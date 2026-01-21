@@ -8,7 +8,7 @@ APP_SECRET = os.environ.get('DROPBOX_APP_SECRET')
 REFRESH_TOKEN = os.environ.get('DROPBOX_REFRESH_TOKEN')
 
 # Use the path from your link (must start with /)
-DROPBOX_FOLDER_PATH = '/flyers' 
+DROPBOX_FOLDER_PATH = '/File requests/flyers' 
 LOCAL_IMG_DIR = 'static/images/gallery'
 DATA_FILE = 'data/flyers.yml'
 WEB_PATH_PREFIX = '/images/gallery/'

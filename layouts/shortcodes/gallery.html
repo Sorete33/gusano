@@ -1,4 +1,4 @@
-{{ $dataFile := .Get "src" | default (.Get 0) | default "flyers" }}
+{{ $dataFile := .Get "src" | default (.Get 0) | default "flyers-viejos" }}
 {{ $data := index .Site.Data $dataFile }}
 
 {{ if $data }}
