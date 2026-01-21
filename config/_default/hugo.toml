@@ -6,6 +6,7 @@ theme = ["blowfish"]
 baseURL = "https://audiogusano.neocities.org/"
 defaultContentLanguage = "en"
 removePathAccents = true
+uglyURLs = true
 
 # pluralizeListTitles = "true" # hugo function useful for non-english languages, find out more in  https://gohugo.io/getting-started/configuration/#pluralizelisttitles
 
