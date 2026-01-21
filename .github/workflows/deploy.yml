@@ -56,10 +56,12 @@ jobs:
         run: |
           rm -rf public
           hugo --minify --gc --cleanDestinationDir --ignoreCache
+          ls -R public/flyers  # This debug line will show us if the file exists before uploading
 
       - name: Deploy to Neocities
         uses: bcomnes/deploy-to-neocities@v1
         with:
           api_token: ${{ secrets.NEOCITIES_API_KEY }}
           dist_dir: public
-          cleanup: false # This forces Neocities to delete old files and sync fresh
+          cleanup: false
+          # This forces Neocities to overwrite every file regardless of timestamps
