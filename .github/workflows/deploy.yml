@@ -1,8 +1,12 @@
 name: Sync Dropbox and Deploy
 on:
   schedule:
-    - cron: '0 * * * *' # Runs every hour. Change to '*/15 * * * *' for every 15 mins.
-  workflow_dispatch:      # Allows you to click a button to run it manually
+    - cron: '0 * * * *'
+  workflow_dispatch:
+
+# REQUIRED: Gives the bot permission to update your flyers.yml
+permissions:
+  contents: write
 
 jobs:
   build-and-deploy:
@@ -10,6 +14,9 @@ jobs:
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
+        with:
+          # Fetches all history so the push doesn't fail
+          fetch-depth: 0 
 
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -26,6 +33,19 @@ jobs:
           DROPBOX_REFRESH_TOKEN: ${{ secrets.DROPBOX_REFRESH_TOKEN }}
         run: python sync_dropbox.py
 
+      # --- THIS IS THE MISSING STEP ---
+      - name: Commit and Push changes back to Repo
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/flyers.yml static/images/gallery/
+          if [ -n "$(git status --porcelain)" ]; then
+            git commit -m "Automated Sync: Update flyers from Dropbox"
+            git push origin master
+          else
+            echo "No changes detected in Dropbox sync."
+          fi
+
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
@@ -33,11 +53,15 @@ jobs:
           extended: true
 
       - name: Build Hugo
-        run: hugo --minify --gc --cleanDestinationDir --ignoreCache
+        run: hugo --minify --gc --cleanDestinationDir
 
       - name: Deploy to Neocities
         uses: bcomnes/deploy-to-neocities@v1
         with:
-          api_token: ${{ secrets.NEOCITIES_API_KEY }} # Changed 'api_key' to 'api_token'
+          api_token: ${{ secrets.NEOCITIES_API_KEY }}
           dist_dir: public
+<<<<<<< HEAD
           cleanup: false
+=======
+          cleanup: false
+>>>>>>> a08558f (newdeploy)
