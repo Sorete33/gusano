@@ -53,8 +53,9 @@ jobs:
           extended: true
 
       - name: Build Hugo
-        # We add --ignoreCache and --cleanDestinationDir to force a total rebuild
-        run: hugo --minify --gc --cleanDestinationDir --ignoreCache
+        run: |
+          rm -rf public
+          hugo --minify --gc --cleanDestinationDir --ignoreCache
 
       - name: Deploy to Neocities
         uses: bcomnes/deploy-to-neocities@v1
