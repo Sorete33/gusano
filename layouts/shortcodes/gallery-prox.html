@@ -1,6 +1,7 @@
 {{ $dataFile := .Get "src" | default (.Get 0) | default "flyers" }}
 {{ $data := index .Site.Data $dataFile }}
 
+
 {{ if $data }}
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
@@ -44,7 +45,7 @@
                         </a>
                     {{ else }}
                         <a href="{{ $finalLink }}" class="glightbox-{{ $dataFile }}">
-                            <img src="{{ $finalLink }}" alt="Flyer" loading="lazy">
+                            <img src="{{ .link }}?v={{ now.Unix }}" alt="Flyer" loading="lazy">
                         </a>
                     {{ end }}
                 </div>
