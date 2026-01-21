@@ -40,4 +40,4 @@ jobs:
         with:
           api_token: ${{ secrets.NEOCITIES_API_KEY }} # Changed 'api_key' to 'api_token'
           dist_dir: public
-          cleanup: true
+          cleanup: false
