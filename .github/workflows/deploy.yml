@@ -62,5 +62,4 @@ jobs:
         with:
           api_token: ${{ secrets.NEOCITIES_API_KEY }}
           dist_dir: public
-          cleanup: false
-          # This forces Neocities to overwrite every file regardless of timestamps
+          cleanup: true  # This forces Neocities to delete old files and sync fresh
