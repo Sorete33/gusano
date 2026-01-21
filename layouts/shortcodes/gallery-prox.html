@@ -21,6 +21,13 @@
     }
 </style>
 
+<div style="background: red; color: white; padding: 20px; font-weight: bold; z-index: 9999; position: relative;">
+    DEBUG INFO:<br>
+    Time of build: {{ now.Format "15:04:05" }}<br>
+    Data File Used: {{ $dataFile }}<br>
+    Total Items Found: {{ len $data }}
+</div>
+
 <div class="nav-wrapper">
     <div class="swiper mySwiper-{{ $dataFile }} swiper-container-{{ $dataFile }}">
         <div class="swiper-wrapper">
