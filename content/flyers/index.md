@@ -19,10 +19,10 @@ layoutBackgroundBlu: true
 
 # Proximas fechas
 
-{{< gallery-prox "flyers-prox" >}}
+{{< gallery-prox "flyers" >}}
 
 ---
 
 # Flyers añejos
 
-{{< gallery src="flyers" >}}
+{{< gallery src="flyers-viejos" >}}
