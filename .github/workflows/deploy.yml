@@ -38,6 +38,6 @@ jobs:
       - name: Deploy to Neocities
         uses: bcomnes/deploy-to-neocities@v1
         with:
-          api_key: ${{ secrets.NEOCITIES_API_KEY }}
+          api_token: ${{ secrets.NEOCITIES_API_KEY }} # Changed 'api_key' to 'api_token'
           dist_dir: public
-          cleanup: true # This keeps Neocities synced exactly with your Hugo output
+          cleanup: true

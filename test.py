@@ -21,7 +21,7 @@ def verify_connection():
 
         # Test 2: Check Folder Path
         # NOTE: Use "" (empty string) to list the root folder if you aren't sure
-        target_path = '/flyers'
+        target_path = '/File requests/flyers'
         
         print(f"Searching for folder: {target_path}...")
         res = dbx.files_list_folder(target_path)
