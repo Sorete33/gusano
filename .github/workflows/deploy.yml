@@ -60,8 +60,4 @@ jobs:
         with:
           api_token: ${{ secrets.NEOCITIES_API_KEY }}
           dist_dir: public
-<<<<<<< HEAD
           cleanup: false
-=======
-          cleanup: false
->>>>>>> a08558f (newdeploy)
