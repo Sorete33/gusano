@@ -1,0 +1,398 @@
+/* Basic reset and body styling */
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #121212;
+  color: #ffffff;
+  overflow-x: hidden;
+}
+
+/* Header styling */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  background-color: #fae316;
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #000000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Main container */
+.container {
+  display: flex;
+  height: calc(100vh - 80px); /* Adjusted for smaller header on mobile */
+}
+
+/* Playlist sidebar */
+aside#playlist {
+  width: 280px;
+  background-color: #000000;
+  padding: 20px;
+  transition: transform 0.3s ease-in-out;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
+  flex-shrink: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+aside#playlist.hidden {
+  transform: translateX(-100%);
+  position: absolute;
+}
+
+aside h3 {
+  color: #fae316;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+}
+
+aside h3 .material-icons {
+  margin-right: 8px;
+}
+
+aside ul {
+  list-style: none;
+  padding: 0;
+}
+
+aside li {
+  padding: 12px 10px;
+  margin-bottom: 5px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  font-size: 0.95em;
+  color: #b3b3b3;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+aside li:hover {
+  background-color: #282828;
+  color: #fff;
+}
+
+aside li.active {
+  background-color: #fae316;
+  color: #000000;
+  font-weight: bold;
+}
+
+aside li .song-duration {
+  font-size: 0.8em;
+  color: #808080;
+}
+
+aside li.active .song-duration {
+  color: #e0e0e0;
+}
+
+/* Toggle playlist button - Hidden on Desktop by default */
+#togglePlaylist {
+  display: none; /* <--- ADD THIS */
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: #000000;
+  color: #fff;
+  border: none;
+  padding: 12px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1em;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  z-index: 10;
+  min-width: 70px;
+  min-height: 48px;
+  transition: background-color 0.2s ease;
+}
+#togglePlaylist:hover {
+  background-color: #a59400;
+}
+
+/* Main content */
+main {
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to bottom, #282828, #121212);
+}
+
+/* Album art */
+.thumbnail {
+  margin-bottom: 30px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+}
+
+.thumbnail img {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid #333;
+  animation: rotate 20s linear infinite;
+  animation-play-state: paused;
+}
+
+.thumbnail img.playing {
+  animation-play-state: running;
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Song info */
+.info {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.info h2 {
+  font-size: 2.5em;
+  margin-bottom: 5px;
+  color: #fff;
+}
+
+.info p {
+  font-size: 1.2em;
+  color: #b3b3b3;
+}
+
+/* Progress & Volume */
+.progress-container,
+.volume-container {
+  width: 80%;
+  max-width: 500px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.progress-container span,
+.volume-container span {
+  font-size: 0.9em;
+  color: #b3b3b3;
+  width: 40px;
+  text-align: center;
+}
+
+/* Range inputs */
+input[type="range"] {
+  width: 100%;
+  height: 12px; /* taller for mobile */
+  background: #535353;
+  border-radius: 5px;
+  outline: none;
+  margin: 0 15px;
+  font-size: 16px; /* prevents iOS zoom */
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #fae316;
+  cursor: grab;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #fae316;
+  cursor: grab;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+input[type="range"]::-webkit-slider-thumb:active,
+input[type="range"]::-moz-range-thumb:active {
+  cursor: grabbing;
+}
+
+/* Controls */
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+  gap: 12px; /* better spacing */
+}
+
+.controls button {
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 2.5em;
+  padding: 8px;
+  border-radius: 50%;
+  transition: color 0.2s ease, transform 0.2s ease;
+  min-width: 48px;
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.controls button:hover {
+  color: #fae316;
+  transform: scale(1.1);
+}
+
+.controls button#playPause {
+  font-size: 3.5em;
+  background-color: #fae316;
+  color: #fff;
+  width: 60px;
+  height: 60px;
+  min-width: 60px;
+  min-height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.controls button#playPause:hover {
+  background-color: #fae316;
+  transform: scale(1.05);
+}
+
+.material-icons {
+  vertical-align: middle;
+  font-size: inherit;
+}
+
+
+/* Overlay background */
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
+  z-index: 99;
+}
+
+.overlay.active {
+  display: block;
+}
+
+/* Hide close button on desktop since playlist is always open */
+#closePlaylist {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  body {
+    overflow: hidden; /* Prevent body scroll when player is open */
+  }
+
+  .container {
+    height: calc(100vh - 65px);
+    position: relative;
+  }
+
+  /* Move the playlist toggle to a fixed floating position */
+  #togglePlaylist {
+    display: flex;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: rgba(250, 227, 22, 0.2);
+    border: 1px solid #fae316;
+    padding: 8px 12px;
+  }
+
+  /* Playlist as a sliding drawer */
+  aside#playlist {
+    position: fixed;
+    top: 0;
+    left: -100%; /* Hidden off-screen */
+    width: 85%;
+    max-width: 320px;
+    height: 100%;
+    z-index: 1000;
+    transition: left 0.3s ease-in-out;
+    background-color: #121212;
+    box-shadow: 5px 0 15px rgba(0,0,0,0.5);
+  }
+
+  aside#playlist.show {
+    left: 0; /* Slide in */
+  }
+
+  .aside-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  #closePlaylist {
+    display: block;
+    background: none;
+    border: none;
+    color: #fae316;
+    font-size: 2rem;
+  }
+
+  /* Main Content Adjustments */
+  main {
+    padding: 10px;
+    justify-content: space-around; /* Space elements evenly */
+  }
+
+  .thumbnail img {
+    width: 220px;
+    height: 220px;
+  }
+
+  .info h2 {
+    font-size: 1.5em;
+  }
+
+  /* Fix the progress bar spacing */
+  .progress-container {
+    width: 95%;
+    margin-bottom: 10px;
+  }
+
+  /* Reverting vertical volume - Horizontal is usually better for thumbs */
+  .volume-container {
+    width: 80%;
+    flex-direction: row; 
+    height: auto;
+  }
+
+  .volume-container input[type="range"] {
+    transform: none;
+    height: 8px;
+  }
+
+  .controls {
+    gap: 15px;
+    width: 100%;
+  }
+
+  
+}

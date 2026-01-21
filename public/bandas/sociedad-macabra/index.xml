@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sociedad Macabra on Bienvenide a Audio Gusano</title>
+    <link>https://audiogusano.neocities.org/bandas/sociedad-macabra/</link>
+    <description>Recent content in Sociedad Macabra on Bienvenide a Audio Gusano</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    
+    <lastBuildDate>Thu, 01 Jan 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://audiogusano.neocities.org/bandas/sociedad-macabra/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Año Nuevo Ruidoso Fest</title>
+      <link>https://audiogusano.neocities.org/recitales/a%C3%B1onuevofest/</link>
+      <pubDate>Thu, 01 Jan 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://audiogusano.neocities.org/recitales/a%C3%B1onuevofest/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://audiogusano.neocities.org/recitales/a%C3%B1onuevofest/featured.png" />
+    </item>
+    
+    <item>
+      <title>Mad Monky Fest</title>
+      <link>https://audiogusano.neocities.org/recitales/mad-monky/</link>
+      <pubDate>Sat, 06 Dec 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://audiogusano.neocities.org/recitales/mad-monky/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://audiogusano.neocities.org/recitales/mad-monky/featured.webp" />
+    </item>
+    
+    <item>
+      <title>Festival Consciente en Galpón Beer </title>
+      <link>https://audiogusano.neocities.org/recitales/galpon-beer/festival-consciente/</link>
+      <pubDate>Fri, 21 Nov 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://audiogusano.neocities.org/recitales/galpon-beer/festival-consciente/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://audiogusano.neocities.org/recitales/galpon-beer/festival-consciente/featured.webp" />
+    </item>
+    
+  </channel>
+</rss>

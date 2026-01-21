@@ -1,0 +1,43 @@
+name: Sync Dropbox and Deploy
+on:
+  schedule:
+    - cron: '0 * * * *' # Runs every hour. Change to '*/15 * * * *' for every 15 mins.
+  workflow_dispatch:      # Allows you to click a button to run it manually
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Install Dependencies
+        run: pip install dropbox PyYAML
+
+      - name: Run Dropbox Sync
+        env:
+          DROPBOX_APP_KEY: ${{ secrets.DROPBOX_APP_KEY }}
+          DROPBOX_APP_SECRET: ${{ secrets.DROPBOX_APP_SECRET }}
+          DROPBOX_REFRESH_TOKEN: ${{ secrets.DROPBOX_REFRESH_TOKEN }}
+        run: python sync_dropbox.py
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: 'latest'
+          extended: true
+
+      - name: Build Hugo
+        run: hugo --minify
+
+      - name: Deploy to Neocities
+        uses: bcomnes/deploy-to-neocities@v1
+        with:
+          api_key: ${{ secrets.NEOCITIES_API_KEY }}
+          dist_dir: public
+          cleanup: true # This keeps Neocities synced exactly with your Hugo output

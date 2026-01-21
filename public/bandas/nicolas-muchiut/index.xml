@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Nicolas Muchiut on Bienvenide a Audio Gusano</title>
+    <link>https://audiogusano.neocities.org/bandas/nicolas-muchiut/</link>
+    <description>Recent content in Nicolas Muchiut on Bienvenide a Audio Gusano</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    
+    <lastBuildDate>Fri, 02 Jan 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://audiogusano.neocities.org/bandas/nicolas-muchiut/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Proyecto Spinetta en Encuentro por las Artes</title>
+      <link>https://audiogusano.neocities.org/recitales/encuentro-por-las-artes/flaco/</link>
+      <pubDate>Fri, 02 Jan 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://audiogusano.neocities.org/recitales/encuentro-por-las-artes/flaco/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://audiogusano.neocities.org/recitales/encuentro-por-las-artes/flaco/featured.webp" />
+    </item>
+    
+    <item>
+      <title>Juanito Alimaña, Nico Muchiut y Ser Sur en Sala Biaus</title>
+      <link>https://audiogusano.neocities.org/recitales/sala-biaus/alima%C3%B1a-sur-muchiut/</link>
+      <pubDate>Sat, 09 Aug 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://audiogusano.neocities.org/recitales/sala-biaus/alima%C3%B1a-sur-muchiut/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://audiogusano.neocities.org/recitales/sala-biaus/alima%C3%B1a-sur-muchiut/featured.jpg" />
+    </item>
+    
+  </channel>
+</rss>

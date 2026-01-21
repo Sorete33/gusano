@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>El Portal Del Tango on Bienvenide a Audio Gusano</title>
+    <link>https://audiogusano.neocities.org/espacios/el-portal-del-tango/</link>
+    <description>Recent content in El Portal Del Tango on Bienvenide a Audio Gusano</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    
+    <lastBuildDate>Wed, 03 Dec 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://audiogusano.neocities.org/espacios/el-portal-del-tango/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Muestra fin de ciclo de la NUEVA (escuela de) MÚSICA en El Portal Del Tango</title>
+      <link>https://audiogusano.neocities.org/recitales/el-portal-del-tango/nueva-musica/</link>
+      <pubDate>Wed, 03 Dec 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://audiogusano.neocities.org/recitales/el-portal-del-tango/nueva-musica/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://audiogusano.neocities.org/recitales/el-portal-del-tango/nueva-musica/featured.jpg" />
+    </item>
+    
+    <item>
+      <title>Festival Distorsivo &#43; Pintura en vivo en El Portal del Tango </title>
+      <link>https://audiogusano.neocities.org/recitales/el-portal-del-tango/festi-distor/</link>
+      <pubDate>Sat, 29 Nov 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://audiogusano.neocities.org/recitales/el-portal-del-tango/festi-distor/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://audiogusano.neocities.org/recitales/el-portal-del-tango/festi-distor/featured.webp" />
+    </item>
+    
+    <item>
+      <title>Primaleon, No Soy de Acá, Entrance y Loz Pozoz en el Festival Consciente a beneficio del CAAC en El Portal del Tango</title>
+      <link>https://audiogusano.neocities.org/recitales/el-portal-del-tango/festi-consciente/</link>
+      <pubDate>Fri, 04 Apr 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://audiogusano.neocities.org/recitales/el-portal-del-tango/festi-consciente/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://audiogusano.neocities.org/recitales/el-portal-del-tango/festi-consciente/featured.webp" />
+    </item>
+    
+  </channel>
+</rss>

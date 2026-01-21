@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tigran Hamasyan on Bienvenide a Audio Gusano</title>
+    <link>https://audiogusano.neocities.org/bandas/tigran-hamasyan/</link>
+    <description>Recent content in Tigran Hamasyan on Bienvenide a Audio Gusano</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    
+    <lastBuildDate>Tue, 14 Oct 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://audiogusano.neocities.org/bandas/tigran-hamasyan/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Tigran Hamasyan en el Teatro Coliseo </title>
+      <link>https://audiogusano.neocities.org/recitales/teatro-coliseo/tigran/</link>
+      <pubDate>Tue, 14 Oct 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://audiogusano.neocities.org/recitales/teatro-coliseo/tigran/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://audiogusano.neocities.org/recitales/teatro-coliseo/tigran/featured.jpg" />
+    </item>
+    
+  </channel>
+</rss>

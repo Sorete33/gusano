@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mate Jazz on Bienvenide a Audio Gusano</title>
+    <link>https://audiogusano.neocities.org/bandas/mate-jazz/</link>
+    <description>Recent content in Mate Jazz on Bienvenide a Audio Gusano</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    
+    <lastBuildDate>Fri, 12 Sep 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://audiogusano.neocities.org/bandas/mate-jazz/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Mate Jazz en Beertonic</title>
+      <link>https://audiogusano.neocities.org/recitales/beertonic/mate-jazz.md/</link>
+      <pubDate>Fri, 12 Sep 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://audiogusano.neocities.org/recitales/beertonic/mate-jazz.md/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://audiogusano.neocities.org/recitales/beertonic/mate-jazz.md/featured.jpg" />
+    </item>
+    
+  </channel>
+</rss>

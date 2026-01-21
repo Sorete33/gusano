@@ -1,0 +1,142 @@
+{{ $apiKey := .Get "key" | default "67da8d330581374371a7fb486a9b1cef" }}
+{{ $buttonText := .Get "label" | default "¡Subí tu Flyer! (solo imagenes)" }}
+
+<style>
+    .flyer-upload-card {
+        border: 2px dashed #ccc;
+        border-radius: 12px;
+        padding: 30px;
+        text-align: center;
+        max-width: 400px;
+        background: #fafafa;
+        transition: all 0.3s ease;
+    }
+    .flyer-upload-card:hover { border-color: #007bff; background: #fff; }
+
+    .btn-upload {
+        background-color: #007bff;
+        color: white;
+        padding: 14px 28px;
+        font-size: 1.1rem;
+        font-weight: bold;
+        border: none;
+        border-radius: 50px;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        transition: transform 0.2s;
+    }
+    .btn-upload:active { transform: scale(0.98); }
+    .btn-upload:disabled { background-color: #ccc; cursor: not-allowed; }
+
+    .preview-img {
+        max-width: 100%;
+        max-height: 200px;
+        border-radius: 8px;
+        margin-top: 15px;
+        display: none;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .spinner {
+        display: none;
+        width: 20px;
+        height: 20px;
+        border: 3px solid rgba(255,255,255,.3);
+        border-radius: 50%;
+        border-top-color: #fff;
+        animation: spin 1s ease-in-out infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .copy-group {
+        display: flex;
+        margin-top: 15px;
+        gap: 5px;
+    }
+    .url-input {
+        flex-grow: 1;
+        padding: 8px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 0.8rem;
+    }
+</style>
+
+<div class="flyer-upload-card">
+    <input type="file" id="imgbb-input" accept="image/*" style="display: none;">
+    
+    <button type="button" id="imgbb-btn" class="btn-upload">
+        <div id="spinner" class="spinner"></div>
+        <span id="btn-text">{{ $buttonText }}</span>
+    </button>
+
+    <div id="status-area">
+        <img id="preview" class="preview-img" src="" alt="Preview">
+        <div id="result-link" style="display: none;">
+            <p style="color: #28a745; margin: 10px 0 5px; font-weight: bold;">¡Listo!</p>
+            <div class="copy-group">
+                <input type="text" id="final-url" class="url-input" readonly>
+                <button onclick="copyUrl()" style="cursor:pointer; padding: 0 10px;">Copiar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+const btn = document.getElementById('imgbb-btn');
+const input = document.getElementById('imgbb-input');
+const spinner = document.getElementById('spinner');
+const btnText = document.getElementById('btn-text');
+const preview = document.getElementById('preview');
+const resultLink = document.getElementById('result-link');
+const finalUrl = document.getElementById('final-url');
+
+btn.addEventListener('click', () => input.click());
+
+input.addEventListener('change', function() {
+    const file = this.files[0];
+    if (!file) return;
+
+    // Reset UI
+    spinner.style.display = 'block';
+    btn.disabled = true;
+    btnText.innerText = 'Subiendo...';
+    resultLink.style.display = 'none';
+
+    const formData = new FormData();
+    formData.append('image', file);
+
+    fetch('https://api.imgbb.com/1/upload?key={{ $apiKey }}', {
+        method: 'POST',
+        body: formData
+    })
+    .then(res => res.json())
+    .then(res => {
+        spinner.style.display = 'none';
+        btn.disabled = false;
+        btnText.innerText = 'Subir otro';
+
+        if (res.success) {
+            preview.src = res.data.display_url;
+            preview.style.display = 'inline-block';
+            finalUrl.value = res.data.url;
+            resultLink.style.display = 'block';
+        } else {
+            alert('Error: ' + res.error.message);
+        }
+    })
+    .catch(err => {
+        spinner.style.display = 'none';
+        btn.disabled = false;
+        alert('Error de conexión');
+    });
+});
+
+function copyUrl() {
+    finalUrl.select();
+    document.execCommand('copy');
+    alert('¡Enlace copiado!');
+}
+</script>

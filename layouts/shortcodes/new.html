@@ -1,0 +1,49 @@
+<div class="new-function-announcement">
+  <button class="close-btn" onclick="this.parentElement.style.display='none'">×</button>
+
+  <h3>{{ .Get "title" }}</h3>
+
+  <p>{{ .Inner }}</p>
+</div>
+
+<style>
+.new-function-announcement {
+  position: relative;
+  border: 1px solid #ffe600;
+  border-left: 4px solid #ffe600;
+  padding: 1rem 1.2rem;
+  margin: 1.5rem 0;
+  background: #000000;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.new-function-announcement h3 {
+  margin: 0 0 .3rem 0;
+  font-size: 1.2rem;
+}
+
+.new-function-announcement small {
+  color: #4a7c4a;
+}
+
+.new-function-announcement p {
+  margin-top: .6rem;
+}
+
+.new-function-announcement .close-btn {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: #4a4a4a;
+  line-height: 1;
+}
+
+.new-function-announcement .close-btn:hover {
+  color: #000;
+}
+</style>

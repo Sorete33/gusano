@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Casa Fratello on Bienvenide a Audio Gusano</title>
+    <link>https://audiogusano.neocities.org/tags/casa-fratello/</link>
+    <description>Recent content in Casa Fratello on Bienvenide a Audio Gusano</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    
+    <lastBuildDate>Sat, 26 Apr 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://audiogusano.neocities.org/tags/casa-fratello/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Armando Alonso en Casa Fratello</title>
+      <link>https://audiogusano.neocities.org/recitales/casa-fratello/armand/</link>
+      <pubDate>Sat, 26 Apr 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://audiogusano.neocities.org/recitales/casa-fratello/armand/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://audiogusano.neocities.org/recitales/casa-fratello/armand/featured.png" />
+    </item>
+    
+  </channel>
+</rss>
