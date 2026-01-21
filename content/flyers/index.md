@@ -25,4 +25,4 @@ layoutBackgroundBlu: true
 
 # Flyers añejos
 
-{{< gallery src="flyers-viejos" >}}
+{{< gallery "flyers-viejos" >}}
