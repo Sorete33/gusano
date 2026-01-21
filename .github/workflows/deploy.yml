@@ -53,6 +53,7 @@ jobs:
           extended: true
 
       - name: Build Hugo
+        # We add --ignoreCache and --cleanDestinationDir to force a total rebuild
         run: hugo --minify --gc --cleanDestinationDir --ignoreCache
 
       - name: Deploy to Neocities
@@ -61,3 +62,5 @@ jobs:
           api_token: ${{ secrets.NEOCITIES_API_KEY }}
           dist_dir: public
           cleanup: false
+          # This forces Neocities to overwrite every file regardless of timestamps
+          force: true
