@@ -64,4 +64,3 @@ jobs:
           dist_dir: public
           cleanup: false
           # This forces Neocities to overwrite every file regardless of timestamps
-          force: true
