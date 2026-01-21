@@ -1,7 +1,6 @@
 {{ $dataFile := .Get "src" | default (.Get 0) | default "flyers" }}
 {{ $data := index .Site.Data $dataFile }}
 
-
 {{ if $data }}
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
@@ -10,12 +9,8 @@
     .swiper-container-{{ $dataFile }} { width: 100%; padding: 50px 0; overflow: hidden; }
     .swiper-slide { width: 300px; }
     .flyer-card {
-        background: #000;
-        border-radius: 12px;
-        overflow: hidden;
-        box-shadow: 0 15px 35px rgba(0,0,0,0.2);
-        height: 420px;
-        position: relative;
+        background: #000; border-radius: 12px; overflow: hidden;
+        box-shadow: 0 15px 35px rgba(0,0,0,0.2); height: 420px; position: relative;
     }
     .flyer-card img, .flyer-card video { width: 100%; height: 100%; object-fit: cover; display: block; }
     .play-icon {
@@ -24,28 +19,28 @@
         display: flex; align-items: center; justify-content: center; z-index: 2;
         border: 2px solid white; pointer-events: none;
     }
-    .nav-wrapper { position: relative; }
 </style>
 
 <div class="nav-wrapper">
     <div class="swiper mySwiper-{{ $dataFile }} swiper-container-{{ $dataFile }}">
         <div class="swiper-wrapper">
             {{ range $data }}
+            {{/* 1. Create the absolute URL and add a unique timestamp to force update */}}
+            {{ $rawLink := .link | relURL }}
+            {{ $timestampedLink := printf "%s?v=%d" $rawLink now.Unix }}
+            
             <div class="swiper-slide">
                 <div class="flyer-card">
-                    {{/* Ensure the link starts with a forward slash and use relURL */}}
-                    {{ $finalLink := .link | relURL }}
-                    
                     {{ if (strings.HasSuffix .link ".mp4") }}
-                        <a href="{{ $finalLink }}" class="glightbox-{{ $dataFile }}" data-type="video">
+                        <a href="{{ $timestampedLink }}" class="glightbox-{{ $dataFile }}" data-type="video">
                             <div class="play-icon">
                                 <svg viewBox="0 0 24 24" width="24" height="24" fill="white"><path d="M8 5v14l11-7z"/></svg>
                             </div>
-                            <video src="{{ $finalLink }}" autoplay loop muted playsinline></video>
+                            <video src="{{ $timestampedLink }}" autoplay loop muted playsinline></video>
                         </a>
                     {{ else }}
-                        <a href="{{ $finalLink }}" class="glightbox-{{ $dataFile }}">
-                            <img src="{{ .link }}?v={{ now.Unix }}" alt="Flyer" loading="lazy">
+                        <a href="{{ $timestampedLink }}" class="glightbox-{{ $dataFile }}">
+                            <img src="{{ $timestampedLink }}" alt="Flyer" loading="lazy">
                         </a>
                     {{ end }}
                 </div>
@@ -64,32 +59,17 @@
 <script>
 (function() {
     const dataName = "{{ $dataFile }}";
-    
     new Swiper(".mySwiper-" + dataName, {
-        effect: "coverflow",
-        grabCursor: true,
-        centeredSlides: true,
-        slidesPerView: "auto",
-        loop: true,
+        effect: "coverflow", grabCursor: true, centeredSlides: true,
+        slidesPerView: "auto", loop: true,
         coverflowEffect: { rotate: 0, stretch: 0, depth: 100, modifier: 2.5, slideShadows: false },
         navigation: { nextEl: ".next-" + dataName, prevEl: ".prev-" + dataName },
         pagination: { el: ".pagination-" + dataName, clickable: true }
     });
 
-    const lightbox = GLightbox({
-        selector: '.glightbox-' + dataName,
-        autoplayVideos: true,
-        injectNodes: {
-            left: '<button class="gdownload-button" style="background: rgba(0,0,0,0.6); border: 1px solid white; color: white; padding: 8px 15px; border-radius: 20px; cursor: pointer; position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); z-index: 9999; display: flex; align-items: center; gap: 8px; font-family: sans-serif; font-size: 14px;">' +
-                  '<svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg> Guardar Archivo' +
-                  '</button>'
-        }
-    });
-
-    // ... (rest of your existing download JS)
+    GLightbox({ selector: '.glightbox-' + dataName });
 })();
 </script>
-
 {{ else }}
     <p style="color: red;">Error: data/{{ $dataFile }}.yml no encontrado.</p>
 {{ end }}
