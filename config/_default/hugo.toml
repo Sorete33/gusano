@@ -10,6 +10,8 @@ uglyURLs = true
 
 # pluralizeListTitles = "true" # hugo function useful for non-english languages, find out more in  https://gohugo.io/getting-started/configuration/#pluralizelisttitles
 
+
+
 enableRobotsTXT = true
 summaryLength = 0
 
@@ -21,6 +23,10 @@ enableEmoji = true
 enableA11y = true
 
 # googleAnalytics = "G-XXXXXXXXX"
+
+[module]
+  [[module.imports]]
+    path = "github.com/nunocoracao/blowfish/v2"
 
 [pagination]
   pagerSize = 100
