@@ -1,0 +1,63 @@
+{{ $apiKey := "f2aee9480da2c75211f143f4a308bff0c83b2990b72cf21794f207591db93a39" }}
+{{ $buttonText := .Get "label" | default "¡Subí tu Video! (PixVid)" }}
+
+<style>
+    .flyer-upload-card {
+        border: 2px dashed #ccc;
+        border-radius: 12px;
+        padding: 35px;
+        text-align: center;
+        max-width: 400px;
+        background: #fafafa;
+        margin: 20px auto;
+        font-family: sans-serif;
+    }
+
+    .btn-upload {
+        background-color: #007bff;
+        color: white;
+        padding: 14px 28px;
+        font-size: 1.1rem;
+        font-weight: bold;
+        border: none;
+        border-radius: 50px;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        transition: background 0.2s;
+    }
+
+    .btn-upload:hover { background-color: #0056b3; }
+
+    .upload-footer {
+        margin-top: 15px;
+        font-size: 0.8rem;
+        color: #666;
+    }
+</style>
+
+<div class="flyer-upload-card">
+    <form action="https://pixvid.org/api/1/upload" method="POST" enctype="multipart/form-data" target="_blank">
+        <input type="hidden" name="key" value="{{ $apiKey }}">
+        <input type="hidden" name="format" value="redirect">
+
+        <div style="margin-bottom: 20px;">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#007bff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="17 8 12 3 7 8"></polyline>
+                <line x1="12" y1="3" x2="12" y2="15"></line>
+            </svg>
+        </div>
+
+        <input type="file" name="source" id="pixvid-file" accept="video/*,image/*" required style="margin-bottom: 15px; display: block; width: 100%;">
+
+        <button type="submit" class="btn-upload">
+            {{ $buttonText }}
+        </button>
+    </form>
+
+    <div class="upload-footer">
+        Al hacer clic, se abrirá PixVid para confirmar tu subida.
+    </div>
+</div>

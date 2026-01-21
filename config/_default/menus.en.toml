@@ -1,0 +1,47 @@
+[[main]]
+none = "none"
+
+[[main]]
+name = "Recitales"
+pre = "sun"
+pageRef = "/recitales"
+identifier = "ZBqnseLlBL"
+weight = 1
+
+[[main]]
+name = "Bandas"
+pre = "eye"
+pageRef = "/bandas"
+identifier = "kQoMKxtpfo"
+weight = 2
+
+[[main]]
+name = "Espacios"
+pre = "moon"
+pageRef = "/espacios"
+identifier = "dfrsL3pRdo"
+weight = 3
+
+[[main]]
+name = "Rocola"
+pre = "music"
+pageRef = "/rocola"
+identifier = "rocola"
+weight = 4
+
+[[main]]
+name = "Próximas Fechitas"
+pre = "bomb"
+pageRef = "/flyers"
+identifier = "flyers"
+weight = 5
+
+[[main]]
+name = "Contacto"
+pre = "email"
+pageRef = "/contacto"
+identifier = "contacto"
+weight = 6
+
+[[footer]]
+none = "none"

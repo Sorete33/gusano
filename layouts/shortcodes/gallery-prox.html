@@ -1,0 +1,125 @@
+{{ $dataFile := .Get "src" | default (.Get 0) | default "flyers" }}
+{{ $data := index .Site.Data $dataFile }}
+
+{{ if $data }}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+
+<style>
+    .swiper-container-{{ $dataFile }} { width: 100%; padding: 50px 0; overflow: hidden; }
+    .swiper-slide { width: 300px; }
+    .flyer-card {
+        background: #000;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+        height: 420px;
+        position: relative;
+    }
+    .flyer-card img, .flyer-card video { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .play-icon {
+        position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+        width: 50px; height: 50px; background: rgba(0, 0, 0, 0.5); border-radius: 50%;
+        display: flex; align-items: center; justify-content: center; z-index: 2;
+        border: 2px solid white; pointer-events: none;
+    }
+    .nav-wrapper { position: relative; }
+</style>
+
+<div class="nav-wrapper">
+    <div class="swiper mySwiper-{{ $dataFile }} swiper-container-{{ $dataFile }}">
+        <div class="swiper-wrapper">
+            {{ range $data }}
+            <div class="swiper-slide">
+                <div class="flyer-card">
+                    {{ if (strings.HasSuffix .link ".mp4") }}
+                        <a href="{{ .link }}" class="glightbox-{{ $dataFile }}" data-type="video">
+                            <div class="play-icon">
+                                <svg viewBox="0 0 24 24" width="24" height="24" fill="white"><path d="M8 5v14l11-7z"/></svg>
+                            </div>
+                            <video src="{{ .link }}" autoplay loop muted playsinline></video>
+                        </a>
+                    {{ else }}
+                        <a href="{{ .link }}" class="glightbox-{{ $dataFile }}">
+                            <img src="{{ .link }}" alt="Flyer" loading="lazy">
+                        </a>
+                    {{ end }}
+                </div>
+            </div>
+            {{ end }}
+        </div>
+        <div class="swiper-pagination pagination-{{ $dataFile }}"></div>
+        <div class="swiper-button-prev prev-{{ $dataFile }}"></div>
+        <div class="swiper-button-next next-{{ $dataFile }}"></div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
+
+<script>
+(function() {
+    const dataName = "{{ $dataFile }}";
+    
+    // Inicializar Swiper (Sin el bloque de randomizer)
+    new Swiper(".mySwiper-" + dataName, {
+        effect: "coverflow",
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: "auto",
+        loop: true,
+        coverflowEffect: { rotate: 0, stretch: 0, depth: 100, modifier: 2.5, slideShadows: false },
+        navigation: { nextEl: ".next-" + dataName, prevEl: ".prev-" + dataName },
+        pagination: { el: ".pagination-" + dataName, clickable: true }
+    });
+
+    const lightbox = GLightbox({
+        selector: '.glightbox-' + dataName,
+        autoplayVideos: true,
+        injectNodes: {
+            left: '<button class="gdownload-button" style="background: rgba(0,0,0,0.6); border: 1px solid white; color: white; padding: 8px 15px; border-radius: 20px; cursor: pointer; position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); z-index: 9999; display: flex; align-items: center; gap: 8px; font-family: sans-serif; font-size: 14px;">' +
+                  '<svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg> Guardar Archivo' +
+                  '</button>'
+        },
+        plyr: { config: { muted: false, volume: 1, controls: ['play-large', 'play', 'progress', 'current-time', 'mute', 'volume', 'fullscreen'] } }
+    });
+
+    async function downloadFile(url, filename) {
+        try {
+            const response = await fetch(url);
+            const blob = await response.blob();
+            const blobUrl = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = blobUrl;
+            a.download = filename;
+            document.body.appendChild(a);
+            a.click();
+            window.URL.revokeObjectURL(blobUrl);
+            document.body.removeChild(a);
+        } catch (e) {
+            const a = document.createElement('a');
+            a.href = url;
+            a.target = '_blank';
+            a.download = filename;
+            a.click();
+        }
+    }
+
+    lightbox.on('open', () => {
+        const downloadBtn = document.querySelector('.gdownload-button');
+        downloadBtn.addEventListener('click', () => {
+            const activeSlide = lightbox.getActiveSlide();
+            const media = activeSlide.querySelector('img, video');
+            if (media) {
+                const url = media.src;
+                const ext = url.split('.').pop().split(/\#|\?/)[0];
+                downloadFile(url, `archivo-${dataName}.${ext}`);
+            }
+        });
+    });
+})();
+</script>
+
+{{ else }}
+    <p style="color: red;">Error: data/{{ $dataFile }}.yml no encontrado.</p>
+{{ end }}

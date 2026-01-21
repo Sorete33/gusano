@@ -1,0 +1,57 @@
+<a href="{{ .Get "url" }}" class="db-upload-btn" target="_blank" rel="noopener">
+    <div class="db-icon-wrapper">
+        <img src="https://cdn-icons-png.flaticon.com/128/1862/1862047.png" alt="Upload Icon">
+    </div>
+    <span class="db-text">{{ .Get "text" | default "subi tu flyer" }}</span>
+</a>
+
+<style>
+.db-upload-btn {
+    /* Layout */
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+    
+    /* Styling */
+    background-color: #613f75;
+    color: #ff6600 !important; /* Your specific orange */
+    padding: 14px 28px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-family: sans-serif;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    
+    /* Effects */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 2px solid transparent;
+}
+
+.db-icon-wrapper img {
+    width: 40px;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+/* Hover States */
+.db-upload-btn:hover {
+    background-color: #ffdc8f !important;
+    color: #613f75 !important;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    border-color: #613f75;
+}
+
+.db-upload-btn:hover .db-icon-wrapper img {
+    transform: scale(1.1) rotate(-5deg);
+}
+
+/* Active click state */
+.db-upload-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+</style>
