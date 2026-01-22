@@ -6,7 +6,6 @@ theme = ["blowfish"]
 baseURL = "https://audiogusano.neocities.org/"
 defaultContentLanguage = "en"
 removePathAccents = true
-uglyURLs = false
 
 # pluralizeListTitles = "true" # hugo function useful for non-english languages, find out more in  https://gohugo.io/getting-started/configuration/#pluralizelisttitles
 
@@ -23,10 +22,6 @@ enableEmoji = true
 enableA11y = true
 
 # googleAnalytics = "G-XXXXXXXXX"
-
-[module]
-  [[module.imports]]
-    path = "github.com/nunocoracao/blowfish/v2"
 
 [pagination]
   pagerSize = 100
