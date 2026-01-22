@@ -56,10 +56,15 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/flyers.yml static/images/gallery/
+          
+          # Add everything that changed (data, static, and potential Hugo config changes)
+          # We don't worry about 'public' because we ignored it in Step 1
+          git add . 
+          
           if [ -n "$(git status --porcelain)" ]; then
             git commit -m "Automated Sync: Update flyers from Dropbox"
-            git push origin HEAD:master 
+            # Use --force-with-lease to avoid conflicts if you happen to push locally at the same time
+            git push origin HEAD:master
           else
-            echo "No changes detected to commit."
+            echo "No changes detected."
           fi
