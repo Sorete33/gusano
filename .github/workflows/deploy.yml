@@ -55,6 +55,12 @@ jobs:
       - name: Initialize Hugo Modules
         run: hugo mod get -u
 
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+        submodules: true  # or 'recursive'
+        fetch-depth: 0
+
       - name: Build Hugo
         run: |
           rm -rf public
