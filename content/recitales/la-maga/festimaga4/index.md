@@ -3,7 +3,11 @@ date : 2026-01-10
 title : "Festimaga Volumen 4"
 weight: -41
 bandas: ["Cínica", "Paprika's Band", "Little Rocker", "Sala Roja", "Inteligencia Accidental"]
+<<<<<<< HEAD
 espacios: []
+=======
+espacios: [La Maga]
+>>>>>>> 37910f3 (new home page)
 author: "Gusanoide"
 draft: false
 showHero: true

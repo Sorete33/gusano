@@ -2,11 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Maquinaria Divina on Bienvenide a Audio Gusano</title>
+<<<<<<< HEAD
     <link>https://audiogusano.neocities.org/bandas/maquinaria-divina/</link>
+=======
+    <link>http://localhost:1313/bandas/maquinaria-divina/</link>
+>>>>>>> 37910f3 (new home page)
     <description>Recent content in Maquinaria Divina on Bienvenide a Audio Gusano</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     
+<<<<<<< HEAD
     <lastBuildDate>Fri, 21 Nov 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://audiogusano.neocities.org/bandas/maquinaria-divina/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -17,6 +22,18 @@
       <guid>https://audiogusano.neocities.org/recitales/galpon-beer/festival-consciente/</guid>
       <description></description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://audiogusano.neocities.org/recitales/galpon-beer/festival-consciente/featured.webp" />
+=======
+    <lastBuildDate>Fri, 21 Nov 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/bandas/maquinaria-divina/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Festival Consciente en Galpón Beer </title>
+      <link>http://localhost:1313/recitales/galpon-beer/festival-consciente/</link>
+      <pubDate>Fri, 21 Nov 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/recitales/galpon-beer/festival-consciente/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/recitales/galpon-beer/festival-consciente/featured.webp" />
+>>>>>>> 37910f3 (new home page)
     </item>
     
   </channel>

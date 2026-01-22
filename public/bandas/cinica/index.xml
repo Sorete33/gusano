@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cínica on Bienvenide a Audio Gusano</title>
+    <link>http://localhost:1313/bandas/cinica/</link>
+    <description>Recent content in Cínica on Bienvenide a Audio Gusano</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    
+    <lastBuildDate>Fri, 16 Jan 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/bandas/cinica/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Cínica, I.A, Sr. Wilson y Nómanda en Sala Biaus</title>
+      <link>http://localhost:1313/recitales/sala-biaus/mr-nomad-cinik-ia/</link>
+      <pubDate>Fri, 16 Jan 2026 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/recitales/sala-biaus/mr-nomad-cinik-ia/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/recitales/sala-biaus/mr-nomad-cinik-ia/featured.jpg" />
+    </item>
+    
+    <item>
+      <title>Festimaga Volumen 4</title>
+      <link>http://localhost:1313/recitales/la-maga/festimaga4/</link>
+      <pubDate>Sat, 10 Jan 2026 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/recitales/la-maga/festimaga4/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/recitales/la-maga/festimaga4/featured.jpg" />
+    </item>
+    
+  </channel>
+</rss>

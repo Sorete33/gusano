@@ -2,11 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Telar on Bienvenide a Audio Gusano</title>
+<<<<<<< HEAD
     <link>https://audiogusano.neocities.org/bandas/telar/</link>
+=======
+    <link>http://localhost:1313/bandas/telar/</link>
+>>>>>>> 37910f3 (new home page)
     <description>Recent content in Telar on Bienvenide a Audio Gusano</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     
+<<<<<<< HEAD
     <lastBuildDate>Thu, 25 Sep 2025 00:59:57 -0300</lastBuildDate><atom:link href="https://audiogusano.neocities.org/bandas/telar/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -17,6 +22,18 @@
       <guid>https://audiogusano.neocities.org/recitales/beertonic/telar/</guid>
       <description></description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://audiogusano.neocities.org/recitales/beertonic/telar/featured.png" />
+=======
+    <lastBuildDate>Thu, 25 Sep 2025 00:59:57 -0300</lastBuildDate><atom:link href="http://localhost:1313/bandas/telar/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Telar en Beertonic</title>
+      <link>http://localhost:1313/recitales/beertonic/telar/</link>
+      <pubDate>Thu, 25 Sep 2025 00:59:57 -0300</pubDate>
+      
+      <guid>http://localhost:1313/recitales/beertonic/telar/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/recitales/beertonic/telar/featured.png" />
+>>>>>>> 37910f3 (new home page)
     </item>
     
   </channel>

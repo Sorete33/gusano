@@ -2,11 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Base on Bienvenide a Audio Gusano</title>
+<<<<<<< HEAD
     <link>https://audiogusano.neocities.org/bandas/base/</link>
+=======
+    <link>http://localhost:1313/bandas/base/</link>
+>>>>>>> 37910f3 (new home page)
     <description>Recent content in Base on Bienvenide a Audio Gusano</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     
+<<<<<<< HEAD
     <lastBuildDate>Sat, 29 Nov 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://audiogusano.neocities.org/bandas/base/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -17,26 +22,56 @@
       <guid>https://audiogusano.neocities.org/recitales/el-portal-del-tango/festi-distor/</guid>
       <description></description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://audiogusano.neocities.org/recitales/el-portal-del-tango/festi-distor/featured.webp" />
+=======
+    <lastBuildDate>Sat, 29 Nov 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/bandas/base/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Festival Distorsivo &#43; Pintura en vivo en El Portal del Tango </title>
+      <link>http://localhost:1313/recitales/el-portal-del-tango/festi-distor/</link>
+      <pubDate>Sat, 29 Nov 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/recitales/el-portal-del-tango/festi-distor/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/recitales/el-portal-del-tango/festi-distor/featured.webp" />
+>>>>>>> 37910f3 (new home page)
     </item>
     
     <item>
       <title>Festival Consciente en Galpón Beer </title>
+<<<<<<< HEAD
       <link>https://audiogusano.neocities.org/recitales/galpon-beer/festival-consciente/</link>
       <pubDate>Fri, 21 Nov 2025 00:00:00 +0000</pubDate>
       
       <guid>https://audiogusano.neocities.org/recitales/galpon-beer/festival-consciente/</guid>
       <description></description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://audiogusano.neocities.org/recitales/galpon-beer/festival-consciente/featured.webp" />
+=======
+      <link>http://localhost:1313/recitales/galpon-beer/festival-consciente/</link>
+      <pubDate>Fri, 21 Nov 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/recitales/galpon-beer/festival-consciente/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/recitales/galpon-beer/festival-consciente/featured.webp" />
+>>>>>>> 37910f3 (new home page)
     </item>
     
     <item>
       <title>Ronda de Bandas del 18-10-25</title>
+<<<<<<< HEAD
       <link>https://audiogusano.neocities.org/recitales/la-ronda/rondadebandas-2/</link>
       <pubDate>Sat, 18 Oct 2025 00:00:00 +0000</pubDate>
       
       <guid>https://audiogusano.neocities.org/recitales/la-ronda/rondadebandas-2/</guid>
       <description></description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://audiogusano.neocities.org/recitales/la-ronda/rondadebandas-2/featured.jpg" />
+=======
+      <link>http://localhost:1313/recitales/la-ronda/rondadebandas-2/</link>
+      <pubDate>Sat, 18 Oct 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/recitales/la-ronda/rondadebandas-2/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/recitales/la-ronda/rondadebandas-2/featured.jpg" />
+>>>>>>> 37910f3 (new home page)
     </item>
     
   </channel>

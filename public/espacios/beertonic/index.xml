@@ -2,11 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Beertonic on Bienvenide a Audio Gusano</title>
+<<<<<<< HEAD
     <link>https://audiogusano.neocities.org/espacios/beertonic/</link>
+=======
+    <link>http://localhost:1313/espacios/beertonic/</link>
+>>>>>>> 37910f3 (new home page)
     <description>Recent content in Beertonic on Bienvenide a Audio Gusano</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     
+<<<<<<< HEAD
     <lastBuildDate>Sun, 23 Nov 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://audiogusano.neocities.org/espacios/beertonic/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -17,66 +22,132 @@
       <guid>https://audiogusano.neocities.org/recitales/beertonic/cumple/</guid>
       <description></description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://audiogusano.neocities.org/recitales/beertonic/cumple/featured.jpg" />
+=======
+    <lastBuildDate>Sun, 23 Nov 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/espacios/beertonic/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Guada y Abril dúo, Catango Trio y Paprika&#39;s Band en el Aniversario de Beertonic</title>
+      <link>http://localhost:1313/recitales/beertonic/cumple/</link>
+      <pubDate>Sun, 23 Nov 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/recitales/beertonic/cumple/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/recitales/beertonic/cumple/featured.jpg" />
+>>>>>>> 37910f3 (new home page)
     </item>
     
     <item>
       <title>Fango y Perlas en Beertonic </title>
+<<<<<<< HEAD
       <link>https://audiogusano.neocities.org/recitales/beertonic/fango-y-perlas/</link>
       <pubDate>Thu, 23 Oct 2025 00:00:00 +0000</pubDate>
       
       <guid>https://audiogusano.neocities.org/recitales/beertonic/fango-y-perlas/</guid>
       <description></description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://audiogusano.neocities.org/recitales/beertonic/fango-y-perlas/featured.webp" />
+=======
+      <link>http://localhost:1313/recitales/beertonic/fango-y-perlas/</link>
+      <pubDate>Thu, 23 Oct 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/recitales/beertonic/fango-y-perlas/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/recitales/beertonic/fango-y-perlas/featured.webp" />
+>>>>>>> 37910f3 (new home page)
     </item>
     
     <item>
       <title>Armando Alonso en Beertonic </title>
+<<<<<<< HEAD
       <link>https://audiogusano.neocities.org/recitales/beertonic/armand/</link>
       <pubDate>Thu, 09 Oct 2025 00:00:00 +0000</pubDate>
       
       <guid>https://audiogusano.neocities.org/recitales/beertonic/armand/</guid>
       <description></description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://audiogusano.neocities.org/recitales/beertonic/armand/featured.png" />
+=======
+      <link>http://localhost:1313/recitales/beertonic/armand/</link>
+      <pubDate>Thu, 09 Oct 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/recitales/beertonic/armand/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/recitales/beertonic/armand/featured.png" />
+>>>>>>> 37910f3 (new home page)
     </item>
     
     <item>
       <title>Telar en Beertonic</title>
+<<<<<<< HEAD
       <link>https://audiogusano.neocities.org/recitales/beertonic/telar/</link>
       <pubDate>Thu, 25 Sep 2025 00:59:57 -0300</pubDate>
       
       <guid>https://audiogusano.neocities.org/recitales/beertonic/telar/</guid>
       <description></description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://audiogusano.neocities.org/recitales/beertonic/telar/featured.png" />
+=======
+      <link>http://localhost:1313/recitales/beertonic/telar/</link>
+      <pubDate>Thu, 25 Sep 2025 00:59:57 -0300</pubDate>
+      
+      <guid>http://localhost:1313/recitales/beertonic/telar/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/recitales/beertonic/telar/featured.png" />
+>>>>>>> 37910f3 (new home page)
     </item>
     
     <item>
       <title>Yula y Abril Amar &#43; Invitades en Beertonic</title>
+<<<<<<< HEAD
       <link>https://audiogusano.neocities.org/recitales/beertonic/yula-2/</link>
       <pubDate>Mon, 15 Sep 2025 00:00:00 +0000</pubDate>
       
       <guid>https://audiogusano.neocities.org/recitales/beertonic/yula-2/</guid>
       <description></description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://audiogusano.neocities.org/recitales/beertonic/yula-2/featured.jpg" />
+=======
+      <link>http://localhost:1313/recitales/beertonic/yula-2/</link>
+      <pubDate>Mon, 15 Sep 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/recitales/beertonic/yula-2/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/recitales/beertonic/yula-2/featured.jpg" />
+>>>>>>> 37910f3 (new home page)
     </item>
     
     <item>
       <title>Mate Jazz en Beertonic</title>
+<<<<<<< HEAD
       <link>https://audiogusano.neocities.org/recitales/beertonic/mate-jazz.md/</link>
       <pubDate>Fri, 12 Sep 2025 00:00:00 +0000</pubDate>
       
       <guid>https://audiogusano.neocities.org/recitales/beertonic/mate-jazz.md/</guid>
       <description></description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://audiogusano.neocities.org/recitales/beertonic/mate-jazz.md/featured.jpg" />
+=======
+      <link>http://localhost:1313/recitales/beertonic/mate-jazz.md/</link>
+      <pubDate>Fri, 12 Sep 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/recitales/beertonic/mate-jazz.md/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/recitales/beertonic/mate-jazz.md/featured.jpg" />
+>>>>>>> 37910f3 (new home page)
     </item>
     
     <item>
       <title>Yula más invitades en Beertonic</title>
+<<<<<<< HEAD
       <link>https://audiogusano.neocities.org/recitales/beertonic/yula/</link>
       <pubDate>Sun, 04 May 2025 15:47:19 -0300</pubDate>
       
       <guid>https://audiogusano.neocities.org/recitales/beertonic/yula/</guid>
       <description></description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://audiogusano.neocities.org/recitales/beertonic/yula/featured.jpg" />
+=======
+      <link>http://localhost:1313/recitales/beertonic/yula/</link>
+      <pubDate>Sun, 04 May 2025 15:47:19 -0300</pubDate>
+      
+      <guid>http://localhost:1313/recitales/beertonic/yula/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/recitales/beertonic/yula/featured.jpg" />
+>>>>>>> 37910f3 (new home page)
     </item>
     
   </channel>

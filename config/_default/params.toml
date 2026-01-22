@@ -41,7 +41,11 @@ showMoreLink = true
 showMoreLinkDest = "/recitales/"
 cardView = true
 cardViewScreenWidth = true
+<<<<<<< HEAD
 layoutBackgroundBlur = true
+=======
+layoutBackgroundBlur = false
+>>>>>>> 37910f3 (new home page)
 disableHeroImageFilter = false
 homepageImage = "under.jpg"
 

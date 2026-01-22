@@ -2,11 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Recitales on Bienvenide a Audio Gusano</title>
+<<<<<<< HEAD
     <link>https://audiogusano.neocities.org/recitales/</link>
+=======
+    <link>http://localhost:1313/recitales/</link>
+>>>>>>> 37910f3 (new home page)
     <description>Recent content in Recitales on Bienvenide a Audio Gusano</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     
+<<<<<<< HEAD
     <lastBuildDate>Fri, 16 Jan 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://audiogusano.neocities.org/recitales/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -17,436 +22,835 @@
       <guid>https://audiogusano.neocities.org/recitales/sala-biaus/mr-nomad-cinik-ia/</guid>
       <description></description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://audiogusano.neocities.org/recitales/sala-biaus/mr-nomad-cinik-ia/featured.jpg" />
+=======
+    <lastBuildDate>Fri, 16 Jan 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/recitales/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Cínica, I.A, Sr. Wilson y Nómanda en Sala Biaus</title>
+      <link>http://localhost:1313/recitales/sala-biaus/mr-nomad-cinik-ia/</link>
+      <pubDate>Fri, 16 Jan 2026 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/recitales/sala-biaus/mr-nomad-cinik-ia/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/recitales/sala-biaus/mr-nomad-cinik-ia/featured.jpg" />
+>>>>>>> 37910f3 (new home page)
     </item>
     
     <item>
       <title>Festimaga Volumen 4</title>
+<<<<<<< HEAD
       <link>https://audiogusano.neocities.org/recitales/la-maga/festimaga4/</link>
       <pubDate>Sat, 10 Jan 2026 00:00:00 +0000</pubDate>
       
       <guid>https://audiogusano.neocities.org/recitales/la-maga/festimaga4/</guid>
       <description></description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://audiogusano.neocities.org/recitales/la-maga/festimaga4/featured.jpg" />
+=======
+      <link>http://localhost:1313/recitales/la-maga/festimaga4/</link>
+      <pubDate>Sat, 10 Jan 2026 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/recitales/la-maga/festimaga4/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/recitales/la-maga/festimaga4/featured.jpg" />
+>>>>>>> 37910f3 (new home page)
     </item>
     
     <item>
       <title>Epifanicas, Sunglasses y Roco y los Chacks en Encuentro por las Artes</title>
+<<<<<<< HEAD
       <link>https://audiogusano.neocities.org/recitales/encuentro-por-las-artes/epi-sun-roco/</link>
       <pubDate>Fri, 09 Jan 2026 00:00:00 +0000</pubDate>
       
       <guid>https://audiogusano.neocities.org/recitales/encuentro-por-las-artes/epi-sun-roco/</guid>
       <description></description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://audiogusano.neocities.org/recitales/encuentro-por-las-artes/epi-sun-roco/featured.jpg" />
+=======
+      <link>http://localhost:1313/recitales/encuentro-por-las-artes/epi-sun-roco/</link>
+      <pubDate>Fri, 09 Jan 2026 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/recitales/encuentro-por-las-artes/epi-sun-roco/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/recitales/encuentro-por-las-artes/epi-sun-roco/featured.jpg" />
+>>>>>>> 37910f3 (new home page)
     </item>
     
     <item>
       <title>Proyecto Spinetta en Encuentro por las Artes</title>
+<<<<<<< HEAD
       <link>https://audiogusano.neocities.org/recitales/encuentro-por-las-artes/flaco/</link>
       <pubDate>Fri, 02 Jan 2026 00:00:00 +0000</pubDate>
       
       <guid>https://audiogusano.neocities.org/recitales/encuentro-por-las-artes/flaco/</guid>
       <description></description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://audiogusano.neocities.org/recitales/encuentro-por-las-artes/flaco/featured.webp" />
+=======
+      <link>http://localhost:1313/recitales/encuentro-por-las-artes/flaco/</link>
+      <pubDate>Fri, 02 Jan 2026 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/recitales/encuentro-por-las-artes/flaco/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/recitales/encuentro-por-las-artes/flaco/featured.webp" />
+>>>>>>> 37910f3 (new home page)
     </item>
     
     <item>
       <title>Año Nuevo Ruidoso Fest</title>
+<<<<<<< HEAD
       <link>https://audiogusano.neocities.org/recitales/a%C3%B1onuevofest/</link>
       <pubDate>Thu, 01 Jan 2026 00:00:00 +0000</pubDate>
       
       <guid>https://audiogusano.neocities.org/recitales/a%C3%B1onuevofest/</guid>
       <description></description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://audiogusano.neocities.org/recitales/a%C3%B1onuevofest/featured.png" />
+=======
+      <link>http://localhost:1313/recitales/anonuevofest/</link>
+      <pubDate>Thu, 01 Jan 2026 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/recitales/anonuevofest/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/recitales/anonuevofest/featured.png" />
+>>>>>>> 37910f3 (new home page)
     </item>
     
     <item>
       <title>Drama y Los Bad Seed en Sala Biaus</title>
+<<<<<<< HEAD
       <link>https://audiogusano.neocities.org/recitales/sala-biaus/drama-seed/</link>
       <pubDate>Sat, 27 Dec 2025 00:00:00 +0000</pubDate>
       
       <guid>https://audiogusano.neocities.org/recitales/sala-biaus/drama-seed/</guid>
       <description></description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://audiogusano.neocities.org/recitales/sala-biaus/drama-seed/featured.jpg" />
+=======
+      <link>http://localhost:1313/recitales/sala-biaus/drama-seed/</link>
+      <pubDate>Sat, 27 Dec 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/recitales/sala-biaus/drama-seed/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/recitales/sala-biaus/drama-seed/featured.jpg" />
+>>>>>>> 37910f3 (new home page)
     </item>
     
     <item>
       <title>Epifanicas en Sala Biaus</title>
+<<<<<<< HEAD
       <link>https://audiogusano.neocities.org/recitales/sala-biaus/epifanicas/</link>
       <pubDate>Sat, 13 Dec 2025 00:00:00 +0000</pubDate>
       
       <guid>https://audiogusano.neocities.org/recitales/sala-biaus/epifanicas/</guid>
       <description></description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://audiogusano.neocities.org/recitales/sala-biaus/epifanicas/featured.jpg" />
+=======
+      <link>http://localhost:1313/recitales/sala-biaus/epifanicas/</link>
+      <pubDate>Sat, 13 Dec 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/recitales/sala-biaus/epifanicas/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/recitales/sala-biaus/epifanicas/featured.jpg" />
+>>>>>>> 37910f3 (new home page)
     </item>
     
     <item>
       <title>Armando Alonso Trío en Gelatiamo</title>
+<<<<<<< HEAD
       <link>https://audiogusano.neocities.org/recitales/gelatiamo/armand/</link>
       <pubDate>Thu, 11 Dec 2025 00:00:00 +0000</pubDate>
       
       <guid>https://audiogusano.neocities.org/recitales/gelatiamo/armand/</guid>
       <description></description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://audiogusano.neocities.org/recitales/gelatiamo/armand/featured.jpg" />
+=======
+      <link>http://localhost:1313/recitales/gelatiamo/armand/</link>
+      <pubDate>Thu, 11 Dec 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/recitales/gelatiamo/armand/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/recitales/gelatiamo/armand/featured.jpg" />
+>>>>>>> 37910f3 (new home page)
     </item>
     
     <item>
       <title>Mad Monky Fest</title>
+<<<<<<< HEAD
       <link>https://audiogusano.neocities.org/recitales/mad-monky/</link>
       <pubDate>Sat, 06 Dec 2025 00:00:00 +0000</pubDate>
       
       <guid>https://audiogusano.neocities.org/recitales/mad-monky/</guid>
       <description></description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://audiogusano.neocities.org/recitales/mad-monky/featured.webp" />
+=======
+      <link>http://localhost:1313/recitales/mad-monky/</link>
+      <pubDate>Sat, 06 Dec 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/recitales/mad-monky/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/recitales/mad-monky/featured.webp" />
+>>>>>>> 37910f3 (new home page)
     </item>
     
     <item>
       <title>Muestra fin de ciclo de la NUEVA (escuela de) MÚSICA en El Portal Del Tango</title>
+<<<<<<< HEAD
       <link>https://audiogusano.neocities.org/recitales/el-portal-del-tango/nueva-musica/</link>
       <pubDate>Wed, 03 Dec 2025 00:00:00 +0000</pubDate>
       
       <guid>https://audiogusano.neocities.org/recitales/el-portal-del-tango/nueva-musica/</guid>
       <description></description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://audiogusano.neocities.org/recitales/el-portal-del-tango/nueva-musica/featured.jpg" />
+=======
+      <link>http://localhost:1313/recitales/el-portal-del-tango/nueva-musica/</link>
+      <pubDate>Wed, 03 Dec 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/recitales/el-portal-del-tango/nueva-musica/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/recitales/el-portal-del-tango/nueva-musica/featured.jpg" />
+>>>>>>> 37910f3 (new home page)
     </item>
     
     <item>
       <title>Festival Distorsivo &#43; Pintura en vivo en El Portal del Tango </title>
+<<<<<<< HEAD
       <link>https://audiogusano.neocities.org/recitales/el-portal-del-tango/festi-distor/</link>
       <pubDate>Sat, 29 Nov 2025 00:00:00 +0000</pubDate>
       
       <guid>https://audiogusano.neocities.org/recitales/el-portal-del-tango/festi-distor/</guid>
       <description></description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://audiogusano.neocities.org/recitales/el-portal-del-tango/festi-distor/featured.webp" />
+=======
+      <link>http://localhost:1313/recitales/el-portal-del-tango/festi-distor/</link>
+      <pubDate>Sat, 29 Nov 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/recitales/el-portal-del-tango/festi-distor/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/recitales/el-portal-del-tango/festi-distor/featured.webp" />
+>>>>>>> 37910f3 (new home page)
     </item>
     
     <item>
       <title>Los Pozoz y Traumas de la Infancia en la Festimaga</title>
+<<<<<<< HEAD
       <link>https://audiogusano.neocities.org/recitales/la-maga/festimaga3/</link>
       <pubDate>Fri, 28 Nov 2025 00:00:00 +0000</pubDate>
       
       <guid>https://audiogusano.neocities.org/recitales/la-maga/festimaga3/</guid>
       <description></description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://audiogusano.neocities.org/recitales/la-maga/festimaga3/featured.jpg" />
+=======
+      <link>http://localhost:1313/recitales/la-maga/festimaga3/</link>
+      <pubDate>Fri, 28 Nov 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/recitales/la-maga/festimaga3/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/recitales/la-maga/festimaga3/featured.jpg" />
+>>>>>>> 37910f3 (new home page)
     </item>
     
     <item>
       <title>Guada y Abril dúo, Catango Trio y Paprika&#39;s Band en el Aniversario de Beertonic</title>
+<<<<<<< HEAD
       <link>https://audiogusano.neocities.org/recitales/beertonic/cumple/</link>
       <pubDate>Sun, 23 Nov 2025 00:00:00 +0000</pubDate>
       
       <guid>https://audiogusano.neocities.org/recitales/beertonic/cumple/</guid>
       <description></description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://audiogusano.neocities.org/recitales/beertonic/cumple/featured.jpg" />
+=======
+      <link>http://localhost:1313/recitales/beertonic/cumple/</link>
+      <pubDate>Sun, 23 Nov 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/recitales/beertonic/cumple/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/recitales/beertonic/cumple/featured.jpg" />
+>>>>>>> 37910f3 (new home page)
     </item>
     
     <item>
       <title>Festival Consciente en Galpón Beer </title>
+<<<<<<< HEAD
       <link>https://audiogusano.neocities.org/recitales/galpon-beer/festival-consciente/</link>
       <pubDate>Fri, 21 Nov 2025 00:00:00 +0000</pubDate>
       
       <guid>https://audiogusano.neocities.org/recitales/galpon-beer/festival-consciente/</guid>
       <description></description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://audiogusano.neocities.org/recitales/galpon-beer/festival-consciente/featured.webp" />
+=======
+      <link>http://localhost:1313/recitales/galpon-beer/festival-consciente/</link>
+      <pubDate>Fri, 21 Nov 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/recitales/galpon-beer/festival-consciente/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/recitales/galpon-beer/festival-consciente/featured.webp" />
+>>>>>>> 37910f3 (new home page)
     </item>
     
     <item>
       <title>Epifanicas en la Fiesta de la Cebada</title>
+<<<<<<< HEAD
       <link>https://audiogusano.neocities.org/recitales/club-la-pampa/epifanicas/</link>
       <pubDate>Sat, 08 Nov 2025 00:00:00 +0000</pubDate>
       
       <guid>https://audiogusano.neocities.org/recitales/club-la-pampa/epifanicas/</guid>
       <description></description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://audiogusano.neocities.org/recitales/club-la-pampa/epifanicas/featured.jpg" />
+=======
+      <link>http://localhost:1313/recitales/club-la-pampa/epifanicas/</link>
+      <pubDate>Sat, 08 Nov 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/recitales/club-la-pampa/epifanicas/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/recitales/club-la-pampa/epifanicas/featured.jpg" />
+>>>>>>> 37910f3 (new home page)
     </item>
     
     <item>
       <title>Valkirias en la Plaza Charo Latessa</title>
+<<<<<<< HEAD
       <link>https://audiogusano.neocities.org/recitales/plaza-charo/valquirias/</link>
       <pubDate>Sat, 08 Nov 2025 00:00:00 +0000</pubDate>
       
       <guid>https://audiogusano.neocities.org/recitales/plaza-charo/valquirias/</guid>
       <description></description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://audiogusano.neocities.org/recitales/plaza-charo/valquirias/featured.webp" />
+=======
+      <link>http://localhost:1313/recitales/plaza-charo/valquirias/</link>
+      <pubDate>Sat, 08 Nov 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/recitales/plaza-charo/valquirias/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/recitales/plaza-charo/valquirias/featured.webp" />
+>>>>>>> 37910f3 (new home page)
     </item>
     
     <item>
       <title> Epifanicas &#43; pintura en vivo de Marcelo Mosqueira en Grey Bar </title>
+<<<<<<< HEAD
       <link>https://audiogusano.neocities.org/recitales/grey-bar/epifanicas/</link>
       <pubDate>Thu, 06 Nov 2025 00:00:00 +0000</pubDate>
       
       <guid>https://audiogusano.neocities.org/recitales/grey-bar/epifanicas/</guid>
       <description></description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://audiogusano.neocities.org/recitales/grey-bar/epifanicas/featured.jpg" />
+=======
+      <link>http://localhost:1313/recitales/grey-bar/epifanicas/</link>
+      <pubDate>Thu, 06 Nov 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/recitales/grey-bar/epifanicas/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/recitales/grey-bar/epifanicas/featured.jpg" />
+>>>>>>> 37910f3 (new home page)
     </item>
     
     <item>
       <title>Entrance, Nómada, y Sala Roja en la Festimaga</title>
+<<<<<<< HEAD
       <link>https://audiogusano.neocities.org/recitales/la-maga/festimaga2/</link>
       <pubDate>Fri, 31 Oct 2025 00:00:00 +0000</pubDate>
       
       <guid>https://audiogusano.neocities.org/recitales/la-maga/festimaga2/</guid>
       <description></description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://audiogusano.neocities.org/recitales/la-maga/festimaga2/featured.png" />
+=======
+      <link>http://localhost:1313/recitales/la-maga/festimaga2/</link>
+      <pubDate>Fri, 31 Oct 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/recitales/la-maga/festimaga2/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/recitales/la-maga/festimaga2/featured.png" />
+>>>>>>> 37910f3 (new home page)
     </item>
     
     <item>
       <title>Fango y Perlas en Beertonic </title>
+<<<<<<< HEAD
       <link>https://audiogusano.neocities.org/recitales/beertonic/fango-y-perlas/</link>
       <pubDate>Thu, 23 Oct 2025 00:00:00 +0000</pubDate>
       
       <guid>https://audiogusano.neocities.org/recitales/beertonic/fango-y-perlas/</guid>
       <description></description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://audiogusano.neocities.org/recitales/beertonic/fango-y-perlas/featured.webp" />
+=======
+      <link>http://localhost:1313/recitales/beertonic/fango-y-perlas/</link>
+      <pubDate>Thu, 23 Oct 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/recitales/beertonic/fango-y-perlas/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/recitales/beertonic/fango-y-perlas/featured.webp" />
+>>>>>>> 37910f3 (new home page)
     </item>
     
     <item>
       <title>La Ronda Catonga en la Plaza Venezuela</title>
+<<<<<<< HEAD
       <link>https://audiogusano.neocities.org/recitales/plaza-venezuela/catonga/</link>
       <pubDate>Sun, 26 Oct 2025 00:00:00 +0000</pubDate>
       
       <guid>https://audiogusano.neocities.org/recitales/plaza-venezuela/catonga/</guid>
       <description></description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://audiogusano.neocities.org/recitales/plaza-venezuela/catonga/featured.jpg" />
+=======
+      <link>http://localhost:1313/recitales/plaza-venezuela/catonga/</link>
+      <pubDate>Sun, 26 Oct 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/recitales/plaza-venezuela/catonga/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/recitales/plaza-venezuela/catonga/featured.jpg" />
+>>>>>>> 37910f3 (new home page)
     </item>
     
     <item>
       <title>Epifanicas en Garage Avispa</title>
+<<<<<<< HEAD
       <link>https://audiogusano.neocities.org/recitales/avispa/epifanicas/</link>
       <pubDate>Fri, 24 Oct 2025 00:00:00 +0000</pubDate>
       
       <guid>https://audiogusano.neocities.org/recitales/avispa/epifanicas/</guid>
       <description></description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://audiogusano.neocities.org/recitales/avispa/epifanicas/featured.jpg" />
+=======
+      <link>http://localhost:1313/recitales/avispa/epifanicas/</link>
+      <pubDate>Fri, 24 Oct 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/recitales/avispa/epifanicas/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/recitales/avispa/epifanicas/featured.jpg" />
+>>>>>>> 37910f3 (new home page)
     </item>
     
     <item>
       <title>El Ensamble de música contemporánea interpreta a Philip Glass y Terry Riley en el Conservatorio Alberto Williams</title>
+<<<<<<< HEAD
       <link>https://audiogusano.neocities.org/recitales/conser/ensamble/</link>
       <pubDate>Fri, 24 Oct 2025 00:00:00 +0000</pubDate>
       
       <guid>https://audiogusano.neocities.org/recitales/conser/ensamble/</guid>
       <description></description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://audiogusano.neocities.org/recitales/conser/ensamble/featured.jpg" />
+=======
+      <link>http://localhost:1313/recitales/conser/ensamble/</link>
+      <pubDate>Fri, 24 Oct 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/recitales/conser/ensamble/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/recitales/conser/ensamble/featured.jpg" />
+>>>>>>> 37910f3 (new home page)
     </item>
     
     <item>
       <title>Inteligencia Accidental en el cumple de Lucas</title>
+<<<<<<< HEAD
       <link>https://audiogusano.neocities.org/recitales/la-casa-de-lu/</link>
       <pubDate>Mon, 20 Oct 2025 00:00:00 +0000</pubDate>
       
       <guid>https://audiogusano.neocities.org/recitales/la-casa-de-lu/</guid>
       <description></description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://audiogusano.neocities.org/recitales/la-casa-de-lu/featured.jpg" />
+=======
+      <link>http://localhost:1313/recitales/la-casa-de-lu/</link>
+      <pubDate>Mon, 20 Oct 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/recitales/la-casa-de-lu/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/recitales/la-casa-de-lu/featured.jpg" />
+>>>>>>> 37910f3 (new home page)
     </item>
     
     <item>
       <title>Ronda de Bandas del 18-10-25</title>
+<<<<<<< HEAD
       <link>https://audiogusano.neocities.org/recitales/la-ronda/rondadebandas-2/</link>
       <pubDate>Sat, 18 Oct 2025 00:00:00 +0000</pubDate>
       
       <guid>https://audiogusano.neocities.org/recitales/la-ronda/rondadebandas-2/</guid>
       <description></description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://audiogusano.neocities.org/recitales/la-ronda/rondadebandas-2/featured.jpg" />
+=======
+      <link>http://localhost:1313/recitales/la-ronda/rondadebandas-2/</link>
+      <pubDate>Sat, 18 Oct 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/recitales/la-ronda/rondadebandas-2/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/recitales/la-ronda/rondadebandas-2/featured.jpg" />
+>>>>>>> 37910f3 (new home page)
     </item>
     
     <item>
       <title>Paez de a dos: Nico Muchiut y Fede Ratto desde el Teatro Trac</title>
+<<<<<<< HEAD
       <link>https://audiogusano.neocities.org/recitales/teatro-trac/paez-de-a-dos/</link>
       <pubDate>Fri, 17 Oct 2025 00:00:00 +0000</pubDate>
       
       <guid>https://audiogusano.neocities.org/recitales/teatro-trac/paez-de-a-dos/</guid>
       <description></description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://audiogusano.neocities.org/recitales/teatro-trac/paez-de-a-dos/featured.jpg" />
+=======
+      <link>http://localhost:1313/recitales/teatro-trac/paez-de-a-dos/</link>
+      <pubDate>Fri, 17 Oct 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/recitales/teatro-trac/paez-de-a-dos/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/recitales/teatro-trac/paez-de-a-dos/featured.jpg" />
+>>>>>>> 37910f3 (new home page)
     </item>
     
     <item>
       <title>Tigran Hamasyan en el Teatro Coliseo </title>
+<<<<<<< HEAD
       <link>https://audiogusano.neocities.org/recitales/teatro-coliseo/tigran/</link>
       <pubDate>Tue, 14 Oct 2025 00:00:00 +0000</pubDate>
       
       <guid>https://audiogusano.neocities.org/recitales/teatro-coliseo/tigran/</guid>
       <description></description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://audiogusano.neocities.org/recitales/teatro-coliseo/tigran/featured.jpg" />
+=======
+      <link>http://localhost:1313/recitales/teatro-coliseo/tigran/</link>
+      <pubDate>Tue, 14 Oct 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/recitales/teatro-coliseo/tigran/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/recitales/teatro-coliseo/tigran/featured.jpg" />
+>>>>>>> 37910f3 (new home page)
     </item>
     
     <item>
       <title>Armando Alonso en Beertonic </title>
+<<<<<<< HEAD
       <link>https://audiogusano.neocities.org/recitales/beertonic/armand/</link>
       <pubDate>Thu, 09 Oct 2025 00:00:00 +0000</pubDate>
       
       <guid>https://audiogusano.neocities.org/recitales/beertonic/armand/</guid>
       <description></description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://audiogusano.neocities.org/recitales/beertonic/armand/featured.png" />
+=======
+      <link>http://localhost:1313/recitales/beertonic/armand/</link>
+      <pubDate>Thu, 09 Oct 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/recitales/beertonic/armand/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/recitales/beertonic/armand/featured.png" />
+>>>>>>> 37910f3 (new home page)
     </item>
     
     <item>
       <title>Jane Doe en Ricón</title>
+<<<<<<< HEAD
       <link>https://audiogusano.neocities.org/recitales/rincon/janedoe/</link>
       <pubDate>Thu, 02 Oct 2025 01:04:40 -0300</pubDate>
       
       <guid>https://audiogusano.neocities.org/recitales/rincon/janedoe/</guid>
       <description></description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://audiogusano.neocities.org/recitales/rincon/janedoe/featured.jpg" />
+=======
+      <link>http://localhost:1313/recitales/rincon/janedoe/</link>
+      <pubDate>Thu, 02 Oct 2025 01:04:40 -0300</pubDate>
+      
+      <guid>http://localhost:1313/recitales/rincon/janedoe/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/recitales/rincon/janedoe/featured.jpg" />
+>>>>>>> 37910f3 (new home page)
     </item>
     
     <item>
       <title>Casco y Guada en Grey Bar</title>
+<<<<<<< HEAD
       <link>https://audiogusano.neocities.org/recitales/grey-bar/casco-guada/</link>
       <pubDate>Thu, 02 Oct 2025 01:04:40 -0300</pubDate>
       
       <guid>https://audiogusano.neocities.org/recitales/grey-bar/casco-guada/</guid>
       <description></description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://audiogusano.neocities.org/recitales/grey-bar/casco-guada/featured.png" />
+=======
+      <link>http://localhost:1313/recitales/grey-bar/casco-guada/</link>
+      <pubDate>Thu, 02 Oct 2025 01:04:40 -0300</pubDate>
+      
+      <guid>http://localhost:1313/recitales/grey-bar/casco-guada/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/recitales/grey-bar/casco-guada/featured.png" />
+>>>>>>> 37910f3 (new home page)
     </item>
     
     <item>
       <title>Telar en Beertonic</title>
+<<<<<<< HEAD
       <link>https://audiogusano.neocities.org/recitales/beertonic/telar/</link>
       <pubDate>Thu, 25 Sep 2025 00:59:57 -0300</pubDate>
       
       <guid>https://audiogusano.neocities.org/recitales/beertonic/telar/</guid>
       <description></description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://audiogusano.neocities.org/recitales/beertonic/telar/featured.png" />
+=======
+      <link>http://localhost:1313/recitales/beertonic/telar/</link>
+      <pubDate>Thu, 25 Sep 2025 00:59:57 -0300</pubDate>
+      
+      <guid>http://localhost:1313/recitales/beertonic/telar/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/recitales/beertonic/telar/featured.png" />
+>>>>>>> 37910f3 (new home page)
     </item>
     
     <item>
       <title>Cumple de La Ronda</title>
+<<<<<<< HEAD
       <link>https://audiogusano.neocities.org/recitales/la-ronda/cumple-ronda/</link>
       <pubDate>Sat, 20 Sep 2025 00:00:00 +0000</pubDate>
       
       <guid>https://audiogusano.neocities.org/recitales/la-ronda/cumple-ronda/</guid>
       <description></description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://audiogusano.neocities.org/recitales/la-ronda/cumple-ronda/featured.jpg" />
+=======
+      <link>http://localhost:1313/recitales/la-ronda/cumple-ronda/</link>
+      <pubDate>Sat, 20 Sep 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/recitales/la-ronda/cumple-ronda/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/recitales/la-ronda/cumple-ronda/featured.jpg" />
+>>>>>>> 37910f3 (new home page)
     </item>
     
     <item>
       <title>Cumpleaños Accidental en Sala Biaus</title>
+<<<<<<< HEAD
       <link>https://audiogusano.neocities.org/recitales/sala-biaus/ia/</link>
       <pubDate>Sat, 20 Sep 2025 13:51:08 -0300</pubDate>
       
       <guid>https://audiogusano.neocities.org/recitales/sala-biaus/ia/</guid>
       <description></description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://audiogusano.neocities.org/recitales/sala-biaus/ia/featured.jpg" />
+=======
+      <link>http://localhost:1313/recitales/sala-biaus/ia/</link>
+      <pubDate>Sat, 20 Sep 2025 13:51:08 -0300</pubDate>
+      
+      <guid>http://localhost:1313/recitales/sala-biaus/ia/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/recitales/sala-biaus/ia/featured.jpg" />
+>>>>>>> 37910f3 (new home page)
     </item>
     
     <item>
       <title>Yula y Abril Amar &#43; Invitades en Beertonic</title>
+<<<<<<< HEAD
       <link>https://audiogusano.neocities.org/recitales/beertonic/yula-2/</link>
       <pubDate>Mon, 15 Sep 2025 00:00:00 +0000</pubDate>
       
       <guid>https://audiogusano.neocities.org/recitales/beertonic/yula-2/</guid>
       <description></description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://audiogusano.neocities.org/recitales/beertonic/yula-2/featured.jpg" />
+=======
+      <link>http://localhost:1313/recitales/beertonic/yula-2/</link>
+      <pubDate>Mon, 15 Sep 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/recitales/beertonic/yula-2/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/recitales/beertonic/yula-2/featured.jpg" />
+>>>>>>> 37910f3 (new home page)
     </item>
     
     <item>
       <title>Mate Jazz en Beertonic</title>
+<<<<<<< HEAD
       <link>https://audiogusano.neocities.org/recitales/beertonic/mate-jazz.md/</link>
       <pubDate>Fri, 12 Sep 2025 00:00:00 +0000</pubDate>
       
       <guid>https://audiogusano.neocities.org/recitales/beertonic/mate-jazz.md/</guid>
       <description></description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://audiogusano.neocities.org/recitales/beertonic/mate-jazz.md/featured.jpg" />
+=======
+      <link>http://localhost:1313/recitales/beertonic/mate-jazz.md/</link>
+      <pubDate>Fri, 12 Sep 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/recitales/beertonic/mate-jazz.md/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/recitales/beertonic/mate-jazz.md/featured.jpg" />
+>>>>>>> 37910f3 (new home page)
     </item>
     
     <item>
       <title>Proyecto Spinetta en el Teatro Trac</title>
+<<<<<<< HEAD
       <link>https://audiogusano.neocities.org/recitales/teatro-trac/spinetta/</link>
       <pubDate>Fri, 12 Sep 2025 00:00:00 +0000</pubDate>
       
       <guid>https://audiogusano.neocities.org/recitales/teatro-trac/spinetta/</guid>
       <description></description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://audiogusano.neocities.org/recitales/teatro-trac/spinetta/featured.webp" />
+=======
+      <link>http://localhost:1313/recitales/teatro-trac/spinetta/</link>
+      <pubDate>Fri, 12 Sep 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/recitales/teatro-trac/spinetta/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/recitales/teatro-trac/spinetta/featured.webp" />
+>>>>>>> 37910f3 (new home page)
     </item>
     
     <item>
       <title>Armando Alonso en el Teatro Trac</title>
+<<<<<<< HEAD
       <link>https://audiogusano.neocities.org/recitales/teatro-trac/armand/</link>
       <pubDate>Tue, 09 Sep 2025 00:00:00 +0000</pubDate>
       
       <guid>https://audiogusano.neocities.org/recitales/teatro-trac/armand/</guid>
       <description></description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://audiogusano.neocities.org/recitales/teatro-trac/armand/featured.png" />
+=======
+      <link>http://localhost:1313/recitales/teatro-trac/armand/</link>
+      <pubDate>Tue, 09 Sep 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/recitales/teatro-trac/armand/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/recitales/teatro-trac/armand/featured.png" />
+>>>>>>> 37910f3 (new home page)
     </item>
     
     <item>
       <title>Juanito Alimaña, Nico Muchiut y Ser Sur en Sala Biaus</title>
+<<<<<<< HEAD
       <link>https://audiogusano.neocities.org/recitales/sala-biaus/alima%C3%B1a-sur-muchiut/</link>
       <pubDate>Sat, 09 Aug 2025 00:00:00 +0000</pubDate>
       
       <guid>https://audiogusano.neocities.org/recitales/sala-biaus/alima%C3%B1a-sur-muchiut/</guid>
       <description></description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://audiogusano.neocities.org/recitales/sala-biaus/alima%C3%B1a-sur-muchiut/featured.jpg" />
+=======
+      <link>http://localhost:1313/recitales/sala-biaus/alimana-sur-muchiut/</link>
+      <pubDate>Sat, 09 Aug 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/recitales/sala-biaus/alimana-sur-muchiut/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/recitales/sala-biaus/alimana-sur-muchiut/featured.jpg" />
+>>>>>>> 37910f3 (new home page)
     </item>
     
     <item>
       <title>Parasomnia, La Vitrola Envenenada, La Toma de Roma y Entrance en la Ronda de Bandas</title>
+<<<<<<< HEAD
       <link>https://audiogusano.neocities.org/recitales/la-ronda/rondadebandas-1/</link>
       <pubDate>Sat, 12 Jul 2025 00:00:00 +0000</pubDate>
       
       <guid>https://audiogusano.neocities.org/recitales/la-ronda/rondadebandas-1/</guid>
       <description></description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://audiogusano.neocities.org/recitales/la-ronda/rondadebandas-1/featured.jpg" />
+=======
+      <link>http://localhost:1313/recitales/la-ronda/rondadebandas-1/</link>
+      <pubDate>Sat, 12 Jul 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/recitales/la-ronda/rondadebandas-1/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/recitales/la-ronda/rondadebandas-1/featured.jpg" />
+>>>>>>> 37910f3 (new home page)
     </item>
     
     <item>
       <title>Round 2, Entrance y Sala Roja en el Festival Demolición</title>
+<<<<<<< HEAD
       <link>https://audiogusano.neocities.org/recitales/festival-demolici%C3%B3n/</link>
       <pubDate>Sat, 28 Jun 2025 00:00:00 +0000</pubDate>
       
       <guid>https://audiogusano.neocities.org/recitales/festival-demolici%C3%B3n/</guid>
       <description></description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://audiogusano.neocities.org/recitales/festival-demolici%C3%B3n/featured.jpg" />
+=======
+      <link>http://localhost:1313/recitales/festival-demolicion/</link>
+      <pubDate>Sat, 28 Jun 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/recitales/festival-demolicion/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/recitales/festival-demolicion/featured.jpg" />
+>>>>>>> 37910f3 (new home page)
     </item>
     
     <item>
       <title>Primaleon, No Soy de Acá, Entrance y Loz Pozoz en el Festival Consciente a beneficio del CAAC en El Portal del Tango</title>
+<<<<<<< HEAD
       <link>https://audiogusano.neocities.org/recitales/el-portal-del-tango/festi-consciente/</link>
       <pubDate>Fri, 04 Apr 2025 00:00:00 +0000</pubDate>
       
       <guid>https://audiogusano.neocities.org/recitales/el-portal-del-tango/festi-consciente/</guid>
       <description></description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://audiogusano.neocities.org/recitales/el-portal-del-tango/festi-consciente/featured.webp" />
+=======
+      <link>http://localhost:1313/recitales/el-portal-del-tango/festi-consciente/</link>
+      <pubDate>Fri, 04 Apr 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/recitales/el-portal-del-tango/festi-consciente/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/recitales/el-portal-del-tango/festi-consciente/featured.webp" />
+>>>>>>> 37910f3 (new home page)
     </item>
     
     <item>
       <title>Yula más invitades en Beertonic</title>
+<<<<<<< HEAD
       <link>https://audiogusano.neocities.org/recitales/beertonic/yula/</link>
       <pubDate>Sun, 04 May 2025 15:47:19 -0300</pubDate>
       
       <guid>https://audiogusano.neocities.org/recitales/beertonic/yula/</guid>
       <description></description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://audiogusano.neocities.org/recitales/beertonic/yula/featured.jpg" />
+=======
+      <link>http://localhost:1313/recitales/beertonic/yula/</link>
+      <pubDate>Sun, 04 May 2025 15:47:19 -0300</pubDate>
+      
+      <guid>http://localhost:1313/recitales/beertonic/yula/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/recitales/beertonic/yula/featured.jpg" />
+>>>>>>> 37910f3 (new home page)
     </item>
     
     <item>
       <title>Los Bad Seed en Sala Biaus</title>
+<<<<<<< HEAD
       <link>https://audiogusano.neocities.org/recitales/sala-biaus/bad-seed/</link>
       <pubDate>Fri, 09 May 2025 00:00:00 +0000</pubDate>
       
       <guid>https://audiogusano.neocities.org/recitales/sala-biaus/bad-seed/</guid>
       <description></description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://audiogusano.neocities.org/recitales/sala-biaus/bad-seed/featured.jpg" />
+=======
+      <link>http://localhost:1313/recitales/sala-biaus/bad-seed/</link>
+      <pubDate>Fri, 09 May 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/recitales/sala-biaus/bad-seed/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/recitales/sala-biaus/bad-seed/featured.jpg" />
+>>>>>>> 37910f3 (new home page)
     </item>
     
     <item>
       <title>Armando Alonso en Casa Fratello</title>
+<<<<<<< HEAD
       <link>https://audiogusano.neocities.org/recitales/casa-fratello/armand/</link>
       <pubDate>Sat, 26 Apr 2025 00:00:00 +0000</pubDate>
       
       <guid>https://audiogusano.neocities.org/recitales/casa-fratello/armand/</guid>
       <description></description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://audiogusano.neocities.org/recitales/casa-fratello/armand/featured.png" />
+=======
+      <link>http://localhost:1313/recitales/casa-fratello/armand/</link>
+      <pubDate>Sat, 26 Apr 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/recitales/casa-fratello/armand/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/recitales/casa-fratello/armand/featured.png" />
+>>>>>>> 37910f3 (new home page)
     </item>
     
     <item>
       <title>Entrance, Inteligencia Accidental, Parasomnia y Sala Roja en la Festimaga</title>
+<<<<<<< HEAD
       <link>https://audiogusano.neocities.org/recitales/la-maga/festimaga1/</link>
       <pubDate>Fri, 04 Apr 2025 00:00:00 +0000</pubDate>
       
       <guid>https://audiogusano.neocities.org/recitales/la-maga/festimaga1/</guid>
       <description></description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://audiogusano.neocities.org/recitales/la-maga/festimaga1/featured.png" />
+=======
+      <link>http://localhost:1313/recitales/la-maga/festimaga1/</link>
+      <pubDate>Fri, 04 Apr 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/recitales/la-maga/festimaga1/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/recitales/la-maga/festimaga1/featured.png" />
+>>>>>>> 37910f3 (new home page)
     </item>
     
   </channel>

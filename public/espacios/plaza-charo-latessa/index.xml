@@ -2,11 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Plaza Charo Latessa on Bienvenide a Audio Gusano</title>
+<<<<<<< HEAD
     <link>https://audiogusano.neocities.org/espacios/plaza-charo-latessa/</link>
+=======
+    <link>http://localhost:1313/espacios/plaza-charo-latessa/</link>
+>>>>>>> 37910f3 (new home page)
     <description>Recent content in Plaza Charo Latessa on Bienvenide a Audio Gusano</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     
+<<<<<<< HEAD
     <lastBuildDate>Sat, 08 Nov 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://audiogusano.neocities.org/espacios/plaza-charo-latessa/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -17,6 +22,18 @@
       <guid>https://audiogusano.neocities.org/recitales/plaza-charo/valquirias/</guid>
       <description></description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://audiogusano.neocities.org/recitales/plaza-charo/valquirias/featured.webp" />
+=======
+    <lastBuildDate>Sat, 08 Nov 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/espacios/plaza-charo-latessa/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Valkirias en la Plaza Charo Latessa</title>
+      <link>http://localhost:1313/recitales/plaza-charo/valquirias/</link>
+      <pubDate>Sat, 08 Nov 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/recitales/plaza-charo/valquirias/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/recitales/plaza-charo/valquirias/featured.webp" />
+>>>>>>> 37910f3 (new home page)
     </item>
     
   </channel>

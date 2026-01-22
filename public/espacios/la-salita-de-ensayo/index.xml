@@ -2,11 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>La Salita De Ensayo on Bienvenide a Audio Gusano</title>
+<<<<<<< HEAD
     <link>https://audiogusano.neocities.org/espacios/la-salita-de-ensayo/</link>
+=======
+    <link>http://localhost:1313/espacios/la-salita-de-ensayo/</link>
+>>>>>>> 37910f3 (new home page)
     <description>Recent content in La Salita De Ensayo on Bienvenide a Audio Gusano</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     
+<<<<<<< HEAD
     <lastBuildDate>Thu, 01 Jan 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://audiogusano.neocities.org/espacios/la-salita-de-ensayo/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -17,16 +22,37 @@
       <guid>https://audiogusano.neocities.org/recitales/a%C3%B1onuevofest/</guid>
       <description></description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://audiogusano.neocities.org/recitales/a%C3%B1onuevofest/featured.png" />
+=======
+    <lastBuildDate>Thu, 01 Jan 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/espacios/la-salita-de-ensayo/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Año Nuevo Ruidoso Fest</title>
+      <link>http://localhost:1313/recitales/anonuevofest/</link>
+      <pubDate>Thu, 01 Jan 2026 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/recitales/anonuevofest/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/recitales/anonuevofest/featured.png" />
+>>>>>>> 37910f3 (new home page)
     </item>
     
     <item>
       <title>Mad Monky Fest</title>
+<<<<<<< HEAD
       <link>https://audiogusano.neocities.org/recitales/mad-monky/</link>
       <pubDate>Sat, 06 Dec 2025 00:00:00 +0000</pubDate>
       
       <guid>https://audiogusano.neocities.org/recitales/mad-monky/</guid>
       <description></description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://audiogusano.neocities.org/recitales/mad-monky/featured.webp" />
+=======
+      <link>http://localhost:1313/recitales/mad-monky/</link>
+      <pubDate>Sat, 06 Dec 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/recitales/mad-monky/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/recitales/mad-monky/featured.webp" />
+>>>>>>> 37910f3 (new home page)
     </item>
     
   </channel>

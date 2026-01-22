@@ -2,11 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Sala Biaus on Bienvenide a Audio Gusano</title>
+<<<<<<< HEAD
     <link>https://audiogusano.neocities.org/espacios/sala-biaus/</link>
+=======
+    <link>http://localhost:1313/espacios/sala-biaus/</link>
+>>>>>>> 37910f3 (new home page)
     <description>Recent content in Sala Biaus on Bienvenide a Audio Gusano</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     
+<<<<<<< HEAD
     <lastBuildDate>Fri, 16 Jan 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://audiogusano.neocities.org/espacios/sala-biaus/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -17,56 +22,113 @@
       <guid>https://audiogusano.neocities.org/recitales/sala-biaus/mr-nomad-cinik-ia/</guid>
       <description></description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://audiogusano.neocities.org/recitales/sala-biaus/mr-nomad-cinik-ia/featured.jpg" />
+=======
+    <lastBuildDate>Fri, 16 Jan 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/espacios/sala-biaus/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Cínica, I.A, Sr. Wilson y Nómanda en Sala Biaus</title>
+      <link>http://localhost:1313/recitales/sala-biaus/mr-nomad-cinik-ia/</link>
+      <pubDate>Fri, 16 Jan 2026 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/recitales/sala-biaus/mr-nomad-cinik-ia/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/recitales/sala-biaus/mr-nomad-cinik-ia/featured.jpg" />
+>>>>>>> 37910f3 (new home page)
     </item>
     
     <item>
       <title>Drama y Los Bad Seed en Sala Biaus</title>
+<<<<<<< HEAD
       <link>https://audiogusano.neocities.org/recitales/sala-biaus/drama-seed/</link>
       <pubDate>Sat, 27 Dec 2025 00:00:00 +0000</pubDate>
       
       <guid>https://audiogusano.neocities.org/recitales/sala-biaus/drama-seed/</guid>
       <description></description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://audiogusano.neocities.org/recitales/sala-biaus/drama-seed/featured.jpg" />
+=======
+      <link>http://localhost:1313/recitales/sala-biaus/drama-seed/</link>
+      <pubDate>Sat, 27 Dec 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/recitales/sala-biaus/drama-seed/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/recitales/sala-biaus/drama-seed/featured.jpg" />
+>>>>>>> 37910f3 (new home page)
     </item>
     
     <item>
       <title>Epifanicas en Sala Biaus</title>
+<<<<<<< HEAD
       <link>https://audiogusano.neocities.org/recitales/sala-biaus/epifanicas/</link>
       <pubDate>Sat, 13 Dec 2025 00:00:00 +0000</pubDate>
       
       <guid>https://audiogusano.neocities.org/recitales/sala-biaus/epifanicas/</guid>
       <description></description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://audiogusano.neocities.org/recitales/sala-biaus/epifanicas/featured.jpg" />
+=======
+      <link>http://localhost:1313/recitales/sala-biaus/epifanicas/</link>
+      <pubDate>Sat, 13 Dec 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/recitales/sala-biaus/epifanicas/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/recitales/sala-biaus/epifanicas/featured.jpg" />
+>>>>>>> 37910f3 (new home page)
     </item>
     
     <item>
       <title>Cumpleaños Accidental en Sala Biaus</title>
+<<<<<<< HEAD
       <link>https://audiogusano.neocities.org/recitales/sala-biaus/ia/</link>
       <pubDate>Sat, 20 Sep 2025 13:51:08 -0300</pubDate>
       
       <guid>https://audiogusano.neocities.org/recitales/sala-biaus/ia/</guid>
       <description></description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://audiogusano.neocities.org/recitales/sala-biaus/ia/featured.jpg" />
+=======
+      <link>http://localhost:1313/recitales/sala-biaus/ia/</link>
+      <pubDate>Sat, 20 Sep 2025 13:51:08 -0300</pubDate>
+      
+      <guid>http://localhost:1313/recitales/sala-biaus/ia/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/recitales/sala-biaus/ia/featured.jpg" />
+>>>>>>> 37910f3 (new home page)
     </item>
     
     <item>
       <title>Juanito Alimaña, Nico Muchiut y Ser Sur en Sala Biaus</title>
+<<<<<<< HEAD
       <link>https://audiogusano.neocities.org/recitales/sala-biaus/alima%C3%B1a-sur-muchiut/</link>
       <pubDate>Sat, 09 Aug 2025 00:00:00 +0000</pubDate>
       
       <guid>https://audiogusano.neocities.org/recitales/sala-biaus/alima%C3%B1a-sur-muchiut/</guid>
       <description></description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://audiogusano.neocities.org/recitales/sala-biaus/alima%C3%B1a-sur-muchiut/featured.jpg" />
+=======
+      <link>http://localhost:1313/recitales/sala-biaus/alimana-sur-muchiut/</link>
+      <pubDate>Sat, 09 Aug 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/recitales/sala-biaus/alimana-sur-muchiut/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/recitales/sala-biaus/alimana-sur-muchiut/featured.jpg" />
+>>>>>>> 37910f3 (new home page)
     </item>
     
     <item>
       <title>Los Bad Seed en Sala Biaus</title>
+<<<<<<< HEAD
       <link>https://audiogusano.neocities.org/recitales/sala-biaus/bad-seed/</link>
       <pubDate>Fri, 09 May 2025 00:00:00 +0000</pubDate>
       
       <guid>https://audiogusano.neocities.org/recitales/sala-biaus/bad-seed/</guid>
       <description></description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://audiogusano.neocities.org/recitales/sala-biaus/bad-seed/featured.jpg" />
+=======
+      <link>http://localhost:1313/recitales/sala-biaus/bad-seed/</link>
+      <pubDate>Fri, 09 May 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/recitales/sala-biaus/bad-seed/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/recitales/sala-biaus/bad-seed/featured.jpg" />
+>>>>>>> 37910f3 (new home page)
     </item>
     
   </channel>
