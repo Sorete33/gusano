@@ -1,12 +1,12 @@
 - link: /images/gallery/oester.jpg
-  name: oester.jpg
+  name: oester
 - link: /images/gallery/bad.webp
-  name: bad.webp
+  name: bad
 - link: /images/gallery/seed.jpg
-  name: seed.jpg
+  name: seed
 - link: /images/gallery/flaco.jpeg
-  name: flaco.jpeg
+  name: flaco
 - link: /images/gallery/kuelgue.mp4
-  name: kuelgue.mp4
-- link: /images/gallery/panero sorete.mp4
-  name: panero sorete.mp4
+  name: kuelgue
+- link: /images/gallery/panero-sorete.mp4
+  name: panero sorete
