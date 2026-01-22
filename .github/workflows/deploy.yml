@@ -15,7 +15,6 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v4
         with:
-          # Fetches all history so the push doesn't fail
           fetch-depth: 0 
 
       - name: Set up Python
@@ -33,39 +32,17 @@ jobs:
           DROPBOX_REFRESH_TOKEN: ${{ secrets.DROPBOX_REFRESH_TOKEN }}
         run: python sync_dropbox.py
 
-      # --- THIS IS THE MISSING STEP ---
-      - name: Commit and Push changes back to Repo
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/flyers.yml static/images/gallery/
-          if [ -n "$(git status --porcelain)" ]; then
-            git commit -m "Automated Sync: Update flyers from Dropbox"
-            git push origin master
-          else
-            echo "No changes detected in Dropbox sync."
-          fi
-
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
           hugo-version: 'latest'
           extended: true
-      
-      - name: Initialize Hugo Modules
-        run: hugo mod get -u
-
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-        submodules: true  # or 'recursive'
-        fetch-depth: 0
 
       - name: Build Hugo
         run: |
-          rm -rf public
-          hugo --minify --gc --cleanDestinationDir --ignoreCache
-          ls -R public/flyers  # This debug line will show us if the file exists before uploading
+          # We build FIRST while the new Dropbox files are present in the local runner
+          hugo --minify --gc --cleanDestinationDir
+          ls -R public/flyers || echo "Flyers directory not found!"
 
       - name: Deploy to Neocities
         uses: bcomnes/deploy-to-neocities@v1
@@ -73,4 +50,16 @@ jobs:
           api_token: ${{ secrets.NEOCITIES_API_KEY }}
           dist_dir: public
           cleanup: false
-          # This forces Neocities to overwrite every file regardless of timestamps
+
+      # Commit the changes LAST so the deployment isn't delayed by Git operations
+      - name: Commit and Push changes back to Repo
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/flyers.yml static/images/gallery/
+          if [ -n "$(git status --porcelain)" ]; then
+            git commit -m "Automated Sync: Update flyers from Dropbox"
+            git push origin HEAD:master 
+          else
+            echo "No changes detected to commit."
+          fi
