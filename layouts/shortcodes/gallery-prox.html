@@ -24,8 +24,9 @@
 <div class="nav-wrapper">
     <div class="swiper mySwiper-{{ $dataFile }} swiper-container-{{ $dataFile }}">
         <div class="swiper-wrapper">
-            {{ range $data }}
-            {{/* 1. Create the absolute URL and add a unique timestamp to force update */}}
+            {{/* Apply 'shuffle' here to randomize the order on every build/refresh */}}
+            {{ range shuffle $data }}
+            
             {{ $rawLink := .link | relURL }}
             {{ $timestampedLink := printf "%s?v=%d" $rawLink now.Unix }}
             
