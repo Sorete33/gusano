@@ -36,7 +36,7 @@ showScrollToTop = true
 [homepage]
 layout = "background"
 showRecent = true
-showRecentItems = "10"
+showRecentItems = "100"
 showMoreLink = true
 showMoreLinkDest = "/recitales/"
 cardView = true
