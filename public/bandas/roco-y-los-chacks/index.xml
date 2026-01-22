@@ -2,27 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Roco Y Los Chacks on Bienvenide a Audio Gusano</title>
-<<<<<<< HEAD
-    <link>https://audiogusano.neocities.org/bandas/roco-y-los-chacks/</link>
-=======
     <link>http://localhost:1313/bandas/roco-y-los-chacks/</link>
->>>>>>> 37910f3 (new home page)
     <description>Recent content in Roco Y Los Chacks on Bienvenide a Audio Gusano</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     
-<<<<<<< HEAD
-    <lastBuildDate>Fri, 09 Jan 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://audiogusano.neocities.org/bandas/roco-y-los-chacks/index.xml" rel="self" type="application/rss+xml" />
-    
-    <item>
-      <title>Epifanicas, Sunglasses y Roco y los Chacks en Encuentro por las Artes</title>
-      <link>https://audiogusano.neocities.org/recitales/encuentro-por-las-artes/epi-sun-roco/</link>
-      <pubDate>Fri, 09 Jan 2026 00:00:00 +0000</pubDate>
-      
-      <guid>https://audiogusano.neocities.org/recitales/encuentro-por-las-artes/epi-sun-roco/</guid>
-      <description></description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://audiogusano.neocities.org/recitales/encuentro-por-las-artes/epi-sun-roco/featured.jpg" />
-=======
     <lastBuildDate>Fri, 09 Jan 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/bandas/roco-y-los-chacks/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -33,26 +17,16 @@
       <guid>http://localhost:1313/recitales/encuentro-por-las-artes/epi-sun-roco/</guid>
       <description></description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/recitales/encuentro-por-las-artes/epi-sun-roco/featured.jpg" />
->>>>>>> 37910f3 (new home page)
     </item>
     
     <item>
       <title>Cumple de La Ronda</title>
-<<<<<<< HEAD
-      <link>https://audiogusano.neocities.org/recitales/la-ronda/cumple-ronda/</link>
-      <pubDate>Sat, 20 Sep 2025 00:00:00 +0000</pubDate>
-      
-      <guid>https://audiogusano.neocities.org/recitales/la-ronda/cumple-ronda/</guid>
-      <description></description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://audiogusano.neocities.org/recitales/la-ronda/cumple-ronda/featured.jpg" />
-=======
       <link>http://localhost:1313/recitales/la-ronda/cumple-ronda/</link>
       <pubDate>Sat, 20 Sep 2025 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/recitales/la-ronda/cumple-ronda/</guid>
       <description></description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/recitales/la-ronda/cumple-ronda/featured.jpg" />
->>>>>>> 37910f3 (new home page)
     </item>
     
   </channel>

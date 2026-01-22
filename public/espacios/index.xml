@@ -2,65 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Espacios on Bienvenide a Audio Gusano</title>
-<<<<<<< HEAD
-    <link>https://audiogusano.neocities.org/espacios/</link>
-=======
     <link>http://localhost:1313/espacios/</link>
->>>>>>> 37910f3 (new home page)
     <description>Recent content in Espacios on Bienvenide a Audio Gusano</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     
-<<<<<<< HEAD
-    <lastBuildDate>Fri, 16 Jan 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://audiogusano.neocities.org/espacios/index.xml" rel="self" type="application/rss+xml" />
-    
-    <item>
-      <title>Sala Biaus</title>
-      <link>https://audiogusano.neocities.org/espacios/sala-biaus/</link>
-      <pubDate>Fri, 16 Jan 2026 00:00:00 +0000</pubDate>
-      
-      <guid>https://audiogusano.neocities.org/espacios/sala-biaus/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Encuentro Por Las Artes</title>
-      <link>https://audiogusano.neocities.org/espacios/encuentro-por-las-artes/</link>
-      <pubDate>Fri, 09 Jan 2026 00:00:00 +0000</pubDate>
-      
-      <guid>https://audiogusano.neocities.org/espacios/encuentro-por-las-artes/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>La Salita De Ensayo</title>
-      <link>https://audiogusano.neocities.org/espacios/la-salita-de-ensayo/</link>
-      <pubDate>Thu, 01 Jan 2026 00:00:00 +0000</pubDate>
-      
-      <guid>https://audiogusano.neocities.org/espacios/la-salita-de-ensayo/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Gelatiamo</title>
-      <link>https://audiogusano.neocities.org/espacios/gelatiamo/</link>
-      <pubDate>Thu, 11 Dec 2025 00:00:00 +0000</pubDate>
-      
-      <guid>https://audiogusano.neocities.org/espacios/gelatiamo/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>El Portal Del Tango</title>
-      <link>https://audiogusano.neocities.org/espacios/el-portal-del-tango/</link>
-      <pubDate>Wed, 03 Dec 2025 00:00:00 +0000</pubDate>
-      
-      <guid>https://audiogusano.neocities.org/espacios/el-portal-del-tango/</guid>
-=======
     <lastBuildDate>Fri, 16 Jan 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/espacios/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -69,19 +15,12 @@
       <pubDate>Fri, 16 Jan 2026 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/espacios/sala-biaus/</guid>
->>>>>>> 37910f3 (new home page)
       <description></description>
       
     </item>
     
     <item>
       <title>La Maga</title>
-<<<<<<< HEAD
-      <link>https://audiogusano.neocities.org/espacios/la-maga/</link>
-      <pubDate>Fri, 28 Nov 2025 00:00:00 +0000</pubDate>
-      
-      <guid>https://audiogusano.neocities.org/espacios/la-maga/</guid>
-=======
       <link>http://localhost:1313/espacios/la-maga/</link>
       <pubDate>Sat, 10 Jan 2026 00:00:00 +0000</pubDate>
       
@@ -126,262 +65,156 @@
       <pubDate>Wed, 03 Dec 2025 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/espacios/el-portal-del-tango/</guid>
->>>>>>> 37910f3 (new home page)
       <description></description>
       
     </item>
     
     <item>
       <title>Beertonic</title>
-<<<<<<< HEAD
-      <link>https://audiogusano.neocities.org/espacios/beertonic/</link>
-      <pubDate>Sun, 23 Nov 2025 00:00:00 +0000</pubDate>
-      
-      <guid>https://audiogusano.neocities.org/espacios/beertonic/</guid>
-=======
       <link>http://localhost:1313/espacios/beertonic/</link>
       <pubDate>Sun, 23 Nov 2025 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/espacios/beertonic/</guid>
->>>>>>> 37910f3 (new home page)
       <description></description>
       
     </item>
     
     <item>
       <title>Galpón Beer</title>
-<<<<<<< HEAD
-      <link>https://audiogusano.neocities.org/espacios/galp%C3%B3n-beer/</link>
-      <pubDate>Fri, 21 Nov 2025 00:00:00 +0000</pubDate>
-      
-      <guid>https://audiogusano.neocities.org/espacios/galp%C3%B3n-beer/</guid>
-=======
       <link>http://localhost:1313/espacios/galpon-beer/</link>
       <pubDate>Fri, 21 Nov 2025 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/espacios/galpon-beer/</guid>
->>>>>>> 37910f3 (new home page)
       <description></description>
       
     </item>
     
     <item>
       <title>Club La Pampa</title>
-<<<<<<< HEAD
-      <link>https://audiogusano.neocities.org/espacios/club-la-pampa/</link>
-      <pubDate>Sat, 08 Nov 2025 00:00:00 +0000</pubDate>
-      
-      <guid>https://audiogusano.neocities.org/espacios/club-la-pampa/</guid>
-=======
       <link>http://localhost:1313/espacios/club-la-pampa/</link>
       <pubDate>Sat, 08 Nov 2025 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/espacios/club-la-pampa/</guid>
->>>>>>> 37910f3 (new home page)
       <description></description>
       
     </item>
     
     <item>
       <title>Plaza Charo Latessa</title>
-<<<<<<< HEAD
-      <link>https://audiogusano.neocities.org/espacios/plaza-charo-latessa/</link>
-      <pubDate>Sat, 08 Nov 2025 00:00:00 +0000</pubDate>
-      
-      <guid>https://audiogusano.neocities.org/espacios/plaza-charo-latessa/</guid>
-=======
       <link>http://localhost:1313/espacios/plaza-charo-latessa/</link>
       <pubDate>Sat, 08 Nov 2025 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/espacios/plaza-charo-latessa/</guid>
->>>>>>> 37910f3 (new home page)
       <description></description>
       
     </item>
     
     <item>
       <title>Grey Bar</title>
-<<<<<<< HEAD
-      <link>https://audiogusano.neocities.org/espacios/grey-bar/</link>
-      <pubDate>Thu, 06 Nov 2025 00:00:00 +0000</pubDate>
-      
-      <guid>https://audiogusano.neocities.org/espacios/grey-bar/</guid>
-=======
       <link>http://localhost:1313/espacios/grey-bar/</link>
       <pubDate>Thu, 06 Nov 2025 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/espacios/grey-bar/</guid>
->>>>>>> 37910f3 (new home page)
       <description></description>
       
     </item>
     
     <item>
       <title>Plaza Venezuela</title>
-<<<<<<< HEAD
-      <link>https://audiogusano.neocities.org/espacios/plaza-venezuela/</link>
-      <pubDate>Sun, 26 Oct 2025 00:00:00 +0000</pubDate>
-      
-      <guid>https://audiogusano.neocities.org/espacios/plaza-venezuela/</guid>
-=======
       <link>http://localhost:1313/espacios/plaza-venezuela/</link>
       <pubDate>Sun, 26 Oct 2025 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/espacios/plaza-venezuela/</guid>
->>>>>>> 37910f3 (new home page)
       <description></description>
       
     </item>
     
     <item>
       <title>Conservatorio Alberto Williams</title>
-<<<<<<< HEAD
-      <link>https://audiogusano.neocities.org/espacios/conservatorio-alberto-williams/</link>
-      <pubDate>Fri, 24 Oct 2025 00:00:00 +0000</pubDate>
-      
-      <guid>https://audiogusano.neocities.org/espacios/conservatorio-alberto-williams/</guid>
-=======
       <link>http://localhost:1313/espacios/conservatorio-alberto-williams/</link>
       <pubDate>Fri, 24 Oct 2025 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/espacios/conservatorio-alberto-williams/</guid>
->>>>>>> 37910f3 (new home page)
       <description></description>
       
     </item>
     
     <item>
       <title>Garage Avispa</title>
-<<<<<<< HEAD
-      <link>https://audiogusano.neocities.org/espacios/garage-avispa/</link>
-      <pubDate>Fri, 24 Oct 2025 00:00:00 +0000</pubDate>
-      
-      <guid>https://audiogusano.neocities.org/espacios/garage-avispa/</guid>
-=======
       <link>http://localhost:1313/espacios/garage-avispa/</link>
       <pubDate>Fri, 24 Oct 2025 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/espacios/garage-avispa/</guid>
->>>>>>> 37910f3 (new home page)
       <description></description>
       
     </item>
     
     <item>
       <title>La Casa De Lu</title>
-<<<<<<< HEAD
-      <link>https://audiogusano.neocities.org/espacios/la-casa-de-lu/</link>
-      <pubDate>Mon, 20 Oct 2025 00:00:00 +0000</pubDate>
-      
-      <guid>https://audiogusano.neocities.org/espacios/la-casa-de-lu/</guid>
-=======
       <link>http://localhost:1313/espacios/la-casa-de-lu/</link>
       <pubDate>Mon, 20 Oct 2025 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/espacios/la-casa-de-lu/</guid>
->>>>>>> 37910f3 (new home page)
       <description></description>
       
     </item>
     
     <item>
       <title>La Ronda</title>
-<<<<<<< HEAD
-      <link>https://audiogusano.neocities.org/espacios/la-ronda/</link>
-      <pubDate>Sat, 18 Oct 2025 00:00:00 +0000</pubDate>
-      
-      <guid>https://audiogusano.neocities.org/espacios/la-ronda/</guid>
-=======
       <link>http://localhost:1313/espacios/la-ronda/</link>
       <pubDate>Sat, 18 Oct 2025 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/espacios/la-ronda/</guid>
->>>>>>> 37910f3 (new home page)
       <description></description>
       
     </item>
     
     <item>
       <title>Teatro Trac</title>
-<<<<<<< HEAD
-      <link>https://audiogusano.neocities.org/espacios/teatro-trac/</link>
-      <pubDate>Fri, 17 Oct 2025 00:00:00 +0000</pubDate>
-      
-      <guid>https://audiogusano.neocities.org/espacios/teatro-trac/</guid>
-=======
       <link>http://localhost:1313/espacios/teatro-trac/</link>
       <pubDate>Fri, 17 Oct 2025 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/espacios/teatro-trac/</guid>
->>>>>>> 37910f3 (new home page)
       <description></description>
       
     </item>
     
     <item>
       <title>Teatro Coliseo</title>
-<<<<<<< HEAD
-      <link>https://audiogusano.neocities.org/espacios/teatro-coliseo/</link>
-      <pubDate>Tue, 14 Oct 2025 00:00:00 +0000</pubDate>
-      
-      <guid>https://audiogusano.neocities.org/espacios/teatro-coliseo/</guid>
-=======
       <link>http://localhost:1313/espacios/teatro-coliseo/</link>
       <pubDate>Tue, 14 Oct 2025 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/espacios/teatro-coliseo/</guid>
->>>>>>> 37910f3 (new home page)
       <description></description>
       
     </item>
     
     <item>
       <title>Rincón</title>
-<<<<<<< HEAD
-      <link>https://audiogusano.neocities.org/espacios/rinc%C3%B3n/</link>
-      <pubDate>Thu, 02 Oct 2025 01:04:40 -0300</pubDate>
-      
-      <guid>https://audiogusano.neocities.org/espacios/rinc%C3%B3n/</guid>
-=======
       <link>http://localhost:1313/espacios/rincon/</link>
       <pubDate>Thu, 02 Oct 2025 01:04:40 -0300</pubDate>
       
       <guid>http://localhost:1313/espacios/rincon/</guid>
->>>>>>> 37910f3 (new home page)
       <description></description>
       
     </item>
     
     <item>
       <title>La Casa Se Derrumba</title>
-<<<<<<< HEAD
-      <link>https://audiogusano.neocities.org/espacios/la-casa-se-derrumba/</link>
-      <pubDate>Sat, 28 Jun 2025 00:00:00 +0000</pubDate>
-      
-      <guid>https://audiogusano.neocities.org/espacios/la-casa-se-derrumba/</guid>
-=======
       <link>http://localhost:1313/espacios/la-casa-se-derrumba/</link>
       <pubDate>Sat, 28 Jun 2025 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/espacios/la-casa-se-derrumba/</guid>
->>>>>>> 37910f3 (new home page)
       <description></description>
       
     </item>
     
     <item>
       <title>Casa Fratello</title>
-<<<<<<< HEAD
-      <link>https://audiogusano.neocities.org/espacios/casa-fratello/</link>
-      <pubDate>Sat, 26 Apr 2025 00:00:00 +0000</pubDate>
-      
-      <guid>https://audiogusano.neocities.org/espacios/casa-fratello/</guid>
-=======
       <link>http://localhost:1313/espacios/casa-fratello/</link>
       <pubDate>Sat, 26 Apr 2025 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/espacios/casa-fratello/</guid>
->>>>>>> 37910f3 (new home page)
       <description></description>
       
     </item>

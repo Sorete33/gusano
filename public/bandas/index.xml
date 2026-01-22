@@ -2,25 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Bandas on Bienvenide a Audio Gusano</title>
-<<<<<<< HEAD
-    <link>https://audiogusano.neocities.org/bandas/</link>
-=======
     <link>http://localhost:1313/bandas/</link>
->>>>>>> 37910f3 (new home page)
     <description>Recent content in Bandas on Bienvenide a Audio Gusano</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     
-<<<<<<< HEAD
-    <lastBuildDate>Fri, 16 Jan 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://audiogusano.neocities.org/bandas/index.xml" rel="self" type="application/rss+xml" />
-    
-    <item>
-      <title>Cínica</title>
-      <link>https://audiogusano.neocities.org/bandas/c%C3%ADnica/</link>
-      <pubDate>Fri, 16 Jan 2026 00:00:00 +0000</pubDate>
-      
-      <guid>https://audiogusano.neocities.org/bandas/c%C3%ADnica/</guid>
-=======
     <lastBuildDate>Fri, 16 Jan 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/bandas/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -29,1045 +15,616 @@
       <pubDate>Fri, 16 Jan 2026 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/bandas/cinica/</guid>
->>>>>>> 37910f3 (new home page)
       <description></description>
       
     </item>
     
     <item>
       <title>Inteligencia Accidental</title>
-<<<<<<< HEAD
-      <link>https://audiogusano.neocities.org/bandas/inteligencia-accidental/</link>
-      <pubDate>Fri, 16 Jan 2026 00:00:00 +0000</pubDate>
-      
-      <guid>https://audiogusano.neocities.org/bandas/inteligencia-accidental/</guid>
-=======
       <link>http://localhost:1313/bandas/inteligencia-accidental/</link>
       <pubDate>Fri, 16 Jan 2026 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/bandas/inteligencia-accidental/</guid>
->>>>>>> 37910f3 (new home page)
       <description></description>
       
     </item>
     
     <item>
       <title>Nómada</title>
-<<<<<<< HEAD
-      <link>https://audiogusano.neocities.org/bandas/n%C3%B3mada/</link>
-      <pubDate>Fri, 16 Jan 2026 00:00:00 +0000</pubDate>
-      
-      <guid>https://audiogusano.neocities.org/bandas/n%C3%B3mada/</guid>
-=======
       <link>http://localhost:1313/bandas/nomada/</link>
       <pubDate>Fri, 16 Jan 2026 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/bandas/nomada/</guid>
->>>>>>> 37910f3 (new home page)
       <description></description>
       
     </item>
     
     <item>
       <title>Sr. Wilson</title>
-<<<<<<< HEAD
-      <link>https://audiogusano.neocities.org/bandas/sr.-wilson/</link>
-      <pubDate>Fri, 16 Jan 2026 00:00:00 +0000</pubDate>
-      
-      <guid>https://audiogusano.neocities.org/bandas/sr.-wilson/</guid>
-=======
       <link>http://localhost:1313/bandas/sr.-wilson/</link>
       <pubDate>Fri, 16 Jan 2026 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/bandas/sr.-wilson/</guid>
->>>>>>> 37910f3 (new home page)
       <description></description>
       
     </item>
     
     <item>
       <title>Little Rocker</title>
-<<<<<<< HEAD
-      <link>https://audiogusano.neocities.org/bandas/little-rocker/</link>
-      <pubDate>Sat, 10 Jan 2026 00:00:00 +0000</pubDate>
-      
-      <guid>https://audiogusano.neocities.org/bandas/little-rocker/</guid>
-=======
       <link>http://localhost:1313/bandas/little-rocker/</link>
       <pubDate>Sat, 10 Jan 2026 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/bandas/little-rocker/</guid>
->>>>>>> 37910f3 (new home page)
       <description></description>
       
     </item>
     
     <item>
       <title>Paprika&#39;s Band</title>
-<<<<<<< HEAD
-      <link>https://audiogusano.neocities.org/bandas/paprikas-band/</link>
-      <pubDate>Sat, 10 Jan 2026 00:00:00 +0000</pubDate>
-      
-      <guid>https://audiogusano.neocities.org/bandas/paprikas-band/</guid>
-=======
       <link>http://localhost:1313/bandas/paprikas-band/</link>
       <pubDate>Sat, 10 Jan 2026 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/bandas/paprikas-band/</guid>
->>>>>>> 37910f3 (new home page)
       <description></description>
       
     </item>
     
     <item>
       <title>Sala Roja</title>
-<<<<<<< HEAD
-      <link>https://audiogusano.neocities.org/bandas/sala-roja/</link>
-      <pubDate>Sat, 10 Jan 2026 00:00:00 +0000</pubDate>
-      
-      <guid>https://audiogusano.neocities.org/bandas/sala-roja/</guid>
-=======
       <link>http://localhost:1313/bandas/sala-roja/</link>
       <pubDate>Sat, 10 Jan 2026 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/bandas/sala-roja/</guid>
->>>>>>> 37910f3 (new home page)
       <description></description>
       
     </item>
     
     <item>
       <title>Epifanicas</title>
-<<<<<<< HEAD
-      <link>https://audiogusano.neocities.org/bandas/epifanicas/</link>
-      <pubDate>Fri, 09 Jan 2026 00:00:00 +0000</pubDate>
-      
-      <guid>https://audiogusano.neocities.org/bandas/epifanicas/</guid>
-=======
       <link>http://localhost:1313/bandas/epifanicas/</link>
       <pubDate>Fri, 09 Jan 2026 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/bandas/epifanicas/</guid>
->>>>>>> 37910f3 (new home page)
       <description></description>
       
     </item>
     
     <item>
       <title>Roco Y Los Chacks</title>
-<<<<<<< HEAD
-      <link>https://audiogusano.neocities.org/bandas/roco-y-los-chacks/</link>
-      <pubDate>Fri, 09 Jan 2026 00:00:00 +0000</pubDate>
-      
-      <guid>https://audiogusano.neocities.org/bandas/roco-y-los-chacks/</guid>
-=======
       <link>http://localhost:1313/bandas/roco-y-los-chacks/</link>
       <pubDate>Fri, 09 Jan 2026 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/bandas/roco-y-los-chacks/</guid>
->>>>>>> 37910f3 (new home page)
       <description></description>
       
     </item>
     
     <item>
       <title>Sunglasses</title>
-<<<<<<< HEAD
-      <link>https://audiogusano.neocities.org/bandas/sunglasses/</link>
-      <pubDate>Fri, 09 Jan 2026 00:00:00 +0000</pubDate>
-      
-      <guid>https://audiogusano.neocities.org/bandas/sunglasses/</guid>
-=======
       <link>http://localhost:1313/bandas/sunglasses/</link>
       <pubDate>Fri, 09 Jan 2026 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/bandas/sunglasses/</guid>
->>>>>>> 37910f3 (new home page)
       <description></description>
       
     </item>
     
     <item>
       <title>Abril Amar</title>
-<<<<<<< HEAD
-      <link>https://audiogusano.neocities.org/bandas/abril-amar/</link>
-      <pubDate>Fri, 02 Jan 2026 00:00:00 +0000</pubDate>
-      
-      <guid>https://audiogusano.neocities.org/bandas/abril-amar/</guid>
-=======
       <link>http://localhost:1313/bandas/abril-amar/</link>
       <pubDate>Fri, 02 Jan 2026 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/bandas/abril-amar/</guid>
->>>>>>> 37910f3 (new home page)
       <description></description>
       
     </item>
     
     <item>
       <title>Agustin Monteleone</title>
-<<<<<<< HEAD
-      <link>https://audiogusano.neocities.org/bandas/agustin-monteleone/</link>
-      <pubDate>Fri, 02 Jan 2026 00:00:00 +0000</pubDate>
-      
-      <guid>https://audiogusano.neocities.org/bandas/agustin-monteleone/</guid>
-=======
       <link>http://localhost:1313/bandas/agustin-monteleone/</link>
       <pubDate>Fri, 02 Jan 2026 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/bandas/agustin-monteleone/</guid>
->>>>>>> 37910f3 (new home page)
       <description></description>
       
     </item>
     
     <item>
       <title>Celeste Olivera</title>
-<<<<<<< HEAD
-      <link>https://audiogusano.neocities.org/bandas/celeste-olivera/</link>
-      <pubDate>Fri, 02 Jan 2026 00:00:00 +0000</pubDate>
-      
-      <guid>https://audiogusano.neocities.org/bandas/celeste-olivera/</guid>
-=======
       <link>http://localhost:1313/bandas/celeste-olivera/</link>
       <pubDate>Fri, 02 Jan 2026 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/bandas/celeste-olivera/</guid>
->>>>>>> 37910f3 (new home page)
       <description></description>
       
     </item>
     
     <item>
       <title>Ignacio Viano</title>
-<<<<<<< HEAD
-      <link>https://audiogusano.neocities.org/bandas/ignacio-viano/</link>
-      <pubDate>Fri, 02 Jan 2026 00:00:00 +0000</pubDate>
-      
-      <guid>https://audiogusano.neocities.org/bandas/ignacio-viano/</guid>
-=======
       <link>http://localhost:1313/bandas/ignacio-viano/</link>
       <pubDate>Fri, 02 Jan 2026 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/bandas/ignacio-viano/</guid>
->>>>>>> 37910f3 (new home page)
       <description></description>
       
     </item>
     
     <item>
       <title>Manuel Gache</title>
-<<<<<<< HEAD
-      <link>https://audiogusano.neocities.org/bandas/manuel-gache/</link>
-      <pubDate>Fri, 02 Jan 2026 00:00:00 +0000</pubDate>
-      
-      <guid>https://audiogusano.neocities.org/bandas/manuel-gache/</guid>
-=======
       <link>http://localhost:1313/bandas/manuel-gache/</link>
       <pubDate>Fri, 02 Jan 2026 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/bandas/manuel-gache/</guid>
->>>>>>> 37910f3 (new home page)
       <description></description>
       
     </item>
     
     <item>
       <title>Nicolas Benaghi</title>
-<<<<<<< HEAD
-      <link>https://audiogusano.neocities.org/bandas/nicolas-benaghi/</link>
-      <pubDate>Fri, 02 Jan 2026 00:00:00 +0000</pubDate>
-      
-      <guid>https://audiogusano.neocities.org/bandas/nicolas-benaghi/</guid>
-=======
       <link>http://localhost:1313/bandas/nicolas-benaghi/</link>
       <pubDate>Fri, 02 Jan 2026 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/bandas/nicolas-benaghi/</guid>
->>>>>>> 37910f3 (new home page)
       <description></description>
       
     </item>
     
     <item>
       <title>Nicolas Muchiut</title>
-<<<<<<< HEAD
-      <link>https://audiogusano.neocities.org/bandas/nicolas-muchiut/</link>
-      <pubDate>Fri, 02 Jan 2026 00:00:00 +0000</pubDate>
-      
-      <guid>https://audiogusano.neocities.org/bandas/nicolas-muchiut/</guid>
-=======
       <link>http://localhost:1313/bandas/nicolas-muchiut/</link>
       <pubDate>Fri, 02 Jan 2026 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/bandas/nicolas-muchiut/</guid>
->>>>>>> 37910f3 (new home page)
       <description></description>
       
     </item>
     
     <item>
       <title>Omar Stacchiotti</title>
-<<<<<<< HEAD
-      <link>https://audiogusano.neocities.org/bandas/omar-stacchiotti/</link>
-      <pubDate>Fri, 02 Jan 2026 00:00:00 +0000</pubDate>
-      
-      <guid>https://audiogusano.neocities.org/bandas/omar-stacchiotti/</guid>
-=======
       <link>http://localhost:1313/bandas/omar-stacchiotti/</link>
       <pubDate>Fri, 02 Jan 2026 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/bandas/omar-stacchiotti/</guid>
->>>>>>> 37910f3 (new home page)
       <description></description>
       
     </item>
     
     <item>
       <title>Pablo Sosa</title>
-<<<<<<< HEAD
-      <link>https://audiogusano.neocities.org/bandas/pablo-sosa/</link>
-      <pubDate>Fri, 02 Jan 2026 00:00:00 +0000</pubDate>
-      
-      <guid>https://audiogusano.neocities.org/bandas/pablo-sosa/</guid>
-=======
       <link>http://localhost:1313/bandas/pablo-sosa/</link>
       <pubDate>Fri, 02 Jan 2026 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/bandas/pablo-sosa/</guid>
->>>>>>> 37910f3 (new home page)
       <description></description>
       
     </item>
     
     <item>
       <title>Rocio Palazzo</title>
-<<<<<<< HEAD
-      <link>https://audiogusano.neocities.org/bandas/rocio-palazzo/</link>
-      <pubDate>Fri, 02 Jan 2026 00:00:00 +0000</pubDate>
-      
-      <guid>https://audiogusano.neocities.org/bandas/rocio-palazzo/</guid>
-=======
       <link>http://localhost:1313/bandas/rocio-palazzo/</link>
       <pubDate>Fri, 02 Jan 2026 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/bandas/rocio-palazzo/</guid>
->>>>>>> 37910f3 (new home page)
       <description></description>
       
     </item>
     
     <item>
       <title>Santiago Amar</title>
-<<<<<<< HEAD
-      <link>https://audiogusano.neocities.org/bandas/santiago-amar/</link>
-      <pubDate>Fri, 02 Jan 2026 00:00:00 +0000</pubDate>
-      
-      <guid>https://audiogusano.neocities.org/bandas/santiago-amar/</guid>
-=======
       <link>http://localhost:1313/bandas/santiago-amar/</link>
       <pubDate>Fri, 02 Jan 2026 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/bandas/santiago-amar/</guid>
->>>>>>> 37910f3 (new home page)
       <description></description>
       
     </item>
     
     <item>
       <title>Los Bad Seed</title>
-<<<<<<< HEAD
-      <link>https://audiogusano.neocities.org/bandas/los-bad-seed/</link>
-      <pubDate>Thu, 01 Jan 2026 00:00:00 +0000</pubDate>
-      
-      <guid>https://audiogusano.neocities.org/bandas/los-bad-seed/</guid>
-=======
       <link>http://localhost:1313/bandas/los-bad-seed/</link>
       <pubDate>Thu, 01 Jan 2026 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/bandas/los-bad-seed/</guid>
->>>>>>> 37910f3 (new home page)
       <description></description>
       
     </item>
     
     <item>
       <title>Parasomnia</title>
-<<<<<<< HEAD
-      <link>https://audiogusano.neocities.org/bandas/parasomnia/</link>
-      <pubDate>Thu, 01 Jan 2026 00:00:00 +0000</pubDate>
-      
-      <guid>https://audiogusano.neocities.org/bandas/parasomnia/</guid>
-=======
       <link>http://localhost:1313/bandas/parasomnia/</link>
       <pubDate>Thu, 01 Jan 2026 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/bandas/parasomnia/</guid>
->>>>>>> 37910f3 (new home page)
       <description></description>
       
     </item>
     
     <item>
       <title>Sociedad Macabra</title>
-<<<<<<< HEAD
-      <link>https://audiogusano.neocities.org/bandas/sociedad-macabra/</link>
-      <pubDate>Thu, 01 Jan 2026 00:00:00 +0000</pubDate>
-      
-      <guid>https://audiogusano.neocities.org/bandas/sociedad-macabra/</guid>
-=======
       <link>http://localhost:1313/bandas/sociedad-macabra/</link>
       <pubDate>Thu, 01 Jan 2026 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/bandas/sociedad-macabra/</guid>
->>>>>>> 37910f3 (new home page)
       <description></description>
       
     </item>
     
     <item>
       <title>Drama</title>
-<<<<<<< HEAD
-      <link>https://audiogusano.neocities.org/bandas/drama/</link>
-      <pubDate>Sat, 27 Dec 2025 00:00:00 +0000</pubDate>
-      
-      <guid>https://audiogusano.neocities.org/bandas/drama/</guid>
-=======
       <link>http://localhost:1313/bandas/drama/</link>
       <pubDate>Sat, 27 Dec 2025 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/bandas/drama/</guid>
->>>>>>> 37910f3 (new home page)
       <description></description>
       
     </item>
     
     <item>
       <title>Agustín Barbieri</title>
-<<<<<<< HEAD
-      <link>https://audiogusano.neocities.org/bandas/agust%C3%ADn-barbieri/</link>
-      <pubDate>Thu, 11 Dec 2025 00:00:00 +0000</pubDate>
-      
-      <guid>https://audiogusano.neocities.org/bandas/agust%C3%ADn-barbieri/</guid>
-=======
       <link>http://localhost:1313/bandas/agustin-barbieri/</link>
       <pubDate>Thu, 11 Dec 2025 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/bandas/agustin-barbieri/</guid>
->>>>>>> 37910f3 (new home page)
       <description></description>
       
     </item>
     
     <item>
       <title>Armando Alonso</title>
-<<<<<<< HEAD
-      <link>https://audiogusano.neocities.org/bandas/armando-alonso/</link>
-      <pubDate>Thu, 11 Dec 2025 00:00:00 +0000</pubDate>
-      
-      <guid>https://audiogusano.neocities.org/bandas/armando-alonso/</guid>
-=======
       <link>http://localhost:1313/bandas/armando-alonso/</link>
       <pubDate>Thu, 11 Dec 2025 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/bandas/armando-alonso/</guid>
->>>>>>> 37910f3 (new home page)
       <description></description>
       
     </item>
     
     <item>
       <title>Nicolas Benagui</title>
-<<<<<<< HEAD
-      <link>https://audiogusano.neocities.org/bandas/nicolas-benagui/</link>
-      <pubDate>Thu, 11 Dec 2025 00:00:00 +0000</pubDate>
-      
-      <guid>https://audiogusano.neocities.org/bandas/nicolas-benagui/</guid>
-=======
       <link>http://localhost:1313/bandas/nicolas-benagui/</link>
       <pubDate>Thu, 11 Dec 2025 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/bandas/nicolas-benagui/</guid>
->>>>>>> 37910f3 (new home page)
       <description></description>
       
     </item>
     
     <item>
       <title>Los Pozoz</title>
-<<<<<<< HEAD
-      <link>https://audiogusano.neocities.org/bandas/los-pozoz/</link>
-      <pubDate>Sat, 06 Dec 2025 00:00:00 +0000</pubDate>
-      
-      <guid>https://audiogusano.neocities.org/bandas/los-pozoz/</guid>
-=======
       <link>http://localhost:1313/bandas/los-pozoz/</link>
       <pubDate>Sat, 06 Dec 2025 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/bandas/los-pozoz/</guid>
->>>>>>> 37910f3 (new home page)
       <description></description>
       
     </item>
     
     <item>
       <title>Nueva Escuela De Música</title>
-<<<<<<< HEAD
-      <link>https://audiogusano.neocities.org/bandas/nueva-escuela-de-m%C3%BAsica/</link>
-      <pubDate>Wed, 03 Dec 2025 00:00:00 +0000</pubDate>
-      
-      <guid>https://audiogusano.neocities.org/bandas/nueva-escuela-de-m%C3%BAsica/</guid>
-=======
       <link>http://localhost:1313/bandas/nueva-escuela-de-musica/</link>
       <pubDate>Wed, 03 Dec 2025 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/bandas/nueva-escuela-de-musica/</guid>
->>>>>>> 37910f3 (new home page)
       <description></description>
       
     </item>
     
     <item>
       <title>Base</title>
-<<<<<<< HEAD
-      <link>https://audiogusano.neocities.org/bandas/base/</link>
-      <pubDate>Sat, 29 Nov 2025 00:00:00 +0000</pubDate>
-      
-      <guid>https://audiogusano.neocities.org/bandas/base/</guid>
-=======
       <link>http://localhost:1313/bandas/base/</link>
       <pubDate>Sat, 29 Nov 2025 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/bandas/base/</guid>
->>>>>>> 37910f3 (new home page)
       <description></description>
       
     </item>
     
     <item>
       <title>Entrance</title>
-<<<<<<< HEAD
-      <link>https://audiogusano.neocities.org/bandas/entrance/</link>
-      <pubDate>Sat, 29 Nov 2025 00:00:00 +0000</pubDate>
-      
-      <guid>https://audiogusano.neocities.org/bandas/entrance/</guid>
-=======
       <link>http://localhost:1313/bandas/entrance/</link>
       <pubDate>Sat, 29 Nov 2025 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/bandas/entrance/</guid>
->>>>>>> 37910f3 (new home page)
       <description></description>
       
     </item>
     
     <item>
       <title>Sabotaje</title>
-<<<<<<< HEAD
-      <link>https://audiogusano.neocities.org/bandas/sabotaje/</link>
-      <pubDate>Sat, 29 Nov 2025 00:00:00 +0000</pubDate>
-      
-      <guid>https://audiogusano.neocities.org/bandas/sabotaje/</guid>
-=======
       <link>http://localhost:1313/bandas/sabotaje/</link>
       <pubDate>Sat, 29 Nov 2025 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/bandas/sabotaje/</guid>
->>>>>>> 37910f3 (new home page)
       <description></description>
       
     </item>
     
     <item>
       <title>Traumas De La Infancia</title>
-<<<<<<< HEAD
-      <link>https://audiogusano.neocities.org/bandas/traumas-de-la-infancia/</link>
-      <pubDate>Fri, 28 Nov 2025 00:00:00 +0000</pubDate>
-      
-      <guid>https://audiogusano.neocities.org/bandas/traumas-de-la-infancia/</guid>
-=======
       <link>http://localhost:1313/bandas/traumas-de-la-infancia/</link>
       <pubDate>Fri, 28 Nov 2025 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/bandas/traumas-de-la-infancia/</guid>
->>>>>>> 37910f3 (new home page)
       <description></description>
       
     </item>
     
     <item>
       <title>Catango Trio</title>
-<<<<<<< HEAD
-      <link>https://audiogusano.neocities.org/bandas/catango-trio/</link>
-      <pubDate>Sun, 23 Nov 2025 00:00:00 +0000</pubDate>
-      
-      <guid>https://audiogusano.neocities.org/bandas/catango-trio/</guid>
-=======
       <link>http://localhost:1313/bandas/catango-trio/</link>
       <pubDate>Sun, 23 Nov 2025 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/bandas/catango-trio/</guid>
->>>>>>> 37910f3 (new home page)
       <description></description>
       
     </item>
     
     <item>
       <title>Guada Y Abril Dúo</title>
-<<<<<<< HEAD
-      <link>https://audiogusano.neocities.org/bandas/guada-y-abril-d%C3%BAo/</link>
-      <pubDate>Sun, 23 Nov 2025 00:00:00 +0000</pubDate>
-      
-      <guid>https://audiogusano.neocities.org/bandas/guada-y-abril-d%C3%BAo/</guid>
-=======
       <link>http://localhost:1313/bandas/guada-y-abril-duo/</link>
       <pubDate>Sun, 23 Nov 2025 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/bandas/guada-y-abril-duo/</guid>
->>>>>>> 37910f3 (new home page)
       <description></description>
       
     </item>
     
     <item>
       <title>Forrxs</title>
-<<<<<<< HEAD
-      <link>https://audiogusano.neocities.org/bandas/forrxs/</link>
-      <pubDate>Fri, 21 Nov 2025 00:00:00 +0000</pubDate>
-      
-      <guid>https://audiogusano.neocities.org/bandas/forrxs/</guid>
-=======
       <link>http://localhost:1313/bandas/forrxs/</link>
       <pubDate>Fri, 21 Nov 2025 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/bandas/forrxs/</guid>
->>>>>>> 37910f3 (new home page)
       <description></description>
       
     </item>
     
     <item>
       <title>Jane Doe</title>
-<<<<<<< HEAD
-      <link>https://audiogusano.neocities.org/bandas/jane-doe/</link>
-      <pubDate>Fri, 21 Nov 2025 00:00:00 +0000</pubDate>
-      
-      <guid>https://audiogusano.neocities.org/bandas/jane-doe/</guid>
-=======
       <link>http://localhost:1313/bandas/jane-doe/</link>
       <pubDate>Fri, 21 Nov 2025 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/bandas/jane-doe/</guid>
->>>>>>> 37910f3 (new home page)
       <description></description>
       
     </item>
     
     <item>
       <title>Maquinaria Divina</title>
-<<<<<<< HEAD
-      <link>https://audiogusano.neocities.org/bandas/maquinaria-divina/</link>
-      <pubDate>Fri, 21 Nov 2025 00:00:00 +0000</pubDate>
-      
-      <guid>https://audiogusano.neocities.org/bandas/maquinaria-divina/</guid>
-=======
       <link>http://localhost:1313/bandas/maquinaria-divina/</link>
       <pubDate>Fri, 21 Nov 2025 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/bandas/maquinaria-divina/</guid>
->>>>>>> 37910f3 (new home page)
       <description></description>
       
     </item>
     
     <item>
       <title>Valquirias</title>
-<<<<<<< HEAD
-      <link>https://audiogusano.neocities.org/bandas/valquirias/</link>
-      <pubDate>Sat, 08 Nov 2025 00:00:00 +0000</pubDate>
-      
-      <guid>https://audiogusano.neocities.org/bandas/valquirias/</guid>
-=======
       <link>http://localhost:1313/bandas/valquirias/</link>
       <pubDate>Sat, 08 Nov 2025 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/bandas/valquirias/</guid>
->>>>>>> 37910f3 (new home page)
       <description></description>
       
     </item>
     
     <item>
       <title>Marcelo Mosqueira</title>
-<<<<<<< HEAD
-      <link>https://audiogusano.neocities.org/bandas/marcelo-mosqueira/</link>
-      <pubDate>Thu, 06 Nov 2025 00:00:00 +0000</pubDate>
-      
-      <guid>https://audiogusano.neocities.org/bandas/marcelo-mosqueira/</guid>
-=======
       <link>http://localhost:1313/bandas/marcelo-mosqueira/</link>
       <pubDate>Thu, 06 Nov 2025 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/bandas/marcelo-mosqueira/</guid>
->>>>>>> 37910f3 (new home page)
       <description></description>
       
     </item>
     
     <item>
       <title>Ronda Catonga</title>
-<<<<<<< HEAD
-      <link>https://audiogusano.neocities.org/bandas/ronda-catonga/</link>
-      <pubDate>Sun, 26 Oct 2025 00:00:00 +0000</pubDate>
-      
-      <guid>https://audiogusano.neocities.org/bandas/ronda-catonga/</guid>
-=======
       <link>http://localhost:1313/bandas/ronda-catonga/</link>
       <pubDate>Sun, 26 Oct 2025 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/bandas/ronda-catonga/</guid>
->>>>>>> 37910f3 (new home page)
       <description></description>
       
     </item>
     
     <item>
       <title>Ensamble De Música Contemporánea</title>
-<<<<<<< HEAD
-      <link>https://audiogusano.neocities.org/bandas/ensamble-de-m%C3%BAsica-contempor%C3%A1nea/</link>
-      <pubDate>Fri, 24 Oct 2025 00:00:00 +0000</pubDate>
-      
-      <guid>https://audiogusano.neocities.org/bandas/ensamble-de-m%C3%BAsica-contempor%C3%A1nea/</guid>
-=======
       <link>http://localhost:1313/bandas/ensamble-de-musica-contemporanea/</link>
       <pubDate>Fri, 24 Oct 2025 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/bandas/ensamble-de-musica-contemporanea/</guid>
->>>>>>> 37910f3 (new home page)
       <description></description>
       
     </item>
     
     <item>
       <title>Philip Glass</title>
-<<<<<<< HEAD
-      <link>https://audiogusano.neocities.org/bandas/philip-glass/</link>
-      <pubDate>Fri, 24 Oct 2025 00:00:00 +0000</pubDate>
-      
-      <guid>https://audiogusano.neocities.org/bandas/philip-glass/</guid>
-=======
       <link>http://localhost:1313/bandas/philip-glass/</link>
       <pubDate>Fri, 24 Oct 2025 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/bandas/philip-glass/</guid>
->>>>>>> 37910f3 (new home page)
       <description></description>
       
     </item>
     
     <item>
       <title>Terry Riley</title>
-<<<<<<< HEAD
-      <link>https://audiogusano.neocities.org/bandas/terry-riley/</link>
-      <pubDate>Fri, 24 Oct 2025 00:00:00 +0000</pubDate>
-      
-      <guid>https://audiogusano.neocities.org/bandas/terry-riley/</guid>
-=======
       <link>http://localhost:1313/bandas/terry-riley/</link>
       <pubDate>Fri, 24 Oct 2025 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/bandas/terry-riley/</guid>
->>>>>>> 37910f3 (new home page)
       <description></description>
       
     </item>
     
     <item>
       <title>Fango Y Perlas</title>
-<<<<<<< HEAD
-      <link>https://audiogusano.neocities.org/bandas/fango-y-perlas/</link>
-      <pubDate>Thu, 23 Oct 2025 00:00:00 +0000</pubDate>
-      
-      <guid>https://audiogusano.neocities.org/bandas/fango-y-perlas/</guid>
-=======
       <link>http://localhost:1313/bandas/fango-y-perlas/</link>
       <pubDate>Thu, 23 Oct 2025 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/bandas/fango-y-perlas/</guid>
->>>>>>> 37910f3 (new home page)
       <description></description>
       
     </item>
     
     <item>
       <title>Fede Ratto</title>
-<<<<<<< HEAD
-      <link>https://audiogusano.neocities.org/bandas/fede-ratto/</link>
-      <pubDate>Fri, 17 Oct 2025 00:00:00 +0000</pubDate>
-      
-      <guid>https://audiogusano.neocities.org/bandas/fede-ratto/</guid>
-=======
       <link>http://localhost:1313/bandas/fede-ratto/</link>
       <pubDate>Fri, 17 Oct 2025 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/bandas/fede-ratto/</guid>
->>>>>>> 37910f3 (new home page)
       <description></description>
       
     </item>
     
     <item>
       <title>Nico Muchiut</title>
-<<<<<<< HEAD
-      <link>https://audiogusano.neocities.org/bandas/nico-muchiut/</link>
-      <pubDate>Fri, 17 Oct 2025 00:00:00 +0000</pubDate>
-      
-      <guid>https://audiogusano.neocities.org/bandas/nico-muchiut/</guid>
-=======
       <link>http://localhost:1313/bandas/nico-muchiut/</link>
       <pubDate>Fri, 17 Oct 2025 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/bandas/nico-muchiut/</guid>
->>>>>>> 37910f3 (new home page)
       <description></description>
       
     </item>
     
     <item>
       <title>Tigran Hamasyan</title>
-<<<<<<< HEAD
-      <link>https://audiogusano.neocities.org/bandas/tigran-hamasyan/</link>
-      <pubDate>Tue, 14 Oct 2025 00:00:00 +0000</pubDate>
-      
-      <guid>https://audiogusano.neocities.org/bandas/tigran-hamasyan/</guid>
-=======
       <link>http://localhost:1313/bandas/tigran-hamasyan/</link>
       <pubDate>Tue, 14 Oct 2025 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/bandas/tigran-hamasyan/</guid>
->>>>>>> 37910f3 (new home page)
       <description></description>
       
     </item>
     
     <item>
       <title>Casco Y Guada</title>
-<<<<<<< HEAD
-      <link>https://audiogusano.neocities.org/bandas/casco-y-guada/</link>
-      <pubDate>Thu, 02 Oct 2025 01:04:40 -0300</pubDate>
-      
-      <guid>https://audiogusano.neocities.org/bandas/casco-y-guada/</guid>
-=======
       <link>http://localhost:1313/bandas/casco-y-guada/</link>
       <pubDate>Thu, 02 Oct 2025 01:04:40 -0300</pubDate>
       
       <guid>http://localhost:1313/bandas/casco-y-guada/</guid>
->>>>>>> 37910f3 (new home page)
       <description></description>
       
     </item>
     
     <item>
       <title>Telar</title>
-<<<<<<< HEAD
-      <link>https://audiogusano.neocities.org/bandas/telar/</link>
-      <pubDate>Thu, 25 Sep 2025 00:59:57 -0300</pubDate>
-      
-      <guid>https://audiogusano.neocities.org/bandas/telar/</guid>
-=======
       <link>http://localhost:1313/bandas/telar/</link>
       <pubDate>Thu, 25 Sep 2025 00:59:57 -0300</pubDate>
       
       <guid>http://localhost:1313/bandas/telar/</guid>
->>>>>>> 37910f3 (new home page)
       <description></description>
       
     </item>
     
     <item>
-<<<<<<< HEAD
       <title>Yula</title>
-      <link>https://audiogusano.neocities.org/bandas/yula/</link>
-      <pubDate>Mon, 15 Sep 2025 00:00:00 +0000</pubDate>
-      
-      <guid>https://audiogusano.neocities.org/bandas/yula/</guid>
-=======
-      <title>YULA</title>
       <link>http://localhost:1313/bandas/yula/</link>
       <pubDate>Mon, 15 Sep 2025 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/bandas/yula/</guid>
->>>>>>> 37910f3 (new home page)
       <description></description>
       
     </item>
     
     <item>
       <title>Mate Jazz</title>
-<<<<<<< HEAD
-      <link>https://audiogusano.neocities.org/bandas/mate-jazz/</link>
-      <pubDate>Fri, 12 Sep 2025 00:00:00 +0000</pubDate>
-      
-      <guid>https://audiogusano.neocities.org/bandas/mate-jazz/</guid>
-=======
       <link>http://localhost:1313/bandas/mate-jazz/</link>
       <pubDate>Fri, 12 Sep 2025 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/bandas/mate-jazz/</guid>
->>>>>>> 37910f3 (new home page)
       <description></description>
       
     </item>
     
     <item>
       <title>Rocío Palazzo</title>
-<<<<<<< HEAD
-      <link>https://audiogusano.neocities.org/bandas/roc%C3%ADo-palazzo/</link>
-      <pubDate>Fri, 12 Sep 2025 00:00:00 +0000</pubDate>
-      
-      <guid>https://audiogusano.neocities.org/bandas/roc%C3%ADo-palazzo/</guid>
-=======
       <link>http://localhost:1313/bandas/rocio-palazzo/</link>
       <pubDate>Fri, 12 Sep 2025 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/bandas/rocio-palazzo/</guid>
->>>>>>> 37910f3 (new home page)
       <description></description>
       
     </item>
     
     <item>
       <title>Juanito Alimaña</title>
-<<<<<<< HEAD
-      <link>https://audiogusano.neocities.org/bandas/juanito-alima%C3%B1a/</link>
-      <pubDate>Sat, 09 Aug 2025 00:00:00 +0000</pubDate>
-      
-      <guid>https://audiogusano.neocities.org/bandas/juanito-alima%C3%B1a/</guid>
-=======
       <link>http://localhost:1313/bandas/juanito-alimana/</link>
       <pubDate>Sat, 09 Aug 2025 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/bandas/juanito-alimana/</guid>
->>>>>>> 37910f3 (new home page)
       <description></description>
       
     </item>
     
     <item>
       <title>Ser Sur</title>
-<<<<<<< HEAD
-      <link>https://audiogusano.neocities.org/bandas/ser-sur/</link>
-      <pubDate>Sat, 09 Aug 2025 00:00:00 +0000</pubDate>
-      
-      <guid>https://audiogusano.neocities.org/bandas/ser-sur/</guid>
-=======
       <link>http://localhost:1313/bandas/ser-sur/</link>
       <pubDate>Sat, 09 Aug 2025 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/bandas/ser-sur/</guid>
->>>>>>> 37910f3 (new home page)
       <description></description>
       
     </item>
     
     <item>
       <title>La Toma De Roma</title>
-<<<<<<< HEAD
-      <link>https://audiogusano.neocities.org/bandas/la-toma-de-roma/</link>
-      <pubDate>Sat, 12 Jul 2025 00:00:00 +0000</pubDate>
-      
-      <guid>https://audiogusano.neocities.org/bandas/la-toma-de-roma/</guid>
-=======
       <link>http://localhost:1313/bandas/la-toma-de-roma/</link>
       <pubDate>Sat, 12 Jul 2025 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/bandas/la-toma-de-roma/</guid>
->>>>>>> 37910f3 (new home page)
       <description></description>
       
     </item>
     
     <item>
       <title>La Vitrola Envenenada</title>
-<<<<<<< HEAD
-      <link>https://audiogusano.neocities.org/bandas/la-vitrola-envenenada/</link>
-      <pubDate>Sat, 12 Jul 2025 00:00:00 +0000</pubDate>
-      
-      <guid>https://audiogusano.neocities.org/bandas/la-vitrola-envenenada/</guid>
-=======
       <link>http://localhost:1313/bandas/la-vitrola-envenenada/</link>
       <pubDate>Sat, 12 Jul 2025 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/bandas/la-vitrola-envenenada/</guid>
->>>>>>> 37910f3 (new home page)
       <description></description>
       
     </item>
     
     <item>
       <title>Round2</title>
-<<<<<<< HEAD
-      <link>https://audiogusano.neocities.org/bandas/round2/</link>
-      <pubDate>Sat, 28 Jun 2025 00:00:00 +0000</pubDate>
-      
-      <guid>https://audiogusano.neocities.org/bandas/round2/</guid>
-=======
       <link>http://localhost:1313/bandas/round2/</link>
       <pubDate>Sat, 28 Jun 2025 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/bandas/round2/</guid>
->>>>>>> 37910f3 (new home page)
       <description></description>
       
     </item>
     
     <item>
       <title>Julian Amar</title>
-<<<<<<< HEAD
-      <link>https://audiogusano.neocities.org/bandas/julian-amar/</link>
-      <pubDate>Sun, 04 May 2025 15:47:19 -0300</pubDate>
-      
-      <guid>https://audiogusano.neocities.org/bandas/julian-amar/</guid>
-=======
       <link>http://localhost:1313/bandas/julian-amar/</link>
       <pubDate>Sun, 04 May 2025 15:47:19 -0300</pubDate>
       
       <guid>http://localhost:1313/bandas/julian-amar/</guid>
->>>>>>> 37910f3 (new home page)
       <description></description>
       
     </item>
     
     <item>
       <title>No Soy De Acá</title>
-<<<<<<< HEAD
-      <link>https://audiogusano.neocities.org/bandas/no-soy-de-ac%C3%A1/</link>
-      <pubDate>Fri, 04 Apr 2025 00:00:00 +0000</pubDate>
-      
-      <guid>https://audiogusano.neocities.org/bandas/no-soy-de-ac%C3%A1/</guid>
-=======
       <link>http://localhost:1313/bandas/no-soy-de-aca/</link>
       <pubDate>Fri, 04 Apr 2025 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/bandas/no-soy-de-aca/</guid>
->>>>>>> 37910f3 (new home page)
       <description></description>
       
     </item>
     
     <item>
       <title>Primaleon</title>
-<<<<<<< HEAD
-      <link>https://audiogusano.neocities.org/bandas/primaleon/</link>
-      <pubDate>Fri, 04 Apr 2025 00:00:00 +0000</pubDate>
-      
-      <guid>https://audiogusano.neocities.org/bandas/primaleon/</guid>
-=======
       <link>http://localhost:1313/bandas/primaleon/</link>
       <pubDate>Fri, 04 Apr 2025 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/bandas/primaleon/</guid>
->>>>>>> 37910f3 (new home page)
       <description></description>
       
     </item>

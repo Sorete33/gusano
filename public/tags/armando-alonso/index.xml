@@ -2,27 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Armando Alonso on Bienvenide a Audio Gusano</title>
-<<<<<<< HEAD
-    <link>https://audiogusano.neocities.org/tags/armando-alonso/</link>
-=======
     <link>http://localhost:1313/tags/armando-alonso/</link>
->>>>>>> 37910f3 (new home page)
     <description>Recent content in Armando Alonso on Bienvenide a Audio Gusano</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     
-<<<<<<< HEAD
-    <lastBuildDate>Sat, 26 Apr 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://audiogusano.neocities.org/tags/armando-alonso/index.xml" rel="self" type="application/rss+xml" />
-    
-    <item>
-      <title>Armando Alonso en Casa Fratello</title>
-      <link>https://audiogusano.neocities.org/recitales/casa-fratello/armand/</link>
-      <pubDate>Sat, 26 Apr 2025 00:00:00 +0000</pubDate>
-      
-      <guid>https://audiogusano.neocities.org/recitales/casa-fratello/armand/</guid>
-      <description></description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://audiogusano.neocities.org/recitales/casa-fratello/armand/featured.png" />
-=======
     <lastBuildDate>Sat, 26 Apr 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/armando-alonso/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -33,7 +17,6 @@
       <guid>http://localhost:1313/recitales/casa-fratello/armand/</guid>
       <description></description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/recitales/casa-fratello/armand/featured.png" />
->>>>>>> 37910f3 (new home page)
     </item>
     
   </channel>

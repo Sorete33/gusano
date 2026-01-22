@@ -2,27 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Armando Alonso on Bienvenide a Audio Gusano</title>
-<<<<<<< HEAD
-    <link>https://audiogusano.neocities.org/bandas/armando-alonso/</link>
-=======
     <link>http://localhost:1313/bandas/armando-alonso/</link>
->>>>>>> 37910f3 (new home page)
     <description>Recent content in Armando Alonso on Bienvenide a Audio Gusano</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     
-<<<<<<< HEAD
-    <lastBuildDate>Thu, 11 Dec 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://audiogusano.neocities.org/bandas/armando-alonso/index.xml" rel="self" type="application/rss+xml" />
-    
-    <item>
-      <title>Armando Alonso Trío en Gelatiamo</title>
-      <link>https://audiogusano.neocities.org/recitales/gelatiamo/armand/</link>
-      <pubDate>Thu, 11 Dec 2025 00:00:00 +0000</pubDate>
-      
-      <guid>https://audiogusano.neocities.org/recitales/gelatiamo/armand/</guid>
-      <description></description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://audiogusano.neocities.org/recitales/gelatiamo/armand/featured.jpg" />
-=======
     <lastBuildDate>Thu, 11 Dec 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/bandas/armando-alonso/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -33,64 +17,36 @@
       <guid>http://localhost:1313/recitales/gelatiamo/armand/</guid>
       <description></description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/recitales/gelatiamo/armand/featured.jpg" />
->>>>>>> 37910f3 (new home page)
     </item>
     
     <item>
       <title>Armando Alonso en Beertonic </title>
-<<<<<<< HEAD
-      <link>https://audiogusano.neocities.org/recitales/beertonic/armand/</link>
-      <pubDate>Thu, 09 Oct 2025 00:00:00 +0000</pubDate>
-      
-      <guid>https://audiogusano.neocities.org/recitales/beertonic/armand/</guid>
-      <description></description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://audiogusano.neocities.org/recitales/beertonic/armand/featured.png" />
-=======
       <link>http://localhost:1313/recitales/beertonic/armand/</link>
       <pubDate>Thu, 09 Oct 2025 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/recitales/beertonic/armand/</guid>
       <description></description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/recitales/beertonic/armand/featured.png" />
->>>>>>> 37910f3 (new home page)
     </item>
     
     <item>
       <title>Armando Alonso en el Teatro Trac</title>
-<<<<<<< HEAD
-      <link>https://audiogusano.neocities.org/recitales/teatro-trac/armand/</link>
-      <pubDate>Tue, 09 Sep 2025 00:00:00 +0000</pubDate>
-      
-      <guid>https://audiogusano.neocities.org/recitales/teatro-trac/armand/</guid>
-      <description></description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://audiogusano.neocities.org/recitales/teatro-trac/armand/featured.png" />
-=======
       <link>http://localhost:1313/recitales/teatro-trac/armand/</link>
       <pubDate>Tue, 09 Sep 2025 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/recitales/teatro-trac/armand/</guid>
       <description></description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/recitales/teatro-trac/armand/featured.png" />
->>>>>>> 37910f3 (new home page)
     </item>
     
     <item>
       <title>Armando Alonso en Casa Fratello</title>
-<<<<<<< HEAD
-      <link>https://audiogusano.neocities.org/recitales/casa-fratello/armand/</link>
-      <pubDate>Sat, 26 Apr 2025 00:00:00 +0000</pubDate>
-      
-      <guid>https://audiogusano.neocities.org/recitales/casa-fratello/armand/</guid>
-      <description></description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://audiogusano.neocities.org/recitales/casa-fratello/armand/featured.png" />
-=======
       <link>http://localhost:1313/recitales/casa-fratello/armand/</link>
       <pubDate>Sat, 26 Apr 2025 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/recitales/casa-fratello/armand/</guid>
       <description></description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/recitales/casa-fratello/armand/featured.png" />
->>>>>>> 37910f3 (new home page)
     </item>
     
   </channel>

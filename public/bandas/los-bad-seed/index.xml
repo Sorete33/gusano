@@ -2,27 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Los Bad Seed on Bienvenide a Audio Gusano</title>
-<<<<<<< HEAD
-    <link>https://audiogusano.neocities.org/bandas/los-bad-seed/</link>
-=======
     <link>http://localhost:1313/bandas/los-bad-seed/</link>
->>>>>>> 37910f3 (new home page)
     <description>Recent content in Los Bad Seed on Bienvenide a Audio Gusano</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     
-<<<<<<< HEAD
-    <lastBuildDate>Thu, 01 Jan 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://audiogusano.neocities.org/bandas/los-bad-seed/index.xml" rel="self" type="application/rss+xml" />
-    
-    <item>
-      <title>Año Nuevo Ruidoso Fest</title>
-      <link>https://audiogusano.neocities.org/recitales/a%C3%B1onuevofest/</link>
-      <pubDate>Thu, 01 Jan 2026 00:00:00 +0000</pubDate>
-      
-      <guid>https://audiogusano.neocities.org/recitales/a%C3%B1onuevofest/</guid>
-      <description></description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://audiogusano.neocities.org/recitales/a%C3%B1onuevofest/featured.png" />
-=======
     <lastBuildDate>Thu, 01 Jan 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/bandas/los-bad-seed/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -33,45 +17,26 @@
       <guid>http://localhost:1313/recitales/anonuevofest/</guid>
       <description></description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/recitales/anonuevofest/featured.png" />
->>>>>>> 37910f3 (new home page)
     </item>
     
     <item>
       <title>Drama y Los Bad Seed en Sala Biaus</title>
-<<<<<<< HEAD
-      <link>https://audiogusano.neocities.org/recitales/sala-biaus/drama-seed/</link>
-      <pubDate>Sat, 27 Dec 2025 00:00:00 +0000</pubDate>
-      
-      <guid>https://audiogusano.neocities.org/recitales/sala-biaus/drama-seed/</guid>
-      <description></description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://audiogusano.neocities.org/recitales/sala-biaus/drama-seed/featured.jpg" />
-=======
       <link>http://localhost:1313/recitales/sala-biaus/drama-seed/</link>
       <pubDate>Sat, 27 Dec 2025 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/recitales/sala-biaus/drama-seed/</guid>
       <description></description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/recitales/sala-biaus/drama-seed/featured.jpg" />
->>>>>>> 37910f3 (new home page)
     </item>
     
     <item>
       <title>Los Bad Seed en Sala Biaus</title>
-<<<<<<< HEAD
-      <link>https://audiogusano.neocities.org/recitales/sala-biaus/bad-seed/</link>
-      <pubDate>Fri, 09 May 2025 00:00:00 +0000</pubDate>
-      
-      <guid>https://audiogusano.neocities.org/recitales/sala-biaus/bad-seed/</guid>
-      <description></description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://audiogusano.neocities.org/recitales/sala-biaus/bad-seed/featured.jpg" />
-=======
       <link>http://localhost:1313/recitales/sala-biaus/bad-seed/</link>
       <pubDate>Fri, 09 May 2025 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/recitales/sala-biaus/bad-seed/</guid>
       <description></description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/recitales/sala-biaus/bad-seed/featured.jpg" />
->>>>>>> 37910f3 (new home page)
     </item>
     
   </channel>

@@ -2,27 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Los Pozoz on Bienvenide a Audio Gusano</title>
-<<<<<<< HEAD
-    <link>https://audiogusano.neocities.org/bandas/los-pozoz/</link>
-=======
     <link>http://localhost:1313/bandas/los-pozoz/</link>
->>>>>>> 37910f3 (new home page)
     <description>Recent content in Los Pozoz on Bienvenide a Audio Gusano</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     
-<<<<<<< HEAD
-    <lastBuildDate>Sat, 06 Dec 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://audiogusano.neocities.org/bandas/los-pozoz/index.xml" rel="self" type="application/rss+xml" />
-    
-    <item>
-      <title>Mad Monky Fest</title>
-      <link>https://audiogusano.neocities.org/recitales/mad-monky/</link>
-      <pubDate>Sat, 06 Dec 2025 00:00:00 +0000</pubDate>
-      
-      <guid>https://audiogusano.neocities.org/recitales/mad-monky/</guid>
-      <description></description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://audiogusano.neocities.org/recitales/mad-monky/featured.webp" />
-=======
     <lastBuildDate>Sat, 06 Dec 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/bandas/los-pozoz/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -33,45 +17,26 @@
       <guid>http://localhost:1313/recitales/mad-monky/</guid>
       <description></description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/recitales/mad-monky/featured.webp" />
->>>>>>> 37910f3 (new home page)
     </item>
     
     <item>
       <title>Los Pozoz y Traumas de la Infancia en la Festimaga</title>
-<<<<<<< HEAD
-      <link>https://audiogusano.neocities.org/recitales/la-maga/festimaga3/</link>
-      <pubDate>Fri, 28 Nov 2025 00:00:00 +0000</pubDate>
-      
-      <guid>https://audiogusano.neocities.org/recitales/la-maga/festimaga3/</guid>
-      <description></description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://audiogusano.neocities.org/recitales/la-maga/festimaga3/featured.jpg" />
-=======
       <link>http://localhost:1313/recitales/la-maga/festimaga3/</link>
       <pubDate>Fri, 28 Nov 2025 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/recitales/la-maga/festimaga3/</guid>
       <description></description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/recitales/la-maga/festimaga3/featured.jpg" />
->>>>>>> 37910f3 (new home page)
     </item>
     
     <item>
       <title>Primaleon, No Soy de Acá, Entrance y Loz Pozoz en el Festival Consciente a beneficio del CAAC en El Portal del Tango</title>
-<<<<<<< HEAD
-      <link>https://audiogusano.neocities.org/recitales/el-portal-del-tango/festi-consciente/</link>
-      <pubDate>Fri, 04 Apr 2025 00:00:00 +0000</pubDate>
-      
-      <guid>https://audiogusano.neocities.org/recitales/el-portal-del-tango/festi-consciente/</guid>
-      <description></description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://audiogusano.neocities.org/recitales/el-portal-del-tango/festi-consciente/featured.webp" />
-=======
       <link>http://localhost:1313/recitales/el-portal-del-tango/festi-consciente/</link>
       <pubDate>Fri, 04 Apr 2025 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/recitales/el-portal-del-tango/festi-consciente/</guid>
       <description></description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/recitales/el-portal-del-tango/festi-consciente/featured.webp" />
->>>>>>> 37910f3 (new home page)
     </item>
     
   </channel>

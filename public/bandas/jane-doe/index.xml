@@ -2,27 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Jane Doe on Bienvenide a Audio Gusano</title>
-<<<<<<< HEAD
-    <link>https://audiogusano.neocities.org/bandas/jane-doe/</link>
-=======
     <link>http://localhost:1313/bandas/jane-doe/</link>
->>>>>>> 37910f3 (new home page)
     <description>Recent content in Jane Doe on Bienvenide a Audio Gusano</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     
-<<<<<<< HEAD
-    <lastBuildDate>Fri, 21 Nov 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://audiogusano.neocities.org/bandas/jane-doe/index.xml" rel="self" type="application/rss+xml" />
-    
-    <item>
-      <title>Festival Consciente en Galpón Beer </title>
-      <link>https://audiogusano.neocities.org/recitales/galpon-beer/festival-consciente/</link>
-      <pubDate>Fri, 21 Nov 2025 00:00:00 +0000</pubDate>
-      
-      <guid>https://audiogusano.neocities.org/recitales/galpon-beer/festival-consciente/</guid>
-      <description></description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://audiogusano.neocities.org/recitales/galpon-beer/festival-consciente/featured.webp" />
-=======
     <lastBuildDate>Fri, 21 Nov 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/bandas/jane-doe/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -33,26 +17,16 @@
       <guid>http://localhost:1313/recitales/galpon-beer/festival-consciente/</guid>
       <description></description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/recitales/galpon-beer/festival-consciente/featured.webp" />
->>>>>>> 37910f3 (new home page)
     </item>
     
     <item>
       <title>Jane Doe en Ricón</title>
-<<<<<<< HEAD
-      <link>https://audiogusano.neocities.org/recitales/rincon/janedoe/</link>
-      <pubDate>Thu, 02 Oct 2025 01:04:40 -0300</pubDate>
-      
-      <guid>https://audiogusano.neocities.org/recitales/rincon/janedoe/</guid>
-      <description></description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://audiogusano.neocities.org/recitales/rincon/janedoe/featured.jpg" />
-=======
       <link>http://localhost:1313/recitales/rincon/janedoe/</link>
       <pubDate>Thu, 02 Oct 2025 01:04:40 -0300</pubDate>
       
       <guid>http://localhost:1313/recitales/rincon/janedoe/</guid>
       <description></description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/recitales/rincon/janedoe/featured.jpg" />
->>>>>>> 37910f3 (new home page)
     </item>
     
   </channel>

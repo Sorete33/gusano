@@ -2,27 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Catango Trio on Bienvenide a Audio Gusano</title>
-<<<<<<< HEAD
-    <link>https://audiogusano.neocities.org/bandas/catango-trio/</link>
-=======
     <link>http://localhost:1313/bandas/catango-trio/</link>
->>>>>>> 37910f3 (new home page)
     <description>Recent content in Catango Trio on Bienvenide a Audio Gusano</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     
-<<<<<<< HEAD
-    <lastBuildDate>Sun, 23 Nov 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://audiogusano.neocities.org/bandas/catango-trio/index.xml" rel="self" type="application/rss+xml" />
-    
-    <item>
-      <title>Guada y Abril dúo, Catango Trio y Paprika&#39;s Band en el Aniversario de Beertonic</title>
-      <link>https://audiogusano.neocities.org/recitales/beertonic/cumple/</link>
-      <pubDate>Sun, 23 Nov 2025 00:00:00 +0000</pubDate>
-      
-      <guid>https://audiogusano.neocities.org/recitales/beertonic/cumple/</guid>
-      <description></description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://audiogusano.neocities.org/recitales/beertonic/cumple/featured.jpg" />
-=======
     <lastBuildDate>Sun, 23 Nov 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/bandas/catango-trio/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -33,26 +17,16 @@
       <guid>http://localhost:1313/recitales/beertonic/cumple/</guid>
       <description></description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/recitales/beertonic/cumple/featured.jpg" />
->>>>>>> 37910f3 (new home page)
     </item>
     
     <item>
       <title>Cumple de La Ronda</title>
-<<<<<<< HEAD
-      <link>https://audiogusano.neocities.org/recitales/la-ronda/cumple-ronda/</link>
-      <pubDate>Sat, 20 Sep 2025 00:00:00 +0000</pubDate>
-      
-      <guid>https://audiogusano.neocities.org/recitales/la-ronda/cumple-ronda/</guid>
-      <description></description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://audiogusano.neocities.org/recitales/la-ronda/cumple-ronda/featured.jpg" />
-=======
       <link>http://localhost:1313/recitales/la-ronda/cumple-ronda/</link>
       <pubDate>Sat, 20 Sep 2025 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/recitales/la-ronda/cumple-ronda/</guid>
       <description></description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/recitales/la-ronda/cumple-ronda/featured.jpg" />
->>>>>>> 37910f3 (new home page)
     </item>
     
   </channel>

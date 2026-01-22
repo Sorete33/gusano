@@ -2,25 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Bienvenide a Audio Gusano</title>
-<<<<<<< HEAD
-    <link>https://audiogusano.neocities.org/tags/</link>
-=======
     <link>http://localhost:1313/tags/</link>
->>>>>>> 37910f3 (new home page)
     <description>Recent content in Tags on Bienvenide a Audio Gusano</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     
-<<<<<<< HEAD
-    <lastBuildDate>Fri, 09 May 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://audiogusano.neocities.org/tags/index.xml" rel="self" type="application/rss+xml" />
-    
-    <item>
-      <title>Grunge</title>
-      <link>https://audiogusano.neocities.org/tags/grunge/</link>
-      <pubDate>Fri, 09 May 2025 00:00:00 +0000</pubDate>
-      
-      <guid>https://audiogusano.neocities.org/tags/grunge/</guid>
-=======
     <lastBuildDate>Fri, 09 May 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -29,75 +15,46 @@
       <pubDate>Fri, 09 May 2025 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/tags/grunge/</guid>
->>>>>>> 37910f3 (new home page)
       <description></description>
       
     </item>
     
     <item>
       <title>Julian Amar</title>
-<<<<<<< HEAD
-      <link>https://audiogusano.neocities.org/tags/julian-amar/</link>
-      <pubDate>Sun, 04 May 2025 15:47:19 -0300</pubDate>
-      
-      <guid>https://audiogusano.neocities.org/tags/julian-amar/</guid>
-=======
       <link>http://localhost:1313/tags/julian-amar/</link>
       <pubDate>Sun, 04 May 2025 15:47:19 -0300</pubDate>
       
       <guid>http://localhost:1313/tags/julian-amar/</guid>
->>>>>>> 37910f3 (new home page)
       <description></description>
       
     </item>
     
     <item>
       <title>Armando Alonso</title>
-<<<<<<< HEAD
-      <link>https://audiogusano.neocities.org/tags/armando-alonso/</link>
-      <pubDate>Sat, 26 Apr 2025 00:00:00 +0000</pubDate>
-      
-      <guid>https://audiogusano.neocities.org/tags/armando-alonso/</guid>
-=======
       <link>http://localhost:1313/tags/armando-alonso/</link>
       <pubDate>Sat, 26 Apr 2025 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/tags/armando-alonso/</guid>
->>>>>>> 37910f3 (new home page)
       <description></description>
       
     </item>
     
     <item>
       <title>Casa Fratello</title>
-<<<<<<< HEAD
-      <link>https://audiogusano.neocities.org/tags/casa-fratello/</link>
-      <pubDate>Sat, 26 Apr 2025 00:00:00 +0000</pubDate>
-      
-      <guid>https://audiogusano.neocities.org/tags/casa-fratello/</guid>
-=======
       <link>http://localhost:1313/tags/casa-fratello/</link>
       <pubDate>Sat, 26 Apr 2025 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/tags/casa-fratello/</guid>
->>>>>>> 37910f3 (new home page)
       <description></description>
       
     </item>
     
     <item>
       <title>Jazz</title>
-<<<<<<< HEAD
-      <link>https://audiogusano.neocities.org/tags/jazz/</link>
-      <pubDate>Sat, 26 Apr 2025 00:00:00 +0000</pubDate>
-      
-      <guid>https://audiogusano.neocities.org/tags/jazz/</guid>
-=======
       <link>http://localhost:1313/tags/jazz/</link>
       <pubDate>Sat, 26 Apr 2025 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/tags/jazz/</guid>
->>>>>>> 37910f3 (new home page)
       <description></description>
       
     </item>

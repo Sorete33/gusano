@@ -2,27 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Nicolas Benagui on Bienvenide a Audio Gusano</title>
-<<<<<<< HEAD
-    <link>https://audiogusano.neocities.org/bandas/nicolas-benagui/</link>
-=======
     <link>http://localhost:1313/bandas/nicolas-benagui/</link>
->>>>>>> 37910f3 (new home page)
     <description>Recent content in Nicolas Benagui on Bienvenide a Audio Gusano</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     
-<<<<<<< HEAD
-    <lastBuildDate>Thu, 11 Dec 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://audiogusano.neocities.org/bandas/nicolas-benagui/index.xml" rel="self" type="application/rss+xml" />
-    
-    <item>
-      <title>Armando Alonso Trío en Gelatiamo</title>
-      <link>https://audiogusano.neocities.org/recitales/gelatiamo/armand/</link>
-      <pubDate>Thu, 11 Dec 2025 00:00:00 +0000</pubDate>
-      
-      <guid>https://audiogusano.neocities.org/recitales/gelatiamo/armand/</guid>
-      <description></description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://audiogusano.neocities.org/recitales/gelatiamo/armand/featured.jpg" />
-=======
     <lastBuildDate>Thu, 11 Dec 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/bandas/nicolas-benagui/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -33,26 +17,16 @@
       <guid>http://localhost:1313/recitales/gelatiamo/armand/</guid>
       <description></description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/recitales/gelatiamo/armand/featured.jpg" />
->>>>>>> 37910f3 (new home page)
     </item>
     
     <item>
       <title>Proyecto Spinetta en el Teatro Trac</title>
-<<<<<<< HEAD
-      <link>https://audiogusano.neocities.org/recitales/teatro-trac/spinetta/</link>
-      <pubDate>Fri, 12 Sep 2025 00:00:00 +0000</pubDate>
-      
-      <guid>https://audiogusano.neocities.org/recitales/teatro-trac/spinetta/</guid>
-      <description></description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://audiogusano.neocities.org/recitales/teatro-trac/spinetta/featured.webp" />
-=======
       <link>http://localhost:1313/recitales/teatro-trac/spinetta/</link>
       <pubDate>Fri, 12 Sep 2025 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/recitales/teatro-trac/spinetta/</guid>
       <description></description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/recitales/teatro-trac/spinetta/featured.webp" />
->>>>>>> 37910f3 (new home page)
     </item>
     
   </channel>
