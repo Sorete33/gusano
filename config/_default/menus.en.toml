@@ -30,7 +30,7 @@ identifier = "rocola"
 weight = 4
 
 [[main]]
-name = "Próximas Fechitas"
+name = "Flyers"
 pre = "bomb"
 pageRef = "/flyers"
 identifier = "flyers"
