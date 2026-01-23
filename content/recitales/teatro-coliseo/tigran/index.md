@@ -17,5 +17,5 @@ heroStyle: background
 
 {{<audio src="https://files.catbox.moe/ypys3b.mp3">}}
 
-[Link directo](https://files.catbox.moe/ypys3b.mp3)
+[WAV](https://pixeldrain.com/u/VfxNgiAm)
 
