@@ -1,4 +1,4 @@
-{{ $dataFile := .Get "src" | default (.Get 0) | default "flyers-viejos" }}
+{{ $dataFile := .Get "src" | default (.Get 0) | default "flyers" }}
 {{ $data := index .Site.Data $dataFile }}
 
 {{ if $data }}
@@ -9,61 +9,40 @@
     .swiper-container-{{ $dataFile }} { width: 100%; padding: 50px 0; overflow: hidden; }
     .swiper-slide { width: 300px; }
     .flyer-card {
-        background: #000;
-        border-radius: 12px;
+        background: transparent;
+        border-radius: 12px; 
         overflow: hidden;
-        box-shadow: 0 15px 35px rgba(0,0,0,0.2);
-        height: 420px;
+        box-shadow: 0 15px 35px rgba(0,0,0,0.2); 
+        height: 420px; 
         position: relative;
     }
-    .flyer-card img, .flyer-card video {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        display: block;
+    .flyer-card img, .flyer-card video { 
+        width: 100%; height: 100%; object-fit: cover; display: block; 
     }
-    .play-icon {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 50px;
-        height: 50px;
-        background: rgba(0, 0, 0, 0.5);
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 2;
-        border: 2px solid white;
-        pointer-events: none;
-    }
-    .nav-wrapper { position: relative; }
+    /* Removed .play-icon styling to keep code clean */
 </style>
 
 <div class="nav-wrapper">
     <div class="swiper mySwiper-{{ $dataFile }} swiper-container-{{ $dataFile }}">
-        <div class="swiper-wrapper" id="wrapper-{{ $dataFile }}">
-            {{ range $data }}
+        <div class="swiper-wrapper">
+            {{ range shuffle $data }}
+            {{ $rawLink := .link | relURL }}
+            {{ $timestampedLink := printf "%s?v=%d" $rawLink now.Unix }}
             <div class="swiper-slide">
                 <div class="flyer-card">
-                    {{ if (strings.HasSuffix .link ".mp4") }}
-                        <a href="{{ .link }}" class="glightbox-{{ $dataFile }}" data-type="video">
-                            <div class="play-icon">
-                                <svg viewBox="0 0 24 24" width="24" height="24" fill="white"><path d="M8 5v14l11-7z"/></svg>
-                            </div>
-                            <video src="{{ .link }}" autoplay loop muted playsinline></video>
-                        </a>
-                    {{ else }}
-                        <a href="{{ .link }}" class="glightbox-{{ $dataFile }}">
-                            <img src="{{ .link }}" alt="Flyer" loading="lazy">
-                        </a>
-                    {{ end }}
+                    {{/* Added data-gallery to fix the "floating/double-click" close bug */}}
+                    <a href="{{ $timestampedLink }}" class="glightbox-{{ $dataFile }}" data-gallery="gallery-{{ $dataFile }}" {{ if (strings.HasSuffix .link ".mp4") }}data-type="video"{{ end }}>
+                        {{ if (strings.HasSuffix .link ".mp4") }}
+                            {{/* Play icon removed from here */}}
+                            <video src="{{ $timestampedLink }}" autoplay loop muted playsinline></video>
+                        {{ else }}
+                            <img src="{{ $timestampedLink }}" alt="Flyer" loading="lazy">
+                        {{ end }}
+                    </a>
                 </div>
             </div>
-            {{ end }} {{/* End of Range */}}
+            {{ end }}
         </div>
-        
         <div class="swiper-pagination pagination-{{ $dataFile }}"></div>
         <div class="swiper-button-prev prev-{{ $dataFile }}"></div>
         <div class="swiper-button-next next-{{ $dataFile }}"></div>
@@ -74,36 +53,28 @@
 <script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
 
 <script>
-    
 (function() {
     const dataName = "{{ $dataFile }}";
-    const wrapper = document.getElementById('wrapper-' + dataName);
-    if (wrapper) {
-        for (let i = wrapper.children.length; i >= 0; i--) {
-            wrapper.appendChild(wrapper.children[Math.random() * i | 0]);
-        }
-    }
-
+    
     new Swiper(".mySwiper-" + dataName, {
-        effect: "coverflow",
-        grabCursor: true,
+        effect: "coverflow", 
+        grabCursor: true, 
         centeredSlides: true,
-        slidesPerView: "auto",
+        slidesPerView: "auto", 
         loop: true,
         coverflowEffect: { rotate: 0, stretch: 0, depth: 100, modifier: 2.5, slideShadows: false },
         navigation: { nextEl: ".next-" + dataName, prevEl: ".prev-" + dataName },
         pagination: { el: ".pagination-" + dataName, clickable: true }
     });
 
-    GLightbox({
+    // Initializing GLightbox with grouped gallery to prevent the closing bug
+    GLightbox({ 
         selector: '.glightbox-' + dataName,
-        autoplayVideos: true,
-        plyr: { config: { muted: false, volume: 1, controls: ['play-large', 'play', 'progress', 'current-time', 'mute', 'volume', 'fullscreen'] } }
+        loop: true,
+        closeOnOutsideClick: true
     });
 })();
-
 </script>
-
 {{ else }}
-    <p style="color: red;">Error: data/{{ $dataFile }}.yml not found.</p>
-{{ end }} {{/* End of If $data */}}
+    <p style="color: red;">Error: data/{{ $dataFile }}.yml no encontrado.</p>
+{{ end }}

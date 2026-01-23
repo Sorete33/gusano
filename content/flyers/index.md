@@ -12,17 +12,6 @@ layoutBackgroundBlu: true
 ---
 
 
+# <h1 style="text-align: center;">Museo de flyers</h1>
 
-<center>{{< dropbox url="https://www.dropbox.com/request/UiVB2ys2dVvegLO1pXZm" text="Subí tu flyer!" >}}</center>
-
----
-
-# Proximas fechas
-
-{{< gallery-prox "flyers" >}}
-
----
-
-# Flyers añejos
-
-{{< gallery "flyers-viejos" >}}
+<h1 style="text-align: center;">{{< gallery "flyers-viejos" >}}</h1>
