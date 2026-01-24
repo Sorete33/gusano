@@ -615,6 +615,41 @@ const songs = [
     src: "https://files.catbox.moe/xkdrvl.mp3",
     img: "/covers/epi-roco-sun.jpg",
   },
+
+  {
+    title: "Cínica en Sala Biaus",
+    artist: "Cínica",
+    src: "https://files.catbox.moe/uhjd18.mp3",
+    img: "/covers/biaus-cin-ia-mr-nomad.jpg",
+  },
+
+  {
+    title: "Inteligencia Accidental en Sala Biaus 16-01-26",
+    artist: "Inteligencia Accidental",
+    src: "https://files.catbox.moe/gulf4e.mp3",
+    img: "/covers/biaus-cin-ia-mr-nomad.jpg",
+  },
+
+  {
+    title: "Sr Wilson en Sala Biaus",
+    artist: "Sr Wilson",
+    src: "https://files.catbox.moe/8t1ot8.mp3",
+    img: "/covers/biaus-cin-ia-mr-nomad.jpg",
+  },
+
+  {
+    title: "Nómada en Sala Biaus",
+    artist: "Nómada",
+    src: "https://files.catbox.moe/uvw3ce.mp3",
+    img: "/covers/biaus-cin-ia-mr-nomad.jpg",
+  },
+
+  {
+    title: "Homenaje a El Kuelgue",
+    artist: "Kuelguero's band",
+    src: "https://files.catbox.moe/9j5gxa.mp3",
+    img: "/recitales/ruta30/kuelgue/featured.png",
+  },
   
   
   
