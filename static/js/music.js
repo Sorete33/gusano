@@ -650,6 +650,13 @@ const songs = [
     src: "https://files.catbox.moe/9j5gxa.mp3",
     img: "/recitales/ruta30/kuelgue/featured.png",
   },
+
+  {
+    title: "Oesterheld en Sala Biaus",
+    artist: "Oesterheld",
+    src: "https://files.catbox.moe/4wzf3v.mp3",
+    img: "/recitales/sala-biaus/oesterheld/featured.jpg",
+  },
   
   
   
