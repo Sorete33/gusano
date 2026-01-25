@@ -10,9 +10,9 @@ showHero: true
 heroStyle: background
 ---
 
-# [alt text](featured.jpg)
+# ![alt](featured.jpg)
 
-# Reúnion épica de Oesterheld en Sala Biaus 24-01-26
+# Reunión épica de Oesterheld en Sala Biaus 24-01-26
 
 ---
 
