@@ -1,14 +1,8 @@
-- link: /images/gallery/oester.jpg
-  name: oester
-- link: /images/gallery/bad.webp
-  name: bad
 - link: /images/gallery/seed.jpg
   name: seed
 - link: /images/gallery/epi-cacona.mp4
   name: epi cacona
-- link: /images/gallery/el-24-de-enero-es-el-desentierro-aaa.mp4
-  name: El 24 de enero es el desentierro aaa
-- link: /images/gallery/madera-aaa.mp4
-  name: madera aaa
 - link: /images/gallery/nomada-aaa.mp4
   name: nomada aaa
+- link: /images/gallery/pizita.jpg
+  name: pizita
