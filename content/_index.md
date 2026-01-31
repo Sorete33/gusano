@@ -2,6 +2,10 @@
 title: Anuncio
 ---
 
+# Defendamos nuestros derechos
+
+![alt text](images/asamblea.png)
+
 ## Próximos eventos
 
 {{< gallery "flyers" >}}
