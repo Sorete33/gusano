@@ -657,6 +657,31 @@ const songs = [
     src: "https://files.catbox.moe/4wzf3v.mp3",
     img: "/recitales/sala-biaus/oesterheld/featured.jpg",
   },
+
+  {
+    title: "Nómada en Galpón Beer",
+    artist: "Nómada",
+    src: "/audio/galpon/nomada.mp3",
+    img: "/covers/nomad-cala-down.jpg",
+  },
+
+  {
+    title: "San Calavera en Galpón Beer",
+    artist: "San Calavera",
+    src: "/audio/galpon/calavera.mp3",
+    img: "/covers/nomad-cala-down.jpg",
+  },
+
+  {
+    title: "Downfall en Galpón Beer",
+    artist: "Downfall",
+    src: "/audio/galpon/downfall.mp3",
+    img: "/covers/nomad-cala-down.jpg",
+  },
+
+  
+
+
   
   
   
