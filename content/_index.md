@@ -2,9 +2,9 @@
 title: Anuncio
 ---
 
-# Defendamos nuestros derechos
+# Defende tus derechos ✊
 
-![alt text](images/asamblea.png)
+![alt text](images/asamblea2.png)
 
 ## Próximos eventos
 
