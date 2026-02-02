@@ -2,7 +2,7 @@
 title: Anuncio
 ---
 
-# Defende tus derechos ✊
+# Defendé tus derechos, este sábado 19 hrs, Plaza España ✊
 
 ![alt text](images/asamblea2.png)
 
