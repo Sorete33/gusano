@@ -3,7 +3,7 @@ date : 2026-02-01
 title : "Festival Urbano en Encuentro por las Artes"
 weight: -47
 bandas: [Angelbby, Rico y Suave, Mija, Vairo, Pyters, Enzo Ville]
-espacios: Encuentro por las Artes]
+espacios: [Encuentro por las Artes]
 author: "Gusanoide"
 draft: false
 showHero: true
