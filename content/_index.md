@@ -2,11 +2,13 @@
 title: Anuncio
 ---
 
-# Defendé tus derechos, este sábado 19 hrs, Plaza España ✊
+# Manifestate, decile NO a la reforma laboral. Este sábado 19 hrs, Plaza España ✊
 
-![alt text](images/asamblea2.png)
+<center> <img src="images/asamblea2.png" style="width:50%; center"></center>
 
-## Próximos eventos
+<br><br><br>
+
+# Próximos eventos
 
 {{< gallery "flyers" >}}
 
