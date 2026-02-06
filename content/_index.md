@@ -2,11 +2,11 @@
 title: Anuncio
 ---
 
-# Manifestate, decile NO a la reforma laboral. Este sábado 19 hrs, Plaza España ✊
+# Este sábado 19 hrs, Plaza España ✊
 
-<center> <img src="images/asamblea2.png" style="width:50%; center"></center>
+{{< gallery "asamblea" >}}
 
-<br><br><br>
+<br><br>
 
 # Próximos eventos
 
