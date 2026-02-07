@@ -2,14 +2,8 @@
   name: seed
 - link: /images/gallery/portal3.jpg
   name: portal3
-- link: /images/gallery/epi.jpg
-  name: epi
 - link: /images/gallery/salabiau.png
   name: salabiau
-- link: /images/gallery/encuentro.png
-  name: encuentro
-- link: /images/gallery/img_20260203_100945_834.png
-  name: IMG_20260203_100945_834
 - link: /images/gallery/feria.png
   name: feria
 - link: /images/gallery/vid_20260205_005517_501.mp4
