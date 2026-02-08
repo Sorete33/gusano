@@ -2,12 +2,6 @@
 title: Anuncio
 ---
 
-# Este sábado 19 hrs, Plaza España ✊
-
-{{< gallery "asamblea" >}}
-
-<br><br>
-
 # Próximos eventos
 
 {{< gallery "flyers" >}}
