@@ -10,7 +10,7 @@ showHero: true
 heroStyle: background
 ---
 
-# featured.jpg
+# ![alt text](featured.jpg)
 
 # [La cantina](https://www.instagram.com/lapcantina/) está abierta a la comunidad y tocan banditas, recomiendo tener contacto la flora y fauna del espacio.
 
