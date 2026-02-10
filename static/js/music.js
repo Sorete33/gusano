@@ -679,6 +679,13 @@ const songs = [
     img: "/covers/nomad-cala-down.jpg",
   },
 
+  {
+    title: "Oesterheld en Ruta 30",
+    artist: "Oesterheld",
+    src: "https://files.catbox.moe/qhrn7g.mp3",
+    img: "/recitales/ruta30/oesterheld/featured.jpg"
+  }
+
   
 
 
