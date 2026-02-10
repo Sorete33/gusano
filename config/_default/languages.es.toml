@@ -1,20 +1,16 @@
 disabled = false
-languageCode = "en"
-languageName = "English"
+languageCode = "es"
+languageName = "Español"
 weight = 1
 title = "Bienvenide a Audio Gusano"
 
 [params]
-displayName = "EN"
-isoCode = "en"
+isoCode = "es"
 rtl = false
 dateFormat = "2 January 2006"
 logo = "worm.png"
 secondaryLogo = "worm.png"
 description = "Sonido subterráneo"
-
-  [params.author]
-  links = [ ]
 
 ["params.author"]
 image = "gusi.jpg"
