@@ -680,6 +680,14 @@ const songs = [
   },
 
   {
+    title: "Epifanicas en Lap Cantina",
+    artist: "Epifanicas",
+    src: "https://files.catbox.moe/bow1th.mp3",
+    img: "/recitales/lap-cantina/epifanicas/featured.jpg"
+  }
+
+
+  {
     title: "Oesterheld en Ruta 30",
     artist: "Oesterheld",
     src: "https://files.catbox.moe/qhrn7g.mp3",
