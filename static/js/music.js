@@ -683,25 +683,38 @@ const songs = [
     title: "Epifanicas en Lap Cantina",
     artist: "Epifanicas",
     src: "https://files.catbox.moe/bow1th.mp3",
-    img: "/recitales/lap-cantina/epifanicas/featured.jpg"
-  }
+    img: "/recitales/lap-cantina/epifanicas/featured.jpg",
+  },
 
 
   {
     title: "Oesterheld en Ruta 30",
     artist: "Oesterheld",
     src: "https://files.catbox.moe/qhrn7g.mp3",
-    img: "/recitales/ruta30/oesterheld/featured.jpg"
-  }
+    img: "/recitales/ruta30/oesterheld/featured.jpg",
+  },
 
-  
+  {
+    title: "Entrance en Sala Biaus",
+    artist: "Entrance",
+    src: "https://files.catbox.moe/iafe6j.mp3",
+    img: "/covers/entrance-ia-sabo-biaus.png",
+  },
 
+  {
+    title: "Inteligencia Accidental en Sala Biaus",
+    artist: "Inteligencia Accidental",
+    src: "https://files.catbox.moe/36tdec.mp3",
+    img: "/covers/entrance-ia-sabo-biaus.png",
+  },
 
-  
-  
-  
-  
-  
+  {
+    title: "Sabotaje en Sala Biaus",
+    artist: "Sabotaje",
+    src: "https://files.catbox.moe/bvkj6x.mp3",
+    img: "/covers/entrance-ia-sabo-biaus.png",
+  },
+
   
   
 ];
