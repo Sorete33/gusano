@@ -10,7 +10,7 @@ showHero: true
 heroStyle: background
 ---
 
-# featured.
+#
 
 ---
 
