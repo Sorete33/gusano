@@ -2,7 +2,9 @@
   name: seed
 - link: /images/gallery/feria.png
   name: feria
-- link: /images/gallery/festimagafeb.png
-  name: festimagafeb
 - link: /images/gallery/juanito.png
   name: juanito
+- link: /images/gallery/encuentro.mp4
+  name: encuentro
+- link: /images/gallery/festimaga.mp4
+  name: festimaga
