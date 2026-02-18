@@ -715,6 +715,29 @@ const songs = [
     img: "/covers/entrance-ia-sabo-biaus.png",
   },
 
+  {
+    title: "Cinica en Encuentro por las Artes",
+    artist: "Cinica",
+    src: "https://files.catbox.moe/mcigps.mp3",
+    img: "/covers/anticover13.png",
+  },
+
+  {
+    title: "Facu Dovidio en Encuentro por las Artes",
+    artist: "Facu Dovidio",
+    src: "https://files.catbox.moe/n29flz.mp3",
+    img: "/covers/anticover13.png",
+  },
+
+  {
+    title: "Paprika's Band en Encuentro por las Artes",
+    artist: "Paprika's Band",
+    src: "https://files.catbox.moe/6jr85k.mp3",
+    img: "/covers/anticover13.png",
+  },
+
+
+
   
   
 ];
