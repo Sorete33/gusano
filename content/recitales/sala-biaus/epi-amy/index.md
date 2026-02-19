@@ -12,7 +12,7 @@ heroStyle: background
 
 # ![alt text](featured.png)
 
-# Epifanicas homenajeando a la Queen Amy + interludio de la genial [Ele Corr](https://www.instagram.com/ele.corr/) en [Sala Biaus](https://www.instagram.com/salabiaus/)
+# [Epifanicas](https://www.instagram.com/epi.fanicas/) homenajeando a la Queen Amy + interludio de la genial [Ele Corr](https://www.instagram.com/ele.corr/) en [Sala Biaus](https://www.instagram.com/salabiaus/)
 
 ---
 
