@@ -18,7 +18,7 @@ heroStyle: background
 
 # Bloque 1
 
-{{<audio src="https://files.catbox.moe/86ivvi.mp3">}}
+{{<audio src="/audio/sala-biaus/epi-amy/epi-sala-2-b1.mp3">}}
 
 [Streaming en formato WAV](https://pixeldrain.com/u/WMLeQAfU)
 
@@ -26,12 +26,12 @@ heroStyle: background
 
 # Interludio de Ele
 
-{{<audio src="https://files.catbox.moe/e6kzpn.mp3">}}
+{{<audio src="/audio/sala-biaus/epi-amy/ele-corr-sala.mp3">}}
 
 ---
 
 # Bloque 2
 
-{{<audio src="https://files.catbox.moe/ty55zc.mp3">}}
+{{<audio src="/audio/sala-biaus/epi-amy/epis-sala-b2.mp3">}}
 
-[Streaming en formato WAV](https://pixeldrain.com/u/xbqbLT3m)
+[Streaming en formato WAV](https://pixeldrain.com/u/SNoi2CjC)
