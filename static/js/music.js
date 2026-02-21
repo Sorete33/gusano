@@ -736,6 +736,14 @@ const songs = [
     img: "/covers/anticover13.png",
   },
 
+  {
+    title: "SOFA en Beertonic",
+    artist: "SOFA",
+    src: "https://files.catbox.moe/rqmo87.mp3",
+    img: "/covers/anticover13.png",
+  },
+
+
 
 
   
