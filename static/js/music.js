@@ -740,7 +740,14 @@ const songs = [
     title: "SOFA en Beertonic",
     artist: "SOFA",
     src: "https://files.catbox.moe/rqmo87.mp3",
-    img: "/covers/anticover13.png",
+    img: "/covers/sofa.png",
+  },
+
+  {
+    title: "Fronda y Raíz en la Varela",
+    artist: "Fronda y Raíz",
+    src: "https://files.catbox.moe/haq3r8.mp3",
+    img: "/covers/raiz.jpg",
   },
 
 
