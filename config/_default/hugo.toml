@@ -71,3 +71,8 @@ enableA11y = true
       name = 'fragmentrefs'
       type = 'fragments'
       weight = 10
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true

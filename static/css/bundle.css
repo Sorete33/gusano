@@ -1,0 +1,176 @@
+
+  .root.svelte-19qbmeq {
+    all: revert;
+    font-family: sans-serif;
+    width: 100%;
+    max-width: 480px;
+    box-sizing: border-box;
+    min-height: 210px; /* 120 + 40 + 48 + 2 (border) */
+    border: 1px solid #bbb;
+  }
+
+  /* This interferes the SVGs inside buttons, ignore them */
+  .root :not(button *) {
+    all: revert;
+  }
+
+  .root.svelte-19qbmeq a {
+    color: #537d86;
+    text-decoration: underline;
+    font-weight: 700;
+  }
+  @media (prefers-color-scheme: dark) {
+    .root.svelte-19qbmeq a {
+      color: inherit;
+    }
+  }
+
+  .links.svelte-1qnb1ca {
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  .links.svelte-1qnb1ca > :where(.svelte-1qnb1ca):first-child {
+    margin-right: 8px; /* fix space between buy/share links */
+  }
+
+  .links.svelte-1qnb1ca > .logo:where(.svelte-1qnb1ca) {
+    line-height: 0;
+  }
+
+  .links.svelte-1qnb1ca > .logo:where(.svelte-1qnb1ca) > picture:where(.svelte-1qnb1ca) > img:where(.svelte-1qnb1ca) {
+    height: 32px;
+    width: 110px;
+  }
+
+  .tracklist.svelte-aac9lf {
+    box-sizing: border-box;
+    overflow-y: scroll;
+    max-height: 200px;
+    transition: max-height 0.2s;
+  }
+
+  .tracklist.collapsed.svelte-aac9lf {
+    max-height: 40px; /* forces transition when expanding */
+  }
+
+  button.expand.svelte-aac9lf {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    opacity: 0.8;
+    color: inherit;
+    border: none;
+    background-color: unset;
+    padding: 4px;
+    font-size: 16px;
+    width: 100%;
+    height: 40px; /* match to parent container height */
+  }
+  button:hover.expand.svelte-aac9lf {
+    opacity: 1;
+  }
+
+  .tracks.svelte-aac9lf {
+    margin: 0;
+    padding: 8px 0;
+  }
+  .tracks.svelte-aac9lf > :where(.svelte-aac9lf) {
+    display: block;
+    width: 100%;
+    text-align: left;
+    font-family: sans-serif;
+    background: none;
+    font-size: 12px;
+    cursor: pointer;
+    padding: 10px 8px;
+    border: 0;
+    border-bottom: 1px solid #bbb;
+    white-space: pre;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .tracks.svelte-aac9lf > .now-playing:where(.svelte-aac9lf) {
+    font-weight: 700;
+  }
+  .tracks.svelte-aac9lf > .unstreamable:where(.svelte-aac9lf) {
+    cursor: default;
+    opacity: 0.5;
+  }
+  .tracks.svelte-aac9lf span:where(.svelte-aac9lf) {
+    font-family: monospace;
+  }
+
+  button.svelte-1b4th2p {
+    cursor: pointer;
+    opacity: 0.8;
+    color: inherit;
+    border: none;
+    background-color: unset;
+    padding: 4px;
+    line-height: 0;
+  }
+  button.svelte-1b4th2p:hover {
+    opacity: 1;
+  }
+  button.svelte-1b4th2p:disabled {
+    cursor: auto;
+    opacity: 0.5;
+  }
+
+  .player.svelte-1b4th2p {
+    display: flex;
+    height: 120px;
+  }
+
+  .info.svelte-1b4th2p {
+    flex: 1 1 0;
+    min-width: 198px;
+    padding: 12px 0 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+  }
+  .info.svelte-1b4th2p p:where(.svelte-1b4th2p) {
+    margin: 0 8px 0 12px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .info.svelte-1b4th2p > p:where(.svelte-1b4th2p):last-of-type {
+    font-style: italic;
+  }
+
+  .controls.svelte-1b4th2p {
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    padding-right: 4px; /* line up with links below */
+  }
+  .controls.svelte-1b4th2p > :where(.svelte-1b4th2p):first-child {
+    padding-left: 8px; /* keep space between play button/artwork interactive */
+  }
+  .controls.svelte-1b4th2p > input:where(.svelte-1b4th2p) {
+    cursor: grab;
+    flex-grow: 1;
+    width: 0; /* force smaller width on Firefox */
+  }
+  .controls.svelte-1b4th2p > input:where(.svelte-1b4th2p):active {
+    cursor: grabbing;
+  }
+
+  .artwork.svelte-1b4th2p {
+    cursor: pointer;
+    height: 120px;
+    width: 120px;
+    min-width: 80px;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+  }

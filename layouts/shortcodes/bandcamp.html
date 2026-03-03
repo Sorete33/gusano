@@ -1,0 +1,16 @@
+{{ $albumID := .Get "id" | default "1314080528" }}
+{{ $title := .Get "title" | default "Album" }}
+{{ $url := .Get "url" | default "" }}
+
+<link rel="stylesheet" href="https://bandcamp.nchlswhttkr.workers.dev/embed/bundle.css" />
+
+<div class="bandcamp-mini-embed" style="min-height: 210px"></div>
+
+<script
+  data-album-id="{{ $albumID }}"
+  data-fallback-text="{{ $title }}"
+  data-fallback-url="{{ $url }}"
+  src="https://bandcamp.nchlswhttkr.workers.dev/embed/bundle.js"
+></script>
+
+<noscript><a href="{{ $url }}">Listen to {{ $title }} on Bandcamp</a></noscript>
