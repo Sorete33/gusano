@@ -750,6 +750,27 @@ const songs = [
     img: "/covers/raiz.jpg",
   },
 
+  {
+    title: "Juanito Alimaña en Encuentro por las Artes",
+    artist: "Juanito Alimaña",
+    src: "https://files.catbox.moe/pmd0a9.mp3",
+    img: "/covers/juanito.jpg",
+  },
+  
+  {
+    title: "Paprika's Band en Encuentro por las Artes",
+    artist: "Paprika's Band",
+    src: "https://files.catbox.moe/npl2es.mp3",
+    img: "/covers/juanito.jpg",
+  },
+  
+  {
+    title: "Muchiut y los monjes del dudaismo en Encuentro por las Artes",
+    artist: "Muchiut y los monjes del dudaismo",
+    src: "https://files.catbox.moe/txexq5.mp3",
+    img: "/covers/juanito.jpg",
+  },
+
 
 
 
