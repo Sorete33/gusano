@@ -1,0 +1,86 @@
+{{ $dataFile := .Get "src" | default (.Get 0) | default "flyers" }}
+{{ $data := index .Site.Data $dataFile }}
+
+{{ if $data }}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+<style>
+    .swiper-container-{{ $dataFile }} { width: 100%; padding: 50px 0; overflow: hidden; }
+    .swiper-slide { width: 300px; }
+    .flyer-card {
+        background: transparent;
+        border-radius: 12px; 
+        overflow: hidden;
+        box-shadow: 0 15px 35px rgba(0,0,0,0.2); 
+        height: 420px; 
+        position: relative;
+    }
+    /* This ensures the image/video doesn't capture the click if we want the link to handle it */
+    .flyer-card img, .flyer-card video { 
+        width: 100%; height: 100%; object-fit: cover; display: block;
+        pointer-events: none; 
+    }
+    /* Make the link itself the only clickable area */
+    .external-promo-link {
+        display: block;
+        width: 100%;
+        height: 100%;
+        cursor: pointer !important;
+    }
+</style>
+
+<div class="nav-wrapper">
+    <div class="swiper mySwiper-{{ $dataFile }} swiper-container-{{ $dataFile }}">
+        <div class="swiper-wrapper">
+            {{ range shuffle $data }}
+                {{ $rawLink := .link | relURL }}
+                {{ $timestampedLink := printf "%s?v=%d" $rawLink now.Unix }}
+                {{ $externalURL := .destination }}
+
+                <div class="swiper-slide">
+                    <div class="flyer-card">
+                        {{ if $externalURL }}
+                            <a href="{{ $externalURL }}" 
+                               target="_blank" 
+                               rel="noopener" 
+                               class="external-promo-link prevent-lightbox" 
+                               data-glightbox="none">
+                                {{ if (strings.HasSuffix .link ".mp4") }}
+                                    <video src="{{ $timestampedLink }}" autoplay loop muted playsinline></video>
+                                {{ else }}
+                                    <img src="{{ $timestampedLink }}" alt="Promo" loading="lazy">
+                                {{ end }}
+                            </a>
+                        {{ else }}
+                            <img src="{{ $timestampedLink }}" alt="Flyer" loading="lazy">
+                        {{ end }}
+                    </div>
+                </div>
+            {{ end }}
+        </div>
+        <div class="swiper-pagination pagination-{{ $dataFile }}"></div>
+        <div class="swiper-button-prev prev-{{ $dataFile }}"></div>
+        <div class="swiper-button-next next-{{ $dataFile }}"></div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script>
+(function() {
+    const dataName = "{{ $dataFile }}";
+    new Swiper(".mySwiper-" + dataName, {
+        effect: "coverflow", 
+        grabCursor: true, 
+        centeredSlides: true,
+        slidesPerView: "auto", 
+        loop: true,
+        coverflowEffect: { rotate: 0, stretch: 0, depth: 100, modifier: 2.5, slideShadows: false },
+        navigation: { nextEl: ".next-" + dataName, prevEl: ".prev-" + dataName },
+        pagination: { el: ".pagination-" + dataName, clickable: true }
+    });
+})();
+</script>
+{{ else }}
+    <p style="color: red;">Error: data/{{ $dataFile }}.yml no encontrado.</p>
+{{ end }}
