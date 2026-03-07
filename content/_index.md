@@ -6,6 +6,8 @@ title: Anuncio
 
 {{< gallery-ext "lanzamientos" >}}
 
+<br><br>
+
 # Próximos eventos
 
 {{< gallery "flyers" >}}
