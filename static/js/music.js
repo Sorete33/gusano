@@ -771,6 +771,33 @@ const songs = [
     img: "/covers/juanito.jpg",
   },
 
+  {
+    title: "Rey Midas en Club Conjura",
+    artist: "Rey Midas",
+    src: "/audio/conjura/Rey-Midas-28-2-26.mp3",
+    img: "/covers/seed-capi.jpg",
+  },
+
+  {
+    title: "Ayende en Club Conjura",
+    artist: "Ayende",
+    src: "/audio/conjura/Ayende-28-2-26.mp3",
+    img: "/covers/seed-capi.jpg",
+  },
+
+  {
+    title: "VIK en Club Conjura",
+    artist: "VIK",
+    src: "/audio/conjura/VIK-28-2-26.mp3",
+    img: "/covers/seed-capi.jpg",
+  },
+
+  {
+    title: "Velvet en Club Conjura",
+    artist: "Velvet",
+    src: "/audio/conjura/Velvet-28-2-26.mp3",
+    img: "/covers/seed-capi.jpg",
+  },
 
 
 
