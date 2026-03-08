@@ -12,7 +12,7 @@ heroStyle: background
 
 # ![alt text](featured.jpg)
 
-# Bueno la maquinita se renego con bad seed y no hay audio jejeje, si alguien tiene contacto con las bandurrias pasenle la data, gracias [Club Conjura](https://www.instagram.com/club.conjura/) por el espacio
+# Bueno la maquinita se renego con bad seed y no hay audio jejeje, gracias [Club Conjura](https://www.instagram.com/club.conjura/) por el espacio
 
 ---
 
