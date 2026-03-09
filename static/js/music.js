@@ -799,7 +799,12 @@ const songs = [
     img: "/covers/seed-capi.jpg",
   },
 
-
+  {
+    title: "Nancy desde el Tren Sarmiento",
+    artist: "Nancy",
+    src: "https://files.catbox.moe/kswukp.mp3",
+    img: "/recitales/tren/nancy/featured.png"
+  }
 
   
   
