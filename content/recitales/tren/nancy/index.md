@@ -12,7 +12,7 @@ heroStyle: background
 
 # ![alt text](featured.png)
 
-# Nancy me regaló este pequeño recital en el tren, haciendo que el viaje sea ameno y generando comunidad en el proceso. Gracias Nancy, por tu energía!
+# Nancy me regaló este pequeño recital en el tren, haciendo que el viaje sea ameno y generando comunidad en el proceso. Gracias Nancy por tu energía!
 
 ---
 
