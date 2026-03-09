@@ -2,7 +2,7 @@
 date : 2026-02-28
 title : "Rey Midas, Ayende, VIK y Velvet en Club Conjura"
 weight: -57
-bandas: [VIK, Velvey, Ayende, Rey Midas]
+bandas: [VIK, Velvet, Ayende, Rey Midas]
 espacios: [Club Conjura]
 author: "Gusanoide"
 draft: false
