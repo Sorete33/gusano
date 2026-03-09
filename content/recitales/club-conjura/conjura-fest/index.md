@@ -12,7 +12,7 @@ heroStyle: background
 
 # ![alt text](featured.jpg)
 
-# Bueno la maquinita se renego con bad seed y no hay audio jejeje, gracias [Club Conjura](https://www.instagram.com/club.conjura/) por el espacio
+# Bueno la maquinita se renego con bad seed y no hay audio jejeje, tampoco tenia el antipop asi que en el pogo se escucha ruido, gracias [Club Conjura](https://www.instagram.com/club.conjura/) por el espacio
 
 ---
 
