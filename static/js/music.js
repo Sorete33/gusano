@@ -803,12 +803,40 @@ const songs = [
     title: "Nancy desde el Tren Sarmiento",
     artist: "Nancy",
     src: "https://files.catbox.moe/kswukp.mp3",
-    img: "/recitales/tren/nancy/featured.png"
-  }
+    img: "/recitales/tren/nancy/featured.png",
+  },
 
   
+  {
+    title: "Armando Alonso Trío en Sala Belgrano",
+    artist: "Armando Alonso",
+    src: "https://files.catbox.moe/didtx2.mp3",
+    img: "/recitales/sala-belgrano/armando/featured.jpg",
+  },
+
   
+  {
+    title: "Base en Sala Biaus",
+    artist: "Base",
+    src: "https://files.catbox.moe/1jjkyb.mp3",
+    img: "/covers/corpo.jpg",
+  },
+
+  {
+    title: "Ismael es de verdad en Sala Biaus",
+    artist: "Ismael es de verdad",
+    src: "https://files.catbox.moe/y5fhfz.mp3",
+    img: "/covers/corpo.jpg",
+  },
+
+  {
+    title: "Corpo Porco en Sala Biaus",
+    artist: "Corpo Porco",
+    src: "https://files.catbox.moe/ts1yj4.mp3",
+    img: "/covers/corpo.jpg",
+  },
 ];
+
 
 const audio = new Audio();
 
