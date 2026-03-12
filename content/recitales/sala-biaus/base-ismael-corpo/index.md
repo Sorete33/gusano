@@ -16,7 +16,7 @@ heroStyle: background
 
 ---
 
-# [Base](https://files.catbox.moe/1jjkyb.mp3) (Extracto)
+# [Base](https://www.instagram.com/base.hc/) (Extracto)
 
 {{<audio src="https://files.catbox.moe/1jjkyb.mp3">}}
 
@@ -24,12 +24,12 @@ heroStyle: background
 
 ---
 
-# [Ismael es de verdad]()
+# [Ismael es de verdad](https://www.instagram.com/i.e.d.v/)
 
 {{<audio src="https://files.catbox.moe/y5fhfz.mp3">}}
 
 ---
 
-# [Corpo Porco]()
+# [Corpo Porco](https://www.instagram.com/corpoporco/)
 
 {{<audio src="https://files.catbox.moe/ts1yj4.mp3">}}
