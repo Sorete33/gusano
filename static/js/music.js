@@ -835,6 +835,14 @@ const songs = [
     src: "https://files.catbox.moe/ts1yj4.mp3",
     img: "/covers/corpo.jpg",
   },
+
+  {
+    title: "Sabotage en El Portal del Tango",
+    artist: "Sabotage",
+    src: "https://files.catbox.moe/59gial.mp3",
+    img: "/recitales/el-portal-del-tango/sabotage/featured.jpg",
+
+  },
 ];
 
 
