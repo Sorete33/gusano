@@ -6,20 +6,36 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
 
 <style>
-    .swiper-container-{{ $dataFile }} { width: 100%; padding: 50px 0; overflow: hidden; }
-    .swiper-slide { width: 300px; }
-    .flyer-card {
+    /* 1. Scoped container */
+    .swiper-container-{{ $dataFile }} { 
+        width: 100%; 
+        padding: 50px 0; 
+        overflow: hidden; 
+    }
+
+    /* 2. Scoped slide width */
+    .swiper-container-{{ $dataFile }} .swiper-slide { 
+        width: 300px; 
+    }
+
+    /* 3. Scoped fixed-height card */
+    .swiper-container-{{ $dataFile }} .flyer-card {
         background: transparent;
         border-radius: 12px; 
         overflow: hidden;
         box-shadow: 0 15px 35px rgba(0,0,0,0.2); 
-        height: 420px; 
+        height: 420px; /* Kept fixed for this version */
         position: relative;
     }
-    .flyer-card img, .flyer-card video { 
-        width: 100%; height: 100%; object-fit: cover; display: block; 
+
+    /* 4. Scoped image behavior */
+    .swiper-container-{{ $dataFile }} .flyer-card img, 
+    .swiper-container-{{ $dataFile }} .flyer-card video { 
+        width: 100%; 
+        height: 100%; 
+        object-fit: cover; /* Kept cover for this version */
+        display: block; 
     }
-    /* Removed .play-icon styling to keep code clean */
 </style>
 
 <div class="nav-wrapper">

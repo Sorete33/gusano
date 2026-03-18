@@ -5,27 +5,35 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
 <style>
-    .swiper-container-{{ $dataFile }} { width: 100%; padding: 50px 0; overflow: hidden; }
-    .swiper-slide { width: 300px; }
-    .flyer-card {
+    /* Scope everything inside the unique container for this data file */
+    .swiper-container-{{ $dataFile }} { 
+        width: 100%; 
+        padding: 50px 0; 
+        overflow: hidden; 
+    }
+
+    /* Use the parent class to ensure these styles don't hit other galleries */
+    .swiper-container-{{ $dataFile }} .swiper-slide { 
+        width: 300px; 
+        height: auto; 
+    }
+
+    .swiper-container-{{ $dataFile }} .flyer-card {
         background: transparent;
         border-radius: 12px; 
         overflow: hidden;
         box-shadow: 0 15px 35px rgba(0,0,0,0.2); 
-        height: 420px; 
-        position: relative;
-    }
-    /* This ensures the image/video doesn't capture the click if we want the link to handle it */
-    .flyer-card img, .flyer-card video { 
-        width: 100%; height: 100%; object-fit: cover; display: block;
-        pointer-events: none; 
-    }
-    /* Make the link itself the only clickable area */
-    .external-promo-link {
+        height: auto; /* Dynamic height for this shortcode only */
         display: block;
-        width: 100%;
-        height: 100%;
-        cursor: pointer !important;
+    }
+
+    .swiper-container-{{ $dataFile }} .flyer-card img, 
+    .swiper-container-{{ $dataFile }} .flyer-card video { 
+        width: 100%; 
+        height: auto; 
+        object-fit: contain; 
+        display: block;
+        pointer-events: none; 
     }
 </style>
 
@@ -75,7 +83,17 @@
         centeredSlides: true,
         slidesPerView: "auto", 
         loop: true,
-        coverflowEffect: { rotate: 0, stretch: 0, depth: 100, modifier: 2.5, slideShadows: false },
+        // This helps Swiper handle slides of different heights
+        autoHeight: false, 
+        observer: true,
+        observeParents: true,
+        coverflowEffect: { 
+            rotate: 0, 
+            stretch: 0, 
+            depth: 100, 
+            modifier: 2.5, 
+            slideShadows: false 
+        },
         navigation: { nextEl: ".next-" + dataName, prevEl: ".prev-" + dataName },
         pagination: { el: ".pagination-" + dataName, clickable: true }
     });
