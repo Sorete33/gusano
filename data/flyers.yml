@@ -1,5 +1,3 @@
-- link: /images/gallery/feria.png
-  name: feria
 - link: /images/gallery/vlcsnap-2026-03-09-20h04m32s727.png
   name: vlcsnap-2026-03-09-20h04m32s727
 - link: /images/gallery/portal.jpg
@@ -12,3 +10,5 @@
   name: catong
 - link: /images/gallery/norita.png
   name: norita
+- link: /images/gallery/murato.png
+  name: murato
