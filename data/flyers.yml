@@ -2,13 +2,11 @@
   name: vlcsnap-2026-03-09-20h04m32s727
 - link: /images/gallery/portal.jpg
   name: portal
-- link: /images/gallery/fab.webp
-  name: fab
 - link: /images/gallery/cinidrama.png
   name: cinidrama
 - link: /images/gallery/catong.png
   name: catong
 - link: /images/gallery/norita.png
   name: norita
-- link: /images/gallery/murato.png
-  name: murato
+- link: /images/gallery/fab.webp
+  name: fab
