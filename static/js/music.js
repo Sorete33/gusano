@@ -843,6 +843,14 @@ const songs = [
     img: "/recitales/el-portal-del-tango/sabotage/featured.jpg",
 
   },
+
+  {
+    title: "Armando Alonso en Beertonic 20-3-26",
+    artist: "Armando Alonso",
+    src: "https://files.catbox.moe/arm4rw.mp3",
+    img: "/recitales/beertonic/armand2/featured.png",
+
+  },
 ];
 
 
