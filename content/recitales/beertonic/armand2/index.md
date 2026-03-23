@@ -13,7 +13,7 @@ heroStyle: background
 # ![alt text](featured.png)
 
 
-#[Armando Alonso](https://www.instagram.com/armandoalonsomusico/) en [BeerTonic](https://www.instagram.com/beertonic.ch/)
+# [Armando Alonso](https://www.instagram.com/armandoalonsomusico/) en [BeerTonic](https://www.instagram.com/beertonic.ch/)
 
 {{<audio src="https://files.catbox.moe/arm4rw.mp3">}}
 
