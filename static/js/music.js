@@ -851,6 +851,30 @@ const songs = [
     img: "/recitales/beertonic/armand2/featured.png",
 
   },
+
+  {
+    title: "La Reja Estudio acústico en Sala Biaus",
+    artist: "La Reja Estudio",
+    src: "https://files.catbox.moe/6zk2lj.mp3",
+    img: "/covers/cinidrama.png",
+
+  },
+
+  {
+    title: "Cínica en Sala Biaus",
+    artist: "Cínica",
+    src: "https://files.catbox.moe/ebajw2.mp3",
+    img: "/covers/cinidrama.png",
+
+  },
+
+  {
+    title: "DRAMA en Sala Biaus",
+    artist: "DRAMA",
+    src: "https://files.catbox.moe/4xqu71.mp3",
+    img: "/covers/cinidrama.png",
+
+  },
 ];
 
 
