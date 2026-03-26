@@ -1,9 +1,6 @@
 ---
 title: Anuncio
 ---
-# Marcha por la memoria, la verdad y la justicia
-
-![alt text](images/memoria.jpg)
 
 # Próximos eventos
 
