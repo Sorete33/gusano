@@ -3,7 +3,7 @@ date : 2026-03-13
 title : "Sabotage en El Portal del Tango"
 weight: -61
 bandas: [Sabotage]
-espacios: [El Portal del Tanngo]
+espacios: [El Portal del Tango]
 author: "Gusanoide"
 draft: false
 showHero: true
