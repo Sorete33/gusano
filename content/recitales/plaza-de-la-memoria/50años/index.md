@@ -1,6 +1,6 @@
 ---
 date : 2026-03-24
-title : "Movilización por la memoria la verdad y la justicia"
+title : "Movilización por la memoria, la verdad y la justicia"
 weight: -66
 bandas: [Colectivo por la memoria]
 espacios: [Plaza de la memoria]
