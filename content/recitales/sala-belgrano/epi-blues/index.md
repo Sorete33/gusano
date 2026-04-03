@@ -14,7 +14,7 @@ heroStyle: background
 
 ---
 
-[Epifanicas](https://www.instagram.com/epi.fanicas/)
+# [Epifanicas](https://www.instagram.com/epi.fanicas/)
 
 {{<audio src="https://files.catbox.moe/4h9707.mp3">}}
 
@@ -22,7 +22,7 @@ heroStyle: background
 
 ---
 
-[Pueblues](https://www.instagram.com/pueblues_/)
+# [Pueblues](https://www.instagram.com/pueblues_/)
 
 {{<audio src="https://files.catbox.moe/78zr8t.mp3">}}
 
