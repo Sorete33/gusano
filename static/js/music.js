@@ -875,6 +875,23 @@ const songs = [
     img: "/covers/cinidrama.png",
 
   },
+
+  {
+    title: "Epifanicas en Sala Belgrano",
+    artist: "Epifanicas",
+    src: "https://files.catbox.moe/4h9707.mp3",
+    img: "/recitales/sala-belgrano/epi-blues/featured.png",
+
+  },
+
+  {
+    title: "Pueblues en Sala Belgrano",
+    artist: "Pueblues",
+    src: "https://files.catbox.moe/78zr8t.mp3",
+    img: "/recitales/sala-belgrano/epi-blues/featured.png",
+
+  },
+
 ];
 
 
