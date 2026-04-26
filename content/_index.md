@@ -2,13 +2,6 @@
 title: Anuncio
 ---
 
-# Radio Abierta en defensa de los glaciares
-<br>
-
-# Sabado 25/4 18Hrs Monumento a los fundadores
-
-![alt text](/glaciares.png)
-
 # Próximos eventos
 
 {{< gallery "flyers" >}}
