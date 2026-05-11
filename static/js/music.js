@@ -892,6 +892,14 @@ const songs = [
 
   },
 
+  {
+    title: "Eruca Sativa en el Club Racing",
+    artist: "Eruca Sativa",
+    src: "",
+    img: "/recitales/club-racing/eruca/featured.webp",
+
+  },
+
 ];
 
 
