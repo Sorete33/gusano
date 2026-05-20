@@ -2,10 +2,11 @@
 title: Anuncio
 ---
 
+<!--
 {{< new title="Defendamos la salud pública" image="/images/salud.webp" >}}
 Acompañamiento de la Marcha Federal por la Salud. HOY Plaza Principal 17:30 Hrs.
 {{< /new >}}
-
+!-->
 # Próximos eventos
 
 {{< gallery "flyers" >}}
