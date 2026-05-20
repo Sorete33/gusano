@@ -895,7 +895,7 @@ const songs = [
   {
     title: "Eruca Sativa en el Club Racing",
     artist: "Eruca Sativa",
-    src: "",
+    src: "https://files.catbox.moe/f9iilj.mp3",
     img: "/recitales/club-racing/eruca/featured.webp",
 
   },
