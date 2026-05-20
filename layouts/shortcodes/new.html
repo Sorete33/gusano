@@ -1,49 +1,212 @@
-<div class="new-function-announcement">
-  <button class="close-btn" onclick="this.parentElement.style.display='none'">×</button>
-
-  <h3>{{ .Get "title" }}</h3>
-
-  <p>{{ .Inner }}</p>
+<div id="hugo-popup-announcement" class="ann-overlay" style="display: flex;">
+  <!-- Clicking the backdrop overlay closes the popup -->
+  <div class="ann-backdrop" onclick="closeHugoPopup()"></div>
+  
+  <div class="ann-modal-box">
+    <!-- Close button (X) in the top-right corner -->
+    <button class="ann-close-x" onclick="closeHugoPopup()" aria-label="Close Announcement">&times;</button>
+    
+    <!-- Title Section -->
+    {{ with .Get "title" }}
+      <h2 class="ann-title">{{ . }}</h2>
+    {{ end }}
+    
+    <!-- Main Scrollable Body Content -->
+    <div class="ann-body">
+      <!-- Text Section (rendered as safe markdown) -->
+      <div class="ann-text">
+        {{ .Inner | markdownify }}
+      </div>
+      
+      <!-- Image Section -->
+      {{ with .Get "image" }}
+        <div class="ann-image-container">
+          <img src="{{ . | relURL }}" alt="Announcement Image" class="ann-img">
+        </div>
+      {{ end }}
+    </div>
+    
+    <!-- Footer Section with action button -->
+    <div class="ann-footer">
+      <button class="ann-btn-close" onclick="closeHugoPopup()">
+        {{ .Get "button" | default "Entendido" }}
+      </button>
+    </div>
+  </div>
 </div>
 
 <style>
-.new-function-announcement {
-  position: relative;
-  border: 1px solid #ffe600;
-  border-left: 4px solid #ffe600;
-  padding: 1rem 1.2rem;
-  margin: 1.5rem 0;
-  background: #000000;
-  border-radius: 6px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-}
+  /* Fullscreen Backdrop Dim Cover */
+  .ann-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999999; /* Higher depth than any page elements */
+  }
 
-.new-function-announcement h3 {
-  margin: 0 0 .3rem 0;
-  font-size: 1.2rem;
-}
+  .ann-backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Deep overlay blur */
+    cursor: pointer;
+  }
 
-.new-function-announcement small {
-  color: #4a7c4a;
-}
+  /* Modal Popup Container */
+  .ann-modal-box {
+    position: relative;
+    background-color: #121212; /* Flat dark background to blend with Blowfish dark elements */
+    color: #ffffff;
+    width: 90%;
+    max-width: 480px;
+    max-height: 85vh;
+    border: 2px solid #ffe600; /* Distinct bright announcement border */
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+    display: flex;
+    flex-direction: column;
+    z-index: 1000000;
+    animation: annPopIn 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  }
 
-.new-function-announcement p {
-  margin-top: .6rem;
-}
+  @keyframes annPopIn {
+    from { opacity: 0; transform: scale(0.95) translateY(5px); }
+    to { opacity: 1; transform: scale(1) translateY(0); }
+  }
 
-.new-function-announcement .close-btn {
-  position: absolute;
-  top: 8px;
-  right: 10px;
-  background: transparent;
-  border: none;
-  font-size: 1.2rem;
-  cursor: pointer;
-  color: #4a4a4a;
-  line-height: 1;
-}
+  /* "X" Close Button */
+  .ann-close-x {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: transparent;
+    border: none;
+    font-size: 28px;
+    font-weight: bold;
+    color: #888;
+    cursor: pointer;
+    line-height: 1;
+    transition: color 0.15s ease, transform 0.1s ease;
+  }
 
-.new-function-announcement .close-btn:hover {
-  color: #000;
-}
+  .ann-close-x:hover {
+    color: #ffe600;
+    transform: scale(1.1);
+  }
+
+  /* Announcement Title */
+  .ann-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0 0 16px 0;
+    padding-right: 25px; /* Ensures title never overlaps 'X' */
+    border-bottom: 1px solid #2d2d2d;
+    padding-bottom: 8px;
+    color: #ffffff;
+    font-family: inherit;
+  }
+
+  /* Scrollable section for text + image */
+  .ann-body {
+    overflow-y: auto;
+    flex-grow: 1;
+    margin-bottom: 16px;
+    padding-right: 4px;
+  }
+
+  /* Thin aesthetic scrollbar */
+  .ann-body::-webkit-scrollbar {
+    width: 6px;
+  }
+  .ann-body::-webkit-scrollbar-thumb {
+    background-color: #333;
+    border-radius: 4px;
+  }
+
+  /* Paragraph Text formatting */
+  .ann-text {
+    font-size: 15px;
+    line-height: 1.55;
+    color: #e2e8f0;
+  }
+  .ann-text p {
+    margin: 0 0 12px 0;
+  }
+  .ann-text p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Image Wrap Box */
+  .ann-image-container {
+    margin-top: 16px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .ann-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    border: 1px solid #2d2d2d;
+    display: block;
+    margin: 0 auto;
+  }
+
+  /* Footer Layout containing actions */
+  .ann-footer {
+    display: flex;
+    justify-content: flex-end;
+    border-top: 1px solid #2d2d2d;
+    padding-top: 12px;
+  }
+
+  /* Action Button styling */
+  .ann-btn-close {
+    background-color: transparent;
+    color: #ffe600;
+    border: 1.5px solid #ffe600;
+    padding: 8px 18px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.15s, color 0.15s;
+  }
+
+  .ann-btn-close:hover {
+    background-color: #ffe600;
+    color: #121212;
+  }
 </style>
+
+<script>
+  function closeHugoPopup() {
+    var pop = document.getElementById('hugo-popup-announcement');
+    if (pop) {
+      pop.style.display = 'none';
+    }
+  }
+
+  // Closes announcement smoothly when pressing the escape key
+  document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+      closeHugoPopup();
+    }
+  });
+
+  // Automatically move the popup to document.body to center it perfectly and escape restricted layouts
+  document.addEventListener('DOMContentLoaded', function() {
+    var pop = document.getElementById('hugo-popup-announcement');
+    if (pop) {
+      document.body.appendChild(pop);
+    }
+  });
+</script>
