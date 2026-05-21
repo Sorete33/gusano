@@ -900,6 +900,31 @@ const songs = [
 
   },
 
+  {
+    title: "Dudosa Procedencia en el Club Juventus",
+    artist: "Dudosa Procedencia",
+    src: "https://files.catbox.moe/aqbbib.mp3",
+    img: "/recitales/juventus/dudosa-inteligencia-corpo/featured.webp",
+
+  },
+
+  {
+    title: "Intelogencia Accidental en el Club Juventus",
+    artist: "Intelogencia Accidental",
+    src: "https://files.catbox.moe/cxp9ne.mp3",
+    img: "/recitales/juventus/dudosa-inteligencia-corpo/featured.webp",
+
+  },
+
+  {
+    title: "Corpo Porco en el Club Juventus",
+    artist: "Corpo Porco",
+    src: "https://files.catbox.moe/aeakx3.mp3",
+    img: "/recitales/juventus/dudosa-inteligencia-corpo/featured.webp",
+
+  },
+
+
 ];
 
 
