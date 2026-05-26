@@ -2,11 +2,10 @@
 title: Anuncio
 ---
 
-<!--
-{{< new title="Defendamos la salud pública" image="/images/salud.webp" >}}
-Acompañamiento de la Marcha Federal por la Salud. HOY Plaza Principal 17:30 Hrs.
+{{< new title="Roberto Nield 1956-2026" image="/images/nield.jpg" >}}
+
 {{< /new >}}
-!-->
+
 
 # Próximos eventos
 
