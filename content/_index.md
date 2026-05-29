@@ -1,10 +1,12 @@
 ---
 title: Anuncio
 ---
-
-{{< new title="Roberto Nield 1956-2026" image="/images/nield.jpg" >}}
+<!-->
+{{< new title="Roberto Nield 1956-2026" image="images/nield.jpg" >}}
 
 {{< /new >}}
+
+<!-->
 
 
 # Próximos eventos
