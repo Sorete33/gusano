@@ -1,7 +1,17 @@
 {{ $dataFile := .Get "src" | default (.Get 0) | default "flyers" }}
 {{ $data := index .Site.Data $dataFile }}
 
-{{ if $data }}
+{{ $fileYml := printf "data/%s.yml" $dataFile }}
+{{ $fileYaml := printf "data/%s.yaml" $dataFile }}
+{{ $fileJson := printf "data/%s.json" $dataFile }}
+{{ $fileToml := printf "data/%s.toml" $dataFile }}
+{{ $fileExists := or (fileExists $fileYml) (fileExists $fileYaml) (fileExists $fileJson) (fileExists $fileToml) }}
+
+{{ if and $fileExists (not $data) }}
+<div class="text-center py-12 text-neutral-500 dark:text-neutral-400">
+    <p class="text-lg font-medium">No hay próximos eventos</p>
+</div>
+{{ else if $data }}
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
 
