@@ -10,10 +10,6 @@ showHero: true
 heroStyle: background
 ---
 
-{{< new title="My title" image="imgaes/salud.webp" >}}
-this is my subtitle text. Here you can write normal markdown text or anything you want!
-{{< /new >}}
-
 # ![alt text](featured.webp)
 
 # Afortunades quienes llegaron a escuchar a Nico, acá el audio de [Eruca](https://www.instagram.com/eruca_sativa/)
