@@ -1,6 +1,10 @@
 - link: /images/gallery/trac.jpg
   name: trac
-- link: /images/gallery/conser2.jpg
-  name: conser2
-- link: /images/gallery/conser1.jpg
-  name: conser1
+- link: /images/gallery/portal.jpg
+  name: portal
+- link: /images/gallery/conser.jpg
+  name: conser
+- link: /images/gallery/epi.mp4
+  name: epi
+- link: /images/gallery/ronda.jpg
+  name: ronda
