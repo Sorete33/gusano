@@ -1,12 +1,12 @@
 ---
 title: Anuncio
 ---
-<!-->
-{{< new title="Roberto Nield 1956-2026" image="images/nield.jpg" >}}
+
+{{< new title="Nueva entrada Ronda de Bandas 3!" image="recitales/la-ronda/rondadebandas-3/featured.jpg" >}}
 
 {{< /new >}}
 
-<!-->
+
 
 
 # Próximos eventos
