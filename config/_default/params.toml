@@ -73,7 +73,7 @@ showZenMode = false
 showComments = true
 
 [comments]
-workerUrl = "https://your-worker.yoursubdomain.workers.dev"
+workerUrl = "comentarios.falopa33.workers.dev"
 
 [list]
 showHero = true

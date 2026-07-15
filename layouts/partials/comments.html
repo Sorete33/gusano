@@ -89,7 +89,7 @@
     const form = e.target;
     const submitBtn = document.getElementById('comment-submit-btn');
     const statusDiv = document.getElementById('comment-status');
-    let workerUrl = "{{ site.Params.comments.workerUrl }}";
+    let workerUrl = "{{ site.Params.comments.workerurl }}";
 
     if (!workerUrl || workerUrl === "https://your-worker.yoursubdomain.workers.dev") {
       showStatus("Error: El sistema de comentarios no está configurado (falta workerUrl en params.toml).", "error");
