@@ -2,12 +2,9 @@
 title: Anuncio
 ---
 
-{{< new title="Nueva entrada Ronda de Bandas 3!" image="recitales/la-ronda/rondadebandas-3/featured.jpg" >}}
+{{< new title="Nuevo sistema de comentarios! Encontralo debajo de cualquier recital y amplifica tu voz." >}}
 
 {{< /new >}}
-
-
-
 
 # Próximos eventos
 
