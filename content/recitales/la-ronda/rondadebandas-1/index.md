@@ -15,7 +15,7 @@ heroStyle: background
 ---
 
 
-# La Vitrola Envenenada en 
+# La Vitrola Envenenada
 
 {{<audio src="https://files.catbox.moe/ztn5z0.mp3">}}
 

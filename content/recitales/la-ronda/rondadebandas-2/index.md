@@ -1,6 +1,6 @@
 ---
 date : 2025-10-18
-title : "Ronda de Bandas del 18-10-25"
+title : "Ronda de Bandas 2"
 weight: -20
 bandas: [Inteligencia Accidental, Base, Sala Roja]
 espacios: [La Ronda]
