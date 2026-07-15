@@ -1,3 +1,4 @@
+{{ if eq .Section "recitales" }}
 <div id="comments-container" class="mt-12 pt-8 border-t border-neutral-200 dark:border-neutral-800">
   <h3 class="text-2xl font-bold mb-6 text-neutral-900 dark:text-neutral">
     {{ i18n "comments.title" | default "Comentarios" }}
@@ -88,11 +89,16 @@
     const form = e.target;
     const submitBtn = document.getElementById('comment-submit-btn');
     const statusDiv = document.getElementById('comment-status');
-    const workerUrl = "{{ site.Params.comments.workerUrl }}";
+    let workerUrl = "{{ site.Params.comments.workerUrl }}";
 
     if (!workerUrl || workerUrl === "https://your-worker.yoursubdomain.workers.dev") {
       showStatus("Error: El sistema de comentarios no está configurado (falta workerUrl en params.toml).", "error");
       return;
+    }
+
+    // Automatically prepend https:// if the user omitted it
+    if (!workerUrl.startsWith('http://') && !workerUrl.startsWith('https://')) {
+      workerUrl = 'https://' + workerUrl;
     }
 
     // Bot check
@@ -142,3 +148,4 @@
     }
   });
 </script>
+{{ end }}
