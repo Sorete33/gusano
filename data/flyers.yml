@@ -1,14 +1,12 @@
 - link: /images/gallery/trac.jpg
   name: trac
-- link: /images/gallery/portal.jpg
-  name: portal
 - link: /images/gallery/papri.jpg
   name: papri
 - link: /images/gallery/sur-madri.jpg
   name: sur-madri
 - link: /images/gallery/ronda.webp
   name: ronda
-- link: /images/gallery/conser2.jpg
-  name: conser2
 - link: /images/gallery/entranbase.webp
   name: entranbase
+- link: /images/gallery/ciclo.jpg
+  name: ciclo
