@@ -1,0 +1,144 @@
+<div id="comments-container" class="mt-12 pt-8 border-t border-neutral-200 dark:border-neutral-800">
+  <h3 class="text-2xl font-bold mb-6 text-neutral-900 dark:text-neutral">
+    {{ i18n "comments.title" | default "Comentarios" }}
+  </h3>
+
+  {{ $slug := md5 .RelPermalink }}
+  {{ $comments := index site.Data.comments $slug }}
+
+  {{ if $comments }}
+    <div class="space-y-6 mb-10">
+      {{ range sort $comments "date" "asc" }}
+        <div class="p-4 rounded-lg bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800">
+          <div class="flex items-center justify-between mb-2 text-sm">
+            <span class="font-bold text-neutral-800 dark:text-neutral-200">
+              {{ .name | default "Anónimo" }}
+            </span>
+            <span class="text-neutral-400 dark:text-neutral-500">
+              {{ time.Format "02/01/2006 15:04" .date }}
+            </span>
+          </div>
+          <p class="text-neutral-700 dark:text-neutral-300 whitespace-pre-line text-base leading-relaxed">
+            {{- .message -}}
+          </p>
+        </div>
+      {{ end }}
+    </div>
+  {{ else }}
+    <p class="text-neutral-500 dark:text-neutral-400 italic mb-8">
+      {{ i18n "comments.no_comments" | default "No hay comentarios aún. ¡Sé el primero en comentar!" }}
+    </p>
+  {{ end }}
+
+  <div class="bg-neutral-50 dark:bg-neutral-900 p-6 rounded-lg border border-neutral-200 dark:border-neutral-800">
+    <h4 class="text-lg font-bold mb-4 text-neutral-900 dark:text-neutral">
+      {{ i18n "comments.write_comment" | default "Dejar un comentario" }}
+    </h4>
+
+    <form id="comment-form" class="space-y-4">
+      <input type="hidden" name="permalink" value="{{ .RelPermalink }}">
+      
+      <!-- Honeypot anti-spam -->
+      <input type="text" name="honeypot" class="hidden" style="display:none !important" autocomplete="off">
+
+      <div>
+        <label for="comment-name" class="block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-1">
+          {{ i18n "comments.name" | default "Nombre (opcional)" }}
+        </label>
+        <input 
+          type="text" 
+          id="comment-name" 
+          name="name" 
+          placeholder="Anónimo" 
+          class="w-full px-3 py-2 rounded-md border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-800 text-neutral-950 dark:text-neutral-50 focus:outline-none focus:ring-2 focus:ring-primary-500"
+        >
+      </div>
+
+      <div>
+        <label for="comment-message" class="block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-1">
+          {{ i18n "comments.message" | default "Mensaje" }}
+        </label>
+        <textarea 
+          id="comment-message" 
+          name="message" 
+          required 
+          rows="4" 
+          placeholder="{{ i18n "comments.placeholder" | default "Escribe tu comentario aquí..." }}" 
+          class="w-full px-3 py-2 rounded-md border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-800 text-neutral-950 dark:text-neutral-50 focus:outline-none focus:ring-2 focus:ring-primary-500"
+        ></textarea>
+      </div>
+
+      <button 
+        type="submit" 
+        id="comment-submit-btn"
+        class="inline-flex items-center justify-center px-4 py-2 text-sm font-medium text-white bg-primary-600 hover:bg-primary-700 rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 disabled:opacity-50"
+      >
+        {{ i18n "comments.submit" | default "Enviar Comentario" }}
+      </button>
+
+      <div id="comment-status" class="hidden text-sm p-3 rounded-md mt-2"></div>
+    </form>
+  </div>
+</div>
+
+<script>
+  document.getElementById('comment-form').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    
+    const form = e.target;
+    const submitBtn = document.getElementById('comment-submit-btn');
+    const statusDiv = document.getElementById('comment-status');
+    const workerUrl = "{{ site.Params.comments.workerUrl }}";
+
+    if (!workerUrl || workerUrl === "https://your-worker.yoursubdomain.workers.dev") {
+      showStatus("Error: El sistema de comentarios no está configurado (falta workerUrl en params.toml).", "error");
+      return;
+    }
+
+    // Bot check
+    if (form.elements['honeypot'].value) {
+      showStatus("Spam detectado.", "error");
+      return;
+    }
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = "{{ i18n "comments.sending" | default "Enviando..." }}";
+    
+    const payload = {
+      name: form.elements['name'].value.trim() || 'Anónimo',
+      message: form.elements['message'].value.trim(),
+      permalink: form.elements['permalink'].value
+    };
+
+    try {
+      const response = await fetch(workerUrl, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        showStatus("¡Comentario enviado con éxito! Aparecerá en el sitio en unos minutos una vez que se complete la compilación.", "success");
+        form.reset();
+      } else {
+        showStatus(`Error: ${data.error || 'No se pudo enviar el comentario.'}`, "error");
+      }
+    } catch (err) {
+      console.error(err);
+      showStatus("Error al conectar con el servidor de comentarios.", "error");
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = "{{ i18n "comments.submit" | default "Enviar Comentario" }}";
+    }
+
+    function showStatus(msg, type) {
+      statusDiv.textContent = msg;
+      statusDiv.className = "text-sm p-3 rounded-md mt-2 block " + 
+        (type === "success" 
+          ? "bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400" 
+          : "bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-400");
+    }
+  });
+</script>
