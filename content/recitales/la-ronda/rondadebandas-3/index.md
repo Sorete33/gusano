@@ -2,7 +2,7 @@
 date : 2026-07-10
 title : "Ronda de Bandas 3"
 weight: -70
-bandas: [Maquinaria divina, Catango, Cínica, Sociedad Macabra]
+bandas: [Maquinaria divina, Catango Trio, Cínica, Sociedad Macabra]
 espacios: [La Ronda]
 author: "Gusanoide"
 draft: false
