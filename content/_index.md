@@ -2,9 +2,9 @@
 title: Anuncio
 ---
 
-{{< new title="Nuevo sistema de comentarios! Encontralo debajo de cualquier recital y amplifica tu voz." >}}
+<!-- {{< new title="Nuevo sistema de comentarios! Encontralo debajo de cualquier recital y amplifica tu voz." >}}
 
-{{< /new >}}
+{{< /new >}} -->
 
 # Próximos eventos
 
