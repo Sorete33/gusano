@@ -1,7 +1,5 @@
 - link: /images/gallery/trac.jpg
   name: trac
-- link: /images/gallery/papri.jpg
-  name: papri
 - link: /images/gallery/sur-madri.jpg
   name: sur-madri
 - link: /images/gallery/ronda.webp
@@ -14,7 +12,5 @@
   name: armand
 - link: /images/gallery/30.jpg
   name: '30'
-- link: /images/gallery/conser.jpg
-  name: conser
 - link: /images/gallery/entr.jpg
   name: entr
