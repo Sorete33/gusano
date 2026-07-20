@@ -4,7 +4,7 @@ on:
     branches:
       - master
   schedule:
-    - cron: '0 * * * *'
+    - cron: '0 */3 * * *'
   workflow_dispatch:
 
 # REQUIRED: Gives the bot permission to update your flyers.yml
