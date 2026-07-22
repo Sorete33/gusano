@@ -23,7 +23,7 @@ heroStyle: background
 ---
 
 
-[Cínica](https://www.instagram.com/_cinicabanda/)
+# [Cínica](https://www.instagram.com/_cinicabanda/)
 
 {{<audio src="https://audiogusano.neocities.org/audio/sala-biaus/entrancinibase-17-7-26/cinica-sala7-26.mp3">}}
 
@@ -36,3 +36,7 @@ heroStyle: background
 {{<audio src="https://audiogusano.neocities.org/audio/sala-biaus/entrancinibase-17-7-26/base-biaus-7-26.mp3">}}
 
 [Streaming en formato WAV](https://pixeldrain.com/u/W6c7qfXE)
+
+## Lista de BASE
+
+![lista base](/images/listas/base.webp)
