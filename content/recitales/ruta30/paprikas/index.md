@@ -18,3 +18,7 @@ heroStyle: background
 {{<audio src="https://audiogusano.neocities.org/audio/ruta30/paprikas-ruta.mp3">}}
 
 [Streaming en formato WAV](https://pixeldrain.com/u/9Hpchn9D)
+
+## Para el museo
+
+![lista papri](/images/listas/paprika.webp)
