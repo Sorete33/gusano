@@ -31,7 +31,7 @@ heroStyle: background
 
 ---
 
-# [Base](https://www.instagram.com/base.hc/) (Extracto)
+# [Base](https://www.instagram.com/base.hc/)
 
 {{<audio src="https://audiogusano.neocities.org/audio/sala-biaus/entrancinibase-17-7-26/base-biaus-7-26.mp3">}}
 
