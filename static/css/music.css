@@ -305,6 +305,356 @@ input[type="range"]::-moz-range-thumb:active {
   display: block;
 }
 
+/* Playlist filters styling */
+.playlist-filters {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+  padding: 12px;
+  background-color: var(--player-bg-dark);
+  border-radius: 8px;
+  border: 1px solid var(--player-bg-light);
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.filter-group label {
+  font-size: 0.8em;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--player-text-muted);
+  letter-spacing: 0.5px;
+}
+
+/* Search bar styling */
+.search-input-container {
+  display: flex;
+  align-items: center;
+  background-color: var(--player-bg-neutral);
+  border: 1px solid var(--player-bg-light);
+  border-radius: 6px;
+  padding: 4px 8px;
+  gap: 8px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.search-input-container:focus-within {
+  border-color: var(--player-primary);
+  box-shadow: 0 0 0 2px rgba(var(--color-primary-500, 132, 204, 22), 0.2);
+}
+
+.search-input-container .search-icon {
+  color: var(--player-text-muted);
+  font-size: 18px !important;
+}
+
+.search-input-container input[type="text"] {
+  background: transparent !important;
+  border: none !important;
+  color: var(--player-text) !important;
+  padding: 4px 0 !important;
+  margin: 0 !important;
+  outline: none !important;
+  font-size: 0.85em;
+  font-family: inherit;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.playlist-filters select,
+.playlist-filters input[type="date"] {
+  background-color: var(--player-bg-neutral);
+  color: var(--player-text);
+  border: 1px solid var(--player-bg-light);
+  padding: 8px 12px;
+  border-radius: 6px;
+  outline: none;
+  font-size: 0.85em;
+  font-family: inherit;
+  width: 100%;
+  box-sizing: border-box;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.playlist-filters select:focus,
+.playlist-filters input[type="date"]:focus {
+  border-color: var(--player-primary);
+  box-shadow: 0 0 0 2px rgba(var(--color-primary-500, 132, 204, 22), 0.2);
+}
+
+.date-input-container {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.clear-btn {
+  background: none;
+  border: none;
+  color: var(--player-text-muted);
+  cursor: pointer;
+  padding: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px !important;
+  border-radius: 4px;
+  transition: color 0.2s, background-color 0.2s;
+}
+
+.clear-btn:hover {
+  color: var(--player-primary);
+  background-color: var(--player-bg-light);
+}
+
+/* Custom date picker */
+.custom-date-picker {
+  position: relative;
+  flex: 1;
+}
+
+.date-picker-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  width: 100%;
+  background: var(--player-bg-neutral);
+  color: var(--player-text);
+  border: 1px solid var(--player-bg-light);
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.85em;
+  font-family: inherit;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.date-picker-btn:hover,
+.date-picker-btn:focus {
+  border-color: var(--player-primary);
+  box-shadow: 0 0 0 2px rgba(var(--color-primary-500, 132, 204, 22), 0.2);
+  outline: none;
+}
+
+.date-picker-btn .material-icons {
+  font-size: 18px !important;
+}
+
+.date-picker-btn #datePickerLabel {
+  flex: 1;
+  text-align: left;
+}
+
+.date-picker-dropdown {
+  display: none;
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  z-index: 50;
+  background: var(--player-bg-dark);
+  border: 1px solid var(--player-bg-light);
+  border-radius: 8px;
+  padding: 12px;
+  width: 260px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+.date-picker-dropdown.show {
+  display: block;
+}
+
+.cal-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.cal-nav-btn {
+  background: none;
+  border: none;
+  color: var(--player-text);
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  font-size: 20px !important;
+  transition: color 0.2s, background-color 0.2s;
+}
+
+.cal-nav-btn:hover {
+  color: var(--player-primary);
+  background-color: var(--player-bg-light);
+}
+
+.cal-title {
+  font-weight: 700;
+  font-size: 0.95em;
+  color: var(--player-text);
+}
+
+.cal-day-names {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2px;
+  margin-bottom: 6px;
+}
+
+.cal-day-names span {
+  text-align: center;
+  font-size: 0.7em;
+  font-weight: 700;
+  color: var(--player-text-muted);
+  padding: 4px 0;
+  text-transform: uppercase;
+}
+
+.cal-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2px;
+}
+
+.cal-day,
+.cal-empty {
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8em;
+  border-radius: 4px;
+}
+
+.cal-day {
+  cursor: pointer;
+  color: var(--player-text);
+  transition: background-color 0.15s, color 0.15s;
+}
+
+.cal-day:hover {
+  background-color: var(--player-bg-light);
+}
+
+.cal-day-has-event {
+  background-color: rgba(var(--color-primary-500, 132, 204, 22), 0.15);
+  color: var(--player-primary);
+  font-weight: 700;
+}
+
+.cal-day-has-event:hover {
+  background-color: rgba(var(--color-primary-500, 132, 204, 22), 0.3);
+}
+
+.cal-day-today {
+  border: 1px solid var(--player-text-muted);
+}
+
+.cal-day-selected {
+  background-color: var(--player-primary) !important;
+  color: var(--player-text-dark) !important;
+  font-weight: 700;
+}
+
+.cal-empty {
+  pointer-events: none;
+}
+
+/* Song list items visual improvements with meta structure */
+aside li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.song-info-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex: 1;
+}
+
+.song-title-text {
+  font-weight: 600;
+  color: var(--player-text);
+}
+
+aside li:not(.active) .song-title-text {
+  color: var(--player-text-muted);
+}
+
+aside li.active .song-title-text {
+  color: var(--player-text-dark);
+}
+
+.song-artist-text {
+  font-size: 0.8em;
+  opacity: 0.8;
+}
+
+.song-duration-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+  flex-shrink: 0;
+}
+
+.song-date {
+  font-size: 0.75em;
+  color: var(--player-primary);
+  font-weight: bold;
+}
+
+aside li.active .song-date {
+  color: var(--player-text-dark);
+  opacity: 0.9;
+}
+
+.aside-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.aside-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+#toggleFiltersBtn {
+  background: none;
+  border: none;
+  color: var(--player-text-muted);
+  cursor: pointer;
+  padding: 6px;
+  font-size: 20px !important;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s, background-color 0.2s;
+}
+
+#toggleFiltersBtn:hover,
+#toggleFiltersBtn.active {
+  color: var(--player-primary);
+  background-color: var(--player-bg-light);
+}
+
+.playlist-filters.hidden {
+  display: none;
+}
+
 /* Hide close button on desktop since playlist is always open */
 #closePlaylist {
   display: none;

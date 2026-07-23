@@ -12,9 +12,54 @@
     <aside id="playlist">
       <div class="aside-header">
         <h3><span class="material-icons">queue_music</span> Recis</h3>
-        <!-- Close button for mobile -->
-        <button id="closePlaylist" class="material-icons">close</button>
+        <div class="aside-header-actions">
+          <button id="toggleFiltersBtn" class="material-icons" title="Filtrar">filter_list</button>
+          <!-- Close button for mobile -->
+          <button id="closePlaylist" class="material-icons">close</button>
+        </div>
       </div>
+      
+      <div class="playlist-filters hidden">
+        <div class="filter-group">
+          <label for="searchFilter">Buscar</label>
+          <div class="search-input-container">
+            <span class="material-icons search-icon">search</span>
+            <input type="text" id="searchFilter" placeholder="Buscar recital, banda..." />
+          </div>
+        </div>
+        <div class="filter-group">
+          <label for="bandFilter">Bandas</label>
+          <select id="bandFilter">
+            <option value="">Todas las bandas</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label>Fecha</label>
+          <div class="date-input-container">
+            <div class="custom-date-picker">
+              <button id="datePickerBtn" class="date-picker-btn" type="button">
+                <span class="material-icons">calendar_today</span>
+                <span id="datePickerLabel">Seleccionar fecha</span>
+                <span class="material-icons">arrow_drop_down</span>
+              </button>
+              <div id="datePickerDropdown" class="date-picker-dropdown">
+                <div class="cal-nav">
+                  <button id="prevMonth" class="material-icons cal-nav-btn" type="button">chevron_left</button>
+                  <span id="calTitle" class="cal-title"></span>
+                  <button id="nextMonth" class="material-icons cal-nav-btn" type="button">chevron_right</button>
+                </div>
+                <div class="cal-day-names">
+                  <span>L</span><span>M</span><span>M</span><span>J</span><span>V</span><span>S</span><span>D</span>
+                </div>
+                <div id="calGrid" class="cal-grid"></div>
+              </div>
+            </div>
+            <input type="hidden" id="dateFilter" />
+            <button id="clearDateBtn" class="clear-btn material-icons" title="Limpiar fecha">clear</button>
+          </div>
+        </div>
+      </div>
+
       <ul id="songList"></ul>
     </aside>
     
@@ -57,6 +102,30 @@
       </div>
     </div>
   </div>
+
+  <!-- Inject Hugo recital data to window.recitalData -->
+  <script>
+    window.recitalData = [
+      {{ range (where .Site.RegularPages "Section" "recitales") }}
+        {
+          permalink: "{{ .RelPermalink }}",
+          date: "{{ .Date.Format "2006-01-02" }}",
+          title: "{{ .Title | safeJS }}",
+          bandas: [
+            {{ range .Params.bandas }}
+              "{{ . | safeJS }}",
+            {{ end }}
+          ],
+          audios: [
+            {{ $matches := findRE `(https?://|/audio/)[a-zA-Z0-9./_-]+\.mp3` .RawContent }}
+            {{ range $matches }}
+              "{{ . }}",
+            {{ end }}
+          ]
+        },
+      {{ end }}
+    ];
+  </script>
 
   <!-- Link to the JavaScript file -->
   <script src="/js/music.js"></script>

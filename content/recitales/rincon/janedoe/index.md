@@ -1,5 +1,5 @@
 ---
-date : 2025-10-02T01:04:40-03:00
+date : '2025-10-02'
 title : "Jane Doe en Ricón"
 weight: -16
 bandas: [Jane Doe]

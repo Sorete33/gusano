@@ -1,5 +1,5 @@
 ---
-date: '2025-05-04T15:47:19-03:00'
+date: '2025-05-04'
 weight: -4
 title: 'Yula más invitades en Beertonic'
 tags: ["Julian Amar",]
