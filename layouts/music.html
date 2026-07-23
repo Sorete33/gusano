@@ -1,38 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Rocola gusana</title>
+{{ define "main" }}
   <!-- Using Material Icons for better visual appeal of controls -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="/css/music.css" />
-</head>
-<body>
 
-  <header>
-
-    
-  <a href="{{ "/" | relURL }}"> <img src="/favicon-32x32.png"> <span class="site-title">Menú</span></a>
-
-  </header>
-
-  <div class="container">
+  <div class="container music-container">
      <!-- Button to toggle playlist visibility -->
     <button id="togglePlaylist" class="playlist-btn"><span class="material-icons">menu</span>Playlist</button> 
 
     <div id="overlay" class="overlay"></div>
 
-<aside id="playlist">
-  <div class="aside-header">
-    <h3><span class="material-icons">queue_music</span> Recis</h3>
-    <!-- Close button for mobile -->
-    <button id="closePlaylist" class="material-icons">close</button>
-  </div>
-  <ul id="songList"></ul>
-</aside>
-    <main>
-
+    <aside id="playlist">
+      <div class="aside-header">
+        <h3><span class="material-icons">queue_music</span> Recis</h3>
+        <!-- Close button for mobile -->
+        <button id="closePlaylist" class="material-icons">close</button>
+      </div>
+      <ul id="songList"></ul>
+    </aside>
+    
+    <div class="music-main">
       <div class="thumbnail">
         <!-- Album art image. 'default.jpg' should be in the 'images' folder. -->
         <img id="albumArt" src="/covers" alt="Album Art" />
@@ -69,10 +55,10 @@
         <!-- Volume slider -->
         <input type="range" id="volume" min="0" max="1" step="0.01" value="1" />
       </div>
-    </main>
+    </div>
   </div>
 
   <!-- Link to the JavaScript file -->
   <script src="/js/music.js"></script>
-</body>
-</html>
+{{ end }}
+
