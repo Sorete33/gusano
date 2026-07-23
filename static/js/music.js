@@ -30,6 +30,7 @@ const songs = [
     artist: "Entrance",
     src: "https://files.catbox.moe/p1lh8s.mp3",
     img: "/covers/festimaga1.jpg",
+    date: "2025-04-04",
   },
 
   {
@@ -37,6 +38,8 @@ const songs = [
     artist: "Inteligencia Accidental",
     src: "https://files.catbox.moe/xbdnwu.mp3",
     img: "/covers/festimaga1.jpg",
+    date: "2025-04-04",
+
   },
 
   {
@@ -44,6 +47,7 @@ const songs = [
     artist: "Parasomnia",
     src: "https://files.catbox.moe/cc7crl.mp3",
     img: "/covers/festimaga1.jpg",
+    date: "2025-04-04",
   },
 
   {
@@ -51,6 +55,7 @@ const songs = [
     artist: "Sala Roja",
     src: "https://files.catbox.moe/2sab53.mp3",
     img: "/covers/festimaga1.jpg",
+    date: "2025-04-04",
   },
 
   {
@@ -58,6 +63,7 @@ const songs = [
     artist: "Armando Alonso",
     src: "https://files.catbox.moe/4icsi1.mp3",
     img: "/covers/fratello.png",
+    date: "2025-04-26",
   },
 
   {
@@ -65,6 +71,7 @@ const songs = [
     artist: " Los Bad Seed",
     src: "https://files.catbox.moe/3l5s6p.mp3",
     img: "/covers/bad-biaus.jpg",
+    date: "2025-05-09",
   },
 
   {
@@ -72,6 +79,7 @@ const songs = [
     artist: "Julian Amar",
     src: "https://files.catbox.moe/zn5ybl.mp3",
     img: "/covers/yula.jpg",
+    date: "2025-05-04",
   },
 
   {
@@ -79,6 +87,7 @@ const songs = [
     artist: "Prima León",
     src: "https://files.catbox.moe/wfudnd.mp3",
     img: "/covers/festi-cons1.webp",
+    date: "2025-04-19",
   },
 
   {
@@ -86,6 +95,7 @@ const songs = [
     artist: "No Soy de Acá",
     src: "https://files.catbox.moe/tyrb3c.mp3",
     img: "/covers/festi-cons1.webp",
+    date: "2025-04-19",
   },
 
   {
@@ -93,6 +103,7 @@ const songs = [
     artist: "Entrance",
     src: "https://files.catbox.moe/hhizka.mp3",
     img: "/covers/festi-cons1.webp",
+    date: "2025-04-19",
   },
 
   {
@@ -100,6 +111,7 @@ const songs = [
     artist: "Los Pozoz",
     src: "https://files.catbox.moe/yf8btq.mp3",
     img: "/covers/festi-cons1.webp",
+    date: "2025-04-19",
   },
 
   {
@@ -107,6 +119,7 @@ const songs = [
     artist: "Round 2",
     src: "https://files.catbox.moe/lfs2fb.mp3",
     img: "/covers/demo.jpg",
+    date: "2025-06-28",
   },
 
   {
@@ -114,6 +127,7 @@ const songs = [
     artist: "Entrance",
     src: "https://files.catbox.moe/ppua4v.mp3",
     img: "/covers/demo.jpg",
+    date: "2025-06-28",
   },
 
   {
@@ -121,6 +135,7 @@ const songs = [
     artist: "Sala Roja",
     src: "https://files.catbox.moe/l8y6z9.mp3",
     img: "/covers/demo.jpg",
+    date: "2025-06-28",
   },
 
   {
@@ -128,6 +143,7 @@ const songs = [
     artist: "La Vitrola Envenenada",
     src: "https://files.catbox.moe/ztn5z0.mp3",
     img: "/covers/ronda1.jpg",
+    date: "2025-07-12",
   },
 
   {
@@ -135,6 +151,7 @@ const songs = [
     artist: "La Toma de Roma",
     src: "https://files.catbox.moe/vvosvl.mp3",
     img: "/covers/ronda1.jpg",
+    date: "2025-07-12",
   },
 
   {
@@ -142,6 +159,7 @@ const songs = [
     artist: "Entrance",
     src: "https://files.catbox.moe/yoe2na.mp3",
     img: "/covers/ronda1.jpg",
+    date: "2025-07-12",
   },
 
   {
@@ -149,6 +167,7 @@ const songs = [
     artist: "Parasomnia",
     src: "https://files.catbox.moe/0fu10z.mp3",
     img: "/covers/ronda1.jpg",
+    date: "2025-07-12",
   },
 
   {
@@ -156,6 +175,7 @@ const songs = [
     artist: "Juanito Alimaña",
     src: "https://files.catbox.moe/7cihmf.mp3",
     img: "/covers/juanito.jpg",
+    date: "2025-08-09",
   },
 
   {
@@ -163,6 +183,7 @@ const songs = [
     artist: "Nicolas Muchiut",
     src: "https://files.catbox.moe/q477ut.mp3",
     img: "/covers/juanito.jpg",
+    date: "2025-08-09",
   },
 
   {
@@ -170,6 +191,7 @@ const songs = [
     artist: "Ser Sur",
     src: "https://files.catbox.moe/feo7wv.mp3",
     img: "/covers/juanito.jpg",
+    date: "2025-08-09",
   },
 
   {
@@ -177,6 +199,7 @@ const songs = [
     artist: "Armando Alonso, Agustín Barbieri, Nicolas Benagui",
     src: "https://files.catbox.moe/wv8ujs.mp3",
     img: "/covers/armand-trac.png",
+    date: "2025-09-09",
   },
 
   {
@@ -184,6 +207,7 @@ const songs = [
     artist: "Rocío Palazzo, Ignacio Viano, Nicolas Benagui",
     src: "https://files.catbox.moe/i52swa.mp3",
     img: "/covers/spinetta.webp",
+    date: "2025-09-12",
   },
 
   {
@@ -191,6 +215,7 @@ const songs = [
     artist: "Mate Jazz",
     src: "https://files.catbox.moe/1qwixg.mp3",
     img: "/covers/mate.jpg",
+    date: "2025-09-12",
   },
 
   {
@@ -198,6 +223,7 @@ const songs = [
     artist: "Yula y Abril Amar",
     src: "https://files.catbox.moe/kh1bf0.mp3",
     img: "/covers/yula.jpg",
+    date: "2025-09-15",
   },
 
   {
@@ -205,6 +231,7 @@ const songs = [
     artist: "Inteligencia Accidental",
     src: "https://files.catbox.moe/l50rmt.mp3",
     img: "/covers/cumple-acc.jpg",
+    date: "2025-09-19",
   },
 
   {
@@ -212,6 +239,7 @@ const songs = [
     artist: "Ronda Catonga",
     src: "https://files.catbox.moe/7suvnz.mp3",
     img: "/covers/cumple-ron.jpg",
+    date: "2025-09-20",
   },
 
   {
@@ -219,6 +247,7 @@ const songs = [
     artist: "Catango Trío",
     src: "https://files.catbox.moe/z143qt.mp3",
     img: "/covers/cumple-ron.jpg",
+    date: "2025-09-20",
   },
 
   {
@@ -226,6 +255,7 @@ const songs = [
     artist: "Roco y los Chaks",
     src: "https://files.catbox.moe/to2xy0.mp3",
     img: "/covers/cumple-ron.jpg",
+    date: "2025-09-20",
   },
 
   {
@@ -233,6 +263,7 @@ const songs = [
     artist: "Epifanicas",
     src: "https://files.catbox.moe/paf97s.mp3",
     img: "/covers/cumple-ron.jpg",
+    date: "2025-09-20",
   },
 
   {
@@ -240,6 +271,7 @@ const songs = [
     artist: "Telar",
     src: "https://files.catbox.moe/ur2qo6.mp3",
     img: "/covers/telar.png",
+    date: "2025-09-25",
   },
 
   {
@@ -247,13 +279,15 @@ const songs = [
     artist: "Casco y Guada",
     src: "https://files.catbox.moe/xyj9u4.mp3",
     img: "/covers/cascoguada.png",
+    date: "2025-10-02",
   },
 
   {
-    title: "Jane Doe en Ricón",
+    title: "Jane Doe en Rincón",
     artist: "Jane Doe",
     src: "https://files.catbox.moe/aqajnb.mp3",
     img: "/covers/jane.jpg",
+    date: "2025-10-02",
   },
 
   {
@@ -261,6 +295,7 @@ const songs = [
     artist: "Armando Alonso, Agustín Barbieri, Nicolas Benaghi",
     src: "https://files.catbox.moe/nnubmi.mp3",
     img: "/covers/armand-beer.png",
+    date: "2025-10-09",
   },
 
   {
@@ -268,6 +303,7 @@ const songs = [
     artist: "Tigran Hamasyan",
     src: "https://files.catbox.moe/ypys3b.mp3",
     img: "/covers/tigran.jpg",
+    date: "2025-10-14",
   },
 
   {
@@ -275,6 +311,7 @@ const songs = [
     artist: "Nico Muchiut y Fede Ratto",
     src: "https://files.catbox.moe/chl3gs.mp3",
     img: "/covers/paez.jpg",
+    date: "2025-10-17",
   },
 
   {
@@ -282,6 +319,7 @@ const songs = [
     artist: "Inteligencia Accidental",
     src: "https://files.catbox.moe/edswyr.mp3",
     img: "/covers/ronda2.jpg",
+    date: "2025-10-18",
   },
 
   {
@@ -289,6 +327,7 @@ const songs = [
     artist: "Base",
     src: "https://files.catbox.moe/fc14c0.mp3",
     img: "/covers/ronda2.jpg",
+    date: "2025-10-18",
   },
 
   {
@@ -296,6 +335,7 @@ const songs = [
     artist: "Sala Roja",
     src: "https://files.catbox.moe/7mai6b.mp3",
     img: "/covers/ronda2.jpg",
+    date: "2025-10-18",
   },
 
   {
@@ -303,6 +343,7 @@ const songs = [
     artist: "Inteligencia Accidental",
     src: "https://files.catbox.moe/1y3q74.mp3",
     img: "/covers/cumple-lu.jpg",
+    date: "2025-10-20",
   },
 
   {
@@ -310,6 +351,7 @@ const songs = [
     artist: "Sala Roja",
     src: "https://files.catbox.moe/w5yfc2.mp3",
     img: "/covers/cumple-lu.jpg",
+    date: "2025-10-20",
   },
 
   {
@@ -317,6 +359,7 @@ const songs = [
     artist: "El Ensamble de música contemporánea",
     src: "https://files.catbox.moe/lg93s3.mp3",
     img: "/covers/glass.jpg",
+    date: "2025-10-24",
   },
 
   {
@@ -324,6 +367,7 @@ const songs = [
     artist: "Alumnes del Conservatorio Alberto Williams",
     src: "https://files.catbox.moe/mwxfv1.mp3",
     img: "/covers/glass.jpg",
+    date: "2025-10-24",
   },
 
   {
@@ -331,6 +375,7 @@ const songs = [
     artist: "Epifanicas",
     src: "https://files.catbox.moe/2u4twa.mp3",
     img: "/covers/garage.jpg",
+    date: "2025-10-24",
   },
 
   {
@@ -338,6 +383,7 @@ const songs = [
     artist: "Ronda Catonga",
     src: "https://files.catbox.moe/gy5zk8.mp3",
     img: "/covers/catonga.jpg",
+    date: "2025-10-26",
   },
 
   {
@@ -345,20 +391,23 @@ const songs = [
     artist: "Fango y Perlas",
     src: "https://files.catbox.moe/e79q6c.mp3",
     img: "/covers/fango.webp",
+    date: "2025-10-23",
   },
 
   {
-    title: "Nómada en la Festimaga",
+    title: "Nómada en la Festimaga 2",
     artist: "Nómada",
     src: "https://files.catbox.moe/a7wcqy.mp3",
     img: "/covers/festimaga2.png",
+    date: "2025-10-31",
   },
 
   {
-    title: "Sala Roja en la Festimaga",
+    title: "Sala Roja en la Festimaga 2",
     artist: "Sala Roja",
     src: "https://files.catbox.moe/dyjyrz.mp3",
     img: "/covers/festimaga2.png",
+    date: "2025-10-31",
   },
 
   {
@@ -373,6 +422,7 @@ const songs = [
     artist: "Epifanicas",
     src: "https://files.catbox.moe/8nzb96.mp3",
     img: "/covers/epis-grey.jpg",
+    date: "2025-11-06",
   },
 
   {
@@ -380,6 +430,7 @@ const songs = [
     artist: "Valkirias",
     src: "https://files.catbox.moe/nkrss1.mp3",
     img: "/covers/charo.webp",
+    date: "2025-11-08",
   },
 
   {
@@ -387,6 +438,7 @@ const songs = [
     artist: "Epifanicas",
     src: "https://files.catbox.moe/b594ma.mp3",
     img: "/covers/epis-cebada.jpg",
+    date: "2025-11-08",
   },
 
   {
@@ -394,6 +446,7 @@ const songs = [
     artist: "Maquinaria Divina",
     src: "https://files.catbox.moe/oh2itu.mp3",
     img: "/covers/festi-cons2.webp",
+    date: "2025-11-21",
   },
 
   {
@@ -401,6 +454,7 @@ const songs = [
     artist: "Jane Doe",
     src: "https://files.catbox.moe/o1nk8u.mp3",
     img: "/covers/festi-cons2.webp",
+    date: "2025-11-21",
   },
 
   {
@@ -408,6 +462,7 @@ const songs = [
     artist: "Base",
     src: "https://files.catbox.moe/q0qqq6.mp3",
     img: "/covers/festi-cons2.webp",
+    date: "2025-11-21",
   },
 
   {
@@ -415,6 +470,7 @@ const songs = [
     artist: "Sociedad Macabra",
     src: "https://files.catbox.moe/6um5nk.mp3",
     img: "/covers/festi-cons2.webp",
+    date: "2025-11-21",
   },
 
   {
@@ -422,6 +478,7 @@ const songs = [
     artist: "Inteligencia Accidental",
     src: "https://files.catbox.moe/kpb3y2.mp3",
     img: "/covers/festi-cons2.webp",
+    date: "2025-11-21",
   },
 
   {
@@ -429,6 +486,7 @@ const songs = [
     artist: "Forrxs",
     src: "https://files.catbox.moe/fw8fd9.mp3",
     img: "/covers/festi-cons2.webp",
+    date: "2025-11-21",
   },
 
   {
@@ -436,6 +494,7 @@ const songs = [
     artist: "Guada y Abril",
     src: "https://files.catbox.moe/4jor73.mp3",
     img: "/covers/cumple-beer.jpg",
+    date: "2025-11-23",
   },
 
   {
@@ -443,6 +502,7 @@ const songs = [
     artist: "Catango Trío ",
     src: "https://files.catbox.moe/o9yf05.mp3",
     img: "/covers/cumple-beer.jpg",
+    date: "2025-11-23",
   },
 
   {
@@ -450,27 +510,31 @@ const songs = [
     artist: "Paprika's Band",
     src: "https://files.catbox.moe/k000p1.mp3",
     img: "/covers/cumple-beer.jpg",
+    date: "2025-11-23",
   },
 
   {
-    title: "Los Pozoz en la Festimaga ",
+    title: "Los Pozoz en la Festimaga 3",
     artist: "Los Pozoz",
     src: "https://files.catbox.moe/f0vb1d.mp3",
     img: "/covers/festimaga3.jpg",
+    date: "2025-11-28",
   },
 
   {
-    title: "Traumas de la Infancia en la Festimaga",
+    title: "Traumas de la Infancia en la Festimaga 3",
     artist: "Traumas de la Infancia",
     src: "https://files.catbox.moe/s8qfqf.mp3",
     img: "/covers/festimaga3.jpg",
+    date: "2025-11-28",
   },
 
   {
-    title: "Reunión de Traumas interpretando Desahogo en la Festimaga",
+    title: "Reunión de Traumas interpretando Desahogo en la Festimaga 3",
     artist: "Yanqui, Nicanor, Chiquilin Sanchez y Simón (el cantor)",
     src: "https://files.catbox.moe/a08fm2.mp3",
     img: "/covers/festimaga3.jpg",
+    date: "2025-11-28",
   },
 
   {
@@ -478,6 +542,7 @@ const songs = [
     artist: "Base",
     src: "https://files.catbox.moe/8blvc7.mp3",
     img: "/covers/festi-distor.webp",
+    date: "2025-11-29",
   },
 
   {
@@ -485,6 +550,7 @@ const songs = [
     artist: "Entrance",
     src: "https://files.catbox.moe/y1rcv1.mp3",
     img: "/covers/festi-distor.webp",
+    date: "2025-11-29",
   },
 
   {
@@ -492,6 +558,7 @@ const songs = [
     artist: "Nueva Escuela de Música",
     src: "https://files.catbox.moe/sg11i3.mp3",
     img: "/covers/nueva.jpg",
+    date: "2025-12-03",
   },
 
   {
@@ -499,6 +566,7 @@ const songs = [
     artist: "Nueva Escuela de Música",
     src: "https://files.catbox.moe/llvbhj.mp3",
     img: "/covers/nueva.jpg",
+    date: "2025-12-03",
   },
 
   {
@@ -506,6 +574,7 @@ const songs = [
     artist: "Los Pozoz",
     src: "https://files.catbox.moe/3g4um0.mp3",
     img: "/covers/mad.webp",
+    date: "2025-12-06",
   },
 
   {
@@ -513,6 +582,7 @@ const songs = [
     artist: "Nómada",
     src: "https://files.catbox.moe/dcp23i.mp3",
     img: "/covers/mad.webp",
+    date: "2025-12-06",
   },
 
   {
@@ -520,6 +590,7 @@ const songs = [
     artist: "Sociedad Macabra",
     src: "https://files.catbox.moe/slx3uw.mp3",
     img: "/covers/mad.webp",
+    date: "2025-12-06",
   },
 
   {
@@ -527,6 +598,7 @@ const songs = [
     artist: "Parasomnia",
     src: "https://files.catbox.moe/1l50w5.mp3",
     img: "/covers/mad.webp",
+    date: "2025-12-06",
   },
 
   {
@@ -534,6 +606,7 @@ const songs = [
     artist: "Epifanicas",
     src: "https://files.catbox.moe/51g1x3.mp3",
     img: "/covers/epi-biaus.jpg",
+    date: "2025-12-13",
   },
 
   {
@@ -541,6 +614,7 @@ const songs = [
     artist: "Hernán de Bragado",
     src: "https://files.catbox.moe/dcs0qf.mp3",
     img: "/covers/epi-biaus.jpg",
+    date: "2025-12-13",
   },
 
   {
@@ -548,6 +622,7 @@ const songs = [
     artist: "Epifanicas",
     src: "https://files.catbox.moe/mqcg8y.mp3",
     img: "/covers/epi-biaus.jpg",
+    date: "2025-12-13",
   },
 
   {
@@ -555,6 +630,7 @@ const songs = [
     artist: "Drama",
     src: "https://files.catbox.moe/u87zop.mp3",
     img: "/covers/bad-drama.jpg",
+    date: "2025-12-27",
   },
 
   {
@@ -562,6 +638,7 @@ const songs = [
     artist: "Los Bad Seed",
     src: "https://files.catbox.moe/1q21vg.mp3",
     img: "/covers/bad-drama.jpg",
+    date: "2025-12-27",
   },
 
   {
@@ -569,6 +646,7 @@ const songs = [
     artist: "Sociedad Macabra",
     src: "https://files.catbox.moe/nz514m.mp3",
     img: "/covers/año.png",
+    date: "2025-12-31",
   },
 
   {
@@ -576,6 +654,7 @@ const songs = [
     artist: "Parasomnia",
     src: "https://files.catbox.moe/a6e37m.mp3",
     img: "/covers/año.png",
+    date: "2025-12-31",
   },
 
   {
@@ -583,6 +662,7 @@ const songs = [
     artist: "Inteligencia Accidental",
     src: "https://files.catbox.moe/i60k6t.mp3",
     img: "/covers/año.png",
+    date: "2025-12-31",
   },
 
   {
@@ -590,6 +670,7 @@ const songs = [
     artist: "Los Bad Seed",
     src: "https://files.catbox.moe/hgf90e.mp3",
     img: "/covers/año.png",
+    date: "2025-12-31",
   },
 
 
@@ -598,6 +679,7 @@ const songs = [
     artist: "Epifanicas",
     src: "https://files.catbox.moe/3rjs9s.mp3",
     img: "/covers/epi-roco-sun.jpg",
+    date: "2026-01-09",
   },
 
 
@@ -606,6 +688,7 @@ const songs = [
     artist: "Sunglasses",
     src: "https://files.catbox.moe/ooo8y2.mp3",
     img: "/covers/epi-roco-sun.jpg",
+    date: "2026-01-09",
   },
 
 
@@ -614,6 +697,7 @@ const songs = [
     artist: "Roco y los Chacks",
     src: "https://files.catbox.moe/xkdrvl.mp3",
     img: "/covers/epi-roco-sun.jpg",
+    date: "2026-01-09",
   },
 
   {
@@ -621,6 +705,7 @@ const songs = [
     artist: "Cínica",
     src: "https://files.catbox.moe/uhjd18.mp3",
     img: "/covers/biaus-cin-ia-mr-nomad.jpg",
+    date: "2026-01-16",
   },
 
   {
@@ -628,6 +713,7 @@ const songs = [
     artist: "Inteligencia Accidental",
     src: "https://files.catbox.moe/gulf4e.mp3",
     img: "/covers/biaus-cin-ia-mr-nomad.jpg",
+    date: "2026-01-16",
   },
 
   {
@@ -635,6 +721,7 @@ const songs = [
     artist: "Sr Wilson",
     src: "https://files.catbox.moe/8t1ot8.mp3",
     img: "/covers/biaus-cin-ia-mr-nomad.jpg",
+    date: "2026-01-16",
   },
 
   {
@@ -642,6 +729,7 @@ const songs = [
     artist: "Nómada",
     src: "https://files.catbox.moe/uvw3ce.mp3",
     img: "/covers/biaus-cin-ia-mr-nomad.jpg",
+    date: "2026-01-16",
   },
 
   {
@@ -649,6 +737,7 @@ const songs = [
     artist: "Kuelguero's band",
     src: "https://files.catbox.moe/9j5gxa.mp3",
     img: "/recitales/ruta30/kuelgue/featured.png",
+    date: "2026-01-22",
   },
 
   {
@@ -656,6 +745,7 @@ const songs = [
     artist: "Oesterheld",
     src: "https://files.catbox.moe/4wzf3v.mp3",
     img: "/recitales/sala-biaus/oesterheld/featured.jpg",
+    date: "2026-01-24",
   },
 
   {
@@ -663,6 +753,7 @@ const songs = [
     artist: "Nómada",
     src: "/audio/galpon/nomada.mp3",
     img: "/covers/nomad-cala-down.jpg",
+    date: "2026-01-30",
   },
 
   {
@@ -670,6 +761,7 @@ const songs = [
     artist: "San Calavera",
     src: "/audio/galpon/calavera.mp3",
     img: "/covers/nomad-cala-down.jpg",
+    date: "2026-01-30",
   },
 
   {
@@ -677,6 +769,7 @@ const songs = [
     artist: "Downfall",
     src: "/audio/galpon/downfall.mp3",
     img: "/covers/nomad-cala-down.jpg",
+    date: "2026-01-30",
   },
 
   {
@@ -684,6 +777,7 @@ const songs = [
     artist: "Epifanicas",
     src: "https://files.catbox.moe/bow1th.mp3",
     img: "/recitales/lap-cantina/epifanicas/featured.jpg",
+    date: "2026-02-06",
   },
 
 
@@ -692,6 +786,7 @@ const songs = [
     artist: "Oesterheld",
     src: "https://files.catbox.moe/qhrn7g.mp3",
     img: "/recitales/ruta30/oesterheld/featured.jpg",
+    date: "2026-02-06",
   },
 
   {
@@ -699,6 +794,7 @@ const songs = [
     artist: "Entrance",
     src: "https://files.catbox.moe/iafe6j.mp3",
     img: "/covers/entrance-ia-sabo-biaus.png",
+    date: "2026-02-07",
   },
 
   {
@@ -706,6 +802,7 @@ const songs = [
     artist: "Inteligencia Accidental",
     src: "https://files.catbox.moe/36tdec.mp3",
     img: "/covers/entrance-ia-sabo-biaus.png",
+    date: "2026-02-07",
   },
 
   {
@@ -713,6 +810,7 @@ const songs = [
     artist: "Sabotaje",
     src: "https://files.catbox.moe/bvkj6x.mp3",
     img: "/covers/entrance-ia-sabo-biaus.png",
+    date: "2026-02-07",
   },
 
   {
@@ -720,6 +818,7 @@ const songs = [
     artist: "Cinica",
     src: "https://files.catbox.moe/mcigps.mp3",
     img: "/covers/anticover13.png",
+    date: "2026-02-13",
   },
 
   {
@@ -727,6 +826,7 @@ const songs = [
     artist: "Facu Dovidio",
     src: "https://files.catbox.moe/n29flz.mp3",
     img: "/covers/anticover13.png",
+    date: "2026-02-13",
   },
 
   {
@@ -734,6 +834,7 @@ const songs = [
     artist: "Paprika's Band",
     src: "https://files.catbox.moe/6jr85k.mp3",
     img: "/covers/anticover13.png",
+    date: "2026-02-13",
   },
 
   {
@@ -741,6 +842,7 @@ const songs = [
     artist: "SOFA",
     src: "https://files.catbox.moe/rqmo87.mp3",
     img: "/covers/sofa.png",
+    date: "2026-02-15",
   },
 
   {
@@ -748,6 +850,7 @@ const songs = [
     artist: "Fronda y Raíz",
     src: "https://files.catbox.moe/haq3r8.mp3",
     img: "/covers/raiz.jpg",
+    date: "2026-02-20",
   },
 
   {
@@ -755,6 +858,7 @@ const songs = [
     artist: "Juanito Alimaña",
     src: "https://files.catbox.moe/pmd0a9.mp3",
     img: "/covers/juanito.jpg",
+    date: "2026-02-27",
   },
 
   {
@@ -762,6 +866,7 @@ const songs = [
     artist: "Paprika's Band",
     src: "https://files.catbox.moe/npl2es.mp3",
     img: "/covers/juanito.jpg",
+    date: "2026-02-27",
   },
 
   {
@@ -769,6 +874,7 @@ const songs = [
     artist: "Muchiut y los monjes del dudaismo",
     src: "https://files.catbox.moe/txexq5.mp3",
     img: "/covers/juanito.jpg",
+    date: "2026-02-27",
   },
 
   {
@@ -776,6 +882,7 @@ const songs = [
     artist: "Rey Midas",
     src: "/audio/conjura/Rey-Midas-28-2-26.mp3",
     img: "/covers/seed-capi.jpg",
+    date: "2026-02-28",
   },
 
   {
@@ -783,6 +890,7 @@ const songs = [
     artist: "Ayende",
     src: "/audio/conjura/Ayende-28-2-26.mp3",
     img: "/covers/seed-capi.jpg",
+    date: "2026-02-28",
   },
 
   {
@@ -790,6 +898,7 @@ const songs = [
     artist: "VIK",
     src: "/audio/conjura/VIK-28-2-26.mp3",
     img: "/covers/seed-capi.jpg",
+    date: "2026-02-28",
   },
 
   {
@@ -797,6 +906,7 @@ const songs = [
     artist: "Velvet",
     src: "/audio/conjura/Velvet-28-2-26.mp3",
     img: "/covers/seed-capi.jpg",
+    date: "2026-02-28",
   },
 
   {
@@ -804,6 +914,7 @@ const songs = [
     artist: "Nancy",
     src: "https://files.catbox.moe/kswukp.mp3",
     img: "/recitales/tren/nancy/featured.png",
+    date: "2026-02-29",
   },
 
 
@@ -812,6 +923,7 @@ const songs = [
     artist: "Armando Alonso",
     src: "https://files.catbox.moe/didtx2.mp3",
     img: "/recitales/sala-belgrano/armando/featured.jpg",
+    date: "2026-03-06",
   },
 
 
@@ -820,6 +932,7 @@ const songs = [
     artist: "Base",
     src: "https://files.catbox.moe/1jjkyb.mp3",
     img: "/covers/corpo.jpg",
+    date: "2026-03-06",
   },
 
   {
@@ -827,6 +940,7 @@ const songs = [
     artist: "Ismael es de verdad",
     src: "https://files.catbox.moe/y5fhfz.mp3",
     img: "/covers/corpo.jpg",
+    date: "2026-03-06",
   },
 
   {
@@ -834,6 +948,7 @@ const songs = [
     artist: "Corpo Porco",
     src: "https://files.catbox.moe/ts1yj4.mp3",
     img: "/covers/corpo.jpg",
+    date: "2026-03-06",
   },
 
   {
@@ -841,6 +956,7 @@ const songs = [
     artist: "Sabotage",
     src: "https://files.catbox.moe/59gial.mp3",
     img: "/recitales/el-portal-del-tango/sabotage/featured.jpg",
+    date: "2026-03-13",
 
   },
 
@@ -849,6 +965,7 @@ const songs = [
     artist: "Armando Alonso",
     src: "https://files.catbox.moe/arm4rw.mp3",
     img: "/recitales/beertonic/armand2/featured.png",
+    date: "2026-03-26",
 
   },
 
@@ -857,6 +974,7 @@ const songs = [
     artist: "La Reja Estudio",
     src: "https://files.catbox.moe/6zk2lj.mp3",
     img: "/covers/cinidrama.png",
+    date: "2026-03-21",
 
   },
 
@@ -865,6 +983,7 @@ const songs = [
     artist: "Cínica",
     src: "https://files.catbox.moe/ebajw2.mp3",
     img: "/covers/cinidrama.png",
+    date: "2026-03-21",
 
   },
 
@@ -873,6 +992,7 @@ const songs = [
     artist: "DRAMA",
     src: "https://files.catbox.moe/4xqu71.mp3",
     img: "/covers/cinidrama.png",
+    date: "2026-03-21",
 
   },
 
@@ -881,6 +1001,7 @@ const songs = [
     artist: "Epifanicas",
     src: "https://files.catbox.moe/4h9707.mp3",
     img: "/recitales/sala-belgrano/epi-blues/featured.png",
+    date: "2026-03-27",
 
   },
 
@@ -889,6 +1010,7 @@ const songs = [
     artist: "Pueblues",
     src: "https://files.catbox.moe/78zr8t.mp3",
     img: "/recitales/sala-belgrano/epi-blues/featured.png",
+    date: "2026-03-27",
 
   },
 
@@ -897,6 +1019,7 @@ const songs = [
     artist: "Eruca Sativa",
     src: "https://files.catbox.moe/f9iilj.mp3",
     img: "/recitales/club-racing/eruca/featured.webp",
+    date: "2026-05-08",
 
   },
 
@@ -905,6 +1028,7 @@ const songs = [
     artist: "Dudosa Procedencia",
     src: "https://files.catbox.moe/aqbbib.mp3",
     img: "/recitales/juventus/dudosa-inteligencia-corpo/featured.webp",
+    date: "2026-05-09",
 
   },
 
@@ -913,6 +1037,7 @@ const songs = [
     artist: "Intelogencia Accidental",
     src: "https://files.catbox.moe/cxp9ne.mp3",
     img: "/recitales/juventus/dudosa-inteligencia-corpo/featured.webp",
+    date: "2026-05-09",
 
   },
 
@@ -921,6 +1046,7 @@ const songs = [
     artist: "Corpo Porco",
     src: "https://files.catbox.moe/aeakx3.mp3",
     img: "/recitales/juventus/dudosa-inteligencia-corpo/featured.webp",
+    date: "2026-05-09",
 
   },
 
@@ -929,6 +1055,7 @@ const songs = [
     artist: "Maquinaria Divina",
     src: "https://files.catbox.moe/2ph46d.mp3",
     img: "/recitales/la-ronda/rondadebandas-3/featured.jpg",
+    date: "2026-07-10",
 
   },
 
@@ -937,6 +1064,7 @@ const songs = [
     artist: "Catango Trio",
     src: "https://files.catbox.moe/3zcs4e.mp3",
     img: "/recitales/la-ronda/rondadebandas-3/featured.jpg",
+    date: "2026-07-10",
 
   },
 
@@ -946,6 +1074,7 @@ const songs = [
     artist: "Cínica",
     src: "https://files.catbox.moe/g0xnhf.mp3",
     img: "/recitales/la-ronda/rondadebandas-3/featured.jpg",
+    date: "2026-07-10",
 
   },
 
@@ -954,6 +1083,7 @@ const songs = [
     artist: "Paprika's Band",
     src: "https://files.catbox.moe/g0xnhf.mp3",
     img: "/recitales/ruta30/paprikas/featured.jpg",
+    date: "2026-07-17",
 
   },
 
@@ -962,6 +1092,7 @@ const songs = [
     artist: "Entrance",
     src: "https://audiogusano.neocities.org/audio/sala-biaus/entrancinibase-17-7-26/entrance-sala-11-7-26.mp3",
     img: "/recitales/sala-biaus/entrance-cinica-base/featured.webp",
+    date: "2026-07-18",
 
   },
 
@@ -970,6 +1101,7 @@ const songs = [
     artist: "Cínica",
     src: "https://audiogusano.neocities.org/audio/sala-biaus/entrancinibase-17-7-26/cinica-sala7-26.mp3",
     img: "/recitales/sala-biaus/entrance-cinica-base/featured.webp",
+    date: "2026-07-18",
 
   },
 
@@ -978,6 +1110,7 @@ const songs = [
     artist: "Base",
     src: "https://audiogusano.neocities.org/audio/sala-biaus/entrancinibase-17-7-26/base-biaus-7-26.mp3",
     img: "/recitales/sala-biaus/entrance-cinica-base/featured.webp",
+    date: "2026-07-18",
 
   },
 
@@ -987,17 +1120,160 @@ const songs = [
 
 songs.reverse();
 
+// Map songs to dates using Hugo's recitalData or title parsing
+songs.forEach(song => {
+  if (song.date) return;
+
+  // 1. Try to match by audio src URL
+  const srcMatch = window.recitalData.find(r => r.audios && r.audios.includes(song.src));
+  if (srcMatch) {
+    song.date = srcMatch.date;
+    return;
+  }
+  
+  // 2. Fallback: Try to match by img path
+  if (song.img && song.img.includes('/recitales/')) {
+    const cleanImgPath = song.img.replace(/\/[^\/]+$/, '');
+    const match = window.recitalData.find(r => {
+      const cleanPermalink = r.permalink.replace(/\/$/, '');
+      return cleanImgPath.includes(cleanPermalink) || cleanPermalink.includes(cleanImgPath);
+    });
+    if (match) {
+      song.date = match.date;
+      return;
+    }
+  }
+  
+  // 3. Fallback: try to match by title (e.g. DD-MM-YY or DD-MM-YYYY)
+  if (song.title) {
+    const dateMatch = song.title.match(/(\d{1,2})-(\d{1,2})-(\d{2,4})/);
+    if (dateMatch) {
+      const day = dateMatch[1].padStart(2, '0');
+      const month = dateMatch[2].padStart(2, '0');
+      let year = dateMatch[3];
+      if (year.length === 2) year = '20' + year;
+      song.date = `${year}-${month}-${day}`;
+    }
+  }
+});
+
 const audio = new Audio();
 audio.preload = "none";
 
+// Extract unique bands from all song artists to populate band select dropdown
+const searchFilter = document.getElementById("searchFilter");
+const bandFilter = document.getElementById("bandFilter");
+const dateFilter = document.getElementById("dateFilter");
+const clearDateBtn = document.getElementById("clearDateBtn");
+const toggleFiltersBtn = document.getElementById("toggleFiltersBtn");
+const playlistFilters = document.querySelector(".playlist-filters");
+
+// Toggle filters visibility
+toggleFiltersBtn.addEventListener('click', () => {
+  playlistFilters.classList.toggle("hidden");
+  toggleFiltersBtn.classList.toggle("active");
+});
+
+const uniqueDates = new Set();
+songs.forEach(song => {
+  if (song.date) {
+    uniqueDates.add(song.date);
+  }
+});
+
+const bands = new Set();
+songs.forEach(song => {
+  if (song.artist) {
+    // Split by comma in case there are multiple bands/artists listed
+    song.artist.split(',').forEach(artistName => {
+      const clean = artistName.trim();
+      if (clean && clean !== "Unknown Artist") {
+        bands.add(clean);
+      }
+    });
+  }
+});
+
+// Sort and populate band filter select
+const sortedBands = Array.from(bands).sort((a, b) => a.localeCompare(b, undefined, { sensitivity: 'base' }));
+sortedBands.forEach(band => {
+  const opt = document.createElement("option");
+  opt.value = band;
+  opt.textContent = band;
+  bandFilter.appendChild(opt);
+});
+
+// Filter states
+let filteredSongs = [...songs];
+
+function normalizeText(str) {
+  return str.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+}
+
+function filterSongs() {
+  const searchQuery = normalizeText(searchFilter.value.trim());
+  const selectedBand = bandFilter.value.toLowerCase();
+  const selectedDate = dateFilter.value;
+  
+  filteredSongs = songs.filter(song => {
+    let searchMatch = true;
+    if (searchQuery) {
+      const titleMatch = song.title && normalizeText(song.title).includes(searchQuery);
+      const artistMatch = song.artist && normalizeText(song.artist).includes(searchQuery);
+      searchMatch = titleMatch || artistMatch;
+    }
+
+    // Band filter
+    let bandMatch = true;
+    if (selectedBand) {
+      bandMatch = song.artist && song.artist.toLowerCase().includes(selectedBand);
+    }
+    
+    // Date filter
+    let dateMatch = true;
+    if (selectedDate) {
+      dateMatch = song.date === selectedDate;
+    }
+    
+    return searchMatch && bandMatch && dateMatch;
+  });
+  
+  populateSongList();
+  
+  // If shuffle is active, update shuffle queue to respect filter
+  if (isShuffled) {
+    updateShuffleQueue();
+  }
+}
+
 function populateSongList() {
   songListEl.innerHTML = "";
-  songs.forEach((song, index) => {
+  filteredSongs.forEach((song) => {
+    const originalIndex = songs.indexOf(song);
     const li = document.createElement("li");
-    li.dataset.index = index;
+    li.dataset.index = originalIndex;
+    
+    if (originalIndex === currentSongIndex) {
+      li.classList.add("active");
+    }
+    
+    let dateBadge = "";
+    if (song.date) {
+      const parts = song.date.split('-');
+      if (parts.length === 3) {
+        dateBadge = `<span class="song-date">${parts[2]}/${parts[1]}</span>`;
+      }
+    }
+
     li.innerHTML = `
-      <span>${song.title} - ${song.artist}</span>
-      <span class="song-duration"></span>
+      <div class="song-info-meta">
+        <span class="song-title-text">${song.title || "Unknown"}</span>
+        <span class="song-artist-text">${song.artist || "Unknown Artist"}</span>
+      </div>
+      <div class="song-duration-meta">
+        ${dateBadge}
+        <span class="song-duration"></span>
+      </div>
     `;
     songListEl.appendChild(li);
   });
@@ -1017,8 +1293,9 @@ function loadSong(index) {
   audio.src = song.src;
 
   // Update active song in playlist
-  songListEl.querySelectorAll("li").forEach((item, i) => {
-    item.classList.toggle("active", i === index);
+  songListEl.querySelectorAll("li").forEach((item) => {
+    const itemIndex = parseInt(item.dataset.index);
+    item.classList.toggle("active", itemIndex === index);
   });
 
   // Reset UI
@@ -1039,6 +1316,105 @@ populateSongList();
 loadSong(currentSongIndex);
 
 // === EVENT LISTENERS ===
+
+// Bind filters input events
+searchFilter.addEventListener('input', filterSongs);
+bandFilter.addEventListener('change', filterSongs);
+dateFilter.addEventListener('change', filterSongs);
+clearDateBtn.addEventListener('click', () => {
+  dateFilter.value = "";
+  datePickerLabel.textContent = "Seleccionar fecha";
+  document.querySelectorAll(".cal-day-selected").forEach(el => el.classList.remove("cal-day-selected"));
+  filterSongs();
+});
+
+// Custom date picker calendar
+const datePickerBtn = document.getElementById("datePickerBtn");
+const datePickerDropdown = document.getElementById("datePickerDropdown");
+const datePickerLabel = document.getElementById("datePickerLabel");
+const calGrid = document.getElementById("calGrid");
+const calTitle = document.getElementById("calTitle");
+const prevMonth = document.getElementById("prevMonth");
+const nextMonth = document.getElementById("nextMonth");
+
+let calMonth = new Date().getMonth();
+let calYear = new Date().getFullYear();
+
+function renderCalendar(month, year) {
+  const monthNames = ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
+  calTitle.textContent = `${monthNames[month]} ${year}`;
+
+  const firstDay = new Date(year, month, 1).getDay();
+  const daysInMonth = new Date(year, month + 1, 0).getDate();
+  const startOffset = firstDay === 0 ? 6 : firstDay - 1;
+
+  calGrid.innerHTML = "";
+
+  for (let i = 0; i < startOffset; i++) {
+    const el = document.createElement("div");
+    el.classList.add("cal-empty");
+    calGrid.appendChild(el);
+  }
+
+  for (let d = 1; d <= daysInMonth; d++) {
+    const el = document.createElement("div");
+    el.textContent = d;
+    el.classList.add("cal-day");
+
+    const dateStr = `${year}-${String(month + 1).padStart(2, "0")}-${String(d).padStart(2, "0")}`;
+
+    if (uniqueDates.has(dateStr)) {
+      el.classList.add("cal-day-has-event");
+    }
+
+    const today = new Date();
+    if (d === today.getDate() && month === today.getMonth() && year === today.getFullYear()) {
+      el.classList.add("cal-day-today");
+    }
+
+    if (dateFilter.value === dateStr) {
+      el.classList.add("cal-day-selected");
+    }
+
+    el.addEventListener("click", () => {
+      document.querySelectorAll(".cal-day-selected").forEach(el => el.classList.remove("cal-day-selected"));
+      el.classList.add("cal-day-selected");
+      dateFilter.value = dateStr;
+      const parts = dateStr.split("-");
+      datePickerLabel.textContent = `${parts[2]}/${parts[1]}/${parts[0]}`;
+      datePickerDropdown.classList.remove("show");
+      filterSongs();
+    });
+
+    calGrid.appendChild(el);
+  }
+}
+
+prevMonth.addEventListener("click", () => {
+  calMonth--;
+  if (calMonth < 0) { calMonth = 11; calYear--; }
+  renderCalendar(calMonth, calYear);
+});
+
+nextMonth.addEventListener("click", () => {
+  calMonth++;
+  if (calMonth > 11) { calMonth = 0; calYear++; }
+  renderCalendar(calMonth, calYear);
+});
+
+datePickerBtn.addEventListener("click", (e) => {
+  e.stopPropagation();
+  datePickerDropdown.classList.toggle("show");
+  if (datePickerDropdown.classList.contains("show")) {
+    renderCalendar(calMonth, calYear);
+  }
+});
+
+document.addEventListener("click", (e) => {
+  if (!datePickerDropdown.contains(e.target) && e.target !== datePickerBtn) {
+    datePickerDropdown.classList.remove("show");
+  }
+});
 
 // Function to close playlist
 const closeDrawer = () => {
@@ -1065,7 +1441,13 @@ prevBtn.onclick = () => {
     currentShuffledIndex = (currentShuffledIndex - 1 + shuffledSongs.length) % shuffledSongs.length;
     currentSongIndex = shuffledSongs[currentShuffledIndex];
   } else {
-    currentSongIndex = (currentSongIndex - 1 + songs.length) % songs.length;
+    let idx = filteredSongs.indexOf(songs[currentSongIndex]);
+    if (idx === -1) {
+      currentSongIndex = songs.indexOf(filteredSongs[filteredSongs.length - 1]);
+    } else {
+      idx = (idx - 1 + filteredSongs.length) % filteredSongs.length;
+      currentSongIndex = songs.indexOf(filteredSongs[idx]);
+    }
   }
   isPlaying = true;
   loadSong(currentSongIndex);
@@ -1078,7 +1460,13 @@ nextBtn.onclick = () => {
     currentShuffledIndex = (currentShuffledIndex + 1) % shuffledSongs.length;
     currentSongIndex = shuffledSongs[currentShuffledIndex];
   } else {
-    currentSongIndex = (currentSongIndex + 1) % songs.length;
+    let idx = filteredSongs.indexOf(songs[currentSongIndex]);
+    if (idx === -1) {
+      currentSongIndex = songs.indexOf(filteredSongs[0]);
+    } else {
+      idx = (idx + 1) % filteredSongs.length;
+      currentSongIndex = songs.indexOf(filteredSongs[idx]);
+    }
   }
   isPlaying = true;
   loadSong(currentSongIndex);
@@ -1143,7 +1531,8 @@ audio.onended = () => {
   } else if (repeatMode === "all") {
     nextBtn.click();
   } else {
-    if (currentSongIndex === songs.length - 1 && !isShuffled) {
+    let idx = filteredSongs.indexOf(songs[currentSongIndex]);
+    if (idx === filteredSongs.length - 1 && !isShuffled) {
       isPlaying = false;
       playPauseBtn.textContent = "play_arrow";
       albumArt.classList.remove('playing');
@@ -1166,21 +1555,25 @@ repeatBtn.onclick = () => {
     repeatMode = "none";
     repeatBtn.textContent = "repeat";
   }
-  repeatBtn.style.color = repeatMode === "none" ? "#fff" : "#1db954";
+  repeatBtn.style.color = repeatMode === "none" ? "#fff" : "#fae316";
 };
 
-shuffleBtn.onclick = () => {
-  isShuffled = !isShuffled;
-  shuffleBtn.style.color = isShuffled ? "#1db954" : "#fff";
-
+function updateShuffleQueue() {
   if (isShuffled) {
-    shuffledSongs = shuffleArray([...Array(songs.length).keys()]);
+    const filteredIndices = filteredSongs.map(s => songs.indexOf(s));
+    shuffledSongs = shuffleArray(filteredIndices);
     const idx = shuffledSongs.indexOf(currentSongIndex);
     if (idx > -1) shuffledSongs.splice(idx, 1);
     shuffledSongs.unshift(currentSongIndex);
   } else {
     shuffledSongs = [];
   }
+}
+
+shuffleBtn.onclick = () => {
+  isShuffled = !isShuffled;
+  shuffleBtn.style.color = isShuffled ? "#fae316" : "#fff";
+  updateShuffleQueue();
 };
 
 // Utilities
@@ -1207,14 +1600,6 @@ audio.onerror = () => {
 };
 
 volume.value = audio.volume;
-
-// Function to open playlist
-playlistBtn.onclick = () => {
-  playlist.classList.add("show");
-  overlay.classList.add("active");
-};
-
-
 
 // Function to open playlist
 playlistBtn.onclick = () => {

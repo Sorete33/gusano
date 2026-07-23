@@ -1,5 +1,5 @@
 ---
-date : 2025-10-02T01:04:40-03:00
+date : '2025-10-02'
 title : "Casco y Guada en Grey Bar"
 weight: -15
 bandas: [Casco y Guada]

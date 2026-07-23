@@ -1,5 +1,5 @@
 ---
-date : 2025-09-25T00:59:57-03:00
+date : '2025-09-25'
 title : "Telar en Beertonic"
 weight: -14
 bandas: [Telar]

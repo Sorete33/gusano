@@ -1,6 +1,6 @@
 ---
 title: 'Primaleon, No Soy de Acá, Entrance y Loz Pozoz en el Festival Consciente a beneficio del CAAC en El Portal del Tango'
-date: '2025-04-04'
+date: '2025-04-19'
 weight: '-5'
 draft: false
 bandas: [Entrance, Primaleon, No Soy de Acá, Los Pozoz]
