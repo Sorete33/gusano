@@ -45,7 +45,7 @@ const songs = [
     src: "https://files.catbox.moe/cc7crl.mp3",
     img: "/covers/festimaga1.jpg",
   },
-  
+
   {
     title: "Sala Roja Festimaga 1",
     artist: "Sala Roja",
@@ -185,7 +185,7 @@ const songs = [
     src: "https://files.catbox.moe/i52swa.mp3",
     img: "/covers/spinetta.webp",
   },
-  
+
   {
     title: "Mate Jazz en Beertonic",
     artist: "Mate Jazz",
@@ -563,35 +563,35 @@ const songs = [
     src: "https://files.catbox.moe/1q21vg.mp3",
     img: "/covers/bad-drama.jpg",
   },
-  
+
   {
     title: "Sociedad Macabra en año nuevo fest",
     artist: "Sociedad Macabra",
     src: "https://files.catbox.moe/nz514m.mp3",
     img: "/covers/año.png",
   },
-    
+
   {
     title: "Parasomnia en año nuevo fest",
     artist: "Parasomnia",
     src: "https://files.catbox.moe/a6e37m.mp3",
     img: "/covers/año.png",
   },
-    
+
   {
     title: "IA en año nuevo fest",
     artist: "Inteligencia Accidental",
     src: "https://files.catbox.moe/i60k6t.mp3",
     img: "/covers/año.png",
-  }, 
-    
+  },
+
   {
     title: "Los Bad Seed en año nuevo fest",
     artist: "Los Bad Seed",
     src: "https://files.catbox.moe/hgf90e.mp3",
     img: "/covers/año.png",
   },
-    
+
 
   {
     title: "Epifanicas en Encuentro por las Artes",
@@ -608,7 +608,7 @@ const songs = [
     img: "/covers/epi-roco-sun.jpg",
   },
 
-  
+
   {
     title: "Roco y los Chacks en Encuentro por las Artes",
     artist: "Roco y los Chacks",
@@ -756,14 +756,14 @@ const songs = [
     src: "https://files.catbox.moe/pmd0a9.mp3",
     img: "/covers/juanito.jpg",
   },
-  
+
   {
     title: "Paprika's Band en Encuentro por las Artes",
     artist: "Paprika's Band",
     src: "https://files.catbox.moe/npl2es.mp3",
     img: "/covers/juanito.jpg",
   },
-  
+
   {
     title: "Muchiut y los monjes del dudaismo en Encuentro por las Artes",
     artist: "Muchiut y los monjes del dudaismo",
@@ -806,7 +806,7 @@ const songs = [
     img: "/recitales/tren/nancy/featured.png",
   },
 
-  
+
   {
     title: "Armando Alonso Trío en Sala Belgrano",
     artist: "Armando Alonso",
@@ -814,7 +814,7 @@ const songs = [
     img: "/recitales/sala-belgrano/armando/featured.jpg",
   },
 
-  
+
   {
     title: "Base en Sala Biaus",
     artist: "Base",
@@ -924,11 +924,71 @@ const songs = [
 
   },
 
+  {
+    title: "Maquinaria Divina Ronda de Bandas 3",
+    artist: "Maquinaria Divina",
+    src: "https://files.catbox.moe/2ph46d.mp3",
+    img: "/recitales/la-ronda/rondadebandas-3/featured.jpg",
+
+  },
+
+  {
+    title: "Catango Trio Ronda de Bandas 3",
+    artist: "Catango Trio",
+    src: "https://files.catbox.moe/3zcs4e.mp3",
+    img: "/recitales/la-ronda/rondadebandas-3/featured.jpg",
+
+  },
+
+
+  {
+    title: "Cínica Ronda de Bandas 3",
+    artist: "Cínica",
+    src: "https://files.catbox.moe/g0xnhf.mp3",
+    img: "/recitales/la-ronda/rondadebandas-3/featured.jpg",
+
+  },
+
+  {
+    title: "Paprika's Band en Ruta 30",
+    artist: "Paprika's Band",
+    src: "https://files.catbox.moe/g0xnhf.mp3",
+    img: "/recitales/ruta30/paprikas/featured.jpg",
+
+  },
+
+  {
+    title: "Entrance en Sala Biaus",
+    artist: "Entrance",
+    src: "https://audiogusano.neocities.org/audio/sala-biaus/entrancinibase-17-7-26/entrance-sala-11-7-26.mp3",
+    img: "/recitales/sala-biaus/entrance-cinica-base/featured.webp",
+
+  },
+
+  {
+    title: "Cínica en Sala Biaus",
+    artist: "Cínica",
+    src: "https://audiogusano.neocities.org/audio/sala-biaus/entrancinibase-17-7-26/cinica-sala7-26.mp3",
+    img: "/recitales/sala-biaus/entrance-cinica-base/featured.webp",
+
+  },
+
+  {
+    title: "Base en Sala Biaus",
+    artist: "Base",
+    src: "https://audiogusano.neocities.org/audio/sala-biaus/entrancinibase-17-7-26/base-biaus-7-26.mp3",
+    img: "/recitales/sala-biaus/entrance-cinica-base/featured.webp",
+
+  },
+
+
 
 ];
 
+songs.reverse();
 
 const audio = new Audio();
+audio.preload = "none";
 
 function populateSongList() {
   songListEl.innerHTML = "";
@@ -940,14 +1000,6 @@ function populateSongList() {
       <span class="song-duration"></span>
     `;
     songListEl.appendChild(li);
-
-    const tempAudio = new Audio(song.src);
-    tempAudio.onloadedmetadata = () => {
-      li.querySelector('.song-duration').textContent = formatTime(tempAudio.duration);
-    };
-    tempAudio.onerror = () => {
-      li.querySelector('.song-duration').textContent = "Error";
-    };
   });
 }
 
@@ -955,13 +1007,13 @@ function loadSong(index) {
   const song = songs[index];
   title.textContent = song.title || "Unknown Title";
   artist.textContent = song.artist || "Unknown Artist";
-  
+
   albumArt.src = song.img || 'images/default.jpg';
-  albumArt.onerror = function() {
+  albumArt.onerror = function () {
     this.onerror = null;
     this.src = 'https://placehold.co/250x250/333333/FFFFFF?text=No+Art';
   };
-  
+
   audio.src = song.src;
 
   // Update active song in playlist
@@ -1015,9 +1067,9 @@ prevBtn.onclick = () => {
   } else {
     currentSongIndex = (currentSongIndex - 1 + songs.length) % songs.length;
   }
+  isPlaying = true;
   loadSong(currentSongIndex);
   audio.play();
-  isPlaying = true;
 };
 
 nextBtn.onclick = () => {
@@ -1028,22 +1080,22 @@ nextBtn.onclick = () => {
   } else {
     currentSongIndex = (currentSongIndex + 1) % songs.length;
   }
+  isPlaying = true;
   loadSong(currentSongIndex);
   audio.play();
-  isPlaying = true;
 };
 
 songListEl.onclick = (e) => {
   let targetLi = e.target.closest("li");
   if (targetLi && targetLi.dataset.index !== undefined) {
     currentSongIndex = parseInt(targetLi.dataset.index);
+    isPlaying = true;
     loadSong(currentSongIndex);
     audio.play();
-    isPlaying = true;
 
     // AUTO-CLOSE: This hides the drawer after picking a song.
     // On desktop, this has no effect because the sidebar is fixed by CSS.
-    closeDrawer(); 
+    closeDrawer();
   }
 };
 
@@ -1065,7 +1117,16 @@ audio.ontimeupdate = () => {
 };
 
 audio.onloadedmetadata = () => {
-  durationEl.textContent = formatTime(audio.duration);
+  const durationStr = formatTime(audio.duration);
+  durationEl.textContent = durationStr;
+
+  const activeLi = songListEl.querySelector(`li[data-index="${currentSongIndex}"]`);
+  if (activeLi) {
+    const durationSpan = activeLi.querySelector('.song-duration');
+    if (durationSpan) {
+      durationSpan.textContent = durationStr;
+    }
+  }
 };
 
 // Volume
