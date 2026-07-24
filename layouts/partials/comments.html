@@ -19,7 +19,7 @@
               {{ time.Format "02/01/2006 15:04" .date }}
             </span>
           </div>
-          <p class="text-neutral-700 dark:text-neutral-300 whitespace-pre-line text-base leading-relaxed">
+          <p class="text-neutral-700 dark:text-neutral-300 whitespace-pre-line text-base leading-relaxed comment-message">
             {{- .message -}}
           </p>
         </div>
@@ -67,6 +67,19 @@
           placeholder="{{ i18n "comments.placeholder" | default "Escribe tu comentario aquí..." }}" 
           class="w-full px-3 py-2 rounded-md border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-800 text-neutral-950 dark:text-neutral-50 focus:outline-none focus:ring-2 focus:ring-primary-500"
         ></textarea>
+
+        <!-- Formatting toolbar -->
+        <div class="flex flex-wrap items-center gap-1 mt-2 relative">
+          <button type="button" class="fmt-btn" data-fmt="bold" title="Negrita (Ctrl+B)"><b>B</b></button>
+          <button type="button" class="fmt-btn" data-fmt="italic" title="Cursiva (Ctrl+I)"><i>I</i></button>
+          <button type="button" class="fmt-btn" data-fmt="link" title="Hipervínculo (Ctrl+K)">🔗</button>
+          <span class="toolbar-sep"></span>
+          <button type="button" id="emoji-btn" class="fmt-btn" title="Insertar emoji">😊</button>
+          <button type="button" id="media-btn" class="fmt-btn" title="Insertar imagen o GIF">🖼️</button>
+          <div id="emoji-picker" class="emoji-picker hidden">
+            <div id="emoji-grid" class="emoji-grid"></div>
+          </div>
+        </div>
       </div>
 
       <button 
@@ -79,8 +92,225 @@
 
       <div id="comment-status" class="hidden text-sm p-3 rounded-md mt-2"></div>
     </form>
+
+    <!-- Media URL dialog -->
+    <div id="media-dialog" class="media-overlay">
+      <div class="media-box">
+        <div class="media-box-header">
+          <h5>Insertar imagen o GIF</h5>
+          <button type="button" id="media-close">&times;</button>
+        </div>
+        <label>URL de la imagen o GIF</label>
+        <input type="url" id="media-url" placeholder="https://ejemplo.com/imagen.gif">
+        <div class="media-box-actions">
+          <button type="button" id="media-cancel">Cancelar</button>
+          <button type="button" id="media-insert">Insertar</button>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
+
+<style>
+  .fmt-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 0.375rem;
+    font-size: 1rem;
+    cursor: pointer;
+    border: none;
+    background: transparent;
+    color: inherit;
+    transition: background-color .15s;
+  }
+  .fmt-btn:hover {
+    background-color: rgba(0,0,0,0.08);
+  }
+  .dark .fmt-btn:hover {
+    background-color: rgba(255,255,255,0.1);
+  }
+  .fmt-btn b, .fmt-btn i {
+    font-size: .875rem;
+  }
+  .toolbar-sep {
+    display: inline-block;
+    width: 1px;
+    height: 1.25rem;
+    background-color: #d4d4d4;
+    margin: 0 .25rem;
+  }
+  .dark .toolbar-sep {
+    background-color: #525252;
+  }
+  .emoji-picker {
+    position: absolute;
+    z-index: 50;
+    top: 100%;
+    left: 0;
+    margin-top: 4px;
+    background: #fff;
+    border: 1px solid #d4d4d4;
+    border-radius: 0.75rem;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+    padding: 10px;
+    max-width: 290px;
+  }
+  .dark .emoji-picker {
+    background: #262626;
+    border-color: #525252;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+  }
+  .emoji-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 4px;
+  }
+  .emoji-item {
+    cursor: pointer;
+    text-align: center;
+    font-size: 1.25rem;
+    padding: 2px;
+    border-radius: 4px;
+    transition: background-color .15s;
+    user-select: none;
+  }
+  .emoji-item:hover {
+    background-color: #f5f5f5;
+  }
+  .dark .emoji-item:hover {
+    background-color: #404040;
+  }
+  .media-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 50;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0,0,0,0.35);
+  }
+  .media-overlay.open {
+    display: flex;
+  }
+  .media-box {
+    background: #fff;
+    border: 1px solid #d4d4d4;
+    border-radius: 0.75rem;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+    padding: 1.25rem;
+    width: 100%;
+    max-width: 360px;
+    margin: 0 1rem;
+  }
+  .dark .media-box {
+    background: #262626;
+    border-color: #525252;
+  }
+  .media-box-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+  }
+  .media-box-header h5 {
+    font-size: .875rem;
+    font-weight: 600;
+    margin: 0;
+    color: inherit;
+  }
+  .media-box-header button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    line-height: 1;
+    color: #a3a3a3;
+    padding: 0;
+  }
+  .media-box-header button:hover {
+    color: #525252;
+  }
+  .dark .media-box-header button:hover {
+    color: #d4d4d4;
+  }
+  .media-box label {
+    display: block;
+    font-size: .75rem;
+    font-weight: 500;
+    color: #737373;
+    margin-bottom: .375rem;
+  }
+  .dark .media-box label {
+    color: #a3a3a3;
+  }
+  .media-box input[type="url"] {
+    width: 100%;
+    padding: .5rem .75rem;
+    border: 1px solid #d4d4d4;
+    border-radius: .375rem;
+    background: #fff;
+    color: inherit;
+    font-size: .875rem;
+    outline: none;
+    margin-bottom: .75rem;
+    box-sizing: border-box;
+  }
+  .media-box input[type="url"]:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 2px rgba(37,99,235,0.2);
+  }
+  .dark .media-box input[type="url"] {
+    background: #262626;
+    border-color: #525252;
+    color: #e5e5e5;
+  }
+  .dark .media-box input[type="url"]:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 2px rgba(59,130,246,0.2);
+  }
+  .media-box-actions {
+    display: flex;
+    gap: .5rem;
+    justify-content: flex-end;
+  }
+  .media-box-actions button {
+    padding: .375rem .75rem;
+    font-size: .875rem;
+    font-weight: 500;
+    border-radius: .375rem;
+    cursor: pointer;
+    border: none;
+  }
+  .media-box-actions button:first-child {
+    color: #737373;
+    background: transparent;
+  }
+  .media-box-actions button:first-child:hover {
+    background: rgba(0,0,0,0.06);
+  }
+  .dark .media-box-actions button:first-child {
+    color: #a3a3a3;
+  }
+  .dark .media-box-actions button:first-child:hover {
+    background: rgba(255,255,255,0.08);
+  }
+  .media-box-actions button:last-child {
+    color: #fff;
+    background: #2563eb;
+  }
+  .media-box-actions button:last-child:hover {
+    background: #1d4ed8;
+  }
+  .comment-message img {
+    border-radius: 0.5rem;
+    max-width: 100%;
+    height: auto;
+    margin: 0.5rem 0;
+  }
+</style>
 
 <script>
   document.getElementById('comment-form').addEventListener('submit', async function(e) {
@@ -147,5 +377,153 @@
           : "bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-400");
     }
   });
+</script>
+
+<script>
+(function() {
+  var emojis = [
+    '😀','😃','😄','😁','😆','🤣','😂','🙂','😉','😊',
+    '😇','🥰','😍','🤩','😘','😋','😜','🤭','🤫','🤔',
+    '😏','🙄','😎','🥳','😢','😭','😤','😡','👿','💀',
+    '👋','✌️','👍','👎','👏','🙌','🤝','💪','🔥','✨',
+    '❤️','🧡','💛','💚','💙','💜','🖤','💔','⭐','🌈',
+    '🎵','🎶','🎸','🎹','🎤','🎧','🎉','🎊','🍕','☕'
+  ];
+
+  var textarea = document.getElementById('comment-message');
+  if (!textarea) return;
+
+  function insertAtCursor(t, text) {
+    var start = t.selectionStart;
+    var end = t.selectionEnd;
+    t.value = t.value.substring(0, start) + text + t.value.substring(end);
+    t.selectionStart = t.selectionEnd = start + text.length;
+    t.focus();
+  }
+
+  function wrapSelection(t, before, after) {
+    var start = t.selectionStart;
+    var end = t.selectionEnd;
+    if (start === end) {
+      t.value = t.value.substring(0, start) + before + after + t.value.substring(end);
+      t.selectionStart = start + before.length;
+      t.selectionEnd = end + before.length;
+    } else {
+      t.value = t.value.substring(0, start) + before + t.value.substring(start, end) + after + t.value.substring(end);
+      t.selectionStart = start + before.length;
+      t.selectionEnd = end + before.length;
+    }
+    t.focus();
+  }
+
+  // Formatting buttons
+  document.querySelectorAll('.fmt-btn[data-fmt]').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var fmt = btn.getAttribute('data-fmt');
+      if (fmt === 'bold') {
+        wrapSelection(textarea, '**', '**');
+      } else if (fmt === 'italic') {
+        wrapSelection(textarea, '*', '*');
+      } else if (fmt === 'link') {
+        var selected = textarea.value.substring(textarea.selectionStart, textarea.selectionEnd);
+        var url = window.prompt('URL del enlace:', 'https://');
+        if (url && url !== 'https://') {
+          var text = selected || 'enlace';
+          insertAtCursor(textarea, '[' + text + '](' + url + ')');
+        }
+      }
+    });
+  });
+
+  // Emoji picker
+  var emojiBtn = document.getElementById('emoji-btn');
+  var emojiPicker = document.getElementById('emoji-picker');
+  var emojiGrid = document.getElementById('emoji-grid');
+
+  if (emojiBtn && emojiPicker && emojiGrid) {
+    emojis.forEach(function(emoji) {
+      var span = document.createElement('span');
+      span.textContent = emoji;
+      span.className = 'emoji-item';
+      span.setAttribute('role', 'button');
+      span.setAttribute('tabindex', '0');
+      span.addEventListener('click', function(e) {
+        e.stopPropagation();
+        insertAtCursor(textarea, emoji);
+        emojiPicker.classList.add('hidden');
+      });
+      emojiGrid.appendChild(span);
+    });
+
+    emojiBtn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      emojiPicker.classList.toggle('hidden');
+    });
+
+    document.addEventListener('click', function() {
+      if (!emojiPicker.classList.contains('hidden')) {
+        emojiPicker.classList.add('hidden');
+      }
+    });
+
+    emojiPicker.addEventListener('click', function(e) {
+      e.stopPropagation();
+    });
+  }
+
+  // Media dialog
+  var mediaBtn = document.getElementById('media-btn');
+  var mediaDialog = document.getElementById('media-dialog');
+  var mediaClose = document.getElementById('media-close');
+  var mediaCancel = document.getElementById('media-cancel');
+  var mediaInsert = document.getElementById('media-insert');
+  var mediaUrl = document.getElementById('media-url');
+
+  if (mediaBtn && mediaDialog && mediaClose && mediaCancel && mediaInsert && mediaUrl) {
+    mediaBtn.addEventListener('click', function() {
+      mediaDialog.classList.add('open');
+    });
+
+    function closeMediaDialog() {
+      mediaDialog.classList.remove('open');
+    }
+
+    mediaClose.addEventListener('click', closeMediaDialog);
+    mediaCancel.addEventListener('click', closeMediaDialog);
+    mediaDialog.addEventListener('click', function(e) {
+      if (e.target === mediaDialog) closeMediaDialog();
+    });
+
+    mediaInsert.addEventListener('click', function() {
+      var url = mediaUrl.value.trim();
+      if (url) {
+        insertAtCursor(textarea, url);
+        mediaUrl.value = '';
+        closeMediaDialog();
+      }
+    });
+
+    mediaUrl.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        mediaInsert.click();
+      }
+    });
+  }
+
+  // Render formatting and images in comment messages
+  document.querySelectorAll('.comment-message').forEach(function(el) {
+    var html = el.innerHTML;
+    // Convert markdown links [text](url)
+    html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener" class="text-primary-600 dark:text-primary-400 hover:underline">$1</a>');
+    // Convert bold **text**
+    html = html.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
+    // Convert italic *text*
+    html = html.replace(/\*([^*]+)\*/g, '<em>$1</em>');
+    // Convert image URLs
+    html = html.replace(/(https?:\/\/[^\s<]+?\.(?:jpg|jpeg|png|gif|webp|svg)(?:\?[^\s<]*)?)/gi, '<br><img src="$1" alt="" loading="lazy"><br>');
+    el.innerHTML = html;
+  });
+})();
 </script>
 {{ end }}
