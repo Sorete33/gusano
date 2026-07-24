@@ -75,6 +75,7 @@
           <button type="button" class="fmt-btn" data-fmt="link" title="Hipervínculo (Ctrl+K)">🔗</button>
           <span class="toolbar-sep"></span>
           <button type="button" id="emoji-btn" class="fmt-btn" title="Insertar emoji">😊</button>
+          <button type="button" id="pepe-btn" class="fmt-btn" title="Insertar Pepe emoji">🐸</button>
           <button type="button" id="media-btn" class="fmt-btn" title="Insertar imagen o GIF">🖼️</button>
           <div id="emoji-picker" class="emoji-picker hidden">
             <div id="emoji-grid" class="emoji-grid"></div>
@@ -106,6 +107,18 @@
           <button type="button" id="media-cancel">Cancelar</button>
           <button type="button" id="media-insert">Insertar</button>
         </div>
+      </div>
+    </div>
+
+    <!-- Pepe emoji picker -->
+    <div id="pepe-picker" class="pepe-overlay">
+      <div class="pepe-box">
+        <div class="pepe-box-header">
+          <h5>Pepe Emojis</h5>
+          <button type="button" id="pepe-close">&times;</button>
+        </div>
+        <div id="pepe-loading" class="pepe-loading">Cargando emojis...</div>
+        <div id="pepe-content" class="pepe-content"></div>
       </div>
     </div>
   </div>
@@ -310,6 +323,121 @@
     height: auto;
     margin: 0.5rem 0;
   }
+
+  .pepe-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 50;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0,0,0,0.35);
+  }
+  .pepe-overlay.open {
+    display: flex;
+  }
+  .pepe-box {
+    background: #fff;
+    border: 1px solid #d4d4d4;
+    border-radius: 0.75rem;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+    width: 100%;
+    max-width: 48rem;
+    max-height: 80vh;
+    margin: 0 1rem;
+    display: flex;
+    flex-direction: column;
+  }
+  .dark .pepe-box {
+    background: #262626;
+    border-color: #525252;
+  }
+  .pepe-box-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.25rem;
+    border-bottom: 1px solid #e5e5e5;
+    flex-shrink: 0;
+  }
+  .dark .pepe-box-header {
+    border-bottom-color: #404040;
+  }
+  .pepe-box-header h5 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0;
+    color: inherit;
+  }
+  .pepe-box-header button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    line-height: 1;
+    color: #a3a3a3;
+    padding: 0;
+  }
+  .pepe-box-header button:hover {
+    color: #525252;
+  }
+  .dark .pepe-box-header button:hover {
+    color: #d4d4d4;
+  }
+  .pepe-loading {
+    padding: 2rem;
+    text-align: center;
+    color: #a3a3a3;
+    font-size: .875rem;
+  }
+  .pepe-content {
+    overflow-y: auto;
+    padding: 0.75rem;
+    flex: 1;
+    min-height: 0;
+  }
+  .pepe-section {
+    margin-bottom: 1rem;
+  }
+  .pepe-section-title {
+    font-size: .8125rem;
+    font-weight: 600;
+    color: #737373;
+    padding: .5rem .25rem;
+    margin: 0;
+    border-bottom: 1px solid #f0f0f0;
+  }
+  .dark .pepe-section-title {
+    color: #a3a3a3;
+    border-bottom-color: #333;
+  }
+  .pepe-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(56px, 1fr));
+    gap: 4px;
+    padding: 6px 0;
+  }
+  .pepe-item {
+    cursor: pointer;
+    border-radius: 6px;
+    padding: 4px;
+    transition: background-color .15s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .pepe-item:hover {
+    background-color: #f0f0f0;
+  }
+  .dark .pepe-item:hover {
+    background-color: #404040;
+  }
+  .pepe-item img {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    image-rendering: auto;
+  }
 </style>
 
 <script>
@@ -382,12 +510,83 @@
 <script>
 (function() {
   var emojis = [
-    '😀','😃','😄','😁','😆','🤣','😂','🙂','😉','😊',
-    '😇','🥰','😍','🤩','😘','😋','😜','🤭','🤫','🤔',
-    '😏','🙄','😎','🥳','😢','😭','😤','😡','👿','💀',
-    '👋','✌️','👍','👎','👏','🙌','🤝','💪','🔥','✨',
-    '❤️','🧡','💛','💚','💙','💜','🖤','💔','⭐','🌈',
-    '🎵','🎶','🎸','🎹','🎤','🎧','🎉','🎊','🍕','☕'
+    // Faces & emotions
+    '😀','😃','😄','😁','😆','😅','🤣','😂','🙂','😊','😇',
+    '🥰','😍','🤩','😘','😗','😚','😙','🥲','😋','😛','😜','🤪',
+    '😝','🤑','🤗','🤭','🫣','🤫','🤔','🫡','🤐','🤨','😐',
+    '😑','😶','🫥','😏','😒','🙄','😬','😮‍💨','🤥','😌','😔',
+    '😪','🤤','😴','😷','🤒','🤕','🤧','🥵','🥶','🥴','😵',
+    '🤯','🤠','🥳','🥸','😎','🤓','🧐','😕','😟','🙁','😮',
+    '😯','😲','😳','🥺','😢','😭','😤','😠','😡','🤬','👿',
+    '💀','☠️','💩','🤡','👹','👺','👻','💀','☠️',
+    // Gestures & body
+    '👋','🤚','🖐️','✋','🖖','👌','🤌','🤏','✌️','🤞','🫰',
+    '🤟','🤘','🤙','👈','👉','👆','🖕','👇','☝️','👍','👎',
+    '✊','👊','🤛','🤜','👏','🙌','🫶','👐','🤲','🤝','🙏',
+    '✍️','💅','🤳','💪','🦵','🦶','👂','🦻','👃','🧠','🫀',
+    '🫁','🦷','👅','👁️','👀','🗣️','👤','👥','🫂',
+    // Hearts & symbols
+    '❤️','🧡','💛','💚','💙','💜','🖤','🤍','🤎','💔','❤️‍🔥',
+    '❤️‍🩹','💖','💗','💘','💝','💞','💟','❣️','💕','🫶','💌',
+    '💋','💯','💫','⭐','🌟','✨','🔥','💥','💢','💨','💦',
+    '💤','🕐','🕑','🕒','🕓','🕔','🕕','🕖','🕗','🕘','🕙',
+    '🕚','🕛','✅','❌','❓','❔','❕','❗','➕','➖','➗',
+    '♠️','♥️','♦️','♣️','🃏','🀄','🎴','🔴','🟠','🟡','🟢',
+    '🔵','🟣','🟤','⚫','⚪','🟥','🟧','🟨','🟩','🟦','🟪',
+    '🟫','⬛','⬜','🔶','🔷','🔸','🔹','🔺','🔻','💠',
+    // Animals
+    '🐶','🐱','🐭','🐹','🐰','🦊','🐻','🐼','🐻‍❄️','🐨','🐯',
+    '🦁','🐮','🐷','🐸','🐵','🐔','🐧','🐦','🐤','🐣','🐥',
+    '🦆','🦅','🦉','🦇','🐺','🐗','🐴','🦄','🐝','🐛','🦋',
+    '🐌','🐞','🐜','🦟','🦗','🪳','🐢','🐍','🦎','🦖','🦕',
+    '🐙','🦑','🦐','🦞','🦀','🐡','🐠','🐟','🐬','🐳','🐋',
+    '🦈','🪸','🐊','🐅','🐆','🦓','🦍','🦧','🐘','🦛','🦏',
+    '🐪','🐫','🦒','🦘','🦬','🐃','🐂','🐄','🐎','🐖','🐏',
+    '🐑','🦙','🐐','🦌','🐕','🐩','🦮','🐕‍🦺','🐈','🐈‍⬛','🪶',
+    '🐓','🦃','🦤','🦚','🦜','🦢','🦩','🕊️','🐇','🦝','🦨',
+    '🦡','🦫','🦦','🦥','🐁','🐀','🐿️','🦔','🐾','🐉','🐲',
+    // Food & drink
+    '🍏','🍎','🍐','🍊','🍋','🍌','🍉','🍇','🍓','🫐','🍈',
+    '🍒','🍑','🥭','🍍','🥥','🥝','🍅','🍆','🥑','🥦','🥬',
+    '🥒','🌶️','🫑','🌽','🥕','🫒','🧄','🧅','🥔','🍠','🫘',
+    '🥐','🍞','🥖','🥨','🧀','🥚','🍳','🧈','🥞','🧇','🥓',
+    '🥩','🍗','🍖','🦴','🌭','🍔','🍟','🍕','🫓','🥪','🥙',
+    '🧆','🌮','🌯','🫔','🥗','🥘','🫕','🥫','🍝','🍜','🍲',
+    '🍛','🍣','🍱','🥟','🦪','🍤','🍙','🍚','🍘','🍥','🥠',
+    '🥮','🫓','🍢','🍡','🍧','🍨','🍦','🥧','🧁','🍰','🎂',
+    '🍮','🍭','🍬','🍫','🍿','🍩','🍪','🌰','🥜','🍯','🥛',
+    '🍼','🫖','☕','🍵','🧉','🥤','🧃','🧋','🍶','🍺','🍻',
+    '🥂','🍷','🫗','🥃','🧊','🥄','🍴','🍽️','🥣','🥡','🥢',
+    '🧂',
+    // Activities & music
+    '⚽','🏀','🏈','⚾','🥎','🎾','🏐','🏉','🥏','🎱','🪀',
+    '🏓','🏸','🏒','🏑','🥍','🏏','🪃','🥅','⛳','🪁','🏹',
+    '🎣','🤿','🥊','🥋','🎽','🛹','🛼','🛷','⛸️','🥌','🎿',
+    '⛷️','🏂','🪂','🏋️','🤼','🤸','🤺','⛹️','🤾','🏌️','🏇',
+    '🧘','🏄','🏊','🤽','🚣','🧗','🚵','🚴','🎯','🎮','🕹️',
+    '🎲','♟️','🧩','🎰','🎳','🎭','🎨','🧵','🧶','🎼','🎤',
+    '🎧','🎺','🎻','🪕','🥁','🪘','🎵','🎶','🎙️','🎚️','🎛️',
+    '🎤','🎧','📻','🎷','🪗','🎸','🎹','🎺','🎻','🪈','🥁',
+    // Objects
+    '📱','💻','🖥️','🖨️','⌨️','🖱️','🖲️','💽','💾','💿','📀',
+    '📼','📷','📸','📹','🎥','📽️','🎞️','📞','☎️','📟','📠',
+    '📺','📻','🎙️','📻','🔋','🪫','🔌','💡','🔦','🕯️','🪔',
+    '🧯','🗑️','🛢️','💸','💵','💴','💶','💷','🪙','💰','💳',
+    '💎','⚖️','🪜','🧰','🪛','🔧','🔨','⚒️','🛠️','⛏️','🪚',
+    '🔩','⚙️','🪤','🧱','⛓️','🧲','🔫','💣','🧨','🧬','🔬',
+    '🔭','🩸','💉','💊','🩹','🩺','🌡️','🧹','🪠','🧺','🧻',
+    '🚽','🚿','🛁','🪥','🪒','🧴','🪶','🪣','🧽','🪟','🪑',
+    '🚪','🛋️','🛏️','🛌','🧸','🪆','🖼️','🪞','🪟','🎁','🎊',
+    '🎉','🎀','🪄','🕳️','💬','💭','🗯️','👁️‍🗨️','🗨️','🗩️',
+    // Nature
+    '🌵','🎄','🌲','🌳','🌴','🪵','🌱','🌿','☘️','🍀','🎍',
+    '🪴','🎋','🍃','🍂','🍁','🍄','🐚','🪨','🌾','💐','🌷',
+    '🌹','🥀','🌺','🌸','🌼','🌻','🌞','🌝','🌛','🌜','🌚',
+    '🌕','🌖','🌗','🌘','🌑','🌒','🌓','🌔','🌙','🌎','🌍',
+    '🌏','🪐','💫','⭐','🌟','✨','⚡','☄️','💥','🔥','🌪️',
+    '🌈','☀️','🌤️','⛅','🌥️','☁️','🌦️','🌧️','⛈️','🌩️','🌨️',
+    '❄️','☃️','⛄','🌬️','💨','💧','💦','🫧','🌊','☔','🪄',
+    '🧩','🎯'
   ];
 
   var textarea = document.getElementById('comment-message');
@@ -511,6 +710,68 @@
     });
   }
 
+  // Pepe emoji picker
+  var pepeBtn = document.getElementById('pepe-btn');
+  var pepePicker = document.getElementById('pepe-picker');
+  var pepeClose = document.getElementById('pepe-close');
+  var pepeContent = document.getElementById('pepe-content');
+  var pepeLoading = document.getElementById('pepe-loading');
+
+  if (pepeBtn && pepePicker && pepeClose && pepeContent && pepeLoading) {
+    var pepeLoaded = false;
+
+    pepeBtn.addEventListener('click', function() {
+      pepePicker.classList.add('open');
+      if (!pepeLoaded) {
+        fetch('/pepe/manifest.json').then(function(r) { return r.json(); }).then(function(data) {
+          pepeLoaded = true;
+          pepeLoading.style.display = 'none';
+          var dirs = {};
+          data.forEach(function(item) {
+            if (!dirs[item.dir]) dirs[item.dir] = [];
+            dirs[item.dir].push(item);
+          });
+          Object.keys(dirs).forEach(function(dir) {
+            var section = document.createElement('div');
+            section.className = 'pepe-section';
+            var title = document.createElement('div');
+            title.className = 'pepe-section-title';
+            title.textContent = dir + ' (' + dirs[dir].length + ')';
+            section.appendChild(title);
+            var grid = document.createElement('div');
+            grid.className = 'pepe-grid';
+            dirs[dir].forEach(function(item) {
+              var img = document.createElement('img');
+              img.src = '/' + item.path;
+              img.alt = item.name;
+              img.loading = 'lazy';
+              var div = document.createElement('div');
+              div.className = 'pepe-item';
+              div.appendChild(img);
+              div.addEventListener('click', function() {
+                insertAtCursor(textarea, '/' + item.path);
+                pepePicker.classList.remove('open');
+              });
+              grid.appendChild(div);
+            });
+            section.appendChild(grid);
+            pepeContent.appendChild(section);
+          });
+        })['catch'](function() {
+          pepeLoading.textContent = 'Error al cargar emojis.';
+        });
+      }
+    });
+
+    pepeClose.addEventListener('click', function() {
+      pepePicker.classList.remove('open');
+    });
+
+    pepePicker.addEventListener('click', function(e) {
+      if (e.target === pepePicker) pepePicker.classList.remove('open');
+    });
+  }
+
   // Render formatting and images in comment messages
   document.querySelectorAll('.comment-message').forEach(function(el) {
     var html = el.innerHTML;
@@ -522,6 +783,8 @@
     html = html.replace(/\*([^*]+)\*/g, '<em>$1</em>');
     // Convert image URLs
     html = html.replace(/(https?:\/\/[^\s<]+?\.(?:jpg|jpeg|png|gif|webp|svg)(?:\?[^\s<]*)?)/gi, '<br><img src="$1" alt="" loading="lazy"><br>');
+    // Convert /pepe/ paths to images
+    html = html.replace(/(\/pepe\/[^\s<]+?\.(?:gif|png|jpg|jpeg|webp|svg))/gi, '<br><img src="$1" alt="" loading="lazy"><br>');
     el.innerHTML = html;
   });
 })();
