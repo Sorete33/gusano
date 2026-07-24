@@ -1,0 +1,264 @@
+.
+├── añonuevofest
+│   ├── featured.png
+│   └── index.md
+├── avispa
+│   └── epifanicas
+│       ├── featured.jpg
+│       └── index.md
+├── beertonic
+│   ├── armand
+│   │   ├── featured.png
+│   │   └── index.md
+│   ├── armand2
+│   │   ├── featured.png
+│   │   └── index.md
+│   ├── cumple
+│   │   ├── featured.jpg
+│   │   └── index.md
+│   ├── fango-y-perlas
+│   │   ├── featured.webp
+│   │   └── index.md
+│   ├── mate-jazz.md
+│   │   ├── featured.jpg
+│   │   └── index.md
+│   ├── sofa
+│   │   ├── featured.png
+│   │   └── index.md
+│   ├── telar
+│   │   ├── featured.png
+│   │   └── index.md
+│   ├── yula
+│   │   ├── featured.jpg
+│   │   └── index.md
+│   └── yula-2
+│       ├── featured.jpg
+│       └── index.md
+├── casa-fratello
+│   └── armand
+│       ├── featured.png
+│       └── index.md
+├── club-ciclon
+│   └── alianza-rock
+│       ├── featured.jpg
+│       └── index.md
+├── club-conjura
+│   └── conjura-fest
+│       ├── featured.jpg
+│       └── index.md
+├── club-la-pampa
+│   └── epifanicas
+│       ├── featured.jpg
+│       └── index.md
+├── club-racing
+│   └── eruca
+│       ├── featured.webp
+│       └── index.md
+├── conser
+│   └── ensamble
+│       ├── featured.jpg
+│       └── index.md
+├── el-portal-del-tango
+│   ├── festi-consciente
+│   │   ├── featured.webp
+│   │   └── index.md
+│   ├── festi-distor
+│   │   ├── featured.webp
+│   │   └── index.md
+│   ├── nueva-musica
+│   │   ├── featured.jpg
+│   │   └── index.md
+│   └── sabotage
+│       ├── featured.jpg
+│       └── index.md
+├── encuentro-por-las-artes
+│   ├── anticover-13
+│   │   ├── featured.png
+│   │   └── index.md
+│   ├── epi-sun-roco
+│   │   ├── featured.jpg
+│   │   └── index.md
+│   ├── flaco
+│   │   ├── featured.webp
+│   │   └── index.md
+│   ├── juanito-papri-nico
+│   │   ├── featured.png
+│   │   └── index.md
+│   └── urbana
+│       ├── featured.png
+│       └── index.md
+├── festival-demolición
+│   ├── featured.jpg
+│   └── index.md
+├── fm-urbana
+│   └── memoria
+│       ├── featured.jpg
+│       └── index.md
+├── galpon-beer
+│   ├── festival-consciente
+│   │   ├── featured.webp
+│   │   └── index.md
+│   └── nomad-calavera-down
+│       ├── featured.jpg
+│       └── index.md
+├── gelatiamo
+│   └── armand
+│       ├── featured.jpg
+│       └── index.md
+├── grey-bar
+│   ├── casco-guada
+│   │   ├── featured.png
+│   │   └── index.md
+│   └── epifanicas
+│       ├── featured.jpg
+│       ├── genio.jpg
+│       └── index.md
+├── il-maestro
+│   └── amar-cia
+│       ├── featured.jpg
+│       └── index.md
+├── juventus
+│   └── dudosa-inteligencia-corpo
+│       ├── archivo1.webp
+│       ├── archivo2.webp
+│       ├── archivo3.webp
+│       ├── archivo4.webp
+│       ├── featured2.webp
+│       ├── featured.webp
+│       ├── imagen2.webp
+│       └── index.md
+├── la-casa-de-lu
+│   ├── featured.jpg
+│   └── index.md
+├── la-maga
+│   ├── festimaga1
+│   │   ├── featured.png
+│   │   └── index.md
+│   ├── festimaga2
+│   │   ├── featured.png
+│   │   └── index.md
+│   ├── festimaga3
+│   │   ├── featured.jpg
+│   │   └── index.md
+│   ├── festimaga4
+│   │   ├── featured.jpg
+│   │   └── index.md
+│   └── festimaga5
+│       ├── featured.png
+│       └── index.md
+├── lap-cantina
+│   └── epifanicas
+│       ├── featured.jpg
+│       └── index.md
+├── la-ronda
+│   ├── cumple-ronda
+│   │   ├── featured.jpg
+│   │   └── index.md
+│   ├── rondadebandas-1
+│   │   ├── featured.jpg
+│   │   └── index.md
+│   ├── rondadebandas-2
+│   │   ├── featured.jpg
+│   │   └── index.md
+│   └── rondadebandas-3
+│       ├── featured.jpg
+│       └── index.md
+├── mad-monky
+│   ├── featured.webp
+│   └── index.md
+├── plaza-charo
+│   └── valquirias
+│       ├── featured.webp
+│       └── index.md
+├── plaza-de-la-memoria
+│   └── 50años
+│       ├── featured.webp
+│       └── index.md
+├── plaza-venezuela
+│   └── catonga
+│       ├── featured.jpg
+│       └── index.md
+├── rincon
+│   └── janedoe
+│       ├── featured.jpg
+│       ├── index.md
+│       └── tormenta.gif
+├── ruta30
+│   ├── kuelgue
+│   │   ├── featured.png
+│   │   └── index.md
+│   ├── oesterheld
+│   │   ├── featured.jpg
+│   │   └── index.md
+│   └── paprikas
+│       ├── featured.jpg
+│       └── index.md
+├── sala-belgrano
+│   ├── armando
+│   │   ├── featured.jpg
+│   │   └── index.md
+│   └── epi-blues
+│       ├── featured.png
+│       └── index.md
+├── sala-biaus
+│   ├── alimaña-sur-muchiut
+│   │   ├── featured.jpg
+│   │   └── index.md
+│   ├── bad-seed
+│   │   ├── featured.jpg
+│   │   └── index.md
+│   ├── base-ismael-corpo
+│   │   ├── featured.jpg
+│   │   └── index.md
+│   ├── drama-seed
+│   │   ├── featured.jpg
+│   │   └── index.md
+│   ├── entrance-cinica-base
+│   │   ├── featured.webp
+│   │   └── index.md
+│   ├── entrance-ia-sabotaje
+│   │   ├── featured.png
+│   │   └── index.md
+│   ├── epi-amy
+│   │   ├── featured.png
+│   │   └── index.md
+│   ├── epifanicas
+│   │   ├── featured.jpg
+│   │   └── index.md
+│   ├── ia
+│   │   ├── featured.jpg
+│   │   └── index.md
+│   ├── la-reja-fest
+│   │   ├── featured.png
+│   │   └── index.md
+│   ├── mr-nomad-cinik-ia
+│   │   ├── featured.jpg
+│   │   └── index.md
+│   └── oesterheld
+│       ├── featured.jpg
+│       └── index.md
+├── teatro-coliseo
+│   └── tigran
+│       ├── featured.jpg
+│       └── index.md
+├── teatro-trac
+│   ├── armand
+│   │   ├── featured.png
+│   │   └── index.md
+│   ├── paez-de-a-dos
+│   │   ├── featured.jpg
+│   │   └── index.md
+│   └── spinetta
+│       ├── featured.webp
+│       └── index.md
+├── tree-a.txt
+├── tren
+│   └── nancy
+│       ├── featured.png
+│       └── index.md
+└── varelabar
+    └── frondayraiz
+        ├── featured.jpg
+        └── index.md
+
+105 directories, 157 files

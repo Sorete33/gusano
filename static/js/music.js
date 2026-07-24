@@ -14,6 +14,8 @@ const playlistBtn = document.getElementById("togglePlaylist");
 const playlist = document.getElementById("playlist");
 const repeatBtn = document.getElementById("repeatBtn");
 const shuffleBtn = document.getElementById("shuffleBtn");
+const viewToggle = document.getElementById("viewToggle");
+const coverGrid = document.getElementById("coverGrid");
 const overlay = document.getElementById("overlay");
 const closePlaylist = document.getElementById("closePlaylist");
 
@@ -23,6 +25,7 @@ let currentSongIndex = 0;
 let repeatMode = "none";
 let shuffledSongs = [];
 let isShuffled = false;
+let viewMode = "list";
 // Song data (replace with your actual songs)
 const songs = [
   {
@@ -1240,6 +1243,10 @@ function filterSongs() {
   
   populateSongList();
   
+  if (viewMode === "grid") {
+    populateCoverGrid();
+  }
+  
   // If shuffle is active, update shuffle queue to respect filter
   if (isShuffled) {
     updateShuffleQueue();
@@ -1279,6 +1286,40 @@ function populateSongList() {
   });
 }
 
+function populateCoverGrid() {
+  coverGrid.innerHTML = "";
+  filteredSongs.forEach((song) => {
+    const originalIndex = songs.indexOf(song);
+    const item = document.createElement("div");
+    item.className = "cover-grid-item";
+    item.dataset.index = originalIndex;
+    if (originalIndex === currentSongIndex) {
+      item.classList.add("active");
+    }
+    const img = document.createElement("img");
+    img.src = song.img || "/covers/default.jpg";
+    img.alt = song.title || "Cover";
+    img.loading = "lazy";
+    img.onerror = function () {
+      this.onerror = null;
+      this.src = 'https://placehold.co/200x200/333333/FFFFFF?text=No+Art';
+    };
+    item.appendChild(img);
+    const titleEl = document.createElement("span");
+    titleEl.className = "cover-title";
+    titleEl.textContent = song.title || "";
+    item.appendChild(titleEl);
+    item.addEventListener("click", () => {
+      currentSongIndex = originalIndex;
+      isPlaying = true;
+      loadSong(currentSongIndex);
+      audio.play();
+      closeDrawer();
+    });
+    coverGrid.appendChild(item);
+  });
+}
+
 function loadSong(index) {
   const song = songs[index];
   title.textContent = song.title || "Unknown Title";
@@ -1294,6 +1335,10 @@ function loadSong(index) {
 
   // Update active song in playlist
   songListEl.querySelectorAll("li").forEach((item) => {
+    const itemIndex = parseInt(item.dataset.index);
+    item.classList.toggle("active", itemIndex === index);
+  });
+  coverGrid.querySelectorAll(".cover-grid-item").forEach((item) => {
     const itemIndex = parseInt(item.dataset.index);
     item.classList.toggle("active", itemIndex === index);
   });
@@ -1574,6 +1619,23 @@ shuffleBtn.onclick = () => {
   isShuffled = !isShuffled;
   shuffleBtn.style.color = isShuffled ? "var(--player-primary)" : "#fff";
   updateShuffleQueue();
+};
+
+viewToggle.onclick = () => {
+  if (viewMode === "list") {
+    viewMode = "grid";
+    viewToggle.textContent = "list";
+    viewToggle.classList.add("active");
+    songListEl.classList.add("hidden");
+    coverGrid.classList.add("active");
+    populateCoverGrid();
+  } else {
+    viewMode = "list";
+    viewToggle.textContent = "grid_view";
+    viewToggle.classList.remove("active");
+    songListEl.classList.remove("hidden");
+    coverGrid.classList.remove("active");
+  }
 };
 
 // Utilities
