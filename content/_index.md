@@ -11,6 +11,8 @@ title: Anuncio
 ° Vista de texto o grid de covers.
 
 ° Se puede escuchar en segundo plano desde el celular sin necesidad de tener la página abierta.
+
+![rocola-en-uso](/images/gif.gif)
 {{< /new >}}
 
 # Próximos eventos
