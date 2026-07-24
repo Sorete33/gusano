@@ -259,13 +259,13 @@ input[type="range"]::-moz-range-thumb:active {
 }
 
 .controls button:hover {
-  color: #fae316;
+  color: var(--player-primary);
   transform: scale(1.1);
 }
 
 .controls button#playPause {
   font-size: 3.5em;
-  background-color: #fae316;
+  background-color: var(--player-primary);
   color: #fff;
   width: 60px;
   height: 60px;
@@ -279,7 +279,7 @@ input[type="range"]::-moz-range-thumb:active {
 }
 
 .controls button#playPause:hover {
-  background-color: #fae316;
+  background-color: var(--player-primary-hover);
   transform: scale(1.05);
 }
 
@@ -575,10 +575,8 @@ aside li {
   display: flex;
   flex-direction: column;
   gap: 2px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
   flex: 1;
+  min-width: 0;
 }
 
 .song-title-text {

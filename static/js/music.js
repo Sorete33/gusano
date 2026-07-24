@@ -1555,7 +1555,7 @@ repeatBtn.onclick = () => {
     repeatMode = "none";
     repeatBtn.textContent = "repeat";
   }
-  repeatBtn.style.color = repeatMode === "none" ? "#fff" : "#fae316";
+  repeatBtn.style.color = repeatMode === "none" ? "#fff" : "var(--player-primary)";
 };
 
 function updateShuffleQueue() {
@@ -1572,7 +1572,7 @@ function updateShuffleQueue() {
 
 shuffleBtn.onclick = () => {
   isShuffled = !isShuffled;
-  shuffleBtn.style.color = isShuffled ? "#fae316" : "#fff";
+  shuffleBtn.style.color = isShuffled ? "var(--player-primary)" : "#fff";
   updateShuffleQueue();
 };
 
