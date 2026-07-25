@@ -12,6 +12,5 @@ layoutBackgroundBlu: true
 ---
 
 
-# <h1 style="text-align: center;">Museo de flyers</h1>
 
-<h1 style="text-align: center;">{{< gallery "flyers-viejos" >}}</h1>
+<h1 style=" center;">{{< gallery "flyers-viejos" >}}</h1>

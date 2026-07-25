@@ -1,7 +1,7 @@
 ---
 title: Anuncio
 ---
-{{< new title="Rocola actualizada" >}}
+<!-- {{< new title="Rocola actualizada" >}}
 ° Reproduce mejor los recitales al no cargar todos a la vez.
 
 ° Tiene un nuevo sistema de filtros por búsqueda, bandas o fecha.
@@ -13,7 +13,9 @@ title: Anuncio
 ° Se puede escuchar en segundo plano desde el celular sin necesidad de tener la página abierta.
 
 ![rocola-en-uso](/images/gif.gif)
-{{< /new >}}
+{{< /new >}} 
+-->
+
 
 # Próximos eventos
 
