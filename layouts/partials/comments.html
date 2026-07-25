@@ -83,13 +83,20 @@
         </div>
       </div>
 
-      <button 
-        type="submit" 
-        id="comment-submit-btn"
-        class="inline-flex items-center justify-center px-4 py-2 text-sm font-medium text-white bg-primary-600 hover:bg-primary-700 rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 disabled:opacity-50"
-      >
-        {{ i18n "comments.submit" | default "Enviar Comentario" }}
-      </button>
+      <div id="comment-preview" class="preview-pane hidden"></div>
+
+      <div class="flex flex-wrap gap-2 items-center">
+        <button type="button" id="preview-btn" class="inline-flex items-center justify-center px-4 py-2 text-sm font-medium text-neutral-700 dark:text-neutral-300 bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500">
+          {{ i18n "comments.preview" | default "Vista previa" }}
+        </button>
+        <button 
+          type="submit" 
+          id="comment-submit-btn"
+          class="inline-flex items-center justify-center px-4 py-2 text-sm font-medium text-white bg-primary-600 hover:bg-primary-700 rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 disabled:opacity-50"
+        >
+          {{ i18n "comments.submit" | default "Enviar Comentario" }}
+        </button>
+      </div>
 
       <div id="comment-status" class="hidden text-sm p-3 rounded-md mt-2"></div>
     </form>
@@ -324,6 +331,33 @@
     margin: 0.5rem 0;
   }
 
+  .preview-pane {
+    padding: 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid #d4d4d4;
+    background: #fafafa;
+    min-height: 80px;
+    line-height: 1.625;
+    font-size: 0.9375rem;
+  }
+  .dark .preview-pane {
+    background: #1a1a1a;
+    border-color: #525252;
+  }
+  .preview-pane img {
+    border-radius: 0.5rem;
+    max-width: 100%;
+    height: auto;
+    margin: 0.5rem 0;
+  }
+  .preview-pane a {
+    color: #2563eb;
+    text-decoration: underline;
+  }
+  .dark .preview-pane a {
+    color: #60a5fa;
+  }
+
   .pepe-overlay {
     display: none;
     position: fixed;
@@ -462,6 +496,12 @@
     // Bot check
     if (form.elements['honeypot'].value) {
       showStatus("Spam detectado.", "error");
+      return;
+    }
+
+    // Localhost check – prevent posting to production worker from dev
+    if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+      showStatus("Modo desarrollo: los comentarios no se envían desde localhost. Despliega el sitio o configura un worker local.", "error");
       return;
     }
 
@@ -772,6 +812,37 @@
     });
   }
 
+  // Preview toggle
+  var previewBtn = document.getElementById('preview-btn');
+  var previewPane = document.getElementById('comment-preview');
+  if (previewBtn && previewPane) {
+    previewBtn.addEventListener('click', function() {
+      if (previewPane.classList.contains('hidden')) {
+        var txt = textarea.value;
+        if (!txt.trim()) {
+          previewPane.innerHTML = '<em class="text-neutral-400 dark:text-neutral-500">' + '{{ i18n "comments.preview_empty" | default "Escribe algo para ver la vista previa." }}' + '</em>';
+        } else {
+          var html = txt
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
+            .replace(/\*([^*]+)\*/g, '<em>$1</em>')
+            .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>')
+            .replace(/(https?:\/\/[^\s<]+?\.(?:jpg|jpeg|png|gif|webp|svg)(?:\?[^\s<]*)?)/gi, '<br><img src="$1" alt="" loading="lazy"><br>')
+            .replace(/(\/pepe\/[^<]+?\.(?:gif|png|jpg|jpeg|webp|svg))/gi, function(m) { return '<br><img src="' + encodeURI(m) + '" alt="" loading="lazy"><br>'; })
+            .replace(/\n/g, '<br>');
+          previewPane.innerHTML = html;
+        }
+        previewBtn.textContent = '{{ i18n "comments.edit" | default "Editar" }}';
+        previewPane.classList.remove('hidden');
+      } else {
+        previewPane.classList.add('hidden');
+        previewBtn.textContent = '{{ i18n "comments.preview" | default "Vista previa" }}';
+      }
+    });
+  }
+
   // Render formatting and images in comment messages
   document.querySelectorAll('.comment-message').forEach(function(el) {
     var html = el.innerHTML;
@@ -784,7 +855,7 @@
     // Convert image URLs
     html = html.replace(/(https?:\/\/[^\s<]+?\.(?:jpg|jpeg|png|gif|webp|svg)(?:\?[^\s<]*)?)/gi, '<br><img src="$1" alt="" loading="lazy"><br>');
     // Convert /pepe/ paths to images
-    html = html.replace(/(\/pepe\/[^\s<]+?\.(?:gif|png|jpg|jpeg|webp|svg))/gi, '<br><img src="$1" alt="" loading="lazy"><br>');
+    html = html.replace(/(\/pepe\/[^<]+?\.(?:gif|png|jpg|jpeg|webp|svg))/gi, function(m) { return '<br><img src="' + encodeURI(m) + '" alt="" loading="lazy"><br>'; });
     el.innerHTML = html;
   });
 })();
