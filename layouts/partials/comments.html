@@ -19,7 +19,12 @@
       {{ range $commentList }}
         {{ if not .replyTo }}
           {{ $parentId := .commentId }}
-          {{ $replies := where $commentList "replyTo" $parentId }}
+          {{ $replies := slice }}
+          {{ range $commentList }}
+            {{ if and .replyTo (eq .replyTo $parentId) }}
+              {{ $replies = $replies | append . }}
+            {{ end }}
+          {{ end }}
           <div>
             <div class="p-4 rounded-lg bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800">
               <div class="flex items-center justify-between mb-2 text-sm">
@@ -53,6 +58,9 @@
                     <p class="text-neutral-700 dark:text-neutral-300 whitespace-pre-line text-base leading-relaxed comment-message">
                       {{- .message | safeHTML -}}
                     </p>
+                    <button type="button" class="reply-btn mt-2 text-sm text-primary-600 dark:text-primary-400 hover:underline" data-key="{{ .commentId }}" data-name="{{ .name | default "Anónimo" }}">
+                      {{ i18n "comments.reply" | default "Responder" }}
+                    </button>
                   </div>
                 {{ end }}
               </div>
