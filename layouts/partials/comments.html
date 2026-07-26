@@ -8,21 +8,65 @@
   {{ $comments := index site.Data.comments $slug }}
 
   {{ if $comments }}
+    {{ $commentList := slice }}
+    {{ range $key, $val := $comments }}
+      {{ $val = merge $val (dict "commentId" $key) }}
+      {{ $commentList = $commentList | append $val }}
+    {{ end }}
+    {{ $commentList = sort $commentList "date" "asc" }}
+
+    {{ $replyMap := dict }}
+    {{ range $commentList }}
+      {{ if .replyTo }}
+        {{ $parentId := .replyTo }}
+        {{ $existing := index $replyMap $parentId | default slice }}
+        {{ $replyMap = merge $replyMap (dict $parentId ($existing | append .)) }}
+      {{ end }}
+    {{ end }}
+
     <div class="space-y-6 mb-10">
-      {{ range sort $comments "date" "asc" }}
-        <div class="p-4 rounded-lg bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800">
-          <div class="flex items-center justify-between mb-2 text-sm">
-            <span class="font-bold text-neutral-800 dark:text-neutral-200">
-              {{ .name | default "Anónimo" }}
-            </span>
-            <span class="text-neutral-400 dark:text-neutral-500">
-              {{ time.Format "02/01/2006 15:04" .date }}
-            </span>
+      {{ range $commentList }}
+        {{ if not .replyTo }}
+          <div>
+            <div class="p-4 rounded-lg bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800">
+              <div class="flex items-center justify-between mb-2 text-sm">
+                <span class="font-bold text-neutral-800 dark:text-neutral-200">
+                  {{ .name | default "Anónimo" }}
+                </span>
+                <span class="text-neutral-400 dark:text-neutral-500">
+                  {{ time.Format "02/01/2006 15:04" .date }}
+                </span>
+              </div>
+              <p class="text-neutral-700 dark:text-neutral-300 whitespace-pre-line text-base leading-relaxed comment-message">
+                {{- .message | safeHTML -}}
+              </p>
+              <button type="button" class="reply-btn mt-2 text-sm text-primary-600 dark:text-primary-400 hover:underline" data-key="{{ .commentId }}" data-name="{{ .name | default "Anónimo" }}">
+                {{ i18n "comments.reply" | default "Responder" }}
+              </button>
+            </div>
+
+            {{ $replies := index $replyMap .commentId }}
+            {{ if $replies }}
+              <div class="ml-8 space-y-4 mt-4">
+                {{ range sort $replies "date" "asc" }}
+                  <div class="p-4 rounded-lg bg-neutral-50 dark:bg-neutral-900 border border-l-4 border-l-primary-400 dark:border-l-primary-600 border-neutral-200 dark:border-neutral-800">
+                    <div class="flex items-center justify-between mb-2 text-sm">
+                      <span class="font-bold text-neutral-800 dark:text-neutral-200">
+                        {{ .name | default "Anónimo" }}
+                      </span>
+                      <span class="text-neutral-400 dark:text-neutral-500">
+                        {{ time.Format "02/01/2006 15:04" .date }}
+                      </span>
+                    </div>
+                    <p class="text-neutral-700 dark:text-neutral-300 whitespace-pre-line text-base leading-relaxed comment-message">
+                      {{- .message | safeHTML -}}
+                    </p>
+                  </div>
+                {{ end }}
+              </div>
+            {{ end }}
           </div>
-          <p class="text-neutral-700 dark:text-neutral-300 whitespace-pre-line text-base leading-relaxed comment-message">
-            {{- .message | safeHTML -}}
-          </p>
-        </div>
+        {{ end }}
       {{ end }}
     </div>
   {{ else }}
@@ -36,8 +80,14 @@
       {{ i18n "comments.write_comment" | default "Dejar un comentario" }}
     </h4>
 
+    <div id="reply-context" class="hidden bg-primary-50 dark:bg-primary-900/20 p-3 rounded-md mb-4 text-sm flex items-center justify-between border border-primary-200 dark:border-primary-800">
+      <span>{{ i18n "comments.replying_to" | default "Respondiendo a" }} <strong id="reply-to-name"></strong></span>
+      <button type="button" id="cancel-reply" class="text-neutral-500 hover:text-neutral-700 dark:hover:text-neutral-300 font-bold text-lg leading-none">&times;</button>
+    </div>
+
     <form id="comment-form" class="space-y-4">
       <input type="hidden" name="permalink" value="{{ .RelPermalink }}">
+      <input type="hidden" name="replyTo" id="reply-to-input" value="">
       
       <!-- Honeypot anti-spam -->
       <input type="text" name="honeypot" class="hidden" style="display:none !important" autocomplete="off">
@@ -525,7 +575,8 @@
     const payload = {
       name: form.elements['name'].value.trim() || 'Anónimo',
       message: form.elements['message'].value.trim(),
-      permalink: form.elements['permalink'].value
+      permalink: form.elements['permalink'].value,
+      replyTo: form.elements['replyTo'].value.trim()
     };
 
     try {
@@ -540,6 +591,7 @@
       if (response.ok) {
         showStatus("¡Comentario enviado con éxito! Aparecerá en el sitio en unos minutos una vez que se complete la compilación.", "success");
         form.reset();
+        document.getElementById('reply-context').classList.add('hidden');
       } else {
         showStatus(`Error: ${data.error || 'No se pudo enviar el comentario.'}`, "error");
       }
@@ -823,6 +875,28 @@
 
     pepePicker.addEventListener('click', function(e) {
       if (e.target === pepePicker) pepePicker.classList.remove('open');
+    });
+  }
+
+  // Reply functionality
+  var replyContext = document.getElementById('reply-context');
+  var replyInput = document.getElementById('reply-to-input');
+  var replyName = document.getElementById('reply-to-name');
+  var cancelReplyBtn = document.getElementById('cancel-reply');
+
+  document.querySelectorAll('.reply-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      replyInput.value = this.getAttribute('data-key');
+      replyName.textContent = this.getAttribute('data-name');
+      replyContext.classList.remove('hidden');
+      document.getElementById('comment-message').focus();
+    });
+  });
+
+  if (cancelReplyBtn) {
+    cancelReplyBtn.addEventListener('click', function() {
+      replyInput.value = '';
+      replyContext.classList.add('hidden');
     });
   }
 
