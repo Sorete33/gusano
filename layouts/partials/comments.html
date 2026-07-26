@@ -15,18 +15,11 @@
     {{ end }}
     {{ $commentList = sort $commentList "date" "asc" }}
 
-    {{ $replyMap := dict }}
-    {{ range $commentList }}
-      {{ if .replyTo }}
-        {{ $parentId := .replyTo }}
-        {{ $existing := index $replyMap $parentId | default slice }}
-        {{ $replyMap = merge $replyMap (dict $parentId ($existing | append .)) }}
-      {{ end }}
-    {{ end }}
-
     <div class="space-y-6 mb-10">
       {{ range $commentList }}
         {{ if not .replyTo }}
+          {{ $parentId := .commentId }}
+          {{ $replies := where $commentList "replyTo" $parentId }}
           <div>
             <div class="p-4 rounded-lg bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800">
               <div class="flex items-center justify-between mb-2 text-sm">
@@ -45,7 +38,6 @@
               </button>
             </div>
 
-            {{ $replies := index $replyMap .commentId }}
             {{ if $replies }}
               <div class="ml-8 space-y-4 mt-4">
                 {{ range sort $replies "date" "asc" }}
