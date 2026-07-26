@@ -15,58 +15,28 @@
     {{ end }}
     {{ $commentList = sort $commentList "date" "asc" }}
 
-    <div class="space-y-6 mb-10">
+    <div id="comment-threads" class="space-y-6 mb-10">
       {{ range $commentList }}
-        {{ if not .replyTo }}
-          {{ $parentId := .commentId }}
-          {{ $replies := slice }}
-          {{ range $commentList }}
-            {{ if and .replyTo (eq .replyTo $parentId) }}
-              {{ $replies = $replies | append . }}
-            {{ end }}
-          {{ end }}
-          <div>
-            <div class="p-4 rounded-lg bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800">
-              <div class="flex items-center justify-between mb-2 text-sm">
-                <span class="font-bold text-neutral-800 dark:text-neutral-200">
-                  {{ .name | default "Anónimo" }}
-                </span>
-                <span class="text-neutral-400 dark:text-neutral-500">
-                  {{ time.Format "02/01/2006 15:04" .date }}
-                </span>
-              </div>
-              <p class="text-neutral-700 dark:text-neutral-300 whitespace-pre-line text-base leading-relaxed comment-message">
-                {{- .message | safeHTML -}}
-              </p>
-              <button type="button" class="reply-btn mt-2 text-sm text-primary-600 dark:text-primary-400 hover:underline" data-key="{{ .commentId }}" data-name="{{ .name | default "Anónimo" }}">
-                {{ i18n "comments.reply" | default "Responder" }}
-              </button>
+        <div class="comment-node {{ if or .replyTo .replyto }}is-reply{{ else }}is-top{{ end }}"
+             data-comment-id="{{ .commentId }}"
+             {{ if .replyTo }}data-reply-to="{{ .replyTo }}"{{ else if .replyto }}data-reply-to="{{ .replyto }}"{{ end }}>
+          <div class="p-4 rounded-lg bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800">
+            <div class="flex items-center justify-between mb-2 text-sm">
+              <span class="font-bold text-neutral-800 dark:text-neutral-200">
+                {{ .name | default "Anónimo" }}
+              </span>
+              <span class="text-neutral-400 dark:text-neutral-500">
+                {{ time.Format "02/01/2006 15:04" .date }}
+              </span>
             </div>
-
-            {{ if $replies }}
-              <div class="ml-8 space-y-4 mt-4">
-                {{ range sort $replies "date" "asc" }}
-                  <div class="p-4 rounded-lg bg-neutral-50 dark:bg-neutral-900 border border-l-4 border-l-primary-400 dark:border-l-primary-600 border-neutral-200 dark:border-neutral-800">
-                    <div class="flex items-center justify-between mb-2 text-sm">
-                      <span class="font-bold text-neutral-800 dark:text-neutral-200">
-                        {{ .name | default "Anónimo" }}
-                      </span>
-                      <span class="text-neutral-400 dark:text-neutral-500">
-                        {{ time.Format "02/01/2006 15:04" .date }}
-                      </span>
-                    </div>
-                    <p class="text-neutral-700 dark:text-neutral-300 whitespace-pre-line text-base leading-relaxed comment-message">
-                      {{- .message | safeHTML -}}
-                    </p>
-                    <button type="button" class="reply-btn mt-2 text-sm text-primary-600 dark:text-primary-400 hover:underline" data-key="{{ .commentId }}" data-name="{{ .name | default "Anónimo" }}">
-                      {{ i18n "comments.reply" | default "Responder" }}
-                    </button>
-                  </div>
-                {{ end }}
-              </div>
-            {{ end }}
+            <p class="text-neutral-700 dark:text-neutral-300 whitespace-pre-line text-base leading-relaxed comment-message">
+              {{- .message | safeHTML -}}
+            </p>
+            <button type="button" class="reply-btn mt-2 text-sm text-primary-600 dark:text-primary-400 hover:underline" data-key="{{ .commentId }}" data-name="{{ .name | default "Anónimo" }}">
+              {{ i18n "comments.reply" | default "Responder" }}
+            </button>
           </div>
-        {{ end }}
+        </div>
       {{ end }}
     </div>
   {{ else }}
@@ -388,6 +358,26 @@
     vertical-align: middle !important;
   }
 
+  .replies-container {
+    position: relative;
+  }
+  .replies-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -1.5rem;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, rgb(34 197 94 / 0.5), rgb(34 197 94 / 0.15));
+    border-radius: 1px;
+  }
+  .dark .replies-container::before {
+    background: linear-gradient(to bottom, rgb(74 222 128 / 0.5), rgb(74 222 128 / 0.15));
+  }
+  .comment-node.is-reply {
+    transition: opacity 0.2s, transform 0.2s;
+  }
+
   .preview-pane {
     padding: 1rem;
     border-radius: 0.5rem;
@@ -563,11 +553,8 @@
       return;
     }
 
-    // Localhost check – prevent posting to production worker from dev
-    if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
-      showStatus("Modo desarrollo: los comentarios no se envían desde localhost. Despliega el sitio o configura un worker local.", "error");
-      return;
-    }
+    // Allow localhost for development – uses the same workerUrl
+    // Remove this check when deploying to production if you want to block localhost
 
     submitBtn.disabled = true;
     submitBtn.textContent = "{{ i18n "comments.sending" | default "Enviando..." }}";
@@ -899,6 +886,26 @@
       replyContext.classList.add('hidden');
     });
   }
+
+  // Nest replies under their parent comments
+  (function nestComments() {
+    var container = document.getElementById('comment-threads');
+    if (!container) return;
+    var nodes = container.querySelectorAll('.comment-node.is-reply');
+    nodes.forEach(function(node) {
+      var parentId = node.getAttribute('data-reply-to');
+      if (!parentId) return;
+      var parent = container.querySelector('[data-comment-id="' + parentId + '"]');
+      if (!parent) return;
+      var replyBox = parent.querySelector('.replies-container');
+      if (!replyBox) {
+        replyBox = document.createElement('div');
+        replyBox.className = 'replies-container ml-8 space-y-4 mt-4';
+        parent.appendChild(replyBox);
+      }
+      replyBox.appendChild(node);
+    });
+  })();
 
   // Preview toggle
   var previewBtn = document.getElementById('preview-btn');
