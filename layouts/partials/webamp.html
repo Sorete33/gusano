@@ -28,6 +28,11 @@
     display: block;
     animation: webampReveal 0.5s ease-out;
   }
+  @media (max-width: 340px) {
+    .webamp-container {
+      left: 0.25rem;
+    }
+  }
   @keyframes webampReveal {
     from {
       opacity: 0;
@@ -37,6 +42,13 @@
       opacity: 1;
       transform: translateY(0) scale(1);
     }
+  }
+  #webamp,
+  #webamp * {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
   }
   .webamp-ripple {
     position: absolute;
@@ -229,20 +241,51 @@
         .catch(function () {});
     }
 
+    function preventWebampDragSelection() {
+      function setSelect(value) {
+        var body = document.body;
+        if (!body) return;
+        body.style.webkitUserSelect = value;
+        body.style.mozUserSelect = value;
+        body.style.msUserSelect = value;
+        body.style.userSelect = value;
+      }
+      document.addEventListener(
+        "mousedown",
+        function (e) {
+          if (e.target && e.target.closest && e.target.closest("#webamp")) {
+            setSelect("none");
+          }
+        },
+        true
+      );
+      document.addEventListener(
+        "mouseup",
+        function () {
+          setSelect("");
+        },
+        true
+      );
+      window.addEventListener("blur", function () {
+        setSelect("");
+      });
+    }
+    preventWebampDragSelection();
+
     function loadWebamp() {
       if (window.Webamp) {
         initWebamp();
         return;
       }
       var s = document.createElement("script");
-      s.src = "https://unpkg.com/webamp@1.5.0/built/webamp.bundle.min.js";
+      s.src = "https://unpkg.com/webamp@2.3.1/built/webamp.bundle.min.js";
       s.onload = initWebamp;
       document.head.appendChild(s);
     }
 
     function initWebamp() {
-      if (window.innerWidth < 768) return;
       if (!window.Webamp) return;
+      var isMobile = window.innerWidth < 768;
       const isSupported =
         (Webamp.isSupported && Webamp.isSupported()) ||
         (Webamp.browserIsSupported && Webamp.browserIsSupported());
@@ -260,9 +303,25 @@
           {
             url: {{ $skin | jsonify | safeJS }},
             name: "D-Shock"
+          },
+          {
+            url: {{ "skins/Black_SlanXP2.wsz" | relURL | jsonify | safeJS }},
+            name: "Black SlanXP2"
+          },
+          {
+            url: {{ "skins/Old_Mac-OS.wsz" | relURL | jsonify | safeJS }},
+            name: "Old Mac-OS"
           }
         ],
-        zIndex: 9999
+        zIndex: 9999,
+        enableMediaSession: true,
+        windowLayout: isMobile
+          ? {
+              main: { position: { left: 0, top: 0 } },
+              equalizer: { position: { left: 0, top: 116 } },
+              playlist: { position: { left: 0, top: 232 } }
+            }
+          : undefined
       });
       webamp.renderWhenReady(document.getElementById("webamp-app")).then(
         function () {
