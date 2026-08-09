@@ -134,6 +134,101 @@
       heroImg.addEventListener("click", handleHeroClick, true);
     }
 
+    function parseMpegHeader(bytes) {
+      if (!bytes || bytes.length < 12) return null;
+      var offset = 0;
+      if (
+        bytes.length > 12 &&
+        bytes[0] === 0x49 &&
+        bytes[1] === 0x44 &&
+        bytes[2] === 0x33
+      ) {
+        var tagSize =
+          ((bytes[6] & 0x7f) << 21) |
+          ((bytes[7] & 0x7f) << 14) |
+          ((bytes[8] & 0x7f) << 7) |
+          (bytes[9] & 0x7f);
+        offset = 10 + tagSize;
+        if ((bytes[5] & 0x10) !== 0) offset += 10;
+      }
+      var i = offset;
+      var n = bytes.length - 4;
+      for (; i < n; i++) {
+        if (bytes[i] === 0xff && (bytes[i + 1] & 0xe0) === 0xe0) break;
+      }
+      if (i >= n) return null;
+      var b1 = bytes[i + 1];
+      var b2 = bytes[i + 2];
+      var versionBits = (b1 >> 3) & 0x03;
+      var layerBits = (b1 >> 1) & 0x03;
+      if (versionBits === 1 || layerBits === 0) return null;
+      var sampleIdx = (b2 >> 2) & 0x03;
+      if (sampleIdx === 3) return null;
+      var base = [44100, 48000, 32000][sampleIdx];
+      var sampleRate =
+        versionBits === 3 ? base : versionBits === 2 ? base / 2 : base / 4;
+      var bitrateIdx = (b2 >> 4) & 0x0f;
+      var table;
+      if (versionBits === 3) {
+        table =
+          layerBits === 1
+            ? [0, 32, 40, 48, 56, 64, 80, 96, 112, 128, 160, 192, 224, 256, 320]
+            : layerBits === 2
+            ? [0, 32, 48, 56, 64, 80, 96, 112, 128, 160, 192, 224, 256, 320, 384]
+            : [0, 32, 64, 96, 128, 160, 192, 224, 256, 288, 320, 352, 384, 416, 448];
+      } else {
+        table =
+          layerBits === 3
+            ? [0, 32, 48, 56, 64, 80, 96, 112, 128, 144, 160, 176, 192, 224, 256]
+            : [0, 8, 16, 24, 32, 40, 48, 56, 64, 80, 96, 112, 128, 144, 160];
+      }
+      var bitrateKbps = table[bitrateIdx] || 0;
+      if (!bitrateKbps) return null;
+      return { sampleRate: sampleRate, bitrateKbps: bitrateKbps };
+    }
+
+    function applyRealMediaTags(webamp, track) {
+      if (!webamp || !track) return;
+      if (!webamp.store || typeof webamp.store.dispatch !== "function") return;
+      var url = track.url;
+      if (!url) return;
+      var state = webamp.store.getState();
+      var id = track.id != null ? track.id : null;
+      var meta = track.metaData || null;
+      if (id == null && state && state.tracks) {
+        for (var key in state.tracks) {
+          if (state.tracks[key] && state.tracks[key].url === url) {
+            id = key;
+            break;
+          }
+        }
+      }
+      if (id == null) return;
+      if (!meta && state && state.tracks && state.tracks[id]) {
+        meta = state.tracks[id];
+      }
+      fetch(url, { headers: { Range: "bytes=0-131071" } })
+        .then(function (resp) {
+          if (!resp.ok) throw new Error("Range fetch failed");
+          return resp.arrayBuffer();
+        })
+        .then(function (buf) {
+          var info = parseMpegHeader(new Uint8Array(buf));
+          if (!info || !info.sampleRate || !info.bitrateKbps) return;
+          webamp.store.dispatch({
+            type: "SET_MEDIA_TAGS",
+            id: id,
+            title: meta && meta.title ? meta.title : "",
+            artist: meta && meta.artist ? meta.artist : "",
+            album: meta && meta.album ? meta.album : "",
+            bitrate: info.bitrateKbps * 1000,
+            sampleRate: info.sampleRate,
+            numberOfChannels: 2
+          });
+        })
+        .catch(function () {});
+    }
+
     function loadWebamp() {
       if (window.Webamp) {
         initWebamp();
@@ -171,7 +266,24 @@
       });
       webamp.renderWhenReady(document.getElementById("webamp-app")).then(
         function () {
-          webamp.appendTracks({{ $tracks | jsonify | safeJS }});
+          var tracks = {{ $tracks | jsonify | safeJS }};
+          webamp.appendTracks(tracks);
+          webamp.onTrackDidChange(function (track) {
+            applyRealMediaTags(webamp, track);
+          });
+          if (tracks.length) {
+            applyRealMediaTags(webamp, {
+              url: tracks[0].url,
+              metaData: tracks[0].metaData
+            });
+          }
+          if (window.location.search.indexOf("__test") !== -1) {
+            window.__webamp = webamp;
+            window.__dbg = {
+              parseMpegHeader: parseMpegHeader,
+              applyRealMediaTags: applyRealMediaTags
+            };
+          }
           requestAnimationFrame(function () {
             var root = document.getElementById("webamp");
             if (!container || !root) return;
