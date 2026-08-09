@@ -35,6 +35,16 @@ jobs:
           DROPBOX_REFRESH_TOKEN: ${{ secrets.DROPBOX_REFRESH_TOKEN }}
         run: python sync_dropbox.py
 
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Refresh Track Durations
+        run: |
+          ffprobe -version >/dev/null 2>&1 || (sudo apt-get update && sudo apt-get install -y ffmpeg)
+          node scripts/get-durations.mjs
+
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:

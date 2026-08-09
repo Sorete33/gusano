@@ -1,0 +1,196 @@
+{{ $skin := "skins/skin.wsz" | relURL }}
+{{ $durations := dict }}
+{{ with index .Site.Data "playlist-durations" }}
+  {{ $durations = . }}
+{{ end }}
+{{ $tracks := slice }}
+{{ range .Site.Data.playlist }}
+  {{ $track := dict "url" .url "metaData" (dict "title" .title "artist" .artist) }}
+  {{ with index $durations .url }}
+    {{ $track = merge $track (dict "duration" (int .)) }}
+  {{ end }}
+  {{ $tracks = $tracks | append $track }}
+{{ end }}
+
+<div class="webamp-container">
+  <div id="webamp-app"></div>
+</div>
+
+<style>
+  .webamp-container {
+    display: none;
+    position: absolute;
+    top: 1.5rem;
+    left: 1.5rem;
+    z-index: 50;
+  }
+  .webamp-container.visible {
+    display: block;
+    animation: webampReveal 0.5s ease-out;
+  }
+  @keyframes webampReveal {
+    from {
+      opacity: 0;
+      transform: translateY(10px) scale(0.96);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+  .webamp-ripple {
+    position: absolute;
+    width: 96px;
+    height: 96px;
+    border-radius: 9999px;
+    border: 3px solid rgba(255, 255, 255, 0.9);
+    pointer-events: none;
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(0);
+    animation: webampRipple 0.6s ease-out forwards;
+  }
+  @keyframes webampRipple {
+    to {
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(1);
+    }
+  }
+  .webamp-pop {
+    animation: webampPop 0.3s ease-out;
+  }
+  @keyframes webampPop {
+    0% {
+      transform: scale(1);
+    }
+    40% {
+      transform: scale(1.12);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  .webamp-unlocked {
+    animation: webampUnlock 0.6s ease-out;
+  }
+  @keyframes webampUnlock {
+    0% {
+      transform: scale(1);
+      box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.8);
+    }
+    100% {
+      transform: scale(1.05);
+      box-shadow: 0 0 0 24px rgba(255, 255, 255, 0);
+    }
+  }
+</style>
+
+<script>
+  (function () {
+    var heroImg = document.querySelector("img[data-zoom-src]");
+    if (heroImg) {
+      heroImg.classList.add("nozoom");
+    }
+    var clicks = 0;
+    var TARGET = 6;
+    var unlocked = false;
+
+    function spawnRipple(e) {
+      if (!heroImg) return;
+      var wrapper = heroImg.parentElement;
+      var rect = wrapper.getBoundingClientRect();
+      var ripple = document.createElement("span");
+      ripple.className = "webamp-ripple";
+      ripple.style.left = e.clientX - rect.left + "px";
+      ripple.style.top = e.clientY - rect.top + "px";
+      ripple.addEventListener("animationend", function () {
+        ripple.remove();
+      });
+      wrapper.appendChild(ripple);
+    }
+
+    function pop() {
+      if (!heroImg) return;
+      heroImg.classList.remove("webamp-pop");
+      void heroImg.offsetWidth;
+      heroImg.classList.add("webamp-pop");
+    }
+
+    function handleHeroClick(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      if (unlocked) return;
+      clicks++;
+      spawnRipple(e);
+      pop();
+      if (clicks >= TARGET) {
+        unlocked = true;
+        heroImg.removeEventListener("click", handleHeroClick, true);
+        heroImg.classList.add("webamp-unlocked");
+        loadWebamp();
+      }
+    }
+
+    if (heroImg) {
+      heroImg.addEventListener("click", handleHeroClick, true);
+    }
+
+    function loadWebamp() {
+      if (window.Webamp) {
+        initWebamp();
+        return;
+      }
+      var s = document.createElement("script");
+      s.src = "https://unpkg.com/webamp@1.5.0/built/webamp.bundle.min.js";
+      s.onload = initWebamp;
+      document.head.appendChild(s);
+    }
+
+    function initWebamp() {
+      if (window.innerWidth < 768) return;
+      if (!window.Webamp) return;
+      const isSupported =
+        (Webamp.isSupported && Webamp.isSupported()) ||
+        (Webamp.browserIsSupported && Webamp.browserIsSupported());
+      if (!isSupported) return;
+      var container = document.querySelector(".webamp-container");
+      if (container) {
+        container.classList.add("visible");
+      }
+      const webamp = new Webamp({
+        initialSkin: {
+          url: {{ $skin | jsonify | safeJS }},
+          name: "D-Shock"
+        },
+        availableSkins: [
+          {
+            url: {{ $skin | jsonify | safeJS }},
+            name: "D-Shock"
+          }
+        ],
+        zIndex: 9999
+      });
+      webamp.renderWhenReady(document.getElementById("webamp-app")).then(
+        function () {
+          webamp.appendTracks({{ $tracks | jsonify | safeJS }});
+          requestAnimationFrame(function () {
+            var root = document.getElementById("webamp");
+            if (!container || !root) return;
+            var containerRect = container.getBoundingClientRect();
+            var windows = root.querySelectorAll(".window");
+            if (!windows.length) return;
+            var minX = Infinity;
+            var minY = Infinity;
+            windows.forEach(function (w) {
+              var rect = w.getBoundingClientRect();
+              if (rect.left < minX) minX = rect.left;
+              if (rect.top < minY) minY = rect.top;
+            });
+            root.style.transform =
+              "translate(" + (containerRect.left - minX) + "px, " +
+              (containerRect.top - minY) + "px)";
+          });
+        }
+      );
+    }
+  })();
+</script>
