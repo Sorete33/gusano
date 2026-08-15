@@ -24,12 +24,29 @@
           <img src="{{ . | relURL }}" alt="Announcement Image" class="ann-img">
         </div>
       {{ end }}
+
+      <!-- Videos Section -->
+      {{ with .Get "videos" }}
+        <div class="ann-videos">
+          {{ range split . "," }}
+            {{ $entry := trim . " " }}
+            {{ $id := $entry }}
+            {{ if hasPrefix $entry "http" }}
+              {{ $u := urls.Parse $entry }}
+              {{ with $u.Query.Get "v" }}
+                {{ $id = . }}
+              {{ end }}
+            {{ end }}
+            <iframe src="https://www.youtube.com/embed/{{ $id }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          {{ end }}
+        </div>
+      {{ end }}
     </div>
     
     <!-- Footer Section with action button -->
     <div class="ann-footer">
       <button class="ann-btn-close" onclick="closeHugoPopup()">
-        {{ .Get "button" | default "Entendido" }}
+        {{ .Get "button" | default "oki" }}
       </button>
     </div>
   </div>
@@ -158,6 +175,22 @@
     border: 1px solid #2d2d2d;
     display: block;
     margin: 0 auto;
+  }
+
+  /* Video Section */
+  .ann-videos {
+    margin-top: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .ann-videos iframe {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border: 1px solid #2d2d2d;
+    border-radius: 8px;
+    display: block;
   }
 
   /* Footer Layout containing actions */

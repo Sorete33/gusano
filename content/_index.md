@@ -1,20 +1,8 @@
 ---
 title: Anuncio
 ---
-<!-- {{< new title="Rocola actualizada" >}}
-° Reproduce mejor los recitales al no cargar todos a la vez.
-
-° Tiene un nuevo sistema de filtros por búsqueda, bandas o fecha.
-
-° Implementado el botón repeat y shuffle.
-
-° Vista de texto o grid de covers.
-
-° Se puede escuchar en segundo plano desde el celular sin necesidad de tener la página abierta.
-
-![rocola-en-uso](/images/gif.gif)
-{{< /new >}} 
--->
+{{< new title="GRACIAS ACCIDENTALES" videos="https://www.youtube.com/watch?v=h3WmNq3bepY,https://www.youtube.com/watch?v=MHovwoqU6bI,https://www.youtube.com/watch?v=X_2DtwUEKpk" >}}
+{{< /new >}}
 
 {{< webamp >}}
 

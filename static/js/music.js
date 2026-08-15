@@ -1084,8 +1084,7 @@ const songs = [
   {
     title: "Paprika's Band en Ruta 30",
     artist: "Paprika's Band",
-    src: "https://files.catbox.moe/mr1rbh.mp3",
-    img: "/recitales/ruta30/paprikas/featured.jpg",
+  img: "/recitales/ruta30/paprikas/featured.jpg",
     date: "2026-07-17",
 
   },

@@ -33,15 +33,15 @@
         border-radius: 12px; 
         overflow: hidden;
         box-shadow: 0 15px 35px rgba(0,0,0,0.2); 
-        height: auto; /* Dynamic height for this shortcode only */
+        height: 300px; /* Fixed square cards for uniform alignment */
         display: block;
     }
 
     .swiper-container-{{ $dataFile }} .flyer-card img, 
     .swiper-container-{{ $dataFile }} .flyer-card video { 
         width: 100%; 
-        height: auto; 
-        object-fit: contain; 
+        height: 100%; 
+        object-fit: cover; 
         display: block;
         pointer-events: none; 
     }
