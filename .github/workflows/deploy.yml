@@ -45,11 +45,6 @@ jobs:
           ffprobe -version >/dev/null 2>&1 || (sudo apt-get update && sudo apt-get install -y ffmpeg)
           node scripts/get-durations.mjs
 
-      - name: Optimize Pepe Emojis
-        run: |
-          sudo apt-get update -qq && sudo apt-get install -y -qq gifsicle pngquant
-          bash scripts/optimize-pepe.sh
-
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:

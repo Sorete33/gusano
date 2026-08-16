@@ -544,6 +544,11 @@
     height: 48px;
     object-fit: contain;
     image-rendering: auto;
+    background: #f0f0f0;
+    border-radius: 6px;
+  }
+  .dark .pepe-item img {
+    background: #333;
   }
 </style>
 
@@ -839,6 +844,7 @@
           pepeLoaded = true;
           pepeLoading.style.display = 'none';
           var dirs = {};
+          var imgs = [];
           data.forEach(function(item) {
             if (!dirs[item.dir]) dirs[item.dir] = [];
             dirs[item.dir].push(item);
@@ -854,9 +860,8 @@
             grid.className = 'pepe-grid';
             dirs[dir].forEach(function(item) {
               var img = document.createElement('img');
-              img.src = '/' + item.path;
+              img.dataset.src = '/' + item.path;
               img.alt = item.name;
-              img.loading = 'lazy';
               var div = document.createElement('div');
               div.className = 'pepe-item';
               div.appendChild(img);
@@ -865,10 +870,29 @@
                 pepePicker.classList.remove('open');
               });
               grid.appendChild(div);
+              imgs.push(img);
             });
             section.appendChild(grid);
             pepeContent.appendChild(section);
           });
+          var loadImg = function(img) {
+            if (!img.dataset.src || img.getAttribute('src')) return;
+            img.setAttribute('src', img.dataset.src);
+            img.dataset.src = '';
+          };
+          if ('IntersectionObserver' in window) {
+            var observer = new IntersectionObserver(function(entries) {
+              entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                  loadImg(entry.target);
+                  observer.unobserve(entry.target);
+                }
+              });
+            }, { root: pepeContent, rootMargin: '300px', threshold: 0 });
+            imgs.forEach(function(img) { observer.observe(img); });
+          } else {
+            imgs.forEach(loadImg);
+          }
         })['catch'](function() {
           pepeLoading.textContent = 'Error al cargar emojis.';
         });
