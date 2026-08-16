@@ -14,7 +14,5 @@ heroStyle: background
 
 # Julian Amar + invitades en [Beertonic](https://www.instagram.com/beertonic.ch/)
 
-{{< audio src="https://files.catbox.moe/zn5ybl.mp3">}}
-
-[Link directo](https://files.catbox.moe/zn5ybl.mp3)
+{{< audio src="https://files.catbox.moe/798l3z.mp3">}}
 

@@ -80,7 +80,7 @@ const songs = [
   {
     title: "Yula en Beertonic",
     artist: "Julian Amar",
-    src: "https://files.catbox.moe/zn5ybl.mp3",
+    src: "https://files.catbox.moe/798l3z.mp3",
     img: "/covers/yula.jpg",
     date: "2025-05-04",
   },
@@ -88,7 +88,7 @@ const songs = [
   {
     title: "Prima León en el Festival Consciente",
     artist: "Prima León",
-    src: "https://files.catbox.moe/wfudnd.mp3",
+    src: "https://files.catbox.moe/q1bnmi.mp3",
     img: "/covers/festi-cons1.webp",
     date: "2025-04-19",
   },
@@ -96,7 +96,7 @@ const songs = [
   {
     title: "No Soy de Acá en el Festival Consciente",
     artist: "No Soy de Acá",
-    src: "https://files.catbox.moe/tyrb3c.mp3",
+    src: "https://files.catbox.moe/tj6ssf.mp3",
     img: "/covers/festi-cons1.webp",
     date: "2025-04-19",
   },
@@ -104,7 +104,7 @@ const songs = [
   {
     title: "Entrance en el Festival Consciente",
     artist: "Entrance",
-    src: "https://files.catbox.moe/hhizka.mp3",
+    src: "https://files.catbox.moe/ua7k09.mp3",
     img: "/covers/festi-cons1.webp",
     date: "2025-04-19",
   },
@@ -112,7 +112,7 @@ const songs = [
   {
     title: "Los Pozoz en el Festival Consciente",
     artist: "Los Pozoz",
-    src: "https://files.catbox.moe/yf8btq.mp3",
+    src: "https://files.catbox.moe/la3tol.mp3",
     img: "/covers/festi-cons1.webp",
     date: "2025-04-19",
   },
@@ -120,7 +120,7 @@ const songs = [
   {
     title: "Round 2 en el Festival Demolición",
     artist: "Round 2",
-    src: "https://files.catbox.moe/lfs2fb.mp3",
+    src: "https://files.catbox.moe/f0a41a.mp3",
     img: "/covers/demo.jpg",
     date: "2025-06-28",
   },
@@ -128,7 +128,7 @@ const songs = [
   {
     title: "Entrance en el Festival Demolición",
     artist: "Entrance",
-    src: "https://files.catbox.moe/ppua4v.mp3",
+    src: "https://files.catbox.moe/afa0v8.mp3",
     img: "/covers/demo.jpg",
     date: "2025-06-28",
   },
@@ -144,7 +144,7 @@ const songs = [
   {
     title: "La Vitrola Envenenada en la Ronda de Bandas",
     artist: "La Vitrola Envenenada",
-    src: "https://files.catbox.moe/ztn5z0.mp3",
+    src: "https://files.catbox.moe/s6klup.mp3",
     img: "/covers/ronda1.jpg",
     date: "2025-07-12",
   },
@@ -152,7 +152,7 @@ const songs = [
   {
     title: "La Toma de Roma en la Ronda de Bandas",
     artist: "La Toma de Roma",
-    src: "https://files.catbox.moe/vvosvl.mp3",
+    src: "https://files.catbox.moe/7ejnrv.mp3",
     img: "/covers/ronda1.jpg",
     date: "2025-07-12",
   },
@@ -160,7 +160,7 @@ const songs = [
   {
     title: "Entrance en la Ronda de Bandas",
     artist: "Entrance",
-    src: "https://files.catbox.moe/yoe2na.mp3",
+    src: "https://files.catbox.moe/z05xbj.mp3",
     img: "/covers/ronda1.jpg",
     date: "2025-07-12",
   },
@@ -168,7 +168,7 @@ const songs = [
   {
     title: "Parasomnia en la Ronda de Bandas",
     artist: "Parasomnia",
-    src: "https://files.catbox.moe/0fu10z.mp3",
+    src: "https://files.catbox.moe/0yuro2.mp3",
     img: "/covers/ronda1.jpg",
     date: "2025-07-12",
   },
@@ -176,7 +176,7 @@ const songs = [
   {
     title: "Juanito Alimaña en Sala Biaus",
     artist: "Juanito Alimaña",
-    src: "https://files.catbox.moe/7cihmf.mp3",
+    src: "https://files.catbox.moe/2d3pjp.mp3",
     img: "/covers/juanito.jpg",
     date: "2025-08-09",
   },
@@ -184,7 +184,7 @@ const songs = [
   {
     title: "Nicolas Muchiut en Sala Biaus",
     artist: "Nicolas Muchiut",
-    src: "https://files.catbox.moe/q477ut.mp3",
+    src: "https://files.catbox.moe/7jx0wr.mp3",
     img: "/covers/juanito.jpg",
     date: "2025-08-09",
   },
@@ -192,7 +192,7 @@ const songs = [
   {
     title: "Ser Sur en Sala Biaus",
     artist: "Ser Sur",
-    src: "https://files.catbox.moe/feo7wv.mp3",
+    src: "https://files.catbox.moe/u6872w.mp3",
     img: "/covers/juanito.jpg",
     date: "2025-08-09",
   },
@@ -200,7 +200,7 @@ const songs = [
   {
     title: "Armando Alonso en el Teatro Trac",
     artist: "Armando Alonso, Agustín Barbieri, Nicolas Benagui",
-    src: "https://files.catbox.moe/wv8ujs.mp3",
+    src: "https://files.catbox.moe/utn41c.mp3",
     img: "/covers/armand-trac.png",
     date: "2025-09-09",
   },
@@ -208,7 +208,7 @@ const songs = [
   {
     title: "Proyecto Spinetta en el Teatro Trac",
     artist: "Rocío Palazzo, Ignacio Viano, Nicolas Benagui",
-    src: "https://files.catbox.moe/i52swa.mp3",
+    src: "https://files.catbox.moe/i4v52n.mp3",
     img: "/covers/spinetta.webp",
     date: "2025-09-12",
   },
@@ -216,7 +216,7 @@ const songs = [
   {
     title: "Mate Jazz en Beertonic",
     artist: "Mate Jazz",
-    src: "https://files.catbox.moe/1qwixg.mp3",
+    src: "https://files.catbox.moe/oregu8.mp3",
     img: "/covers/mate.jpg",
     date: "2025-09-12",
   },
@@ -224,7 +224,7 @@ const songs = [
   {
     title: "Yula y Abril Amar + Invitades en Beertonic ",
     artist: "Yula y Abril Amar",
-    src: "https://files.catbox.moe/kh1bf0.mp3",
+    src: "https://files.catbox.moe/u92eyf.mp3",
     img: "/covers/yula.jpg",
     date: "2025-09-15",
   },
@@ -232,7 +232,7 @@ const songs = [
   {
     title: "Cumpleaños Accidental en Sala Biaus",
     artist: "Inteligencia Accidental",
-    src: "https://files.catbox.moe/l50rmt.mp3",
+    src: "https://files.catbox.moe/ylvtia.mp3",
     img: "/covers/cumple-acc.jpg",
     date: "2025-09-19",
   },
@@ -240,7 +240,7 @@ const songs = [
   {
     title: "Ronda Catonga en el cumple de La Ronda",
     artist: "Ronda Catonga",
-    src: "https://files.catbox.moe/7suvnz.mp3",
+    src: "https://files.catbox.moe/mrznfy.mp3",
     img: "/covers/cumple-ron.jpg",
     date: "2025-09-20",
   },
@@ -248,7 +248,7 @@ const songs = [
   {
     title: "Catango Trío en el cumple de La Ronda",
     artist: "Catango Trío",
-    src: "https://files.catbox.moe/z143qt.mp3",
+    src: "https://files.catbox.moe/vhy8d5.mp3",
     img: "/covers/cumple-ron.jpg",
     date: "2025-09-20",
   },
@@ -256,7 +256,7 @@ const songs = [
   {
     title: "Roco y los Chaks en el cumple de La Ronda",
     artist: "Roco y los Chaks",
-    src: "https://files.catbox.moe/to2xy0.mp3",
+    src: "https://files.catbox.moe/bhpk3m.mp3",
     img: "/covers/cumple-ron.jpg",
     date: "2025-09-20",
   },
@@ -264,7 +264,7 @@ const songs = [
   {
     title: "Epifanicas en el cumple de La Ronda",
     artist: "Epifanicas",
-    src: "https://files.catbox.moe/paf97s.mp3",
+    src: "https://files.catbox.moe/7ew71a.mp3",
     img: "/covers/cumple-ron.jpg",
     date: "2025-09-20",
   },
@@ -272,7 +272,7 @@ const songs = [
   {
     title: "Telar en Beertonic",
     artist: "Telar",
-    src: "https://files.catbox.moe/ur2qo6.mp3",
+    src: "https://files.catbox.moe/8ze5fk.mp3",
     img: "/covers/telar.png",
     date: "2025-09-25",
   },
@@ -280,7 +280,7 @@ const songs = [
   {
     title: "Casco y Guada en Grey Bar",
     artist: "Casco y Guada",
-    src: "https://files.catbox.moe/xyj9u4.mp3",
+    src: "https://files.catbox.moe/op8zz9.mp3",
     img: "/covers/cascoguada.png",
     date: "2025-10-02",
   },
@@ -288,7 +288,7 @@ const songs = [
   {
     title: "Jane Doe en Rincón",
     artist: "Jane Doe",
-    src: "https://files.catbox.moe/aqajnb.mp3",
+    src: "https://files.catbox.moe/tvs4jx.mp3",
     img: "/covers/jane.jpg",
     date: "2025-10-02",
   },
@@ -296,7 +296,7 @@ const songs = [
   {
     title: "Armando Alonso en Beertonic",
     artist: "Armando Alonso, Agustín Barbieri, Nicolas Benaghi",
-    src: "https://files.catbox.moe/nnubmi.mp3",
+    src: "https://files.catbox.moe/1j5fsf.mp3",
     img: "/covers/armand-beer.png",
     date: "2025-10-09",
   },
@@ -304,7 +304,7 @@ const songs = [
   {
     title: "Tigran Hamasyan en el Teatro Coliseo",
     artist: "Tigran Hamasyan",
-    src: "https://files.catbox.moe/ypys3b.mp3",
+    src: "https://files.catbox.moe/x1egy7.mp3",
     img: "/covers/tigran.jpg",
     date: "2025-10-14",
   },

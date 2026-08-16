@@ -14,7 +14,5 @@ heroStyle: background
 
 # [Armando Alonso](https://www.instagram.com/armandoalonsomusico/) tocando [Problemas con el gas](https://open.spotify.com/album/0WDFaIn6KDqoyzmYQZEbaz?si=bRVjbe5JTlWWKBrj5C3deg) en [Beertonic](https://www.instagram.com/beertonic.ch/) 9-10-25
 
-{{<audio src="https://files.catbox.moe/nnubmi.mp3">}}
-
-[Link directo](https://files.catbox.moe/nnubmi.mp3)
+{{<audio src="https://files.catbox.moe/1j5fsf.mp3">}}
 

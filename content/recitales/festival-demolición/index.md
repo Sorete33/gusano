@@ -16,18 +16,15 @@ heroStyle: background
 # [Round 2](https://www.instagram.com/rounddos__/)
 
 
-{{< audio src="https://files.catbox.moe/lfs2fb.mp3">}}
+{{< audio src="https://files.catbox.moe/f0a41a.mp3">}}
 
-[Link Directo](https://files.catbox.moe/lfs2fb.mp3)
 
 ---
 
 # [Entrance](https://www.instagram.com/entr4nce.ck/)
 
 
-{{< audio src="https://files.catbox.moe/ppua4v.mp3">}}
-
-[Link Directo](https://files.catbox.moe/ppua4v.mp3)
+{{< audio src="https://files.catbox.moe/afa0v8.mp3">}}
 
 
 ---

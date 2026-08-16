@@ -13,6 +13,5 @@ heroStyle: background
 
 # Mate Jazz en [Beertonic](https://www.instagram.com/beertonic.ch/) 12/09/25
 
-{{<audio src="https://files.catbox.moe/1qwixg.mp3">}}
+{{<audio src="https://files.catbox.moe/oregu8.mp3">}}
 
-[Link directo](https://files.catbox.moe/1qwixg.mp3)

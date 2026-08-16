@@ -19,27 +19,21 @@ heroStyle: background
 ---
 # [Ronda Catonga](https://www.instagram.com/rondacatongacandombechivilcoy/)
 
-{{<audio src="https://files.catbox.moe/7suvnz.mp3">}}
-
-[Link directo](https://files.catbox.moe/7suvnz.mp3)
+{{<audio src="https://files.catbox.moe/mrznfy.mp3">}}
 
 
 ---
 
 # [Catango Trio](https://www.instagram.com/catango.trio/)
 
-{{<audio src="https://files.catbox.moe/z143qt.mp3">}}
-
-[Link directo](https://files.catbox.moe/z143qt.mp3)
+{{<audio src="https://files.catbox.moe/vhy8d5.mp3">}}
 
 
 ---
 
 # [Roco y los Chacks](https://www.instagram.com/rocoyloschacks/)
 
-{{<audio src="https://files.catbox.moe/to2xy0.mp3">}}
-
-[Link directo](https://files.catbox.moe/to2xy0.mp3)
+{{<audio src="https://files.catbox.moe/bhpk3m.mp3">}}
 
 
 ---
@@ -47,9 +41,7 @@ heroStyle: background
 # [Epifanicas](https://www.instagram.com/epi.fanicas/)
 
 
-{{<audio src="https://files.catbox.moe/paf97s.mp3">}}
-
-[Link directo](https://files.catbox.moe/paf97s.mp3)
+{{<audio src="https://files.catbox.moe/7ew71a.mp3">}}
 
 
 ---

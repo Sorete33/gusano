@@ -14,7 +14,5 @@ heroStyle: background
 
 # Casco y Guada nos regalan su música en Grey Bar 2-10-25
 
-{{<audio src="https://files.catbox.moe/xyj9u4.mp3">}}
-
-[Link directo](https://files.catbox.moe/xyj9u4.mp3)
+{{<audio src="https://files.catbox.moe/op8zz9.mp3">}}
 

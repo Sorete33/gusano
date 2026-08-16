@@ -11,7 +11,6 @@ heroStyle: background
 ---
 
 
-
 ![alt text](featured.webp)
 
 # Festival en beneficio a la Casa de atención y acompañamiento comunitario de Chivilcoy (CAAC) organizado por [Derrumbando Muros](https://www.instagram.com/derribandomuroschivilcoy/)  en [El Portal del Tango](https://www.instagram.com/elportaldeltango/) 19/04/25
@@ -21,9 +20,7 @@ heroStyle: background
 
 # [Primaleón](https://www.instagram.com/primaleon_/) abriendo el Festival.
 
-{{<audio src="https://files.catbox.moe/wfudnd.mp3">}}
-
-[Link directo](https://files.catbox.moe/wfudnd.mp3)
+{{<audio src="https://files.catbox.moe/q1bnmi.mp3">}}
 
 
 ---
@@ -31,9 +28,7 @@ heroStyle: background
 # [No soy de acá](https://www.instagram.com/nosoydeacaok/)
 
 
-{{<audio src="https://files.catbox.moe/tyrb3c.mp3">}}
-
-[Link directo](https://files.catbox.moe/tyrb3c.mp3)
+{{<audio src="https://files.catbox.moe/tj6ssf.mp3">}}
 
 
 ---
@@ -41,16 +36,12 @@ heroStyle: background
 
 # [Entrance](https://www.instagram.com/entr4nce.ck/) presentando oficialmente su nombre.
 
-{{<audio src="https://files.catbox.moe/hhizka.mp3">}}
-
-[Link directo](https://files.catbox.moe/hhizka.mp3)
+{{<audio src="https://files.catbox.moe/ua7k09.mp3">}}
 
 
 ---
 
 # [Los Pozoz](https://www.instagram.com/los.pozoz/)
 
-{{<audio src="https://files.catbox.moe/yf8btq.mp3">}}
-
-[Link directo](https://files.catbox.moe/yf8btq.mp3)
+{{<audio src="https://files.catbox.moe/la3tol.mp3">}}
 

@@ -18,24 +18,19 @@ heroStyle: background
 
 # [Juanito Alimaña](https://www.instagram.com/juanito_alimana_45/) en su primera presentación
 
-{{<audio src="https://files.catbox.moe/7cihmf.mp3">}}
-
-[Link directo](https://files.catbox.moe/7cihmf.mp3)
+{{<audio src="https://files.catbox.moe/2d3pjp.mp3">}}
 
 
 ---
 
 # [Nico Muchiut](https://www.instagram.com/nicolas_muchiut/)
 
-{{<audio src="https://files.catbox.moe/q477ut.mp3">}}
-
-[Link directo](https://files.catbox.moe/q477ut.mp3)
+{{<audio src="https://files.catbox.moe/7jx0wr.mp3">}}
 
 
 ---
 
 # [Ser Sur](https://www.instagram.com/_ser_sur/) 
 
-{{<audio src="https://files.catbox.moe/feo7wv.mp3">}}
+{{<audio src="https://files.catbox.moe/u6872w.mp3">}}
 
-[Link directo](https://files.catbox.moe/feo7wv.mp3)

@@ -14,7 +14,5 @@ heroStyle: background
 
 # [Telar](https://www.instagram.com/somostelar/) en vivo desde [Beertonic](https://www.instagram.com/beertonic.ch/) 25/09/25
 
-{{<audio src="https://files.catbox.moe/ur2qo6.mp3">}}
-
-[Link directo](https://files.catbox.moe/ur2qo6.mp3)
+{{<audio src="https://files.catbox.moe/8ze5fk.mp3">}}
 

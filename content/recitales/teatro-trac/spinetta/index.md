@@ -13,9 +13,5 @@ heroStyle: background
 
 # [Rocío Palazzo](https://www.instagram.com/rocio.palazzo/), [Nicolas Benagui](https://www.instagram.com/nicolasbenaghi/) e [Ignacio Viano](https://www.instagram.com/ignacio.viano/)  homenajeando al flaco desde el Teatro Trac 12/09/25
 
-{{<audio src="https://files.catbox.moe/i52swa.mp3">}}
-
-[Link directo](https://files.catbox.moe/i52swa.mp3)
-
-
+{{<audio src="https://files.catbox.moe/i4v52n.mp3">}}
 

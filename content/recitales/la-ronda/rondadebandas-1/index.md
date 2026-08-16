@@ -17,33 +17,26 @@ heroStyle: background
 
 # La Vitrola Envenenada
 
-{{<audio src="https://files.catbox.moe/ztn5z0.mp3">}}
-
-[Link directo](https://files.catbox.moe/ztn5z0.mp3)
+{{<audio src="https://files.catbox.moe/s6klup.mp3">}}
 
 
 ---
 
 # [La Toma de Roma](https://www.instagram.com/latomaderoma/)
 
-{{<audio src="https://files.catbox.moe/vvosvl.mp3">}}
+{{<audio src="https://files.catbox.moe/7ejnrv.mp3">}}
 
-[Link directo](https://files.catbox.moe/vvosvl.mp3)
 
 ---
 
 # [Entrance](https://www.instagram.com/entr4nce.ck/)
 
-{{<audio src="https://files.catbox.moe/yoe2na.mp3">}}
-
-[Link directo](hhttps://files.catbox.moe/yoe2na.mp3)
+{{<audio src="https://files.catbox.moe/z05xbj.mp3">}}
 
 
 ---
 
 # [Parasomnia](https://www.instagram.com/p_a_r_a_s_o_m_n_i_a/)
 
-{{<audio src="https://files.catbox.moe/0fu10z.mp3">}}
-
-[Link directo](https://files.catbox.moe/0fu10z.mp3)
+{{<audio src="https://files.catbox.moe/0yuro2.mp3">}}
 

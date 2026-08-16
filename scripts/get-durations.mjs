@@ -3,8 +3,12 @@ import { execFile } from "node:child_process";
 import { promisify } from "node:util";
 
 const execFileAsync = promisify(execFile);
-const CONCURRENCY = 5;
-const FORCE = process.argv.includes("--force");
+const args = process.argv.slice(2);
+const FORCE = args.includes("--force");
+const concurrencyArg = args.find((a) => a.startsWith("--concurrency"));
+const CONCURRENCY = concurrencyArg
+  ? parseInt(concurrencyArg.split("=")[1] ?? concurrencyArg.split(" ")[1], 10) || 2
+  : 2;
 
 const yml = readFileSync("data/playlist.yml", "utf8");
 const urls = [

@@ -16,8 +16,7 @@ heroStyle: background
 
 ## [EP Desencuentro yá en spoti](https://open.spotify.com/album/7E1SBWSxTZJrpdE028xVD9?si=X4ZL8eTBQHCAXAdDqIEIWA)
 
-{{<audio src="https://files.catbox.moe/aqajnb.mp3">}}
+{{<audio src="https://files.catbox.moe/tvs4jx.mp3">}}
 
-[Link directo](https://files.catbox.moe/aqajnb.mp3)
 
 ![alt text](tormenta.gif)

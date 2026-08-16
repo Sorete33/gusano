@@ -15,7 +15,7 @@ heroStyle: background
 
 # [Tigran Hamasyan](https://www.instagram.com/tigranhamasyan/) en el Teatro Coliseo 14-10-25
 
-{{<audio src="https://files.catbox.moe/ypys3b.mp3">}}
+{{<audio src="https://files.catbox.moe/x1egy7.mp3">}}
 
 [WAV](https://pixeldrain.com/u/VfxNgiAm)
 
