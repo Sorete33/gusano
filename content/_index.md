@@ -2,7 +2,7 @@
 title: Anuncio
 ---
 
-{{< new title="Comunidad Gusanera: Me ayudan a difundir para que Ligustrino vuelva pronto a casa? Gracias  ![alt text](static/assets/ligus.webp)" >}}
+{{< new title="Comunidad Gusanera: Me ayudan a difundir para que Ligustrino vuelva pronto a casa? Gracias  ![ligus](static/ligus.webp)" >}}
 {{< /new >}}
 
 
