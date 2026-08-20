@@ -2,10 +2,9 @@
 title: Anuncio
 ---
 
-<!-- {{< new title="GRACIAS ACCIDENTALES" videos="https://www.youtube.com/watch?v=h3WmNq3bepY,https://www.youtube.com/watch?v=MHovwoqU6bI,https://www.youtube.com/watch?v=X_2DtwUEKpk" >}}
+{{< new title="Comunidad Gusanera: Me ayudan a difundir para que Ligustrino vuelva pronto a casa? Gracias  ![alt text](static/assets/ligus.webp)" >}}
 {{< /new >}}
 
--->
 
 {{< webamp >}}
 
