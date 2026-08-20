@@ -9,7 +9,7 @@
   background-repeat: no-repeat;
   background-position: center;
   pointer-events: none;
-  z-index: 99999;
+  z-index: 1000001;
   transform: translate(-4px, -4px);
   transition: transform 0.1s ease;
 }
