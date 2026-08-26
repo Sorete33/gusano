@@ -24,10 +24,18 @@ enableA11y = true
 # googleAnalytics = "G-XXXXXXXXX"
 
 [pagination]
-  pagerSize = 100
+  pagerSize = 20
+
+[minify]
+  disableCSS = false
+  disableHTML = false
+  disableJS = false
+  disableSVG = false
 
 [imaging]
   anchor = 'Center'
+  quality = 80
+  resampleFilter = "Lanczos"
 
 [taxonomies]
   tags = "tags"

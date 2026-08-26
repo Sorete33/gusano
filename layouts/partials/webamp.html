@@ -97,22 +97,15 @@
 
   img[data-zoom-src] {
     cursor: pointer;
+    will-change: transform;
     transition: box-shadow 0.2s ease, transform 0.2s ease;
   }
   img[data-zoom-src]:hover {
     transform: scale(1.05);
-    box-shadow: 0 0 25px 8px rgba(255, 255, 255, 0.45);
-    animation: heroGlow 2.5s ease-in-out infinite;
-  }
-  img[data-zoom-src].hero-glow-stop {
-    animation: none;
+    box-shadow: 0 0 20px 6px rgba(255, 255, 255, 0.3);
   }
   img[data-zoom-src].webamp-unlocked {
     animation: webampUnlock 0.6s ease-out forwards;
-  }
-  @keyframes heroGlow {
-    0%, 100% { box-shadow: 0 0 10px 3px rgba(255, 255, 255, 0.3); }
-    50% { box-shadow: 0 0 25px 8px rgba(255, 255, 255, 0.15); }
   }
 
   .hero-progress-ring {
@@ -211,7 +204,6 @@
         unlocked = true;
         heroImg.removeEventListener("click", handleHeroClick, true);
         heroImg.classList.add("webamp-unlocked");
-        heroImg.classList.add("hero-glow-stop");
         heroImg.style.cursor = "default";
         if (ring) ring.style.display = "none";
         loadWebamp();
@@ -275,6 +267,8 @@
       return { sampleRate: sampleRate, bitrateKbps: bitrateKbps };
     }
 
+    var tagCache = {};
+
     function applyRealMediaTags(webamp, track) {
       if (!webamp || !track) return;
       if (!webamp.store || typeof webamp.store.dispatch !== "function") return;
@@ -295,6 +289,20 @@
       if (!meta && state && state.tracks && state.tracks[id]) {
         meta = state.tracks[id];
       }
+      if (tagCache[url]) {
+        var cached = tagCache[url];
+        webamp.store.dispatch({
+          type: "SET_MEDIA_TAGS",
+          id: id,
+          title: meta && meta.title ? meta.title : "",
+          artist: meta && meta.artist ? meta.artist : "",
+          album: meta && meta.album ? meta.album : "",
+          bitrate: cached.bitrateKbps * 1000,
+          sampleRate: cached.sampleRate,
+          numberOfChannels: 2
+        });
+        return;
+      }
       fetch(url, { headers: { Range: "bytes=0-131071" } })
         .then(function (resp) {
           if (!resp.ok) throw new Error("Range fetch failed");
@@ -303,6 +311,7 @@
         .then(function (buf) {
           var info = parseMpegHeader(new Uint8Array(buf));
           if (!info || !info.sampleRate || !info.bitrateKbps) return;
+          tagCache[url] = info;
           webamp.store.dispatch({
             type: "SET_MEDIA_TAGS",
             id: id,

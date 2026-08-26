@@ -10,8 +10,8 @@
   background-position: center;
   pointer-events: none;
   z-index: 1000001;
+  will-change: transform;
   transform: translate(-4px, -4px);
-  transition: transform 0.1s ease;
 }
 
 .custom-cursor.clicking {

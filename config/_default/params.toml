@@ -36,7 +36,7 @@ showScrollToTop = true
 [homepage]
 layout = "background"
 showRecent = true
-showRecentItems = "100"
+showRecentItems = "15"
 showMoreLink = true
 showMoreLinkDest = "/recitales/"
 cardView = true
@@ -117,5 +117,3 @@ cardView = true
 cardViewScreenWidth = true
 
 
-custom_css = ["/css/music.css"]
-custom_js = ["/js/music.js"]
