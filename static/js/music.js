@@ -1092,7 +1092,7 @@ const songs = [
   {
     title: "Entrance en Sala Biaus",
     artist: "Entrance",
-    src: "https://audiogusano.neocities.org/audio/sala-biaus/entrancinibase-17-7-26/entrance-sala-11-7-26.mp3",
+    src: "https://files.catbox.moe/8iivth.mp3",
     img: "/recitales/sala-biaus/entrance-cinica-base/featured.webp",
     date: "2026-07-18",
 
@@ -1101,7 +1101,7 @@ const songs = [
   {
     title: "Cínica en Sala Biaus",
     artist: "Cínica",
-    src: "https://audiogusano.neocities.org/audio/sala-biaus/entrancinibase-17-7-26/cinica-sala7-26.mp3",
+    src: "https://files.catbox.moe/8usc4r.mp3",
     img: "/recitales/sala-biaus/entrance-cinica-base/featured.webp",
     date: "2026-07-18",
 
@@ -1110,9 +1110,18 @@ const songs = [
   {
     title: "Base en Sala Biaus",
     artist: "Base",
-    src: "https://audiogusano.neocities.org/audio/sala-biaus/entrancinibase-17-7-26/base-biaus-7-26.mp3",
+    src: "https://files.catbox.moe/kh6kkv.mp3",
     img: "/recitales/sala-biaus/entrance-cinica-base/featured.webp",
     date: "2026-07-18",
+
+  },
+
+  {
+    title: "Vocayuva en Beertonic",
+    artist: "Vocayuva",
+    src: "https://files.catbox.moe/wrment.mp3",
+    img: "/recitales/beertonic/vocayuva/featured.jpg",
+    date: "2026-08-20",
 
   },
 
