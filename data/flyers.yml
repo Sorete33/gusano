@@ -4,9 +4,13 @@
   name: conser
 - link: /images/gallery/conser3.jpg
   name: conser3
-- link: /images/gallery/lucas.jpg
-  name: lucas
 - link: /images/gallery/reaper.jpg
   name: reaper
 - link: /images/gallery/ronda.jpg
   name: ronda
+- link: /images/gallery/794294753_18097125950574037_2373325251268925093_n.jpg
+  name: 794294753_18097125950574037_2373325251268925093_n
+- link: /images/gallery/791388347_18086971640678014_407525560053675363_n.jpg
+  name: 791388347_18086971640678014_407525560053675363_n
+- link: /images/gallery/samu.jpg
+  name: samu
