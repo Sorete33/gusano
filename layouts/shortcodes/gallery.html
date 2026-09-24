@@ -46,6 +46,25 @@
         object-fit: cover; /* Kept cover for this version */
         display: block; 
     }
+
+    /* 5. Scoped ribbon */
+    .swiper-container-{{ $dataFile }} .flyer-ribbon {
+        position: absolute;
+        top: 12px;
+        left: 0;
+        z-index: 10;
+        background: #e11d48;
+        color: #fff;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        padding: 6px 14px;
+        border-radius: 0 6px 6px 0;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.35);
+        max-width: 90%;
+        white-space: nowrap;
+    }
 </style>
 
 <div class="nav-wrapper">
@@ -56,6 +75,7 @@
             {{ $timestampedLink := printf "%s?v=%d" $rawLink now.Unix }}
             <div class="swiper-slide">
                 <div class="flyer-card">
+                    {{ if .ribbon }}<div class="flyer-ribbon">{{ .ribbon }}</div>{{ end }}
                     {{/* Added data-gallery to fix the "floating/double-click" close bug */}}
                     <a href="{{ $timestampedLink }}" class="glightbox-{{ $dataFile }}" data-gallery="gallery-{{ $dataFile }}" {{ if (strings.HasSuffix .link ".mp4") }}data-type="video"{{ end }}>
                         {{ if (strings.HasSuffix .link ".mp4") }}
