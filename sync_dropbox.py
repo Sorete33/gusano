@@ -24,9 +24,23 @@ def slugify(value):
     
     return f"{value}{ext.lower()}"
 
+def load_existing_entries():
+    """Load current data/flyers.yml to preserve manual fields that Dropbox sync does not know about."""
+    existing = {}
+    if os.path.exists(DATA_FILE):
+        try:
+            with open(DATA_FILE, 'r') as f:
+                for item in yaml.safe_load(f) or []:
+                    if isinstance(item, dict) and item.get('link'):
+                        existing[item['link']] = item
+        except Exception as e:
+            print(f"Warning: could not read existing {DATA_FILE}: {e}")
+    return existing
+
 def sync():
     os.makedirs(LOCAL_STATIC_DIR, exist_ok=True)
     os.makedirs(os.path.dirname(DATA_FILE), exist_ok=True)
+    existing_entries = load_existing_entries()
 
     try:
         dbx = dropbox.Dropbox(
@@ -65,10 +79,19 @@ def sync():
         
         processed_filenames.append(clean_name)
         
-        flyer_list.append({
+        flyer_entry = {
             'link': f'/images/gallery/{clean_name}',
             'name': os.path.splitext(entry.name)[0] # Keep the original name for the UI label
-        })
+        }
+
+        # Preserve manual fields (e.g. ribbon) added by hand in the repo
+        previous = existing_entries.get(flyer_entry['link'])
+        if previous:
+            for key in ('ribbon',):
+                if previous.get(key):
+                    flyer_entry[key] = previous[key]
+
+        flyer_list.append(flyer_entry)
 
     # Cleanup: Remove files that don't match our processed list
     for local_f in current_local_files:
