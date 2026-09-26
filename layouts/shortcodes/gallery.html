@@ -26,6 +26,8 @@
     /* 2. Scoped slide width */
     .swiper-container-{{ $dataFile }} .swiper-slide { 
         width: 300px; 
+        user-select: none;
+        -webkit-user-select: none;
     }
 
     /* 3. Scoped fixed-height card */
@@ -38,13 +40,25 @@
         position: relative;
     }
 
-    /* 4. Scoped image behavior */
+    /* 4. Scoped image behavior
+       pointer-events: none lets the pointer reach the <a> (so the lightbox still
+       opens) while stopping the media element itself from swallowing the
+       mousedown/mousemove pair Swiper needs. Without it <video> starts a native
+       media drag, no mousemove/mouseup ever reach Swiper, and slides stop
+       responding to drag. */
     .swiper-container-{{ $dataFile }} .flyer-card img, 
     .swiper-container-{{ $dataFile }} .flyer-card video { 
         width: 100%; 
         height: 100%; 
         object-fit: cover; /* Kept cover for this version */
         display: block; 
+        pointer-events: none; 
+        -webkit-user-drag: none; 
+    }
+
+    .swiper-container-{{ $dataFile }} .flyer-card a {
+        display: block;
+        cursor: pointer;
     }
 
     /* 5. Scoped ribbon */
@@ -76,13 +90,14 @@
             <div class="swiper-slide">
                 <div class="flyer-card">
                     {{ if .ribbon }}<div class="flyer-ribbon">{{ .ribbon }}</div>{{ end }}
-                    {{/* Added data-gallery to fix the "floating/double-click" close bug */}}
-                    <a href="{{ $timestampedLink }}" class="glightbox-{{ $dataFile }}" data-gallery="gallery-{{ $dataFile }}" {{ if (strings.HasSuffix .link ".mp4") }}data-type="video"{{ end }}>
+                    {{/* data-gallery groups the slides; draggable="false" stops the
+                         browser from turning the whole card into a native drag
+                         source, which is what was blocking Swiper on video items */}}
+                    <a href="{{ $timestampedLink }}" class="glightbox-{{ $dataFile }}" data-gallery="gallery-{{ $dataFile }}" draggable="false" {{ if (strings.HasSuffix .link ".mp4") }}data-type="video"{{ end }}>
                         {{ if (strings.HasSuffix .link ".mp4") }}
-                            {{/* Play icon removed from here */}}
-                            <video src="{{ $timestampedLink }}" autoplay loop muted playsinline></video>
+                            <video src="{{ $timestampedLink }}" autoplay loop muted playsinline draggable="false"></video>
                         {{ else }}
-                            <img src="{{ $timestampedLink }}" alt="Flyer" loading="lazy">
+                            <img src="{{ $timestampedLink }}" alt="Flyer" loading="lazy" draggable="false">
                         {{ end }}
                     </a>
                 </div>
@@ -113,11 +128,56 @@
         pagination: { el: ".pagination-" + dataName, clickable: true }
     });
 
-    // Initializing GLightbox with grouped gallery to prevent the closing bug
-    GLightbox({ 
+    // Keep the card previews from playing under the lightbox.
+    const cards = Array.prototype.slice.call(
+        document.querySelectorAll(".swiper-container-" + dataName + " video")
+    );
+    const pauseCards = () => cards.forEach(v => v.pause());
+    const playCards = () => cards.forEach(v => {
+        // Only resume previews that are still within the viewport.
+        const r = v.getBoundingClientRect();
+        if (r.right > 0 && r.left < window.innerWidth) v.play().catch(() => {});
+    });
+
+    // GLightbox options
+    //
+    // closeEffect/slideEffect: "none" is deliberate. GLightbox only finishes
+    // closing (or switching slide) from the `animationend` event of its
+    // zoomOut/slideIn CSS animations, and it latches `closing = true` until
+    // that event arrives. Any other animation that ends inside a slide and
+    // bubbles up (Plyr uses plyr-fade-in / plyr-popup on its own children)
+    // fires that listener early, tearing the modal down mid-animation and
+    // leaving `closing` stuck -- after which the X button, outside click and
+    // Escape are all dead and it only recovers on a second click. With "none"
+    // GLightbox skips the animation and runs its teardown synchronously, so
+    // the close can never get stuck.
+    //
+    // plyr.config.ratio: null is deliberate. GLightbox hardcodes
+    // plyr.config.ratio = "16:9", and Plyr turns that into
+    // `padding-bottom: 56.25%` on its wrapper, so a 720x1280 (9:16) video gets
+    // cropped and GLightbox's resize() also sizes the media from the fake 16:9
+    // ratio. null makes Plyr use the video's real aspect ratio and makes
+    // GLightbox measure the actual rendered wrapper.
+    //
+    // preload: false stops GLightbox from spinning up background Plyr players
+    // for neighbouring video slides (they keep playing off-screen).
+    // draggable: false only turns off GLightbox's own drag layer on the opened
+    // slide; the draggable="false" on the anchors above is what stops the
+    // browser treating each card as a native drag source, since an <a href> is
+    // draggable by default and a native drag swallows the mousemove/mouseup
+    // pair Swiper needs.
+    GLightbox({
         selector: '.glightbox-' + dataName,
         loop: true,
-        closeOnOutsideClick: true
+        closeOnOutsideClick: true,
+        draggable: false,
+        preload: false,
+        closeEffect: "none",
+        slideEffect: "none",
+        openEffect: "fade",
+        plyr: { config: { ratio: null } },
+        onOpen: pauseCards,
+        onClose: playCards
     });
 })();
 </script>

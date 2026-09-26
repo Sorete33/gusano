@@ -62,15 +62,16 @@
                                target="_blank" 
                                rel="noopener" 
                                class="external-promo-link prevent-lightbox" 
-                               data-glightbox="none">
+                               data-glightbox="none"
+                               draggable="false">
                                 {{ if (strings.HasSuffix .link ".mp4") }}
-                                    <video src="{{ $timestampedLink }}" autoplay loop muted playsinline></video>
+                                    <video src="{{ $timestampedLink }}" autoplay loop muted playsinline draggable="false"></video>
                                 {{ else }}
-                                    <img src="{{ $timestampedLink }}" alt="Promo" loading="lazy">
+                                    <img src="{{ $timestampedLink }}" alt="Promo" loading="lazy" draggable="false">
                                 {{ end }}
                             </a>
                         {{ else }}
-                            <img src="{{ $timestampedLink }}" alt="Flyer" loading="lazy">
+                            <img src="{{ $timestampedLink }}" alt="Flyer" loading="lazy" draggable="false">
                         {{ end }}
                     </div>
                 </div>
