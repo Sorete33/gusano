@@ -2,9 +2,9 @@
 title: Anuncio
 ---
 
-{{< new title="Daniel Rodolfo Garcia 1958-2026 QEPD. Gracias Dani por toda la música que generaste." >}}
+<!-- {{< new title="Daniel Rodolfo Garcia 1958-2026 QEPD. Gracias Dani por toda la música que generaste." >}}
 ![Dani](/images/garis.jpg)
-
+-->
 
 {{< /new >}}
 
