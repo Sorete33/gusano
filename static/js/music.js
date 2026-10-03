@@ -1125,6 +1125,24 @@ const songs = [
 
   },
 
+  {
+    title: "Corpo Porco en el cumple accidental",
+    artist: "Corpo Porco",
+    src: "https://archive.org/download/ia-cumple/corpo-porco.mp3",
+    img: "/recitales/la-maga/cumple-accidental/featured.webp",
+    date: "2026-09-26",
+
+  },
+
+  {
+    title: "Inteligencia Accidental en el cumple accidental",
+    artist: "Inteligencia Accidental",
+    src: "https://archive.org/download/ia-cumple/ia-cumple.mp3",
+    img: "/recitales/la-maga/cumple-accidental/featured.webp",
+    date: "2026-09-26",
+
+  },
+
 
 
 ];
