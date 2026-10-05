@@ -2,11 +2,11 @@
 title: Anuncio
 ---
 
-{{< new title="Por el momento los recitales están caídos porque el servidor donde se hosteaban explotó. Pero que no panda el cúnico, tengo todos los archivos de manera local y los voy a estar subiendo a Internet Archive para que se conserven. Gracias por su atención en este asunto" >}}
+<!-- {{< new title="Por el momento los recitales están caídos porque el servidor donde se hosteaban explotó. Pero que no panda el cúnico, tengo todos los archivos de manera local y los voy a estar subiendo a Internet Archive para que se conserven. Gracias por su atención en este asunto" >}}
 
 
 {{< /new >}}
-
+-->
 
 {{< webamp >}}
 
