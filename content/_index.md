@@ -2,12 +2,11 @@
 title: Anuncio
 ---
 
-<!-- {{< new title="Daniel Rodolfo Garcia 1958-2026 QEPD. Gracias Dani por toda la música que generaste." >}}
-![Dani](/images/garis.jpg)
+{{< new title="Por el momento los recitales están caídos porque el servidor donde se hosteaban explotó. Pero que no panda el cúnico, tengo todos los archivos de manera local y los voy a estar subiendo a Internet Archive para que se conserven. Gracias por su atención en este asunto" >}}
 
 
 {{< /new >}}
--->
+
 
 {{< webamp >}}
 
