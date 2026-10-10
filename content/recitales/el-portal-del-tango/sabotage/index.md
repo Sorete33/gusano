@@ -14,8 +14,6 @@ heroStyle: background
 
 # Sabo-festi-cumple de Adri, feliz órbita solar Adrián! Gracias por tus vibraciones bajas.
 
-## El audio de la otra bandita misticamente se borro
-
 ---
 
 # [Sabotage](https://www.instagram.com/sabotage.nu.metal/) 

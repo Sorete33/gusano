@@ -14,7 +14,7 @@ heroStyle: background
 
 # Ronda de bandas del 10-7-26 gracias [La Ronda](https://www.instagram.com/larondacultural/) por el espacio.
 
-### El audio Sociedad Macabra quedo un solo tema porque mucho pogo y se le salieron las pilas a la maquina jejej :0 van a tener que tocar nuevamente
+### El audio Sociedad Macabra quedo un solo tema.
 ---
 
 # [Maquinaria Divina](https://www.instagram.com/maquinariadivina/)

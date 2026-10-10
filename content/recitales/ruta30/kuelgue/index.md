@@ -10,7 +10,6 @@ showHero: true
 heroStyle: background
 ---
 # <video src="/covers/kuelgue.mp4" width="320" height="240" controls></video>
-# Bandasa improvisada + Jam, todo lo que está bien. El ambiente de bar estaba fortisimo, espero que se disfrute.
 
 ---
 

@@ -13,7 +13,6 @@ heroStyle: background
 # ![alt text](featured.png)
 
 # Festejando el cumple de Morti de la mejor manera fest con Sociedad Macabra, Parasomnia, IA y Los Bad Seed, gracias gracias gracias.
-~(disculpen los coritos estaba escabio)~
 
 ---
 

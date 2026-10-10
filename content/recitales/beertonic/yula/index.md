@@ -12,7 +12,7 @@ heroStyle: background
 
 ![alt text](featured.jpg)
 
-# Julian Amar + invitades en [Beertonic](https://www.instagram.com/beertonic.ch/)
+# Yula + invitades en [Beertonic](https://www.instagram.com/beertonic.ch/)
 
 {{< audio src="https://files.catbox.moe/798l3z.mp3">}}
 

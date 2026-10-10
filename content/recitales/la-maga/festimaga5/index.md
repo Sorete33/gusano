@@ -12,8 +12,6 @@ heroStyle: background
 
 # ![alt text](featured.png)
 
-# Festimaga volumen 5 con 5 bandas de lujo, fechón, entre todes formamos parte de algo más grande, gracias.
-
 ---
 
 # Mate Jazz

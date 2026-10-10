@@ -12,7 +12,7 @@ heroStyle: background
 
 # ![alt](featured.jpg)
 
-# Reunión épica de [Oesterheld](https://www.instagram.com/_oesterheld_/) en Sala Biaus 24-01-26
+# Reunión de [Oesterheld](https://www.instagram.com/_oesterheld_/) en Sala Biaus 24-01-26
 
 ---
 

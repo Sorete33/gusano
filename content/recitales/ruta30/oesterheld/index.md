@@ -12,7 +12,7 @@ heroStyle: background
 
 # ![alt text](featured.jpg)
 
-# Despedida de [Oesterheld](https://www.instagram.com/_oesterheld_/). Nos vemos en 5 años, gracias por la música.
+# [Oesterheld](https://www.instagram.com/_oesterheld_/) en vivo desde Ruta 30.
 
 ---
 

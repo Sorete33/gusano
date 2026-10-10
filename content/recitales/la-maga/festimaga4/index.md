@@ -12,10 +12,6 @@ heroStyle: background
 
 # ![alt text](featured.jpg)
 
-# 5 Bandas, pintura en vivo, una noche memorable, gracias.
-
-Bueno el audio de la linea quedo saturado, no pude estar presente con las maquinitas asi que quedó solo el aire de arriba del techo de la maga, en sala ro se renego y quedó un extracto, espero lo disfruten.
-
 ---
 
 # [Cínica](https://www.instagram.com/_cinicabanda/)

@@ -12,8 +12,6 @@ heroStyle: background
 
 # ![alt text](featured.jpg)
 
-### Salí cagando del reci del Armand para llegar a este fechón, como se porta Chivil, muchísimas movidas de calidad y auténticas, gracias [Sala Biaus]() por el espacio. Ismael y Corpo quedaron grabados solo en mp3 porque la grabadora flashaba con la memoria.
-
 ---
 
 # [Base](https://www.instagram.com/base.hc/) (Extracto)

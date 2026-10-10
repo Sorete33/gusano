@@ -13,7 +13,7 @@ heroStyle: background
 
 ![alt text](featured.png)
 
-# [Armando Alonso](https://www.instagram.com/armandoalonsomusico/) presentando su nuevo disco "Problemas con el gas" desde el teatro Trac 06/09/25.
+# [Armando Alonso](https://www.instagram.com/armandoalonsomusico/) presentando su nuevo disco "Problemas con el gas" desde el [Teatro Trac](https://www.instagram.com/tracgrupoteatralindependiente/) 06/09/25.
 
 {{<audio src="https://files.catbox.moe/utn41c.mp3">}}
 

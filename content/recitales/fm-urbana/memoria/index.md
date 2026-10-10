@@ -1,5 +1,5 @@
 ---
-date : 2026-03-26
+date : 2026-03-24
 title : "Vigilia por la memoria en la radio FM Urbana 102.1"
 weight: -65
 bandas: [Rocio Palazzo, Nicolas Benagui, Ignacio Viano]

@@ -12,8 +12,6 @@ heroStyle: background
 
 # ![alt text](featured.jpg)
 
-# Primera vez que tengo que grabar en 0.6 de volumen, gracias Nómada por el audio y activar la fechita.
-
 ---
 
 # [Nómada](https://www.instagram.com/nomada.chivilcoy/)

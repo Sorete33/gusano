@@ -12,9 +12,7 @@ heroStyle: background
 
 # ![alt text](featured.png)
 
-# Más [Cínica](https://www.instagram.com/_cinicabanda/)! Más Drama! ¿Más Drama? Más [DRAMA](https://www.instagram.com/drama.arg/)
-
-# [La Reja Estudio](https://www.instagram.com/la_reja_estudio/) Fest en [Sala Biaus](https://www.instagram.com/salabiaus/)
+# [Cínica](https://www.instagram.com/_cinicabanda/)y [DRAMA](https://www.instagram.com/drama.arg/) en [La Reja Estudio](https://www.instagram.com/la_reja_estudio/) Fest en [Sala Biaus](https://www.instagram.com/salabiaus/)
 
 ---
 

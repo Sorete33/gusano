@@ -12,7 +12,6 @@ heroStyle: background
 
 # ![alt text](featured.png)
 
-# Tengo que conseguir un tripode porque ya no se puede ver más semejantes banduarrias sin pogo y coritos, gracias por la musica y gracias a sala biaus por el espacio.
 
 ---
 

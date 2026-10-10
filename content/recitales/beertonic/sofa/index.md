@@ -12,7 +12,7 @@ heroStyle: background
 
 # ![alt text](featured.png)
 
-# Hermoso acusticón de temas auténticos de [SOFA](https://www.instagram.com/sofaw000/) y algunos coversitos en [Beertonic](https://www.instagram.com/beertonic.ch/)
+# Acustico de temas auténticos de [SOFA](https://www.instagram.com/sofaw000/) y algunos coversitos en [Beertonic](https://www.instagram.com/beertonic.ch/)
 
 {{<audio src="https://files.catbox.moe/rqmo87.mp3">}}
 

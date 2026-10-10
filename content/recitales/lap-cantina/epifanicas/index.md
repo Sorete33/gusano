@@ -12,8 +12,7 @@ heroStyle: background
 
 # ![alt text](featured.jpg)
 
-# [La cantina](https://www.instagram.com/lapcantina/) está abierta a la comunidad y tocan banditas, recomiendo tener contacto con  la flora y fauna del espacio.
-
+# [Epifanicas](https://www.instagram.com/epi.fanicas/) en vivo desde [La cantina](https://www.instagram.com/lapcantina/).
 ---
 
 # [Epifanicas](https://www.instagram.com/epi.fanicas/)
