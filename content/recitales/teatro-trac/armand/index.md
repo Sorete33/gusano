@@ -1,8 +1,8 @@
 ---
 date : '2025-09-09'
-title : "Armando Alonso en el Teatro Trac"
+title : "Armando Alonso Trío en el Teatro Trac"
 weight: -9
-bandas: [Armando Alonso]
+bandas: [Armando Alonso, Agustín Barbieri, Nicolás Benaghi]
 espacios: [Teatro Trac]
 author: "Gusanoide"
 cardView: false

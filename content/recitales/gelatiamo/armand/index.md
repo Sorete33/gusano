@@ -2,7 +2,7 @@
 date : 2025-12-11
 title : "Armando Alonso Trío en Gelatiamo"
 weight: -35
-bandas: [Armando Alonso, Nicolas Benagui, Agustín Barbieri]
+bandas: [Armando Alonso, Nicolás Benaghi, Agustín Barbieri]
 espacios: [Gelatiamo]
 author: "Gusanoide"
 draft: false

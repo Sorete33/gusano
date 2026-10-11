@@ -2,9 +2,8 @@
 title: "Armando Alonso en Casa Fratello"
 date: 2025-04-26
 weight: -2
-tags: ["Armando Alonso", "Jazz", "Casa Fratello"]
 espacios: ["Casa Fratello"]
-bandas: ["Armando Alonso"]
+bandas: [Armando Alonso, Nicolás Benaghi, Agustín Barbieri]
 author: "Gusaoide"
 showHero: true
 heroStyle: background

@@ -2,7 +2,7 @@
 date : 2026-03-21
 title : "Cínica y Drama en La Reja Estudio Fest"
 weight: -64
-bandas: [Cínica, DRAMA, Nicolas Benagui, Ignacio Viano, Julián Muchiut]
+bandas: [Cínica, DRAMA, Nicolás Benaghi, Ignacio Viano, Julián Muchiut]
 espacios: [Sala Biaus]
 author: "Gusanoide"
 draft: false

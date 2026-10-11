@@ -2,7 +2,7 @@
 date : 2026-03-06
 title : "Armando Alonso Trío en Sala Belgrano"
 weight: -59
-bandas: [Armando Alonso, Nicolas Benaghi, Agustín Barbieri]
+bandas: [Armando Alonso, Nicolás Benaghi, Agustín Barbieri]
 espacios: [Sala Belgrano]
 author: "Gusanoide"
 draft: false

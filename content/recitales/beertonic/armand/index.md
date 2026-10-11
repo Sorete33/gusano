@@ -1,8 +1,8 @@
 ---
 date : 2025-10-09
-title : "Armando Alonso en Beertonic "
+title : "Armando Alonso Trío en Beertonic "
 weight: -17
-bandas: [Armando Alonso]
+bandas: [Armando Alonso, Agustín Barbieri, Nicolás Benaghi]
 espacios: [Beertonic]
 author: "Gusanoide"
 draft: false

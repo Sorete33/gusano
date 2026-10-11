@@ -2,7 +2,7 @@
 date : 2026-03-24
 title : "Vigilia por la memoria en la radio FM Urbana 102.1"
 weight: -65
-bandas: [Rocio Palazzo, Nicolas Benagui, Ignacio Viano]
+bandas: [Rocio Palazzo, Nicolás Benaghi, Ignacio Viano]
 espacios: [FM Urbana]
 author: "Gusanoide"
 draft: false
@@ -16,7 +16,7 @@ heroStyle: background
 
 ---
 
-# Rocio Palazzo, Nicolas Benagui e Ignacio Viano
+# Rocio Palazzo, Nicolás Benaghi e Ignacio Viano
 
 {{<audio src="https://files.catbox.moe/lydu1h.mp3">}}
 

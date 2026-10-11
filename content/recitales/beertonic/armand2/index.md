@@ -2,7 +2,7 @@
 date : 2026-03-20
 title : "Armando Alonso Trío en Beertonic"
 weight: -63
-bandas: [Armando Alonso, Nicolas Benagui, Agustín Barbieri]
+bandas: [Armando Alonso, Nicolás Benaghi, Agustín Barbieri]
 espacios: [Beertonic]
 author: "Gusanoide"
 draft: false
