@@ -12,6 +12,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import shutil
 import subprocess
 import sys
 import tempfile
@@ -60,6 +61,12 @@ def probe(url: str) -> float | None:
 
 
 def main() -> None:
+    # A missing ffprobe makes every probe fail at once and the script still
+    # exits 0, which looks exactly like "nothing left to fill in". Fail loudly
+    # instead: CI installs ffmpeg in .github/workflows/deploy.yml.
+    if not shutil.which("ffprobe"):
+        sys.exit("ffprobe not found - install ffmpeg (apt-get install ffmpeg)")
+
     ap = argparse.ArgumentParser()
     ap.add_argument("--force", action="store_true", help="re-probe known durations")
     ap.add_argument("--concurrency", type=int, default=2)

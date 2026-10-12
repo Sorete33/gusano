@@ -26,7 +26,12 @@ jobs:
           python-version: '3.x'
 
       - name: Install Dependencies
-        run: pip install dropbox PyYAML
+        run: |
+          pip install dropbox PyYAML
+          # get-durations.py probes every track without a duration; the
+          # ubuntu runners do not ship ffprobe.
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends ffmpeg
 
       - name: Run Dropbox Sync
         env:
