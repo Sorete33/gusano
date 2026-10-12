@@ -18,9 +18,12 @@ heroStyle: background
 
 # Rocio Palazzo, Nicolás Benaghi e Ignacio Viano
 
-{{<audio src="https://files.catbox.moe/lydu1h.mp3">}}
+{{< track show="fm-urbana/memoria" track="discursos" >}}
 
-[Streaming en formato WAV](https://pixeldrain.com/u/fWamT4RH)
+{{< track show="fm-urbana/memoria" track="somos-rock" >}}
+
+{{< track show="fm-urbana/memoria" track="murgas" >}}
+
 
 ---
 
@@ -29,3 +32,5 @@ heroStyle: background
 {{<audio src="https://files.catbox.moe/v0obn3.mp3">}}
 
 [Streaming en formato WAV](https://pixeldrain.com/u/BTcBxvG7)
+
+[Artículo en Internet Archive](https://archive.org/details/live-2026-03-24-movilizacin-por-la-memoria-verdad-y-justicia)

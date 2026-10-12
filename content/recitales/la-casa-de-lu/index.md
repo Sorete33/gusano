@@ -18,17 +18,13 @@ heroStyle: background
 
 # [Inteligencia Accidental](https://www.instagram.com/inteligencia.accidental/) 
 
-{{<audio src="https://files.catbox.moe/1y3q74.mp3">}}
-
-[Streaming en formato WAV](https://pixeldrain.com/u/Eav5NuYm)
+{{< track show="la-casa-de-lu" track="inteligencia-accidental" >}}
 
 
 ---
 
 # [Sala Roja](https://www.instagram.com/__salaroja/)
 
-{{<audio src="https://files.catbox.moe/w5yfc2.mp3">}}
+{{< track show="la-casa-de-lu" track="sala-roja" >}}
 
-[Streaming en formato WAV](https://pixeldrain.com/u/1WKyBp6Q)
-
-
+[Artículo en Internet Archive](https://archive.org/details/live-2025-10-20-cumple-lucas)

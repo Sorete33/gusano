@@ -19,11 +19,7 @@ heroStyle: background
 
 # [Los Pozoz](https://www.instagram.com/los.pozoz/)
 
-{{<audio src="https://files.catbox.moe/f0vb1d.mp3">}}
-
-[Link directo](https://files.catbox.moe/f0vb1d.mp3)
-
-[Streaming en formato WAV](https://pixeldrain.com/u/ZJx8JeQZ)
+{{< track show="la-maga/festimaga3" track="los-pozoz" >}}
 
 
 ---
@@ -31,20 +27,11 @@ heroStyle: background
 # [Traumas de la Infancia](https://www.instagram.com/traumasdelainfancia81/)
 
 
-{{<audio src="https://files.catbox.moe/s8qfqf.mp3">}}
-
-[Link directo](https://files.catbox.moe/s8qfqf.mp3)
-
-[Streaming en formato WAV](https://pixeldrain.com/u/vVPWKtLh)
+{{< track show="la-maga/festimaga3" track="traumas-de-la-infancia" >}}
 
 
 ---
 
 # Show reunión de Traumas con la formación guitarra + coros Yanqui, bajo, Nicanor, batería, Chiquilin Sanchez y voz, Simón (el cantor) interpretando su primer material grabado [Desahogo](https://traumasdelainfancia.bandcamp.com/album/desahogo)
 
-{{<audio src="https://files.catbox.moe/a08fm2.mp3">}}
-
-[Link directo](https://files.catbox.moe/a08fm2.mp3)
-
-[Streaming en formato WAV](https://pixeldrain.com/u/ZT58DhCz)
-
+{{< track show="la-maga/festimaga3" track="desahogo" >}}

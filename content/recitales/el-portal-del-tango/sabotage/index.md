@@ -18,6 +18,6 @@ heroStyle: background
 
 # [Sabotage](https://www.instagram.com/sabotage.nu.metal/) 
 
-{{<audio src="https://files.catbox.moe/59gial.mp3">}}
+{{< track show="el-portal-del-tango/sabotage" track="sabotage" >}}
 
-[Streaming en formato WAV](https://pixeldrain.com/u/AvDxwDVx)
+[Artículo en Internet Archive](https://archive.org/details/live-2026-03-13-sabotage)

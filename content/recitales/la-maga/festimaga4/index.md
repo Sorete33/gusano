@@ -16,42 +16,34 @@ heroStyle: background
 
 # [Cínica](https://www.instagram.com/_cinicabanda/)
 
-{{<audio src="https://files.catbox.moe/3jyhtm.mp3">}}
-
-[Streaming en formato WAV](https://pixeldrain.com/u/potpGi8n)
+{{< track show="la-maga/festimaga4" track="cinica" >}}
 
 ---
 
 # [Paprika's Band](https://www.instagram.com/lapaprikaband/)
 
-{{<audio src="https://files.catbox.moe/psh860.mp3">}}
-
-[Streaming en formato WAV](https://pixeldrain.com/u/A46CPgT3)
+{{< track show="la-maga/festimaga4" track="paprikas-band" >}}
 
 ---
 
 # [Little Rocker](https://www.instagram.com/littlerockerr/)
 
-{{<audio src="https://files.catbox.moe/0hm7p2.mp3">}}
-
-[Streaming en formato WAV](https://pixeldrain.com/u/b9eUccD7)
+{{< track show="la-maga/festimaga4" track="little-rocker" >}}
 
 ---
 
 # [Sala Roja](https://www.instagram.com/__salaroja/)
 
-{{<audio src="https://files.catbox.moe/3mp9ao.mp3">}}
-
-[Streaming en formato WAV](https://pixeldrain.com/u/NDHUB5pv)
+{{< track show="la-maga/festimaga4" track="sala-roja" >}}
 
 ---
 
 # [Inteligencia Accidental](https://www.instagram.com/inteligencia.accidental/)
 
-{{<audio src="https://files.catbox.moe/ud2j4b.mp3">}}
-
-[Streaming en formato WAV](https://pixeldrain.com/u/aXzvh6m4)
+{{< track show="la-maga/festimaga4" track="inteligencia-accidental" >}}
 
 ---
 
 # Pintura en vivo de la mano de [Nativa](https://www.instagram.com/nativa_sl/) (si alguien tiene una foto que me la pase)
+
+[Artículo en Internet Archive](https://archive.org/details/live-2026-01-10-festimaga-4)

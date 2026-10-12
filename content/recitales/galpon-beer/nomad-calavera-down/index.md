@@ -16,22 +16,18 @@ heroStyle: background
 
 # [Nómada](https://www.instagram.com/nomada.chivilcoy/)
 
-{{<audio src="/audio/galpon/nomada.mp3">}}
-
-[Streaming en formato WAV](https://pixeldrain.com/u/zUgYMHfQ)
+{{< track show="galpon-beer/nomad-calavera-down" track="nomada" >}}
 
 ---
 
 # [San Calavera](https://www.instagram.com/san__calavera/)
 
-{{<audio src="/audio/galpon/calavera.mp3">}}
-
-[Streaming en formato WAV](https://pixeldrain.com/u/qja8gSkN)
+{{< track show="galpon-beer/nomad-calavera-down" track="san-calavera" >}}
 
 ---
 
 # [Downfall](https://www.instagram.com/downfall_hc/)
 
-{{<audio src="/audio/galpon/downfall.mp3">}}
+{{< track show="galpon-beer/nomad-calavera-down" track="downfall" >}}
 
-[Streaming en formato WAV](https://pixeldrain.com/u/WtyNHGGk)
+[Artículo en Internet Archive](https://archive.org/details/live-2026-01-30-nomadasan-calaveradownfall)

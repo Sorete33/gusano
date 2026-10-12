@@ -105,28 +105,32 @@
     </div>
   </div>
 
-  <!-- Inject Hugo recital data to window.recitalData -->
-  <script>
-    window.recitalData = [
-      {{ range (where .Site.RegularPages "Section" "recitales") }}
-        {
-          permalink: "{{ .RelPermalink }}",
-          date: "{{ .Date.Format "2006-01-02" }}",
-          title: "{{ .Title | safeJS }}",
-          bandas: [
-            {{ range .Params.bandas }}
-              "{{ . | safeJS }}",
-            {{ end }}
-          ],
-          audios: [
-            {{ $matches := findRE `(https?://|/audio/)[a-zA-Z0-9./_-]+\.mp3` .RawContent }}
-            {{ range $matches }}
-              "{{ . }}",
-            {{ end }}
-          ]
-        },
+  <!-- Songs come from data/shows.yml (see layouts/partials/webamp.html, which
+       builds the winamp playlist from the same file). Pre-resolved here so
+       static/js/music.js stays a static asset with no hardcoded data. -->
+  {{ $songs := slice }}
+  {{ range .Site.Data.shows }}
+    {{ $archive := .archive }}
+    {{ $date := .date }}
+    {{ $cover := .cover | default "/covers/default.jpg" }}
+    {{ range .tracks }}
+      {{ $src := .src }}
+      {{ with .mp3 }}
+        {{ $src = printf "https://archive.org/download/%s/%s" $archive . }}
       {{ end }}
-    ];
+      {{ if $src }}
+        {{ $songs = $songs | append (dict
+          "title" (.title | default "")
+          "artist" (.artist | default "")
+          "src" $src
+          "img" $cover
+          "date" $date
+        ) }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+  <script>
+    window.shows = {{ $songs | jsonify | safeJS }};
   </script>
 
   <!-- Link to the JavaScript file -->

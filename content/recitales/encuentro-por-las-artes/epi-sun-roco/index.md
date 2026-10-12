@@ -16,23 +16,18 @@ heroStyle: background
 
 # [Epifanicas](https://www.instagram.com/epi.fanicas/)
 
-{{<audio src="https://files.catbox.moe/3rjs9s.mp3">}}
-
-[Streaming en formato WAV](https://pixeldrain.com/u/EvDYC4De)
+{{< track show="encuentro-por-las-artes/epi-sun-roco" track="epifanicas" >}}
 
 ---
 
 # [Sunglasses](https://www.instagram.com/sunglasses.fm/)
 
-{{<audio src="https://files.catbox.moe/ooo8y2.mp3">}}
-
-[Streaming en formato WAV](https://pixeldrain.com/u/8zBxmVJU)
+{{< track show="encuentro-por-las-artes/epi-sun-roco" track="sunglasses" >}}
 
 ---
 
 # [Roco y los Chacks](https://www.instagram.com/rocoyloschacks/)
 
-{{<audio src="https://files.catbox.moe/xkdrvl.mp3">}}
+{{< track show="encuentro-por-las-artes/epi-sun-roco" track="roco-y-los-chacks" >}}
 
-[Streaming en formato WAV](https://pixeldrain.com/u/3aTh34Vs)
-
+[Artículo en Internet Archive](https://archive.org/details/live-2026-01-09-epifanicas-sunglasses-roco-y-los-chaks)

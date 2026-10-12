@@ -1,0 +1,36 @@
+/* Audio players rendered by layouts/shortcodes/track.html and tracks.html.
+   Replaces the hand written <audio> + "[Streaming en formato WAV]" blocks the
+   recital pages used to carry. */
+
+.recital-track {
+  margin: 1rem 0;
+}
+
+.recital-track audio {
+  width: 100%;
+  max-width: 100%;
+}
+
+.recital-track .track-download {
+  display: inline-block;
+  margin-top: 0.35rem;
+  font-size: 0.9rem;
+  text-decoration: underline;
+}
+
+.recital-track .track-label {
+  display: inline-block;
+  margin-top: 0.35rem;
+  font-size: 0.85rem;
+  opacity: 0.75;
+}
+
+.recital-track figcaption {
+  margin-top: 0.35rem;
+  font-size: 0.85rem;
+  opacity: 0.75;
+}
+
+.recital-archive {
+  margin-top: 1.5rem;
+}

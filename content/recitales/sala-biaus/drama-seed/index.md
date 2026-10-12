@@ -18,14 +18,12 @@ heroStyle: background
 
 # DRAMA
 
-{{<audio src="https://files.catbox.moe/u87zop.mp3">}}
-
-[Streaming en formato WAV](https://pixeldrain.com/u/8xzvNFJN)
+{{< track show="sala-biaus/drama-seed" track="drama" >}}
 
 ---
 
 # Bad Seed
 
-{{<audio src="https://files.catbox.moe/1q21vg.mp3">}}
+{{< track show="sala-biaus/drama-seed" track="bad-seed" >}}
 
-[Streaming en formato WAV](https://pixeldrain.com/u/ye5jtU6T)
+[Artículo en Internet Archive](https://archive.org/details/live-2025-12-27-dramabad-seed)

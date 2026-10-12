@@ -1,0 +1,74 @@
+{{/* Renders one track of a show from data/shows.yml.
+
+  Usage from a recital page:
+
+    {{< track show="la-maga/cumple-accidental" track="corpo-porco" >}}
+
+  {{< track show="<show id>" track="<track id>" [label="(extracto)"] >}}
+
+  All parameters are named: Hugo does not allow mixing named and positional
+  ones in a single call.
+
+  The show id is the path of the page under content/recitales (a show filed
+  straight under a venue is just its own name, e.g. "mad-monky"). Track ids are
+  the `id` of a track in data/shows.yml.
+
+  Renders the audio player plus the lossless download link. The player's MIME
+  type is derived from the file, because a few archive.org items have no mp3
+  derivative and only ship a .wav.
+*/}}
+
+{{ $showId := .Get "show" }}
+{{ $trackId := .Get "track" }}
+{{ $label := .Get "label" }}
+
+{{ $show := dict }}
+{{ range site.Data.shows }}
+  {{ if eq .id $showId }}{{ $show = . }}{{ end }}
+{{ end }}
+
+{{ with $show }}
+  {{ $track := dict }}
+  {{ range .tracks }}
+    {{ if eq .id $trackId }}{{ $track = . }}{{ end }}
+  {{ end }}
+
+  {{ with $track }}
+    {{ $url := .src }}
+    {{ with .mp3 }}
+      {{ $url = printf "https://archive.org/download/%s/%s" $show.archive . }}
+    {{ end }}
+
+    {{ if $url }}
+      {{ $ext := path.Ext $url | strings.TrimPrefix "." | lower }}
+      {{ $mime := dict "mp3" "audio/mpeg" "flac" "audio/flac" "wav" "audio/wav" "ogg" "audio/ogg" "m4a" "audio/mp4" }}
+      {{ $type := index $mime $ext | default "audio/mpeg" }}
+
+      <figure class="recital-track">
+        <audio controls preload="none" crossorigin="anonymous">
+          <source src="{{ $url }}" type="{{ $type }}">
+          Tu navegador no puede reproducir este audio.
+        </audio>
+
+        {{ $download := .flac }}
+        {{ if not $download }}{{ $download = .wav }}{{ end }}
+        {{ with $download }}
+          {{ $durl := printf "https://archive.org/download/%s/%s" $show.archive . }}
+          {{ $dext := path.Ext $durl | strings.TrimPrefix "." | lower }}
+          <a class="track-download" href="{{ $durl }}" download>
+            {{ if eq $dext "flac" }}Descarga en formato FLAC{{ else }}Descarga en formato WAV{{ end }}
+            {{ with $label }} {{ . }}{{ end }}
+          </a>
+        {{ else }}
+          {{ with $label }}<span class="track-label">{{ . }}</span>{{ end }}
+        {{ end }}
+      </figure>
+    {{ else }}
+      {{ warnf "track shortcode: %s#%s has no playable URL" $showId $trackId }}
+    {{ end }}
+  {{ else }}
+    {{ warnf "track shortcode: no track %q in show %q" $trackId $showId }}
+  {{ end }}
+{{ else }}
+  {{ warnf "track shortcode: no show %q in data/shows.yml" $showId }}
+{{ end }}

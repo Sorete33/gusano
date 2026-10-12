@@ -16,26 +16,20 @@ heroStyle: background
 
 # [Entrance](https://www.instagram.com/entr4nce.ck/) (Extracto)
 
-{{<audio src="https://files.catbox.moe/8iivth.mp3">}}
-
-[Streaming en formato WAV](https://pixeldrain.com/u/CTgmT756)
+{{< track show="sala-biaus/entrance-cinica-base" track="entrance" label="(extracto)" >}}
 
 ---
 
 
 # [Cínica](https://www.instagram.com/_cinicabanda/)
 
-{{<audio src="https://files.catbox.moe/8usc4r.mp3">}}
-
-[Streaming en formato WAV](https://pixeldrain.com/u/PQ7XZaxw)
+{{< track show="sala-biaus/entrance-cinica-base" track="cinica" >}}
 
 ---
 
 # [Base](https://www.instagram.com/base.hc/)
 
-{{<audio src="https://files.catbox.moe/kh6kkv.mp3">}}
-
-[Streaming en formato WAV](https://pixeldrain.com/u/W6c7qfXE)
+{{< track show="sala-biaus/entrance-cinica-base" track="base" >}}
 
 ## Lista de BASE
 

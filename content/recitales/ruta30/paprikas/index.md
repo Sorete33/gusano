@@ -15,10 +15,10 @@ heroStyle: background
 # Temitas nuevos de la [Papri](https://www.instagram.com/lapaprikaband/) en Ruta 30
 
 
-{{<audio src="https://audiogusano.neocities.org/audio/ruta30/paprikas-ruta.mp3">}}
-
-[Streaming en formato WAV](https://pixeldrain.com/u/9Hpchn9D)
+{{< track show="ruta30/paprikas" track="paprikas-band-en-ruta-30" >}}
 
 ## Para el museo
 
 ![lista papri](/images/listas/paprika.webp)
+
+[Artículo en Internet Archive](https://archive.org/details/live-2026-07-17-paprikas-band)

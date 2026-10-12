@@ -13,7 +13,4 @@ heroStyle: background
 
 # Armando Alonso en vivo desde Casa Fratello 26-4-25
 
-{{< audio src="https://files.catbox.moe/4icsi1.mp3" >}}
-
-[Link Directo](https://files.catbox.moe/4icsi1.mp3)
-
+{{< track show="casa-fratello/armand" track="armando-alonso" >}}

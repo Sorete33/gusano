@@ -16,6 +16,6 @@ heroStyle: background
 
 ---
 
-{{<audio src="https://files.catbox.moe/qhrn7g.mp3">}}
+{{< track show="ruta30/oesterheld" track="oesterheld" >}}
 
-[Streaming en formato WAV](https://pixeldrain.com/u/huJDQBqF)
+[Artículo en Internet Archive](https://archive.org/details/live-2026-02-06-oesterheld)

@@ -18,22 +18,18 @@ heroStyle: background
 
 # Acústico de La Reja Estudio
 
-{{<audio src="https://files.catbox.moe/6zk2lj.mp3">}}
-
-[Streaming en formato WAV](https://pixeldrain.com/u/97tW6gMy)
+{{< track show="sala-biaus/la-reja-fest" track="acustico-la-reja" >}}
 
 ---
 
 # Cínica
 
-{{<audio src="https://files.catbox.moe/ebajw2.mp3">}}
-
-[Streaming en formato WAV](https://pixeldrain.com/u/nd2fXaEW)
+{{< track show="sala-biaus/la-reja-fest" track="cinica" >}}
 
 ---
 
 # DRAMA
 
-{{<audio src="https://files.catbox.moe/4xqu71.mp3">}}
+{{< track show="sala-biaus/la-reja-fest" track="drama" >}}
 
-[Streaming en formato WAV](https://pixeldrain.com/u/yAwJKXUh)
+[Artículo en Internet Archive](https://archive.org/details/live-2026-03-21-reja-estudio-fest)

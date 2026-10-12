@@ -13,5 +13,6 @@ heroStyle: background
 
 # Mate Jazz en [Beertonic](https://www.instagram.com/beertonic.ch/) 12/09/25
 
-{{<audio src="https://files.catbox.moe/oregu8.mp3">}}
+{{< track show="beertonic/mate-jazz" track="mate-jazz" >}}
 
+[Artículo en Internet Archive](https://archive.org/details/live-2025-09-12-matejazz)

@@ -17,22 +17,18 @@ heroStyle: background
 
 # [Entrance](https://www.instagram.com/entr4nce.ck/)
 
-{{<audio src="https://files.catbox.moe/iafe6j.mp3">}}
-
-[Streaming en formato WAV](https://pixeldrain.com/u/6oyFYHdK)
+{{< track show="sala-biaus/entrance-ia-sabotaje" track="entrance" >}}
 
 ---
 
 # [Inteligencia Accidental](https://www.instagram.com/inteligencia.accidental/)
 
-{{<audio src="https://files.catbox.moe/36tdec.mp3">}}
-
-[Streaming en formato WAV](https://pixeldrain.com/u/FjNmrvjw)
+{{< track show="sala-biaus/entrance-ia-sabotaje" track="inteligencia-accidental" >}}
 
 ---
 
 # [Sabotaje](https://www.instagram.com/sabotage.nu.metal/)
 
-{{<audio src="https://files.catbox.moe/bvkj6x.mp3">}}
+{{< track show="sala-biaus/entrance-ia-sabotaje" track="sabotage" >}}
 
-[Streaming en formato WAV](https://pixeldrain.com/u/ddMpU8AW)
+[Artículo en Internet Archive](https://archive.org/details/live-2026-02-07-entranceinteligencia-accidental-sabotage)

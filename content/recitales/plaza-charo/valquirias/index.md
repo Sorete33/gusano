@@ -15,10 +15,6 @@ heroStyle: background
 
 # [Valkirias](https://www.instagram.com/valkiriasbanda/) tocando en el marco de la 12va marcha del orgullo en Chivilcoy 08-11-25
 
-{{<audio src="https://files.catbox.moe/nkrss1.mp3">}}
+{{< track show="plaza-charo/valquirias" track="valquirias" >}}
 
-[Link directo](https://files.catbox.moe/nkrss1.mp3)
-
-[Streaming en formato WAV](https://pixeldrain.com/u/tQY1kqy8)
-
-
+[Artículo en Internet Archive](https://archive.org/details/live-2025-11-08-12va-marcha-del-orgullo)

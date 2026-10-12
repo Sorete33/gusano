@@ -17,11 +17,7 @@ heroStyle: background
 
 # [Base](https://www.instagram.com/base.hc/)
 
-{{<audio src="https://files.catbox.moe/8blvc7.mp3">}}
-
-[Link directo](https://files.catbox.moe/8blvc7.mp3)
-
-[Streaming en formato WAV](https://pixeldrain.com/u/pemUMQWa)
+{{< track show="el-portal-del-tango/festi-distor" track="base" >}}
 
 
 ---
@@ -32,14 +28,11 @@ heroStyle: background
 
 # [Entrance](https://www.instagram.com/entr4nce.ck/)
 
-{{<audio src="https://files.catbox.moe/y1rcv1.mp3">}}
-
-[Link directo](https://files.catbox.moe/y1rcv1.mp3)
-
-[Streaming en formato WAV](https://pixeldrain.com/u/jukhSHhs)
+{{< track show="el-portal-del-tango/festi-distor" track="entrance" >}}
 
 
 ---
 
 # Pintura en vivo de [Sofia Speranza](https://www.instagram.com/sofiasperanza__/) y [Lucas Caceres](https://www.instagram.com/conectarte94/) (si alguien tiene una foto de la pintura pasenla asi la adjunto)
 
+[Artículo en Internet Archive](https://archive.org/details/live-2025-11-29-festival-distorsivo)

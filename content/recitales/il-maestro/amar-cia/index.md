@@ -19,13 +19,12 @@ heroStyle: background
 # Abril y Guada
 
 
-{{<audio src="/audio/guabril-ilma.mp3">}}
-[Streaming en formato WAV](https://pixeldrain.com/u/6GshBpsQ)
+{{< track show="il-maestro/amar-cia" track="guada-y-abril" >}}
 
 ---
 
 # Abril y Juli
 
-{{<audio src="/audio/juliabril.mp3">}}
+{{< track show="il-maestro/amar-cia" track="yula-y-abril" >}}
 
-[Streaming en formato WAV](https://pixeldrain.com/u/RtFpSBHA)
+[Artículo en Internet Archive](https://archive.org/details/live-2026-01-25-abril-guada-yula)

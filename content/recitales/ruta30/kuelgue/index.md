@@ -15,14 +15,12 @@ heroStyle: background
 
 # Homenaje a El Kuelgue
 
-{{<audio src="https://files.catbox.moe/9j5gxa.mp3">}}
-
-[Streaming en formato WAV](https://pixeldrain.com/u/E2Sh39KZ)
+{{< track show="ruta30/kuelgue" track="homenaje-a-el-kuelgue" >}}
 
 ---
 
 # JAM
 
-{{<audio src="https://files.catbox.moe/gvwfy0.mp3">}}
+{{< track show="ruta30/kuelgue" track="homenaje-a-el-kuelgue" >}}
 
-[Streaming en formato WAV](https://pixeldrain.com/u/3cLnr6UC)
+[Artículo en Internet Archive](https://archive.org/details/live-2026-01-22-el-kuelgue)

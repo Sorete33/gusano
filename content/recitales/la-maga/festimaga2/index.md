@@ -16,11 +16,7 @@ heroStyle: background
 
 # Primera presentación para Nómada en la [Festimaga](https://www.instagram.com/rancho.la.maga/) 31-10-25
 
-{{<audio src="https://files.catbox.moe/a7wcqy.mp3">}}
-
-[Link directo](https://files.catbox.moe/a7wcqy.mp3)
-
-[Streaming en formato WAV](https://pixeldrain.com/u/aZLDz4iV)
+{{< track show="la-maga/festimaga2" track="festimaga" >}}
 
 
 
@@ -28,20 +24,13 @@ heroStyle: background
 
 # [Sala Roja](https://www.instagram.com/__salaroja/) en la [Festimaga](https://www.instagram.com/rancho.la.maga/) 31-10-25
 
-{{<audio src="https://files.catbox.moe/dyjyrz.mp3">}}
-
-[Link directo](https://files.catbox.moe/dyjyrz.mp3)
-
-[Streaming en formato WAV](https://pixeldrain.com/u/6D291E7N)
+{{< track show="la-maga/festimaga2" track="sala-roja" >}}
 
 
 ---
 
 # [Entrance](https://www.instagram.com/entr4nce.ck/) cerrando la [Festimaga](https://www.instagram.com/rancho.la.maga/) 31-10-25
 
-{{<audio src="https://files.catbox.moe/uh6yu2.mp3">}}
+{{< track show="la-maga/festimaga2" track="entrance" >}}
 
-[Link directo](https://files.catbox.moe/uh6yu2.mp3)
-
-[Streaming en formato WAV](https://pixeldrain.com/u/kEjH7K1X)
-
+[Artículo en Internet Archive](https://archive.org/details/live-2025-10-31-festi-maga-2)

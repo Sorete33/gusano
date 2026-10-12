@@ -18,17 +18,13 @@ heroStyle: background
 
 # Philip Glass
 
-{{<audio src="https://files.catbox.moe/lg93s3.mp3">}}
-
-[Streaming en formato WAV](https://pixeldrain.com/u/tsqQTsky)
+{{< track show="conser/ensamble" track="philip-glass" >}}
 
 
 ---
 
 # Terry Riley
 
-{{<audio src="https://files.catbox.moe/mwxfv1.mp3">}}
+{{< track show="conser/ensamble" track="terry-riley" >}}
 
-[Streaming en formato WAV](https://pixeldrain.com/u/TTZ5xGkN)
-
-
+[Artículo en Internet Archive](https://archive.org/details/live-2025-10-24-glass-y-riley)

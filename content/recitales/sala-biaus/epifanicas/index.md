@@ -18,25 +18,20 @@ heroStyle: background
 ---
 # Bloque 1
 
-{{<audio src="https://files.catbox.moe/51g1x3.mp3">}}
-
-[Streaming en formato WAV](https://pixeldrain.com/u/aaaScuph)
+{{< track show="sala-biaus/epifanicas" track="bloque-1" >}}
 
 ---
 
 # Interludio: Hernán de Bragado
 
-{{<audio src="https://files.catbox.moe/dcs0qf.mp3">}}
-
-[Streaming en formato WAV](https://pixeldrain.com/u/5nqU9Ad4)
+{{< track show="sala-biaus/epifanicas" track="hernan-interludio" >}}
 
 ---
 
 # Bloque 2
 
-{{<audio src="https://files.catbox.moe/mqcg8y.mp3">}}
-
-[Streaming en formato WAV](https://pixeldrain.com/u/Xj47kfCe)
+{{< track show="sala-biaus/epifanicas" track="bloque-2" >}}
 
 ---
 
+[Artículo en Internet Archive](https://archive.org/details/live-2025-12-13-epifanicas)

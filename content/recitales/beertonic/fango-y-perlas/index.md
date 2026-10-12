@@ -15,8 +15,6 @@ heroStyle: background
 # [Fango y Perlas](https://www.instagram.com/fango_y_perlas/) en [Beertonic](https://www.instagram.com/beertonic.ch/) (extracto) 23-10-25
 
 
-{{<audio src="https://files.catbox.moe/e79q6c.mp3">}}
+{{< track show="beertonic/fango-y-perlas" track="fango-y-perlas" label="(extracto)" >}}
 
-[Link directo](https://files.catbox.moe/e79q6c.mp3)
-
-[Streaming en formato WAV](https://pixeldrain.com/u/czY3J7Vk)
+[Artículo en Internet Archive](https://archive.org/details/live-2025-10-23-fango-y-perlas)

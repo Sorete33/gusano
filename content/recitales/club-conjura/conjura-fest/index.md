@@ -18,31 +18,25 @@ heroStyle: background
 
 # [Rey Midas](https://www.instagram.com/rey.midas.banda/)
 
-{{<audio src="/audio/conjura/Rey-Midas-28-2-26.mp3">}}
-
-[Streaming en formato WAV](https://pixeldrain.com/u/D1zSdvPh)
+{{< track show="club-conjura/conjura-fest" track="rey-midas" >}}
 
 ---
 
 
 # [Ayende](https://www.instagram.com/ayendeeeee/)
 
-{{<audio src="/audio/conjura/Ayende-28-2-26.mp3">}}
-
-[Streaming en formato WAV](https://pixeldrain.com/u/kwoZg6EA)
+{{< track show="club-conjura/conjura-fest" track="ayende" >}}
 
 ---
 
 # VIK
 
-{{<audio src="/audio/conjura/VIK-28-2-26.mp3">}}
-
-[Streaming en formato WAV](https://pixeldrain.com/u/Qyk4sdQ4)
+{{< track show="club-conjura/conjura-fest" track="vik" >}}
 
 ---
 
 # [Velvet](https://www.instagram.com/velvet.banda/)
 
-{{<audio src="/audio/conjura/Velvet-28-2-26.mp3">}}
+{{< track show="club-conjura/conjura-fest" track="velvet" >}}
 
-[Streaming en formato WAV](https://pixeldrain.com/u/1hQmBmsH)
+[Artículo en Internet Archive](https://archive.org/details/live-2026-02-28-ciclo-void)

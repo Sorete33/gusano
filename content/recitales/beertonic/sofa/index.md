@@ -14,6 +14,6 @@ heroStyle: background
 
 # Acustico de temas auténticos de [SOFA](https://www.instagram.com/sofaw000/) y algunos coversitos en [Beertonic](https://www.instagram.com/beertonic.ch/)
 
-{{<audio src="https://files.catbox.moe/rqmo87.mp3">}}
+{{< track show="beertonic/sofa" track="sofa" >}}
 
-[Streaming en formato WAV](https://pixeldrain.com/u/NgoXiXmw)
+[Artículo en Internet Archive](https://archive.org/details/live-2026-02-15-sofa)

@@ -16,39 +16,31 @@ heroStyle: background
 
 # Mate Jazz
 
-{{<audio src="https://files.catbox.moe/lkctx7.mp3">}}
-
-[Streaming en formato WAV](https://pixeldrain.com/u/ShAX4EiU)
+{{< track show="la-maga/festimaga5" track="mate-jazz" >}}
 
 ---
 
 # [Black Mamba](https://www.instagram.com/black_mamba.chivilcoy/)
 
-{{<audio src="https://files.catbox.moe/y8b0rz.mp3">}}
-
-[Streaming en formato WAV](https://pixeldrain.com/u/63FutSAd)
+{{< track show="la-maga/festimaga5" track="black-mamba" >}}
 
 ---
 
 # [Los Pozoz](https://www.instagram.com/los.pozoz/)
 
-{{<audio src="https://files.catbox.moe/nm5hzy.mp3">}}
-
-[Streaming en formato WAV](https://pixeldrain.com/u/w1aaKyLn)
+{{< track show="la-maga/festimaga5" track="los-pozoz" >}}
 
 ---
 
 # [Nómada](https://www.instagram.com/nomadachivilcoy/)
 
-{{<audio src="https://files.catbox.moe/9jnhlw.mp3">}}
-
-[Streaming en formato WAV](https://pixeldrain.com/u/DAjccoNR)
+{{< track show="la-maga/festimaga5" track="nomada" >}}
 
 ---
 
 # [Sabotage](https://www.instagram.com/sabotage.nu.metal/) 
 ### (la grabadora estaba arriba del techo y el bajo hacia vibrar la chapa asi que quedo con un ruidito jejeje)
 
-{{<audio src="https://files.catbox.moe/jak6vg.mp3">}}
+{{< track show="la-maga/festimaga5" track="sabotage" >}}
 
-[Streaming en formato WAV](https://pixeldrain.com/u/KStJUZBv)
+[Artículo en Internet Archive](https://archive.org/details/live-2026-02-21-festimaga-5)

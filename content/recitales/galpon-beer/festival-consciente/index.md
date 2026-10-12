@@ -18,64 +18,41 @@ heroStyle: background
 
 # Primera presentación de [Maquinaria Divina](https://www.instagram.com/maquinariadivina/)
 
-{{<audio src="https://files.catbox.moe/oh2itu.mp3">}}
-
-[Link directo](https://files.catbox.moe/oh2itu.mp3)
-
-[Streaming en formato WAV](https://pixeldrain.com/u/Bz7ABgyj)
+{{< track show="galpon-beer/festival-consciente" track="maquinaria-divina" >}}
 
 
 ---
 
 #  [Jane Doe](https://www.instagram.com/jane.doe.brg/)
 
-{{<audio src="https://files.catbox.moe/o1nk8u.mp3">}}
-
-[Link directo](https://files.catbox.moe/o1nk8u.mp3)
-
-[Streaming en formato WAV](https://pixeldrain.com/u/GrxP37tB)
+{{< track show="galpon-beer/festival-consciente" track="jane-doe" >}}
 
 
 ---
 
 #  [Base](https://www.instagram.com/base.hc/)
 
-{{<audio src="https://files.catbox.moe/q0qqq6.mp3">}}
-
-[Link directo](https://files.catbox.moe/q0qqq6.mp3)
-
-[Streaming en formato WAV](https://pixeldrain.com/u/YgvFcbAn)
+{{< track show="galpon-beer/festival-consciente" track="base" >}}
 
 
 ---
 
 #  [Sociedad Macabra](https://www.instagram.com/sociedad.macabra/)
 
-{{<audio src="https://files.catbox.moe/6um5nk.mp3">}}
-
-[Link directo](https://files.catbox.moe/6um5nk.mp3)
-
-[Streaming en formato WAV](https://pixeldrain.com/u/uoZpXB9A)
+{{< track show="galpon-beer/festival-consciente" track="sociedad-macabra" >}}
 
 
 ---
 
 #  [Inteligencia Accidental](https://www.instagram.com/inteligencia.accidental/)
 
-{{<audio src="https://files.catbox.moe/kpb3y2.mp3">}}
-
-[Link directo](https://files.catbox.moe/kpb3y2.mp3)
-
-[Streaming en formato WAV](https://pixeldrain.com/u/r5S3nCMR)
+{{< track show="galpon-beer/festival-consciente" track="inteligencia-accidental" >}}
 
 
 ---
 
 #  [Forrxs](https://www.instagram.com/forrxsbanda/)
 
-{{<audio src="https://files.catbox.moe/fw8fd9.mp3">}}
+{{< track show="galpon-beer/festival-consciente" track="forrxs" >}}
 
-[Link directo](https://files.catbox.moe/fw8fd9.mp3)
-
-[Streaming en formato WAV](https://pixeldrain.com/u/kyq7FjNo)
-
+[Artículo en Internet Archive](https://archive.org/details/live-2025-11-21-festival-consciente)

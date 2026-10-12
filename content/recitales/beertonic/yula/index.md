@@ -14,5 +14,6 @@ heroStyle: background
 
 # Yula + invitades en [Beertonic](https://www.instagram.com/beertonic.ch/)
 
-{{< audio src="https://files.catbox.moe/798l3z.mp3">}}
+{{< track show="beertonic/yula" track="yula-invitades" >}}
 
+[Artículo en Internet Archive](https://archive.org/details/live-2025-05-04-yula)

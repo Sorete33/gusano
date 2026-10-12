@@ -18,22 +18,18 @@ heroStyle: background
 
 # [Juanito Alimaña](https://www.instagram.com/juanito_alimana_45/)
 
-{{<audio src="https://files.catbox.moe/pmd0a9.mp3">}}
-
-[Streaming en formato WAV](https://pixeldrain.com/u/aDTaHUK3)
+{{< track show="encuentro-por-las-artes/juanito-papri-nico" track="juanito-alimana" >}}
 
 ---
 
 # [Paprika's Band](https://www.instagram.com/lapaprikaband/)
 
-{{<audio src="https://files.catbox.moe/npl2es.mp3">}}
-
-[Streaming en formato WAV](https://pixeldrain.com/u/d448Ccgi)
+{{< track show="encuentro-por-las-artes/juanito-papri-nico" track="paprikas-band" >}}
 
 ---
 
 # [Muchiut y los monjes del dudaismo](https://www.instagram.com/nicolas_muchiut/)
 
-{{<audio src="https://files.catbox.moe/txexq5.mp3">}}
+{{< track show="encuentro-por-las-artes/juanito-papri-nico" track="nicolas-muchiut-y-los-monjes-del-dudaismo" >}}
 
-[Streaming en formato WAV](https://pixeldrain.com/u/GKbLxLhS)
+[Artículo en Internet Archive](https://archive.org/details/live-2026-02-27-juanito-alimaapaprikas-bandmuchiut-y-los-monjes-del-dudaismo)

@@ -16,35 +16,29 @@ heroStyle: background
 
 # [Cínica](https://www.instagram.com/_cinicabanda/)
 
-{{<audio src="https://files.catbox.moe/uhjd18.mp3">}}
-
-[WAV](https://pixeldrain.com/u/9RFNQjf7)
+{{< track show="sala-biaus/mr-nomad-cinik-ia" track="cinica" >}}
 
 ---
 
 # [Inteligencia Accidental](https://www.instagram.com/inteligencia.accidental/)
 
-{{<audio src="https://files.catbox.moe/gulf4e.mp3">}}
-
-[WAV](https://pixeldrain.com/u/P392jdg9)
+{{< track show="sala-biaus/mr-nomad-cinik-ia" track="inteligencia-accidental" >}}
 
 ---
 
 # [Sr Wilson](https://www.instagram.com/srwilsonrock/)
 
-{{<audio src="https://files.catbox.moe/8t1ot8.mp3">}}
-
-[WAV](https://pixeldrain.com/u/XYSL9kN8)
+{{< track show="sala-biaus/mr-nomad-cinik-ia" track="sr-wilson" >}}
 
 ---
 
 # [Nómada](https://www.instagram.com/nomada.chivilcoy/)
 
-{{<audio src="https://files.catbox.moe/uvw3ce.mp3">}}
-
-[WAV](https://pixeldrain.com/u/ubyU4j2p)
+{{< track show="sala-biaus/mr-nomad-cinik-ia" track="nomada" >}}
 
 ---
 
 # Pintura en vivo y magia de la mano de [Nativa](https://www.instagram.com/nativa_sl/) 
 ![alt text](https://files.catbox.moe/by1iqt.jpg)
+
+[Artículo en Internet Archive](https://archive.org/details/live-2026-01-16-cnicainteligencia-accidentalsr-wilson-nmada)

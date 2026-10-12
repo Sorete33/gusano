@@ -1,0 +1,2182 @@
+# Catálogo único de recitales.
+# Generado por scripts/bootstrap-shows.py + scripts/sync-archive.py.
+#
+# Consumido por:
+#   layouts/partials/webamp.html   (winamp de la home)
+#   layouts/music.html             (rocola, inyecta window.shows)
+#   layouts/shortcodes/track.html  (players en las páginas de recital)
+#
+# Por pista:
+#   id       slug estable; es la clave en data/show-durations.json
+#   src      URL completa (catbox / pixeldrain legacy)
+#   mp3      nombre de archivo dentro del item de archive.org;
+#           se resuelve con `archive` -> https://archive.org/download/<archive>/<mp3>
+#   flac/wav descarga en alta calidad, mismo criterio
+#   duration segundos (scripts/get-durations.mjs lo rellena)
+# Si la pista tiene `mp3`, gana sobre `src`.
+- id: la-maga/cumple-accidental
+  date: '2026-09-26'
+  title: Cumpleañito Accidental
+  tracks:
+  - id: corpo-porco
+    artist: Corpo Porco
+    title: Corpo Porco en el cumple accidental
+    mp3: 01%20-%20Corpo%20Porco%20-%20La%20Maga%20(2026-09-26).mp3
+    flac: 01%20-%20Corpo%20Porco%20-%20La%20Maga%20(2026-09-26).flac
+    wav: 01%20-%20Corpo%20Porco%20-%20La%20Maga%20(2026-09-26).wav
+    duration: 1854
+  - id: inteligencia-accidental
+    artist: Inteligencia Accidental
+    title: Inteligencia Accidental en el cumple accidental
+    mp3: 01%20-%20Inteligencia%20Accidental%20-%20La%20Maga%20(2026-09-26).mp3
+    flac: 01%20-%20Inteligencia%20Accidental%20-%20La%20Maga%20(2026-09-26).flac
+    wav: 02%20-%20Inteligencia%20Accidental%20-%20La%20Maga%20(2026-09-26).wav
+    duration: 2944
+  space: La Maga
+  bands:
+  - Inteligencia Accidental
+  - Corpo Porco
+  cover: /recitales/la-maga/cumple-accidental/featured.webp
+  page: /recitales/la-maga/cumple-accidental/
+  archive: live-2026-09-26-cumple-accidental-3
+  archive_url: https://archive.org/details/live-2026-09-26-cumple-accidental-3
+- id: beertonic/vocayuva
+  date: '2026-08-20'
+  title: Vocayuva en Beertonic
+  tracks:
+  - id: vocayuva
+    artist: Vocayuva
+    title: Vocayuva en Beertonic
+    mp3: Vocayuva%20-%20Beertonic%20(2026-08-20).mp3
+    flac: Vocayuva%20-%20Beertonic%20(2026-08-20).flac
+    wav: Vocayuva%20-%20Beertonic%20(2026-08-20).wav
+    duration: 3451
+  space: Beertonic
+  bands:
+  - Vocayuva
+  cover: /recitales/beertonic/vocayuva/featured.jpg
+  page: /recitales/beertonic/vocayuva/
+  archive: live-2026-08-20-vocayuva
+  archive_url: https://archive.org/details/live-2026-08-20-vocayuva
+- id: sala-biaus/entrance-cinica-base
+  date: '2026-07-18'
+  title: Entrance, Cínica y Base en Sala Biaus
+  tracks:
+  - id: entrance
+    artist: Entrance
+    title: Entrance en Sala Biaus
+    src: https://files.catbox.moe/8iivth.mp3
+    duration: 1005
+  - id: cinica
+    artist: Cínica
+    title: Cínica en Sala Biaus
+    src: https://files.catbox.moe/8usc4r.mp3
+    duration: 2237
+  - id: base
+    artist: Base
+    title: Base en Sala Biaus
+    src: https://files.catbox.moe/kh6kkv.mp3
+    duration: 1953
+  space: Sala Biaus
+  bands:
+  - Entrance
+  - Cínica
+  - Base
+  cover: /recitales/sala-biaus/entrance-cinica-base/featured.webp
+  page: /recitales/sala-biaus/entrance-cinica-base/
+- id: ruta30/paprikas
+  date: '2026-07-17'
+  title: Paprika's Band en Ruta 30
+  tracks:
+  - id: paprikas-band-en-ruta-30
+    artist: Paprika's Band
+    title: Paprika's Band en Ruta 30
+    mp3: Paprika%27s%20%20Band%20en%20Ruta%2030%20(2026-07-17).mp3
+    flac: Paprika%27s%20%20Band%20en%20Ruta%2030%20(2026-07-17).flac
+    wav: Paprika%27s%20%20Band%20en%20Ruta%2030%20(2026-07-17).wav
+    duration: 3258
+  space: Ruta 30
+  bands:
+  - Paprika's Band
+  cover: /recitales/ruta30/paprikas/featured.jpg
+  page: /recitales/ruta30/paprikas/
+  archive: live-2026-07-17-paprikas-band
+  archive_url: https://archive.org/details/live-2026-07-17-paprikas-band
+- id: la-ronda/rondadebandas-3
+  date: '2026-07-10'
+  title: Ronda de Bandas 3
+  tracks:
+  - id: maquinaria-divina
+    artist: Maquinaria divina
+    title: Maquinaria Divina Ronda de Bandas 3
+    mp3: 01%20-%20Maquinaria%20Divina%20-%20Ronda%20de%20Bandas%203%20(2026-07-10).mp3
+    flac: 01%20-%20Maquinaria%20Divina%20-%20Ronda%20de%20Bandas%203%20(2026-07-10).flac
+    wav: 01%20-%20Maquinaria%20Divina%20-%20Ronda%20de%20Bandas%203%20(2026-07-10).wav
+    duration: 1911
+  - id: catango-trio
+    artist: Catango Trio
+    title: Catango Trio Ronda de Bandas 3
+    mp3: 02%20-%20Catango%20Tr%C3%ADo%20-%20Ronda%20de%20Bandas%203%20(2026-07-10).mp3
+    flac: 02%20-%20Catango%20Tr%C3%ADo%20-%20Ronda%20de%20Bandas%203%20(2026-07-10).flac
+    wav: 02%20-%20Catango%20Tr%C3%ADo%20-%20Ronda%20de%20Bandas%203%20(2026-07-10).wav
+    duration: 1555
+  - id: cinica
+    artist: Cínica
+    title: Cínica Ronda de Bandas 3
+    mp3: 03%20-%20C%C3%ADnica%20-%20Ronda%20de%20Bandas%203%20(2026-07-10).mp3
+    flac: 03%20-%20C%C3%ADnica%20-%20Ronda%20de%20Bandas%203%20(2026-07-10).flac
+    wav: 03%20-%20C%C3%ADnica%20-%20Ronda%20de%20Bandas%203%20(2026-07-10).wav
+    duration: 1952
+  - id: sociedad-macabra
+    artist: Sociedad Macabra
+    title: Sociedad Macabra en el Festival Consciente
+    mp3: 04%20-%20Sociedad%20Macabra%20-%20Ronda%20de%20Bandas%203%20(2026-07-10).mp3
+    flac: 04%20-%20Sociedad%20Macabra%20-%20Ronda%20de%20Bandas%203%20(2026-07-10).flac
+    wav: 04%20-%20Sociedad%20Macabra%20-%20Ronda%20de%20Bandas%203%20(2026-07-10).wav
+    duration: 150
+  space: La Ronda
+  bands:
+  - Maquinaria divina
+  - Catango Trio
+  - Cínica
+  - Sociedad Macabra
+  cover: /recitales/la-ronda/rondadebandas-3/featured.jpg
+  page: /recitales/la-ronda/rondadebandas-3/
+  archive: live-2026-07-10-ronda-de-bandas-3
+  archive_url: https://archive.org/details/live-2026-07-10-ronda-de-bandas-3
+- id: juventus/dudosa-inteligencia-corpo
+  date: '2026-05-09'
+  title: Accidental Tour '26
+  tracks:
+  - id: dudosa-procedencia
+    artist: Dudosa Procedencia
+    title: Dudosa Procedencia en el Club Juventus
+    mp3: 01%20-%20Dudosa%20Procedencia%20-%20Juventus%20(2026-05-09).mp3
+    flac: 01%20-%20Dudosa%20Procedencia%20-%20Juventus%20(2026-05-09).flac
+    wav: 01%20-%20Dudosa%20Procedencia%20-%20Juventus%20(2026-05-09).wav
+    duration: 2440
+  - id: inteligencia-accidental
+    artist: Inteligencia Accidental
+    title: Intelogencia Accidental en el Club Juventus
+    mp3: 02%20-%20Inteligencia%20Accidental%20-%20Juventus%20(2026-05-09).mp3
+    flac: 02%20-%20Inteligencia%20Accidental%20-%20Juventus%20(2026-05-09).flac
+    wav: 02%20-%20Inteligencia%20Accidental%20-%20Juventus%20(2026-05-09).wav
+    duration: 2929
+  - id: corpo-porco
+    artist: Corpo Porco
+    title: Corpo Porco en el Club Juventus
+    mp3: 03%20-%20Corpo%20Porco%20-%20Juventus%20(2026-05-09).mp3
+    flac: 03%20-%20Corpo%20Porco%20-%20Juventus%20(2026-05-09).flac
+    wav: 03%20-%20Corpo%20Porco%20-%20Juventus%20(2026-05-09).wav
+    duration: 1774
+  space: Juventus
+  bands:
+  - Dudosa Procedencia
+  - Inteligencia Accidental
+  - Corpo Porco
+  cover: /recitales/juventus/dudosa-inteligencia-corpo/featured.webp
+  page: /recitales/juventus/dudosa-inteligencia-corpo/
+  archive: live-2026-05-09-viaje-accidental
+  archive_url: https://archive.org/details/live-2026-05-09-viaje-accidental
+- id: club-racing/eruca
+  date: '2026-05-08'
+  title: Eruca Sativa en el Club Racing
+  tracks:
+  - id: eruca
+    artist: Eruca
+    title: Eruca Sativa en el Club Racing
+    src: https://files.catbox.moe/f9iilj.mp3
+    duration: 3758
+  space: Club Racing
+  bands:
+  - Eruca Sativa
+  cover: /recitales/club-racing/eruca/featured.webp
+  page: /recitales/club-racing/eruca/
+- id: sala-belgrano/epi-blues
+  date: '2026-03-27'
+  title: Epifanicas y Pueblues en Sala Belgrano
+  tracks:
+  - id: pueblues
+    artist: Pueblues
+    title: Pueblues en Sala Belgrano
+    mp3: 01%20-%20Pueblues%20-%20Sala%20Belgrano%20(2026-03-27).mp3
+    flac: 01%20-%20Pueblues%20-%20Sala%20Belgrano%20(2026-03-27).flac
+    wav: 01%20-%20Pueblues%20-%20Sala%20Belgrano%20(2026-03-27).wav
+    duration: 2956
+  - id: epifanicas
+    artist: Epifanicas
+    title: Epifanicas en Sala Belgrano
+    mp3: 02%20-%20Epifanicas%20-%20Sala%20Belgrano%20(2026-03-27).mp3
+    flac: 02%20-%20Epifanicas%20-%20Sala%20Belgrano%20(2026-03-27).flac
+    wav: 02%20-%20Epifanicas%20-%20Sala%20Belgrano%20(2026-03-27).wav
+    duration: 1814
+  space: Sala Belgrano
+  bands:
+  - Epifanicas
+  - Pueblues
+  cover: /recitales/sala-belgrano/epi-blues/featured.png
+  page: /recitales/sala-belgrano/epi-blues/
+  archive: live-2026-03-27-pueblues-epifanicas
+  archive_url: https://archive.org/details/live-2026-03-27-pueblues-epifanicas
+- id: plaza-de-la-memoria/50años
+  date: '2026-03-24'
+  title: Movilización por la memoria, la verdad y la justicia
+  tracks:
+  - id: discursos
+    artist: Discursos
+    title: Discursos
+    mp3: 01%20-%20Discursos%20-%20Plaza%20de%20la%20Memoria%20(2026-03-24).mp3
+  - id: somos-rock
+    artist: Somos Rock
+    title: Somos rock en la calle 8
+    mp3: 02%20-%20Somos%20Rock%20en%20la%20Calle%208%20-%20Plaza%20de%20la%20Memoria%20(2026-03-24).mp3
+    flac: 02%20-%20Somos%20Rock%20en%20la%20Calle%208%20-%20Plaza%20de%20la%20Memoria%20(2026-03-24).flac
+    wav: 02%20-%20Somos%20Rock%20en%20la%20Calle%208%20-%20Plaza%20de%20la%20Memoria%20(2026-03-24).wav
+    duration: 842
+  - id: murgas
+    artist: Murgas
+    title: Murgas
+    mp3: 03%20-%20Murgas%20-%20Plaza%20de%20la%20Memoria%20(2026-03-24).mp3
+    flac: 03%20-%20Murgas%20-%20Plaza%20de%20la%20Memoria%20(2026-03-24).flac
+    wav: 03%20-%20Murgas%20-%20Plaza%20de%20la%20Memoria%20(2026-03-24).wav
+    duration: 410
+  space: Plaza de la memoria
+  bands:
+  - Colectivo por la memoria
+  cover: /recitales/plaza-de-la-memoria/50años/featured.webp
+  page: /recitales/plaza-de-la-memoria/50años/
+  archive: live-2026-03-24-movilizacin-por-la-memoria-verdad-y-justicia
+  archive_url: https://archive.org/details/live-2026-03-24-movilizacin-por-la-memoria-verdad-y-justicia
+- id: fm-urbana/memoria
+  date: '2026-03-24'
+  title: Vigilia por la memoria en la radio FM Urbana 102.1
+  tracks:
+  - id: discursos
+    artist: Discursos
+    title: Discursos - Plaza de la Memoria
+    mp3: 01%20-%20Discursos%20-%20Plaza%20de%20la%20Memoria%20(2026-03-24).mp3
+  - id: somos-rock
+    artist: Somos Rock
+    title: Somos Rock en la Calle 8 - Plaza de la Memoria
+    mp3: 02%20-%20Somos%20Rock%20en%20la%20Calle%208%20-%20Plaza%20de%20la%20Memoria%20(2026-03-24).mp3
+    flac: 02%20-%20Somos%20Rock%20en%20la%20Calle%208%20-%20Plaza%20de%20la%20Memoria%20(2026-03-24).flac
+    wav: 02%20-%20Somos%20Rock%20en%20la%20Calle%208%20-%20Plaza%20de%20la%20Memoria%20(2026-03-24).wav
+    duration: 842
+  - id: murgas
+    artist: Murgas
+    title: Murgas - Plaza de la Memoria
+    mp3: 03%20-%20Murgas%20-%20Plaza%20de%20la%20Memoria%20(2026-03-24).mp3
+    flac: 03%20-%20Murgas%20-%20Plaza%20de%20la%20Memoria%20(2026-03-24).flac
+    wav: 03%20-%20Murgas%20-%20Plaza%20de%20la%20Memoria%20(2026-03-24).wav
+    duration: 410
+  space: FM Urbana
+  bands:
+  - Rocio Palazzo
+  - Nicolás Benaghi
+  - Ignacio Viano
+  cover: /recitales/fm-urbana/memoria/featured.jpg
+  page: /recitales/fm-urbana/memoria/
+  archive: live-2026-03-24-movilizacin-por-la-memoria-verdad-y-justicia
+  archive_url: https://archive.org/details/live-2026-03-24-movilizacin-por-la-memoria-verdad-y-justicia
+- id: sala-biaus/la-reja-fest
+  date: '2026-03-21'
+  title: Cínica y Drama en La Reja Estudio Fest
+  tracks:
+  - id: acustico-la-reja
+    artist: Acústico La Reja
+    title: Acústico La Reja - Sala Biaus
+    mp3: 01%20-%20Ac%C3%BAstico%20La%20Reja%20-%20Sala%20Biaus%20(2026-03-21).mp3
+    flac: 01%20-%20Ac%C3%BAstico%20La%20Reja%20-%20Sala%20Biaus%20(2026-03-21).flac
+    wav: 01%20-%20Ac%C3%BAstico%20La%20Reja%20-%20Sala%20Biaus%20(2026-03-21).wav
+    duration: 1219
+  - id: cinica
+    artist: Cínica
+    title: Cínica en Sala Biaus
+    mp3: 02%20-%20C%C3%ADnica%20-%20Sala%20Biaus%20(2026-03-21).mp3
+    flac: 02%20-%20C%C3%ADnica%20-%20Sala%20Biaus%20(2026-03-21).flac
+    wav: 02%20-%20C%C3%ADnica%20-%20Sala%20Biaus%20(2026-03-21).wav
+    duration: 2076
+  - id: drama
+    artist: DRAMA
+    title: DRAMA en Sala Biaus
+    mp3: 03%20-%20DRAMA%20-%20Sala%20Biaus%20(2026-03-21).mp3
+    flac: 03%20-%20DRAMA%20-%20Sala%20Biaus%20(2026-03-21).flac
+    wav: 03%20-%20DRAMA%20-%20Sala%20Biaus%20(2026-03-21).wav
+    duration: 1833
+  space: Sala Biaus
+  bands:
+  - Cínica
+  - DRAMA
+  - Nicolás Benaghi
+  - Ignacio Viano
+  - Julián Muchiut
+  cover: /recitales/sala-biaus/la-reja-fest/featured.png
+  page: /recitales/sala-biaus/la-reja-fest/
+  archive: live-2026-03-21-reja-estudio-fest
+  archive_url: https://archive.org/details/live-2026-03-21-reja-estudio-fest
+- id: beertonic/armand2
+  date: '2026-03-19'
+  title: Armando Alonso Trío en Beertonic
+  tracks:
+  - id: armando-alonso
+    artist: Armando Alonso
+    title: Armando Alonso en BeerTonic
+    mp3: Armando%20Alonso%20-%20Beertonic%20(2026-03-20).mp3
+    flac: Armando%20Alonso%20-%20Beertonic%20(2026-03-20).flac
+    wav: Armando%20Alonso%20-%20Beertonic%20(2026-03-20).wav
+    duration: 3677
+  space: Beertonic
+  bands:
+  - Armando Alonso
+  - Nicolás Benaghi
+  - Agustín Barbieri
+  cover: /recitales/beertonic/armand2/featured.png
+  page: /recitales/beertonic/armand2/
+  archive: live-2026-03-19-armando-alonso
+  archive_url: https://archive.org/details/live-2026-03-19-armando-alonso
+- id: club-ciclon/alianza-rock
+  date: '2026-03-14'
+  title: 30 Mil y D' Coyotes en el Alianza Rock
+  tracks:
+  - id: 30-mil
+    artist: 30 Mil
+    title: 30 Mil (Extracto)
+    mp3: 01%20-%2030mil%20-%20Festival%20Alianza.mp3
+    flac: 01%20-%2030mil%20-%20Festival%20Alianza.flac
+    wav: 01%20-%2030mil%20-%20Festival%20Alianza.wav
+    duration: 982
+  - id: d-coyotes
+    artist: D' Coyotes
+    title: D' Coyotes Primer recital :D
+    mp3: 02%20-%20D%27%20Coyotes%20-%20Festival%20Alianza.mp3
+    flac: 02%20-%20D%27%20Coyotes%20-%20Festival%20Alianza.flac
+    wav: 02%20-%20D%27%20Coyotes%20-%20Festival%20Alianza.wav
+    duration: 1222
+  space: CLub Alianza
+  bands:
+  - 30 Mil
+  - D' Coyotes
+  cover: /recitales/club-ciclon/alianza-rock/featured.jpg
+  page: /recitales/club-ciclon/alianza-rock/
+  archive: live-2026-03-14-festival-alianza
+  archive_url: https://archive.org/details/live-2026-03-14-festival-alianza
+- id: el-portal-del-tango/sabotage
+  date: '2026-03-13'
+  title: Sabotage en El Portal del Tango
+  tracks:
+  - id: sabotage
+    artist: Sabotage
+    title: Sabotage en El Portal del Tango
+    mp3: Sabotage%20-%20Portal%20del%20Tango%20(2026-03-13).mp3
+    wav: Sabotage%20-%20Portal%20del%20Tango%20(2026-03-13).wav
+    duration: 3985
+  space: El Portal del Tango
+  bands:
+  - Sabotage
+  cover: /recitales/el-portal-del-tango/sabotage/featured.jpg
+  page: /recitales/el-portal-del-tango/sabotage/
+  archive: live-2026-03-13-sabotage
+  archive_url: https://archive.org/details/live-2026-03-13-sabotage
+- id: sala-biaus/base-ismael-corpo
+  date: '2026-03-06'
+  title: Base, IEDV y Corpo Porco en Sala Biaus
+  tracks:
+  - id: base
+    artist: Base
+    title: Base en Sala Biaus
+    mp3: 01%20-%20BASE%20-%20Sala%20Biaus%20(2026-03-06).mp3
+    flac: 01%20-%20BASE%20-%20Sala%20Biaus%20(2026-03-06).flac
+    wav: 01%20-%20BASE%20-%20Sala%20Biaus%20(2026-03-06).wav
+    duration: 589
+  - id: ismael-es-de-verdad
+    artist: Ismael es de verdad
+    title: Ismael es de verdad en Sala Biaus
+    mp3: 02%20-%20Ismael%20es%20de%20Verdad%20-%20Sala%20Biaus%20(2026-03-06).mp3
+  - id: corpo-porco
+    artist: Corpo Porco
+    title: Corpo Porco en Sala Biaus
+    mp3: 03%20-%20Corpo%20Porco%20-%20Sala%20Biaus%20(2026-03-06).mp3
+  space: Sala Biaus
+  bands:
+  - Base
+  - Ismael es de verdad
+  - Corpo Porco
+  cover: /recitales/sala-biaus/base-ismael-corpo/featured.jpg
+  page: /recitales/sala-biaus/base-ismael-corpo/
+  archive: live-2026-03-06-baseismael-es-de-verdadcorpo-porco
+  archive_url: https://archive.org/details/live-2026-03-06-baseismael-es-de-verdadcorpo-porco
+- id: sala-belgrano/armando
+  date: '2026-03-06'
+  title: Armando Alonso Trío en Sala Belgrano
+  tracks:
+  - id: armando-alonso-trio-en-sala-belgrano
+    artist: Armando Alonso
+    title: Armando Alonso Trío en Sala Belgrano
+    mp3: Armando%20Alonso%20Tr%C3%ADo%20en%20Sala%20Belgrano%20(2026-03-06).mp3
+    flac: Armando%20Alonso%20Tr%C3%ADo%20en%20Sala%20Belgrano%20(2026-03-06).flac
+    wav: Armando%20Alonso%20Tr%C3%ADo%20en%20Sala%20Belgrano%20(2026-03-06).wav
+    duration: 3951
+  space: Sala Belgrano
+  bands:
+  - Armando Alonso
+  - Nicolás Benaghi
+  - Agustín Barbieri
+  cover: /recitales/sala-belgrano/armando/featured.jpg
+  page: /recitales/sala-belgrano/armando/
+  archive: live-2026-03-06-armando-alonso-tro
+  archive_url: https://archive.org/details/live-2026-03-06-armando-alonso-tro
+- id: tren/nancy
+  date: '2026-03-02'
+  title: Nancy desde el tren Sarmiento
+  tracks:
+  - id: nancy
+    artist: Nancy
+    title: Nancy desde el Tren Sarmiento
+    src: Nancy%20en%20el%20Tren%20Argentino%20(2026-03-02).wav
+    fmt: wav
+    wav: Nancy%20en%20el%20Tren%20Argentino%20(2026-03-02).wav
+  space: Trenes Argentinos
+  bands:
+  - Nancy
+  cover: /recitales/tren/nancy/featured.png
+  page: /recitales/tren/nancy/
+  archive: live-2026-03-02-nancy
+  archive_url: https://archive.org/details/live-2026-03-02-nancy
+- id: club-conjura/conjura-fest
+  date: '2026-02-28'
+  title: Rey Midas, Ayende, VIK y Velvet en Club Conjura
+  tracks:
+  - id: rey-midas
+    artist: Rey Midas
+    title: Rey Midas en Club Conjura
+    mp3: 01%20-%20Rey-Midas%20-%20Ciclo%20Void%20(28-2-26).mp3
+    flac: 01%20-%20Rey-Midas%20-%20Ciclo%20Void%20(28-2-26).flac
+    wav: 01%20-%20Rey-Midas%20-%20Ciclo%20Void%20(28-2-26).wav
+    duration: 1564
+  - id: ayende
+    artist: Ayende
+    title: Ayende en Club Conjura
+    mp3: 02%20-%20Ayende%20-%20Ciclo%20Void%20(28-2-26).mp3
+    flac: 02%20-%20Ayende%20-%20Ciclo%20Void%20(28-2-26).flac
+    wav: 02%20-%20Ayende%20-%20Ciclo%20Void%20(28-2-26).wav
+    duration: 1599
+  - id: vik
+    artist: VIK
+    title: VIK en Club Conjura
+    mp3: 03%20-%20VIK%20-%20Ciclo%20Void%20(28-2-26).mp3
+    flac: 03%20-%20VIK%20-%20Ciclo%20Void%20(28-2-26).flac
+    wav: 03%20-%20VIK%20-%20Ciclo%20Void%20(28-2-26).wav
+    duration: 2144
+  - id: velvet
+    artist: Velvet
+    title: Velvet en Club Conjura
+    mp3: 04%20-%20Velvet%20-%20Ciclo%20Void%20(28-2-26).mp3
+    flac: 04%20-%20Velvet%20-%20Ciclo%20Void%20(28-2-26).flac
+    wav: 04%20-%20Velvet%20-%20Ciclo%20Void%20(28-2-26).wav
+    duration: 1998
+  space: Club Conjura
+  bands:
+  - VIK
+  - Velvet
+  - Ayende
+  - Rey Midas
+  cover: /recitales/club-conjura/conjura-fest/featured.jpg
+  page: /recitales/club-conjura/conjura-fest/
+  archive: live-2026-02-28-ciclo-void
+  archive_url: https://archive.org/details/live-2026-02-28-ciclo-void
+- id: encuentro-por-las-artes/juanito-papri-nico
+  date: '2026-02-27'
+  title: Juanito Alimaña, Paprika's Band y Muchiut y los monjes de dudaismo en Encuentro por las Artes
+  tracks:
+  - id: juanito-alimana
+    artist: Juanito Alimaña
+    title: Juanito Alimaña en Encuentro por las Artes
+    src: 01%20-%20Juanito%20Alima%C3%B1a%20(2026-02-27).wav
+    fmt: wav
+    wav: 01%20-%20Juanito%20Alima%C3%B1a%20(2026-02-27).wav
+  - id: paprikas-band
+    artist: Paprika's Band
+    title: Paprika's Band en Encuentro por las Artes
+    src: 02%20-%20Paprika%27s%20Band%20(2026-02-27).wav
+    fmt: wav
+    wav: 02%20-%20Paprika%27s%20Band%20(2026-02-27).wav
+  - id: nicolas-muchiut-y-los-monjes-del-dudaismo
+    artist: Nicolas Muchiut y los monjes del dudaismo
+    title: Nicolas Muchiut y los monjes del dudaismo
+    src: 03%20-%20Nicolas%20Muchiut%20y%20los%20monjes%20del%20dudaismo%20(2026-02-27).wav
+    fmt: wav
+    wav: 03%20-%20Nicolas%20Muchiut%20y%20los%20monjes%20del%20dudaismo%20(2026-02-27).wav
+  space: Encuentro por las Artes
+  bands:
+  - Juanito Alimaña
+  - Paprika's Band
+  - Muchiut y los monjes de dudaismo
+  cover: /recitales/encuentro-por-las-artes/juanito-papri-nico/featured.png
+  page: /recitales/encuentro-por-las-artes/juanito-papri-nico/
+  archive: live-2026-02-27-juanito-alimaapaprikas-bandmuchiut-y-los-monjes-del-dudaismo
+  archive_url: https://archive.org/details/live-2026-02-27-juanito-alimaapaprikas-bandmuchiut-y-los-monjes-del-dudaismo
+- id: la-maga/festimaga5
+  date: '2026-02-21'
+  title: Festimaga Vol 5
+  tracks:
+  - id: mate-jazz
+    artist: Mate Jazz
+    title: Mate Jazz en Beertonic
+    mp3: 01%20-%20Mate%20Jazz%20-%20Festimaga%20(2026-02-21).mp3
+    flac: 01%20-%20Mate%20Jazz%20-%20Festimaga%20(2026-02-21).flac
+    wav: 01%20-%20Mate%20Jazz%20-%20Festimaga%20(2026-02-21).wav
+    duration: 3038
+  - id: black-mamba
+    artist: Black Mamba
+    title: Black Mamba
+    mp3: 02%20-%20Black%20Mamba%20-%20Festimaga%20(2026-02-21).mp3
+    flac: 02%20-%20Black%20Mamba%20-%20Festimaga%20(2026-02-21).flac
+    wav: 02%20-%20Black%20Mamba%20-%20Festimaga%20(2026-02-21).wav
+    duration: 1929
+  - id: los-pozoz
+    artist: Los Pozoz
+    title: Los Pozoz en el Festival Consciente
+    mp3: 03%20-%20Los%20Pozoz-%20Festimaga%20(2026-02-21).mp3
+    flac: 03%20-%20Los%20Pozoz-%20Festimaga%20(2026-02-21).flac
+    wav: 03%20-%20Los%20Pozoz-%20Festimaga%20(2026-02-21).wav
+    duration: 1167
+  - id: nomada
+    artist: Nómada
+    title: Nómada en la Festimaga 2
+    mp3: 04%20-%20N%C3%B3mada%20-%20Festimaga%20(2026-02-21).mp3
+    flac: 04%20-%20N%C3%B3mada%20-%20Festimaga%20(2026-02-21).flac
+    wav: 04%20-%20N%C3%B3mada%20-%20Festimaga%20(2026-02-21).wav
+    duration: 1880
+  - id: sabotage
+    artist: Sabotage
+    title: Sabotage - Festimaga
+    mp3: 05%20-%20Sabotage%20-%20Festimaga%20(2026-02-21).mp3
+    flac: 05%20-%20Sabotage%20-%20Festimaga%20(2026-02-21).flac
+    wav: 05%20-%20Sabotage%20-%20Festimaga%20(2026-02-21).wav
+    duration: 3056
+  space: La Maga
+  bands:
+  - Mate Jazz
+  - Black Mamba
+  - Los Pozoz
+  - Nómada
+  - Sabotaje
+  cover: /recitales/la-maga/festimaga5/featured.png
+  page: /recitales/la-maga/festimaga5/
+  archive: live-2026-02-21-festimaga-5
+  archive_url: https://archive.org/details/live-2026-02-21-festimaga-5
+- id: varelabar/frondayraiz
+  date: '2026-02-20'
+  title: Fronda y Raíz en Varela Resto Bar
+  tracks:
+  - id: varela
+    artist: Fronda y Raíz
+    title: Fronda y Raíz en la Varela
+    mp3: Fronda%20y%20Ra%C3%ADz%20-%20Club%20Varela%20(2026-02-20).mp3
+    flac: Fronda%20y%20Ra%C3%ADz%20-%20Club%20Varela%20(2026-02-20).flac
+    wav: Fronda%20y%20Ra%C3%ADz%20-%20Club%20Varela%20(2026-02-20).wav
+    duration: 2904
+  space: Varela Resto Bar
+  bands:
+  - Fronda y Raíz
+  cover: /recitales/varelabar/frondayraiz/featured.jpg
+  page: /recitales/varelabar/frondayraiz/
+  archive: live-2026-02-20-fronda-y-raz
+  archive_url: https://archive.org/details/live-2026-02-20-fronda-y-raz
+- id: beertonic/sofa
+  date: '2026-02-15'
+  title: SOFA en Beertonic
+  tracks:
+  - id: sofa
+    artist: SOFA
+    title: SOFA en Beertonic
+    mp3: SOFA%20-%20Beertonic%20(2026-02-15).mp3
+    flac: SOFA%20-%20Beertonic%20(2026-02-15).flac
+    wav: SOFA%20-%20Beertonic%20(2026-02-15).wav
+    duration: 1911
+  space: Beertonic
+  bands:
+  - SOFA
+  cover: /recitales/beertonic/sofa/featured.png
+  page: /recitales/beertonic/sofa/
+  archive: live-2026-02-15-sofa
+  archive_url: https://archive.org/details/live-2026-02-15-sofa
+- id: sala-biaus/epi-amy
+  date: '2026-02-14'
+  title: Epifanicas homenaje a Amy Winehouse en Sala Biaus
+  tracks:
+  - id: epifanicas
+    artist: Epifanicas
+    title: Epifanicas Bloque 1 - Sala Biaus
+    mp3: 01%20-%20Epifanicas%20Bloque%201%20-%20Sala%20Biaus%20(2026-02-14).mp3
+    flac: 01%20-%20Epifanicas%20Bloque%201%20-%20Sala%20Biaus%20(2026-02-14).flac
+    wav: 01%20-%20Epifanicas%20Bloque%201%20-%20Sala%20Biaus%20(2026-02-14).wav
+    duration: 1950
+  - id: ele-corr
+    artist: Ele Corr
+    title: 02 Ele Corr Interludio - Sala Biaus
+    mp3: 02%20Ele%20Corr%20Interludio%20-%20Sala%20Biaus%20(2026-02-14).mp3
+  - id: epifanicas-2
+    artist: Epifanicas
+    title: Epifanicas Bloque 2 - Sala Biaus
+    mp3: 03%20-%20Epifanicas%20Bloque%202%20-%20Sala%20Biaus%20(2026-02-14).mp3
+    flac: 03%20-%20Epifanicas%20Bloque%202%20-%20Sala%20Biaus%20(2026-02-14).flac
+    wav: 03%20-%20Epifanicas%20Bloque%202%20-%20Sala%20Biaus%20(2026-02-14).wav
+    duration: 1400
+  space: Sala Biaus
+  bands:
+  - Epifanicas
+  - Ele Corr
+  cover: /recitales/sala-biaus/epi-amy/featured.png
+  page: /recitales/sala-biaus/epi-amy/
+  archive: live-2026-02-14-epifanicas
+  archive_url: https://archive.org/details/live-2026-02-14-epifanicas
+- id: encuentro-por-las-artes/anticover-13
+  date: '2026-02-13'
+  title: Anticover 13 en Encuentro por las Artes
+  tracks:
+  - id: cinica
+    artist: Cinica
+    title: Cinica en Encuentro por las Artes
+    mp3: 01%20-%20Cinica%20-%20Anticover%2013.mp3
+    flac: 01%20-%20Cinica%20-%20Anticover%2013.flac
+    wav: 01%20-%20Cinica%20-%20Anticover%2013.wav
+    duration: 270
+  - id: facundo-dovidio
+    artist: Facundo Dovidio
+    title: Facundo Dovidio- Anticover 13
+    mp3: 02%20-%20Facundo%20Dovidio-%20Anticover%2013.mp3
+    flac: 02%20-%20Facundo%20Dovidio-%20Anticover%2013.flac
+    wav: 02%20-%20Facundo%20Dovidio-%20Anticover%2013.wav
+    duration: 815
+  - id: paprikas-band
+    artist: Paprika's Band
+    title: Paprika's Band en Encuentro por las Artes
+    mp3: 03%20-%20Paprika%27s%20Band%20-%20Anticover%2013.mp3
+    flac: 03%20-%20Paprika%27s%20Band%20-%20Anticover%2013.flac
+    wav: 03%20-%20Paprika%27s%20Band%20-%20Anticover%2013.wav
+    duration: 853
+  - id: memi-mesplet
+    artist: Memi Mesplet
+    title: Daniel Casas y Memi Mesplet - Poema 1
+    mp3: Daniel%20Casas%20y%20Memi%20Mesplet%20-%20Poema%201.mp3
+  - id: memi-mesplet-2
+    artist: Memi Mesplet
+    title: Daniel Casas y Memi Mesplet - Poema 2
+    mp3: Daniel%20Casas%20y%20Memi%20Mesplet%20-%20Poema%202.mp3
+  space: Encuentro por las Artes
+  bands:
+  - Cinica
+  - Facundo Dovidio
+  - Paprika's Band
+  - Memi Mesplet
+  - Daniel Casas
+  cover: /recitales/encuentro-por-las-artes/anticover-13/featured.png
+  page: /recitales/encuentro-por-las-artes/anticover-13/
+  archive: live-2026-02-13-anticover-13
+  archive_url: https://archive.org/details/live-2026-02-13-anticover-13
+- id: sala-biaus/entrance-ia-sabotaje
+  date: '2026-02-07'
+  title: Entrance, Inteligencia Accidental y Sabotaje en Sala Biaus
+  tracks:
+  - id: entrance
+    artist: Entrance
+    title: Entrance en Sala Biaus
+    mp3: 01%20-%20Entrance%20-%20Sala%20Biaus%20(2026-02-07).mp3
+    flac: 01%20-%20Entrance%20-%20Sala%20Biaus%20(2026-02-07).flac
+    wav: 01%20-%20Entrance%20-%20Sala%20Biaus%20(2026-02-07).wav
+    duration: 2152
+  - id: inteligencia-accidental
+    artist: Inteligencia Accidental
+    title: Inteligencia Accidental en Sala Biaus
+    mp3: 02%20-%20Inteligencia%20Accidental%20-%20Sala%20Biaus%20(2026-02-07).mp3
+    flac: 02%20-%20Inteligencia%20Accidental%20-%20Sala%20Biaus%20(2026-02-07).flac
+    wav: 02%20-%20Inteligencia%20Accidental%20-%20Sala%20Biaus%20(2026-02-07).wav
+    duration: 2284
+  - id: sabotage
+    artist: Sabotage
+    title: Sabotage - Sala Biaus
+    mp3: 03%20-%20Sabotage%20-%20Sala%20Biaus%20(2026-02-07).mp3
+    flac: 03%20-%20Sabotage%20-%20Sala%20Biaus%20(2026-02-07).flac
+    wav: 03%20-%20Sabotage%20-%20Sala%20Biaus%20(2026-02-07).wav
+    duration: 2848
+  space: Sala Biaus
+  bands:
+  - Entrance
+  - Inteligencia Accidental
+  - Sabojate
+  cover: /recitales/sala-biaus/entrance-ia-sabotaje/featured.png
+  page: /recitales/sala-biaus/entrance-ia-sabotaje/
+  archive: live-2026-02-07-entranceinteligencia-accidental-sabotage
+  archive_url: https://archive.org/details/live-2026-02-07-entranceinteligencia-accidental-sabotage
+- id: ruta30/oesterheld
+  date: '2026-02-06'
+  title: Oesterheld en Ruta 30
+  tracks:
+  - id: oesterheld
+    artist: Oesterheld
+    title: Oesterheld en Ruta 30
+    mp3: Oesterheld%20en%20Ruta%2030%20(2026-02-06).mp3
+    flac: Oesterheld%20en%20Ruta%2030%20(2026-02-06).flac
+    wav: Oesterheld%20en%20Ruta%2030%20(2026-02-06).wav
+    duration: 4238
+  space: Ruta 30
+  bands:
+  - Oesterheld
+  cover: /recitales/ruta30/oesterheld/featured.jpg
+  page: /recitales/ruta30/oesterheld/
+  archive: live-2026-02-06-oesterheld
+  archive_url: https://archive.org/details/live-2026-02-06-oesterheld
+- id: lap-cantina/epifanicas
+  date: '2026-02-06'
+  title: Epifanicas en Lap Cantina
+  tracks:
+  - id: epifanicas
+    artist: Epifanicas
+    title: Epifanicas en Lap Cantina
+    mp3: Epifanicas%20-%20Lap%20Cantina%20(2026-02-06).mp3
+    flac: Epifanicas%20-%20Lap%20Cantina%20(2026-02-06).flac
+    wav: Epifanicas%20-%20Lap%20Cantina%20(2026-02-06).wav
+    duration: 2683
+  space: Lap Cantina
+  bands:
+  - Epifanicas
+  cover: /recitales/lap-cantina/epifanicas/featured.jpg
+  page: /recitales/lap-cantina/epifanicas/
+  archive: live-2026-02-06-epifanicas
+  archive_url: https://archive.org/details/live-2026-02-06-epifanicas
+- id: encuentro-por-las-artes/urbana
+  date: '2026-02-01'
+  title: Festival Urbano en Encuentro por las Artes
+  tracks:
+  - id: angelbby
+    artist: Rico y Suave
+    title: Angelbby feat Rico y suave y Mija
+    mp3: 01%20-%20Angelbby%20Feat%20Rico%20y%20suave%20y%20Mija%20(2026-02-01).mp3
+    flac: 01%20-%20Angelbby%20Feat%20Rico%20y%20suave%20y%20Mija%20(2026-02-01).flac
+    wav: 01%20-%20Angelbby%20Feat%20Rico%20y%20suave%20y%20Mija%20(2026-02-01).wav
+    duration: 2084
+  - id: vairo
+    artist: Vairo
+    title: Vairo producción CH Records
+    mp3: 02%20-%20Vairo%20(2026-02-01).mp3
+    flac: 02%20-%20Vairo%20(2026-02-01).flac
+    wav: 02%20-%20Vairo%20(2026-02-01).wav
+    duration: 2244
+  - id: enzo-ville
+    artist: Enzo Ville
+    title: Enzo Ville
+    mp3: 03%20-%20Enzo%20Ville%20(2026-02-01).mp3
+    flac: 03%20-%20Enzo%20Ville%20(2026-02-01).flac
+    wav: 03%20-%20Enzo%20Ville%20(2026-02-01).wav
+    duration: 1552
+  space: Encuentro por las Artes
+  bands:
+  - Angelbby
+  - Rico y Suave
+  - Mija
+  - Vairo
+  - Pyters
+  - Enzo Ville
+  cover: /recitales/encuentro-por-las-artes/urbana/featured.png
+  page: /recitales/encuentro-por-las-artes/urbana/
+  archive: live-2026-02-01-festival-urbano
+  archive_url: https://archive.org/details/live-2026-02-01-festival-urbano
+- id: galpon-beer/nomad-calavera-down
+  date: '2026-01-30'
+  title: Nómada, San Calavera y Downfall en Galpón Beer
+  tracks:
+  - id: nomada
+    artist: Nómada
+    title: Nómada en Galpón Beer
+    mp3: 01%20-%20Nomada%20(2026-01-30).mp3
+    flac: 01%20-%20Nomada%20(2026-01-30).flac
+    wav: 01%20-%20Nomada%20(2026-01-30).wav
+    duration: 2040
+  - id: san-calavera
+    artist: San Calavera
+    title: San Calavera en Galpón Beer
+    mp3: 02%20-%20San%20Calavera%20(2026-01-30).mp3
+    flac: 02%20-%20San%20Calavera%20(2026-01-30).flac
+    wav: 02%20-%20San%20Calavera%20(2026-01-30).wav
+    duration: 2359
+  - id: downfall
+    artist: Downfall
+    title: Downfall en Galpón Beer
+    mp3: 03%20-%20Downfall%20(2026-01-30).mp3
+    flac: 03%20-%20Downfall%20(2026-01-30).flac
+    wav: 03%20-%20Downfall%20(2026-01-30).wav
+    duration: 2028
+  space: Galpón Beer
+  bands:
+  - Nómada
+  - San Calavera
+  - Downfall
+  cover: /recitales/galpon-beer/nomad-calavera-down/featured.jpg
+  page: /recitales/galpon-beer/nomad-calavera-down/
+  archive: live-2026-01-30-nomadasan-calaveradownfall
+  archive_url: https://archive.org/details/live-2026-01-30-nomadasan-calaveradownfall
+- id: il-maestro/amar-cia
+  date: '2026-01-25'
+  title: Amar y compañia en Il Maestro
+  tracks:
+  - id: guada-y-abril
+    artist: Guada y Abril
+    title: Guada y Abril - Il Maestro
+    mp3: 01%20-%20Guada%20y%20Abril%20-%20Il%20Maestro%20(2026-01-25).mp3
+    flac: 01%20-%20Guada%20y%20Abril%20-%20Il%20Maestro%20(2026-01-25).flac
+    wav: 01%20-%20Guada%20y%20Abril%20-%20Il%20Maestro%20(2026-01-25).wav
+    duration: 1017
+  - id: yula-y-abril
+    artist: Yula y Abril
+    title: Yula y Abril - Il Maestro
+    mp3: 01%20-%20Yula%20y%20Abril%20-%20Il%20Maestro%20(2026-01-25).mp3
+    flac: 01%20-%20Yula%20y%20Abril%20-%20Il%20Maestro%20(2026-01-25).flac
+    wav: 02%20-%20Yula%20y%20Abril%20-%20Il%20Maestro%20(2026-01-25).wav
+    duration: 3021
+  space: Il Maestro
+  bands:
+  - Abril Amar
+  - Julian Amar
+  - Guada Benitez
+  cover: /recitales/il-maestro/amar-cia/featured.jpg
+  page: /recitales/il-maestro/amar-cia/
+  archive: live-2026-01-25-abril-guada-yula
+  archive_url: https://archive.org/details/live-2026-01-25-abril-guada-yula
+- id: sala-biaus/oesterheld
+  date: '2026-01-24'
+  title: Oesterheld en Sala Biaus
+  tracks:
+  - id: oesterheld
+    artist: Oesterheld
+    title: Oesterheld en Sala Biaus
+    mp3: Oesterheld%20en%20Sala%20Biaus%20(2026-01-24).mp3
+    flac: Oesterheld%20en%20Sala%20Biaus%20(2026-01-24).flac
+    wav: Oesterheld%20en%20Sala%20Biaus%20(2026-01-24).wav
+    duration: 4283
+  space: Sala Biaus
+  bands:
+  - Oesterheld
+  cover: /recitales/sala-biaus/oesterheld/featured.jpg
+  page: /recitales/sala-biaus/oesterheld/
+  archive: live-2026-01-24-oesterheld
+  archive_url: https://archive.org/details/live-2026-01-24-oesterheld
+- id: ruta30/kuelgue
+  date: '2026-01-22'
+  title: Homenaje a El Kuelgue en Ruta 30
+  tracks:
+  - id: homenaje-a-el-kuelgue
+    artist: Homenaje a El Kuelgue
+    title: Homenaje a El Kuelgue
+    mp3: Homenaje%20a%20El%20Kuelgue%20en%20Ruta%2030%20(2026-01-22).mp3
+    flac: Homenaje%20a%20El%20Kuelgue%20en%20Ruta%2030%20(2026-01-22).flac
+    wav: Homenaje%20a%20El%20Kuelgue%20en%20Ruta%2030%20(2026-01-22).wav
+    duration: 1658
+  space: Ruta 30
+  bands:
+  - Kuelguero's band
+  cover: /recitales/ruta30/kuelgue/featured.png
+  page: /recitales/ruta30/kuelgue/
+  archive: live-2026-01-22-el-kuelgue
+  archive_url: https://archive.org/details/live-2026-01-22-el-kuelgue
+- id: sala-biaus/mr-nomad-cinik-ia
+  date: '2026-01-16'
+  title: Cínica, I.A, Sr. Wilson y Nómanda en Sala Biaus
+  tracks:
+  - id: cinica
+    artist: Cínica
+    title: Cínica en Sala Biaus
+    mp3: 01%20-%20C%C3%ADnica%20-%20Sala%20Biaus%20(2026-01-16).mp3
+    flac: 01%20-%20C%C3%ADnica%20-%20Sala%20Biaus%20(2026-01-16).flac
+    wav: 01%20-%20C%C3%ADnica%20-%20Sala%20Biaus%20(2026-01-16).wav
+    duration: 1751
+  - id: inteligencia-accidental
+    artist: Inteligencia Accidental
+    title: Inteligencia Accidental en Sala Biaus 16-01-26
+    mp3: 02%20-%20Inteligencia%20Accidental%20-%20Sala%20Biaus%20(2026-01-16).mp3
+    flac: 02%20-%20Inteligencia%20Accidental%20-%20Sala%20Biaus%20(2026-01-16).flac
+    wav: 02%20-%20Inteligencia%20Accidental%20-%20Sala%20Biaus%20(2026-01-16).wav
+    duration: 2131
+  - id: sr-wilson
+    artist: Sr. Wilson
+    title: Sr Wilson en Sala Biaus
+    mp3: 03%20-%20Sr%20Wilson%20-%20Sala%20Biaus%20(2026-01-16).mp3
+    flac: 03%20-%20Sr%20Wilson%20-%20Sala%20Biaus%20(2026-01-16).flac
+    wav: 03%20-%20Sr%20Wilson%20-%20Sala%20Biaus%20(2026-01-16).wav
+    duration: 1330
+  - id: nomada
+    artist: Nómada
+    title: Nómada en Sala Biaus
+    mp3: 04%20-%20N%C3%B3mada%20-%20Sala%20Biaus%20(2026-01-16).mp3
+    flac: 04%20-%20N%C3%B3mada%20-%20Sala%20Biaus%20(2026-01-16).flac
+    wav: 04%20-%20N%C3%B3mada%20-%20Sala%20Biaus%20(2026-01-16).wav
+    duration: 1725
+  space: Sala Biaus
+  bands:
+  - Cínica
+  - Inteligencia Accidental
+  - Sr. Wilson
+  - Nómada
+  cover: /recitales/sala-biaus/mr-nomad-cinik-ia/featured.jpg
+  page: /recitales/sala-biaus/mr-nomad-cinik-ia/
+  archive: live-2026-01-16-cnicainteligencia-accidentalsr-wilson-nmada
+  archive_url: https://archive.org/details/live-2026-01-16-cnicainteligencia-accidentalsr-wilson-nmada
+- id: la-maga/festimaga4
+  date: '2026-01-10'
+  title: Festimaga Volumen 4
+  tracks:
+  - id: cinica
+    artist: Cínica
+    title: Cínica en Sala Biaus
+    mp3: 01%20-%20C%C3%ADnica%20-%20Festimaga%204%20(2026-01-10).mp3
+    flac: 01%20-%20C%C3%ADnica%20-%20Festimaga%204%20(2026-01-10).flac
+    wav: 01%20-%20C%C3%ADnica%20-%20Festimaga%204%20(2026-01-10).wav
+    duration: 1533
+  - id: paprikas-band
+    artist: Paprika's Band
+    title: Paprika's Band en el aniversario de Beertonic
+    mp3: 02%20-%20Paprika%27s%20Band%20-%20Festimaga%204%20(2026-01-10).mp3
+    flac: 02%20-%20Paprika%27s%20Band%20-%20Festimaga%204%20(2026-01-10).flac
+    wav: 02%20-%20Paprika%27s%20Band%20-%20Festimaga%204%20(2026-01-10).wav
+    duration: 1755
+  - id: little-rocker
+    artist: Little Rocker
+    title: Little Rocker
+    mp3: 03%20-%20Little%20Rocker%20-%20Festimaga%204%20(2026-01-10).mp3
+    flac: 03%20-%20Little%20Rocker%20-%20Festimaga%204%20(2026-01-10).flac
+    wav: 03%20-%20Little%20Rocker%20-%20Festimaga%204%20(2026-01-10).wav
+    duration: 1472
+  - id: sala-roja
+    artist: Sala Roja
+    title: Sala Roja Festimaga 1
+    mp3: 04%20-%20Sala%20Roja%20-%20Festimaga%204%20(2026-01-10).mp3
+    flac: 04%20-%20Sala%20Roja%20-%20Festimaga%204%20(2026-01-10).flac
+    wav: 04%20-%20Sala%20Roja%20-%20Festimaga%204%20(2026-01-10).wav
+    duration: 691
+  - id: inteligencia-accidental
+    artist: Inteligencia Accidental
+    title: Inteligencia Accidental Festimaga 1
+    mp3: 05%20-%20Inteligencia%20Accidental%20-%20Festimaga%204%20(2026-01-10).mp3
+    flac: 05%20-%20Inteligencia%20Accidental%20-%20Festimaga%204%20(2026-01-10).flac
+    wav: 05%20-%20Inteligencia%20Accidental%20-%20Festimaga%204%20(2026-01-10).wav
+    duration: 2304
+  space: La Maga
+  bands:
+  - Cínica
+  - Paprika's Band
+  - Little Rocker
+  - Sala Roja
+  - Inteligencia Accidental
+  cover: /recitales/la-maga/festimaga4/featured.jpg
+  page: /recitales/la-maga/festimaga4/
+  archive: live-2026-01-10-festimaga-4
+  archive_url: https://archive.org/details/live-2026-01-10-festimaga-4
+- id: encuentro-por-las-artes/epi-sun-roco
+  date: '2026-01-09'
+  title: Epifanicas, Sunglasses y Roco y los Chacks en Encuentro por las Artes
+  tracks:
+  - id: epifanicas
+    artist: Epifanicas
+    title: Epifanicas en Encuentro por las Artes
+    mp3: 01%20-%20Epifanicas%20-%20Encuentro%20por%20las%20Artes%20(2026-01-09).mp3
+    flac: 01%20-%20Epifanicas%20-%20Encuentro%20por%20las%20Artes%20(2026-01-09).flac
+    wav: 01%20-%20Epifanicas%20-%20Encuentro%20por%20las%20Artes%20(2026-01-09).wav
+    duration: 1528
+  - id: sunglasses
+    artist: Sunglasses
+    title: Sunglasses en Encuentro por las Artes
+    mp3: 02%20-%20Sunglasses%20-%20Encuentro%20por%20las%20Artes%20(2026-01-09).mp3
+    flac: 02%20-%20Sunglasses%20-%20Encuentro%20por%20las%20Artes%20(2026-01-09).flac
+    wav: 02%20-%20Sunglasses%20-%20Encuentro%20por%20las%20Artes%20(2026-01-09).wav
+    duration: 2722
+  - id: roco-y-los-chacks
+    artist: Roco y los Chacks
+    title: Roco y los Chacks en Encuentro por las Artes
+    mp3: 03%20-%20Roco%20y%20los%20Chacks%20-%20Encuentro%20por%20las%20Artes%20(2026-01-09).mp3
+    flac: 03%20-%20Roco%20y%20los%20Chacks%20-%20Encuentro%20por%20las%20Artes%20(2026-01-09).flac
+    wav: 03%20-%20Roco%20y%20los%20Chacks%20-%20Encuentro%20por%20las%20Artes%20(2026-01-09).wav
+    duration: 2707
+  space: Encuentro por las Artes
+  bands:
+  - Epifanicas
+  - Sunglasses
+  - Roco y los Chacks
+  cover: /recitales/encuentro-por-las-artes/epi-sun-roco/featured.jpg
+  page: /recitales/encuentro-por-las-artes/epi-sun-roco/
+  archive: live-2026-01-09-epifanicas-sunglasses-roco-y-los-chaks
+  archive_url: https://archive.org/details/live-2026-01-09-epifanicas-sunglasses-roco-y-los-chaks
+- id: encuentro-por-las-artes/flaco
+  date: '2026-01-02'
+  title: Proyecto Spinetta en Encuentro por las Artes
+  tracks:
+  - id: proyecto-spinetta
+    artist: Proyecto Spinetta
+    title: Proyecto Spinetta
+    mp3: Proyecto%20Spinetta%20(2026-01-02).mp3
+    flac: Proyecto%20Spinetta%20(2026-01-02).flac
+    wav: Proyecto%20Spinetta%20(2026-01-02).wav
+    duration: 4842
+  space: Encuentro por las Artes
+  bands:
+  - Rocio Palazzo
+  - Nicolas Benaghi
+  - Ignacio Viano
+  - Manuel Gache
+  - Abril Amar
+  - Santiago Amar
+  - Pablo Sosa
+  - Agustin Monteleone
+  - Nicolas Muchiut
+  - Omar Stacchiotti
+  - Celeste Olivera
+  cover: /recitales/encuentro-por-las-artes/flaco/featured.webp
+  page: /recitales/encuentro-por-las-artes/flaco/
+  archive: live-2026-01-02-proyecto-spinetta
+  archive_url: https://archive.org/details/live-2026-01-02-proyecto-spinetta
+- id: añonuevofest
+  date: '2026-01-01'
+  title: Año Nuevo Ruidoso Fest
+  tracks:
+  - id: sociedad-macabra
+    artist: Sociedad Macabra
+    title: Sociedad Macabra en año nuevo fest
+    src: https://files.catbox.moe/nz514m.mp3
+    duration: 1023
+  - id: parasomnia
+    artist: Parasomnia
+    title: Parasomnia en año nuevo fest
+    src: https://files.catbox.moe/a6e37m.mp3
+    duration: 1656
+  - id: i-a
+    artist: I.A
+    title: IA en año nuevo fest
+    src: https://files.catbox.moe/i60k6t.mp3
+    duration: 1477
+  - id: los-bad-seed
+    artist: Los Bad Seed
+    title: Los Bad Seed en año nuevo fest
+    src: https://files.catbox.moe/hgf90e.mp3
+    duration: 1482
+  space: La salita de ensayo
+  bands:
+  - Sociedad Macabra
+  - Parasomnia
+  - Inteligencia Accidental
+  - Los Bad Seed
+  cover: /recitales/añonuevofest/featured.png
+  page: /recitales/añonuevofest/
+- id: sala-biaus/drama-seed
+  date: '2025-12-27'
+  title: Drama y Los Bad Seed en Sala Biaus
+  tracks:
+  - id: drama
+    artist: Drama
+    title: Drama en Sala Biaus
+    mp3: 01%20-%20DRAMA%20-%20Sala%20Biaus%20(2025-12-27).mp3
+    flac: 01%20-%20DRAMA%20-%20Sala%20Biaus%20(2025-12-27).flac
+    wav: 01%20-%20DRAMA%20-%20Sala%20Biaus%20(2025-12-27).wav
+    duration: 1717
+  - id: bad-seed
+    artist: Bad Seed
+    title: Los Bad Seed en Sala Biaus
+    mp3: 02%20-%20Bad%20Seed%20-%20Sala%20Biaus%20(2025-12-27).mp3
+    flac: 02%20-%20Bad%20Seed%20-%20Sala%20Biaus%20(2025-12-27).flac
+    wav: 02%20-%20Bad%20Seed%20-%20Sala%20Biaus%20(2025-12-27).wav
+    duration: 2912
+  space: Sala Biaus
+  bands:
+  - Drama
+  - Los Bad Seed
+  cover: /recitales/sala-biaus/drama-seed/featured.jpg
+  page: /recitales/sala-biaus/drama-seed/
+  archive: live-2025-12-27-dramabad-seed
+  archive_url: https://archive.org/details/live-2025-12-27-dramabad-seed
+- id: sala-biaus/epifanicas
+  date: '2025-12-13'
+  title: Epifanicas en Sala Biaus
+  tracks:
+  - id: bloque-1
+    artist: Epifanicas
+    title: Epifanicas Bloque 1 en Sala Biaus
+    mp3: 01%20-%20Epifanicas%20Bloque%201%20-%20Sala%20Biaus%20(2025-12-13).mp3
+    flac: 01%20-%20Epifanicas%20Bloque%201%20-%20Sala%20Biaus%20(2025-12-13).flac
+    wav: 01%20-%20Epifanicas%20Bloque%201%20-%20Sala%20Biaus%20(2025-12-13).wav
+    duration: 1943
+  - id: hernan-interludio
+    artist: Hernán Interludio
+    title: Hernán Interludio - Sala Biaus
+    mp3: 02%20-%20Hern%C3%A1n%20Interludio%20-%20Sala%20Biaus%20(2025-12-13).mp3
+    flac: 02%20-%20Hern%C3%A1n%20Interludio%20-%20Sala%20Biaus%20(2025-12-13).flac
+    wav: 02%20-%20Hern%C3%A1n%20Interludio%20-%20Sala%20Biaus%20(2025-12-13).wav
+    duration: 2116
+  - id: bloque-2
+    artist: Epifanicas
+    title: Epifanicas Bloque 2 en Sala Biaus
+    mp3: 03%20-%20Epifanicas%20Bloque%202%20-%20Sala%20Biaus%20(2025-12-13).mp3
+    flac: 03%20-%20Epifanicas%20Bloque%202%20-%20Sala%20Biaus%20(2025-12-13).flac
+    wav: 03%20-%20Epifanicas%20Bloque%202%20-%20Sala%20Biaus%20(2025-12-13).wav
+    duration: 2400
+  space: Sala Biaus
+  bands:
+  - Epifanicas
+  cover: /recitales/sala-biaus/epifanicas/featured.jpg
+  page: /recitales/sala-biaus/epifanicas/
+  archive: live-2025-12-13-epifanicas
+  archive_url: https://archive.org/details/live-2025-12-13-epifanicas
+- id: gelatiamo/armand
+  date: '2025-12-11'
+  title: Armando Alonso Trío en Gelatiamo
+  tracks:
+  - id: armando-alonso
+    artist: Armando Alonso
+    title: Armando Alonso
+    mp3: Armando%20Alonso%20(2025-12-11).mp3
+    flac: Armando%20Alonso%20(2025-12-11).flac
+    wav: Armando%20Alonso%20(2025-12-11).wav
+    duration: 3319
+  space: Gelatiamo
+  bands:
+  - Armando Alonso
+  - Nicolás Benaghi
+  - Agustín Barbieri
+  cover: /recitales/gelatiamo/armand/featured.jpg
+  page: /recitales/gelatiamo/armand/
+  archive: live-2025-12-11-armando-alonso
+  archive_url: https://archive.org/details/live-2025-12-11-armando-alonso
+- id: mad-monky
+  date: '2025-12-06'
+  title: Mad Monky Fest
+  tracks:
+  - id: los-pozoz
+    artist: Los Pozoz
+    title: Los Pozoz en el Mad Monky Fest
+    mp3: 01%20-%20Los%20Pozoz%20-%20Mad%20Monkey%20Fest%20(2025-12-06).mp3
+    flac: 01%20-%20Los%20Pozoz%20-%20Mad%20Monkey%20Fest%20(2025-12-06).flac
+    wav: 01%20-%20Los%20Pozoz%20-%20Mad%20Monkey%20Fest%20(2025-12-06).wav
+    duration: 1083
+  - id: nomada
+    artist: Nómada
+    title: Nómada en el Mad Monky Fest
+    mp3: 02%20-%20N%C3%B3mada%20-%20Mad%20Monkey%20Fest%20(2025-12-06).mp3
+    flac: 02%20-%20N%C3%B3mada%20-%20Mad%20Monkey%20Fest%20(2025-12-06).flac
+    wav: 02%20-%20N%C3%B3mada%20-%20Mad%20Monkey%20Fest%20(2025-12-06).wav
+    duration: 2061
+  - id: sociedad-macabra
+    artist: Sociedad Macabra
+    title: Sociedad Macabra en el Mad Monky Fest
+    mp3: 03%20-%20Sociedad%20Macabra%20-%20Mad%20Monkey%20Fest%20(2025-12-06).mp3
+    flac: 03%20-%20Sociedad%20Macabra%20-%20Mad%20Monkey%20Fest%20(2025-12-06).flac
+    wav: 03%20-%20Sociedad%20Macabra%20-%20Mad%20Monkey%20Fest%20(2025-12-06).wav
+    duration: 1026
+  - id: parasomnia
+    artist: Parasomnia
+    title: Parasomnia en el Mad Monky Fest
+    mp3: 04%20-%20Parasomnia-%20Mad%20Monkey%20Fest%20(2025-12-06).mp3
+    flac: 04%20-%20Parasomnia-%20Mad%20Monkey%20Fest%20(2025-12-06).flac
+    wav: 04%20-%20Parasomnia-%20Mad%20Monkey%20Fest%20(2025-12-06).wav
+    duration: 1344
+  space: La salita de ensayo
+  bands:
+  - Los Pozoz
+  - Nómada
+  - Sociedad Macabra
+  - Parasomnia
+  cover: /recitales/mad-monky/featured.webp
+  page: /recitales/mad-monky/
+  archive: live-2025-12-06-mad-monkey-fest
+  archive_url: https://archive.org/details/live-2025-12-06-mad-monkey-fest
+- id: el-portal-del-tango/nueva-musica
+  date: '2025-12-03'
+  title: Muestra fin de ciclo de la NUEVA (escuela de) MÚSICA en El Portal Del Tango
+  tracks:
+  - id: alfon-vicky-milo
+    artist: Alfon Vicky Milo
+    title: Alfon Vicky Milo
+    mp3: 01%20-%20Alfon%20Vicky%20Milo.mp3
+    flac: 01%20-%20Alfon%20Vicky%20Milo.flac
+    wav: 01%20-%20Alfon%20Vicky%20Milo.wav
+    duration: 490
+  - id: milo-guada
+    artist: Milo Guada
+    title: Milo Guada
+    mp3: 02%20-%20Milo%20Guada.mp3
+    flac: 02%20-%20Milo%20Guada.flac
+    wav: 02%20-%20Milo%20Guada.wav
+    duration: 209
+  - id: guara-guada
+    artist: Guara Guada
+    title: Guara Guada
+    mp3: 03%20-%20Guara%20Guada.mp3
+    flac: 03%20-%20Guara%20Guada.flac
+    wav: 03%20-%20Guara%20Guada.wav
+    duration: 120
+  - id: lola
+    artist: Lola
+    title: Lola
+    mp3: 04%20-%20Lola.mp3
+    flac: 04%20-%20Lola.flac
+    wav: 04%20-%20Lola.wav
+    duration: 381
+  - id: vicky
+    artist: Vicky
+    title: Vicky
+    mp3: 05%20-%20Vicky.mp3
+    flac: 05%20-%20Vicky.flac
+    wav: 05%20-%20Vicky.wav
+    duration: 301
+  - id: valen
+    artist: Valen
+    title: Valen
+    mp3: 06%20-%20Valen.mp3
+    flac: 06%20-%20Valen.flac
+    wav: 06%20-%20Valen.wav
+    duration: 184
+  - id: justo-y-segundo
+    artist: Justo y Segundo
+    title: Justo y Segundo
+    mp3: 07%20-%20Justo%20y%20Segundo.mp3
+    flac: 07%20-%20Justo%20y%20Segundo.flac
+    wav: 07%20-%20Justo%20y%20Segundo.wav
+    duration: 198
+  - id: tobias
+    artist: Tobias
+    title: Tobias
+    mp3: 08%20-%20Tobias.mp3
+    flac: 08%20-%20Tobias.flac
+    wav: 08%20-%20Tobias.wav
+    duration: 246
+  - id: benja-y-mate
+    artist: Benja y Mate
+    title: Benja y Mate
+    mp3: 09%20-%20Benja%20y%20Mate.mp3
+    flac: 09%20-%20Benja%20y%20Mate.flac
+    wav: 09%20-%20Benja%20y%20Mate.wav
+    duration: 790
+  - id: mate
+    artist: Mate
+    title: Mate
+    mp3: 10%20-%20Mate.mp3
+    flac: 10%20-%20Mate.flac
+    wav: 10%20-%20Mate.wav
+    duration: 203
+  - id: ciro
+    artist: Ciro
+    title: Ciro
+    mp3: 11%20-%20Ciro.mp3
+    flac: 11%20-%20Ciro.flac
+    wav: 11%20-%20Ciro.wav
+    duration: 298
+  - id: mateo
+    artist: Mateo
+    title: Mateo
+    mp3: 12%20-%20Mateo.mp3
+    flac: 12%20-%20Mateo.flac
+    wav: 12%20-%20Mateo.wav
+    duration: 638
+  - id: mateo-y-luky
+    artist: Mateo y luky
+    title: Mateo y luky
+    mp3: 13%20-%20Mateo%20y%20luky.mp3
+    flac: 13%20-%20Mateo%20y%20luky.flac
+    wav: 13%20-%20Mateo%20y%20luky.wav
+    duration: 438
+  - id: benja
+    artist: Benja
+    title: Benja
+    mp3: 14%20-%20Benja.mp3
+    flac: 14%20-%20Benja.flac
+    wav: 14%20-%20Benja.wav
+    duration: 335
+  - id: maloquio
+    artist: Maloquio
+    title: Maloquio
+    mp3: 15%20-%20Maloquio.mp3
+    flac: 15%20-%20Maloquio.flac
+    wav: 15%20-%20Maloquio.wav
+    duration: 1326
+  space: El Portal del Tango
+  bands:
+  - Nueva Escuela de Música
+  cover: /recitales/el-portal-del-tango/nueva-musica/featured.jpg
+  page: /recitales/el-portal-del-tango/nueva-musica/
+  archive: live-2025-12-03-muestra-de-fin-de-ao-dia-1
+  archive_url: https://archive.org/details/live-2025-12-03-muestra-de-fin-de-ao-dia-1
+- id: el-portal-del-tango/festi-distor
+  date: '2025-11-29'
+  title: 'Festival Distorsivo + Pintura en vivo en El Portal del Tango '
+  tracks:
+  - id: base
+    artist: Base
+    title: Base en el Festival Distorsivo
+    mp3: 01_Base%20-%20Festival%20Distorsivo%20(2025-11-29).mp3
+    flac: 01_Base%20-%20Festival%20Distorsivo%20(2025-11-29).flac
+    wav: 01_Base%20-%20Festival%20Distorsivo%20(2025-11-29).wav
+    duration: 1135
+  - id: entrance
+    artist: Entrance
+    title: Entrance en el Festival Distorsivo
+    mp3: 02_Entrance%20-%20Festival%20Distorsivo%20(2025-11-29).mp3
+    flac: 02_Entrance%20-%20Festival%20Distorsivo%20(2025-11-29).flac
+    wav: 02_Entrance%20-%20Festival%20Distorsivo%20(2025-11-29).wav
+    duration: 2164
+  space: El Portal del Tango
+  bands:
+  - Base
+  - Entrance
+  - Sabotaje
+  cover: /recitales/el-portal-del-tango/festi-distor/featured.webp
+  page: /recitales/el-portal-del-tango/festi-distor/
+  archive: live-2025-11-29-festival-distorsivo
+  archive_url: https://archive.org/details/live-2025-11-29-festival-distorsivo
+- id: la-maga/festimaga3
+  date: '2025-11-28'
+  title: Los Pozoz y Traumas de la Infancia en la Festimaga
+  tracks:
+  - id: los-pozoz
+    artist: Los Pozoz
+    title: Los Pozoz en la Festimaga 3
+    src: https://files.catbox.moe/f0vb1d.mp3
+    duration: 347
+  - id: traumas-de-la-infancia
+    artist: Traumas de la Infancia
+    title: Traumas de la Infancia en la Festimaga 3
+    src: https://files.catbox.moe/s8qfqf.mp3
+    duration: 990
+  - id: desahogo
+    artist: Desahogo
+    title: Reunión de Traumas interpretando Desahogo en la Festimaga 3
+    src: https://files.catbox.moe/a08fm2.mp3
+    duration: 932
+  space: La Maga
+  bands:
+  - Los Pozoz
+  - Traumas de la Infancia
+  cover: /recitales/la-maga/festimaga3/featured.jpg
+  page: /recitales/la-maga/festimaga3/
+- id: beertonic/cumple
+  date: '2025-11-23'
+  title: Guada y Abril dúo, Catango Trio y Paprika's Band en el Aniversario de Beertonic
+  tracks:
+  - id: catango-trio
+    artist: Catango Trio
+    title: Catango Trío en el aniversario de Beertonic
+    mp3: 01%20-%20Catango%20Trio%20-%20BeerTonic%20(2025-11-23).mp3
+    flac: 01%20-%20Catango%20Trio%20-%20BeerTonic%20(2025-11-23).flac
+    wav: 01%20-%20Catango%20Trio%20-%20BeerTonic%20(2025-11-23).wav
+    duration: 1140
+  - id: guada-y-abril-duo
+    artist: Guada y Abril dúo
+    title: Guada y Abril dúo en el aniversario de Beertonic (extracto).
+    mp3: 02%20-%20Guada%20y%20Abril%20Duo%20-%20BeerTonic%20(2025-11-23).mp3
+    flac: 02%20-%20Guada%20y%20Abril%20Duo%20-%20BeerTonic%20(2025-11-23).flac
+    wav: 02%20-%20Guada%20y%20Abril%20Duo%20-%20BeerTonic%20(2025-11-23).wav
+    duration: 777
+  - id: paprikas-band
+    artist: Paprika's Band
+    title: Paprika's Band en el aniversario de Beertonic
+    mp3: 03%20-%20Paprikas%20Band%20-%20BeerTonic%20(2025-11-23).mp3
+    flac: 03%20-%20Paprikas%20Band%20-%20BeerTonic%20(2025-11-23).flac
+    wav: 03%20-%20Paprikas%20Band%20-%20BeerTonic%20(2025-11-23).wav
+    duration: 1643
+  space: Beertonic
+  bands:
+  - Guada y Abril dúo
+  - Catango Trio
+  - Paprika's Band
+  cover: /recitales/beertonic/cumple/featured.jpg
+  page: /recitales/beertonic/cumple/
+  archive: live-2025-11-23-aniversario-beertonic
+  archive_url: https://archive.org/details/live-2025-11-23-aniversario-beertonic
+- id: galpon-beer/festival-consciente
+  date: '2025-11-21'
+  title: 'Festival Consciente en Galpón Beer '
+  tracks:
+  - id: maquinaria-divina
+    artist: Maquinaria Divina
+    title: Maquinaria Divina en el Festival Consciente
+    mp3: 01%20-%20Maquinaria%20Divina%20(2025-11-21).mp3
+    flac: 01%20-%20Maquinaria%20Divina%20(2025-11-21).flac
+    wav: 01%20-%20Maquinaria%20Divina%20(2025-11-21).wav
+    duration: 2012
+  - id: jane-doe
+    artist: Jane Doe
+    title: Jane Doe en el Festival Consciente
+    mp3: 02%20-%20Jane%20Doe%20(2025-11-21).mp3
+    flac: 02%20-%20Jane%20Doe%20(2025-11-21).flac
+    wav: 02%20-%20Jane%20Doe%20(2025-11-21).wav
+    duration: 2127
+  - id: base
+    artist: Base
+    title: Base en el Festival Consciente
+    mp3: 03%20-%20Base%20(2025-11-21).mp3
+    flac: 03%20-%20Base%20(2025-11-21).flac
+    wav: 03%20-%20Base%20(2025-11-21).wav
+    duration: 1445
+  - id: sociedad-macabra
+    artist: Sociedad Macabra
+    title: Sociedad Macabra en el Festival Consciente
+    mp3: 04%20-%20Sociedad%20Macabra%20(2025-11-21).mp3
+  - id: inteligencia-accidental
+    artist: Inteligencia Accidental
+    title: Inteligencia Accidental en el Festival Consciente
+    mp3: 05%20-%20Inteligencia%20Accidental%20(2025-11-21).mp3
+  - id: forrxs
+    artist: Forrxs
+    title: Forrxs en el Festival Consciente
+    mp3: 06%20-%20Forrxs%20(2025-11-21).mp3
+  space: Galpón Beer
+  bands:
+  - Maquinaria Divina
+  - Jane Doe
+  - Base
+  - Sociedad Macabra
+  - Inteligencia Accidental
+  - Forrxs
+  cover: /recitales/galpon-beer/festival-consciente/featured.webp
+  page: /recitales/galpon-beer/festival-consciente/
+  archive: live-2025-11-21-festival-consciente
+  archive_url: https://archive.org/details/live-2025-11-21-festival-consciente
+- id: plaza-charo/valquirias
+  date: '2025-11-08'
+  title: Valkirias en la Plaza Charo Latessa
+  tracks:
+  - id: valquirias
+    artist: Valquirias
+    title: Valquirias en la 12va marcha del orgullo
+    mp3: Valquirias%20en%20la%2012va%20marcha%20del%20orgullo%20(2025-11-08).mp3
+    flac: Valquirias%20en%20la%2012va%20marcha%20del%20orgullo%20(2025-11-08).flac
+    wav: Valquirias%20en%20la%2012va%20marcha%20del%20orgullo%20(2025-11-08).wav
+    duration: 1316
+  space: Plaza Charo Latessa
+  bands:
+  - Valquirias
+  cover: /recitales/plaza-charo/valquirias/featured.webp
+  page: /recitales/plaza-charo/valquirias/
+  archive: live-2025-11-08-12va-marcha-del-orgullo
+  archive_url: https://archive.org/details/live-2025-11-08-12va-marcha-del-orgullo
+- id: club-la-pampa/epifanicas
+  date: '2025-11-08'
+  title: Epifanicas en la Fiesta de la Cebada
+  tracks:
+  - id: epifanicas
+    artist: Epifanicas
+    title: Epifanicas en la Fiesta de la Cebada
+    mp3: Epifanicas%20Festival%20Cebada%20(2025-11-08).mp3
+    flac: Epifanicas%20Festival%20Cebada%20(2025-11-08).flac
+    wav: Epifanicas%20Festival%20Cebada%20(2025-11-08).wav
+    duration: 2734
+  space: Club La Pampa
+  bands:
+  - Epifanicas
+  cover: /recitales/club-la-pampa/epifanicas/featured.jpg
+  page: /recitales/club-la-pampa/epifanicas/
+  archive: live-2025-11-08-festival-cebada
+  archive_url: https://archive.org/details/live-2025-11-08-festival-cebada
+- id: grey-bar/epifanicas
+  date: '2025-11-06'
+  title: ' Epifanicas + pintura en vivo de Marcelo Mosqueira en Grey Bar '
+  tracks:
+  - id: epifanicas
+    artist: Epifanicas
+    title: Epifanicas en Grey Bar
+    mp3: Epifanicas%20-%20Grey%20Bar%20(2025-11-06).mp3
+    flac: Epifanicas%20-%20Grey%20Bar%20(2025-11-06).flac
+    wav: Epifanicas%20-%20Grey%20Bar%20(2025-11-06).wav
+    duration: 2835
+  space: Grey Bar
+  bands:
+  - Epifanicas
+  - Marcelo Mosqueira
+  cover: /recitales/grey-bar/epifanicas/featured.jpg
+  page: /recitales/grey-bar/epifanicas/
+  archive: live-2025-11-06-epifanicas
+  archive_url: https://archive.org/details/live-2025-11-06-epifanicas
+- id: la-maga/festimaga2
+  date: '2025-10-31'
+  title: Entrance, Nómada, y Sala Roja en la Festimaga
+  tracks:
+  - id: festimaga
+    artist: Nómada
+    title: Nómada en la Festimaga 2
+    mp3: 01%20-%20N%C3%B3mada%20-%20Festimaga%202%20(2025-10-31).mp3
+    flac: 01%20-%20N%C3%B3mada%20-%20Festimaga%202%20(2025-10-31).flac
+    wav: 01%20-%20N%C3%B3mada%20-%20Festimaga%202%20(2025-10-31).wav
+    duration: 1033
+  - id: sala-roja
+    artist: Sala Roja
+    title: Sala Roja en la Festimaga 2
+    mp3: 02%20-%20Sala%20Roja%20-%20Festimaga%202%20(2025-10-31).mp3
+    flac: 02%20-%20Sala%20Roja%20-%20Festimaga%202%20(2025-10-31).flac
+    wav: 02%20-%20Sala%20Roja%20-%20Festimaga%202%20(2025-10-31).wav
+    duration: 1949
+  - id: entrance
+    artist: Entrance
+    title: 'Entrance en la Festimaga '
+    mp3: 03%20-%20Entrance%20-%20Festimaga%202%20(2025-10-31).mp3
+    flac: 03%20-%20Entrance%20-%20Festimaga%202%20(2025-10-31).flac
+    wav: 03%20-%20Entrance%20-%20Festimaga%202%20(2025-10-31).wav
+    duration: 2055
+  space: La Maga
+  bands:
+  - Entrance
+  - Nómada
+  - Sala Roja
+  cover: /recitales/la-maga/festimaga2/featured.png
+  page: /recitales/la-maga/festimaga2/
+  archive: live-2025-10-31-festi-maga-2
+  archive_url: https://archive.org/details/live-2025-10-31-festi-maga-2
+- id: plaza-venezuela/catonga
+  date: '2025-10-26'
+  title: La Ronda Catonga en la Plaza Venezuela
+  tracks:
+  - id: ronda-catonga
+    artist: Ronda Catonga
+    title: Ronda Catonga en la Plaza Venezuela
+    mp3: Ronda%20Catonga%20en%20la%20Plaza%20Venezuela%20(2025-10-26).mp3
+    flac: Ronda%20Catonga%20en%20la%20Plaza%20Venezuela%20(2025-10-26).flac
+    wav: Ronda%20Catonga%20en%20la%20Plaza%20Venezuela%20(2025-10-26).wav
+    duration: 2657
+  space: Plaza Venezuela
+  bands:
+  - Ronda Catonga
+  cover: /recitales/plaza-venezuela/catonga/featured.jpg
+  page: /recitales/plaza-venezuela/catonga/
+  archive: live-2025-10-26-ronda-catonga
+  archive_url: https://archive.org/details/live-2025-10-26-ronda-catonga
+- id: conser/ensamble
+  date: '2025-10-24'
+  title: El Ensamble de música contemporánea interpreta a Philip Glass y Terry Riley en el Conservatorio Alberto Williams
+  tracks:
+  - id: philip-glass
+    artist: Philip Glass
+    title: El Ensamble de música contemporánea interpreta a Philip Glass en el Conservatorio Alberto Williams
+    mp3: Philip%20Glass%20interpretado%20por%20alumnes%20del%20convervatorio%20Alberto%20Williams%20(2025-10-24).mp3
+    flac: Philip%20Glass%20interpretado%20por%20alumnes%20del%20convervatorio%20Alberto%20Williams%20(2025-10-24).flac
+    wav: Philip%20Glass%20interpretado%20por%20alumnes%20del%20convervatorio%20Alberto%20Williams%20(2025-10-24).wav
+    duration: 2195
+  - id: terry-riley
+    artist: Terry Riley
+    title: 'Alumnes del Conservatorio Alberto Williams interpretan y Terry Riley a cargo del profesor Pablo Torre '
+    mp3: Terry%20Riley%20interpretado%20por%20alumnes%20del%20convervatorio%20Alberto%20Williams%20(2025-10-24).mp3
+  space: Conservatorio Alberto Williams
+  bands:
+  - Ensamble de música contemporánea
+  - Philip Glass
+  - Terry Riley
+  cover: /recitales/conser/ensamble/featured.jpg
+  page: /recitales/conser/ensamble/
+  archive: live-2025-10-24-glass-y-riley
+  archive_url: https://archive.org/details/live-2025-10-24-glass-y-riley
+- id: avispa/epifanicas
+  date: '2025-10-24'
+  title: Epifanicas en Garage Avispa
+  tracks:
+  - id: epifanicas
+    artist: Epifanicas
+    title: Epifanicas en Garage Avispa
+    mp3: Epifanicas%20en%20vivo%20desde%20Avispa%20Garage%2024-10-2025.mp3
+    wav: Epifanicas%20en%20vivo%20desde%20Avispa%20Garage%2024-10-2025.wav
+    duration: 3090
+  space: Garage Avispa
+  bands:
+  - Epifanicas
+  cover: /recitales/avispa/epifanicas/featured.jpg
+  page: /recitales/avispa/epifanicas/
+  archive: live-2025-10-24-epifanicas
+  archive_url: https://archive.org/details/live-2025-10-24-epifanicas
+- id: beertonic/fango-y-perlas
+  date: '2025-10-23'
+  title: 'Fango y Perlas en Beertonic '
+  tracks:
+  - id: fango-y-perlas
+    artist: Fango y Perlas
+    title: Fango y Perlas en Beertonic
+    mp3: Fango%20y%20Perlas%20-%20Beertonic%20(2025-10-23).mp3
+    flac: Fango%20y%20Perlas%20-%20Beertonic%20(2025-10-23).flac
+    wav: Fango%20y%20Perlas%20-%20Beertonic%20(2025-10-23).wav
+    duration: 860
+  space: Beertonic
+  bands:
+  - Fango y Perlas
+  cover: /recitales/beertonic/fango-y-perlas/featured.webp
+  page: /recitales/beertonic/fango-y-perlas/
+  archive: live-2025-10-23-fango-y-perlas
+  archive_url: https://archive.org/details/live-2025-10-23-fango-y-perlas
+- id: la-casa-de-lu
+  date: '2025-10-20'
+  title: Inteligencia Accidental en el cumple de Lucas
+  tracks:
+  - id: inteligencia-accidental
+    artist: Inteligencia Accidental
+    title: Inteligencia Accidental en el cumple de Lucas
+    mp3: 01%20-%20Inteligencia%20Accidental%20-%20Cumple%20de%20Lucas%20(2025-10-20).mp3
+    flac: 01%20-%20Inteligencia%20Accidental%20-%20Cumple%20de%20Lucas%20(2025-10-20).flac
+    wav: 01%20-%20Inteligencia%20Accidental%20-%20Cumple%20de%20Lucas%20(2025-10-20).wav
+    duration: 1573
+  - id: sala-roja
+    artist: Sala Roja
+    title: Sala Roja en el cumple de Lucas
+    mp3: 02%20-%20Sala%20Roja%20-%20Cumple%20de%20Lucas%20(2025-10-20).mp3
+    flac: 02%20-%20Sala%20Roja%20-%20Cumple%20de%20Lucas%20(2025-10-20).flac
+    wav: 02%20-%20Sala%20Roja%20-%20Cumple%20de%20Lucas%20(2025-10-20).wav
+    duration: 2599
+  space: La casa de Lu
+  bands:
+  - Inteligencia Accidental
+  cover: /recitales/la-casa-de-lu/featured.jpg
+  page: /recitales/la-casa-de-lu/
+  archive: live-2025-10-20-cumple-lucas
+  archive_url: https://archive.org/details/live-2025-10-20-cumple-lucas
+- id: la-ronda/rondadebandas-2
+  date: '2025-10-18'
+  title: Ronda de Bandas 2
+  tracks:
+  - id: inteligencia-accidental
+    artist: Inteligencia Accidental
+    title: Inteligencia Accidental en la Ronda de Bandas
+    mp3: 01%20-%20Inteligencia%20Accidental%20-%20Ronda%20de%20Bandas%202%20(2025-10-18).mp3
+    flac: 01%20-%20Inteligencia%20Accidental%20-%20Ronda%20de%20Bandas%202%20(2025-10-18).flac
+    wav: 01%20-%20Inteligencia%20Accidental%20-%20Ronda%20de%20Bandas%202%20(2025-10-18).wav
+    duration: 2793
+  - id: base
+    artist: Base
+    title: Base en la Ronda de Bandas
+    mp3: 02%20-%20BASE%20-%20Ronda%20de%20Bandas%202%20(2025-10-18).mp3
+    flac: 02%20-%20BASE%20-%20Ronda%20de%20Bandas%202%20(2025-10-18).flac
+    wav: 02%20-%20BASE%20-%20Ronda%20de%20Bandas%202%20(2025-10-18).wav
+    duration: 1300
+  - id: sala-roja
+    artist: Sala Roja
+    title: Sala Roja en la Ronda de Bandas
+    mp3: 03%20-%20Sala%20Roja%20-%20Ronda%20de%20Bandas%202%20(2025-10-18).mp3
+    flac: 03%20-%20Sala%20Roja%20-%20Ronda%20de%20Bandas%202%20(2025-10-18).flac
+    wav: 03%20-%20Sala%20Roja%20-%20Ronda%20de%20Bandas%202%20(2025-10-18).wav
+    duration: 2872
+  space: La Ronda
+  bands:
+  - Inteligencia Accidental
+  - Base
+  - Sala Roja
+  cover: /recitales/la-ronda/rondadebandas-2/featured.jpg
+  page: /recitales/la-ronda/rondadebandas-2/
+  archive: live-2025-10-18-ronda-de-bandas-2
+  archive_url: https://archive.org/details/live-2025-10-18-ronda-de-bandas-2
+- id: teatro-trac/paez-de-a-dos
+  date: '2025-10-17'
+  title: 'Paez de a dos: Nico Muchiut y Fede Ratto desde el Teatro Trac'
+  tracks:
+  - id: paez-de-a-dos
+    artist: Páez de a Dos
+    title: Páez de a Dos en el Teatro Trac
+    mp3: P%C3%A1ez%20de%20a%20Dos%20en%20el%20Teatro%20Trac%20(2025-10-17).mp3
+    flac: P%C3%A1ez%20de%20a%20Dos%20en%20el%20Teatro%20Trac%20(2025-10-17).flac
+    wav: P%C3%A1ez%20de%20a%20Dos%20en%20el%20Teatro%20Trac%20(2025-10-17).wav
+    duration: 4706
+  space: Teatro Trac
+  bands:
+  - Nico Muchiut
+  - Fede Ratto
+  cover: /recitales/teatro-trac/paez-de-a-dos/featured.jpg
+  page: /recitales/teatro-trac/paez-de-a-dos/
+  archive: live-2025-10-17-pez-de-a-dos
+  archive_url: https://archive.org/details/live-2025-10-17-pez-de-a-dos
+- id: teatro-coliseo/tigran
+  date: '2025-10-14'
+  title: 'Tigran Hamasyan en el Teatro Coliseo '
+  tracks:
+  - id: tigran-hamasyan
+    artist: Tigran Hamasyan
+    title: Tigran Hamasyan en el Teatro Coliseo
+    mp3: Tigran%20Hamasyan%20en%20el%20Teatro%20Coliseo%20(2025-10-14).mp3
+    flac: Tigran%20Hamasyan%20en%20el%20Teatro%20Coliseo%20(2025-10-14).flac
+    wav: Tigran%20Hamasyan%20en%20el%20Teatro%20Coliseo%20(2025-10-14).wav
+    duration: 5789
+  space: Teatro Coliseo
+  bands:
+  - Tigran Hamasyan
+  cover: /recitales/teatro-coliseo/tigran/featured.jpg
+  page: /recitales/teatro-coliseo/tigran/
+  archive: live-2025-10-14-tigran-hamasyan
+  archive_url: https://archive.org/details/live-2025-10-14-tigran-hamasyan
+- id: beertonic/armand
+  date: '2025-10-09'
+  title: 'Armando Alonso Trío en Beertonic '
+  tracks:
+  - id: armando-alonso
+    artist: Armando Alonso
+    title: Armando Alonso en Beertonic
+    src: Armando%20Alonso%20-%20Beertonic%20(2025-10-09).wav
+    fmt: wav
+    wav: Armando%20Alonso%20-%20Beertonic%20(2025-10-09).wav
+    duration: 3123
+  space: Beertonic
+  bands:
+  - Armando Alonso
+  - Agustín Barbieri
+  - Nicolás Benaghi
+  cover: /recitales/beertonic/armand/featured.png
+  page: /recitales/beertonic/armand/
+  archive: live-2025-10-09-armando-alonso
+  archive_url: https://archive.org/details/live-2025-10-09-armando-alonso
+- id: rincon/janedoe
+  date: '2025-10-02'
+  title: Jane Doe en Ricón
+  tracks:
+  - id: casco-y-guada
+    artist: Casco y Guada
+    title: Casco y Guada
+    mp3: Casco%20y%20Guada%20(2025-10-02).mp3
+    flac: Casco%20y%20Guada%20(2025-10-02).flac
+    wav: Casco%20y%20Guada%20(2025-10-02).wav
+    duration: 2629
+  space: Rincón
+  bands:
+  - Jane Doe
+  cover: /recitales/rincon/janedoe/featured.jpg
+  page: /recitales/rincon/janedoe/
+  archive: live-2025-10-02-casco-y-guada
+  archive_url: https://archive.org/details/live-2025-10-02-casco-y-guada
+- id: grey-bar/casco-guada
+  date: '2025-10-02'
+  title: Casco y Guada en Grey Bar
+  tracks:
+  - id: casco-y-guada
+    artist: Casco y Guada
+    title: Casco y Guada en Grey Bar
+    mp3: Casco%20y%20Guada%20(2025-10-02).mp3
+    flac: Casco%20y%20Guada%20(2025-10-02).flac
+    wav: Casco%20y%20Guada%20(2025-10-02).wav
+    duration: 2629
+  space: Grey Bar
+  bands:
+  - Casco y Guada
+  cover: /recitales/grey-bar/casco-guada/featured.png
+  page: /recitales/grey-bar/casco-guada/
+  archive: live-2025-10-02-casco-y-guada
+  archive_url: https://archive.org/details/live-2025-10-02-casco-y-guada
+- id: beertonic/telar
+  date: '2025-09-25'
+  title: Telar en Beertonic
+  tracks:
+  - id: telar
+    artist: Telar
+    title: Telar en Beertonic
+    mp3: Telar%20-%20Beertonic%20(25-9-25).mp3
+    flac: Telar%20-%20Beertonic%20(25-9-25).flac
+    wav: Telar%20-%20Beertonic%20(25-9-25).wav
+    duration: 3020
+  space: Beertonic
+  bands:
+  - Telar
+  cover: /recitales/beertonic/telar/featured.png
+  page: /recitales/beertonic/telar/
+  archive: live-2025-09-25-telar
+  archive_url: https://archive.org/details/live-2025-09-25-telar
+- id: la-ronda/cumple-ronda
+  date: '2025-09-20'
+  title: Cumple de La Ronda
+  tracks:
+  - id: ronda-catonga
+    artist: Ronda Catonga
+    title: Ronda Catonga en el cumple de La Ronda
+    mp3: 01%20-%20Ronda%20Catonga%20-%20Cumple%2016%20de%20La%20Ronda%20(2025-09-20).mp3
+    flac: 01%20-%20Ronda%20Catonga%20-%20Cumple%2016%20de%20La%20Ronda%20(2025-09-20).flac
+    wav: 01%20-%20Ronda%20Catonga%20-%20Cumple%2016%20de%20La%20Ronda%20(2025-09-20).wav
+    duration: 892
+  - id: catango-trio
+    artist: Catango Trio
+    title: Catango Trío en el cumple de La Ronda
+    mp3: 02%20-%20Catango%20Tr%C3%ADo%20-%20Cumple%2016%20de%20La%20Ronda%20(2025-09-20).mp3
+    flac: 02%20-%20Catango%20Tr%C3%ADo%20-%20Cumple%2016%20de%20La%20Ronda%20(2025-09-20).flac
+    wav: 02%20-%20Catango%20Tr%C3%ADo%20-%20Cumple%2016%20de%20La%20Ronda%20(2025-09-20).wav
+    duration: 1338
+  - id: roco-y-los-chacks
+    artist: Roco y los Chacks
+    title: Roco y los Chaks en el cumple de La Ronda
+    mp3: 03%20-%20Roco%20y%20los%20Chacks%20-%20Cumple%2016%20de%20La%20Ronda%20(2025-09-20).mp3
+    flac: 03%20-%20Roco%20y%20los%20Chacks%20-%20Cumple%2016%20de%20La%20Ronda%20(2025-09-20).flac
+    wav: 03%20-%20Roco%20y%20los%20Chacks%20-%20Cumple%2016%20de%20La%20Ronda%20(2025-09-20).wav
+    duration: 2275
+  - id: epifanicas
+    artist: Epifanicas
+    title: Epifanicas en el cumple de La Ronda
+    mp3: 04%20-%20Epifanicas%20-%20Cumple%2016%20de%20La%20Ronda%20(2025-09-20).mp3
+    flac: 04%20-%20Epifanicas%20-%20Cumple%2016%20de%20La%20Ronda%20(2025-09-20).flac
+    wav: 04%20-%20Epifanicas%20-%20Cumple%2016%20de%20La%20Ronda%20(2025-09-20).wav
+    duration: 2773
+  space: La Ronda
+  bands:
+  - Ronda Catonga
+  - Epifanicas
+  - Catango Trio
+  - Roco y los Chacks
+  cover: /recitales/la-ronda/cumple-ronda/featured.jpg
+  page: /recitales/la-ronda/cumple-ronda/
+  archive: live-2025-09-20-cumple-la-ronda
+  archive_url: https://archive.org/details/live-2025-09-20-cumple-la-ronda
+- id: sala-biaus/ia
+  date: '2025-09-19'
+  title: Cumpleaños Accidental en Sala Biaus
+  tracks:
+  - id: inteligencia-accidental
+    artist: Inteligencia Accidental
+    title: Cumpleaños Accidental en Sala Biaus
+    mp3: Inteligencia%20Accidental%20Aniversario%20N%C2%B0%202%20en%20Sala%20Biaus%20(2025-09-19).mp3
+    flac: Inteligencia%20Accidental%20Aniversario%20N%C2%B0%202%20en%20Sala%20Biaus%20(2025-09-19).flac
+    wav: Inteligencia%20Accidental%20Aniversario%20N%C2%B0%202%20en%20Sala%20Biaus%20(2025-09-19).wav
+    duration: 2565
+  space: Sala Biaus
+  bands:
+  - Inteligencia Accidental
+  cover: /recitales/sala-biaus/ia/featured.jpg
+  page: /recitales/sala-biaus/ia/
+  archive: live-2025-09-19-cumple-accidental-2
+  archive_url: https://archive.org/details/live-2025-09-19-cumple-accidental-2
+- id: beertonic/yula-2
+  date: '2025-09-15'
+  title: Yula y Abril Amar + Invitades en Beertonic
+  tracks:
+  - id: yula
+    artist: Yula
+    title: 'Yula y Abril Amar + Invitades en Beertonic '
+    mp3: Yula%20-%20Beertonic%20(2025-09-15).mp3
+    flac: Yula%20-%20Beertonic%20(2025-09-15).flac
+    wav: Yula%20-%20Beertonic%20(2025-09-15).wav
+    duration: 2762
+  space: Beertonic
+  bands:
+  - Yula
+  - Abril Amar
+  cover: /recitales/beertonic/yula-2/featured.jpg
+  page: /recitales/beertonic/yula-2/
+  archive: live-2025-09-15-yula
+  archive_url: https://archive.org/details/live-2025-09-15-yula
+- id: teatro-trac/spinetta
+  date: '2025-09-12'
+  title: Proyecto Spinetta en el Teatro Trac
+  tracks:
+  - id: rocio-palazzo
+    artist: Proyecto Spinetta
+    title: Proyecto Spinetta en el Teatro Trac
+    mp3: Proyecto%20Spinetta%20en%20el%20Teatro%20Trac%20(2025-09-12).mp3
+    flac: Proyecto%20Spinetta%20en%20el%20Teatro%20Trac%20(2025-09-12).flac
+    wav: Proyecto%20Spinetta%20en%20el%20Teatro%20Trac%20(2025-09-12).wav
+    duration: 4248
+  space: Teatro Trac
+  bands:
+  - Rocío Palazzo
+  - Ignacio Viano
+  - Nicolás Benaghi
+  cover: /recitales/teatro-trac/spinetta/featured.webp
+  page: /recitales/teatro-trac/spinetta/
+  archive: live-2025-09-12-proyecto-spinetta
+  archive_url: https://archive.org/details/live-2025-09-12-proyecto-spinetta
+- id: beertonic/mate-jazz
+  date: '2025-09-12'
+  title: Mate Jazz en Beertonic
+  tracks:
+  - id: mate-jazz
+    artist: Mate Jazz
+    title: Mate Jazz en Beertonic
+    mp3: Matejazz%20-%20Beertonic%20(2025-09-12).mp3
+    flac: Matejazz%20-%20Beertonic%20(2025-09-12).flac
+    wav: Matejazz%20-%20Beertonic%20(2025-09-12).wav
+    duration: 2861
+  space: Beertonic
+  bands:
+  - Mate Jazz
+  cover: /recitales/beertonic/mate-jazz/featured.jpg
+  page: /recitales/beertonic/mate-jazz/
+  archive: live-2025-09-12-matejazz
+  archive_url: https://archive.org/details/live-2025-09-12-matejazz
+- id: teatro-trac/armand
+  date: '2025-09-09'
+  title: Armando Alonso Trío en el Teatro Trac
+  tracks:
+  - id: armando-alonso
+    artist: Armando Alonso
+    title: Armando Alonso en el Teatro Trac
+    mp3: Armando%20Alonso%20Tr%C3%ADo%20en%20el%20Teatro%20Trac%20(2025-09-09).mp3
+    flac: Armando%20Alonso%20Tr%C3%ADo%20en%20el%20Teatro%20Trac%20(2025-09-09).flac
+    wav: Armando%20Alonso%20Tr%C3%ADo%20en%20el%20Teatro%20Trac%20(2025-09-09).wav
+    duration: 4189
+  space: Teatro Trac
+  bands:
+  - Armando Alonso
+  - Agustín Barbieri
+  - Nicolás Benaghi
+  cover: /recitales/teatro-trac/armand/featured.png
+  page: /recitales/teatro-trac/armand/
+  archive: live-2025-09-09-armando-alonso-tro
+  archive_url: https://archive.org/details/live-2025-09-09-armando-alonso-tro
+- id: sala-biaus/alimaña-sur-muchiut
+  date: '2025-08-09'
+  title: Juanito Alimaña, Nico Muchiut y Ser Sur en Sala Biaus
+  tracks:
+  - id: juanito-alimana
+    artist: Juanito Alimaña
+    title: Juanito Alimaña en Sala Biaus
+    mp3: 01%20-%20Juanito%20Alima%C3%B1a%20-%20Sala%20Biaus%20(2025-08-09).mp3
+    flac: 01%20-%20Juanito%20Alima%C3%B1a%20-%20Sala%20Biaus%20(2025-08-09).flac
+    wav: 01%20-%20Juanito%20Alima%C3%B1a%20-%20Sala%20Biaus%20(2025-08-09).wav
+    duration: 1585
+  - id: nico-muchiut
+    artist: Nicolas Muchiut
+    title: Nicolas Muchiut en Sala Biaus
+    mp3: 02%20-%20Nicolas%20Muchiut%20y%20los%20Monjes%20del%20Dudaismo%20-%20Sala%20Biaus%20(2025-08-09).mp3
+    flac: 02%20-%20Nicolas%20Muchiut%20y%20los%20Monjes%20del%20Dudaismo%20-%20Sala%20Biaus%20(2025-08-09).flac
+    wav: 02%20-%20Nicolas%20Muchiut%20y%20los%20Monjes%20del%20Dudaismo%20-%20Sala%20Biaus%20(2025-08-09).wav
+    duration: 2945
+  - id: ser-sur
+    artist: Ser Sur
+    title: Ser Sur en Sala Biaus
+    mp3: 03%20-%20Ser%20Sur%20-%20Sala%20Biaus%20(2025-08-09).mp3
+    flac: 03%20-%20Ser%20Sur%20-%20Sala%20Biaus%20(2025-08-09).flac
+    wav: 03%20-%20Ser%20Sur%20-%20Sala%20Biaus%20(2025-08-09).wav
+    duration: 3312
+  space: Sala Biaus
+  bands:
+  - Juanito Alimaña
+  - Ser Sur
+  - Nicolas Muchiut
+  cover: /recitales/sala-biaus/alimaña-sur-muchiut/featured.jpg
+  page: /recitales/sala-biaus/alimaña-sur-muchiut/
+  archive: live-2025-08-09-juanito-alimaanico-muchiutser-sur
+  archive_url: https://archive.org/details/live-2025-08-09-juanito-alimaanico-muchiutser-sur
+- id: la-ronda/rondadebandas-1
+  date: '2025-07-12'
+  title: Parasomnia, La Vitrola Envenenada, La Toma de Roma y Entrance en la Ronda de Bandas
+  tracks:
+  - id: la-vitrola-envenenada
+    artist: La Vitrola Envenenada
+    title: La Vitrola Envenenada en la Ronda de Bandas
+    mp3: 01%20-%20La%20Vitrola%20Envenenada%20-%20Ronda%20de%20Bandas%20(2025-07-12).mp3
+    flac: 01%20-%20La%20Vitrola%20Envenenada%20-%20Ronda%20de%20Bandas%20(2025-07-12).flac
+    wav: 01%20-%20La%20Vitrola%20Envenenada%20-%20Ronda%20de%20Bandas%20(2025-07-12).wav
+    duration: 1575
+  - id: la-toma-de-roma
+    artist: La Toma de Roma
+    title: La Toma de Roma en la Ronda de Bandas
+    mp3: 02%20-%20La%20Toma%20de%20Roma%20-%20Ronda%20de%20Bandas%20(2025-07-12).mp3
+    flac: 02%20-%20La%20Toma%20de%20Roma%20-%20Ronda%20de%20Bandas%20(2025-07-12).flac
+    wav: 02%20-%20La%20Toma%20de%20Roma%20-%20Ronda%20de%20Bandas%20(2025-07-12).wav
+    duration: 1343
+  - id: entrance
+    artist: Entrance
+    title: Entrance en la Ronda de Bandas
+    mp3: 03%20-%20Entrance%20-%20Ronda%20de%20Bandas%20(2025-07-12).mp3
+    flac: 03%20-%20Entrance%20-%20Ronda%20de%20Bandas%20(2025-07-12).flac
+    wav: 03%20-%20Entrance%20-%20Ronda%20de%20Bandas%20(2025-07-12).wav
+    duration: 1167
+  - id: parasomnia
+    artist: Parasomnia
+    title: Parasomnia en la Ronda de Bandas
+    mp3: 04%20-%20Parasomnia%20-%20Ronda%20de%20Bandas%20(2025-07-12).mp3
+    flac: 04%20-%20Parasomnia%20-%20Ronda%20de%20Bandas%20(2025-07-12).flac
+    wav: 04%20-%20Parasomnia%20-%20Ronda%20de%20Bandas%20(2025-07-12).wav
+    duration: 1714
+  space: La Ronda
+  bands:
+  - Parasomnia
+  - La Vitrola Envenenada
+  - La Toma de Roma
+  - Entrance
+  cover: /recitales/la-ronda/rondadebandas-1/featured.jpg
+  page: /recitales/la-ronda/rondadebandas-1/
+  archive: live-2025-07-12-ronda-de-bandas-1
+  archive_url: https://archive.org/details/live-2025-07-12-ronda-de-bandas-1
+- id: festival-demolición
+  date: '2025-06-28'
+  title: Round 2, Entrance y Sala Roja en el Festival Demolición
+  tracks:
+  - id: la-bestia
+    artist: La Bestia
+    title: La Bestia
+    mp3: 01-%20La%20Bestia%20(2025-06-28).mp3
+    flac: 01-%20La%20Bestia%20(2025-06-28).flac
+    wav: 01-%20La%20Bestia%20(2025-06-28).wav
+    duration: 1370
+  - id: 30mil
+    artist: 30mil
+    title: 30mil
+    mp3: 02-%2030mil%20(2025-06-28).mp3
+    flac: 02-%2030mil%20(2025-06-28).flac
+    wav: 02-%2030mil%20(2025-06-28).wav
+    duration: 1015
+  - id: entrance
+    artist: Entrance
+    title: Entrance en el Festival Demolición
+    mp3: 03-%20Entrance%20(2025-06-28).mp3
+    flac: 03-%20Entrance%20(2025-06-28).flac
+    wav: 03-%20Entrance%20(2025-06-28).wav
+    duration: 1037
+  - id: round-2
+    artist: Round2
+    title: Round 2 en el Festival Demolición
+    mp3: 04-%20Round%202%20(2025-06-28).mp3
+    flac: 04-%20Round%202%20(2025-06-28).flac
+    wav: 04-%20Round%202%20(2025-06-28).wav
+    duration: 1052
+  - id: sala-roja
+    artist: Sala Roja
+    title: Sala Roja en el Festival Demolición
+    mp3: 05-%20Sala%20Roja%20(2025-06-28).mp3
+    flac: 05-%20Sala%20Roja%20(2025-06-28).flac
+    wav: 05-%20Sala%20Roja%20(2025-06-28).wav
+    duration: 2812
+  space: La Casa se Derrumba
+  bands:
+  - Round2
+  - Entrance
+  - Sala Roja
+  cover: /recitales/festival-demolición/featured.jpg
+  page: /recitales/festival-demolición/
+  archive: live-2025-06-28-festival-demolicin
+  archive_url: https://archive.org/details/live-2025-06-28-festival-demolicin
+- id: sala-biaus/bad-seed
+  date: '2025-05-09'
+  title: Los Bad Seed en Sala Biaus
+  tracks:
+  - id: bad-seed
+    artist: Bad Seed
+    title: Bad Seed en Sala Biaus
+    mp3: Bad%20Seed%20en%20Sala%20Biaus%20(2025-05-09).mp3
+    flac: Bad%20Seed%20en%20Sala%20Biaus%20(2025-05-09).flac
+    wav: Bad%20Seed%20en%20Sala%20Biaus%20(2025-05-09).wav
+    duration: 2603
+  space: Sala Biaus
+  bands:
+  - Los Bad Seed
+  cover: /recitales/sala-biaus/bad-seed/featured.jpg
+  page: /recitales/sala-biaus/bad-seed/
+  archive: live-2025-05-09-bad-seed
+  archive_url: https://archive.org/details/live-2025-05-09-bad-seed
+- id: beertonic/yula
+  date: '2025-05-04'
+  title: Yula más invitades en Beertonic
+  tracks:
+  - id: yula-invitades
+    artist: YULA
+    title: Yula en Beertonic
+    mp3: Yula%20-%20Beertonic%20(2025-05-04).mp3
+    flac: Yula%20-%20Beertonic%20(2025-05-04).flac
+    wav: Yula%20-%20Beertonic%20(2025-05-04).wav
+    duration: 4413
+  space: Beertonic
+  bands:
+  - YULA
+  - Julian Amar
+  cover: /recitales/beertonic/yula/featured.jpg
+  page: /recitales/beertonic/yula/
+  archive: live-2025-05-04-yula
+  archive_url: https://archive.org/details/live-2025-05-04-yula
+- id: casa-fratello/armand
+  date: '2025-04-26'
+  title: Armando Alonso en Casa Fratello
+  tracks:
+  - id: armando-alonso
+    artist: Armando Alonso
+    title: Armando Alonso en Casa Fratello
+    src: https://files.catbox.moe/4icsi1.mp3
+    duration: 3567
+  space: Casa Fratello
+  bands:
+  - Armando Alonso
+  - Nicolás Benaghi
+  - Agustín Barbieri
+  cover: /recitales/casa-fratello/armand/featured.png
+  page: /recitales/casa-fratello/armand/
+- id: el-portal-del-tango/festi-consciente
+  date: '2025-04-19'
+  title: Primaleon, No Soy de Acá, Entrance y Loz Pozoz en el Festival Consciente a beneficio del CAAC en El Portal del Tango
+  tracks:
+  - id: primaleon
+    artist: Primaleon
+    title: Prima León en el Festival Consciente
+    mp3: 01%20-%20Primaleon%20-%20Festival%20Consciente%20(2025-04-19).mp3
+    flac: 01%20-%20Primaleon%20-%20Festival%20Consciente%20(2025-04-19).flac
+    wav: 01%20-%20Primaleon%20-%20Festival%20Consciente%20(2025-04-19).wav
+    duration: 1893
+  - id: entrance
+    artist: Entrance
+    title: Entrance en el Festival Consciente
+    mp3: 02%20-%20Entrance%20-%20Festival%20Consciente%20(2025-04-19).mp3
+    flac: 02%20-%20Entrance%20-%20Festival%20Consciente%20(2025-04-19).flac
+    wav: 02%20-%20Entrance%20-%20Festival%20Consciente%20(2025-04-19).wav
+    duration: 1290
+  - id: no-soy-de-aca
+    artist: No Soy de Acá
+    title: No Soy de Acá en el Festival Consciente
+    mp3: 03%20-%20No%20Soy%20De%20Ac%C3%A1%20-%20Festival%20Consciente%20(2025-04-19).mp3
+  - id: los-pozoz
+    artist: Los Pozoz
+    title: Los Pozoz en el Festival Consciente
+    mp3: 04%20-%20Los%20Pozoz%20-%20Festival%20Consciente%20(2025-04-19).mp3
+  space: El Portal del Tango
+  bands:
+  - Entrance
+  - Primaleon
+  - No Soy de Acá
+  - Los Pozoz
+  cover: /recitales/el-portal-del-tango/festi-consciente/featured.webp
+  page: /recitales/el-portal-del-tango/festi-consciente/
+  archive: live-2025-04-19-festival-consciente
+  archive_url: https://archive.org/details/live-2025-04-19-festival-consciente
+- id: la-maga/festimaga1
+  date: '2025-04-04'
+  title: Entrance, Inteligencia Accidental, Parasomnia y Sala Roja en la Festimaga
+  tracks:
+  - id: entrance
+    artist: Entrance
+    title: Entrance Festimaga 1
+    src: 01%20-%20Entrance%20-%20Festimaga%201%20(2025-04-04).wav
+    fmt: wav
+    wav: 01%20-%20Entrance%20-%20Festimaga%201%20(2025-04-04).wav
+    duration: 384
+  - id: inteligencia-accidental
+    artist: Inteligencia Accidental
+    title: Inteligencia Accidental Festimaga 1
+    src: 02%20-%20Inteligencia%20Accidental%20-%20Festimaga%201%20(2025-04-04).wav
+    fmt: wav
+    wav: 02%20-%20Inteligencia%20Accidental%20-%20Festimaga%201%20(2025-04-04).wav
+  - id: parasomnia
+    artist: Parasomnia
+    title: Parasomnia Festimaga 1
+    src: 03%20-%20Parasomnia-%20Festimaga%201%20(2025-04-04).wav
+    fmt: wav
+    wav: 03%20-%20Parasomnia-%20Festimaga%201%20(2025-04-04).wav
+  - id: sala-roja
+    artist: Sala Roja
+    title: Sala Roja Festimaga 1
+    src: 04%20-%20Sala%20Roja%20-%20Festimaga%201%20(2025-04-04).wav
+    fmt: wav
+    wav: 04%20-%20Sala%20Roja%20-%20Festimaga%201%20(2025-04-04).wav
+  space: La Maga
+  bands:
+  - Entrance
+  - Inteligencia Accidental
+  - Parasomnia
+  - Sala Roja
+  cover: /recitales/la-maga/festimaga1/featured.png
+  page: /recitales/la-maga/festimaga1/
+  archive: live-2025-04-04-festi-maga-1
+  archive_url: https://archive.org/details/live-2025-04-04-festi-maga-1
+- id: sin-pagina/sin-asignar
+  date: ''
+  title: Pistas sin show asignada (restos de playlist.yml)
+  tracks:
+  - id: juli-y-abril-duo
+    artist: ''
+    title: Juli y Abril Dúo
+    src: https://files.catbox.moe/a8a68s.mp3
+    duration: 3021
+  - id: epifanicas-homenaje-a-amy-winehouse-bloque-1
+    artist: ''
+    title: Epifanicas Homenaje a Amy Winehouse Bloque 1
+    src: https://files.catbox.moe/86ivvi.mp3
+    duration: 1950
+  - id: epifanicas-homenaje-a-amy-winehouse-bloque-2
+    artist: ''
+    title: Epifanicas Homenaje a Amy Winehouse Bloque 2
+    src: https://files.catbox.moe/tgnzth.mp3
+    duration: 1400

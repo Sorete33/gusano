@@ -15,26 +15,20 @@ heroStyle: background
 
 # Primera presentación de [Entrance](https://www.instagram.com/entr4nce.ck/)
 
-{{< audio src="https://files.catbox.moe/p1lh8s.mp3" >}}
-
-[Link Directo](https://files.catbox.moe/p1lh8s.mp3)
+{{< track show="la-maga/festimaga1" track="entrance" >}}
 
 
 ---
 
 # [Inteligencia Accidental](https://www.instagram.com/inteligencia.accidental/)
-{{< audio src="https://files.catbox.moe/xbdnwu.mp3" >}}
-
-[Link Directo](https://files.catbox.moe/xbdnwu.mp3)
+{{< track show="la-maga/festimaga1" track="inteligencia-accidental" >}}
 
 
 ---
 
 # [Parasomnia](https://www.instagram.com/p_a_r_a_s_o_m_n_i_a/)
 
-{{< audio src="https://files.catbox.moe/cc7crl.mp3" >}}
-
-[Link Directo](https://files.catbox.moe/cc7crl.mp3)
+{{< track show="la-maga/festimaga1" track="parasomnia" >}}
 
 
 ---
@@ -42,6 +36,6 @@ heroStyle: background
 
 # Cuarta presentación de [Sala Roja](https://www.instagram.com/__salaroja/)
 
-{{< audio src="https://files.catbox.moe/2sab53.mp3">}}
+{{< track show="la-maga/festimaga1" track="sala-roja" >}}
 
-[Link Directo](https://files.catbox.moe/2sab53.mp3)
+[Artículo en Internet Archive](https://archive.org/details/live-2025-04-04-festi-maga-1)

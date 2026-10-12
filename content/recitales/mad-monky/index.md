@@ -18,38 +18,30 @@ heroStyle: background
 
 # [Los Pozoz](https://www.instagram.com/los.pozoz/) 
 
-{{<audio src="https://files.catbox.moe/3g4um0.mp3">}}
-
-[Streaming en formato WAV](https://pixeldrain.com/u/G2y9MfoX)
+{{< track show="mad-monky" track="los-pozoz" >}}
 
 
 ---
 
 # [Nómada](https://www.instagram.com/nomada.chivilcoy/)
 
-{{<audio src="https://files.catbox.moe/dcp23i.mp3">}}
-
-[Streaming en formato WAV](https://pixeldrain.com/u/jLhCrmRz)
+{{< track show="mad-monky" track="nomada" >}}
 
 
 ---
 
 # [Sociedad Macabra](https://www.instagram.com/sociedad.macabra/)
 
-{{<audio src="https://files.catbox.moe/slx3uw.mp3">}}
-
-[Streaming en formato WAV](https://pixeldrain.com/u/MUBz4wku)
+{{< track show="mad-monky" track="sociedad-macabra" >}}
 
 
 ---
 
 # [Parasomnia](https://www.instagram.com/p_a_r_a_s_o_m_n_i_a/)
 
-{{<audio src="https://files.catbox.moe/1l50w5.mp3">}}
-
-[Streaming en formato WAV](https://pixeldrain.com/u/L6ZDSfY4)
+{{< track show="mad-monky" track="parasomnia" >}}
 
 
 ---
 
-
+[Artículo en Internet Archive](https://archive.org/details/live-2025-12-06-mad-monkey-fest)

@@ -15,6 +15,6 @@ heroStyle: background
 
 # [Armando Alonso](https://www.instagram.com/armandoalonsomusico/) en [BeerTonic](https://www.instagram.com/beertonic.ch/)
 
-{{<audio src="https://files.catbox.moe/5rr4ni.mp3">}}
+{{< track show="beertonic/armand2" track="armando-alonso" >}}
 
-[Streaming en formato WAV](https://pixeldrain.com/u/4HvAHbMg)
+[Artículo en Internet Archive](https://archive.org/details/live-2026-03-19-armando-alonso)

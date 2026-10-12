@@ -16,15 +16,12 @@ heroStyle: background
 
 # [Epifanicas](https://www.instagram.com/epi.fanicas/)
 
-{{<audio src="https://files.catbox.moe/4h9707.mp3">}}
-
-[Streaming en formato WAV](https://pixeldrain.com/u/fCQSjYNY)
+{{< track show="sala-belgrano/epi-blues" track="epifanicas" >}}
 
 ---
 
 # [Pueblues](https://www.instagram.com/pueblues_/)
 
-{{<audio src="https://files.catbox.moe/78zr8t.mp3">}}
+{{< track show="sala-belgrano/epi-blues" track="pueblues" >}}
 
-[Streaming en formato WAV](https://pixeldrain.com/u/rmsS8GyC)
-
+[Artículo en Internet Archive](https://archive.org/details/live-2026-03-27-pueblues-epifanicas)

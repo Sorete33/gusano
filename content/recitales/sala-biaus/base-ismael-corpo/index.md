@@ -16,22 +16,18 @@ heroStyle: background
 
 # [Base](https://www.instagram.com/base.hc/) (Extracto)
 
-{{<audio src="https://files.catbox.moe/1jjkyb.mp3">}}
-
-[Streaming en formato WAV](https://pixeldrain.com/u/M1J4uiFS)
+{{< track show="sala-biaus/base-ismael-corpo" track="base" label="(extracto)" >}}
 
 ---
 
 # [Ismael es de verdad](https://www.instagram.com/i.e.d.v/)
 
-{{<audio src="https://files.catbox.moe/y5fhfz.mp3">}}
-
+{{< track show="sala-biaus/base-ismael-corpo" track="ismael-es-de-verdad" >}}
 ---
 
 # [Corpo Porco](https://www.instagram.com/corpoporco/)
 
-{{<audio src="https://files.catbox.moe/ts1yj4.mp3">}}
-
+{{< track show="sala-biaus/base-ismael-corpo" track="corpo-porco" >}}
 ---
 
 # Lista de Ismael
@@ -41,3 +37,5 @@ heroStyle: background
 # Fanzine de Corpo Porco
 
 ![alt text](/images/corpo.jpg)
+
+[Artículo en Internet Archive](https://archive.org/details/live-2026-03-06-baseismael-es-de-verdadcorpo-porco)

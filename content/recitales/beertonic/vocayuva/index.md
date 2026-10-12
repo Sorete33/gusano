@@ -14,6 +14,6 @@ heroStyle: background
 
 # [Vocayuva](https://www.instagram.com/vocayuva.musica/) un Jueves cualquiera en [Beertonic](https://www.instagram.com/beertonic.ch/)
 
-{{<audio src="https://files.catbox.moe/wrment.mp3">}}
+{{< track show="beertonic/vocayuva" track="vocayuva" >}}
 
-[Streaming en formato WAV](https://pixeldrain.com/u/wwx57rUj)
+[Artículo en Internet Archive](https://archive.org/details/live-2026-08-20-vocayuva)

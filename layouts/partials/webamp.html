@@ -1,15 +1,26 @@
+{{/* Tracks come from data/shows.yml, the single catalogue shared with the
+     rocola player and the recital pages. A track's playable URL is
+     https://archive.org/download/<show.archive>/<track.mp3> when it has an
+     archive.org file, otherwise the legacy full URL in track.src. */}}
 {{ $skin := "skins/skin.wsz" | relURL }}
-{{ $durations := dict }}
-{{ with index .Site.Data "playlist-durations" }}
-  {{ $durations = . }}
-{{ end }}
 {{ $tracks := slice }}
-{{ range .Site.Data.playlist }}
-  {{ $track := dict "url" .url "metaData" (dict "title" .title "artist" .artist) }}
-  {{ with index $durations .url }}
-    {{ $track = merge $track (dict "duration" (int .)) }}
+{{ range .Site.Data.shows }}
+  {{ $archive := .archive }}
+  {{ range .tracks }}
+    {{ $t := . }}
+    {{ $src := $t.src }}
+    {{ with $t.mp3 }}
+      {{ $src = printf "https://archive.org/download/%s/%s" $archive . }}
+    {{ end }}
+    {{ if $src }}
+      {{ $meta := dict "title" $t.title "artist" ($t.artist | default "") }}
+      {{ $track := dict "url" $src "metaData" $meta }}
+      {{ with $t.duration }}
+        {{ $track = merge $track (dict "duration" (int .)) }}
+      {{ end }}
+      {{ $tracks = $tracks | append $track }}
+    {{ end }}
   {{ end }}
-  {{ $tracks = $tracks | append $track }}
 {{ end }}
 
 <div class="webamp-container">

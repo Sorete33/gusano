@@ -18,23 +18,19 @@ heroStyle: background
 
 # [Inteligencia Accidental](https://www.instagram.com/inteligencia.accidental/)
 
-{{<audio src="https://files.catbox.moe/edswyr.mp3">}}
-
-[Streaming en formato WAV](https://pixeldrain.com/u/bGkTQ5ij)
+{{< track show="la-ronda/rondadebandas-2" track="inteligencia-accidental" >}}
 
 
 ---
 
 # [Base](https://www.instagram.com/base.hc/)
 
-{{<audio src="https://files.catbox.moe/fc14c0.mp3">}}
-
-[Streaming en formato WAV](https://pixeldrain.com/u/G7njEvzS)
+{{< track show="la-ronda/rondadebandas-2" track="base" >}}
 
 ---
 
 # [Sala Roja](https://www.instagram.com/__salaroja/)
 
-{{<audio src="https://files.catbox.moe/7mai6b.mp3">}}
+{{< track show="la-ronda/rondadebandas-2" track="sala-roja" >}}
 
-[Streaming en formato WAV](https://pixeldrain.com/u/YigjhEcb)
+[Artículo en Internet Archive](https://archive.org/details/live-2025-10-18-ronda-de-bandas-2)

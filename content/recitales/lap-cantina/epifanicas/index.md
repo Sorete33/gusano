@@ -17,6 +17,6 @@ heroStyle: background
 
 # [Epifanicas](https://www.instagram.com/epi.fanicas/)
 
-{{<audio src="https://files.catbox.moe/bow1th.mp3">}}
+{{< track show="lap-cantina/epifanicas" track="epifanicas" >}}
 
-[Streaming en formato WAV](https://pixeldrain.com/u/Wde7m6fg)
+[Artículo en Internet Archive](https://archive.org/details/live-2026-02-06-epifanicas)

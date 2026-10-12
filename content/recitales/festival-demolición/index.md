@@ -16,21 +16,24 @@ heroStyle: background
 # [Round 2](https://www.instagram.com/rounddos__/)
 
 
-{{< audio src="https://files.catbox.moe/f0a41a.mp3">}}
-
-
+{{< track show="festival-demolición" track="round-2" >}}
 ---
 
 # [Entrance](https://www.instagram.com/entr4nce.ck/)
 
 
-{{< audio src="https://files.catbox.moe/afa0v8.mp3">}}
-
-
+{{< track show="festival-demolición" track="entrance" >}}
 ---
 
 # [Sala Roja](https://www.instagram.com/__salaroja/)
 
-{{< audio src="https://files.catbox.moe/l8y6z9.mp3">}}
+{{< track show="festival-demolición" track="sala-roja" >}}
 
-[Link Directo](https://files.catbox.moe/l8y6z9.mp3)
+[Artículo en Internet Archive](https://archive.org/details/live-2025-06-28-festival-demolicin)
+
+
+---
+
+{{< track show="festival-demolición" track="la-bestia" >}}
+
+{{< track show="festival-demolición" track="30mil" >}}

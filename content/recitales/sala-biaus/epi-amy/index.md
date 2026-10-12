@@ -18,20 +18,17 @@ heroStyle: background
 
 # Bloque 1
 
-{{<audio src="/audio/sala-biaus/epi-amy/epi-sala-2-b1.mp3">}}
-
-[Streaming en formato WAV](https://pixeldrain.com/u/WMLeQAfU)
+{{< track show="sala-biaus/epi-amy" track="epifanicas" >}}
 
 ---
 
 # Interludio de Ele
 
-{{<audio src="/audio/sala-biaus/epi-amy/ele-corr-sala.mp3">}}
-
+{{< track show="sala-biaus/epi-amy" track="ele-corr" >}}
 ---
 
 # Bloque 2
 
-{{<audio src="/audio/sala-biaus/epi-amy/epis-sala-b2.mp3">}}
+{{< track show="sala-biaus/epi-amy" track="epifanicas-2" >}}
 
-[Streaming en formato WAV](https://pixeldrain.com/u/SNoi2CjC)
+[Artículo en Internet Archive](https://archive.org/details/live-2026-02-14-epifanicas)

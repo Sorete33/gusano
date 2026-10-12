@@ -18,11 +18,7 @@ heroStyle: background
 
 # Guada y Abril dúo (extracto).
 
-{{<audio src="https://files.catbox.moe/4jor73.mp3">}}
-
-[Link directo](https://files.catbox.moe/4jor73.mp3)
-
-[Streaming en formato WAV](https://pixeldrain.com/u/UXvYDuv4)
+{{< track show="beertonic/cumple" track="guada-y-abril-duo" label="(extracto)" >}}
 
 
 
@@ -30,19 +26,13 @@ heroStyle: background
 
 # [Catango Trio](https://www.instagram.com/catango.trio/)
 
-{{<audio src="https://files.catbox.moe/o9yf05.mp3">}}
-
-[Link directo](https://files.catbox.moe/o9yf05.mp3)
-
-[Streaming en formato WAV](https://pixeldrain.com/u/jQ6gJYAy)
+{{< track show="beertonic/cumple" track="catango-trio" >}}
 
 
 ---
 
 # Primera presentación de [Paprika's Band](https://www.instagram.com/lapaprikaband/)
 
-{{<audio src="https://files.catbox.moe/k000p1.mp3">}}
+{{< track show="beertonic/cumple" track="paprikas-band" >}}
 
-[Link directo](https://files.catbox.moe/k000p1.mp3)
-
-[Streaming en formato WAV](https://pixeldrain.com/u/Y8U7srG1)
+[Artículo en Internet Archive](https://archive.org/details/live-2025-11-23-aniversario-beertonic)

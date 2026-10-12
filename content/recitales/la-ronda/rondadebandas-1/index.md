@@ -17,26 +17,21 @@ heroStyle: background
 
 # La Vitrola Envenenada
 
-{{<audio src="https://files.catbox.moe/s6klup.mp3">}}
-
-
+{{< track show="la-ronda/rondadebandas-1" track="la-vitrola-envenenada" >}}
 ---
 
 # [La Toma de Roma](https://www.instagram.com/latomaderoma/)
 
-{{<audio src="https://files.catbox.moe/7ejnrv.mp3">}}
-
-
+{{< track show="la-ronda/rondadebandas-1" track="la-toma-de-roma" >}}
 ---
 
 # [Entrance](https://www.instagram.com/entr4nce.ck/)
 
-{{<audio src="https://files.catbox.moe/z05xbj.mp3">}}
-
-
+{{< track show="la-ronda/rondadebandas-1" track="entrance" >}}
 ---
 
 # [Parasomnia](https://www.instagram.com/p_a_r_a_s_o_m_n_i_a/)
 
-{{<audio src="https://files.catbox.moe/0yuro2.mp3">}}
+{{< track show="la-ronda/rondadebandas-1" track="parasomnia" >}}
 
+[Artículo en Internet Archive](https://archive.org/details/live-2025-07-12-ronda-de-bandas-1)

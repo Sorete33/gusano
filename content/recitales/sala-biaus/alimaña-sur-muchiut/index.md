@@ -18,19 +18,16 @@ heroStyle: background
 
 # [Juanito Alimaña](https://www.instagram.com/juanito_alimana_45/) en su primera presentación
 
-{{<audio src="https://files.catbox.moe/2d3pjp.mp3">}}
-
-
+{{< track show="sala-biaus/alimaña-sur-muchiut" track="juanito-alimana" >}}
 ---
 
 # [Nico Muchiut](https://www.instagram.com/nicolas_muchiut/)
 
-{{<audio src="https://files.catbox.moe/7jx0wr.mp3">}}
-
-
+{{< track show="sala-biaus/alimaña-sur-muchiut" track="nico-muchiut" >}}
 ---
 
 # [Ser Sur](https://www.instagram.com/_ser_sur/) 
 
-{{<audio src="https://files.catbox.moe/u6872w.mp3">}}
+{{< track show="sala-biaus/alimaña-sur-muchiut" track="ser-sur" >}}
 
+[Artículo en Internet Archive](https://archive.org/details/live-2025-08-09-juanito-alimaanico-muchiutser-sur)

@@ -16,6 +16,6 @@ heroStyle: background
 
 ---
 
-{{<audio src="https://files.catbox.moe/kswukp.mp3">}}
+{{< track show="tren/nancy" track="nancy" >}}
 
-[Streaming en formato WAV](https://pixeldrain.com/u/2Zg4195r)
+[Artículo en Internet Archive](https://archive.org/details/live-2026-03-02-nancy)

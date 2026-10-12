@@ -14,7 +14,6 @@ heroStyle: background
 
 # [Armando Alonso Trío](https://www.instagram.com/armandoalonsomusico/) en vivo desde Gelatiamo 11-12-25
 
-{{<audio src="https://files.catbox.moe/wi5he5.mp3">}}
+{{< track show="gelatiamo/armand" track="armando-alonso" >}}
 
-[Streaming en formato WAV](https://pixeldrain.com/u/XsuC2yQs)
-
+[Artículo en Internet Archive](https://archive.org/details/live-2025-12-11-armando-alonso)

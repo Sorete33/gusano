@@ -20,28 +20,23 @@ heroStyle: background
 
 # [Primaleón](https://www.instagram.com/primaleon_/) abriendo el Festival.
 
-{{<audio src="https://files.catbox.moe/q1bnmi.mp3">}}
-
-
+{{< track show="el-portal-del-tango/festi-consciente" track="primaleon" >}}
 ---
 
 # [No soy de acá](https://www.instagram.com/nosoydeacaok/)
 
 
-{{<audio src="https://files.catbox.moe/tj6ssf.mp3">}}
-
-
+{{< track show="el-portal-del-tango/festi-consciente" track="no-soy-de-aca" >}}
 ---
 
 
 # [Entrance](https://www.instagram.com/entr4nce.ck/) presentando oficialmente su nombre.
 
-{{<audio src="https://files.catbox.moe/ua7k09.mp3">}}
-
-
+{{< track show="el-portal-del-tango/festi-consciente" track="entrance" >}}
 ---
 
 # [Los Pozoz](https://www.instagram.com/los.pozoz/)
 
-{{<audio src="https://files.catbox.moe/la3tol.mp3">}}
+{{< track show="el-portal-del-tango/festi-consciente" track="los-pozoz" >}}
 
+[Artículo en Internet Archive](https://archive.org/details/live-2025-04-19-festival-consciente)

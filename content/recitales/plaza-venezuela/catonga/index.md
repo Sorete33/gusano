@@ -19,7 +19,6 @@ heroStyle: background
 #### (No se requieren conocimientos previos ni acceso a instrumentos para comenzar)
 
 
-{{<audio src="https://files.catbox.moe/gy5zk8.mp3">}}
+{{< track show="plaza-venezuela/catonga" track="ronda-catonga" >}}
 
-[Streaming en formato WAV](https://pixeldrain.com/u/VycqtVXB)
-
+[Artículo en Internet Archive](https://archive.org/details/live-2025-10-26-ronda-catonga)

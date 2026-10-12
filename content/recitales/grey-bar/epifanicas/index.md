@@ -14,12 +14,12 @@ heroStyle: background
 
 # [Epifanicas](https://www.instagram.com/epi.fanicas/) en [Grey Bar](https://www.instagram.com/greybar.ch/) + pintura en vivo de [Marcelo Mosqueira](https://www.instagram.com/marceloj.mosqueira/) 06-11-25
 
-{{<audio src="https://files.catbox.moe/8nzb96.mp3">}}
-
-[Link directo](https://files.catbox.moe/8nzb96.mp3)
+{{< track show="grey-bar/epifanicas" track="epifanicas" >}}
 
 [Streaming en formato WAV]()
 
 # Pintura del Genio
 
 ![alt text](genio.jpg)
+
+[Artículo en Internet Archive](https://archive.org/details/live-2025-11-06-epifanicas)

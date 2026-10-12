@@ -1,19 +1,21 @@
 #!/usr/bin/env python3
 """Check the site's music links and cover images for breakage.
 
-Scans static/js/music.js, data/playlist.yml, data/flyers-viejos.yml and the
-recital content pages, then:
+Scans data/shows.yml (the single catalogue both players read), the flyer data
+and the recital content pages, then:
   - classifies files.catbox.moe links WITHOUT touching the network when
-    possible, by cross-referencing data/playlist-durations.json (get-durations.mjs
-    only records a duration when ffprobe successfully downloads the file, so a
-    playlist URL missing a duration is dead);
-  - throttled ranged-GETs the catbox URLs the durations file can't cover
+    possible, by cross-referencing the `duration` recorded on each track
+    (get-durations.py only records one when ffprobe successfully downloads the
+    file, so a catbox track missing a duration is dead);
+  - throttled ranged-GETs the catbox URLs the durations can't cover
     (serialized >= --catbox-interval apart, with a circuit breaker that backs
     off when catbox refuses connections, to avoid rate-limit bans);
+  - HEAD-checks archive.org URLs only when --check-archive is passed, since
+    there are ~170 of them and they are stable;
   - HEAD-checks other external hosts (spotify, youtube, ...);
   - verifies local paths exist (static/, content page bundles, public/)
 
-Usage: python3 scripts/check-links.py [--local-dir static] [--offline]
+Usage: python3 scripts/check-links.py [--offline] [--check-archive]
 """
 import argparse
 import concurrent.futures as cf
@@ -26,6 +28,11 @@ import time
 import urllib.request
 import urllib.error
 
+try:
+    import yaml
+except ImportError:
+    sys.exit("PyYAML required: pip install pyyaml")
+
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 UA = "Mozilla/5.0 check-links"
@@ -36,39 +43,35 @@ EXTERNAL_HOSTS = ("files.catbox.moe", "audiogusano.neocities.org", "open.spotify
                   "www.instagram.com", "dropbox.com", "www.dropbox.com")
 
 
-def parse_music_js(local_dir):
-    """Return (sources, images) referenced by the rocola player."""
-    path = os.path.join(local_dir, "static", "js", "music.js")
-    if not os.path.exists(path):
-        path = os.path.join(ROOT, "static", "js", "music.js")
-    text = open(path, encoding="utf-8", errors="replace").read()
-    srcs = re.findall(r'src\s*:\s*"([^"]+)"', text)
-    imgs = re.findall(r'img\s*:\s*"([^"]+)"', text)
-    return srcs, imgs
+def parse_shows_yml(local_dir):
+    """data/shows.yml -> (sources, images, durations).
 
-
-def parse_playlist_yml(local_dir):
-    path = os.path.join(local_dir, "data", "playlist.yml")
-    if not os.path.exists(path):
-        path = os.path.join(ROOT, "data", "playlist.yml")
-    text = open(path, encoding="utf-8").read()
-    return re.findall(r'^\s*url\s*:\s*["\']?([^"\'\s]+)', text, re.M)
-
-
-def parse_playlist_durations(local_dir):
-    """data/playlist-durations.json -> {url: seconds}.
-
-    get-durations.mjs only writes an entry when ffprobe successfully downloads
-    the file, so a key's absence means "dead or never probed".
+    This is the one catalogue both players read, so it is also the one place a
+    dead audio link can show up. A track's playable URL is its archive.org file
+    when it has one, otherwise the legacy full URL in `src`.
     """
-    path = os.path.join(local_dir, "data", "playlist-durations.json")
+    path = os.path.join(local_dir, "data", "shows.yml")
     if not os.path.exists(path):
-        path = os.path.join(ROOT, "data", "playlist-durations.json")
-    try:
-        with open(path, encoding="utf-8") as f:
-            return json.load(f)
-    except Exception:
-        return {}
+        path = os.path.join(ROOT, "data", "shows.yml")
+    shows = yaml.safe_load(open(path, encoding="utf-8")) or []
+    srcs, imgs, durations = [], [], {}
+    for show in shows:
+        if not isinstance(show, dict):
+            continue
+        if show.get("cover"):
+            imgs.append(show["cover"])
+        for track in show.get("tracks") or []:
+            if track.get("mp3") and show.get("archive"):
+                srcs.append(
+                    "https://archive.org/download/%s/%s" % (show["archive"], track["mp3"])
+                )
+            elif track.get("src"):
+                srcs.append(track["src"])
+                # get-durations.py only records a duration when ffprobe
+                # downloads the file, so its absence means "dead or unprobed".
+                if track.get("duration"):
+                    durations[track["src"]] = track["duration"]
+    return srcs, imgs, durations
 
 
 def parse_flyers_yml(local_dir, name):
@@ -228,7 +231,9 @@ def main():
     ap.add_argument("--local-dir", default=ROOT, help="repo root (default: this repo)")
     ap.add_argument("--no-external", action="store_true", help="skip network checks entirely")
     ap.add_argument("--offline", action="store_true",
-                    help="no network: classify catbox playlist links from playlist-durations.json only")
+                    help="no network: classify catbox links from the durations in shows.yml only")
+    ap.add_argument("--check-archive", action="store_true",
+                    help="also HEAD-check the ~170 archive.org URLs (slow)")
     ap.add_argument("--max-workers", type=int, default=4)
     ap.add_argument("--catbox-interval", type=float, default=1.0,
                     help="minimum seconds between catbox requests (rate-limit avoidance)")
@@ -237,18 +242,22 @@ def main():
     args = ap.parse_args()
     local = args.local_dir
 
-    srcs, imgs = parse_music_js(local)
-    playlist = parse_playlist_yml(local)
+    srcs, imgs, durations = parse_shows_yml(local)
     flyers_new = parse_flyers_yml(local, "flyers.yml")
     flyers_old = parse_flyers_yml(local, "flyers-viejos.yml")
     content_audio = parse_content_audio(local)
-    durations = parse_playlist_durations(local)
-    playlist_set = set(playlist)
+    playlist_set = set(srcs)
 
     external = {}
-    for u in list(srcs) + playlist + content_audio:
-        if is_external(u) and any(h in u for h in EXTERNAL_HOSTS):
-            external.setdefault(u, 0)
+    for u in list(srcs) + content_audio:
+        if not is_external(u):
+            continue
+        if not any(h in u for h in EXTERNAL_HOSTS):
+            continue
+        # ~170 archive.org URLs: stable, and slow to check, so opt in.
+        if "archive.org" in u and not args.check_archive:
+            continue
+        external.setdefault(u, 0)
     external = list(external)
 
     offline_dead = []    # catbox, in playlist, no duration -> dead (offline signal)
@@ -292,10 +301,10 @@ def main():
         print(f"  {u}")
     net_dead = len(dead_audio) - len(offline_dead)
     print(f"({len(dead_audio)}/{len(external)} external URLs dead"
-          f"  [{len(offline_dead)} offline via playlist-durations.json,"
+          f"  [{len(offline_dead)} offline via shows.yml durations,"
           f" {net_dead} network-confirmed])")
     if offline_live:
-        print(f"\n({len(offline_live)} catbox URLs have durations in playlist-durations.json — skipped network)")
+        print(f"\n({len(offline_live)} catbox URLs have a duration in shows.yml — skipped network)")
 
     if unreachable:
         print("\n=== EXTERNAL AUDIO UNREACHABLE (network blocked / timeout) ===")

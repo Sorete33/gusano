@@ -16,6 +16,6 @@ heroStyle: background
 
 ---
 
-{{<audio src="https://files.catbox.moe/p6wjyo.mp3">}}
+{{< track show="encuentro-por-las-artes/flaco" track="proyecto-spinetta" >}}
 
-[Streaming en formato WAV](https://pixeldrain.com/u/653y6jRT)
+[Artículo en Internet Archive](https://archive.org/details/live-2026-01-02-proyecto-spinetta)

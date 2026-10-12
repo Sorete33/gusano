@@ -18,15 +18,13 @@ heroStyle: background
 
 # [30 Mil](https://www.instagram.com/30mil_punk/) (Extracto)
 
-{{<audio src="https://files.catbox.moe/uyn737.mp3">}}
-
-[Streaming en formato WAV](https://pixeldrain.com/u/JyLNCDV6)
+{{< track show="club-ciclon/alianza-rock" track="30-mil" label="(extracto)" >}}
 
 
 ---
 
 # [D' Coyotes](https://www.instagram.com/dcoyotes26/) Primer recital :D
 
-{{<audio src="https://files.catbox.moe/zpki6f.mp3">}}
+{{< track show="club-ciclon/alianza-rock" track="d-coyotes" >}}
 
-[Streaming en formato WAV](https://pixeldrain.com/u/7YgSixLx)
+[Artículo en Internet Archive](https://archive.org/details/live-2026-03-14-festival-alianza)

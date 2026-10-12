@@ -14,6 +14,6 @@ heroStyle: background
 
 # [Epifanicas](https://www.instagram.com/epi.fanicas/) tocando en el [Garage Avispa](https://www.instagram.com/avispacustomgarage/)
 
-{{<audio src="https://files.catbox.moe/2u4twa.mp3">}}
+{{< track show="avispa/epifanicas" track="epifanicas" >}}
 
-[Streaming en formato WAV](https://pixeldrain.com/u/exQTRVxu)
+[Artículo en Internet Archive](https://archive.org/details/live-2025-10-24-epifanicas)

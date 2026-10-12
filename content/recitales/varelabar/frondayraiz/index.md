@@ -14,6 +14,6 @@ heroStyle: background
 
 # Viaje por toda la Argentina con Fronda y Raíz desde la [Varela](https://www.instagram.com/varelarestobar8/)
 
-{{<audio src="https://files.catbox.moe/haq3r8.mp3">}}
+{{< track show="varelabar/frondayraiz" track="varela" >}}
 
-[Streaming en formato WAV](https://pixeldrain.com/u/aLhZjQgz)
+[Artículo en Internet Archive](https://archive.org/details/live-2026-02-20-fronda-y-raz)

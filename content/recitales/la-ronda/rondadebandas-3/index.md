@@ -19,30 +19,24 @@ heroStyle: background
 
 # [Maquinaria Divina](https://www.instagram.com/maquinariadivina/)
 
-{{<audio src="https://files.catbox.moe/2ph46d.mp3">}}
-
-[Streaming en formato WAV](https://pixeldrain.com/u/g68JysY2)
+{{< track show="la-ronda/rondadebandas-3" track="maquinaria-divina" >}}
 
 ---
 
 # [Catango Trio](https://www.instagram.com/catango.trio/)
 
-{{<audio src="https://files.catbox.moe/3zcs4e.mp3">}}
-
-[Streaming en formato WAV](https://pixeldrain.com/u/p4q2nhpF)
+{{< track show="la-ronda/rondadebandas-3" track="catango-trio" >}}
 
 ---
 
 # [Cínica](https://www.instagram.com/_cinicabanda/)
 
-{{<audio src="https://files.catbox.moe/g0xnhf.mp3">}}
-
-[Streaming en formato WAV](https://pixeldrain.com/u/YNfyUtAv)
+{{< track show="la-ronda/rondadebandas-3" track="cinica" >}}
 
 ---
 
 # [Sociedad Macabra](https://www.instagram.com/sociedad.macabra/)
 
-{{<audio src="https://files.catbox.moe/yc3l5f.mp3">}}
+{{< track show="la-ronda/rondadebandas-3" track="sociedad-macabra" >}}
 
-[Streaming en formato WAV](https://pixeldrain.com/u/voSKdjxX)
+[Artículo en Internet Archive](https://archive.org/details/live-2026-07-10-ronda-de-bandas-3)

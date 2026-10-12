@@ -18,31 +18,25 @@ heroStyle: background
 
 # [Cínica](https://www.instagram.com/_cinicabanda/) (solo calle roja)
 
-{{<audio src="https://files.catbox.moe/mcigps.mp3">}}
-
-[Streaming en formato WAV](https://pixeldrain.com/u/GQnETMxp)
+{{< track show="encuentro-por-las-artes/anticover-13" track="cinica" >}}
 
 ---
 
 # [Facu Dovidio](https://www.instagram.com/fadovidio/)
 
-{{<audio src="https://files.catbox.moe/n29flz.mp3">}}
-
-[Streaming en formato WAV](https://pixeldrain.com/u/YjaGms7g)
+{{< track show="encuentro-por-las-artes/anticover-13" track="facundo-dovidio" >}}
 
 ---
 
 # [Paprika's Band](https://www.instagram.com/lapaprikaband/)
 
-{{<audio src="https://files.catbox.moe/6jr85k.mp3">}}
-
-[Streaming en formato WAV](https://pixeldrain.com/u/k6FLgYhB)
+{{< track show="encuentro-por-las-artes/anticover-13" track="paprikas-band" >}}
 
 ---
 
 # Poemas de [Daniel Casas](https://www.instagram.com/danqxcasas/) y [Memi Mesplet](https://www.instagram.com/memimesplet/)
 
-{{<audio src="https://files.catbox.moe/asqmxg.mp3">}}
+{{< track show="encuentro-por-las-artes/anticover-13" track="memi-mesplet" >}}
+{{< track show="encuentro-por-las-artes/anticover-13" track="memi-mesplet-2" >}}
 
-{{<audio src="https://files.catbox.moe/8pxy2q.mp3">}}
-
+[Artículo en Internet Archive](https://archive.org/details/live-2026-02-13-anticover-13)

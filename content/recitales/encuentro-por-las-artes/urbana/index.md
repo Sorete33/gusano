@@ -18,23 +18,18 @@ heroStyle: background
 
 # [Angelbby](https://www.instagram.com/angelbby.ok/) feat [Rico y suave](https://www.instagram.com/ricoysuaveyb/) y [Mija](https://www.instagram.com/_mijaulariaga/)
 
-{{<audio src="https://files.catbox.moe/1awhb4.mp3">}}
-
-[Streaming en formato WAV](https://pixeldrain.com/u/tt38koaU)
+{{< track show="encuentro-por-las-artes/urbana" track="angelbby" >}}
 
 ---
 
 # [Vairo](https://www.instagram.com/vairoofficial/) producción [CH Records](https://www.instagram.com/ch.records.ok/)
 
-{{<audio src="https://files.catbox.moe/jy1r5x.mp3">}}
-
-[Streaming en formato WAV](https://pixeldrain.com/u/zdsb8oMe)
+{{< track show="encuentro-por-las-artes/urbana" track="vairo" >}}
 
 ---
 
 # [Enzo Ville](https://www.instagram.com/enzoville14/)
 
-{{<audio src="https://files.catbox.moe/g9gma0.mp3">}}
+{{< track show="encuentro-por-las-artes/urbana" track="enzo-ville" >}}
 
-[Streaming en formato WAV](https://pixeldrain.com/u/TLRmRGkL)
-
+[Artículo en Internet Archive](https://archive.org/details/live-2026-02-01-festival-urbano)

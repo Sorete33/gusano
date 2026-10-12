@@ -13,5 +13,6 @@ heroStyle: background
 
 # [Rocío Palazzo](https://www.instagram.com/rocio.palazzo/), [Nicolas Benagui](https://www.instagram.com/nicolasbenaghi/) e [Ignacio Viano](https://www.instagram.com/ignacio.viano/)  homenajeando al flaco desde el Teatro Trac 12/09/25
 
-{{<audio src="https://files.catbox.moe/i4v52n.mp3">}}
+{{< track show="teatro-trac/spinetta" track="rocio-palazzo" >}}
 
+[Artículo en Internet Archive](https://archive.org/details/live-2025-09-12-proyecto-spinetta)

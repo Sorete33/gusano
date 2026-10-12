@@ -12,5 +12,6 @@ heroStyle: background
 
 # [Inteligencia Accidental](https://www.instagram.com/inteligencia.accidental/) festejando su segundo cumple accidental en [Sala Biaus](https://www.instagram.com/salabiaus/) 19-9-25
 
-{{<audio src="https://files.catbox.moe/ylvtia.mp3">}}
+{{< track show="sala-biaus/ia" track="inteligencia-accidental" >}}
 
+[Artículo en Internet Archive](https://archive.org/details/live-2025-09-19-cumple-accidental-2)

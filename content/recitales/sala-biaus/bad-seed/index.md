@@ -13,6 +13,6 @@ heroStyle: background
 
 # Tercera fecha de [Los Bad Seed](https://www.instagram.com/losbadseed/) en [Sala Biaus](https://www.instagram.com/salabiaus/) presentando ep [Simbiosis](https://open.spotify.com/album/6eEaaKnQgOoWaNj1a8DvYAs)
 
-{{< audio src="https://files.catbox.moe/3l5s6p.mp3" >}}
+{{< track show="sala-biaus/bad-seed" track="bad-seed" >}}
 
-[Link Directo](https://files.catbox.moe/3l5s6p.mp3)
+[Artículo en Internet Archive](https://archive.org/details/live-2025-05-09-bad-seed)

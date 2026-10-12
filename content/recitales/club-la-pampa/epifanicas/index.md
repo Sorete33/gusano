@@ -14,10 +14,6 @@ heroStyle: background
 
 # [Epifanicas](https://www.instagram.com/epi.fanicas/) en la fiesta de la cebada 08-11-25
 
-{{<audio src="https://files.catbox.moe/b594ma.mp3">}}
+{{< track show="club-la-pampa/epifanicas" track="epifanicas" >}}
 
-[Link directo](https://files.catbox.moe/b594ma.mp3)
-
-[Streaming en formato WAV](https://pixeldrain.com/u/2xXr9GtR)
-
-
+[Artículo en Internet Archive](https://archive.org/details/live-2025-11-08-festival-cebada)

@@ -1,0 +1,47 @@
+{{/* Renders every track of a show from data/shows.yml, plus the archive.org
+  item link. Useful for pages that are just a list of recordings.
+
+  Usage:  {{< tracks show="la-maga/cumple-accidental" >}}
+
+  Individual sections should prefer {{< track >}} so each keeps its own heading
+  and Instagram link.
+*/}}
+
+{{ $showId := .Get "show" }}
+{{ range site.Data.shows }}
+  {{ if eq .id $showId }}
+    {{ $show := . }}
+    {{ range $show.tracks }}
+      {{ $track := . }}
+      {{ $url := $track.src }}
+      {{ with $track.mp3 }}
+        {{ $url = printf "https://archive.org/download/%s/%s" $show.archive . }}
+      {{ end }}
+      {{ if $url }}
+        {{ $ext := path.Ext $url | strings.TrimPrefix "." | lower }}
+        {{ $mime := dict "mp3" "audio/mpeg" "flac" "audio/flac" "wav" "audio/wav" }}
+        <figure class="recital-track">
+          <audio controls preload="none" crossorigin="anonymous">
+            <source src="{{ $url }}" type="{{ index $mime $ext | default "audio/mpeg" }}">
+            Tu navegador no puede reproducir este audio.
+          </audio>
+          {{ $download := $track.flac }}
+          {{ if not $download }}{{ $download = $track.wav }}{{ end }}
+          {{ with $download }}
+            <a class="track-download" href="{{ printf "https://archive.org/download/%s/%s" $show.archive . }}" download>
+              Descarga en alta calidad
+            </a>
+          {{ end }}
+          <figcaption>{{ $track.title }}{{ with $track.artist }} — {{ . }}{{ end }}</figcaption>
+        </figure>
+      {{ end }}
+    {{ end }}
+    {{ with $show.archive_url }}
+      <p class="recital-archive">
+        <a href="{{ . }}" rel="noopener" target="_blank">Artículo en Internet Archive</a>
+      </p>
+    {{ end }}
+  {{ end }}
+{{ else }}
+  {{ warnf "tracks shortcode: no show %q in data/shows.yml" $showId }}
+{{ end }}

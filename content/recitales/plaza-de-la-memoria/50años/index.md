@@ -18,20 +18,17 @@ heroStyle: background
 
 # Discursos
 
-{{<audio src="https://files.catbox.moe/gs2eg4.mp3">}}
-
+{{< track show="plaza-de-la-memoria/50años" track="discursos" >}}
 ---
 
 # Somos rock en la calle 8
 
-{{<audio src="https://files.catbox.moe/rli6nv.mp3">}}
-
-[Streaming en formato WAV](https://pixeldrain.com/u/igAQdiHs)
+{{< track show="plaza-de-la-memoria/50años" track="somos-rock" >}}
 
 ---
 
 # Murgas
 
-{{<audio src="https://files.catbox.moe/t27bso.mp3">}}
+{{< track show="plaza-de-la-memoria/50años" track="murgas" >}}
 
-[Streaming en formato WAV](https://pixeldrain.com/u/tc45KDZp)
+[Artículo en Internet Archive](https://archive.org/details/live-2026-03-24-movilizacin-por-la-memoria-verdad-y-justicia)

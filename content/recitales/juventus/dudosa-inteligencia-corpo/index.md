@@ -21,23 +21,17 @@ heroStyle: background
 ---
 # [Dudosa Procedencia](https://www.instagram.com/dudosaprocedencia_/)
 
-{{<audio src="https://files.catbox.moe/aqbbib.mp3">}}
-
-[Streaming en formato WAV](https://pixeldrain.com/u/8tB6TXPS)
+{{< track show="juventus/dudosa-inteligencia-corpo" track="dudosa-procedencia" >}}
 
 ---
 # [Inteligencia Accidental](https://www.instagram.com/inteligencia.accidental/)
 
-{{<audio src="https://files.catbox.moe/cxp9ne.mp3">}}
-
-[Streaming en formato WAV](https://pixeldrain.com/u/Xsu3EcKQ)
+{{< track show="juventus/dudosa-inteligencia-corpo" track="inteligencia-accidental" >}}
 
 ---
 # [Corpo Porco](https://www.instagram.com/corpoporco/)
 
-{{<audio src="https://files.catbox.moe/aeakx3.mp3">}}
-
-[Streaming en formato WAV](https://pixeldrain.com/u/vgBG9ZLb)
+{{< track show="juventus/dudosa-inteligencia-corpo" track="corpo-porco" >}}
 
 ---
 
@@ -48,3 +42,5 @@ heroStyle: background
 # Archivos incómodos para otras memorias posibles ✊🏽⚒️
 
 # “Si el archivo es la ley y su institución, la noción de “desarchivar” también puede referir a la desobediencia ante lo que se puede recordar y, por lo tanto, ante lo que se puede decir (Aillon, Virginia).
+
+[Artículo en Internet Archive](https://archive.org/details/live-2026-05-09-viaje-accidental)

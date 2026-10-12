@@ -21,11 +21,36 @@ heroStyle: background
 
 # Día 1
 
-{{<audio src="https://files.catbox.moe/sg11i3.mp3">}}
+{{< track show="el-portal-del-tango/nueva-musica" track="alfon-vicky-milo" >}}
 
-[Link directo](https://files.catbox.moe/sg11i3.mp3)
+{{< track show="el-portal-del-tango/nueva-musica" track="milo-guada" >}}
 
-[Streaming en formato WAV](https://pixeldrain.com/u/VWkm8Zqz)
+{{< track show="el-portal-del-tango/nueva-musica" track="guara-guada" >}}
+
+{{< track show="el-portal-del-tango/nueva-musica" track="lola" >}}
+
+{{< track show="el-portal-del-tango/nueva-musica" track="vicky" >}}
+
+{{< track show="el-portal-del-tango/nueva-musica" track="valen" >}}
+
+{{< track show="el-portal-del-tango/nueva-musica" track="justo-y-segundo" >}}
+
+{{< track show="el-portal-del-tango/nueva-musica" track="tobias" >}}
+
+{{< track show="el-portal-del-tango/nueva-musica" track="benja-y-mate" >}}
+
+{{< track show="el-portal-del-tango/nueva-musica" track="mate" >}}
+
+{{< track show="el-portal-del-tango/nueva-musica" track="ciro" >}}
+
+{{< track show="el-portal-del-tango/nueva-musica" track="mateo" >}}
+
+{{< track show="el-portal-del-tango/nueva-musica" track="mateo-y-luky" >}}
+
+{{< track show="el-portal-del-tango/nueva-musica" track="benja" >}}
+
+{{< track show="el-portal-del-tango/nueva-musica" track="maloquio" >}}
+
 
 
 # Día 2
@@ -36,3 +61,4 @@ heroStyle: background
 
 [Streaming en formato WAV](https://pixeldrain.com/u/Y7GVAUPg)
 
+[Artículo en Internet Archive](https://archive.org/details/live-2025-12-03-muestra-de-fin-de-ao-dia-1)

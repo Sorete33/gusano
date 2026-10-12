@@ -19,30 +19,23 @@ heroStyle: background
 ---
 # [Ronda Catonga](https://www.instagram.com/rondacatongacandombechivilcoy/)
 
-{{<audio src="https://files.catbox.moe/mrznfy.mp3">}}
-
-
+{{< track show="la-ronda/cumple-ronda" track="ronda-catonga" >}}
 ---
 
 # [Catango Trio](https://www.instagram.com/catango.trio/)
 
-{{<audio src="https://files.catbox.moe/vhy8d5.mp3">}}
-
-
+{{< track show="la-ronda/cumple-ronda" track="catango-trio" >}}
 ---
 
 # [Roco y los Chacks](https://www.instagram.com/rocoyloschacks/)
 
-{{<audio src="https://files.catbox.moe/bhpk3m.mp3">}}
-
-
+{{< track show="la-ronda/cumple-ronda" track="roco-y-los-chacks" >}}
 ---
 
 # [Epifanicas](https://www.instagram.com/epi.fanicas/)
 
 
-{{<audio src="https://files.catbox.moe/7ew71a.mp3">}}
-
-
+{{< track show="la-ronda/cumple-ronda" track="epifanicas" >}}
 ---
 
+[Artículo en Internet Archive](https://archive.org/details/live-2025-09-20-cumple-la-ronda)

@@ -19,6 +19,6 @@ heroStyle: background
 ## En el primer tema, Blue Monk, entraba una brisa divina pero no tenia el antipop y se escucha ruido, ya en el segundo temita afloja. Atentis al estreno al final del audio, rismo.
 
 
-{{<audio src="https://files.catbox.moe/didtx2.mp3">}}
+{{< track show="sala-belgrano/armando" track="armando-alonso-trio-en-sala-belgrano" >}}
 
-[Streaming en formato WAV](https://pixeldrain.com/u/Ca7W2xVM)
+[Artículo en Internet Archive](https://archive.org/details/live-2026-03-06-armando-alonso-tro)

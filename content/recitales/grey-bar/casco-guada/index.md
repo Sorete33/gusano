@@ -14,5 +14,6 @@ heroStyle: background
 
 # Casco y Guada nos regalan su música en Grey Bar 2-10-25
 
-{{<audio src="https://files.catbox.moe/op8zz9.mp3">}}
+{{< track show="grey-bar/casco-guada" track="casco-y-guada" >}}
 
+[Artículo en Internet Archive](https://archive.org/details/live-2025-10-02-casco-y-guada)
