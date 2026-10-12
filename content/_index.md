@@ -2,7 +2,7 @@
 title: Anuncio
 ---
 
-{{< new title="Audio Gusano ya se encuentra archivado en Internet Archive" >}}
+<!-- {{< new title="Audio Gusano ya se encuentra archivado en Internet Archive" >}}
 
 [Internet Archive](https://archive.org/) es una biblioteca digital sin ánimo de lucro que se dedica principalmente a guardar una copia de la totalidad de internet para garantizar la libre información y un acceso abierto al conocimiento universal.
 
@@ -15,6 +15,7 @@ Archive funciona a base de donaciones así que si te sobra algún morlaco no dud
 
 ![Archive](https://mastodon.archive.org/system/media_attachments/files/111/047/413/399/623/102/original/e878041974acb294.png)
 {{< /new >}}
+-->
 
 {{< webamp >}}
 
