@@ -1,22 +1,19 @@
-{{/* Tracks come from data/shows.yml, the single catalogue shared with the
-     rocola player and the recital pages. A track's playable URL is
+{{/* Tracks come from data/shows.yml via partials/player-tracks.html, which
+     also applies the [params.players].exclude list. A track's playable URL is
      https://archive.org/download/<show.archive>/<track.mp3> when it has an
      archive.org file, otherwise the legacy full URL in track.src. */}}
 {{ $skin := "skins/skin.wsz" | relURL }}
 {{ $tracks := slice }}
-{{ range .Site.Data.shows }}
-  {{ $archive := .archive }}
-  {{ range .tracks }}
-    {{ $t := . }}
-    {{ $src := partial "track-url.html" (dict "track" $t "archive" $archive) }}
-    {{ if $src }}
-      {{ $meta := dict "title" $t.title "artist" ($t.artist | default "") }}
-      {{ $track := dict "url" $src "metaData" $meta }}
-      {{ with $t.duration }}
-        {{ $track = merge $track (dict "duration" (int .)) }}
-      {{ end }}
-      {{ $tracks = $tracks | append $track }}
+{{ range partial "player-tracks.html" }}
+  {{ $t := .track }}
+  {{ $src := partial "track-url.html" (dict "track" $t "archive" .show.archive) }}
+  {{ if $src }}
+    {{ $meta := dict "title" $t.title "artist" ($t.artist | default "") }}
+    {{ $track := dict "url" $src "metaData" $meta }}
+    {{ with $t.duration }}
+      {{ $track = merge $track (dict "duration" (int .)) }}
     {{ end }}
+    {{ $tracks = $tracks | append $track }}
   {{ end }}
 {{ end }}
 

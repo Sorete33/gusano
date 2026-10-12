@@ -84,3 +84,17 @@ enableA11y = true
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true
+
+[params.players]
+# Shows kept out of the rocola and the winamp playlist. The recital pages
+# still show them. Three forms match:
+#   "El Portal del Tango"               a venue: every show held there
+#   "la-maga/cumple-accidental"         one show
+#   "la-maga/cumple-accidental/corpo-porco"  one track
+# An entry that matches nothing is reported as a build warning, so a typo
+# cannot silently disable an exclusion.
+exclude = [
+  "El Portal del Tango",
+  "FM Urbana",
+  "Plaza de la memoria",
+]

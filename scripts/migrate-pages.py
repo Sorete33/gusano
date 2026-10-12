@@ -39,6 +39,7 @@ SHOWS = ROOT / "data" / "shows.yml"
 
 FM_RE = re.compile(r"\A---\r?\n(.*?)\r?\n---", re.S)
 AUDIO_RE = re.compile(r'^\s*\{\{<+\s*audio\b.*$')
+TRACK_RE = re.compile(r'^\s*\{\{<+\s*track\s+show="([^"]*)"\s+track="([^"]*)"')
 LINK_DIRECT_RE = re.compile(r"^\s*\[\s*(Link directo|Enlace directo|Descargar)[^\]]*\]\([^)]*\)\s*$", re.I)
 STREAM_RE = re.compile(r"^\s*\[\s*[^\]]*(WAV|FLAC|Streaming|Descarga)[^\]]*\]\([^)]*\)\s*$", re.I)
 IA_LINK_RE = re.compile(r"^\s*\[\s*[^\]]*Internet Archive[^\]]*\]\([^)]*\)\s*$", re.I)
@@ -175,6 +176,14 @@ def migrate(path: Path, shows_by_id: dict, report: list) -> str | None:
     out, used, heading = [], set(), ""
     i, changed = 0, False
     lines = body.splitlines()
+
+    # Tracks already rendered by a previous run count as used. Without this a
+    # page that is half-migrated looks untouched, and the "render every file"
+    # fallback below would re-emit players the page already has.
+    for line in lines:
+        tm = TRACK_RE.match(line)
+        if tm and tm.group(1) == show_id:
+            used.add(tm.group(2))
     while i < len(lines):
         line = lines[i]
         hm = HEADING_RE.match(line)
@@ -192,8 +201,21 @@ def migrate(path: Path, shows_by_id: dict, report: list) -> str | None:
         if AUDIO_RE.match(line):
             label = heading_label(heading)
             track = pick_track(label, tracks, used)
-            if track is None and len(tracks) == 1:
+            if track is None and len(tracks) == 1 and not used:
                 track = tracks[0]
+            if track is None and used and len(used) >= len(tracks):
+                # Every file already has a player on this page, so this audio
+                # tag is something the catalogue does not describe (a catbox /
+                # pixeldrain recording, usually). Re-emitting the tracks here
+                # would duplicate the ones above; leave the tag as it is.
+                report.append(
+                    (show_id, f"heading {label!r} matches no track and all "
+                              f"{len(tracks)} file(s) already have a player; "
+                              f"audio tag left alone")
+                )
+                out.append(line)
+                i += 1
+                continue
             if track is None and not used:
                 # The page's sections don't line up with the archive at all
                 # (a whole night recorded as one blob upstream, split per song

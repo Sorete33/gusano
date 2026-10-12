@@ -21,6 +21,11 @@ Usage:
     python3 scripts/sync-archive.py            # dry run, prints a report
     python3 scripts/sync-archive.py --write    # rewrite data/shows.yml
     python3 scripts/sync-archive.py --show sala-biaus/epi-amy   # one show
+    python3 scripts/sync-archive.py --refresh  # ignore the /tmp cache
+
+--write refuses to run if any existing track would be dropped, because the
+matcher keys on artist name and two tracks sharing an artist collide. Pass
+--allow-drop once you have read the list and agree with it.
 """
 
 from __future__ import annotations
@@ -29,6 +34,7 @@ import argparse
 import json
 import re
 import sys
+import time
 import unicodedata
 import urllib.parse
 import urllib.request
@@ -42,6 +48,12 @@ except ImportError:
 ROOT = Path(__file__).resolve().parent.parent
 SHOWS = ROOT / "data" / "shows.yml"
 CACHE = Path("/tmp/opencode/ia-cache")
+# How long a cached archive.org response stays usable. archive.org derives
+# mp3/flac derivatives in the background, so a listing cached before that
+# finishes reports an item as having no mp3 and the matcher rewrites the show
+# to .wav. Six hours is short enough to avoid that in normal use.
+CACHE_TTL = 6 * 3600
+FETCH_ATTEMPTS = 3
 
 # The collection owner. Change this if the uploads ever move to another account.
 UPLOADER = "escalofrioexistencial@tuta.io"
@@ -92,20 +104,37 @@ def encode(name: str) -> str:
     return urllib.parse.quote(name, safe="()!*-._~")
 
 
-def fetch(url: str) -> dict:
+def fetch(url: str, max_age: int = CACHE_TTL) -> dict:
+    """GET a JSON endpoint, caching it briefly.
+
+    archive.org derives mp3/flac in the background, so a cached listing taken
+    before the derivatives existed reports an item as having no mp3. The TTL
+    is short for that reason; --refresh sets max_age to 0.
+
+    archive.org also intermittently answers with an empty payload. Retrying is
+    what makes a run reproducible: a single empty response used to look
+    exactly like "this item has no files", which silently zeroed a show.
+    """
     CACHE.mkdir(parents=True, exist_ok=True)
     key = CACHE / (urllib.parse.quote(url, safe="")[:180] + ".json")
-    if key.exists():
+    if key.exists() and time.time() - key.stat().st_mtime < max_age:
         return json.loads(key.read_text(encoding="utf-8"))
     req = urllib.request.Request(url, headers={"User-Agent": "sync-archive/1.0"})
-    with urllib.request.urlopen(req, timeout=60) as resp:
-        data = json.loads(resp.read().decode("utf-8"))
-    key.write_text(json.dumps(data), encoding="utf-8")
-    return data
+    last: Exception | None = None
+    for attempt in range(FETCH_ATTEMPTS):
+        try:
+            with urllib.request.urlopen(req, timeout=60) as resp:
+                data = json.loads(resp.read().decode("utf-8"))
+            key.write_text(json.dumps(data), encoding="utf-8")
+            return data
+        except Exception as exc:  # noqa: BLE001
+            last = exc
+            time.sleep(2 * (attempt + 1))
+    raise RuntimeError(f"{url}: gave up after {FETCH_ATTEMPTS} attempts ({last})")
 
 
-def list_items() -> dict[str, dict]:
-    data = fetch(SEARCH.format(uploader=urllib.parse.quote(UPLOADER)))
+def list_items(max_age: int = CACHE_TTL) -> dict[str, dict]:
+    data = fetch(SEARCH.format(uploader=urllib.parse.quote(UPLOADER)), max_age)
     out = {}
     for doc in data["response"]["docs"]:
         doc["d"] = (doc.get("date") or "")[:10]
@@ -113,12 +142,21 @@ def list_items() -> dict[str, dict]:
     return out
 
 
-def item_tracks(ident: str) -> list[dict]:
+def item_tracks(ident: str, max_age: int = CACHE_TTL) -> list[dict]:
     """One entry per recording: group derivatives by `original`, pick a format."""
-    meta = fetch(f"https://archive.org/metadata/{ident}")
+    meta = fetch(f"https://archive.org/metadata/{ident}", max_age)
+    files = meta.get("files") or []
+    if not files:
+        # archive.org has been seen to answer with an empty payload for an item
+        # that plainly has files. Treat that as an error so the show is reported
+        # unresolved and left alone, never rewritten to zero tracks.
+        raise RuntimeError(
+            f"{ident}: archive.org returned no file list "
+            f"(item may be private, or the response was empty)"
+        )
     groups: dict[str, dict] = {}
     order: list[str] = []
-    for f in meta.get("files", []):
+    for f in files:
         name = f.get("name") or ""
         ext = name.rsplit(".", 1)[-1].lower() if "." in name else ""
         if ext not in AUDIO_EXT:
@@ -263,6 +301,10 @@ def build_tracks(show: dict, ident: str, tracks: list[dict]) -> tuple[list[dict]
     Old tracks are matched to files one by one so that the wording already in
     the page survives; old tracks with no counterpart in the item are dropped
     and reported rather than silently kept.
+
+    Returns (tracks, notes, drops). `drops` is what lets the caller refuse a
+    destructive --write: the matcher keys on artist name first, so two tracks
+    sharing an artist collide and one loses its match.
     """
     old = show.get("tracks") or []
     by_norm: dict[str, dict] = {}
@@ -308,28 +350,42 @@ def build_tracks(show: dict, ident: str, tracks: list[dict]) -> tuple[list[dict]
             entry["duration"] = t["seconds"]
         out.append(entry)
 
+    drops: list[str] = []
     for t in old:
         if id(t) not in consumed:
+            have = ", ".join(k for k in ("mp3", "flac", "wav", "src") if t.get(k))
+            name = t.get("title") or t.get("id")
+            drops.append(name)
             notes.append(
-                f"  dropped '{t.get('title') or t.get('id')}'"
-                f" ({t.get('src', 'no src')}) - no matching file in {ident}"
+                f"  dropped '{name}'"
+                f" (has: {have or 'no audio file'}) - no matching file in {ident}"
             )
 
-    return out, notes
+    return out, notes, drops
 
 
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--write", action="store_true")
     ap.add_argument("--show", help="only this show id")
+    ap.add_argument(
+        "--allow-drop", action="store_true",
+        help="write even though some existing tracks would be dropped",
+    )
+    ap.add_argument(
+        "--refresh", action="store_true",
+        help="ignore the cached archive.org responses and refetch everything",
+    )
     args = ap.parse_args()
 
+    max_age = 0 if args.refresh else CACHE_TTL
     shows = yaml.safe_load(SHOWS.read_text(encoding="utf-8")) or []
-    items = list_items()
+    items = list_items(max_age)
     print(f"shows: {len(shows)}   IA items: {len(items)}\n")
 
     matched, unresolved, skipped = [], [], []
     untouched = []
+    would_drop: list[str] = []
     for show in shows:
         if args.show and show["id"] != args.show:
             skipped.append(show)
@@ -340,12 +396,14 @@ def main() -> None:
             untouched.append(show)  # keep the show exactly as it was
             continue
         try:
-            tracks = item_tracks(ident)
+            tracks = item_tracks(ident, max_age)
         except Exception as exc:  # noqa: BLE001
             unresolved.append((show["id"], f"metadata failed: {exc}"))
             untouched.append(show)
             continue
-        new_tracks, notes = build_tracks(show, ident, tracks)
+        new_tracks, notes, drops = build_tracks(show, ident, tracks)
+        for d in drops:
+            would_drop.append(f"{show['id']}: {d}")
         old = len(show.get("tracks") or [])
         if old != len(new_tracks):
             note = "MORE" if len(new_tracks) > old else "FEWER"
@@ -369,6 +427,21 @@ def main() -> None:
     if not args.write:
         print("\n(dry run - pass --write to update data/shows.yml)")
         return
+
+    if would_drop and not args.allow_drop:
+        print(
+            f"\nrefusing to write: {len(would_drop)} track(s) would be dropped.",
+            file=sys.stderr,
+        )
+        for d in would_drop:
+            print(f"  {d}", file=sys.stderr)
+        print(
+            "\nThis is usually the matcher, not archive.org: tracks that share an "
+            "artist name collide.\nRe-run with --allow-drop if the drops are "
+            "really ones you want gone.",
+            file=sys.stderr,
+        )
+        sys.exit(1)
 
     shows = matched + untouched + skipped
     shows.sort(key=lambda s: (s.get("date") or "", s["id"]), reverse=True)

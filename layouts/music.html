@@ -109,21 +109,18 @@
        builds the winamp playlist from the same file). Pre-resolved here so
        static/js/music.js stays a static asset with no hardcoded data. -->
   {{ $songs := slice }}
-  {{ range .Site.Data.shows }}
-    {{ $archive := .archive }}
-    {{ $date := .date }}
-    {{ $cover := .cover | default "/covers/default.jpg" }}
-    {{ range .tracks }}
-      {{ $src := partial "track-url.html" (dict "track" . "archive" $archive) }}
-      {{ if $src }}
-        {{ $songs = $songs | append (dict
-          "title" (.title | default "")
-          "artist" (.artist | default "")
-          "src" $src
-          "img" $cover
-          "date" $date
-        ) }}
-      {{ end }}
+  {{ range partial "player-tracks.html" }}
+    {{ $show := .show }}
+    {{ $track := .track }}
+    {{ $src := partial "track-url.html" (dict "track" $track "archive" $show.archive) }}
+    {{ if $src }}
+      {{ $songs = $songs | append (dict
+        "title" ($track.title | default "")
+        "artist" ($track.artist | default "")
+        "src" $src
+        "img" ($show.cover | default "/covers/default.jpg")
+        "date" ($show.date | default "")
+      ) }}
     {{ end }}
   {{ end }}
   <script>

@@ -1,0 +1,56 @@
+{{/* The list of tracks the rocola and the winamp playlist should offer.
+
+     Returns a slice of dicts: {"show" <show map>, "track" <track map>}.
+     Both players consume this, so they cannot drift apart.
+
+     The exclude list lives in config/_default/hugo.toml under
+     [params.players].exclude, not in data/shows.yml, because
+     sync-archive.py --write rebuilds show.tracks wholesale and would wipe a
+     flag set in the catalogue. Three forms match:
+
+       "El Portal del Tango"                   a venue: every show held there
+       "la-maga/cumple-accidental"             one show
+       "la-maga/cumple-accidental/corpo-porco" one track
+
+     Every key that actually matched is collected, then anything left over in
+     the config list is reported with warnf: a typo must not quietly disable
+     an exclusion. Hugo dedupes identical warnings, so although both players
+     call this partial it still surfaces once per build.
+
+     A track with no playable URL is left in: the callers already drop those
+     via track-url.html, and keeping the decision in one place is what stops
+     the two players from disagreeing. */}}
+
+{{ $skip := site.Params.players.exclude | default slice }}
+{{ $out := slice }}
+{{ $matched := slice }}
+
+{{ range site.Data.shows }}
+  {{ $show := . }}
+  {{ $byVenue := in $skip $show.space }}
+  {{ $byShow := in $skip $show.id }}
+  {{ if $byVenue }}
+    {{ $matched = $matched | append $show.space }}
+  {{ end }}
+  {{ if $byShow }}
+    {{ $matched = $matched | append $show.id }}
+  {{ end }}
+  {{ range .tracks }}
+    {{ $key := printf "%s/%s" $show.id .id }}
+    {{ $byTrack := in $skip $key }}
+    {{ if $byTrack }}
+      {{ $matched = $matched | append $key }}
+    {{ end }}
+    {{ if not (or $byVenue $byShow $byTrack) }}
+      {{ $out = $out | append (dict "show" $show "track" .) }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+{{ range $skip }}
+  {{ if not (in $matched .) }}
+    {{ warnf "players: %q in [params.players].exclude matches no venue, show or track in data/shows.yml" . }}
+  {{ end }}
+{{ end }}
+
+{{ return $out }}
