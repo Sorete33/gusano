@@ -370,6 +370,7 @@
     artist: Sabotage
     title: Sabotage en El Portal del Tango
     mp3: Sabotage%20-%20Portal%20del%20Tango%20(2026-03-13).mp3
+    flac: Sabotage%20-%20Portal%20del%20Tango%20(2026-03-13).flac
     wav: Sabotage%20-%20Portal%20del%20Tango%20(2026-03-13).wav
     duration: 3985
   space: El Portal del Tango
@@ -436,8 +437,8 @@
   - id: nancy
     artist: Nancy
     title: Nancy desde el Tren Sarmiento
-    src: Nancy%20en%20el%20Tren%20Argentino%20(2026-03-02).wav
-    fmt: wav
+    mp3: Nancy%20en%20el%20Tren%20Argentino%20(2026-03-02).mp3
+    flac: Nancy%20en%20el%20Tren%20Argentino%20(2026-03-02).flac
     wav: Nancy%20en%20el%20Tren%20Argentino%20(2026-03-02).wav
     duration: 1276
   space: Trenes Argentinos
@@ -496,22 +497,22 @@
   - id: juanito-alimana
     artist: Juanito Alimaña
     title: Juanito Alimaña en Encuentro por las Artes
-    src: 01%20-%20Juanito%20Alima%C3%B1a%20(2026-02-27).wav
-    fmt: wav
+    mp3: 01%20-%20Juanito%20Alima%C3%B1a%20(2026-02-27).mp3
+    flac: 01%20-%20Juanito%20Alima%C3%B1a%20(2026-02-27).flac
     wav: 01%20-%20Juanito%20Alima%C3%B1a%20(2026-02-27).wav
     duration: 1835
   - id: paprikas-band
     artist: Paprika's Band
     title: Paprika's Band en Encuentro por las Artes
-    src: 02%20-%20Paprika%27s%20Band%20(2026-02-27).wav
-    fmt: wav
+    mp3: 02%20-%20Paprika%27s%20Band%20(2026-02-27).mp3
+    flac: 02%20-%20Paprika%27s%20Band%20(2026-02-27).flac
     wav: 02%20-%20Paprika%27s%20Band%20(2026-02-27).wav
     duration: 1661
   - id: nicolas-muchiut-y-los-monjes-del-dudaismo
     artist: Nicolas Muchiut y los monjes del dudaismo
     title: Nicolas Muchiut y los monjes del dudaismo
-    src: 03%20-%20Nicolas%20Muchiut%20y%20los%20monjes%20del%20dudaismo%20(2026-02-27).wav
-    fmt: wav
+    mp3: 03%20-%20Nicolas%20Muchiut%20y%20los%20monjes%20del%20dudaismo%20(2026-02-27).mp3
+    flac: 03%20-%20Nicolas%20Muchiut%20y%20los%20monjes%20del%20dudaismo%20(2026-02-27).flac
     wav: 03%20-%20Nicolas%20Muchiut%20y%20los%20monjes%20del%20dudaismo%20(2026-02-27).wav
     duration: 2800
   space: Encuentro por las Artes
@@ -1590,6 +1591,7 @@
     artist: Epifanicas
     title: Epifanicas en Garage Avispa
     mp3: Epifanicas%20en%20vivo%20desde%20Avispa%20Garage%2024-10-2025.mp3
+    flac: Epifanicas%20en%20vivo%20desde%20Avispa%20Garage%2024-10-2025.flac
     wav: Epifanicas%20en%20vivo%20desde%20Avispa%20Garage%2024-10-2025.wav
     duration: 3090
   space: Garage Avispa
@@ -1720,8 +1722,8 @@
   - id: armando-alonso
     artist: Armando Alonso
     title: Armando Alonso en Beertonic
-    src: Armando%20Alonso%20-%20Beertonic%20(2025-10-09).wav
-    fmt: wav
+    mp3: Armando%20Alonso%20-%20Beertonic%20(2025-10-09).mp3
+    flac: Armando%20Alonso%20-%20Beertonic%20(2025-10-09).flac
     wav: Armando%20Alonso%20-%20Beertonic%20(2025-10-09).wav
     duration: 3123
   space: Beertonic
