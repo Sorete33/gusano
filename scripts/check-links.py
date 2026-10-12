@@ -5,8 +5,8 @@ Scans data/shows.yml (the single catalogue both players read), the flyer data
 and the recital content pages, then:
   - classifies files.catbox.moe links WITHOUT touching the network when
     possible, by cross-referencing the `duration` recorded on each track
-    (get-durations.py only records one when ffprobe successfully downloads the
-    file, so a catbox track missing a duration is dead);
+    (sync-archive.py only records one when archive.org reports a length for
+     that file, so a catbox track missing a duration is unconfirmed);
   - throttled ranged-GETs the catbox URLs the durations can't cover
     (serialized >= --catbox-interval apart, with a circuit breaker that backs
     off when catbox refuses connections, to avoid rate-limit bans);
@@ -67,8 +67,8 @@ def parse_shows_yml(local_dir):
                 )
             elif track.get("src"):
                 srcs.append(track["src"])
-                # get-durations.py only records a duration when ffprobe
-                # downloads the file, so its absence means "dead or unprobed".
+                # A duration only exists when archive.org reported a
+                # length, so its absence means "dead or never confirmed".
                 if track.get("duration"):
                     durations[track["src"]] = track["duration"]
     return srcs, imgs, durations

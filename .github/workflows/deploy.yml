@@ -26,12 +26,7 @@ jobs:
           python-version: '3.x'
 
       - name: Install Dependencies
-        run: |
-          pip install dropbox PyYAML
-          # get-durations.py probes every track without a duration; the
-          # ubuntu runners do not ship ffprobe.
-          sudo apt-get update
-          sudo apt-get install -y --no-install-recommends ffmpeg
+        run: pip install dropbox PyYAML
 
       - name: Run Dropbox Sync
         env:
@@ -39,9 +34,6 @@ jobs:
           DROPBOX_APP_SECRET: ${{ secrets.DROPBOX_APP_SECRET }}
           DROPBOX_REFRESH_TOKEN: ${{ secrets.DROPBOX_REFRESH_TOKEN }}
         run: python sync_dropbox.py
-
-      - name: Refresh Track Durations
-        run: python3 scripts/get-durations.py
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2

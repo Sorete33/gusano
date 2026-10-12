@@ -507,7 +507,7 @@ def main() -> None:
         "#   mp3      nombre de archivo dentro del item de archive.org;\n"
         "#           se resuelve con `archive` -> https://archive.org/download/<archive>/<mp3>\n"
         "#   flac/wav descarga en alta calidad, mismo criterio\n"
-        "#   duration segundos (scripts/get-durations.py lo rellena)\n"
+        "#   duration segundos (lo rellena sync-archive.py desde la metadata de archive.org)\n"
         "# Si la pista tiene `mp3`, gana sobre `src`.\n"
     )
     body = yaml.safe_dump(

@@ -12,7 +12,7 @@
 #   mp3      nombre de archivo dentro del item de archive.org;
 #           se resuelve con `archive` -> https://archive.org/download/<archive>/<mp3>
 #   flac/wav descarga en alta calidad, mismo criterio
-#   duration segundos (scripts/get-durations.py lo rellena)
+#   duration segundos (lo rellena sync-archive.py desde la metadata de archive.org)
 # Si la pista tiene `mp3`, gana sobre `src`.
 - id: la-maga/cumple-accidental
   date: '2026-09-26'
@@ -499,12 +499,14 @@
     src: 01%20-%20Juanito%20Alima%C3%B1a%20(2026-02-27).wav
     fmt: wav
     wav: 01%20-%20Juanito%20Alima%C3%B1a%20(2026-02-27).wav
+    duration: 1835
   - id: paprikas-band
     artist: Paprika's Band
     title: Paprika's Band en Encuentro por las Artes
     src: 02%20-%20Paprika%27s%20Band%20(2026-02-27).wav
     fmt: wav
     wav: 02%20-%20Paprika%27s%20Band%20(2026-02-27).wav
+    duration: 1661
   - id: nicolas-muchiut-y-los-monjes-del-dudaismo
     artist: Nicolas Muchiut y los monjes del dudaismo
     title: Nicolas Muchiut y los monjes del dudaismo

@@ -159,7 +159,10 @@ def item_tracks(ident: str) -> list[dict]:
 
 
 def parse_len(meta: dict, name: str) -> int | None:
-    """IA writes length as '1854' on originals but '30:54' on mp3 derivatives."""
+    """IA writes length as '1854' or '1854.61' on originals but '30:54' on mp3
+    derivatives. All three forms have to be accepted: a wav-only item has no
+    mp3 to fall back on, so a missed decimal here silently drops the duration.
+    """
     for f in meta.get("files", []):
         if f.get("name") != name:
             continue
@@ -169,6 +172,10 @@ def parse_len(meta: dict, name: str) -> int | None:
         if ":" in v:
             parts = [int(x) for x in v.split(":")]
             return sum(p * 60**i for i, p in enumerate(reversed(parts)))
+        try:
+            return round(float(v))
+        except ValueError:
+            return None
     return None
 
 
