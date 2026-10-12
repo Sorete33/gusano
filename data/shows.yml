@@ -226,6 +226,7 @@
     artist: Discursos
     title: Discursos
     mp3: 01%20-%20Discursos%20-%20Plaza%20de%20la%20Memoria%20(2026-03-24).mp3
+    duration: 3003
   - id: somos-rock
     artist: Somos Rock
     title: Somos rock en la calle 8
@@ -255,6 +256,7 @@
     artist: Discursos
     title: Discursos - Plaza de la Memoria
     mp3: 01%20-%20Discursos%20-%20Plaza%20de%20la%20Memoria%20(2026-03-24).mp3
+    duration: 3003
   - id: somos-rock
     artist: Somos Rock
     title: Somos Rock en la Calle 8 - Plaza de la Memoria
@@ -392,10 +394,12 @@
     artist: Ismael es de verdad
     title: Ismael es de verdad en Sala Biaus
     mp3: 02%20-%20Ismael%20es%20de%20Verdad%20-%20Sala%20Biaus%20(2026-03-06).mp3
+    duration: 2022
   - id: corpo-porco
     artist: Corpo Porco
     title: Corpo Porco en Sala Biaus
     mp3: 03%20-%20Corpo%20Porco%20-%20Sala%20Biaus%20(2026-03-06).mp3
+    duration: 1717
   space: Sala Biaus
   bands:
   - Base
@@ -435,6 +439,7 @@
     src: Nancy%20en%20el%20Tren%20Argentino%20(2026-03-02).wav
     fmt: wav
     wav: Nancy%20en%20el%20Tren%20Argentino%20(2026-03-02).wav
+    duration: 1276
   space: Trenes Argentinos
   bands:
   - Nancy
@@ -506,6 +511,7 @@
     src: 03%20-%20Nicolas%20Muchiut%20y%20los%20monjes%20del%20dudaismo%20(2026-02-27).wav
     fmt: wav
     wav: 03%20-%20Nicolas%20Muchiut%20y%20los%20monjes%20del%20dudaismo%20(2026-02-27).wav
+    duration: 2800
   space: Encuentro por las Artes
   bands:
   - Juanito Alimaña
@@ -616,6 +622,7 @@
     artist: Ele Corr
     title: 02 Ele Corr Interludio - Sala Biaus
     mp3: 02%20Ele%20Corr%20Interludio%20-%20Sala%20Biaus%20(2026-02-14).mp3
+    duration: 1795
   - id: epifanicas-2
     artist: Epifanicas
     title: Epifanicas Bloque 2 - Sala Biaus
@@ -660,10 +667,12 @@
     artist: Memi Mesplet
     title: Daniel Casas y Memi Mesplet - Poema 1
     mp3: Daniel%20Casas%20y%20Memi%20Mesplet%20-%20Poema%201.mp3
+    duration: 272
   - id: memi-mesplet-2
     artist: Memi Mesplet
     title: Daniel Casas y Memi Mesplet - Poema 2
     mp3: Daniel%20Casas%20y%20Memi%20Mesplet%20-%20Poema%202.mp3
+    duration: 432
   space: Encuentro por las Artes
   bands:
   - Cinica
@@ -1416,14 +1425,17 @@
     artist: Sociedad Macabra
     title: Sociedad Macabra en el Festival Consciente
     mp3: 04%20-%20Sociedad%20Macabra%20(2025-11-21).mp3
+    duration: 1050
   - id: inteligencia-accidental
     artist: Inteligencia Accidental
     title: Inteligencia Accidental en el Festival Consciente
     mp3: 05%20-%20Inteligencia%20Accidental%20(2025-11-21).mp3
+    duration: 1839
   - id: forrxs
     artist: Forrxs
     title: Forrxs en el Festival Consciente
     mp3: 06%20-%20Forrxs%20(2025-11-21).mp3
+    duration: 2739
   space: Galpón Beer
   bands:
   - Maquinaria Divina
@@ -1558,6 +1570,7 @@
     artist: Terry Riley
     title: 'Alumnes del Conservatorio Alberto Williams interpretan y Terry Riley a cargo del profesor Pablo Torre '
     mp3: Terry%20Riley%20interpretado%20por%20alumnes%20del%20convervatorio%20Alberto%20Williams%20(2025-10-24).mp3
+    duration: 4249
   space: Conservatorio Alberto Williams
   bands:
   - Ensamble de música contemporánea
@@ -2108,10 +2121,12 @@
     artist: No Soy de Acá
     title: No Soy de Acá en el Festival Consciente
     mp3: 03%20-%20No%20Soy%20De%20Ac%C3%A1%20-%20Festival%20Consciente%20(2025-04-19).mp3
+    duration: 1154
   - id: los-pozoz
     artist: Los Pozoz
     title: Los Pozoz en el Festival Consciente
     mp3: 04%20-%20Los%20Pozoz%20-%20Festival%20Consciente%20(2025-04-19).mp3
+    duration: 1872
   space: El Portal del Tango
   bands:
   - Entrance
@@ -2139,18 +2154,21 @@
     src: 02%20-%20Inteligencia%20Accidental%20-%20Festimaga%201%20(2025-04-04).wav
     fmt: wav
     wav: 02%20-%20Inteligencia%20Accidental%20-%20Festimaga%201%20(2025-04-04).wav
+    duration: 1958
   - id: parasomnia
     artist: Parasomnia
     title: Parasomnia Festimaga 1
     src: 03%20-%20Parasomnia-%20Festimaga%201%20(2025-04-04).wav
     fmt: wav
     wav: 03%20-%20Parasomnia-%20Festimaga%201%20(2025-04-04).wav
+    duration: 2583
   - id: sala-roja
     artist: Sala Roja
     title: Sala Roja Festimaga 1
     src: 04%20-%20Sala%20Roja%20-%20Festimaga%201%20(2025-04-04).wav
     fmt: wav
     wav: 04%20-%20Sala%20Roja%20-%20Festimaga%201%20(2025-04-04).wav
+    duration: 1706
   space: La Maga
   bands:
   - Entrance
