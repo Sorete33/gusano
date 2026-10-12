@@ -38,6 +38,11 @@
     {{ with .mp3 }}
       {{ $url = printf "https://archive.org/download/%s/%s" $show.archive . }}
     {{ end }}
+    {{/* A track whose archive.org item has no mp3 derivative stores the bare
+         filename in `src`; build the full URL for it, the same way `mp3` is. */}}
+    {{ if and $url $show.archive (not (hasPrefix "http" $url)) }}
+      {{ $url = printf "https://archive.org/download/%s/%s" $show.archive $url }}
+    {{ end }}
 
     {{ if $url }}
       {{ $ext := path.Ext $url | strings.TrimPrefix "." | lower }}

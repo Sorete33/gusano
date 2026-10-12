@@ -12,7 +12,7 @@
 #   mp3      nombre de archivo dentro del item de archive.org;
 #           se resuelve con `archive` -> https://archive.org/download/<archive>/<mp3>
 #   flac/wav descarga en alta calidad, mismo criterio
-#   duration segundos (scripts/get-durations.mjs lo rellena)
+#   duration segundos (scripts/get-durations.py lo rellena)
 # Si la pista tiene `mp3`, gana sobre `src`.
 - id: la-maga/cumple-accidental
   date: '2026-09-26'

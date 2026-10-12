@@ -28,10 +28,20 @@ SHOWS = ROOT / "data" / "shows.yml"
 
 
 def track_url(show: dict, track: dict) -> str | None:
-    """The playable URL: the archive.org file if any, else the legacy URL."""
+    """The playable URL: the archive.org file if any, else the legacy URL.
+
+    A track whose item ships no mp3 derivative stores the bare (percent-encoded)
+    filename in `src`, so it needs the archive.org prefix just like `mp3` does.
+    A real legacy URL (catbox, pixeldrain) is returned untouched.
+    """
     if track.get("mp3"):
         return f"https://archive.org/download/{show['archive']}/{track['mp3']}"
-    return track.get("src")
+    src = track.get("src")
+    if not src or src.startswith("http"):
+        return src
+    if show.get("archive"):
+        return f"https://archive.org/download/{show['archive']}/{src}"
+    return None
 
 
 def probe(url: str) -> float | None:
