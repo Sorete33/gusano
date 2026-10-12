@@ -94,7 +94,7 @@ enableA11y = true
 # An entry that matches nothing is reported as a build warning, so a typo
 # cannot silently disable an exclusion.
 exclude = [
-  "El Portal del Tango",
+  "el-portal-del-tango/nueva-musica",
   "FM Urbana",
   "Plaza de la memoria",
 ]
