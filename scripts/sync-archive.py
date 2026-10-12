@@ -273,6 +273,30 @@ def variants(s: str) -> set[str]:
     return out
 
 
+def ranked_variants(*values: str) -> list[str]:
+    """Normalized forms of each value, most specific first, de-duplicated.
+
+    Same forms as variants(), but as an ordered list and across several values
+    at once. Callers look these up in sequence and take the first hit, so the
+    order has to be stable: iterating a set here let Python's per-process hash
+    seed decide which track matched, and a re-run could drop a different one.
+    """
+    out: list[str] = []
+    seen: set[str] = set()
+    for value in values:
+        if not value:
+            continue
+        candidates = [norm(value)]
+        trimmed = re.sub(r"\s+(en|-)\s+.*$", "", value).strip()
+        if trimmed and trimmed != value:
+            candidates.append(norm(trimmed))
+        for key in candidates:
+            if key and key not in seen:
+                seen.add(key)
+                out.append(key)
+    return out
+
+
 def artist_for(base: str, show: dict) -> str:
     """Prefer a band name from the page's `bandas` over the raw filename.
 
@@ -295,7 +319,7 @@ def artist_for(base: str, show: dict) -> str:
     return trimmed or base
 
 
-def build_tracks(show: dict, ident: str, tracks: list[dict]) -> tuple[list[dict], list[str]]:
+def build_tracks(show: dict, ident: str, tracks: list[dict]) -> tuple[list[dict], list[str], list[str]]:
     """Rebuild a show's track list from the item's files, keeping old ids.
 
     Old tracks are matched to files one by one so that the wording already in
@@ -303,14 +327,21 @@ def build_tracks(show: dict, ident: str, tracks: list[dict]) -> tuple[list[dict]
     and reported rather than silently kept.
 
     Returns (tracks, notes, drops). `drops` is what lets the caller refuse a
-    destructive --write: the matcher keys on artist name first, so two tracks
-    sharing an artist collide and one loses its match.
+    destructive --write.
+
+    Matching has to be deterministic: two tracks by the same artist both want
+    the artist key, and resolving that by set iteration order made a re-run
+    drop a different track each time. So a key claimed by more than one track is
+    marked ambiguous and never used - the precise title keys are unambiguous and
+    still find the right track - and candidates are tried in a fixed order.
     """
     old = show.get("tracks") or []
     by_norm: dict[str, dict] = {}
+    shared: set[str] = set()
     for t in old:
         for key in variants(t.get("artist") or "") | variants(t.get("title") or ""):
-            by_norm.setdefault(key, t)
+            if by_norm.setdefault(key, t) is not t:
+                shared.add(key)
 
     notes: list[str] = []
     used_ids: set[str] = set()
@@ -319,10 +350,17 @@ def build_tracks(show: dict, ident: str, tracks: list[dict]) -> tuple[list[dict]
     for t in tracks:
         artist = artist_for(t["base"], show)
         prev = None
-        for key in variants(artist) | variants(t["base"]):
-            if key in by_norm:
-                prev = by_norm[key]
-                break
+        # Most specific first: the whole filename, then the filename without
+        # its venue tail, then the artist. Skipping contested keys and tracks
+        # already taken keeps one old track from being claimed twice.
+        for key in ranked_variants(t["base"], artist):
+            if key in shared or key not in by_norm:
+                continue
+            cand = by_norm[key]
+            if id(cand) in consumed:
+                continue
+            prev = cand
+            break
         if prev is not None:
             consumed.add(id(prev))
         base_id = slug(artist) if prev is None else (prev.get("id") or slug(artist))
@@ -417,9 +455,12 @@ def main() -> None:
         show["tracks"] = new_tracks
         matched.append(show)
 
-    total = sum(len(s.get("tracks") or []) for s in matched)
+    # Only matched shows get rebuilt. Reporting just those made a clean run
+    # look like 15 tracks had gone missing.
+    rebuilt = sum(len(s.get("tracks") or []) for s in matched)
+    kept = sum(len(s.get("tracks") or []) for s in untouched)
     print(f"\nmatched   : {len(matched)}")
-    print(f"tracks    : {total}")
+    print(f"tracks    : {rebuilt} rebuilt + {kept} left as-is = {rebuilt + kept}")
     print(f"unresolved: {len(unresolved)}")
     for sid, reason in unresolved:
         print(f"  {sid}: {reason}")
