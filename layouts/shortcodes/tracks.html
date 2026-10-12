@@ -13,10 +13,7 @@
     {{ $show := . }}
     {{ range $show.tracks }}
       {{ $track := . }}
-      {{ $url := $track.src }}
-      {{ with $track.mp3 }}
-        {{ $url = printf "https://archive.org/download/%s/%s" $show.archive . }}
-      {{ end }}
+      {{ $url := partial "track-url.html" (dict "track" $track "archive" $show.archive) }}
       {{ if $url }}
         {{ $ext := path.Ext $url | strings.TrimPrefix "." | lower }}
         {{ $mime := dict "mp3" "audio/mpeg" "flac" "audio/flac" "wav" "audio/wav" }}
@@ -25,10 +22,12 @@
             <source src="{{ $url }}" type="{{ index $mime $ext | default "audio/mpeg" }}">
             Tu navegador no puede reproducir este audio.
           </audio>
-          {{ $download := $track.flac }}
-          {{ if not $download }}{{ $download = $track.wav }}{{ end }}
-          {{ with $download }}
-            <a class="track-download" href="{{ printf "https://archive.org/download/%s/%s" $show.archive . }}" download>
+          {{ $durl := partial "track-url.html" (dict "track" $track "archive" $show.archive "field" "flac") }}
+          {{ if not $durl }}
+            {{ $durl = partial "track-url.html" (dict "track" $track "archive" $show.archive "field" "wav") }}
+          {{ end }}
+          {{ with $durl }}
+            <a class="track-download" href="{{ . }}" download>
               Descarga en alta calidad
             </a>
           {{ end }}

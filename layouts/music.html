@@ -114,10 +114,7 @@
     {{ $date := .date }}
     {{ $cover := .cover | default "/covers/default.jpg" }}
     {{ range .tracks }}
-      {{ $src := .src }}
-      {{ with .mp3 }}
-        {{ $src = printf "https://archive.org/download/%s/%s" $archive . }}
-      {{ end }}
+      {{ $src := partial "track-url.html" (dict "track" . "archive" $archive) }}
       {{ if $src }}
         {{ $songs = $songs | append (dict
           "title" (.title | default "")

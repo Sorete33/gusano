@@ -1,0 +1,36 @@
+{{/* Resolve one track's URL. Returns "" when the track has no audio.
+
+  Input:  dict "track" <track map> "archive" <item identifier> ["field" <key>]
+  Output: a playable URL
+
+  data/shows.yml stores archive.org files as bare, percent-encoded filenames:
+  in `mp3` for the playable format, and in `flac` / `wav` for the lossless
+  download. A track whose item ships no mp3 derivative keeps such a filename
+  in `src` instead. `src` is also where the pre-archive catbox / pixeldrain
+  links live, and those are already absolute. So: pick the filename (the
+  `field` key wins over `src`), pass absolute URLs through untouched, and
+  prefix anything else with the item URL.
+
+  All four consumers call this so there is exactly one place that builds an
+  archive.org URL.
+
+  NOTE on argument order: Hugo's `hasPrefix` here takes (STRING, PREFIX) -
+  `hasPrefix $url "http"` - the reverse of what the docs state. Getting it
+  backwards makes the guard silently always false, which is how 160 players
+  ended up double-prefixed once. */}}
+
+{{ $field := .field | default "src" }}
+{{ $name := index .track $field | default "" }}
+{{ if eq $field "src" }}
+  {{ with .track.mp3 }}{{ $name = . }}{{ end }}
+{{ end }}
+
+{{ $url := "" }}
+{{ if $name }}
+  {{ if hasPrefix $name "http" }}
+    {{ $url = $name }}
+  {{ else if .archive }}
+    {{ $url = printf "https://archive.org/download/%s/%s" .archive $name }}
+  {{ end }}
+{{ end }}
+{{ return $url }}

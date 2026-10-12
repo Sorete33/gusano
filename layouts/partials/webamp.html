@@ -8,10 +8,7 @@
   {{ $archive := .archive }}
   {{ range .tracks }}
     {{ $t := . }}
-    {{ $src := $t.src }}
-    {{ with $t.mp3 }}
-      {{ $src = printf "https://archive.org/download/%s/%s" $archive . }}
-    {{ end }}
+    {{ $src := partial "track-url.html" (dict "track" $t "archive" $archive) }}
     {{ if $src }}
       {{ $meta := dict "title" $t.title "artist" ($t.artist | default "") }}
       {{ $track := dict "url" $src "metaData" $meta }}
