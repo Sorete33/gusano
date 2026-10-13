@@ -71,9 +71,11 @@ OVERRIDES = {
     "club-la-pampa/epifanicas": "live-2025-11-08-festival-cebada",
     # Three shows whose IA item carries a date the catalogue does not, so the
     # date match finds nothing. Each file's length matches the catalogue's.
+    # The catalogue dates are the correct ones - do not "fix" these towards the
+    # item. Only festimaga3 was wrong, and it is in DATE_FIXES below.
     "la-maga/festimaga3": "live-2025-11-02-festimaga-3",
-    "club-racing/eruca": "live-2026-03-08-eruca-sativa",
-    "casa-fratello/armand": "live-2025-03-27-armando-alonso",
+    "club-racing/eruca": "live-2026-03-08-eruca-sativa",  # catalogue: 2026-05-08
+    "casa-fratello/armand": "live-2025-03-27-armando-alonso",  # catalogue: 2025-04-26
     # Page front matter said 2026-03-20; the show was actually the 19th.
     "beertonic/armand2": "live-2026-03-19-armando-alonso",
     # The page covers "Día 1" of a three day event; dia 2 is a different take.
