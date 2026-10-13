@@ -1,12 +1,18 @@
 #!/bin/bash
 # Converts flyer videos to animated WebP and removes the originals.
 #
-# Why: Neocities' free tier only accepts a whitelist of extensions, and .mp4 is
-# not on it. deploy-to-neocities silently drops unsupported types before
-# uploading, so the .mp4 kept serving from an old supporter-tier upload while any
-# edit to it silently failed to deploy. .webp IS allowed, and animated WebP
-# autoplays and loops in an <img> exactly like the muted inline <video> the
-# gallery used, so the gallery shortcodes need no change.
+# NOT NEEDED for normal operation. The site is a Neocities Supporter account, so
+# .mp4 uploads as .mp4 and deploys fine (deploy.yml passes neocities_supporter:
+# true to the deploy action). This script exists only for the downgrade case.
+#
+# Why it exists: on the free tier, Neocities accepts a whitelist that excludes
+# .mp4, and deploy-to-neocities silently drops unsupported types before
+# uploading. So a .mp4 kept serving from an old supporter-tier upload while any
+# edit to it silently failed to deploy. If the account drops off Supporter, run
+# this to get back onto an extension that works on every tier -- .webp is
+# allowed, and animated WebP autoplays and loops in an <img> exactly like the
+# muted inline <video> the gallery uses, so the gallery shortcodes need no
+# change. See TODO-flyers.md, "Videos".
 #
 # The gallery cards are 300px wide, so 480px is plenty for the card; the
 # lightbox is a little softer than the mp4 was, which is the trade.
