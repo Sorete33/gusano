@@ -25,8 +25,11 @@ Archive funciona a base de donaciones así que si te sobra algún morlaco no dud
 
 <br>
 
-{{/* The Cloudflare Worker from worker-flyers.js. It commits the upload into
-     Sorete33/audiogusano-flyers and dispatches this repo's deploy workflow. */}}
+<!-- The Cloudflare Worker from worker-flyers.js. It commits the upload into
+     Sorete33/audiogusano-flyers and dispatches this repo's deploy workflow.
+     An HTML comment, not a Hugo {{/* */}} one: this is a content file, not a
+     template, so Go template comments render verbatim instead of being
+     stripped. -->
 <center>{{< flyer-upload url="https://audiogusano-flyers.falopa33.workers.dev" >}}</center>
 
 <br>
