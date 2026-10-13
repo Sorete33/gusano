@@ -1,5 +1,5 @@
 ---
-date : 2025-11-28
+date : 2025-11-25
 title : "Los Pozoz y Traumas de la Infancia en la Festimaga"
 weight: -32
 bandas: [Los Pozoz, Traumas de la Infancia]
@@ -13,7 +13,7 @@ heroStyle: background
 
 ![alt text](featured.jpg)
 
-# [Los Pozoz](https://www.instagram.com/los.pozoz/), [Traumas de la Infancia](https://www.instagram.com/traumasdelainfancia81/) + Show reunión de Traumas en el[Rancho la Maga](https://www.instagram.com/rancho.la.maga/) 28-11-25
+# [Los Pozoz](https://www.instagram.com/los.pozoz/), [Traumas de la Infancia](https://www.instagram.com/traumasdelainfancia81/) + Show reunión de Traumas en el[Rancho la Maga](https://www.instagram.com/rancho.la.maga/) 25-11-25
 
 ---
 

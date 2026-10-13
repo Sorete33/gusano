@@ -87,7 +87,13 @@ OVERRIDES = {
 }
 
 # Front matter dates that are known to be off by a day.
-DATE_FIXES = {"beertonic/armand2": "2026-03-19"}
+DATE_FIXES = {
+    "beertonic/armand2": "2026-03-19",
+    # Page front matter and heading said 2025-11-28; the archive filenames all
+    # say 2025-11-25. The item's own `date` field says 2025-11-02, which is
+    # wrong too - the show was the 25th.
+    "la-maga/festimaga3": "2025-11-25",
+}
 
 TRACK_RE = re.compile(r"^(?:\d+\s*[-–]\s*)?(.+?)\s*(?:\((\d{4}-\d{2}-\d{2})\))?$")
 AUDIO_EXT = ("mp3", "flac", "wav")
