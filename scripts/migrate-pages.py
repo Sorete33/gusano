@@ -49,6 +49,11 @@ LINK_RE = re.compile(r"\[([^\]]+)\]\([^)]*\)")
 ANY_URL_RE = re.compile(r"https?://[^\s)\"']+")
 # Hosts that only ever serve audio downloads, so a link to one of them next to
 # a player is always redundant once the shortcode renders it.
+#
+# dropbox.com stays here even though Dropbox is gone from the site: this
+# classifies links in historical recital content, and old pages still carry
+# dropbox audio links that the player now supersedes. Removing it would make the
+# script leave those links in place.
 AUDIO_HOSTS = ("pixeldrain.com", "files.catbox.moe", "archive.org",
                "dropbox.com", "/audio/")
 

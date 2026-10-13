@@ -40,7 +40,7 @@ UA = "Mozilla/5.0 check-links"
 EXTERNAL_HOSTS = ("files.catbox.moe", "audiogusano.neocities.org", "open.spotify.com",
                   "music.youtube.com", "youtu.be", "www.youtube.com", "youtube.com",
                   "bandcamp.com", ".bandcamp.com", "agustinlayus.bandcamp.com",
-                  "www.instagram.com", "dropbox.com", "www.dropbox.com")
+                  "www.instagram.com")
 
 
 def parse_shows_yml(local_dir):

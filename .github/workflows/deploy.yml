@@ -1,15 +1,32 @@
-name: Sync Dropbox and Deploy
+name: Sync Flyers and Deploy
 on:
   push:
     branches:
       - master
-  schedule:
-    - cron: '0 */3 * * *'
+  # Fired by worker-flyers.js right after it commits a flyer to
+  # Sorete33/audiogusano-flyers. This is what makes an upload appear in ~1
+  # minute instead of waiting for the next scheduled run.
+  repository_dispatch:
+    types:
+      - flyer-uploaded
+  # Manual runs are how deletions and re-syncs get done now that there is no
+  # cron to pick them up.
   workflow_dispatch:
+  # Monthly safety net. The dispatch path can fail silently (a dropped Worker
+  # request, a GitHub outage) and nothing would ever notice, so keep one cheap
+  # catch-all run. Set to a 3-hourly cron if you would rather not think about it.
+  schedule:
+    - cron: '17 4 1 * *'
 
 # REQUIRED: Gives the bot permission to update your flyers.yml
 permissions:
   contents: write
+
+# One deploy at a time. Two bands uploading at once should queue up, not race
+# each other into conflicting git pushes.
+concurrency:
+  group: deploy
+  cancel-in-progress: false
 
 jobs:
   build-and-deploy:
@@ -18,7 +35,7 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0 
+          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -26,14 +43,15 @@ jobs:
           python-version: '3.x'
 
       - name: Install Dependencies
-        run: pip install dropbox PyYAML
+        run: pip install PyYAML
 
-      - name: Run Dropbox Sync
+      - name: Run Flyer Sync
         env:
-          DROPBOX_APP_KEY: ${{ secrets.DROPBOX_APP_KEY }}
-          DROPBOX_APP_SECRET: ${{ secrets.DROPBOX_APP_SECRET }}
-          DROPBOX_REFRESH_TOKEN: ${{ secrets.DROPBOX_REFRESH_TOKEN }}
-        run: python sync_dropbox.py
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          FLYERS_REPO: Sorete33/audiogusano-flyers
+          FLYERS_PATH: flyers
+          FLYERS_BRANCH: main
+        run: python sync_github.py
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
@@ -43,9 +61,15 @@ jobs:
 
       - name: Build Hugo
         run: |
-          # We build FIRST while the new Dropbox files are present in the local runner
+          # We build FIRST while the new flyer files are present in the local runner
           hugo --minify --gc --cleanDestinationDir
-          ls -R public/flyers || echo "Flyers directory not found!"
+          ls -R public/images/gallery || echo "Gallery directory not found!"
+
+      # The deploy action silently drops file types it thinks Neocities will
+      # refuse, so a .mp4 in the tree reads as a successful deploy while never
+      # reaching the site. Fail here instead.
+      - name: Check for files Neocities free tier will drop
+        run: python3 scripts/check-neocities-types.py public
 
       - name: Deploy to Neocities
         uses: bcomnes/deploy-to-neocities@v1
@@ -54,18 +78,24 @@ jobs:
           dist_dir: public
           cleanup: false
 
-      # Commit the changes LAST so the deployment isn't delayed by Git operations
+      # Commit the changes LAST so the deployment isn't delayed by git operations.
+      #
+      # NOTE: actions/checkout persists credentials backed by GITHUB_TOKEN, and
+      # GitHub deliberately does not fire workflows from GITHUB_TOKEN pushes.
+      # That is what stops this commit from re-triggering this workflow forever.
+      # If anyone switches the checkout to a PAT, that protection is gone and
+      # this workflow will loop -- keep using the default token.
       - name: Commit and Push changes back to Repo
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          
+
           # Add everything that changed (data, static, and potential Hugo config changes)
           # We don't worry about 'public' because we ignored it in Step 1
-          git add . 
-          
+          git add .
+
           if [ -n "$(git status --porcelain)" ]; then
-            git commit -m "Automated Sync: Update flyers from Dropbox"
+            git commit -m "Automated Sync: Update flyers from GitHub"
             # Use --force-with-lease to avoid conflicts if you happen to push locally at the same time
             git push origin HEAD:master
           else

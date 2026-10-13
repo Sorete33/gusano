@@ -1,0 +1,160 @@
+{{/* Anonymous flyer upload. Posts the file to the Cloudflare Worker in
+     worker-flyers.js, which commits it into Sorete33/audiogusano-flyers and
+     dispatches the deploy workflow.
+
+     Usage:  {{< flyer-upload url="https://<worker>.workers.dev" >}}
+     Optional: label, maxmb. */}}
+{{ $url := .Get "url" }}
+{{ $label := .Get "label" | default "Subí tu flyer!" }}
+{{ $maxMb := .Get "maxmb" | default 8 }}
+{{ $key := printf "flyer-upload-%s" (substr (sha256 $url) 0 8) }}
+
+<div class="flyer-upload" data-key="{{ $key }}">
+  <input type="file" id="{{ $key }}-input" accept="image/*" hidden>
+
+  <button type="button" class="fu-btn" id="{{ $key }}-btn">
+    <span class="fu-icon" aria-hidden="true">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+        <polyline points="17 8 12 3 7 8"/>
+        <line x1="12" y1="3" x2="12" y2="15"/>
+      </svg>
+    </span>
+    <span class="fu-text">{{ $label }}</span>
+    <span class="fu-spinner" aria-hidden="true"></span>
+  </button>
+
+  <p class="fu-status" id="{{ $key }}-status" role="status" aria-live="polite"></p>
+</div>
+
+<style>
+.flyer-upload { display: inline-block; margin: 12px 0; }
+
+.fu-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background-color: #613f75;
+    color: #ff6600;
+    padding: 9px 18px;
+    border-radius: 12px;
+    border: 4px solid transparent;
+    font-family: sans-serif;
+    font-weight: 800;
+    font-size: 15px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), border-color 0.3s ease;
+}
+.fu-btn:hover:not(:disabled) {
+    background-color: #ffdc8f;
+    color: #613f75;
+    transform: translateY(-3px);
+    border-color: #613f75;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+.fu-btn:hover:not(:disabled) .fu-icon { transform: scale(1.1) rotate(-5deg); }
+.fu-btn:active:not(:disabled) { transform: translateY(0); }
+.fu-btn:disabled { opacity: 0.65; cursor: progress; }
+
+.fu-icon { display: block; transition: transform 0.3s ease; }
+.fu-icon svg { display: block; }
+
+/* Hidden by default, swapped in while the upload is in flight. */
+.fu-spinner {
+    display: none;
+    width: 18px; height: 18px;
+    border: 3px solid currentColor;
+    border-right-color: transparent;
+    border-radius: 50%;
+    animation: fu-spin 0.9s linear infinite;
+}
+@keyframes fu-spin { to { transform: rotate(360deg); } }
+
+.flyer-upload.is-uploading .fu-spinner { display: block; }
+.flyer-upload.is-uploading .fu-icon { display: none; }
+
+.fu-status {
+    margin: 10px 0 0;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    max-width: 34ch;
+}
+.fu-status.is-ok { color: #28a745; }
+.fu-status.is-error { color: #dc2626; }
+
+/* Screen readers get the outcome; the spinner alone would be silent. */
+@media (prefers-reduced-motion: reduce) {
+    .fu-spinner { animation-duration: 3s; }
+    .fu-btn { transition: none; }
+}
+</style>
+
+<script>
+(function () {
+  const KEY = "{{ $key }}";
+  const ENDPOINT = "{{ $url }}";
+  const MAX_BYTES = {{ $maxMb }} * 1024 * 1024;
+
+  const root = document.querySelector('.flyer-upload[data-key="' + KEY + '"]');
+  if (!root) return;
+  // The shortcode can render more than once on a page; only wire the first.
+  if (root.dataset.wired) return;
+  root.dataset.wired = "1";
+
+  const input = document.getElementById(KEY + "-input");
+  const btn = document.getElementById(KEY + "-btn");
+  const status = document.getElementById(KEY + "-status");
+
+  const say = (msg, kind) => {
+    status.textContent = msg;
+    status.className = "fu-status" + (kind ? " is-" + kind : "");
+  };
+
+  const setBusy = (busy) => {
+    root.classList.toggle("is-uploading", busy);
+    btn.disabled = busy;
+    // The label lives in the second span so it can stay put while the spinner
+    // replaces the icon.
+    btn.querySelector(".fu-text").textContent = busy ? "Subiendo..." : "{{ $label }}";
+  };
+
+  btn.addEventListener("click", () => input.click());
+
+  input.addEventListener("change", async () => {
+    const file = input.files && input.files[0];
+    if (!file) return;
+
+    if (file.size > MAX_BYTES) {
+      say("Ese archivo pesa " + (file.size / 1048576).toFixed(1) +
+          " MB. El máximo es {{ $maxMb }} MB.", "error");
+      input.value = "";
+      return;
+    }
+
+    setBusy(true);
+    say("Subiendo tu flyer...");
+
+    const body = new FormData();
+    body.append("file", file);
+
+    try {
+      const res = await fetch(ENDPOINT, { method: "POST", body });
+      const data = await res.json().catch(() => ({}));
+
+      if (!res.ok || !data.success) {
+        throw new Error(data.error || ("HTTP " + res.status));
+      }
+
+      say("¡Listo! Ya está en la galería.", "ok");
+      input.value = "";
+    } catch (err) {
+      say("No se pudo subir: " + err.message, "error");
+    } finally {
+      setBusy(false);
+    }
+  });
+})();
+</script>

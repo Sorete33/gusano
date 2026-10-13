@@ -25,7 +25,8 @@ Archive funciona a base de donaciones así que si te sobra algún morlaco no dud
 
 <br>
 
-<center>{{< dropbox url="https://www.dropbox.com/request/UiVB2ys2dVvegLO1pXZm" text="Subí tu flyer!" >}}</center>
+{{/* TODO: set the url to your deployed worker-flyers.js worker before publishing */}}
+<center>{{< flyer-upload url="https://audiogusano-flyers.audiogusano.workers.dev" >}}</center>
 
 <br>
 
