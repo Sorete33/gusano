@@ -17,10 +17,4 @@ heroStyle: background
 
 {{< track show="ruta30/kuelgue" track="homenaje-a-el-kuelgue" >}}
 
----
-
-# JAM
-
-{{< track show="ruta30/kuelgue" track="homenaje-a-el-kuelgue" >}}
-
 [Artículo en Internet Archive](https://archive.org/details/live-2026-01-22-el-kuelgue)

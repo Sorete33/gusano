@@ -2244,22 +2244,3 @@
   page: /recitales/la-maga/festimaga1/
   archive: live-2025-04-04-festi-maga-1
   archive_url: https://archive.org/details/live-2025-04-04-festi-maga-1
-- id: sin-pagina/sin-asignar
-  date: ''
-  title: Pistas sin show asignada (restos de playlist.yml)
-  tracks:
-  - id: juli-y-abril-duo
-    artist: ''
-    title: Juli y Abril Dúo
-    src: https://files.catbox.moe/a8a68s.mp3
-    duration: 3021
-  - id: epifanicas-homenaje-a-amy-winehouse-bloque-1
-    artist: ''
-    title: Epifanicas Homenaje a Amy Winehouse Bloque 1
-    src: https://files.catbox.moe/86ivvi.mp3
-    duration: 1950
-  - id: epifanicas-homenaje-a-amy-winehouse-bloque-2
-    artist: ''
-    title: Epifanicas Homenaje a Amy Winehouse Bloque 2
-    src: https://files.catbox.moe/tgnzth.mp3
-    duration: 1400
