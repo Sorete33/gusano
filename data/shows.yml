@@ -249,28 +249,23 @@
   archive: live-2026-03-24-movilizacin-por-la-memoria-verdad-y-justicia
   archive_url: https://archive.org/details/live-2026-03-24-movilizacin-por-la-memoria-verdad-y-justicia
 - id: fm-urbana/memoria
-  date: '2026-03-24'
+  date: '2026-03-26'
   title: Vigilia por la memoria en la radio FM Urbana 102.1
   tracks:
-  - id: discursos
-    artist: Discursos
-    title: Discursos - Plaza de la Memoria
-    mp3: 01%20-%20Discursos%20-%20Plaza%20de%20la%20Memoria%20(2026-03-24).mp3
-    duration: 3003
-  - id: somos-rock
-    artist: Somos Rock
-    title: Somos Rock en la Calle 8 - Plaza de la Memoria
-    mp3: 02%20-%20Somos%20Rock%20en%20la%20Calle%208%20-%20Plaza%20de%20la%20Memoria%20(2026-03-24).mp3
-    flac: 02%20-%20Somos%20Rock%20en%20la%20Calle%208%20-%20Plaza%20de%20la%20Memoria%20(2026-03-24).flac
-    wav: 02%20-%20Somos%20Rock%20en%20la%20Calle%208%20-%20Plaza%20de%20la%20Memoria%20(2026-03-24).wav
-    duration: 842
-  - id: murgas
-    artist: Murgas
-    title: Murgas - Plaza de la Memoria
-    mp3: 03%20-%20Murgas%20-%20Plaza%20de%20la%20Memoria%20(2026-03-24).mp3
-    flac: 03%20-%20Murgas%20-%20Plaza%20de%20la%20Memoria%20(2026-03-24).flac
-    wav: 03%20-%20Murgas%20-%20Plaza%20de%20la%20Memoria%20(2026-03-24).wav
-    duration: 410
+  - id: musica
+    artist: Rocio Palazzo
+    title: Rocio Palazzo, Nicolás Benaghi e Ignacio Viano
+    mp3: 01%20-%20Rocio%20Palazzo%2C%20Nicolas%20Benagui%20e%20Ignacio%20Viano%20(2026-03-26).mp3
+    flac: 01%20-%20Rocio%20Palazzo%2C%20Nicolas%20Benagui%20e%20Ignacio%20Viano%20(2026-03-26).flac
+    wav: 01%20-%20Rocio%20Palazzo%2C%20Nicolas%20Benagui%20e%20Ignacio%20Viano%20(2026-03-26).wav
+    duration: 960
+  - id: coplas
+    artist: Coplas
+    title: Coplas
+    mp3: 02%20-%20Coplas%20(2026-03-26).mp3
+    flac: 02%20-%20Coplas%20(2026-03-26).flac
+    wav: 02%20-%20Coplas%20(2026-03-26).wav
+    duration: 1130
   space: FM Urbana
   bands:
   - Rocio Palazzo
@@ -278,8 +273,8 @@
   - Ignacio Viano
   cover: /recitales/fm-urbana/memoria/featured.jpg
   page: /recitales/fm-urbana/memoria/
-  archive: live-2026-03-24-movilizacin-por-la-memoria-verdad-y-justicia
-  archive_url: https://archive.org/details/live-2026-03-24-movilizacin-por-la-memoria-verdad-y-justicia
+  archive: live-2026-03-26-vigilia-por-la-memoria
+  archive_url: https://archive.org/details/live-2026-03-26-vigilia-por-la-memoria
 - id: sala-biaus/la-reja-fest
   date: '2026-03-21'
   title: Cínica y Drama en La Reja Estudio Fest

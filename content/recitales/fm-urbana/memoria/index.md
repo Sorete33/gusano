@@ -1,5 +1,5 @@
 ---
-date : 2026-03-24
+date : 2026-03-26
 title : "Vigilia por la memoria en la radio FM Urbana 102.1"
 weight: -65
 bandas: [Rocio Palazzo, Nicolás Benaghi, Ignacio Viano]
@@ -18,19 +18,12 @@ heroStyle: background
 
 # Rocio Palazzo, Nicolás Benaghi e Ignacio Viano
 
-{{< track show="fm-urbana/memoria" track="discursos" >}}
-
-{{< track show="fm-urbana/memoria" track="somos-rock" >}}
-
-{{< track show="fm-urbana/memoria" track="murgas" >}}
-
+{{< track show="fm-urbana/memoria" track="musica" >}}
 
 ---
 
 # Coplas
 
-{{<audio src="https://files.catbox.moe/v0obn3.mp3">}}
+{{< track show="fm-urbana/memoria" track="coplas" >}}
 
-[Streaming en formato WAV](https://pixeldrain.com/u/BTcBxvG7)
-
-[Artículo en Internet Archive](https://archive.org/details/live-2026-03-24-movilizacin-por-la-memoria-verdad-y-justicia)
+[Artículo en Internet Archive](https://archive.org/details/live-2026-03-26-vigilia-por-la-memoria)
