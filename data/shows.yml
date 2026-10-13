@@ -1,5 +1,5 @@
 # Catálogo único de recitales.
-# Generado por scripts/bootstrap-shows.py + scripts/sync-archive.py.
+# Mantenido a mano y con scripts/sync-archive.py.
 #
 # Consumido por:
 #   layouts/partials/webamp.html   (winamp de la home)
@@ -7,7 +7,7 @@
 #   layouts/shortcodes/track.html  (players en las páginas de recital)
 #
 # Por pista:
-#   id       slug estable; es la clave en data/show-durations.json
+#   id       slug estable; es la clave que usan los {{< track >}} del contenido
 #   src      URL completa (catbox / pixeldrain legacy)
 #   mp3      nombre de archivo dentro del item de archive.org;
 #           se resuelve con `archive` -> https://archive.org/download/<archive>/<mp3>
