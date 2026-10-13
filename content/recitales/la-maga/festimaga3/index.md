@@ -35,3 +35,5 @@ heroStyle: background
 # Show reunión de Traumas con la formación guitarra + coros Yanqui, bajo, Nicanor, batería, Chiquilin Sanchez y voz, Simón (el cantor) interpretando su primer material grabado [Desahogo](https://traumasdelainfancia.bandcamp.com/album/desahogo)
 
 {{< track show="la-maga/festimaga3" track="desahogo" >}}
+
+[Artículo en Internet Archive](https://archive.org/details/live-2025-11-02-festimaga-3)

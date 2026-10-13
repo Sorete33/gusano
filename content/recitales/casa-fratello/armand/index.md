@@ -14,3 +14,5 @@ heroStyle: background
 # Armando Alonso en vivo desde Casa Fratello 26-4-25
 
 {{< track show="casa-fratello/armand" track="armando-alonso" >}}
+
+[Artículo en Internet Archive](https://archive.org/details/live-2025-03-27-armando-alonso)

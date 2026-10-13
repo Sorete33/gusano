@@ -183,15 +183,19 @@
   title: Eruca Sativa en el Club Racing
   tracks:
   - id: eruca
-    artist: Eruca
+    artist: Eruca Sativa
     title: Eruca Sativa en el Club Racing
-    src: https://files.catbox.moe/f9iilj.mp3
+    mp3: Eruca%20Sativa%20-%20Club%20Racing%20(2026-03-08).mp3
+    flac: Eruca%20Sativa%20-%20Club%20Racing%20(2026-03-08).flac
+    wav: Eruca%20Sativa%20-%20Club%20Racing%20(2026-03-08).wav
     duration: 3758
   space: Club Racing
   bands:
   - Eruca Sativa
   cover: /recitales/club-racing/eruca/featured.webp
   page: /recitales/club-racing/eruca/
+  archive: live-2026-03-08-eruca-sativa
+  archive_url: https://archive.org/details/live-2026-03-08-eruca-sativa
 - id: sala-belgrano/epi-blues
   date: '2026-03-27'
   title: Epifanicas y Pueblues en Sala Belgrano
@@ -218,6 +222,33 @@
   page: /recitales/sala-belgrano/epi-blues/
   archive: live-2026-03-27-pueblues-epifanicas
   archive_url: https://archive.org/details/live-2026-03-27-pueblues-epifanicas
+- id: fm-urbana/memoria
+  date: '2026-03-26'
+  title: Vigilia por la memoria en la radio FM Urbana 102.1
+  tracks:
+  - id: musica
+    artist: Rocio Palazzo
+    title: Rocio Palazzo, Nicolás Benaghi e Ignacio Viano
+    mp3: 01%20-%20Rocio%20Palazzo%2C%20Nicolas%20Benagui%20e%20Ignacio%20Viano%20(2026-03-26).mp3
+    flac: 01%20-%20Rocio%20Palazzo%2C%20Nicolas%20Benagui%20e%20Ignacio%20Viano%20(2026-03-26).flac
+    wav: 01%20-%20Rocio%20Palazzo%2C%20Nicolas%20Benagui%20e%20Ignacio%20Viano%20(2026-03-26).wav
+    duration: 960
+  - id: coplas
+    artist: Coplas
+    title: Coplas
+    mp3: 02%20-%20Coplas%20(2026-03-26).mp3
+    flac: 02%20-%20Coplas%20(2026-03-26).flac
+    wav: 02%20-%20Coplas%20(2026-03-26).wav
+    duration: 1130
+  space: FM Urbana
+  bands:
+  - Rocio Palazzo
+  - Nicolás Benaghi
+  - Ignacio Viano
+  cover: /recitales/fm-urbana/memoria/featured.jpg
+  page: /recitales/fm-urbana/memoria/
+  archive: live-2026-03-26-vigilia-por-la-memoria
+  archive_url: https://archive.org/details/live-2026-03-26-vigilia-por-la-memoria
 - id: plaza-de-la-memoria/50años
   date: '2026-03-24'
   title: Movilización por la memoria, la verdad y la justicia
@@ -248,33 +279,6 @@
   page: /recitales/plaza-de-la-memoria/50años/
   archive: live-2026-03-24-movilizacin-por-la-memoria-verdad-y-justicia
   archive_url: https://archive.org/details/live-2026-03-24-movilizacin-por-la-memoria-verdad-y-justicia
-- id: fm-urbana/memoria
-  date: '2026-03-26'
-  title: Vigilia por la memoria en la radio FM Urbana 102.1
-  tracks:
-  - id: musica
-    artist: Rocio Palazzo
-    title: Rocio Palazzo, Nicolás Benaghi e Ignacio Viano
-    mp3: 01%20-%20Rocio%20Palazzo%2C%20Nicolas%20Benagui%20e%20Ignacio%20Viano%20(2026-03-26).mp3
-    flac: 01%20-%20Rocio%20Palazzo%2C%20Nicolas%20Benagui%20e%20Ignacio%20Viano%20(2026-03-26).flac
-    wav: 01%20-%20Rocio%20Palazzo%2C%20Nicolas%20Benagui%20e%20Ignacio%20Viano%20(2026-03-26).wav
-    duration: 960
-  - id: coplas
-    artist: Coplas
-    title: Coplas
-    mp3: 02%20-%20Coplas%20(2026-03-26).mp3
-    flac: 02%20-%20Coplas%20(2026-03-26).flac
-    wav: 02%20-%20Coplas%20(2026-03-26).wav
-    duration: 1130
-  space: FM Urbana
-  bands:
-  - Rocio Palazzo
-  - Nicolás Benaghi
-  - Ignacio Viano
-  cover: /recitales/fm-urbana/memoria/featured.jpg
-  page: /recitales/fm-urbana/memoria/
-  archive: live-2026-03-26-vigilia-por-la-memoria
-  archive_url: https://archive.org/details/live-2026-03-26-vigilia-por-la-memoria
 - id: sala-biaus/la-reja-fest
   date: '2026-03-21'
   title: Cínica y Drama en La Reja Estudio Fest
@@ -1192,6 +1196,72 @@
   page: /recitales/mad-monky/
   archive: live-2025-12-06-mad-monkey-fest
   archive_url: https://archive.org/details/live-2025-12-06-mad-monkey-fest
+- id: el-portal-del-tango/nueva-musica-dia-2
+  date: '2025-12-03'
+  title: Muestra fin de ciclo de la NUEVA (escuela de) de MÚSICA en El Portal Del Tango - Día 2
+  tracks:
+  - id: juani-carlos-mora
+    artist: Juani Carlos Mora
+    title: Juani Carlos Mora
+    mp3: 01%20-%20Juani%20Carlos%20Mora.mp3
+    flac: 01%20-%20Juani%20Carlos%20Mora.flac
+    wav: 01%20-%20Juani%20Carlos%20Mora.wav
+    duration: 541
+  - id: mateo-ciro
+    artist: Mateo Ciro
+    title: Mateo Ciro
+    mp3: 02%20-%20Mateo%20Ciro.mp3
+    flac: 02%20-%20Mateo%20Ciro.flac
+    wav: 02%20-%20Mateo%20Ciro.wav
+    duration: 736
+  - id: valen-max
+    artist: Valen Max
+    title: Valen Max
+    mp3: 03%20-%20Valen%20Max.mp3
+    flac: 03%20-%20Valen%20Max.flac
+    wav: 03%20-%20Valen%20Max.wav
+    duration: 1550
+  - id: belen
+    artist: Belen
+    title: Belen
+    mp3: 04%20-%20Belen.mp3
+    flac: 04%20-%20Belen.flac
+    wav: 04%20-%20Belen.wav
+    duration: 219
+  - id: enzo-mimi-philip-gena-valen
+    artist: Enzo Mimi Philip Gena Valen
+    title: Enzo Mimi Philip Gena Valen
+    mp3: 05%20-%20Enzo%20Mimi%20Philip%20Gena%20Valen.mp3
+    flac: 05%20-%20Enzo%20Mimi%20Philip%20Gena%20Valen.flac
+    wav: 05%20-%20Enzo%20Mimi%20Philip%20Gena%20Valen.wav
+    duration: 609
+  - id: mora-galo-mati-gena
+    artist: Mora Galo Mati Gena
+    title: Mora Galo Mati Gena
+    mp3: 06%20-%20Mora%20Galo%20Mati%20Gena.mp3
+    flac: 06%20-%20Mora%20Galo%20Mati%20Gena.flac
+    wav: 06%20-%20Mora%20Galo%20Mati%20Gena.wav
+    duration: 794
+  - id: benja
+    artist: Benja
+    title: Benja
+    mp3: 07%20-%20Benja.mp3
+    flac: 07%20-%20Benja.flac
+    wav: 07%20-%20Benja.wav
+    duration: 1457
+  space: El Portal del Tango
+  bands:
+  - Juani Carlos Mora
+  - Mateo Ciro
+  - Valen Max
+  - Belen
+  - Enzo Mimi Philip Gena Valen
+  - Mora Galo Mati Gena
+  - Benja
+  cover: /recitales/el-portal-del-tango/nueva-musica/featured.jpg
+  page: /recitales/el-portal-del-tango/nueva-musica/
+  archive: live-2025-12-03-muestra-de-fin-de-ao-dia-2
+  archive_url: https://archive.org/details/live-2025-12-03-muestra-de-fin-de-ao-dia-2
 - id: el-portal-del-tango/nueva-musica
   date: '2025-12-03'
   title: Muestra fin de ciclo de la NUEVA (escuela de) MÚSICA en El Portal Del Tango
@@ -1308,72 +1378,6 @@
   page: /recitales/el-portal-del-tango/nueva-musica/
   archive: live-2025-12-03-muestra-de-fin-de-ao-dia-1
   archive_url: https://archive.org/details/live-2025-12-03-muestra-de-fin-de-ao-dia-1
-- id: el-portal-del-tango/nueva-musica-dia-2
-  date: '2025-12-03'
-  title: Muestra fin de ciclo de la NUEVA (escuela de) de MÚSICA en El Portal Del Tango - Día 2
-  tracks:
-  - id: juani-carlos-mora
-    artist: Juani Carlos Mora
-    title: Juani Carlos Mora
-    mp3: 01%20-%20Juani%20Carlos%20Mora.mp3
-    flac: 01%20-%20Juani%20Carlos%20Mora.flac
-    wav: 01%20-%20Juani%20Carlos%20Mora.wav
-    duration: 541
-  - id: mateo-ciro
-    artist: Mateo Ciro
-    title: Mateo Ciro
-    mp3: 02%20-%20Mateo%20Ciro.mp3
-    flac: 02%20-%20Mateo%20Ciro.flac
-    wav: 02%20-%20Mateo%20Ciro.wav
-    duration: 736
-  - id: valen-max
-    artist: Valen Max
-    title: Valen Max
-    mp3: 03%20-%20Valen%20Max.mp3
-    flac: 03%20-%20Valen%20Max.flac
-    wav: 03%20-%20Valen%20Max.wav
-    duration: 1550
-  - id: belen
-    artist: Belen
-    title: Belen
-    mp3: 04%20-%20Belen.mp3
-    flac: 04%20-%20Belen.flac
-    wav: 04%20-%20Belen.wav
-    duration: 219
-  - id: enzo-mimi-philip-gena-valen
-    artist: Enzo Mimi Philip Gena Valen
-    title: Enzo Mimi Philip Gena Valen
-    mp3: 05%20-%20Enzo%20Mimi%20Philip%20Gena%20Valen.mp3
-    flac: 05%20-%20Enzo%20Mimi%20Philip%20Gena%20Valen.flac
-    wav: 05%20-%20Enzo%20Mimi%20Philip%20Gena%20Valen.wav
-    duration: 609
-  - id: mora-galo-mati-gena
-    artist: Mora Galo Mati Gena
-    title: Mora Galo Mati Gena
-    mp3: 06%20-%20Mora%20Galo%20Mati%20Gena.mp3
-    flac: 06%20-%20Mora%20Galo%20Mati%20Gena.flac
-    wav: 06%20-%20Mora%20Galo%20Mati%20Gena.wav
-    duration: 794
-  - id: benja
-    artist: Benja
-    title: Benja
-    mp3: 07%20-%20Benja.mp3
-    flac: 07%20-%20Benja.flac
-    wav: 07%20-%20Benja.wav
-    duration: 1457
-  space: El Portal del Tango
-  bands:
-  - Juani Carlos Mora
-  - Mateo Ciro
-  - Valen Max
-  - Belen
-  - Enzo Mimi Philip Gena Valen
-  - Mora Galo Mati Gena
-  - Benja
-  cover: /recitales/el-portal-del-tango/nueva-musica/featured.jpg
-  page: /recitales/el-portal-del-tango/nueva-musica/
-  archive: live-2025-12-03-muestra-de-fin-de-ao-dia-2
-  archive_url: https://archive.org/details/live-2025-12-03-muestra-de-fin-de-ao-dia-2
 - id: el-portal-del-tango/festi-distor
   date: '2025-11-29'
   title: 'Festival Distorsivo + Pintura en vivo en El Portal del Tango '
@@ -1408,17 +1412,23 @@
   - id: los-pozoz
     artist: Los Pozoz
     title: Los Pozoz en la Festimaga 3
-    src: https://files.catbox.moe/f0vb1d.mp3
+    mp3: 01%20-%20Los%20Pozoz%20(extracto)%20-%20Festimaga%203%20(2025-11-25).mp3
+    flac: 01%20-%20Los%20Pozoz%20(extracto)%20-%20Festimaga%203%20(2025-11-25).flac
+    wav: 01%20-%20Los%20Pozoz%20(extracto)%20-%20Festimaga%203%20(2025-11-25).wav
     duration: 347
   - id: traumas-de-la-infancia
     artist: Traumas de la Infancia
     title: Traumas de la Infancia en la Festimaga 3
-    src: https://files.catbox.moe/s8qfqf.mp3
+    mp3: 02%20-%20Traumas%20de%20la%20Infancia%20-%20Festimaga%203%20(2025-11-25).mp3
+    flac: 02%20-%20Traumas%20de%20la%20Infancia%20-%20Festimaga%203%20(2025-11-25).flac
+    wav: 02%20-%20Traumas%20de%20la%20Infancia%20-%20Festimaga%203%20(2025-11-25).wav
     duration: 990
   - id: desahogo
-    artist: Desahogo
+    artist: Traumas de la Infancia Reunión
     title: Reunión de Traumas interpretando Desahogo en la Festimaga 3
-    src: https://files.catbox.moe/a08fm2.mp3
+    mp3: 03%20-%20Traumas%20de%20la%20Infancia%20Reuni%C3%B3n%20-%20Festimaga%203%20(2025-11-25).mp3
+    flac: 03%20-%20Traumas%20de%20la%20Infancia%20Reuni%C3%B3n%20-%20Festimaga%203%20(2025-11-25).flac
+    wav: 03%20-%20Traumas%20de%20la%20Infancia%20Reuni%C3%B3n%20-%20Festimaga%203%20(2025-11-25).wav
     duration: 932
   space: La Maga
   bands:
@@ -1426,6 +1436,8 @@
   - Traumas de la Infancia
   cover: /recitales/la-maga/festimaga3/featured.jpg
   page: /recitales/la-maga/festimaga3/
+  archive: live-2025-11-02-festimaga-3
+  archive_url: https://archive.org/details/live-2025-11-02-festimaga-3
 - id: beertonic/cumple
   date: '2025-11-23'
   title: Guada y Abril dúo, Catango Trio y Paprika's Band en el Aniversario de Beertonic
@@ -1798,7 +1810,7 @@
   archive_url: https://archive.org/details/live-2025-10-09-armando-alonso
 - id: rincon/janedoe
   date: '2025-10-04'
-  title: Jane Doe en Ricón
+  title: Jane Doe en Rincón
   tracks:
   - id: jane-doe
     artist: Jane Doe
@@ -2155,7 +2167,9 @@
   - id: armando-alonso
     artist: Armando Alonso
     title: Armando Alonso en Casa Fratello
-    src: https://files.catbox.moe/4icsi1.mp3
+    mp3: Armando%20Alonso%20-%20Pizzeria%20Fratello%20(2025-03-27).mp3
+    flac: Armando%20Alonso%20-%20Pizzeria%20Fratello%20(2025-03-27).flac
+    wav: Armando%20Alonso%20-%20Pizzeria%20Fratello%20(2025-03-27).wav
     duration: 3567
   space: Casa Fratello
   bands:
@@ -2164,6 +2178,8 @@
   - Agustín Barbieri
   cover: /recitales/casa-fratello/armand/featured.png
   page: /recitales/casa-fratello/armand/
+  archive: live-2025-03-27-armando-alonso
+  archive_url: https://archive.org/details/live-2025-03-27-armando-alonso
 - id: el-portal-del-tango/festi-consciente
   date: '2025-04-19'
   title: Primaleon, No Soy de Acá, Entrance y Loz Pozoz en el Festival Consciente a beneficio del CAAC en El Portal del Tango

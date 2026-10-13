@@ -69,6 +69,11 @@ OVERRIDES = {
     # The page records a 2025-11-08 show at Club La Pampa whose IA item is
     # labelled "Festival Cebada" with venue "Festival Cebada".
     "club-la-pampa/epifanicas": "live-2025-11-08-festival-cebada",
+    # Three shows whose IA item carries a date the catalogue does not, so the
+    # date match finds nothing. Each file's length matches the catalogue's.
+    "la-maga/festimaga3": "live-2025-11-02-festimaga-3",
+    "club-racing/eruca": "live-2026-03-08-eruca-sativa",
+    "casa-fratello/armand": "live-2025-03-27-armando-alonso",
     # Page front matter said 2026-03-20; the show was actually the 19th.
     "beertonic/armand2": "live-2026-03-19-armando-alonso",
     # The page covers "Día 1" of a three day event; dia 2 is a different take.
@@ -374,8 +379,13 @@ def build_tracks(show: dict, ident: str, tracks: list[dict]) -> tuple[list[dict]
         label = t["base"]
         if prev and prev.get("title"):
             label = prev["title"]  # keep the page's / player's own wording
+        # Same for the artist. Re-deriving it from the filename both loses the
+        # distinction between two tracks by one band - "Traumas de la Infancia"
+        # and "Traumas de la Infancia Reunión" both reduce to the former - and
+        # makes the next run unable to tell them apart again.
+        entry_artist = (prev.get("artist") or artist) if prev is not None else artist
 
-        entry = {"id": tid, "artist": artist, "title": label}
+        entry = {"id": tid, "artist": entry_artist, "title": label}
         if t["fmt"] == "mp3":
             entry["mp3"] = t["file"]
         else:

@@ -1,6 +1,6 @@
 ---
 date : '2025-10-04'
-title : "Jane Doe en Ricón"
+title : "Jane Doe en Rincón"
 weight: -16
 bandas: [Jane Doe]
 espacios: [Rincón]
