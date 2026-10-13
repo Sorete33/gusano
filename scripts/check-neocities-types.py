@@ -14,8 +14,15 @@ ALLOWED below is the deploy action's own `supportedFiletypes` set (extracted
 from dist/index.cjs), so this script predicts what will actually be uploaded
 rather than what the docs claim.
 
-Usage: python3 scripts/check-neocities-types.py [dir]   (default: public)
-Exit 0 if clean, 1 if any unsupported file would be silently dropped.
+--supporter turns the failure into a report. A Supporter account has no upload
+whitelist on the Neocities side, and deploy.yml passes neocities_supporter:true
+so the action stops filtering too, meaning these files DO reach the site. They
+are still worth reporting, but failing the build over them would just be wrong.
+The check stays around for the day the account downgrades.
+
+Usage: python3 scripts/check-neocities-types.py [dir] [--supporter]
+Exit 0 if clean (or, with --supporter, even with supporter-tier files present),
+1 if a file would be silently dropped on the free tier.
 """
 import os
 import sys
@@ -78,14 +85,21 @@ def scan(root):
 
 
 def main():
-    root = sys.argv[1] if len(sys.argv) > 1 else "public"
+    args = sys.argv[1:]
+    supporter = "--supporter" in args
+    dirs = [a for a in args if not a.startswith("-")]
+    root = dirs[0] if dirs else "public"
+
     if not os.path.isdir(root):
         print(f"Not a directory: {root}, skipping")
         return 0
 
     offenders, frozen = scan(root)
 
-    if frozen:
+    # On Supporter the deploy action uploads .wsz like anything else, so the
+    # "frozen forever" warning is no longer true. Silence it rather than
+    # printing a claim that is wrong.
+    if frozen and not supporter:
         print(f"ℹ️  {len(frozen)} frozen file(s) in {root}/ are live on Neocities but")
         print("   can no longer be updated (deploy-to-neocities drops them):")
         for path, ext, size in sorted(frozen, key=lambda o: -o[2]):
@@ -99,9 +113,14 @@ def main():
     supporters = [o for o in offenders if o[1] in SUPPORTER_ONLY]
     others = [o for o in offenders if o[1] not in SUPPORTER_ONLY]
 
-    print(f"\n❌ {len(offenders)} file(s) in {root}/ will NOT be uploaded to Neocities.")
-    print("   deploy-to-neocities filters these out before uploading, so the deploy")
-    print("   would succeed and the files would silently never appear on the site.\n")
+    if supporter:
+        print(f"\nℹ️  {len(offenders)} file(s) in {root}/ are outside the free-tier")
+        print("   whitelist but the account is Supporter, so these deploy normally.")
+        print("   Kept visible so an accidental downgrade is not a surprise.\n")
+    else:
+        print(f"\n❌ {len(offenders)} file(s) in {root}/ will NOT be uploaded to Neocities.")
+        print("   deploy-to-neocities filters these out before uploading, so the deploy")
+        print("   would succeed and the files would silently never appear on the site.\n")
 
     if supporters:
         print("   Supporter-tier-only media (these are the ones that bite):")
@@ -116,6 +135,10 @@ def main():
         if len(others) > 40:
             print(f"     ...and {len(others) - 40} more")
         print()
+
+    if supporter:
+        print("   See https://neocities.org/site_files/allowed_types\n")
+        return 0
 
     print("   Fix by converting to an allowed type (see")
     print("   scripts/convert-flyer-videos.sh for the video case), removing the file,")

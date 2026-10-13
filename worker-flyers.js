@@ -18,13 +18,25 @@
  *   {{< flyer-upload url="https://<worker>.<subdomain>.workers.dev" >}}
  */
 
-// Same list as sync_github.py / scripts/check-neocities-types.py. Neocities free
-// tier refuses these on upload, and the deploy action silently filters them out
-// before it ever contacts Neocities, so reject them here where it is visible.
-const ALLOWED_EXTENSIONS = ['.jpg', '.jpeg', '.png', '.gif', '.webp', '.avif', '.svg'];
+// The site is a Neocities Supporter account, which has no upload whitelist, and
+// deploy.yml passes neocities_supporter:true so the deploy action stops
+// filtering locally too. .mp4 therefore uploads as .mp4 -- no conversion, and
+// gallery.html already renders it as a <video>. If the account ever downgrades,
+// revert these to the image-only list and check-neocities-types.py will start
+// failing the build again on its own.
+const IMAGE_EXTENSIONS = ['.jpg', '.jpeg', '.png', '.gif', '.webp', '.avif', '.svg'];
+const VIDEO_EXTENSIONS = ['.mp4'];
+const ALLOWED_EXTENSIONS = [...IMAGE_EXTENSIONS, ...VIDEO_EXTENSIONS];
 
 // Anything bigger is a mistake, and the Workers isolate would rather not know.
-const MAX_BYTES = 8 * 1024 * 1024;
+// The video ceiling is a MEMORY limit, not a policy one. Holding one upload
+// costs roughly 5-7x its size all at once -- the FormData copy, arrayBuffer(),
+// the latin1 string, the base64 string, the JSON body and the fetch buffer --
+// against a 128 MB isolate, so ~15 MB is where it starts dying. 10 MB leaves
+// headroom. Raising MAX_VIDEO_BYTES much past that risks a memory-exceeded
+// error on a big clip rather than a clean rejection.
+const MAX_IMAGE_BYTES = 8 * 1024 * 1024;
+const MAX_VIDEO_BYTES = 10 * 1024 * 1024;
 
 // Dispatch event type the deploy workflow listens for.
 const DISPATCH_EVENT = 'flyer-uploaded';
@@ -187,13 +199,18 @@ export default {
 
     if (!ALLOWED_EXTENSIONS.includes(ext)) {
       return json({
-        error: `Subí una imagen. "${ext || '?'}" no se puede publicar en Neocities.`,
+        error: `Subí una imagen o un mp4. "${ext || '?'}" no se puede publicar.`,
         allowed: ALLOWED_EXTENSIONS,
       }, 415, env);
     }
 
-    if (file.size > MAX_BYTES) {
-      return json({ error: 'El archivo es demasiado grande (máx 8 MB).' }, 413, env);
+    const isVideo = VIDEO_EXTENSIONS.includes(ext);
+    const maxBytes = isVideo ? MAX_VIDEO_BYTES : MAX_IMAGE_BYTES;
+    if (file.size > maxBytes) {
+      const maxMb = Math.round(maxBytes / 1024 / 1024);
+      return json({
+        error: `El archivo es demasiado grande (máx ${maxMb} MB${isVideo ? ' para un video' : ''}).`,
+      }, 413, env);
     }
 
     const slug = slugify(originalName);

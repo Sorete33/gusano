@@ -3,14 +3,15 @@
      dispatches the deploy workflow.
 
      Usage:  {{< flyer-upload url="https://<worker>.workers.dev" >}}
-     Optional: label, maxmb. */}}
+     Optional: label, maxmb, maxvidmb. */}}
 {{ $url := .Get "url" }}
 {{ $label := .Get "label" | default "Subí tu flyer!" }}
 {{ $maxMb := .Get "maxmb" | default 8 }}
+{{ $maxVidMb := .Get "maxvidmb" | default 10 }}
 {{ $key := printf "flyer-upload-%s" (substr (sha256 $url) 0 8) }}
 
 <div class="flyer-upload" data-key="{{ $key }}">
-  <input type="file" id="{{ $key }}-input" accept="image/*" hidden>
+  <input type="file" id="{{ $key }}-input" accept="image/*,video/mp4,.mp4" hidden>
 
   <button type="button" class="fu-btn" id="{{ $key }}-btn">
     {{/* Same icon the old dropbox.html button used. alt="" because the button
@@ -109,6 +110,7 @@
   const KEY = "{{ $key }}";
   const ENDPOINT = "{{ $url }}";
   const MAX_BYTES = {{ $maxMb }} * 1024 * 1024;
+  const MAX_VIDEO_BYTES = {{ $maxVidMb }} * 1024 * 1024;
 
   const root = document.querySelector('.flyer-upload[data-key="' + KEY + '"]');
   if (!root) return;
@@ -139,9 +141,15 @@
     const file = input.files && input.files[0];
     if (!file) return;
 
-    if (file.size > MAX_BYTES) {
+    // Videos get their own, larger allowance. The worker enforces the same two
+    // limits; this copy just avoids burning an upload on a guaranteed 413.
+    const isVideo = /\.mp4$/i.test(file.name);
+    const maxBytes = isVideo ? MAX_VIDEO_BYTES : MAX_BYTES;
+    const maxMb = Math.round(maxBytes / 1048576);
+
+    if (file.size > maxBytes) {
       say("Ese archivo pesa " + (file.size / 1048576).toFixed(1) +
-          " MB. El máximo es {{ $maxMb }} MB.", "error");
+          " MB. El máximo es " + maxMb + " MB.", "error");
       input.value = "";
       return;
     }

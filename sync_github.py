@@ -30,11 +30,11 @@ DATA_FILE = "data/flyers.yml"
 
 GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN") or os.environ.get("GH_TOKEN")
 
-# Only extensions Neocities accepts on the free tier. Everything else is a
-# silent no-op at deploy time (the deploy action filters unsupported types out
-# before uploading), so refusing it here means a rejected upload is visible
-# instead of vanishing. Keep in sync with scripts/check-neocities-types.py.
-ALLOWED_EXTENSIONS = {".jpg", ".jpeg", ".png", ".gif", ".webp", ".avif", ".svg"}
+# Extensions worth pulling into the gallery. The site is a Neocities Supporter
+# account, which has no upload whitelist and deploys with
+# neocities_supporter:true, so .mp4 is included here and reaches the site as
+# .mp4 -- no conversion. Keep in sync with scripts/check-neocities-types.py.
+ALLOWED_EXTENSIONS = {".jpg", ".jpeg", ".png", ".gif", ".webp", ".avif", ".svg", ".mp4"}
 
 # The GitHub contents API returns at most 1000 entries per directory listing and
 # gives no way to page past that, so a folder at the cap is almost certainly
@@ -110,8 +110,8 @@ def list_remote_files():
             name = entry.get("name") or ""
             ext = os.path.splitext(name)[1].lower()
             if ext not in ALLOWED_EXTENSIONS:
-                print(f"Skipping {entry['path']}: .{ext or '?'} is not deployable "
-                      f"to Neocities. Allowed: {', '.join(sorted(ALLOWED_EXTENSIONS))}")
+                print(f"Skipping {entry['path']}: .{ext or '?'} is not something "
+                      f"the gallery renders. Allowed: {', '.join(sorted(ALLOWED_EXTENSIONS))}")
                 continue
 
             collected.append({
