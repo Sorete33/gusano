@@ -2,12 +2,18 @@
   name: ccnk-test
 - link: /images/gallery/ccnk.jpg
   name: ccnk
+- link: /images/gallery/conser.mp4
+  name: conser
 - link: /images/gallery/conser3.jpg
   name: conser3
+- link: /images/gallery/lap.mp4
+  name: lap
 - link: /images/gallery/reaper.jpg
   name: reaper
 - link: /images/gallery/ronda.jpg
   name: ronda
+- link: /images/gallery/ronda2.jpg
+  name: ronda2
 - link: /images/gallery/ruta-2.jpg
   name: ruta-2
 - link: /images/gallery/ruta.jpg
