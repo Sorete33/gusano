@@ -1797,23 +1797,23 @@
   archive: live-2025-10-09-armando-alonso
   archive_url: https://archive.org/details/live-2025-10-09-armando-alonso
 - id: rincon/janedoe
-  date: '2025-10-02'
+  date: '2025-10-04'
   title: Jane Doe en Ricón
   tracks:
-  - id: casco-y-guada
-    artist: Casco y Guada
-    title: Casco y Guada
-    mp3: Casco%20y%20Guada%20(2025-10-02).mp3
-    flac: Casco%20y%20Guada%20(2025-10-02).flac
-    wav: Casco%20y%20Guada%20(2025-10-02).wav
-    duration: 2629
+  - id: jane-doe
+    artist: Jane Doe
+    title: Jane Doe en Rincón
+    mp3: Jane%20Doe%20en%20Rinc%C3%B3n%20(2025-10-04).mp3
+    flac: Jane%20Doe%20en%20Rinc%C3%B3n%20(2025-10-04).flac
+    wav: Jane%20Doe%20en%20Rinc%C3%B3n%20(2025-10-04).wav
+    duration: 2612
   space: Rincón
   bands:
   - Jane Doe
   cover: /recitales/rincon/janedoe/featured.jpg
   page: /recitales/rincon/janedoe/
-  archive: live-2025-10-02-casco-y-guada
-  archive_url: https://archive.org/details/live-2025-10-02-casco-y-guada
+  archive: live-2025-10-04-jane-doe
+  archive_url: https://archive.org/details/live-2025-10-04-jane-doe
 - id: grey-bar/casco-guada
   date: '2025-10-02'
   title: Casco y Guada en Grey Bar

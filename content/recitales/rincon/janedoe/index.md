@@ -1,5 +1,5 @@
 ---
-date : '2025-10-02'
+date : '2025-10-04'
 title : "Jane Doe en Ricón"
 weight: -16
 bandas: [Jane Doe]
@@ -16,7 +16,7 @@ heroStyle: background
 
 ## [EP Desencuentro yá en spoti](https://open.spotify.com/album/7E1SBWSxTZJrpdE028xVD9?si=X4ZL8eTBQHCAXAdDqIEIWA)
 
-{{< track show="rincon/janedoe" track="casco-y-guada" >}}
+{{< track show="rincon/janedoe" track="jane-doe" >}}
 ![alt text](tormenta.gif)
 
-[Artículo en Internet Archive](https://archive.org/details/live-2025-10-02-casco-y-guada)
+[Artículo en Internet Archive](https://archive.org/details/live-2025-10-04-jane-doe)
