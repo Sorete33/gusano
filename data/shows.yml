@@ -1308,6 +1308,72 @@
   page: /recitales/el-portal-del-tango/nueva-musica/
   archive: live-2025-12-03-muestra-de-fin-de-ao-dia-1
   archive_url: https://archive.org/details/live-2025-12-03-muestra-de-fin-de-ao-dia-1
+- id: el-portal-del-tango/nueva-musica-dia-2
+  date: '2025-12-03'
+  title: Muestra fin de ciclo de la NUEVA (escuela de) de MÚSICA en El Portal Del Tango - Día 2
+  tracks:
+  - id: juani-carlos-mora
+    artist: Juani Carlos Mora
+    title: Juani Carlos Mora
+    mp3: 01%20-%20Juani%20Carlos%20Mora.mp3
+    flac: 01%20-%20Juani%20Carlos%20Mora.flac
+    wav: 01%20-%20Juani%20Carlos%20Mora.wav
+    duration: 541
+  - id: mateo-ciro
+    artist: Mateo Ciro
+    title: Mateo Ciro
+    mp3: 02%20-%20Mateo%20Ciro.mp3
+    flac: 02%20-%20Mateo%20Ciro.flac
+    wav: 02%20-%20Mateo%20Ciro.wav
+    duration: 736
+  - id: valen-max
+    artist: Valen Max
+    title: Valen Max
+    mp3: 03%20-%20Valen%20Max.mp3
+    flac: 03%20-%20Valen%20Max.flac
+    wav: 03%20-%20Valen%20Max.wav
+    duration: 1550
+  - id: belen
+    artist: Belen
+    title: Belen
+    mp3: 04%20-%20Belen.mp3
+    flac: 04%20-%20Belen.flac
+    wav: 04%20-%20Belen.wav
+    duration: 219
+  - id: enzo-mimi-philip-gena-valen
+    artist: Enzo Mimi Philip Gena Valen
+    title: Enzo Mimi Philip Gena Valen
+    mp3: 05%20-%20Enzo%20Mimi%20Philip%20Gena%20Valen.mp3
+    flac: 05%20-%20Enzo%20Mimi%20Philip%20Gena%20Valen.flac
+    wav: 05%20-%20Enzo%20Mimi%20Philip%20Gena%20Valen.wav
+    duration: 609
+  - id: mora-galo-mati-gena
+    artist: Mora Galo Mati Gena
+    title: Mora Galo Mati Gena
+    mp3: 06%20-%20Mora%20Galo%20Mati%20Gena.mp3
+    flac: 06%20-%20Mora%20Galo%20Mati%20Gena.flac
+    wav: 06%20-%20Mora%20Galo%20Mati%20Gena.wav
+    duration: 794
+  - id: benja
+    artist: Benja
+    title: Benja
+    mp3: 07%20-%20Benja.mp3
+    flac: 07%20-%20Benja.flac
+    wav: 07%20-%20Benja.wav
+    duration: 1457
+  space: El Portal del Tango
+  bands:
+  - Juani Carlos Mora
+  - Mateo Ciro
+  - Valen Max
+  - Belen
+  - Enzo Mimi Philip Gena Valen
+  - Mora Galo Mati Gena
+  - Benja
+  cover: /recitales/el-portal-del-tango/nueva-musica/featured.jpg
+  page: /recitales/el-portal-del-tango/nueva-musica/
+  archive: live-2025-12-03-muestra-de-fin-de-ao-dia-2
+  archive_url: https://archive.org/details/live-2025-12-03-muestra-de-fin-de-ao-dia-2
 - id: el-portal-del-tango/festi-distor
   date: '2025-11-29'
   title: 'Festival Distorsivo + Pintura en vivo en El Portal del Tango '

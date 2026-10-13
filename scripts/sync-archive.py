@@ -72,7 +72,9 @@ OVERRIDES = {
     # Page front matter said 2026-03-20; the show was actually the 19th.
     "beertonic/armand2": "live-2026-03-19-armando-alonso",
     # The page covers "Día 1" of a three day event; dia 2 is a different take.
+    # Both items carry the same date, so neither resolves by date alone.
     "el-portal-del-tango/nueva-musica": "live-2025-12-03-muestra-de-fin-de-ao-dia-1",
+    "el-portal-del-tango/nueva-musica-dia-2": "live-2025-12-03-muestra-de-fin-de-ao-dia-2",
     # The page spells the venue "Plaza Charo Latessa" and the band "Valkirias";
     # the item says "Latesa" and its file says "Valquirias", so exact venue and
     # band matching both miss.

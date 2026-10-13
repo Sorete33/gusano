@@ -43,6 +43,7 @@ TRACK_RE = re.compile(r'^\s*\{\{<+\s*track\s+show="([^"]*)"\s+track="([^"]*)"')
 LINK_DIRECT_RE = re.compile(r"^\s*\[\s*(Link directo|Enlace directo|Descargar)[^\]]*\]\([^)]*\)\s*$", re.I)
 STREAM_RE = re.compile(r"^\s*\[\s*[^\]]*(WAV|FLAC|Streaming|Descarga)[^\]]*\]\([^)]*\)\s*$", re.I)
 IA_LINK_RE = re.compile(r"^\s*\[\s*[^\]]*Internet Archive[^\]]*\]\([^)]*\)\s*$", re.I)
+IA_LABEL_RE = re.compile(r"^\s*\[\s*([^\]]*)\]")
 HEADING_RE = re.compile(r"^(\s*)(#{1,6})\s+(.*?)\s*$")
 LINK_RE = re.compile(r"\[([^\]]+)\]\([^)]*\)")
 ANY_URL_RE = re.compile(r"https?://[^\s)\"']+")
@@ -251,7 +252,13 @@ def migrate(path: Path, shows_by_id: dict, report: list) -> str | None:
             continue
 
         if IA_LINK_RE.match(line):
-            if show.get("archive_url"):
+            # Only repair a bare link. A suffixed label ("... - Día 2") is
+            # hand-written and points at a different item: a page can carry
+            # more than one show, and this script only knows the one whose id
+            # matches its path, so rewriting those would lose them.
+            lm = IA_LABEL_RE.match(line)
+            label = lm.group(1).strip() if lm else ""
+            if show.get("archive_url") and label == "Artículo en Internet Archive":
                 out.append(
                     f'[Artículo en Internet Archive]({show["archive_url"]})'
                 )

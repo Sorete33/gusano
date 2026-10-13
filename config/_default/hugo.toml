@@ -95,6 +95,7 @@ enableA11y = true
 # cannot silently disable an exclusion.
 exclude = [
   "el-portal-del-tango/nueva-musica",
+  "el-portal-del-tango/nueva-musica-dia-2",
   "FM Urbana",
   "Plaza de la memoria",
 ]

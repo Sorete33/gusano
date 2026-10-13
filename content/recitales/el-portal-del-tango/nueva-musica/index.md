@@ -55,10 +55,20 @@ heroStyle: background
 
 # Día 2
 
-{{<audio src="https://files.catbox.moe/llvbhj.mp3">}}
+{{< track show="el-portal-del-tango/nueva-musica-dia-2" track="juani-carlos-mora" >}}
 
-[Link directo](https://files.catbox.moe/llvbhj.mp3)
+{{< track show="el-portal-del-tango/nueva-musica-dia-2" track="mateo-ciro" >}}
 
-[Streaming en formato WAV](https://pixeldrain.com/u/Y7GVAUPg)
+{{< track show="el-portal-del-tango/nueva-musica-dia-2" track="valen-max" >}}
 
-[Artículo en Internet Archive](https://archive.org/details/live-2025-12-03-muestra-de-fin-de-ao-dia-1)
+{{< track show="el-portal-del-tango/nueva-musica-dia-2" track="belen" >}}
+
+{{< track show="el-portal-del-tango/nueva-musica-dia-2" track="enzo-mimi-philip-gena-valen" >}}
+
+{{< track show="el-portal-del-tango/nueva-musica-dia-2" track="mora-galo-mati-gena" >}}
+
+{{< track show="el-portal-del-tango/nueva-musica-dia-2" track="benja" >}}
+
+[Artículo en Internet Archive - Día 1](https://archive.org/details/live-2025-12-03-muestra-de-fin-de-ao-dia-1)
+
+[Artículo en Internet Archive - Día 2](https://archive.org/details/live-2025-12-03-muestra-de-fin-de-ao-dia-2)
