@@ -1,6 +1,14 @@
-name = "audiogusano-flyer-worker"
+# MUST stay in sync with the `url` passed to the flyer-upload shortcode in
+# content/_index.md. They were briefly out of sync ("...-flyer-worker" here vs
+# "...-flyers" there), which meant `wrangler deploy` created a brand new worker
+# that nothing pointed at, while the live one kept serving the old code and every
+# upload failed with a stale error. Deploying to a name that does not exist is a
+# silent success, not a failure, so check this first if uploads behave oddly:
+#   curl -X POST -F "file=@x.txt" https://<the url in _index.md>
+name = "audiogusano-flyers"
 main = "worker-flyers.js"
 compatibility_date = "2026-01-01"
+preview_urls = false
 
 # Every value here matches a default already baked into worker-flyers.js. They
 # are written out so the worker's whole configuration is readable in one place.
