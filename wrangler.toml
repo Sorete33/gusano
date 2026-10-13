@@ -1,3 +1,15 @@
 name = "audiogusano-flyer-worker"
 main = "worker-flyers.js"
 compatibility_date = "2026-01-01"
+
+# Every value here matches a default already baked into worker-flyers.js. They
+# are written out so the worker's whole configuration is readable in one place.
+# GITHUB_PAT is deliberately absent -- it is a secret, set with `wrangler secret
+# put GITHUB_PAT` or in the Cloudflare dashboard, and must never be committed.
+[vars]
+FLYERS_REPO = "Sorete33/audiogusano-flyers"
+FLYERS_PATH = "flyers"
+FLYERS_BRANCH = "main"
+GUSANO_REPO = "Sorete33/gusano"
+GUSANO_BRANCH = "master"
+ALLOWED_ORIGIN = "https://audiogusano.neocities.org"

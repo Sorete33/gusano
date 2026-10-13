@@ -2,3 +2,7 @@ public/
 resources/
 .hugo_build.lock
 __pycache__/
+
+# wrangler's local cache; it stores the account id and name
+.wrangler/
+node_modules/

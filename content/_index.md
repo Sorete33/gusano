@@ -25,8 +25,9 @@ Archive funciona a base de donaciones así que si te sobra algún morlaco no dud
 
 <br>
 
-{{/* TODO: set the url to your deployed worker-flyers.js worker before publishing */}}
-<center>{{< flyer-upload url="https://audiogusano-flyers.audiogusano.workers.dev" >}}</center>
+{{/* The Cloudflare Worker from worker-flyers.js. It commits the upload into
+     Sorete33/audiogusano-flyers and dispatches this repo's deploy workflow. */}}
+<center>{{< flyer-upload url="https://audiogusano-flyers.falopa33.workers.dev" >}}</center>
 
 <br>
 
