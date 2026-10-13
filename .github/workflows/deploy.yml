@@ -76,7 +76,20 @@ jobs:
         with:
           api_token: ${{ secrets.NEOCITIES_API_KEY }}
           dist_dir: public
-          cleanup: false
+          # Delete files on Neocities that are no longer in the build. With this
+          # off the deploy only ever adds, so every renamed image or dropped
+          # flyer stays on the server forever -- Hugo's processed images get
+          # content-hashed names (featured_hu_<hash>.png), so re-editing one
+          # leaves the previous copy behind on every single build. That is how
+          # the site outgrew its quota.
+          #
+          # cleanup only runs AFTER the upload succeeds, so it will not fire
+          # until the storage problem is resolved.
+          cleanup: true
+          # Never delete the Winamp skins: layouts/partials/webamp.html points
+          # the player at all three, and .wsz is not in the deploy action's
+          # supported-type list, so without this they would be swept up.
+          protected_files: "skins/*.wsz"
 
       # Commit the changes LAST so the deployment isn't delayed by git operations.
       #
