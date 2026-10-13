@@ -1,0 +1,3 @@
+name = "audiogusano-flyer-worker"
+main = "worker-flyers.js"
+compatibility_date = "2026-01-01"
