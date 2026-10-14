@@ -94,6 +94,8 @@ enableA11y = true
 # An entry that matches nothing is reported as a build warning, so a typo
 # cannot silently disable an exclusion.
 exclude = [
+  # Entrevista, no un recital: se escucha sólo desde su página.
+  "luz-bajita/armando/entrevista-armando-alonso-por-tomas-garibotti",
   "el-portal-del-tango/nueva-musica",
   "el-portal-del-tango/nueva-musica-dia-2",
   "FM Urbana",
