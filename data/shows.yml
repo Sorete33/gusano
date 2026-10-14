@@ -14,6 +14,26 @@
 #   flac/wav descarga en alta calidad, mismo criterio
 #   duration segundos (lo rellena sync-archive.py desde la metadata de archive.org)
 # Si la pista tiene `mp3`, gana sobre `src`.
+- id: luz-bajita/armando
+  date: '2026-10-10'
+  title: Armando Alonso Trío en Luz Bajita Desk
+  tracks:
+  - id: armando-alonso
+    artist: Armando Alonso
+    title: Armando Alonso Trío en Luz Bajita Desk
+    mp3: Armando%20Alonso%20Tr%C3%ADo%20en%20vivo%20desde%20Luz%20Bajita%20Desk%2010-10-26.mp3
+    flac: Armando%20Alonso%20Tr%C3%ADo%20en%20vivo%20desde%20Luz%20Bajita%20Desk%2010-10-26.flac
+    wav: Armando%20Alonso%20Tr%C3%ADo%20en%20vivo%20desde%20Luz%20Bajita%20Desk%2010-10-26.wav
+    duration: 2170
+  space: Luz Bajita Desk
+  bands:
+  - Armando Alonso
+  - Nicolás Benaghi
+  - Agustín Barbieri
+  cover: /recitales/luz-bajita/armando/featured.jpg
+  page: /recitales/luz-bajita/armando/
+  archive: armando-luz-bajita
+  archive_url: https://archive.org/details/armando-luz-bajita
 - id: la-maga/cumple-accidental
   date: '2026-09-26'
   title: Cumpleañito Accidental
