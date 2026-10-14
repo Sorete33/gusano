@@ -12,10 +12,14 @@
     {{ end }}
 
     <!-- Optional destination for the whole announcement. When set, the flyer
-         image becomes clickable and the footer button turns into a CTA that
-         navigates instead of closing. Left unset, the modal behaves as before.
-         The same URL feeds both, so a caller cannot end up with a link on the
-         image pointing somewhere different from the button. -->
+         image becomes clickable and a primary action renders under it, so the
+         thing being announced and the thing you can do about it sit together.
+         Left unset, neither appears and the modal is text/image plus a
+         dismissal. The same URL feeds both, so a caller cannot end up with a
+         link on the image pointing somewhere different from the button.
+
+         Two labels, because the modal has two distinct jobs: `button` names the
+         navigating action, `close` names the dismissal in the footer. -->
     {{ $link := .Get "link" }}
 
     <!-- Main Scrollable Body Content -->
@@ -63,19 +67,32 @@
           {{ end }}
         </div>
       {{ end }}
+
     </div>
-    
-    <!-- Footer Section with action button. With `link` set the primary action
-         navigates; dismissal still works via the X, the backdrop and Escape, so
-         no close affordance is lost. -->
+
+    <!-- Primary action, directly under the flyer.
+         Outside .ann-body on purpose. A portrait flyer is as tall as the modal
+         allows, so a CTA inside the scroll area lands below the fold: present
+         in the DOM, never seen without scrolling, which for the one button
+         that goes to the event is the same as not being there. Pinned here it
+         sits immediately under the image and stays put however tall the
+         announcement gets.
+
+         Rendered only when `link` is set. An anchor with no href is not a
+         button, it is a dead element, and there is nothing for it to do. -->
+    {{ if $link }}
+      <div class="ann-actions">
+        <a class="ann-btn-cta" href="{{ $link }}">{{ .Get "button" | default "Ir al evento" }}</a>
+      </div>
+    {{ end }}
+
+    <!-- Footer dismissal. It sits in the slot the CTA used to occupy and does
+         exactly what the X does, so there is no navigation here to confuse it
+         with: whatever it is labelled, clicking it closes the window. -->
     <div class="ann-footer">
-      {{ if $link }}
-        <a class="ann-btn-cta" href="{{ $link }}">{{ .Get "button" | default "Ver más" }}</a>
-      {{ else }}
-        <button class="ann-btn-close" onclick="closeHugoPopup()">
-          {{ .Get "button" | default "oki" }}
-        </button>
-      {{ end }}
+      <button class="ann-btn-close" onclick="closeHugoPopup()">
+        {{ .Get "close" | default "oki" }}
+      </button>
     </div>
   </div>
 </div>
@@ -163,7 +180,9 @@
   .ann-body {
     overflow-y: auto;
     flex-grow: 1;
-    margin-bottom: 16px;
+    /* No bottom margin: .ann-actions supplies the gap below the image, and
+       stacking both would leave the CTA floating away from the flyer. */
+    margin-bottom: 0;
     padding-right: 4px;
   }
 
@@ -259,7 +278,17 @@
     display: block;
   }
 
-  /* Footer Layout containing actions */
+  /* Row holding the primary action under the flyer. Centered so it reads as
+     attached to the image above rather than as another right-aligned footer
+     control, and outside .ann-body so it cannot scroll out of view. */
+  .ann-actions {
+    margin-top: 16px;
+    display: flex;
+    justify-content: center;
+  }
+
+  /* Footer dismissal. Right-aligned so the CTA above keeps the eye, and the
+     X, this and the backdrop all do the same thing. */
   .ann-footer {
     display: flex;
     justify-content: flex-end;
@@ -267,12 +296,14 @@
     padding-top: 12px;
   }
 
-  /* Action Button styling */
+  /* Dismissal button styling. min-width keeps a two-letter label like "oki"
+     from rendering as a sliver. */
   .ann-btn-close {
     background-color: transparent;
     color: #ffe600;
     border: 1.5px solid #ffe600;
     padding: 8px 18px;
+    min-width: 96px;
     font-size: 14px;
     font-weight: 600;
     border-radius: 6px;
@@ -285,18 +316,20 @@
     color: #121212;
   }
 
-  /* Primary CTA, shown in place of the close button when `link` is set.
-     Deliberately the inverse of .ann-btn-close (filled rather than outlined)
-     so the navigating action is the one the eye lands on. */
+  /* Primary CTA, rendered under the flyer when `link` is set. Deliberately the
+     inverse of .ann-btn-close (filled rather than outlined) so the navigating
+     action is the one the eye lands on. */
   .ann-btn-cta {
     background-color: #ffe600;
     color: #121212;
     border: 1.5px solid #ffe600;
     padding: 8px 18px;
+    min-width: 96px;
     font-size: 14px;
     font-weight: 600;
     border-radius: 6px;
     cursor: pointer;
+    text-align: center;
     text-decoration: none;
     transition: opacity 0.15s ease, transform 0.1s ease;
   }
