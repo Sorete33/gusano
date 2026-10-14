@@ -10,18 +10,40 @@
     {{ with .Get "title" }}
       <h2 class="ann-title">{{ . }}</h2>
     {{ end }}
-    
+
+    <!-- Optional destination for the whole announcement. When set, the flyer
+         image becomes clickable and the footer button turns into a CTA that
+         navigates instead of closing. Left unset, the modal behaves as before.
+         The same URL feeds both, so a caller cannot end up with a link on the
+         image pointing somewhere different from the button. -->
+    {{ $link := .Get "link" }}
+
     <!-- Main Scrollable Body Content -->
     <div class="ann-body">
-      <!-- Text Section (rendered as safe markdown) -->
-      <div class="ann-text">
-        {{ .Inner | markdownify }}
-      </div>
+      <!-- Text Section (rendered as safe markdown). Optional, so trim before
+           testing: a shortcode written on two lines with nothing between the
+           tags still hands .Inner a newline, and `with` treats that non-empty
+           string as truthy -- which would emit an empty .ann-text and open the
+           modal with a gap above the flyer. -->
+      {{ with trim .Inner " \t\r\n" }}
+        <div class="ann-text">
+          {{ . | markdownify }}
+        </div>
+      {{ end }}
       
-      <!-- Image Section -->
+      <!-- Image Section. relURL strips the origin off an absolute URL, turning
+           the Neocities address into a root-relative path. That is what we want
+           here: the flyer ships as a page-bundle resource, so the same path
+           resolves both on the deployed site and on a local preview server. -->
       {{ with .Get "image" }}
         <div class="ann-image-container">
-          <img src="{{ . | relURL }}" alt="Announcement Image" class="ann-img">
+          {{ if $link }}
+            <a href="{{ $link }}" class="ann-img-link" draggable="false">
+              <img src="{{ . | relURL }}" alt="Announcement Image" class="ann-img">
+            </a>
+          {{ else }}
+            <img src="{{ . | relURL }}" alt="Announcement Image" class="ann-img">
+          {{ end }}
         </div>
       {{ end }}
 
@@ -43,11 +65,17 @@
       {{ end }}
     </div>
     
-    <!-- Footer Section with action button -->
+    <!-- Footer Section with action button. With `link` set the primary action
+         navigates; dismissal still works via the X, the backdrop and Escape, so
+         no close affordance is lost. -->
     <div class="ann-footer">
-      <button class="ann-btn-close" onclick="closeHugoPopup()">
-        {{ .Get "button" | default "oki" }}
-      </button>
+      {{ if $link }}
+        <a class="ann-btn-cta" href="{{ $link }}">{{ .Get "button" | default "Ver más" }}</a>
+      {{ else }}
+        <button class="ann-btn-close" onclick="closeHugoPopup()">
+          {{ .Get "button" | default "oki" }}
+        </button>
+      {{ end }}
     </div>
   </div>
 </div>
@@ -188,6 +216,31 @@
     border: 1px solid #2d2d2d;
     display: block;
     margin: 0 auto;
+    transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  /* Whole image is the link target, so the pointer reads as interactive over
+     the entire flyer rather than just its corners. Two hover cues (yellow ring
+     + slight zoom) make the image's linkability obvious at a glance, which a
+     caption-less image otherwise does not. */
+  .ann-img-link {
+    display: block;
+    cursor: pointer;
+    border-radius: 8px;
+  }
+
+  .ann-img-link:hover {
+    box-shadow: 0 0 0 2px #ffe600;
+  }
+
+  .ann-img-link:hover .ann-img {
+    transform: scale(1.02);
+  }
+
+  /* An image-only popup has nothing above the flyer, and the container's
+     top margin would otherwise open the modal with a 16px dead gap. */
+  .ann-body > .ann-image-container:first-child {
+    margin-top: 0;
   }
 
   /* Video Section */
@@ -230,6 +283,27 @@
   .ann-btn-close:hover {
     background-color: #ffe600;
     color: #121212;
+  }
+
+  /* Primary CTA, shown in place of the close button when `link` is set.
+     Deliberately the inverse of .ann-btn-close (filled rather than outlined)
+     so the navigating action is the one the eye lands on. */
+  .ann-btn-cta {
+    background-color: #ffe600;
+    color: #121212;
+    border: 1.5px solid #ffe600;
+    padding: 8px 18px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: opacity 0.15s ease, transform 0.1s ease;
+  }
+
+  .ann-btn-cta:hover {
+    opacity: 0.85;
+    transform: translateY(-1px);
   }
 </style>
 
