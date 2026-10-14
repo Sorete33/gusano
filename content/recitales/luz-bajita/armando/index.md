@@ -16,6 +16,12 @@ heroStyle: background
 
 ---
 
+# Entrevista a Armando Alonso por Tomás Garibotti
+
+{{< track show="luz-bajita/armando" track="entrevista-armando-alonso-por-tomas-garibotti" label="(entrevista)" >}}
+
+---
+
 {{< track show="luz-bajita/armando" track="armando-alonso" >}}
 
 [Artículo en Internet Archive](https://archive.org/details/armando-luz-bajita)
