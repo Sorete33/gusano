@@ -2,9 +2,9 @@
 title: Anuncio
 ---
 
-{{< new title="Nueva entrada: Armando Alonso en Luz Bajita Desk" image="https://audiogusano.neocities.org/recitales/luz-bajita/armando/featured_hu_42bae0fe114e56b5.jpg" link="https://audiogusano.neocities.org/recitales/luz-bajita/armando/" button="Ir al evento" >}}
+<!-- {{< new title="Nueva entrada: Armando Alonso en Luz Bajita Desk" image="https://audiogusano.neocities.org/recitales/luz-bajita/armando/featured_hu_42bae0fe114e56b5.jpg" link="https://audiogusano.neocities.org/recitales/luz-bajita/armando/" button="Ir al evento" >}}
 {{< /new >}}
-
+-->
 
 {{< webamp >}}
 
