@@ -1,45 +1,59 @@
+# Main menu. Entries are `name` + `pageRef` for internal pages, `name` + `url`
+# for external ones (external URLs get target="_blank" automatically in both
+# the desktop bar and the fullscreen hamburger).
+#
+# No `pre` (icon) on purpose: the icons cost ~20px each in the header bar and
+# blew the 853-1105px band past the available width, which cropped the site
+# title to zero. aria-label/title are generated from `name`, so dropping the
+# decorative icon keeps the accessible name intact. See
+# assets/css/custom.css for the matching responsive rule.
 
 [[main]]
 name = "Recitales"
-pre = "sun"
 pageRef = "/recitales"
 identifier = "ZBqnseLlBL"
 weight = 1
 
 [[main]]
 name = "Bandas"
-pre = "eye"
 pageRef = "/bandas"
 identifier = "kQoMKxtpfo"
 weight = 2
 
 [[main]]
 name = "Espacios"
-pre = "moon"
 pageRef = "/espacios"
 identifier = "dfrsL3pRdo"
 weight = 3
 
 [[main]]
 name = "Rocola"
-pre = "music"
 pageRef = "/rocola"
 identifier = "rocola"
 weight = 4
 
 [[main]]
 name = "Flyers"
-pre = "bomb"
 pageRef = "/flyers"
 identifier = "flyers"
 weight = 5
 
+# Sonido subterráneo on Internet Archive. External, so `url` not `pageRef`.
+# `title` is set by hand: the other six entries inherit .Title from the page
+# their pageRef points at, and with no page to inherit from the desktop bar
+# rendered title="" (no hover tooltip).
+[[main]]
+name = "Internet Archive"
+title = "Internet Archive"
+url = "https://archive.org/details/@audiogusano"
+identifier = "internet-archive"
+weight = 6
+
 [[main]]
 name = "Contacto"
-pre = "email"
 pageRef = "/contacto"
 identifier = "contacto"
-weight = 6
+weight = 7
 
 [[footer]]
 none = "none"

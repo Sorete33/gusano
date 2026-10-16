@@ -30,7 +30,10 @@ layout = "basic"
 showMenu = true
 showCopyright = false
 showThemeAttribution = false
-showAppearanceSwitcher = true
+# Dark only: there is no day mode to offer. Dropping the switcher also removes
+# the only theme code that takes the `dark` class off <html>; see
+# layouts/partials/extend-head.html, which pins it back on.
+showAppearanceSwitcher = false
 showScrollToTop = true
 
 [homepage]

@@ -1,0 +1,64 @@
+/* Site-wide overrides, appended after the scheme and blowfish's main.css by
+   themes/blowfish/layouts/partials/head.html.
+
+   Dark only. blowfish ships:
+
+       html:not(.dark) { color-scheme: light; }
+       html.dark       { color-scheme: dark;   }
+
+   layouts/_default/baseof.html hardcodes `dark` on <html>, so the second rule
+   already wins. This restates it with `html:not(.dark)` - same specificity,
+   later in the bundle - so the light value cannot come back even if the class
+   is ever lost. It keeps native UI (scrollbars, form controls, the caret)
+   dark, which is the part CSS variables alone do not cover. */
+
+html,
+html:not(.dark) {
+  color-scheme: dark;
+}
+
+/* Header: hold the full bar down to 1200px, hamburger below it.
+
+   blowfish swaps the desktop bar for the fullscreen hamburger at `md`, which
+   in its Tailwind build is 853px - far too early for seven menu entries plus
+   the site title. Below the breakpoint the title cropped to 0-45px and the nav
+   wrapped onto two rows.
+
+   1200px is set by the title, not the nav. The row measures 897px
+   (logo 64 + gaps 16 + "Bienvenide a Audio Gusano" 210 + nav 607), and the
+   available width is viewport - 256px of lg padding: that is -52px at 1100px
+   and still -3px at 1150px, so 1200px is the first round number that leaves
+   real slack (~47px). Shortening the title to "Audio Gusano" would buy the
+   band back down to 1100px if the greeting ever needs to fit a smaller screen.
+
+   Done in CSS rather than by editing header/basic.html on purpose: this theme
+   ships a PRE-PURGED Tailwind build and the project has no Tailwind step, so
+   .lg\:flex is absent from the compiled CSS. Swapping `md:flex` for `lg:flex`
+   in the template compiles to nothing and hides the bar at every width.
+
+   These selectors are (0,3,0) and this file is concatenated after
+   compiled/main.css, so they beat the theme's (0,1,0) .hidden / .md\:flex /
+   .md\:hidden regardless of order. Above 1200px nothing here applies and the
+   theme's own 853px rules already give bar-above / hamburger-below. */
+@media (max-width: 1199.98px) {
+  .main-menu .hidden.md\:flex {
+    display: none;
+  }
+  .main-menu .flex.md\:hidden {
+    display: flex;
+  }
+}
+
+/* The 1100px boundary first measured only ~6px of headroom, too thin to survive
+   a webfont fallback. These two shave 44px off the row: logo 80 -> 64 and
+   gap-x-5 (1.25rem) -> 1rem across seven gaps (-28px). */
+.main-menu .logo {
+  max-height: 4rem;
+  max-width: 4rem;
+}
+
+@media (min-width: 1200px) {
+  .main-menu .hidden.md\:flex > nav {
+    column-gap: 1rem;
+  }
+}
