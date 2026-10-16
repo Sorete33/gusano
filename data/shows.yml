@@ -18,22 +18,17 @@
   date: '2026-10-10'
   title: Armando Alonso Trío en Luz Bajita Desk
   tracks:
-  # Entrevista subida antes que el resto: mp3 solo, sin flac/wav, así que se
-  # reproduce pero no tiene descarga en alta calidad.
-  # OJO: en archive.org el archivo todavía se llama "Alosno". Cuando lo
-  # renombreen a "Alonso", `sync-archive.py --show luz-bajita/armando --write`
-  # deja el id y el title igual y sólo actualiza el nombre de archivo.
   - id: entrevista-armando-alonso-por-tomas-garibotti
     artist: Armando Alonso
     title: Entrevista Armando Alonso por Tomas Garibotti en Luz Bajita
-    mp3: 01%20-%20Entrevista%20Armando%20Alosno%20por%20Tomas%20Garibotti%20en%20Luz%20Bajita.mp3
+    mp3: 01%20-%20Entrevista%20Armando%20Alonso%20por%20Tom%C3%A1s%20Garibotti%20en%20Luz%20Bajita.mp3
     duration: 1022
   - id: armando-alonso
     artist: Armando Alonso
     title: Armando Alonso Trío en Luz Bajita Desk
-    mp3: Armando%20Alonso%20Tr%C3%ADo%20en%20vivo%20desde%20Luz%20Bajita%20Desk%2010-10-26.mp3
-    flac: Armando%20Alonso%20Tr%C3%ADo%20en%20vivo%20desde%20Luz%20Bajita%20Desk%2010-10-26.flac
-    wav: Armando%20Alonso%20Tr%C3%ADo%20en%20vivo%20desde%20Luz%20Bajita%20Desk%2010-10-26.wav
+    mp3: 02%20-%20Armando%20Alonso%20Tr%C3%ADo%20en%20vivo%20desde%20Luz%20Bajita%20Desk%2010-10-26.mp3
+    flac: 02%20-%20Armando%20Alonso%20Tr%C3%ADo%20en%20vivo%20desde%20Luz%20Bajita%20Desk%2010-10-26.flac
+    wav: 02%20-%20Armando%20Alonso%20Tr%C3%ADo%20en%20vivo%20desde%20Luz%20Bajita%20Desk%2010-10-26.wav
     duration: 2170
   space: Luz Bajita Desk
   bands:
