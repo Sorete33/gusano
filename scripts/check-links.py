@@ -75,13 +75,21 @@ def parse_shows_yml(local_dir):
 
 
 def parse_flyers_yml(local_dir, name):
+    """Pull the `link:` values out of a data/*.yml flyer list.
+
+    The optional `-` matters. data/flyers.yml is written by sync_github.py as
+    `- link: /path` (one key per list item, inline), while the deleted
+    flyers-viejos.yml used `- name: ...` followed by an indented `  link: ...`.
+    The old `^\s*link` only matched the second shape, so this silently returned
+    nothing for data/flyers.yml and the homepage gallery was never link-checked.
+    """
     path = os.path.join(local_dir, "data", name)
     if not os.path.exists(path):
         path = os.path.join(ROOT, "data", name)
     if not os.path.exists(path):
         return []
     text = open(path, encoding="utf-8").read()
-    return re.findall(r'^\s*link\s*:\s*["\']?([^"\'\s]+)', text, re.M)
+    return re.findall(r'^\s*-?\s*link\s*:\s*["\']?([^"\'\s]+)', text, re.M)
 
 
 def parse_content_audio(local_dir):
@@ -97,6 +105,31 @@ def parse_content_audio(local_dir):
                 text = open(os.path.join(dirpath, fn), encoding="utf-8", errors="replace").read()
                 urls.extend(pat.findall(text))
     return urls
+
+
+def parse_recital_featured(local_dir):
+    """Public paths of every recital page's featured.* resource.
+
+    Replaces the old data/flyers-viejos.yml scan. That file was a hand-kept
+    list and is gone: layouts/flyers/single.html now builds the /flyers/
+    archive straight from these page resources, so the flyers are whatever
+    content/recitales actually contains. A recital page with no featured.*
+    image renders no tile, which is the failure worth catching here.
+    """
+    base = os.path.join(local_dir, "content", "recitales")
+    if not os.path.isdir(base):
+        base = os.path.join(ROOT, "content", "recitales")
+    found, missing = [], []
+    for dirpath, _dirs, files in os.walk(base):
+        if "index.md" not in files:
+            continue
+        page = "/" + os.path.relpath(dirpath, os.path.join(ROOT, "content")).replace(os.sep, "/")
+        feats = sorted(fn for fn in files if fn.startswith("featured."))
+        if not feats:
+            missing.append(page)
+        else:
+            found.append(f"{page}/{feats[0]}")
+    return found, missing
 
 
 def is_external(url):
@@ -244,7 +277,8 @@ def main():
 
     srcs, imgs, durations = parse_shows_yml(local)
     flyers_new = parse_flyers_yml(local, "flyers.yml")
-    flyers_old = parse_flyers_yml(local, "flyers-viejos.yml")
+    recital_feats, recital_no_featured = parse_recital_featured(local)
+    flyers_archive = flyers_new + recital_feats
     content_audio = parse_content_audio(local)
     playlist_set = set(srcs)
 
@@ -294,7 +328,7 @@ def main():
 
     missing_local_audio = sorted({u for u in srcs + content_audio if u.startswith("/") and not local_exists(local, u)})
     missing_covers = sorted({p for p in imgs if not local_exists(local, p)})
-    missing_flyers = sorted({p for p in flyers_new + flyers_old if not local_exists(local, p)})
+    missing_flyers = sorted({p for p in flyers_archive if not local_exists(local, p)})
 
     print("=== DEAD EXTERNAL AUDIO ===")
     for u in dead_audio:
@@ -332,9 +366,17 @@ def main():
     print("\n=== FLYER LINKS MISSING ===")
     for p in missing_flyers:
         print(f"  {p}")
-    print(f"({len(missing_flyers)})")
+    print(f"({len(missing_flyers)}"
+          f"  [{len(flyers_new)} from flyers.yml,"
+          f" {len(recital_feats)} from recital featured.* resources])")
 
-    total = len(dead_audio) + len(missing_local_audio) + len(missing_covers) + len(missing_flyers)
+    print("\n=== RECITAL PAGES WITH NO featured.* IMAGE ===")
+    for p in recital_no_featured:
+        print(f"  {p}")
+    print(f"({len(recital_no_featured)} — each one renders no tile in the /flyers/ archive)")
+
+    total = (len(dead_audio) + len(missing_local_audio) + len(missing_covers)
+             + len(missing_flyers) + len(recital_no_featured))
     print(f"\nTOTAL issues: {total}")
     return 0 if total == 0 else 1
 

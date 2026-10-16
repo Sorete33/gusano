@@ -1,0 +1,749 @@
+{{- /*
+  /flyers/ archive — vertical full-screen deck.
+
+  Deliberately standalone. The homepage "Próximos eventos" carousel is a
+  different thing with a different job: it reads data/flyers.yml, is written by
+  sync_github.py from the upload drop zone, and lives in
+  layouts/shortcodes/gallery.html. This one is the archive: every flyer that
+  has already happened, built from the recital pages themselves.
+
+  Nothing here touches that shortcode, data/flyers.yml or the upload pipeline.
+
+  Why there is no YAML any more: data/flyers-viejos.yml was a hand-kept list,
+  and 44 of its 47 entries turned out to be byte-identical copies of images
+  that already existed as page resources under content/recitales/**. All 77
+  recital pages carry title, date, espacios and bandas, so the pages are a
+  complete source of truth. Adding a show is just adding
+  content/recitales/<venue>/<show>/index.md + featured.*.
+
+  Two sources feed the deck:
+    1. Recital pages, newest first.
+    2. static/covers/ — the flyers with no recital page. Listing the directory
+       means dropping a new one in is all it takes; no list to extend.
+*/ -}}
+
+{{ define "main" }}
+  {{ .Scratch.Set "scope" "single" }}
+
+  {{/* Hero. Same resolution order as blowfish's single.html so /flyers/ keeps
+       its collage backdrop; hero/background.html finds featured.webp on its
+       own via GetMatch "*feature*", so the front matter is unchanged. It is
+       position:fixed, so it costs no vertical space. */}}
+  {{ if .Params.showHero | default (site.Params.article.showHero | default false) }}
+    {{ $heroStyle := .Params.heroStyle }}
+    {{ if not $heroStyle }}{{ $heroStyle = site.Params.article.heroStyle }}{{ end }}
+    {{ $heroStyle := print "hero/" $heroStyle ".html" }}
+    {{ if templates.Exists ( printf "partials/%s" $heroStyle ) }}
+      {{ partial $heroStyle . }}
+    {{ else }}
+      {{ partial "hero/basic.html" . }}
+    {{ end }}
+  {{ end }}
+
+  {{- $images := slice ".jpg" ".jpeg" ".png" ".webp" -}}
+  {{- $venues := slice -}}
+  {{- $years := slice -}}
+  {{- $artistKeys := slice -}}
+  {{- $artists := slice -}}
+  {{- $skipped := 0 -}}
+
+  {{- /* Pass 1: collect the filter vocabularies only. The filter bar has to be
+         rendered before the deck so its controls come first in the tab order,
+         but it cannot know the venue/year/artist lists until the recital pages
+         have been walked. */ -}}
+  {{- range (where site.RegularPages "Section" "recitales").ByDate.Reverse -}}
+    {{- $page := . -}}
+    {{- with .Resources.GetMatch "featured.*" -}}
+      {{- range ($page.Params.espacios | default slice) -}}
+        {{- $venues = $venues | append . -}}
+      {{- end -}}
+      {{- range ($page.Params.bandas | default slice) -}}
+        {{- $key := anchorize . -}}
+        {{- if and $key (not (in $artistKeys $key)) -}}
+          {{- $artistKeys = $artistKeys | append $key -}}
+          {{- $artists = $artists | append . -}}
+        {{- end -}}
+      {{- end -}}
+      {{- $years = $years | append ($page.Date.Format "2006") -}}
+    {{- else -}}
+      {{- $skipped = add $skipped 1 -}}
+      {{- warnf "flyers archive: %s has no featured.* resource, skipping it" $page.File.Path -}}
+    {{- end -}}
+  {{- end -}}
+
+  <div class="flyers-archive" data-flyers-archive>
+
+    {{- /* No visible heading — it was a wall of text above the artwork. Kept as
+           sr-only so the page still has an h1 for screen readers; the front
+           matter title still drives <title> and the nav entry. */ -}}
+    <h1 class="sr-only">{{ .Title }}</h1>
+
+    {{- if ne $skipped 0 -}}
+      {{- warnf "flyers archive: %d recital page(s) skipped for a missing featured.* image" $skipped -}}
+    {{- end -}}
+
+    <div class="fa-filters" id="fa-filters">
+      <label class="fa-field">
+        <span class="fa-label">Espacio</span>
+        <select id="fa-venue" class="fa-select">
+          <option value="">Todos</option>
+          {{- range ($venues | uniq | sort) }}<option value="{{ . }}">{{ . }}</option>{{ end -}}
+        </select>
+      </label>
+      <label class="fa-field">
+        <span class="fa-label">Año</span>
+        <select id="fa-year" class="fa-select">
+          <option value="">Todos</option>
+          {{- /* The page range is ByDate.Reverse, so the first occurrence of
+                 each year is its newest one and uniq keeps that order. */ -}}
+          {{- range ($years | uniq) }}<option value="{{ . }}">{{ . }}</option>{{ end -}}
+        </select>
+      </label>
+      <label class="fa-field fa-field--grow">
+        <span class="fa-label">Artista</span>
+        <input id="fa-artist" class="fa-select" type="search" autocomplete="off"
+               list="fa-artist-list" placeholder="Buscar artista…">
+        <datalist id="fa-artist-list">
+          {{- range ($artists | sort) }}<option value="{{ . }}"></option>{{ end -}}
+        </datalist>
+      </label>
+      <button type="button" id="fa-clear" class="fa-clear" hidden>Limpiar</button>
+      <span class="fa-counter"><span id="fa-shown"></span></span>
+    </div>
+
+    {{- /* The nav buttons live in .fa-stage, outside the scroller: an absolutely
+           positioned child of a scroll container scrolls away with it. */ -}}
+    <div class="fa-stage">
+    <div class="fa-deck" id="fa-deck" tabindex="-1"
+         role="region" aria-roledescription="carousel" aria-label="Archivo de flyers">
+      {{- /* ---- recital pages ---- */ -}}
+      {{- range (where site.RegularPages "Section" "recitales").ByDate.Reverse -}}
+        {{- $page := . -}}
+        {{- with .Resources.GetMatch "featured.*" -}}
+          {{- $res := . -}}
+          {{- /* Instant placeholder only. The slide proper is the untouched
+                 original, which is already deployed because every recital page
+                 uses it as its own hero — so the deck adds nothing to the
+                 build or to the Neocities upload. */ -}}
+          {{- $thumb := $res.Resize "480x q80 webp" -}}
+          {{- $bands := ($page.Params.bandas | default slice) -}}
+          {{- $fname := printf "%s%s" (urlize $page.Title) (path.Ext $res.Name) -}}
+
+      <section class="fa-slide"
+               data-venue="{{ delimit ($page.Params.espacios | default slice) ", " }}"
+               data-year="{{ $page.Date.Format "2006" }}"
+               data-bands="{{ delimit $bands "||" }}">
+        <div class="fa-media">
+          {{- /* nozoom on every image here: blowfish's footer partial runs
+             mediumZoom() over `img:not(.nozoom)`, so without it a plain tap on
+             a cover opens the theme's zoom overlay. The deck navigates by
+             swipe/wheel/arrows instead, so nothing here should zoom. */ -}}
+          <img class="fa-img fa-img--thumb nozoom" src="{{ $thumb.RelPermalink }}"
+               alt="{{ $page.Title }}" loading="lazy" decoding="async">
+          <img class="fa-img fa-img--full nozoom" data-src="{{ $res.RelPermalink }}"
+               alt="{{ $page.Title }}" decoding="async">
+        </div>
+        <div class="fa-caption">
+          <div class="fa-caption-text">
+            <h2 class="fa-title">{{ $page.Title }}</h2>
+            <p class="fa-meta">{{ time.Format ":date_long" $page.Date }}{{ with ($page.Params.espacios | default slice) }} · {{ delimit . ", " }}{{ end }}</p>
+            {{- with $bands }}
+            <ul class="fa-tags">
+              {{- range . }}
+              <li><button type="button" data-band="{{ . }}" title='Filtrar por "{{ . }}"'>{{ . }}</button></li>
+              {{- end }}
+            </ul>
+            {{- end }}
+          </div>
+          <div class="fa-actions">
+            <a class="fa-listen" href="{{ $page.RelPermalink }}">Escuchar el recital &rarr;</a>
+            <a class="fa-download" href="{{ $res.RelPermalink }}" download="{{ $fname }}">
+              <span>Descargar Flyer</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>
+            </a>
+          </div>
+        </div>
+      </section>
+        {{- else -}}
+          {{- /* Already counted in pass 1. */ -}}
+        {{- end -}}
+      {{- end -}}
+
+      {{- /* ---- flyers with no recital page ---- */ -}}
+      {{- range readDir "static/covers" -}}
+        {{- $ext := path.Ext .Name -}}
+        {{- if and (in $images $ext) (not .IsDir) -}}
+          {{- $url := printf "/covers/%s" .Name | relURL -}}
+      <section class="fa-slide" data-venue="" data-year="" data-bands="">
+        <div class="fa-media">
+          {{- /* Static files cannot go through Hugo Pipes, so there is no
+                 thumbnail and no separate placeholder: one image, already
+                 lazy-loaded by the browser. */ -}}
+          <img class="fa-img fa-img--thumb is-on nozoom" src="{{ $url }}"
+               alt="{{ humanize (path.BaseName .Name) }}" loading="lazy" decoding="async">
+        </div>
+        <div class="fa-caption">
+          <div class="fa-caption-text">
+            <h2 class="fa-title">{{ humanize (path.BaseName .Name) }}</h2>
+            <p class="fa-meta">Flyer sin artículo</p>
+          </div>
+          <div class="fa-actions">
+            <a class="fa-download" href="{{ $url }}" download="{{ urlize .Name }}">
+              <span>Descargar Flyer</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>
+            </a>
+          </div>
+        </div>
+      </section>
+        {{- end -}}
+      {{- end -}}
+    </div>
+
+      <button type="button" class="fa-nav fa-nav--prev" id="fa-prev" aria-label="Flyer anterior">&lsaquo;</button>
+      <button type="button" class="fa-nav fa-nav--next" id="fa-next" aria-label="Flyer siguiente">&rsaquo;</button>
+    </div>
+
+    {{- /* ---- filters are rendered before the deck, above ---- */ -}}
+    <p class="fa-empty" id="fa-empty" hidden>
+      No hay flyers con esos filtros.<br>
+      <button type="button" class="fa-clear" id="fa-reset">Limpiar filtros</button>
+    </p>
+  </div>
+
+  <style>
+    /* --- full bleed ------------------------------------------------------
+       Escapes both caps blowfish imposes: the article body is max-w-prose and
+       <body> is `max-w-7xl px-6 sm:px-14 md:px-24 lg:px-32`. 100vw plus a
+       half-viewport pull-back is the only way out of a centred max-width
+       parent without restructuring the theme's baseof. */
+    .flyers-archive {
+      --fa-chrome: 4rem;
+      width: 100vw;
+      position: relative;
+      left: 50%;
+      right: 50%;
+      margin-left: -50vw;
+      margin-right: -50vw;
+      display: flex;
+      flex-direction: column;
+      height: calc(100vh - var(--fa-chrome));
+      height: calc(100dvh - var(--fa-chrome));
+      padding: 0 clamp(0.75rem, 3vw, 2rem);
+    }
+    /* Measured in JS rather than hardcoded: the theme header changes height
+       with the logo and between the mobile and desktop menus. */
+
+    /* Scrim behind the control bar. The hero collage is a fixed backdrop that
+       shows through the top of the deck, and small grey labels on top of it
+       are unreadable. Mirrors the gradient under the caption. */
+    .flyers-archive::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 auto 0;
+      height: 9rem;
+      background: linear-gradient(to bottom, rgb(38 38 38) 30%, transparent);
+      pointer-events: none;
+    }
+    .flyers-archive .fa-filters {
+      position: relative;
+      z-index: 1;
+      flex: 0 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: end;
+      gap: .6rem 1rem;
+      padding: .75rem 0;
+      width: 100%;
+      max-width: 72rem;
+      margin-inline: auto;
+    }
+    .flyers-archive .fa-field { display: flex; flex-direction: column; gap: .2rem; }
+    .flyers-archive .fa-field--grow { flex: 1 1 14rem; }
+    .flyers-archive .fa-label {
+      font-size: .65rem;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: #a3a3a3;
+    }
+    .flyers-archive .fa-select {
+      min-width: 10rem;
+      padding: .35rem .55rem;
+      border-radius: .375rem;
+      border: 1px solid #525252;
+      background: transparent;
+      color: inherit;
+      font-size: .9rem;
+    }
+    .flyers-archive .fa-field--grow .fa-select { width: 100%; min-width: 0; }
+    .dark .flyers-archive .fa-select { border-color: #525252; }
+    .flyers-archive .fa-clear {
+      padding: .4rem .8rem;
+      border-radius: .375rem;
+      border: 1px solid currentColor;
+      background: transparent;
+      color: inherit;
+      font-size: .8rem;
+      cursor: pointer;
+    }
+    .flyers-archive .fa-clear:hover { background: rgba(127,127,127,.18); }
+
+    /* --- the deck -------------------------------------------------------
+       A native horizontal scroll container. No pointer or touch handlers
+       exist anywhere in this file: touch momentum, trackpad and PageUp/Down
+       all work natively, which is the whole reason swipe and tap stopped
+       fighting over the same pixel. The one exception is the wheel listener
+       further down, which maps vertical wheel to horizontal travel because not
+       every browser does that on its own. */
+    .flyers-archive .fa-stage {
+      position: relative;
+      flex: 1 1 auto;
+      min-height: 0;
+      display: flex;
+    }
+    .flyers-archive .fa-deck {
+      flex: 1 1 auto;
+      min-height: 0;
+      display: flex;
+      flex-direction: row;
+      overflow-x: auto;
+      overflow-y: hidden;
+      scroll-snap-type: x proximity;
+      overscroll-behavior-x: contain;
+      /* Slides are much wider than a portrait flyer, so the empty margins would
+         otherwise show the fixed hero collage straight through, competing with
+         the artwork. Mute it to a texture behind the deck; the collage still
+         reads through at the top, behind the control bar. */
+      background: rgb(23 23 23 / .72);
+      /* Reordering all 81 children at load makes the browser's scroll anchoring
+         compensate and leave the deck parked on a random slide. Nothing here
+         benefits from anchoring. */
+      overflow-anchor: none;
+      outline: none;
+    }
+    /* Full-width slides with no gap: the period between them is exactly one
+       clientWidth, so slide k is snapped at k * stride and the counter stays a
+       plain division (see syncActive). */
+    .flyers-archive .fa-slide {
+      flex: 0 0 100%;
+      scroll-snap-align: center;
+      display: flex;
+      flex-direction: column;
+    }
+    .flyers-archive .fa-slide[hidden] { display: none; }
+
+    /* --- prev / next ----------------------------------------------------
+       Outside the scroller, in .fa-stage. An absolutely positioned child of a
+       scroll container scrolls away with the content, so putting them inside
+       .fa-deck would not hold still. */
+    .flyers-archive .fa-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 3;
+      display: grid;
+      place-items: center;
+      width: 2.75rem;
+      height: 2.75rem;
+      padding: 0;
+      border: 0;
+      border-radius: 9999px;
+      background: rgba(0,0,0,.45);
+      color: #fff;
+      font-size: 1.9rem;
+      line-height: 1;
+      cursor: pointer;
+      transition: opacity .2s ease;
+    }
+    .flyers-archive .fa-nav:disabled { opacity: .18; cursor: default; }
+    .flyers-archive .fa-nav--prev { left: .5rem; }
+    .flyers-archive .fa-nav--next { right: .5rem; }
+
+    /* --- media ----------------------------------------------------------
+       inset:0 + margin:auto, not a flex/grid child. A percentage height on a
+       grid item inside `place-items:center` resolves against a content-sized
+       row, so the row grows to the image's intrinsic size and the cover
+       overflows instead of scaling. */
+    .flyers-archive .fa-media {
+      position: relative;
+      flex: 1 1 auto;
+      min-height: 0;
+    }
+    .flyers-archive .fa-img {
+      position: absolute;
+      inset: 0;
+      margin: auto;
+      max-width: 100%;
+      max-height: 100%;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      border-radius: .25rem;
+    }
+    .flyers-archive .fa-img--thumb {
+      filter: blur(10px);
+      transform: scale(1.04);
+      transition: opacity .3s ease;
+    }
+    .flyers-archive .fa-img--full { opacity: 0; transition: opacity .3s ease; }
+    .flyers-archive .fa-img--full.is-on { opacity: 1; }
+    .flyers-archive .fa-slide[data-loaded="1"] .fa-img--thumb { opacity: 0; }
+    .flyers-archive .fa-img--thumb.is-on { filter: none; transform: none; }
+
+    /* --- caption -------------------------------------------------------- */
+    .flyers-archive .fa-caption {
+      flex: 0 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: .5rem 1.5rem;
+      width: 100%;
+      max-width: 72rem;
+      margin-inline: auto;
+      padding: .85rem 0 1rem;
+      background: linear-gradient(to top, rgb(38 38 38), transparent);
+    }
+    .flyers-archive .fa-caption-text { min-width: 0; flex: 1 1 20rem; }
+    .flyers-archive .fa-title { margin: 0; font-size: 1.05rem; font-weight: 700; line-height: 1.25; }
+    .flyers-archive .fa-meta { margin: .1rem 0 0; font-size: .8rem; color: #a3a3a3; }
+    .flyers-archive .fa-tags {
+      display: flex; flex-wrap: wrap; gap: .3rem;
+      margin: .45rem 0 0; padding: 0; list-style: none;
+    }
+    .flyers-archive .fa-tags:empty { display: none; }
+    .flyers-archive .fa-tags button {
+      padding: .1rem .55rem; border-radius: 9999px;
+      border: 1px solid rgba(127,127,127,.45);
+      background: transparent; color: inherit;
+      font-size: .72rem; cursor: pointer;
+    }
+    .flyers-archive .fa-tags button:hover { background: rgba(127,127,127,.2); }
+
+    .flyers-archive .fa-actions { display: flex; align-items: center; gap: .9rem; }
+    .flyers-archive .fa-listen { font-size: .88rem; font-weight: 600; white-space: nowrap; }
+    .flyers-archive .fa-download {
+      display: inline-flex;
+      align-items: center;
+      gap: .3rem;
+      font-size: .8rem;
+      white-space: nowrap;
+      opacity: .8;
+    }
+    .flyers-archive .fa-download:hover { opacity: 1; }
+    .flyers-archive .fa-download svg { width: .95rem; height: .95rem; }
+
+    /* --- counter -------------------------------------------------------- */
+    .flyers-archive .fa-counter {
+      flex: 0 0 auto;
+      font-size: .8rem;
+      color: #a3a3a3;
+      font-variant-numeric: tabular-nums;
+      padding-bottom: .25rem;
+    }
+
+    .flyers-archive .fa-empty {
+      position: absolute; inset: 0;
+      display: grid; place-content: center; gap: .75rem;
+      text-align: center; color: #a3a3a3;
+    }
+
+    @media (max-width: 640px) {
+      .flyers-archive .fa-field { flex: 1 1 calc(50% - .75rem); }
+      .flyers-archive .fa-select { min-width: 0; width: 100%; font-size: .8rem; }
+      .flyers-archive .fa-title { font-size: .95rem; }
+      .flyers-archive .fa-caption { gap: .4rem; padding: .6rem 0 .8rem; }
+      .flyers-archive .fa-listen { font-size: .8rem; }
+      .flyers-archive .fa-download { font-size: .75rem; }
+      .flyers-archive .fa-nav { width: 2.25rem; height: 2.25rem; font-size: 1.5rem; }
+      .flyers-archive .fa-nav--prev { left: .25rem; }
+      .flyers-archive .fa-nav--next { right: .25rem; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .flyers-archive .fa-img { transition: none !important; }
+    }
+  </style>
+
+<script>
+(function () {
+  var root = document.querySelector("[data-flyers-archive]");
+  if (!root) return;
+
+  var deck   = document.getElementById("fa-deck");
+  var slides = Array.prototype.slice.call(deck.querySelectorAll(".fa-slide"));
+  if (!slides.length) return;
+
+  var venue = document.getElementById("fa-venue");
+  var year  = document.getElementById("fa-year");
+  var artist= document.getElementById("fa-artist");
+  var clear = document.getElementById("fa-clear");
+  var reset = document.getElementById("fa-reset");
+  var empty = document.getElementById("fa-empty");
+  var shown = document.getElementById("fa-shown");
+  var prevBtn = document.getElementById("fa-prev");
+  var nextBtn = document.getElementById("fa-next");
+
+  /* --- header height ----------------------------------------------------
+     Measured rather than hardcoded: the theme header changes height with the
+     logo and between the mobile and desktop menus, and it is built out of
+     divs — there is no <header> element to query. This archive block starts
+     directly below it, so its own document offset *is* the chrome height. */
+  function sizeChrome() {
+    var top = root.getBoundingClientRect().top + (window.scrollY || window.pageYOffset || 0);
+    if (top > 0) root.style.setProperty("--fa-chrome", Math.ceil(top) + "px");
+  }
+  sizeChrome();
+  window.addEventListener("resize", sizeChrome);
+  window.addEventListener("load", sizeChrome);
+  /* Slide geometry is viewport-derived, so it has to be re-measured whenever
+     the deck resizes or its visible slide set changes. */
+  window.addEventListener("resize", function () { measureDeck(); syncActive(); });
+
+  /* --- random order -----------------------------------------------------
+     Client-side, once per page load. Hugo's `shuffle` would randomise at
+     build time, so refreshing would show the same sequence; the old gallery
+     used it and paired it with a per-deploy cache-buster, which reshuffled
+     and re-downloaded everything on every band upload.
+
+     This reorders the existing DOM nodes, so nothing is rendered twice and
+     the slides stay server-rendered. */
+  (function () {
+    for (var i = slides.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var t = slides[i]; slides[i] = slides[j]; slides[j] = t;
+    }
+    var frag = document.createDocumentFragment();
+    slides.forEach(function (s) { frag.appendChild(s); });
+    deck.appendChild(frag);
+    // Belt and braces alongside overflow-anchor:none — reordering children of
+    // a scroll container can otherwise leave it scrolled into the middle.
+    deck.scrollLeft = 0;
+  })();
+
+  /* Case- and accent-insensitive, so "Nicolas Benaghi" and "Nicolás Benaghi"
+     are one artist rather than two. */
+  function norm(s) {
+    return String(s || "")
+      .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+      .toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
+  }
+  function bandsMatch(raw, needle) {
+    if (!raw) return false;
+    var parts = raw.split("||");
+    for (var i = 0; i < parts.length; i++) {
+      if (norm(parts[i]).indexOf(needle) !== -1) return true;
+    }
+    return false;
+  }
+
+  /* --- images -----------------------------------------------------------
+     Originals are only fetched near the viewport. A deck of 81 would otherwise
+     pull every full-size flyer at once, which is exactly what the old grid
+     did. */
+  function loadFull(slide) {
+    if (slide.dataset.loaded) return;
+    var img = slide.querySelector(".fa-img--full");
+    /* No full-size layer: this is one of the flyers in static/covers/, whose
+       single image is the original because static files cannot go through
+       Hugo Pipes. Marking it loaded would fire the fade rule that hides
+       .fa-img--thumb — which here is the only image — and the slide would
+       render blank. Leave it unmarked. */
+    if (!img) return;
+    var src = img.getAttribute("data-src");
+    if (!src) return;
+    var probe = new Image();
+    probe.onload = function () {
+      img.src = src;
+      img.classList.add("is-on");
+      slide.dataset.loaded = "1";
+    };
+    probe.onerror = function () { slide.dataset.loaded = "1"; };
+    probe.src = src;
+  }
+
+  /* --- counter ----------------------------------------------------------
+     Positions count only the *visible* slides, so the counter reads "3 / 11"
+     rather than a raw index into all 81 once a filter is on. */
+  var active = -1;
+  var visibleCount = slides.length;
+
+  function setActive(pos) {
+    if (pos === active) return;
+    active = pos;
+    if (shown) shown.textContent = (pos + 1) + " / " + visibleCount;
+    /* Stop at the ends rather than wrapping, so the buttons visibly run out
+       instead of silently teleporting back to slide 1. */
+    if (prevBtn) prevBtn.disabled = pos <= 0;
+    if (nextBtn) nextBtn.disabled = pos >= visibleCount - 1;
+  }
+
+  /* Driven by scrollLeft arithmetic, not an IntersectionObserver. With
+     scroll-snap-align:center and no margins between slides, slide k is
+     centred when scrollLeft = k * stride - peek, where stride is the rendered
+     slide width and peek is half the leftover — so the index is a division.
+     An observer only reports when the browser chooses to deliver
+     notifications, which after a programmatic scroll with no frames being
+     produced can be arbitrarily late — the counter then sits on the wrong
+     slide. */
+  var peek = 0;
+  var stride = 0;
+  function measureDeck() {
+    var D = deck.clientWidth;
+    /* Measured off a real slide rather than read back from the --fa-peek
+       custom property: unregistered custom properties come back from
+       getComputedStyle as their unresolved token stream, so parseFloat on
+       `clamp(1.5rem, 4vw, 3rem)` is NaN. A rendered slide width is exact
+       whatever the CSS ends up expressing. */
+    var ref = null;
+    for (var i = 0; i < slides.length; i++) {
+      if (!slides[i].hidden) { ref = slides[i]; break; }
+    }
+    stride = ref ? ref.getBoundingClientRect().width : D;
+    peek = (D - stride) / 2;
+  }
+  function syncActive() {
+    if (!stride || !visibleCount) return;
+    var i = Math.round((deck.scrollLeft + peek) / stride);
+    setActive(Math.max(0, Math.min(visibleCount - 1, i)));
+  }
+  /* Called straight from the scroll event, not through requestAnimationFrame.
+     It is one division and one comparison — too cheap to be worth throttling,
+     and rAF would tie the counter to frame production, which is exactly the
+     dependency this is avoiding. */
+  deck.addEventListener("scroll", syncActive, { passive: true });
+
+  /* Vertical wheel -> one slide per gesture. Not a raw scrollLeft += deltaY:
+     scroll-snap then drags the offset back to the nearest snap point, which
+     for a small delta is the slide you were already on, so the wheel appears
+     dead. Accumulating and stepping by exactly one stride always lands on a
+     snap point instead.
+
+     preventDefault runs unconditionally because we handle vertical wheel
+     outright, which also stops the browser's own translation from
+     double-scrolling on top of this. Horizontal wheel/trackpad (deltaX) is
+     left alone and handled natively.
+
+     This is the only listener that touches a pointer-ish event, and it is
+     wheel-only, so it cannot collide with touch swipe or clicks. */
+  var wheelAcc = 0;
+  deck.addEventListener("wheel", function (e) {
+    if (Math.abs(e.deltaY) <= Math.abs(e.deltaX)) return;
+    e.preventDefault();
+    wheelAcc += e.deltaY;
+    if (Math.abs(wheelAcc) < 60) return;
+    var dir = wheelAcc > 0 ? 1 : -1;
+    wheelAcc = 0;
+    deck.scrollBy({ left: dir * stride, behavior: "smooth" });
+  }, { passive: false });
+
+  /* Images still load via observers. Loading is tolerant of late delivery in
+     a way that a visible, always-wrong counter is not. */
+  var ioVisible = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) loadFull(e.target);
+    });
+  }, { root: deck, threshold: 0.3 });
+
+  /* A second, wider observer that only warms images well before they are
+     needed, so swiping does not reveal a blank cover. The margin is on the
+     inline axis now, matching the deck's scroll direction. */
+  var ioPrefetch = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) loadFull(e.target);
+    });
+  }, { root: deck, rootMargin: "0px 120%", threshold: 0 });
+
+  slides.forEach(function (s) { ioVisible.observe(s); ioPrefetch.observe(s); });
+
+  /* --- filters ---------------------------------------------------------- */
+  function apply() {
+    var v = venue.value;
+    var y = year.value;
+    var a = norm(artist.value.trim());
+    var n = 0;
+    var firstVisible = -1;
+
+    /* A plain loop, not forEach: `break` is only legal inside an actual
+       iteration statement, and a forEach *call* is a function call. Putting
+       `break` in its callback is a SyntaxError that kills the whole script. */
+    for (var i = 0; i < slides.length; i++) {
+      var s = slides[i];
+      var ok = (!v || s.dataset.venue === v) &&
+               (!y || s.dataset.year === y) &&
+               (!a || bandsMatch(s.dataset.bands, a));
+      s.hidden = !ok;
+      if (ok) {
+        n++;
+        if (firstVisible === -1) firstVisible = i;
+      }
+    }
+
+    visibleCount = n;
+    clear.hidden = !(v || y || a);
+    empty.hidden = n > 0;
+
+    if (n) {
+      measureDeck();
+      deck.scrollLeft = 0;
+      active = -1;
+      syncActive();
+      loadFull(slides[firstVisible]);
+    } else {
+      active = -1;
+      if (shown) shown.textContent = "0 / 0";
+    }
+  }
+
+  function resetFilters() {
+    venue.value = ""; year.value = ""; artist.value = "";
+    apply();
+  }
+
+  venue.addEventListener("change", apply);
+  year.addEventListener("change", apply);
+  // change/Enter, not input: a half-typed name must not blank the deck.
+  artist.addEventListener("change", apply);
+  artist.addEventListener("keydown", function (e) {
+    if (e.key === "Enter") { e.preventDefault(); apply(); }
+  });
+  clear.addEventListener("click", resetFilters);
+  reset.addEventListener("click", resetFilters);
+
+  root.addEventListener("click", function (e) {
+    var tag = e.target.closest("[data-band]");
+    if (tag) { artist.value = tag.dataset.band; apply(); }
+  });
+
+  /* --- prev / next ------------------------------------------------------
+     Buttons rather than only gestures. The wheel and swipe are good but not
+     obvious to everyone, and a mouse user has no reason to discover them. */
+  function page(dir) {
+    if (!stride || !visibleCount) return;
+    var target = Math.max(0, Math.min(visibleCount - 1, active + dir));
+    if (target === active) return;
+    deck.scrollBy({ left: dir * stride, behavior: "smooth" });
+  }
+
+  prevBtn.addEventListener("click", function () { page(-1); });
+  nextBtn.addEventListener("click", function () { page(1); });
+
+  document.addEventListener("keydown", function (e) {
+    /* Arrow keys page the deck. Browsers only scroll a horizontal container
+       with the inline arrows and only when it holds focus, which it does not
+       by default, so this is bound to the document instead. Not a gesture
+       handler — it cannot collide with touch or clicks. */
+    var t = e.target;
+    if (t && (t.tagName === "INPUT" || t.tagName === "SELECT" || t.tagName === "TEXTAREA")) return;
+    if (e.key === "ArrowRight") page(1);
+    else if (e.key === "ArrowLeft") page(-1);
+    else return;
+    e.preventDefault();
+  });
+
+  measureDeck();
+  setActive(0);
+  syncActive();
+  loadFull(slides[0]);
+})();
+</script>
+{{ end }}
