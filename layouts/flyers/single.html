@@ -47,11 +47,23 @@
   {{- $artists := slice -}}
   {{- $skipped := 0 -}}
 
+  {{- /* The pages the deck is built from. `noFlyer: true` in a recital page's
+         front matter keeps that page — and its audio — out of the deck while the
+         article itself stays published and playable; it is for shows whose
+         featured.* is not real artwork. Absent and false both stay in, so the
+         flag only ever has to be added, never unset.
+
+         Both passes below range over this, not over site.RegularPages directly,
+         so the filter bar can never offer a venue/artist/year that no visible
+         slide carries. Pages are dropped before the featured.* check, so an
+         intentional exclusion is silent and never reaches $skipped. */ -}}
+  {{- $deckPages := where (where site.RegularPages "Section" "recitales") "Params.noFlyer" "!=" true -}}
+
   {{- /* Pass 1: collect the filter vocabularies only. The filter bar has to be
          rendered before the deck so its controls come first in the tab order,
          but it cannot know the venue/year/artist lists until the recital pages
          have been walked. */ -}}
-  {{- range (where site.RegularPages "Section" "recitales").ByDate.Reverse -}}
+  {{- range $deckPages.ByDate.Reverse -}}
     {{- $page := . -}}
     {{- with .Resources.GetMatch "featured.*" -}}
       {{- range ($page.Params.espacios | default slice) -}}
@@ -117,7 +129,7 @@
     <div class="fa-deck" id="fa-deck" tabindex="-1"
          role="region" aria-roledescription="carousel" aria-label="Archivo de flyers">
       {{- /* ---- recital pages ---- */ -}}
-      {{- range (where site.RegularPages "Section" "recitales").ByDate.Reverse -}}
+      {{- range $deckPages.ByDate.Reverse -}}
         {{- $page := . -}}
         {{- with .Resources.GetMatch "featured.*" -}}
           {{- $res := . -}}
