@@ -76,8 +76,10 @@ OVERRIDES = {
     # Three shows whose IA item carries a date the catalogue does not, so the
     # date match finds nothing. Each file's length matches the catalogue's.
     # The catalogue dates are the correct ones - do not "fix" these towards the
-    # item. Only festimaga3 was wrong, and it is in DATE_FIXES below.
-    "la-maga/festimaga3": "live-2025-11-02-festimaga-3",
+    # item. Only the 2025-11-25 show was wrong, and it is in DATE_FIXES below.
+    # That show is not a festimaga: it was Traumas de la Infancia + Los Pozoz
+    # plus a Traumas reunion set. The item still carries the old name.
+    "la-maga/traumas-pozoz": "live-2025-11-02-festimaga-3",
     "club-racing/eruca": "live-2026-03-08-eruca-sativa",  # catalogue: 2026-05-08
     "casa-fratello/armand": "live-2025-03-27-armando-alonso",  # catalogue: 2025-04-26
     # Page front matter said 2026-03-20; the show was actually the 19th.
@@ -96,9 +98,11 @@ OVERRIDES = {
 DATE_FIXES = {
     "beertonic/armand2": "2026-03-19",
     # Page front matter and heading said 2025-11-28; the archive filenames all
-    # say 2025-11-25. The item's own `date` field says 2025-11-02, which is
-    # wrong too - the show was the 25th.
-    "la-maga/festimaga3": "2025-11-25",
+    # say 2025-11-25. The item's own `date` field said 2025-11-02, which was
+    # wrong too - the show was the 25th. The item's date has since been
+    # corrected on archive.org, but the key stays: the catalogue date is the
+    # one that was always right.
+    "la-maga/traumas-pozoz": "2025-11-25",
 }
 
 TRACK_RE = re.compile(r"^(?:\d+\s*[-–]\s*)?(.+?)\s*(?:\((\d{4}-\d{2}-\d{2})\))?$")

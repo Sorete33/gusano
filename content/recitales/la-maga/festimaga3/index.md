@@ -1,39 +1,49 @@
 ---
-date : 2025-11-25
-title : "Los Pozoz y Traumas de la Infancia en la Festimaga"
-weight: -32
-bandas: [Los Pozoz, Traumas de la Infancia]
+date : 2026-01-10
+title : "Festimaga Vol 3"
+weight: -41
+bandas: ["Cínica", "Paprika's Band", "Little Rocker", "Sala Roja", "Inteligencia Accidental"]
 espacios: [La Maga]
 author: "Gusanoide"
 draft: false
 showHero: true
 heroStyle: background
+---
+
+# ![alt text](featured.jpg)
 
 ---
 
-![alt text](featured.jpg)
+# [Cínica](https://www.instagram.com/_cinicabanda/)
 
-# [Los Pozoz](https://www.instagram.com/los.pozoz/), [Traumas de la Infancia](https://www.instagram.com/traumasdelainfancia81/) + Show reunión de Traumas en el[Rancho la Maga](https://www.instagram.com/rancho.la.maga/) 25-11-25
-
----
-
-# [Los Pozoz](https://www.instagram.com/los.pozoz/)
-
-{{< track show="la-maga/festimaga3" track="los-pozoz" >}}
-
+{{< track show="la-maga/festimaga3" track="cinica" >}}
 
 ---
 
-# [Traumas de la Infancia](https://www.instagram.com/traumasdelainfancia81/)
+# [Paprika's Band](https://www.instagram.com/lapaprikaband/)
 
-
-{{< track show="la-maga/festimaga3" track="traumas-de-la-infancia" >}}
-
+{{< track show="la-maga/festimaga3" track="paprikas-band" >}}
 
 ---
 
-# Show reunión de Traumas con la formación guitarra + coros Yanqui, bajo, Nicanor, batería, Chiquilin Sanchez y voz, Simón (el cantor) interpretando su primer material grabado [Desahogo](https://traumasdelainfancia.bandcamp.com/album/desahogo)
+# [Little Rocker](https://www.instagram.com/littlerockerr/)
 
-{{< track show="la-maga/festimaga3" track="desahogo" >}}
+{{< track show="la-maga/festimaga3" track="little-rocker" >}}
 
-[Artículo en Internet Archive](https://archive.org/details/live-2025-11-02-festimaga-3)
+---
+
+# [Sala Roja](https://www.instagram.com/__salaroja/)
+
+{{< track show="la-maga/festimaga3" track="sala-roja" >}}
+
+---
+
+# [Inteligencia Accidental](https://www.instagram.com/inteligencia.accidental/)
+
+{{< track show="la-maga/festimaga3" track="inteligencia-accidental" >}}
+
+---
+
+# Pintura en vivo de la mano de [Nativa](https://www.instagram.com/nativa_sl/) (si alguien tiene una foto que me la pase)
+
+[Artículo en Internet Archive](https://archive.org/details/live-2026-01-10-festimaga-4)

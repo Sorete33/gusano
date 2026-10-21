@@ -1,8 +1,8 @@
 ---
-date : 2026-01-10
-title : "Festimaga Volumen 4"
-weight: -41
-bandas: ["Cínica", "Paprika's Band", "Little Rocker", "Sala Roja", "Inteligencia Accidental"]
+date : 2026-02-21
+title : "Festimaga Vol 4"
+weight: -55
+bandas: [Mate Jazz, Black Mamba, Los Pozoz, Nómada, Sabotaje]
 espacios: [La Maga]
 author: "Gusanoide"
 draft: false
@@ -10,40 +10,37 @@ showHero: true
 heroStyle: background
 ---
 
-# ![alt text](featured.jpg)
+# ![alt text](featured.png)
 
 ---
 
-# [Cínica](https://www.instagram.com/_cinicabanda/)
+# Mate Jazz
 
-{{< track show="la-maga/festimaga4" track="cinica" >}}
-
----
-
-# [Paprika's Band](https://www.instagram.com/lapaprikaband/)
-
-{{< track show="la-maga/festimaga4" track="paprikas-band" >}}
+{{< track show="la-maga/festimaga4" track="mate-jazz" >}}
 
 ---
 
-# [Little Rocker](https://www.instagram.com/littlerockerr/)
+# [Black Mamba](https://www.instagram.com/black_mamba.chivilcoy/)
 
-{{< track show="la-maga/festimaga4" track="little-rocker" >}}
-
----
-
-# [Sala Roja](https://www.instagram.com/__salaroja/)
-
-{{< track show="la-maga/festimaga4" track="sala-roja" >}}
+{{< track show="la-maga/festimaga4" track="black-mamba" >}}
 
 ---
 
-# [Inteligencia Accidental](https://www.instagram.com/inteligencia.accidental/)
+# [Los Pozoz](https://www.instagram.com/los.pozoz/)
 
-{{< track show="la-maga/festimaga4" track="inteligencia-accidental" >}}
+{{< track show="la-maga/festimaga4" track="los-pozoz" >}}
 
 ---
 
-# Pintura en vivo de la mano de [Nativa](https://www.instagram.com/nativa_sl/) (si alguien tiene una foto que me la pase)
+# [Nómada](https://www.instagram.com/nomadachivilcoy/)
 
-[Artículo en Internet Archive](https://archive.org/details/live-2026-01-10-festimaga-4)
+{{< track show="la-maga/festimaga4" track="nomada" >}}
+
+---
+
+# [Sabotage](https://www.instagram.com/sabotage.nu.metal/) 
+### (la grabadora estaba arriba del techo y el bajo hacia vibrar la chapa asi que quedo con un ruidito jejeje)
+
+{{< track show="la-maga/festimaga4" track="sabotage" >}}
+
+[Artículo en Internet Archive](https://archive.org/details/live-2026-02-21-festimaga-5)

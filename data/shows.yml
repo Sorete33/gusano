@@ -548,41 +548,41 @@
   page: /recitales/encuentro-por-las-artes/juanito-papri-nico/
   archive: live-2026-02-27-juanito-alimaapaprikas-bandmuchiut-y-los-monjes-del-dudaismo
   archive_url: https://archive.org/details/live-2026-02-27-juanito-alimaapaprikas-bandmuchiut-y-los-monjes-del-dudaismo
-- id: la-maga/festimaga5
+- id: la-maga/festimaga4
   date: '2026-02-21'
-  title: Festimaga Vol 5
+  title: Festimaga Vol 4
   tracks:
   - id: mate-jazz
     artist: Mate Jazz
-    title: Mate Jazz en Beertonic
+    title: Mate Jazz en la Festimaga 4
     mp3: 01%20-%20Mate%20Jazz%20-%20Festimaga%20(2026-02-21).mp3
     flac: 01%20-%20Mate%20Jazz%20-%20Festimaga%20(2026-02-21).flac
     wav: 01%20-%20Mate%20Jazz%20-%20Festimaga%20(2026-02-21).wav
     duration: 3038
   - id: black-mamba
     artist: Black Mamba
-    title: Black Mamba
+    title: Black Mamba en la Festimaga 4
     mp3: 02%20-%20Black%20Mamba%20-%20Festimaga%20(2026-02-21).mp3
     flac: 02%20-%20Black%20Mamba%20-%20Festimaga%20(2026-02-21).flac
     wav: 02%20-%20Black%20Mamba%20-%20Festimaga%20(2026-02-21).wav
     duration: 1929
   - id: los-pozoz
     artist: Los Pozoz
-    title: Los Pozoz en el Festival Consciente
+    title: Los Pozoz en la Festimaga 4
     mp3: 03%20-%20Los%20Pozoz-%20Festimaga%20(2026-02-21).mp3
     flac: 03%20-%20Los%20Pozoz-%20Festimaga%20(2026-02-21).flac
     wav: 03%20-%20Los%20Pozoz-%20Festimaga%20(2026-02-21).wav
     duration: 1167
   - id: nomada
     artist: Nómada
-    title: Nómada en la Festimaga 2
+    title: Nómada en la Festimaga 4
     mp3: 04%20-%20N%C3%B3mada%20-%20Festimaga%20(2026-02-21).mp3
     flac: 04%20-%20N%C3%B3mada%20-%20Festimaga%20(2026-02-21).flac
     wav: 04%20-%20N%C3%B3mada%20-%20Festimaga%20(2026-02-21).wav
     duration: 1880
   - id: sabotage
     artist: Sabotage
-    title: Sabotage - Festimaga
+    title: Sabotage en la Festimaga 4
     mp3: 05%20-%20Sabotage%20-%20Festimaga%20(2026-02-21).mp3
     flac: 05%20-%20Sabotage%20-%20Festimaga%20(2026-02-21).flac
     wav: 05%20-%20Sabotage%20-%20Festimaga%20(2026-02-21).wav
@@ -594,8 +594,8 @@
   - Los Pozoz
   - Nómada
   - Sabotaje
-  cover: /recitales/la-maga/festimaga5/featured.png
-  page: /recitales/la-maga/festimaga5/
+  cover: /recitales/la-maga/festimaga4/featured.png
+  page: /recitales/la-maga/festimaga4/
   archive: live-2026-02-21-festimaga-5
   archive_url: https://archive.org/details/live-2026-02-21-festimaga-5
 - id: varelabar/frondayraiz
@@ -957,41 +957,41 @@
   page: /recitales/sala-biaus/mr-nomad-cinik-ia/
   archive: live-2026-01-16-cnicainteligencia-accidentalsr-wilson-nmada
   archive_url: https://archive.org/details/live-2026-01-16-cnicainteligencia-accidentalsr-wilson-nmada
-- id: la-maga/festimaga4
+- id: la-maga/festimaga3
   date: '2026-01-10'
-  title: Festimaga Volumen 4
+  title: Festimaga Vol 3
   tracks:
   - id: cinica
     artist: Cínica
-    title: Cínica en Sala Biaus
+    title: Cínica en la Festimaga 3
     mp3: 01%20-%20C%C3%ADnica%20-%20Festimaga%204%20(2026-01-10).mp3
     flac: 01%20-%20C%C3%ADnica%20-%20Festimaga%204%20(2026-01-10).flac
     wav: 01%20-%20C%C3%ADnica%20-%20Festimaga%204%20(2026-01-10).wav
     duration: 1533
   - id: paprikas-band
     artist: Paprika's Band
-    title: Paprika's Band en el aniversario de Beertonic
+    title: Paprika's Band en la Festimaga 3
     mp3: 02%20-%20Paprika%27s%20Band%20-%20Festimaga%204%20(2026-01-10).mp3
     flac: 02%20-%20Paprika%27s%20Band%20-%20Festimaga%204%20(2026-01-10).flac
     wav: 02%20-%20Paprika%27s%20Band%20-%20Festimaga%204%20(2026-01-10).wav
     duration: 1755
   - id: little-rocker
     artist: Little Rocker
-    title: Little Rocker
+    title: Little Rocker en la Festimaga 3
     mp3: 03%20-%20Little%20Rocker%20-%20Festimaga%204%20(2026-01-10).mp3
     flac: 03%20-%20Little%20Rocker%20-%20Festimaga%204%20(2026-01-10).flac
     wav: 03%20-%20Little%20Rocker%20-%20Festimaga%204%20(2026-01-10).wav
     duration: 1472
   - id: sala-roja
     artist: Sala Roja
-    title: Sala Roja Festimaga 1
+    title: Sala Roja en la Festimaga 3
     mp3: 04%20-%20Sala%20Roja%20-%20Festimaga%204%20(2026-01-10).mp3
     flac: 04%20-%20Sala%20Roja%20-%20Festimaga%204%20(2026-01-10).flac
     wav: 04%20-%20Sala%20Roja%20-%20Festimaga%204%20(2026-01-10).wav
     duration: 691
   - id: inteligencia-accidental
     artist: Inteligencia Accidental
-    title: Inteligencia Accidental Festimaga 1
+    title: Inteligencia Accidental en la Festimaga 3
     mp3: 05%20-%20Inteligencia%20Accidental%20-%20Festimaga%204%20(2026-01-10).mp3
     flac: 05%20-%20Inteligencia%20Accidental%20-%20Festimaga%204%20(2026-01-10).flac
     wav: 05%20-%20Inteligencia%20Accidental%20-%20Festimaga%204%20(2026-01-10).wav
@@ -1003,8 +1003,8 @@
   - Little Rocker
   - Sala Roja
   - Inteligencia Accidental
-  cover: /recitales/la-maga/festimaga4/featured.jpg
-  page: /recitales/la-maga/festimaga4/
+  cover: /recitales/la-maga/festimaga3/featured.jpg
+  page: /recitales/la-maga/festimaga3/
   archive: live-2026-01-10-festimaga-4
   archive_url: https://archive.org/details/live-2026-01-10-festimaga-4
 - id: encuentro-por-las-artes/epi-sun-roco
@@ -1430,27 +1430,27 @@
   page: /recitales/el-portal-del-tango/festi-distor/
   archive: live-2025-11-29-festival-distorsivo
   archive_url: https://archive.org/details/live-2025-11-29-festival-distorsivo
-- id: la-maga/festimaga3
+- id: la-maga/traumas-pozoz
   date: '2025-11-25'
-  title: Los Pozoz y Traumas de la Infancia en la Festimaga
+  title: Los Pozoz y Traumas de la Infancia en La Maga
   tracks:
   - id: los-pozoz
     artist: Los Pozoz
-    title: Los Pozoz en la Festimaga 3
+    title: Los Pozoz en La Maga
     mp3: 01%20-%20Los%20Pozoz%20(extracto)%20-%20Festimaga%203%20(2025-11-25).mp3
     flac: 01%20-%20Los%20Pozoz%20(extracto)%20-%20Festimaga%203%20(2025-11-25).flac
     wav: 01%20-%20Los%20Pozoz%20(extracto)%20-%20Festimaga%203%20(2025-11-25).wav
     duration: 347
   - id: traumas-de-la-infancia
     artist: Traumas de la Infancia
-    title: Traumas de la Infancia en la Festimaga 3
+    title: Traumas de la Infancia en La Maga
     mp3: 02%20-%20Traumas%20de%20la%20Infancia%20-%20Festimaga%203%20(2025-11-25).mp3
     flac: 02%20-%20Traumas%20de%20la%20Infancia%20-%20Festimaga%203%20(2025-11-25).flac
     wav: 02%20-%20Traumas%20de%20la%20Infancia%20-%20Festimaga%203%20(2025-11-25).wav
     duration: 990
   - id: desahogo
     artist: Traumas de la Infancia Reunión
-    title: Reunión de Traumas interpretando Desahogo en la Festimaga 3
+    title: Reunión de Traumas interpretando Desahogo
     mp3: 03%20-%20Traumas%20de%20la%20Infancia%20Reuni%C3%B3n%20-%20Festimaga%203%20(2025-11-25).mp3
     flac: 03%20-%20Traumas%20de%20la%20Infancia%20Reuni%C3%B3n%20-%20Festimaga%203%20(2025-11-25).flac
     wav: 03%20-%20Traumas%20de%20la%20Infancia%20Reuni%C3%B3n%20-%20Festimaga%203%20(2025-11-25).wav
@@ -1459,8 +1459,8 @@
   bands:
   - Los Pozoz
   - Traumas de la Infancia
-  cover: /recitales/la-maga/festimaga3/featured.jpg
-  page: /recitales/la-maga/festimaga3/
+  cover: /recitales/la-maga/traumas-pozoz/featured.jpg
+  page: /recitales/la-maga/traumas-pozoz/
   archive: live-2025-11-02-festimaga-3
   archive_url: https://archive.org/details/live-2025-11-02-festimaga-3
 - id: beertonic/cumple
@@ -2250,29 +2250,29 @@
   - id: entrance
     artist: Entrance
     title: Entrance Festimaga 1
-    src: 01%20-%20Entrance%20-%20Festimaga%201%20(2025-04-04).wav
-    fmt: wav
+    mp3: 01%20-%20Entrance%20-%20Festimaga%201%20(2025-04-04).mp3
+    flac: 01%20-%20Entrance%20-%20Festimaga%201%20(2025-04-04).flac
     wav: 01%20-%20Entrance%20-%20Festimaga%201%20(2025-04-04).wav
     duration: 384
   - id: inteligencia-accidental
     artist: Inteligencia Accidental
     title: Inteligencia Accidental Festimaga 1
-    src: 02%20-%20Inteligencia%20Accidental%20-%20Festimaga%201%20(2025-04-04).wav
-    fmt: wav
+    mp3: 02%20-%20Inteligencia%20Accidental%20-%20Festimaga%201%20(2025-04-04).mp3
+    flac: 02%20-%20Inteligencia%20Accidental%20-%20Festimaga%201%20(2025-04-04).flac
     wav: 02%20-%20Inteligencia%20Accidental%20-%20Festimaga%201%20(2025-04-04).wav
     duration: 1958
   - id: parasomnia
     artist: Parasomnia
     title: Parasomnia Festimaga 1
-    src: 03%20-%20Parasomnia-%20Festimaga%201%20(2025-04-04).wav
-    fmt: wav
+    mp3: 03%20-%20Parasomnia-%20Festimaga%201%20(2025-04-04).mp3
+    flac: 03%20-%20Parasomnia-%20Festimaga%201%20(2025-04-04).flac
     wav: 03%20-%20Parasomnia-%20Festimaga%201%20(2025-04-04).wav
     duration: 2583
   - id: sala-roja
     artist: Sala Roja
     title: Sala Roja Festimaga 1
-    src: 04%20-%20Sala%20Roja%20-%20Festimaga%201%20(2025-04-04).wav
-    fmt: wav
+    mp3: 04%20-%20Sala%20Roja%20-%20Festimaga%201%20(2025-04-04).mp3
+    flac: 04%20-%20Sala%20Roja%20-%20Festimaga%201%20(2025-04-04).flac
     wav: 04%20-%20Sala%20Roja%20-%20Festimaga%201%20(2025-04-04).wav
     duration: 1706
   space: La Maga
