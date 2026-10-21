@@ -5,6 +5,10 @@ Fetches the items of the audiogusano Internet Archive collection, matches each
 show in data/shows.yml to its item, and rewrites the track list from the files
 that item actually contains.
 
+This script only reads archive.org. To upload a new show and open its entry
+in the catalogue in one go, use scripts/upload-recital.py, which calls this
+one once the item is on archive.org.
+
 Matching, in order:
   1. exact date + the item's `venue` metadata
   2. exact date + band names found in the item's filenames
