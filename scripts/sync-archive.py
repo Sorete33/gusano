@@ -188,8 +188,18 @@ def item_tracks(ident: str, max_age: int = CACHE_TTL) -> list[dict]:
         if key not in groups:
             groups[key] = {}
             order.append(key)
-        # Keep the first file seen for a format (later ones are duplicates).
-        groups[key].setdefault(ext, name)
+        # The derivative of "X.wav" is called "X.mp3". When a file was renamed
+        # on archive.org, the old derivative can survive for a while with the
+        # old name, and then two files of the same format sit in the group.
+        # The one that matches the original's base name is the right one; the
+        # other is leftovers, and picking it points the site at a file that
+        # may be deleted any moment.
+        base = key.rsplit(".", 1)[0]
+        fbase = name.rsplit(".", 1)[0]
+        if ext not in groups[key] or (
+            fbase == base and groups[key][ext].rsplit(".", 1)[0] != base
+        ):
+            groups[key][ext] = name
         if ext == "wav" and f.get("length") and str(f["length"]).isdigit():
             groups[key]["_sec"] = int(f["length"])
 
