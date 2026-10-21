@@ -696,6 +696,17 @@ def find_featured(info: dict, folder: Path) -> Path | None:
     return cands[0] if len(cands) == 1 else None
 
 
+def default_folder() -> Path:
+    """La carpeta de los masters: la del script si tiene el recital.txt, si no
+    la de trabajo. Correr el script desde la carpeta de los masters es lo
+    normal, pero también se puede correr desde el repo con --dir."""
+    for base in (HERE, Path.cwd()):
+        for name in INFO_NAMES:
+            if (base / name).is_file():
+                return base
+    return HERE
+
+
 def main() -> None:
     ap = argparse.ArgumentParser(
         description="Sube un recital a archive.org y abre la entrada en el sitio.",
@@ -717,7 +728,7 @@ def main() -> None:
     ap.add_argument("--wait", type=int, default=30, help="minutos de espera por los derivados")
     args = ap.parse_args()
 
-    folder = Path(args.dir).expanduser().resolve() if args.dir else HERE
+    folder = Path(args.dir).expanduser().resolve() if args.dir else default_folder()
     if not folder.is_dir():
         die(f"no existe la carpeta {folder}")
 
@@ -745,7 +756,10 @@ def main() -> None:
 
     slug_show = get_str(info, "slug") or slug(title)
     show_id = f"{slug(venue)}/{slug_show}"
-    identifier = get_str(info, "identifier") or f"live-{date}-{slug_show}"
+    # El identificador del item sigue la convención de los que ya están:
+    # live-<fecha>-<nombre del evento>. El slug de la página es otra cosa
+    # (festimaga5 sin guion), así que no se usa para esto.
+    identifier = get_str(info, "identifier") or f"live-{date}-{slug(title)}"
     page_title = title if norm(venue) in norm(title) else f"{title} en {venue}"
 
     say(f"info    : {info_path}")

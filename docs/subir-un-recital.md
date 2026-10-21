@@ -119,7 +119,12 @@ La misma que usan los items que ya están:
 | `description` | `Grabación en vivo de <Evento> en <Venue> el día <fecha>.` |
 | `mediatype` | `audio` |
 | `collection` | `opensource_audio` |
-| identifier | `live-<fecha>-<slug>` |
+| identifier | `live-<fecha>-<nombre del evento>` |
+
+El identifier sale del nombre del evento, no del slug de la página: para
+"Festimaga 5" es `live-2026-10-17-festimaga-5`, y la página queda en
+`content/recitales/la-maga/festimaga5/`. Se puede fijar con `identifier:` en
+el `recital.txt`.
 
 El `date` del item tiene que ser **la fecha real del show**: es lo primero que
 mira el matcher para cruzar un show con su item. Si no coincide, el show
