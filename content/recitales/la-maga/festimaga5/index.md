@@ -12,7 +12,7 @@ heroStyle: background
 
 # ![alt text](featured.webp)
 
-Gr
+## Gracias a les feriantes por participar, si quieren adjuntar su emprendimiento en los comentarios o en un mail los agrego en el artículo
 
 ---
 
@@ -46,7 +46,7 @@ Gr
 
 ---
 
-# Charla sobre hongos de Mili
+# Charla sobre hongos de [Mili Giacomini](https://www.instagram.com/miligiacomini.ok/)
 
 {{< track show="la-maga/festimaga5" track="charla-sobre-hongos-de-mili" >}}
 
