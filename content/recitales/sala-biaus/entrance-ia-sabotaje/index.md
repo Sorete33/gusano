@@ -1,8 +1,8 @@
 ---
 date : 2026-02-07
-title : "Entrance, Inteligencia Accidental y Sabotaje en Sala Biaus"
+title : "Entrance, Inteligencia Accidental y Sabotage en Sala Biaus"
 weight: -50
-bandas: [Entrance, Inteligencia Accidental, Sabojate]
+bandas: [Entrance, Inteligencia Accidental, Sabotage]
 espacios: [Sala Biaus]
 author: "Gusanoide"
 draft: false
@@ -27,7 +27,7 @@ heroStyle: background
 
 ---
 
-# [Sabotaje](https://www.instagram.com/sabotage.nu.metal/)
+# [Sabotage](https://www.instagram.com/sabotage.nu.metal/)
 
 {{< track show="sala-biaus/entrance-ia-sabotaje" track="sabotage" >}}
 
