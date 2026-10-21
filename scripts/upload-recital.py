@@ -68,6 +68,7 @@ except ImportError:
 HERE = Path(__file__).resolve().parent
 AUDIO_EXTS = (".wav", ".flac", ".mp3", ".m4a", ".ogg", ".aif", ".aiff")
 IMAGE_EXTS = (".jpg", ".jpeg", ".png", ".webp", ".avif")
+AUDIO_EXT = AUDIO_EXTS  # el sync llama así a los formatos que reconoce
 INFO_NAMES = ("recital.txt", "recital.yaml", "recital.yml", "recital.info")
 DEFAULT_COVERAGE = "Chivilcoy, Buenos Aires, Argentina"
 DEFAULT_COLLECTION = "opensource_audio"
@@ -372,6 +373,20 @@ def item_exists(identifier: str) -> bool:
     return ia_metadata(identifier) is not None
 
 
+def existing_track_count(identifier: str) -> int:
+    """Cuántas pistas tiene ya el item: para seguir numerando desde ahí y no
+    repetir los números de los archivos."""
+    data = ia_metadata(identifier) or {}
+    groups = set()
+    for f in data.get("files") or []:
+        name = f.get("name") or ""
+        ext = name.rsplit(".", 1)[-1].lower() if "." in name else ""
+        if f".{ext}" not in AUDIO_EXT:
+            continue
+        groups.add(f.get("original") or name)
+    return len(groups)
+
+
 def upload_item(identifier: str, files: list[Path], meta: dict) -> None:
     ia = shutil.which("ia")
     if not ia:
@@ -473,6 +488,16 @@ def upsert_show(repo: Path, show: dict, update: bool) -> None:
         )
     if old is not None:
         show["tracks"] = old.get("tracks") or []
+        # El título del catálogo está cuidado a mano: se respeta.
+        if old.get("title"):
+            show["title"] = old["title"]
+        # Las bandas sí las manda el recital.txt: es la fuente de verdad de
+        # este show. Si difieren, se avisa, para ver el cambio.
+        old_bands = old.get("bands") or []
+        new_bands = show.get("bands") or []
+        if new_bands and new_bands != old_bands:
+            say(f"  bandas: {old_bands} -> {new_bands}")
+        show["bands"] = new_bands or old_bands
         show.setdefault("cover", old.get("cover"))
         if not show.get("cover"):
             show.pop("cover", None)
@@ -520,12 +545,48 @@ def next_weight(repo: Path) -> int:
     return (min(weights) - 1) if weights else -1
 
 
+TRACK_RE = re.compile(
+    r'\{\{<\s*track\s+show="([^"]*)"\s+track="([^"]*)"\s*>\}\}'
+)
+
+
 def write_page(repo: Path, show: dict, featured: Path | None, venue: str) -> Path:
+    """Crea la página del show.
+
+    Si la página ya existe NO se toca: las páginas tienen texto escrito a
+    mano (links a Instagram, artículos, notas del show) y pisar eso sería
+    perder trabajo. Lo que sí hace es avisar qué players quedaron afuera, con
+    el markdown listo para pegar.
+
+    Si no existe, se arma sola: front matter + un {{< track >}} por pista."""
     show_id = show["id"]
     venue_slug, show_slug = show_id.split("/", 1)
     page_dir = repo / "content" / "recitales" / venue_slug / show_slug
-    page_dir.mkdir(parents=True, exist_ok=True)
+    page = page_dir / "index.md"
 
+    if page.is_file():
+        existing = page.read_text(encoding="utf-8")
+        have = {tid for sid, tid in TRACK_RE.findall(existing) if sid == show_id}
+        missing = [t for t in (show.get("tracks") or []) if t.get("id") not in have]
+        if missing:
+            say(f"\nla página ya existe: {page.relative_to(repo)}")
+            say("no la toco (tiene texto escrito a mano). Faltan estos players:")
+            for t in missing:
+                artist = t.get("artist") or t.get("id") or ""
+                say(f"  # {artist}")
+                say(f'  {{{{< track show="{show_id}" track="{t.get("id")}" >}}}}')
+                say("")
+        else:
+            say(f"página  : {page.relative_to(repo)} (ya existía, sin cambios)")
+        # El flyer: si la página ya tiene uno, no se toca. Si no, se copia el
+        # nuevo para que entre al archivo de /flyers/.
+        if featured and featured.is_file() and not list(page_dir.glob("featured.*")):
+            ext = featured.suffix.lower()
+            shutil.copy2(featured, page_dir / f"featured{ext}")
+            show["cover"] = f"/recitales/{venue_slug}/{show_slug}/featured{ext}"
+        return page
+
+    page_dir.mkdir(parents=True, exist_ok=True)
     bands = show.get("bands") or []
     title = show.get("title") or ""
     page_title = title if norm(venue) in norm(title) else f"{title} en {venue}"
@@ -566,18 +627,14 @@ def write_page(repo: Path, show: dict, featured: Path | None, venue: str) -> Pat
     if show.get("archive_url"):
         body += [f"[Artículo en Internet Archive]({show['archive_url']})", ""]
 
-    (page_dir / "index.md").write_text("\n".join(fm + body), encoding="utf-8")
+    page.write_text("\n".join(fm + body), encoding="utf-8")
+    say(f"página  : {page.relative_to(repo)}")
 
     if featured and featured.is_file():
         ext = featured.suffix.lower()
-        # Si la página ya tenía un featured con otra extensión, se va: con dos,
-        # Hugo elige uno al azar.
-        for old in page_dir.glob("featured.*"):
-            if old.name.lower() != f"featured{ext}":
-                old.unlink()
         shutil.copy2(featured, page_dir / f"featured{ext}")
         show["cover"] = f"/recitales/{venue_slug}/{show_slug}/featured{ext}"
-    return page_dir / "index.md"
+    return page
 
 
 # ------------------------------------------------------------------ principal
@@ -650,6 +707,11 @@ def main() -> None:
     ap.add_argument("--dry-run", action="store_true", help="planifica y no toca nada")
     ap.add_argument("--init", action="store_true", help="escribe un recital.txt de ejemplo")
     ap.add_argument("--skip-upload", action="store_true", help="el item ya está subido")
+    ap.add_argument(
+        "--add-files",
+        action="store_true",
+        help="agregar pistas a un item que ya existe en archive.org",
+    )
     ap.add_argument("--update", action="store_true", help="el show ya está en el catálogo")
     ap.add_argument("--build", action="store_true", help="corre hugo al final")
     ap.add_argument("--wait", type=int, default=30, help="minutos de espera por los derivados")
@@ -734,6 +796,19 @@ def main() -> None:
     else:
         say("flyer   : (ninguno) la página va a quedar fuera del archivo de /flyers/")
 
+    # Al agregar pistas a un item que ya existe, la numeración sigue desde el
+    # final: los nombres de archivo que ya están no se tocan.
+    if args.add_files:
+        if not item_exists(identifier):
+            die(
+                f"el item '{identifier}' no existe en archive.org.\n"
+                "Para un recital nuevo no usés --add-files: corré sin él."
+            )
+        start = existing_track_count(identifier)
+        say(f"\n--add-files: el item ya tiene {start} pistas; las nuevas siguen desde {start + 1}.")
+        for t in plan:
+            t["index"] = start + t["index"]
+
     if args.dry_run:
         say("\n--dry-run: no se sube nada ni se escribe nada.")
         say("\nQuedaría así:")
@@ -752,12 +827,28 @@ def main() -> None:
         return
 
     # --- subida -------------------------------------------------------------
-    if not args.skip_upload:
+    if args.skip_upload:
+        say("\n--skip-upload: el item se toma como ya subido.")
+        if not item_exists(identifier):
+            say(f"  ojo: no encontré el item '{identifier}' en archive.org.")
+    elif args.add_files:
+        # El item ya está en archive.org y lo que hay que hacer es agregarle
+        # pistas. La numeración ya viene corrida desde el final.
+        staged = stage_files(plan, title, date)
+        try:
+            # Sin metadata: el item ya la tiene y no hay que pisarla.
+            upload_item(identifier, staged, {})
+            wait_for_derivatives(identifier, [p.name for p in staged], args.wait * 60)
+        finally:
+            if staged:
+                shutil.rmtree(staged[0].parent, ignore_errors=True)
+    else:
         if item_exists(identifier):
             die(
                 f"el item '{identifier}' ya existe en archive.org.\n"
-                "Si el item ya está bien armado, usá --skip-upload (eso NO sube "
-                "archivos, sólo arma la entrada del catálogo)."
+                "Si querés agregarle pistas, usá --add-files.\n"
+                "Si el item ya está bien armado y sólo falta la entrada del "
+                "catálogo, usá --skip-upload (eso NO sube archivos)."
             )
         staged = stage_files(plan, title, date)
         try:
@@ -766,10 +857,6 @@ def main() -> None:
         finally:
             if staged:
                 shutil.rmtree(staged[0].parent, ignore_errors=True)
-    else:
-        say("\n--skip-upload: el item se toma como ya subido.")
-        if not item_exists(identifier):
-            say(f"  ojo: no encontré el item '{identifier}' en archive.org.")
 
     # --- catálogo -----------------------------------------------------------
     venue_slug, show_slug = show_id.split("/", 1)
@@ -784,7 +871,7 @@ def main() -> None:
         "bands": bands,
         "page": f"/recitales/{venue_slug}/{show_slug}/",
     }
-    upsert_show(repo, show, args.update)
+    upsert_show(repo, show, args.update or args.add_files)
     say(f"\ncatálogo: agregué {show_id} a data/shows.yml")
 
     run_sync(repo, show_id)
@@ -804,7 +891,6 @@ def main() -> None:
 
     # --- página -------------------------------------------------------------
     page = write_page(repo, show, featured, venue)
-    say(f"página  : {page.relative_to(repo)}")
     if show.get("cover"):
         # el cover se define recién con la página: hay que persistirlo
         shows, header = load_shows(repo)

@@ -132,9 +132,47 @@ queda sin resolver y hay que agregar un `OVERRIDES` en `sync-archive.py`.
 | `--dry-run` | planifica y muestra todo, no sube ni escribe nada |
 | `--init` | escribe un `recital.txt` de ejemplo en la carpeta |
 | `--skip-upload` | el item ya está subido: arma la entrada del catálogo y la página |
+| `--add-files` | **agregar** pistas a un item que ya existe en archive.org |
 | `--update` | el show ya existe en `data/shows.yml`: lo actualiza sin perder los textos viejos de las pistas |
 | `--build` | corre `hugo --minify --gc` al final y muestra los warnings |
 | `--wait N` | minutos de espera por los derivados (default 30) |
+
+## Agregar pistas a un show que ya está subido
+
+Si el item ya existe en archive.org y lo que falta son pistas (un set nuevo de
+una banda, una toma mejor, un encore), `--add-files` las sube **al item
+existente** y después actualiza el catálogo:
+
+```bash
+python3 upload-recital.py --add-files
+```
+
+La numeración de los archivos sigue desde el final: si el item ya tiene 5
+pistas, las nuevas se llaman `06 - ...`, `07 - ...`. Los nombres de archivo
+que ya están no se tocan. En este modo no se manda metadata: la del item no
+cambia.
+
+## Qué NO hace el script
+
+- **No pisa una página que ya existe.** Las páginas tienen texto escrito a
+  mano (links a Instagram, notas del show) y eso no se toca. Si el show ya
+  tenía página, el script la deja como está y avisa qué players quedaron
+  afuera, con el markdown listo para pegar:
+
+  ```
+  # Banda 3
+  {{< track show="la-maga/festimaga5" track="banda-3" >}}
+  ```
+
+- **No cambia el título del catálogo** de un show existente: está cuidado a
+  mano. Las bandas sí las manda el `recital.txt`, y si difieren se avisa.
+
+- **No borra ni modifica los masters.** Se copian a un temporal con el nombre
+  canónico y se sube desde ahí.
+
+- **No publica la página si la fecha del show es futura.** Hugo tiene
+  `buildFuture` apagado, así que una página con fecha de mañana no sale hasta
+  que llega. Para un show ya happened, funciona.
 
 ## Requisitos
 
@@ -159,6 +197,13 @@ exactamente qué línea agregar.
 **El sync no matchea** — casi siempre es la fecha: el item tiene una y el
 catálogo otra. El script lo avisa con los dos valores. Se arregla con una
 entrada en `OVERRIDES` (`scripts/sync-archive.py`).
+
+**"el item ya existe en archive.org"** — usá `--add-files` si querés agregarle
+pistas, o `--skip-upload` si sólo falta la entrada del catálogo.
+
+**La página no aparece en el sitio** — mirá la fecha: si es futura, Hugo no la
+publica. Si ya pasó, fijate si tiene `featured.*` (sin él, la página no entra
+al archivo de `/flyers/`).
 
 **Los derivados no llegan a tiempo** — archive.org deriva en background y con
 masters de 1 GB puede tardar. El script avisa y sigue: el catálogo puede usar
