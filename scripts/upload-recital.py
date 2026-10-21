@@ -581,7 +581,7 @@ def write_page(repo: Path, show: dict, featured: Path | None, venue: str) -> Pat
         # El flyer: si la página ya tiene uno, no se toca. Si no, se copia el
         # nuevo para que entre al archivo de /flyers/.
         if featured and featured.is_file() and not list(page_dir.glob("featured.*")):
-            ext = featured.suffix.lower()
+            ext = "." + (image_format(featured) or featured.suffix.lstrip(".").lower())
             shutil.copy2(featured, page_dir / f"featured{ext}")
             show["cover"] = f"/recitales/{venue_slug}/{show_slug}/featured{ext}"
         return page
@@ -631,7 +631,15 @@ def write_page(repo: Path, show: dict, featured: Path | None, venue: str) -> Pat
     say(f"página  : {page.relative_to(repo)}")
 
     if featured and featured.is_file():
-        ext = featured.suffix.lower()
+        # La extensión sale del formato real del archivo, no de la del
+        # archivo: Hugo resuelve el decoder por extensión, y un WebP guardado
+        # como .jpg rompe el build con "image: unknown format".
+        ext = "." + (image_format(featured) or featured.suffix.lstrip(".").lower())
+        # Si la página ya tenía un featured con otra extensión, se va: con dos,
+        # Hugo elige uno al azar.
+        for old in page_dir.glob("featured.*"):
+            if old.name.lower() != f"featured{ext}":
+                old.unlink()
         shutil.copy2(featured, page_dir / f"featured{ext}")
         show["cover"] = f"/recitales/{venue_slug}/{show_slug}/featured{ext}"
     return page
@@ -640,25 +648,36 @@ def write_page(repo: Path, show: dict, featured: Path | None, venue: str) -> Pat
 # ------------------------------------------------------------------ principal
 
 
+def image_format(path: Path) -> str:
+    """El formato REAL de la imagen, no el de la extensión.
+
+    Hugo elige el decoder por extensión, así que un WebP guardado como .jpg
+    rompe el build con 'resize: image: unknown format'. Va por la cabecera.
+
+    Devuelve 'jpg', 'png', 'webp', 'gif', 'avif' o '' si no se reconoce.
+    """
+    try:
+        head = path.read_bytes()[:16]
+    except OSError:
+        return ""
+    if head.startswith(b"\xff\xd8\xff"):
+        return "jpg"
+    if head.startswith(b"\x89PNG\r\n\x1a\n"):
+        return "png"
+    if head.startswith(b"RIFF") and head[8:12] == b"WEBP":
+        return "webp"
+    if head.startswith((b"GIF87a", b"GIF89a")):
+        return "gif"
+    if len(head) >= 12 and head[4:8] == b"ftyp":
+        return "avif"
+    return ""
+
+
 def looks_like_image(path: Path) -> bool:
     """Chequeo barato por los bytes mágicos: Hugo hace .Resize() del flyer en
     las páginas de banda, y si el archivo no es una imagen de verdad el build
     se cae recién al final, con un error medio críptico."""
-    try:
-        head = path.read_bytes()[:16]
-    except OSError:
-        return False
-    if head.startswith(b"\xff\xd8\xff"):
-        return True  # jpeg
-    if head.startswith(b"\x89PNG\r\n\x1a\n"):
-        return True  # png
-    if head.startswith(b"RIFF") and head[8:12] == b"WEBP":
-        return True
-    if head.startswith((b"GIF87a", b"GIF89a")):
-        return True
-    if len(head) >= 12 and head[4:8] == b"ftyp":
-        return True  # avif / heic
-    return False
+    return bool(image_format(path))
 
 
 def resolve_image(folder: Path, name: str) -> Path | None:
