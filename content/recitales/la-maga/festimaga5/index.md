@@ -12,9 +12,11 @@ heroStyle: background
 
 # ![alt text](featured.webp)
 
+Gr
+
 ---
 
-# Fronda y Raíz
+# [Fronda y Raíz](https://www.instagram.com/frondayraiz_musica/)
 
 {{< track show="la-maga/festimaga5" track="fronda-y-raiz" >}}
 
@@ -41,5 +43,7 @@ heroStyle: background
 # [Sabotage](https://www.instagram.com/sabotage.nu.metal/)
 
 {{< track show="la-maga/festimaga5" track="sabotage" >}}
+
+---
 
 [Artículo en Internet Archive](https://archive.org/details/live-2026-10-11-festimaga-5)

@@ -648,6 +648,36 @@ def write_page(repo: Path, show: dict, featured: Path | None, venue: str) -> Pat
 # ------------------------------------------------------------------ principal
 
 
+DATE_IN_NAME = re.compile(r"\((\d{2,4}[-/]\d{1,2}[-/]\d{1,4})\)")
+
+
+def date_in_name(path: Path) -> str:
+    """La fecha que el usuario puso en el nombre del archivo, si hay alguna.
+
+    Acepta las dos convenciones: DD-MM-YY (como están nombrados los masters)
+    y YYYY-MM-DD (como están nombradas las carpetas). Confundirlas es fácil
+    y el error cuesta un item con la fecha equivocada, que el matcher del
+    catálogo nunca va a encontrar.
+    """
+    m = DATE_IN_NAME.search(path.name)
+    if not m:
+        return ""
+    parts = m.group(1).replace("/", "-").split("-")
+    if len(parts) != 3:
+        return ""
+    a, b, c = parts
+    if len(a) == 4:
+        y, mes, d = a, b, c
+    else:
+        d, mes, y = a, b, c
+        if len(y) == 2:
+            y = "20" + y
+    try:
+        return dt.date(int(y), int(mes), int(d)).isoformat()
+    except ValueError:
+        return ""
+
+
 def image_format(path: Path) -> str:
     """El formato REAL de la imagen, no el de la extensión.
 
@@ -804,6 +834,19 @@ def main() -> None:
         say(f"\n{len(plan)} pistas, {human_size(total)} en total:")
         for t in plan:
             say(f"  {t['index']:02d}  {t['src'].name}  ->  {t['band']}")
+        # La fecha del nombre del archivo y la del recital.txt tienen que
+        # decir lo mismo. Los masters se nombran DD-MM-YY y las carpetas
+        # YYYY-MM-DD, y el error se cuela fácil.
+        for t in plan:
+            en_el_nombre = date_in_name(t["src"])
+            if en_el_nombre and en_el_nombre != date:
+                say(
+                    f"\n  OJO: '{t['src'].name}' tiene la fecha {en_el_nombre} "
+                    f"y el recital.txt dice {date}.\n"
+                    "  Si la del archivo es la correcta, corregí 'date' en el "
+                    "recital.txt antes de subir: el catálogo cruza el show con "
+                    "el item por esa fecha."
+                )
     else:
         say("\npistas: las toma del item de archive.org (--skip-upload).")
 

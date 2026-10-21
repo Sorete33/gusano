@@ -105,6 +105,25 @@ agregar la pista al archivo.
 `content/recitales/la-maga/festimaga6/`, y ese path es el `id` del show en
 `data/shows.yml`.
 
+### Ojo con la fecha
+
+Las carpetas se nombran `YYYY-MM-DD` y los masters `DD-MM-YY`. Son las dos
+convenciones y se confunden fácil: una `date:` equivocada en el `recital.txt`
+crea un item con la fecha equivocada, y el catálogo cruza el show con el item
+**por esa fecha**, así que nunca lo va a encontrar.
+
+Por eso el script compara la fecha que está en el nombre de cada archivo con
+la del `recital.txt` y avisa si no coinciden (entende las dos convenciones):
+
+```
+OJO: '02 - Otra - Festimaga 5 (05-10-26).wav' tiene la fecha 2026-10-05 y el
+recital.txt dice 2026-10-11.
+```
+
+Los archivos que se suben siempre llevan la fecha en ISO
+(`01 - <Banda> - <Evento> (2026-10-11).wav`), aunque el master se llamara
+`(11-10-26)`.
+
 ## Qué metadata se sube
 
 La misma que usan los items que ya están:
