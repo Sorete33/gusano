@@ -21,38 +21,39 @@
   - id: fronda-y-raiz
     artist: Fronda y Raíz
     title: Fronda y Raíz en la Festimaga 5
-    src: 01%20-%20Fronda%20y%20Ra%C3%ADz%20-%20Festimaga%205%20(2026-10-11).wav
-    fmt: wav
+    mp3: 01%20-%20Fronda%20y%20Ra%C3%ADz%20-%20Festimaga%205%20(2026-10-11).mp3
     wav: 01%20-%20Fronda%20y%20Ra%C3%ADz%20-%20Festimaga%205%20(2026-10-11).wav
-    duration: 2074
+    duration: 2075
   - id: 2x3
     artist: 2x3
     title: 2x3 en la Festimaga 5
-    src: 02%20-%202x3%20-%20Festimaga%205%20(2026-10-11).wav
-    fmt: wav
+    mp3: 02%20-%202x3%20-%20Festimaga%205%20(2026-10-11).mp3
     wav: 02%20-%202x3%20-%20Festimaga%205%20(2026-10-11).wav
     duration: 2350
   - id: bandurria
     artist: Bandurria
     title: Bandurria en la Festimaga 5
-    src: 03%20-%20Bandurria%20-%20Festimaga%205%20(2026-10-11).wav
-    fmt: wav
+    mp3: 03%20-%20Bandurria%20-%20Festimaga%205%20(2026-10-11).mp3
     wav: 03%20-%20Bandurria%20-%20Festimaga%205%20(2026-10-11).wav
     duration: 182
   - id: entres
     artist: Entres
     title: Entres en la Festimaga 5
-    src: 04%20-%20Entres%20-%20Festimaga%205%20(2026-10-11).wav
-    fmt: wav
+    mp3: 04%20-%20Entres%20-%20Festimaga%205%20(2026-10-11).mp3
     wav: 04%20-%20Entres%20-%20Festimaga%205%20(2026-10-11).wav
     duration: 1346
   - id: sabotage
     artist: Sabotage
     title: Sabotage en la Festimaga 5
-    src: 05%20-%20Sabotage%20-%20Festimaga%205%20(2026-10-11).wav
-    fmt: wav
+    mp3: 05%20-%20Sabotage%20-%20Festimaga%205%20(2026-10-11).mp3
     wav: 05%20-%20Sabotage%20-%20Festimaga%205%20(2026-10-11).wav
     duration: 3558
+  - id: charla-sobre-hongos-de-mili
+    artist: Charla sobre hongos de Mili
+    title: Charla sobre hongos de Mili en la Festimaga 5
+    mp3: 06%20-%20Charla%20sobre%20hongos%20de%20Mili%20-%20Festimaga%205%20(11-10-26).mp3
+    wav: 06%20-%20Charla%20sobre%20hongos%20de%20Mili%20-%20Festimaga%205%20(11-10-26).wav
+    duration: 670
   space: La Maga
   bands:
   - Fronda y Raíz

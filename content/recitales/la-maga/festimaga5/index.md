@@ -46,4 +46,10 @@ Gr
 
 ---
 
+# Charla sobre hongos de Mili
+
+{{< track show="la-maga/festimaga5" track="charla-sobre-hongos-de-mili" >}}
+
+---
+
 [Artículo en Internet Archive](https://archive.org/details/live-2026-10-11-festimaga-5)
