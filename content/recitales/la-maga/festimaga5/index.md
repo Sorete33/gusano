@@ -12,7 +12,7 @@ heroStyle: background
 
 # ![alt text](featured.webp)
 
-## Gracias a les feriantes por participar, si quieren adjuntar su emprendimiento en los comentarios o en un mail les agrego al artículo.
+## Gracias a les feriantes por participar, si quieren adjuntar su emprendimiento en los comentarios o en un mail les agrego al artículo. También si alguien sabe el nombre del Dúo Bandurria le pongo el apropiado.
 
 ---
 
