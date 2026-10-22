@@ -2,8 +2,9 @@
 title: Anuncio
 ---
 
-{{< new title="Nueva entrada: Festimaga Vol 5" image="https://audiogusano.neocities.org/recitales/la-maga/festimaga5/featured.webp" link="https://audiogusano.neocities.org/recitales/la-maga/festimaga5/" button="Ir al evento" >}}
+<!-- {{< new title="Nueva entrada: Festimaga Vol 5" image="https://audiogusano.neocities.org/recitales/la-maga/festimaga5/featured.webp" link="https://audiogusano.neocities.org/recitales/la-maga/festimaga5/" button="Ir al evento" >}}
 {{< /new >}}
+-->
 
 
 {{< webamp >}}
