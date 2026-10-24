@@ -2,9 +2,11 @@
 title: Anuncio
 ---
 
-<!-- {{< new title="Nueva entrada: Festimaga Vol 5" image="https://audiogusano.neocities.org/recitales/la-maga/festimaga5/featured.webp" link="https://audiogusano.neocities.org/recitales/la-maga/festimaga5/" button="Ir al evento" >}}
+{{< new title="Subí tu música." image="/images/material.gif" >}}
+
+Si tenes algo grabado que quieras compartir con la comunidad, ahora podes auto-publicarte usando el botón "Subí tu material" y en pocos minutos aparecerá en Nuevos Lanzamientos.
+
 {{< /new >}}
--->
 
 
 {{< webamp >}}
