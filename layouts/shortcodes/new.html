@@ -43,10 +43,10 @@
         <div class="ann-image-container">
           {{ if $link }}
             <a href="{{ $link }}" class="ann-img-link" draggable="false">
-              <img src="{{ . | relURL }}" alt="Announcement Image" class="ann-img">
+              <img src="{{ . | relURL }}" alt="Announcement Image" class="ann-img nozoom" draggable="false">
             </a>
           {{ else }}
-            <img src="{{ . | relURL }}" alt="Announcement Image" class="ann-img">
+            <img src="{{ . | relURL }}" alt="Announcement Image" class="ann-img nozoom" draggable="false">
           {{ end }}
         </div>
       {{ end }}
