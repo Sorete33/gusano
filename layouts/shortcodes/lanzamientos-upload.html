@@ -1,0 +1,293 @@
+{{/* Anonymous lanzamiento upload. Posts cover + destination URL to the Worker,
+     which commits into Sorete33/audiogusano-flyers/lanzamientos and dispatches
+     the deploy workflow.
+
+     Usage:  {{< lanzamientos-upload url="https://<worker>.workers.dev" >}} */}}
+{{ $url := .Get "url" }}
+{{ $label := .Get "label" | default "Subí tu material!" }}
+{{ $maxMb := .Get "maxmb" | default 8 }}
+{{ $key := printf "lanzamientos-upload-%s" (substr (sha256 $url) 0 8) }}
+
+<div class="flyer-upload" data-key="{{ $key }}">
+  <input type="file" id="{{ $key }}-input" accept="image/*,video/mp4,.mp4" hidden>
+
+  <button type="button" class="fu-btn" id="{{ $key }}-btn">
+    <span class="fu-icon"><img src="https://cdn-icons-png.flaticon.com/128/1862/1862047.png" alt=""></span>
+    <span class="fu-text">{{ $label }}</span>
+    <span class="fu-spinner" aria-hidden="true"></span>
+  </button>
+
+  <div class="fu-modal" id="{{ $key }}-modal" hidden>
+    <div class="fu-modal-card" role="dialog" aria-modal="true">
+      <button type="button" class="fu-modal-close" id="{{ $key }}-close" aria-label="Cerrar">×</button>
+      <div class="fu-step fu-step-1">
+        <p class="fu-modal-title">Link al material</p>
+        <input type="url" id="{{ $key }}-dest" placeholder="https://..." required>
+        <button type="button" class="fu-btn fu-next" id="{{ $key }}-next">Siguiente</button>
+      </div>
+      <div class="fu-step fu-step-2" hidden>
+        <p class="fu-modal-title">Elegí la portada</p>
+        <button type="button" class="fu-btn fu-pick" id="{{ $key }}-pick">Seleccionar imagen</button>
+        <p class="fu-modal-hint">JPG, PNG, WebP…</p>
+      </div>
+      <div class="fu-step fu-step-date" hidden>
+        <p class="fu-modal-title">Fecha (opcional)</p>
+        <input type="date" id="{{ $key }}-date" min="2026-01-01" max="2026-12-31">
+        <button type="button" class="fu-open-cal" id="{{ $key }}-opencal" aria-label="Abrir calendario">📅</button>
+        <button type="button" class="fu-btn fu-upload" id="{{ $key }}-upload" style="margin-top:8px;">Subir</button>
+      </div>
+    </div>
+  </div>
+
+  <p class="fu-status" id="{{ $key }}-status" role="status" aria-live="polite"></p>
+</div>
+
+<style>
+.flyer-upload { display: inline-block; margin: 12px 0; }
+.fu-btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    background-color: #613f75; color: #ff6600 !important;
+    padding: 0 14px; border-radius: 10px;
+    font-family: sans-serif; font-weight: 800; font-size: 0.85rem;
+    text-transform: uppercase; letter-spacing: 1px; cursor: pointer; line-height: 1.2;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 2px solid transparent;
+}
+.fu-btn:hover:not(:disabled) { background-color: #ffdc8f !important; color: #613f75 !important; transform: translateY(-3px); box-shadow: 0 8px 20px rgba(0,0,0,0.3); border-color: #613f75; }
+.fu-btn:active:not(:disabled) { transform: translateY(0); box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
+.fu-btn:disabled { opacity: 0.65; cursor: progress; }
+.fu-icon { display: block; transition: transform 0.3s ease; }
+.fu-icon img { width: 24px; height: 24px; display: block; transform: scale(1.4); transform-origin: center; transition: transform 0.3s ease; }
+.fu-btn:hover:not(:disabled) .fu-icon img { transform: scale(1.55) rotate(-5deg); }
+.fu-spinner { display: none; width: 18px; height: 18px; border: 3px solid currentColor; border-right-color: transparent; border-radius: 50%; animation: fu-spin 0.9s linear infinite; }
+@keyframes fu-spin { to { transform: rotate(360deg); } }
+.flyer-upload.is-uploading .fu-spinner { display: block; }
+.flyer-upload.is-uploading .fu-icon { display: none; }
+.fu-status { margin: 10px auto 0; font-size: 0.85rem; line-height: 1.4; max-width: 34ch; }
+.fu-status.is-ok { color: #28a745; }
+.fu-status.is-error { color: #dc2626; }
+.fu-modal { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.55); z-index: 1000; }
+.fu-modal[hidden] { display: none; }
+.fu-modal-card { position: relative; background: #fff; color: #613f75; border-radius: 16px; padding: 24px; width: min(90vw, 360px); box-shadow: 0 20px 60px rgba(0,0,0,0.35); font-family: sans-serif; }
+.fu-modal-close { position: absolute; top: 8px; right: 12px; border: none; background: transparent; font-size: 22px; cursor: pointer; color: #613f75; }
+.fu-modal-title { font-weight: 800; text-transform: uppercase; letter-spacing: 1px; margin: 0 0 12px; }
+.fu-modal input[type="url"] { width: 100%; padding: 8px; border: 2px solid #613f75; border-radius: 8px; font-weight: 700; margin-bottom: 12px; }
+.fu-modal input[type="date"] { width: calc(100% - 44px); padding: 8px; border: 2px solid #613f75; border-radius: 8px; font-weight: 700; margin-bottom: 12px; }
+.fu-open-cal { width: 36px; height: 36px; margin-bottom: 12px; border: 2px solid #613f75; border-radius: 8px; background: #ffdc8f; cursor: pointer; font-size: 18px; }
+.fu-modal-hint { font-size: 0.8rem; opacity: 0.7; margin-top: 8px; }
+.fu-step[hidden] { display: none; }
+@media (prefers-color-scheme: dark) {
+  .fu-modal-card { background: #1f1b24; color: #f3e8ff; }
+  .fu-modal input[type="url"] { background: #2a2433; color: #f3e8ff; border-color: #ffdc8f; }
+  .fu-modal-close { color: #f3e8ff; }
+  .fu-modal-title { color: #f3e8ff; }
+}
+html.dark .fu-modal-card, .dark .fu-modal-card { background: #1f1b24; color: #f3e8ff; }
+html.dark .fu-modal input[type="url"], .dark .fu-modal input[type="url"] { background: #2a2433; color: #f3e8ff; border-color: #ffdc8f; }
+html.dark .fu-modal input[type="date"], .dark .fu-modal input[type="date"] { background: #2a2433; color: #f3e8ff; border-color: #ffdc8f; color-scheme: dark; }
+html.dark .fu-modal-close, .dark .fu-modal-close { color: #f3e8ff; }
+html.dark .fu-modal-title, .dark .fu-modal-title { color: #f3e8ff; }
+</style>
+
+<script>
+(function () {
+  const KEY = "{{ $key }}";
+  const ENDPOINT = "{{ $url }}";
+  const MAX_BYTES = {{ $maxMb }} * 1024 * 1024;
+
+  const root = document.querySelector('.flyer-upload[data-key="' + KEY + '"]');
+  if (!root) return;
+  if (root.dataset.wired) return;
+  root.dataset.wired = "1";
+
+  const input = document.getElementById(KEY + "-input");
+  const btn = document.getElementById(KEY + "-btn");
+  const status = document.getElementById(KEY + "-status");
+  const modal = document.getElementById(KEY + "-modal");
+  const destInput = document.getElementById(KEY + "-dest");
+  const dateInput = document.getElementById(KEY + "-date");
+  const openCalBtn = document.getElementById(KEY + "-opencal");
+  const nextBtn = document.getElementById(KEY + "-next");
+  const pickBtn = document.getElementById(KEY + "-pick");
+  const uploadBtn = document.getElementById(KEY + "-upload");
+  const closeBtn = document.getElementById(KEY + "-close");
+
+  const say = (msg, kind) => {
+    status.textContent = msg;
+    status.className = "fu-status" + (kind ? " is-" + kind : "");
+  };
+  const setBusy = (busy) => {
+    root.classList.toggle("is-uploading", busy);
+    btn.disabled = busy;
+    btn.querySelector(".fu-text").textContent = busy ? "Subiendo..." : "{{ $label }}";
+  };
+
+  const isValidUrl = (v) => {
+    try { const u = new URL(v); return u.protocol === "http:" || u.protocol === "https:"; }
+    catch (e) { return false; }
+  };
+  const parseDate = () => {
+    const v = (dateInput && dateInput.value) || "";
+    if (!v) return { valid: true, day: NaN, month: NaN, iso: "" }; // optional
+    const m = v.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+    if (!m) return { valid: false, day: NaN, month: NaN, iso: "" };
+    const y = parseInt(m[1], 10);
+    const month = parseInt(m[2], 10);
+    const day = parseInt(m[3], 10);
+    const d = new Date(y, month - 1, day);
+    const valid = y === 2026 && !isNaN(d.getTime()) &&
+                  d.getFullYear() === y && d.getMonth() === month - 1 && d.getDate() === day;
+    return { valid, day, month, iso: valid ? v : "" };
+  };
+
+  const openModal = () => {
+    if (!modal) return;
+    modal.removeAttribute("hidden");
+    const stepDate = modal.querySelector(".fu-step-date");
+    const step1 = modal.querySelector(".fu-step-1");
+    const step2 = modal.querySelector(".fu-step-2");
+    if (stepDate) stepDate.setAttribute("hidden", "");
+    if (step1) step1.removeAttribute("hidden");
+    if (step2) step2.setAttribute("hidden", "");
+    say("");
+    if (destInput) destInput.focus();
+  };
+  const closeModal = () => {
+    if (!modal) return;
+    modal.setAttribute("hidden", "");
+    if (destInput) destInput.value = "";
+    if (dateInput) dateInput.value = "";
+    const stepDate = modal.querySelector(".fu-step-date");
+    const step1 = modal.querySelector(".fu-step-1");
+    const step2 = modal.querySelector(".fu-step-2");
+    if (stepDate) stepDate.setAttribute("hidden", "");
+    if (step1) step1.removeAttribute("hidden");
+    if (step2) step2.setAttribute("hidden", "");
+  };
+
+  btn.addEventListener("click", openModal);
+  if (nextBtn) nextBtn.addEventListener("click", () => {
+    const v = (destInput && destInput.value || "").trim();
+    if (!isValidUrl(v)) {
+      say("Indicá un link válido (http/https).", "error");
+      if (destInput) destInput.focus();
+      return;
+    }
+    const step1 = modal.querySelector(".fu-step-1");
+    const step2 = modal.querySelector(".fu-step-2");
+    if (step1) step1.setAttribute("hidden", "");
+    if (step2) step2.removeAttribute("hidden");
+    say("");
+  });
+  const advanceToCover = () => {
+    const step1 = modal.querySelector(".fu-step-1");
+    const step2 = modal.querySelector(".fu-step-2");
+    if (step1) step1.setAttribute("hidden", "");
+    if (step2) step2.removeAttribute("hidden");
+    say("");
+  };
+  const advanceToDate = () => {
+    const step2 = modal.querySelector(".fu-step-2");
+    const stepDate = modal.querySelector(".fu-step-date");
+    if (step2) step2.setAttribute("hidden", "");
+    if (stepDate) stepDate.removeAttribute("hidden");
+    say("");
+    if (dateInput) {
+      dateInput.value = "";
+      dateInput.focus();
+    }
+  };
+  if (dateInput) {
+    const openPicker = () => {
+      dateInput.focus();
+      if (typeof dateInput.showPicker === "function") {
+        try { dateInput.showPicker(); return; } catch (e) {}
+      }
+      try { dateInput.click(); } catch (e) {}
+    };
+    dateInput.addEventListener("click", openPicker);
+    dateInput.addEventListener("keydown", (e) => e.preventDefault());
+    dateInput.addEventListener("beforeinput", (e) => e.preventDefault());
+  }
+  if (openCalBtn) {
+    openCalBtn.addEventListener("click", () => {
+      if (dateInput) {
+        dateInput.focus();
+        if (typeof dateInput.showPicker === "function") {
+          try { dateInput.showPicker(); return; } catch (e) {}
+        }
+        try { dateInput.click(); } catch (e) {}
+      }
+    });
+  }
+  if (pickBtn) pickBtn.addEventListener("click", () => input.click());
+  if (closeBtn) closeBtn.addEventListener("click", closeModal);
+  if (modal) modal.addEventListener("click", (e) => { if (e.target === modal) closeModal(); });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && modal && !modal.hasAttribute("hidden")) closeModal();
+  });
+
+  input.addEventListener("change", async () => {
+    const file = input.files && input.files[0];
+    if (!file) return;
+    const destination = (destInput && destInput.value || "").trim();
+    if (!isValidUrl(destination)) {
+      say("Indicá un link válido (http/https).", "error");
+      input.value = "";
+      return;
+    }
+    const isVideo = /\.mp4$/i.test(file.name);
+    const maxBytes = isVideo ? (10 * 1024 * 1024) : MAX_BYTES;
+    const maxMb = Math.round(maxBytes / 1048576);
+    if (file.size > maxBytes) {
+      say("Ese archivo pesa " + (file.size / 1048576).toFixed(1) + " MB. El máximo es " + maxMb + " MB.", "error");
+      input.value = "";
+      return;
+    }
+    advanceToDate();
+  });
+
+  const doUpload = async () => {
+    const file = input.files && input.files[0];
+    if (!file) {
+      say("Seleccioná una imagen primero.", "error");
+      return;
+    }
+    const destination = (destInput && destInput.value || "").trim();
+    if (!isValidUrl(destination)) {
+      say("Indicá un link válido (http/https).", "error");
+      return;
+    }
+    const { valid: dateValid, day, month } = parseDate();
+    if (!dateValid) {
+      say("Indicá una fecha válida del 2026 o dejala vacía.", "error");
+      if (dateInput) dateInput.focus();
+      return;
+    }
+    setBusy(true);
+    say("Subiendo tu lanzamiento...");
+    const body = new FormData();
+    body.append("file", file);
+    body.append("section", "lanzamientos");
+    body.append("destination", destination);
+    if (dateValid && !isNaN(day)) {
+      body.append("day", String(day));
+      body.append("month", String(month));
+    }
+    try {
+      const res = await fetch(ENDPOINT, { method: "POST", body });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok || !data.success) throw new Error(data.error || ("HTTP " + res.status));
+      say("¡Listo! Ya está publicado.", "ok");
+      input.value = "";
+      closeModal();
+    } catch (err) {
+      say("No se pudo subir: " + err.message, "error");
+    } finally {
+      setBusy(false);
+    }
+  };
+  if (uploadBtn) uploadBtn.addEventListener("click", doUpload);
+})();
+</script>

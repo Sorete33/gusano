@@ -9,7 +9,9 @@ field preservation in data/flyers.yml, deleting files that no longer exist
 upstream -- is deliberately identical to the Dropbox version, so data/flyers.yml
 stays the contract the gallery shortcode reads.
 """
+import argparse
 import base64
+import datetime
 import json
 import os
 import re
@@ -23,10 +25,45 @@ import yaml
 
 # Configuration
 FLYERS_REPO = os.environ.get("FLYERS_REPO", "Sorete33/audiogusano-flyers")
-FLYERS_PATH = os.environ.get("FLYERS_PATH", "flyers")
 FLYERS_BRANCH = os.environ.get("FLYERS_BRANCH", "main")
-LOCAL_STATIC_DIR = "static/images/gallery"
-DATA_FILE = "data/flyers.yml"
+
+SECTIONS = {
+    "flyers": {
+        "remote_path": os.environ.get("FLYERS_PATH", "flyers"),
+        "local_dir": "static/images/gallery",
+        "data_file": "data/flyers.yml",
+        "sidecar": "_dates.json",
+        "preserve": ("ribbon", "date"),
+    },
+    "lanzamientos": {
+        "remote_path": os.environ.get("LAUNCHES_PATH", "lanzamientos"),
+        "local_dir": "static/nuevos",
+        "data_file": "data/lanzamientos.yml",
+        "sidecar": "_lanzamientos.json",
+        "preserve": ("destination", "date"),
+    },
+}
+
+# Active section (set by configure())
+SECTION = "flyers"
+FLYERS_PATH = SECTIONS[SECTION]["remote_path"]
+LOCAL_STATIC_DIR = SECTIONS[SECTION]["local_dir"]
+DATA_FILE = SECTIONS[SECTION]["data_file"]
+SIDECAR = SECTIONS[SECTION]["sidecar"]
+PRESERVE_FIELDS = SECTIONS[SECTION]["preserve"]
+
+
+def configure(section):
+    global SECTION, FLYERS_PATH, LOCAL_STATIC_DIR, DATA_FILE, SIDECAR, PRESERVE_FIELDS
+    if section not in SECTIONS:
+        raise SystemExit(f"Unknown section: {section}")
+    SECTION = section
+    cfg = SECTIONS[section]
+    FLYERS_PATH = cfg["remote_path"]
+    LOCAL_STATIC_DIR = cfg["local_dir"]
+    DATA_FILE = cfg["data_file"]
+    SIDECAR = cfg["sidecar"]
+    PRESERVE_FIELDS = cfg["preserve"]
 
 GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN") or os.environ.get("GH_TOKEN")
 
@@ -108,6 +145,10 @@ def list_remote_files():
                 continue
 
             name = entry.get("name") or ""
+            # Sidecar metadata and dotfiles are not gallery assets; skip them
+            # silently instead of warning about an unknown extension.
+            if name.startswith('.') or name.startswith('_'):
+                continue
             ext = os.path.splitext(name)[1].lower()
             if ext not in ALLOWED_EXTENSIONS:
                 print(f"Skipping {entry['path']}: .{ext or '?'} is not something "
@@ -170,6 +211,30 @@ def download_url(entry):
     return ""
 
 
+def normalize_date(value):
+    """Normalize a date value to ISO YYYY-MM-DD.
+
+    Accepts datetime/date objects and strings in ISO (YYYY-MM-DD) or
+    local DD-MM-YYYY / DD/MM/YYYY form. Returns None for empty input.
+    """
+    if value is None:
+        return None
+    if isinstance(value, (datetime.date, datetime.datetime)):
+        return value.strftime('%Y-%m-%d')
+    s = str(value).strip()
+    if not s:
+        return None
+    import re
+    if re.fullmatch(r'\d{4}-\d{1,2}-\d{1,2}', s):
+        y, m, d = s.split('-')
+        return f"{int(y):04d}-{int(m):02d}-{int(d):02d}"
+    m = re.fullmatch(r'(\d{1,2})[-/](\d{1,2})[-/](\d{4})', s)
+    if m:
+        d, mo, y = m.groups()
+        return f"{int(y):04d}-{int(mo):02d}-{int(d):02d}"
+    return s
+
+
 def load_existing_entries():
     """Load current data/flyers.yml to preserve manual fields the sync does not know about."""
     existing = {}
@@ -184,11 +249,38 @@ def load_existing_entries():
     return existing
 
 
+def load_remote_sidecar():
+    """Fetch the section sidecar (slug -> metadata) if present."""
+    url = (f"https://api.github.com/repos/{FLYERS_REPO}/contents/{FLYERS_PATH}/{SIDECAR}"
+           f"?ref={FLYERS_BRANCH}")
+    try:
+        entry = api_get(url)
+    except urllib.error.HTTPError as e:
+        if e.code == 404:
+            return {}
+        print(f"Warning: could not fetch {SIDECAR}: HTTP {e.code}")
+        return {}
+    except Exception as e:
+        print(f"Warning: could not fetch {SIDECAR}: {e}")
+        return {}
+    if not isinstance(entry, dict) or not entry.get('content'):
+        return {}
+    try:
+        import base64 as _b64
+        payload = _b64.b64decode(entry['content'])
+        data = json.loads(payload)
+        if isinstance(data, dict):
+            return data
+    except Exception as e:
+        print(f"Warning: could not parse {SIDECAR}: {e}")
+    return {}
+
+
 def sync():
     os.makedirs(LOCAL_STATIC_DIR, exist_ok=True)
     os.makedirs(os.path.dirname(DATA_FILE), exist_ok=True)
     existing_entries = load_existing_entries()
-
+    remote_sidecar = load_remote_sidecar()
     print(f"Connecting to GitHub ({FLYERS_REPO}@{FLYERS_BRANCH}, path /{FLYERS_PATH})...")
     remote_files = list_remote_files()
     if remote_files is None:
@@ -212,17 +304,43 @@ def sync():
 
         processed_filenames.append(clean_name)
 
+        if SECTION == "lanzamientos":
+            link_prefix = "/nuevos"
+        else:
+            link_prefix = "/images/gallery"
         flyer_entry = {
-            'link': f'/images/gallery/{clean_name}',
+            'link': f'{link_prefix}/{clean_name}',
             'name': os.path.splitext(entry['name'])[0]  # Keep the original name for the UI label
         }
 
-        # Preserve manual fields (e.g. ribbon) added by hand in the repo
+        # Preserve manual fields and apply sidecar metadata.
         previous = existing_entries.get(flyer_entry['link'])
+        # Sidecar takes precedence for its known field(s).
+        if clean_name in remote_sidecar:
+            meta = remote_sidecar[clean_name]
+            if SECTION == "flyers":
+                nd = normalize_date(meta if not isinstance(meta, dict) else meta.get("date"))
+                if nd:
+                    flyer_entry['date'] = nd
+            else:
+                if isinstance(meta, dict):
+                    if meta.get("destination"):
+                        flyer_entry['destination'] = meta["destination"]
+                    if meta.get("date"):
+                        nd = normalize_date(meta["date"])
+                        if nd:
+                            flyer_entry['date'] = nd
+                else:
+                    if meta:
+                        flyer_entry['destination'] = meta
         if previous:
-            for key in ('ribbon',):
-                if previous.get(key):
-                    flyer_entry[key] = previous[key]
+            for key in PRESERVE_FIELDS:
+                if key not in flyer_entry and previous.get(key):
+                    val = previous.get(key)
+                    if key == "date":
+                        val = normalize_date(val)
+                    if val:
+                        flyer_entry[key] = val
 
         flyer_list.append(flyer_entry)
 
@@ -238,5 +356,13 @@ def sync():
     print(f"✅ Sync complete. {len(flyer_list)} items in {DATA_FILE}")
 
 
-if __name__ == "__main__":
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--section", choices=sorted(SECTIONS), default="flyers")
+    args = parser.parse_args()
+    configure(args.section)
     sync()
+
+
+if __name__ == "__main__":
+    main()

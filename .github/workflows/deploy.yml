@@ -51,7 +51,14 @@ jobs:
           FLYERS_REPO: Sorete33/audiogusano-flyers
           FLYERS_PATH: flyers
           FLYERS_BRANCH: main
-        run: python sync_github.py
+        run: python sync_github.py --section flyers
+
+      - name: Run Lanzamientos Sync
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          FLYERS_REPO: Sorete33/audiogusano-flyers
+          FLYERS_BRANCH: main
+        run: python sync_github.py --section lanzamientos
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2

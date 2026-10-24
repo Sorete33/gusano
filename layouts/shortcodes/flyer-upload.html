@@ -21,6 +21,23 @@
     <span class="fu-spinner" aria-hidden="true"></span>
   </button>
 
+  <div class="fu-modal" id="{{ $key }}-modal" hidden>
+    <div class="fu-modal-card" role="dialog" aria-modal="true">
+      <button type="button" class="fu-modal-close" id="{{ $key }}-close" aria-label="Cerrar">×</button>
+      <div class="fu-step fu-step-1">
+        <p class="fu-modal-title">Fecha del evento</p>
+        <input type="date" id="{{ $key }}-date" min="2026-01-01" max="2026-12-31" required>
+        <button type="button" class="fu-open-cal" id="{{ $key }}-opencal" aria-label="Abrir calendario">📅</button>
+        <button type="button" class="fu-btn fu-next" id="{{ $key }}-next">Siguiente</button>
+      </div>
+      <div class="fu-step fu-step-2" hidden>
+        <p class="fu-modal-title">Elegí el flyer</p>
+        <button type="button" class="fu-btn fu-pick" id="{{ $key }}-pick">Seleccionar imagen</button>
+        <p class="fu-modal-hint">JPG, PNG, WebP, MP4…</p>
+      </div>
+    </div>
+  </div>
+
   <p class="fu-status" id="{{ $key }}-status" role="status" aria-live="polite"></p>
 </div>
 
@@ -36,22 +53,24 @@
 .fu-btn {
     display: inline-flex;
     align-items: center;
-    gap: 14px;
+    gap: 8px;
 
     background-color: #613f75;
     color: #ff6600 !important;
-    padding: 7px 14px;
-    border-radius: 12px;
+    padding: 0 14px;
+    border-radius: 10px;
     text-decoration: none;
     font-family: sans-serif;
     font-weight: 800;
+    font-size: 0.85rem;
     text-transform: uppercase;
     letter-spacing: 1px;
     cursor: pointer;
+    line-height: 1.2;
 
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    border: 4px solid transparent;
+    border: 2px solid transparent;
 }
 .fu-btn:hover:not(:disabled) {
     background-color: #ffdc8f !important;
@@ -64,14 +83,16 @@
     transform: translateY(0);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
-.fu-btn:hover:not(:disabled) .fu-icon img { transform: scale(1.1) rotate(-5deg); }
+.fu-btn:hover:not(:disabled) .fu-icon img { transform: scale(1.55) rotate(-5deg); }
 .fu-btn:disabled { opacity: 0.65; cursor: progress; }
 
 .fu-icon { display: block; transition: transform 0.3s ease; }
 .fu-icon img {
-    width: 40px;
-    height: auto;
+    width: 24px;
+    height: 24px;
     display: block;
+    transform: scale(1.4);
+    transform-origin: center;
     transition: transform 0.3s ease;
 }
 
@@ -98,6 +119,87 @@
 .fu-status.is-ok { color: #28a745; }
 .fu-status.is-error { color: #dc2626; }
 
+.fu-date {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 10px 0;
+  font-family: sans-serif;
+  font-size: 0.9rem;
+  color: #613f75;
+}
+.fu-date input {
+  width: 64px;
+  padding: 6px 8px;
+  border: 2px solid #613f75;
+  border-radius: 8px;
+  font-weight: 700;
+  text-align: center;
+}
+.fu-date .fu-year { font-weight: 700; opacity: 0.7; }
+.fu-date[hidden] { display: none; }
+
+.fu-modal {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.55);
+  z-index: 1000;
+}
+.fu-modal[hidden] { display: none; }
+.fu-modal-card {
+  position: relative;
+  background: #fff;
+  color: #613f75;
+  border-radius: 16px;
+  padding: 24px;
+  width: min(90vw, 360px);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+  font-family: sans-serif;
+}
+.fu-modal-close {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  border: none;
+  background: transparent;
+  font-size: 22px;
+  cursor: pointer;
+  color: #613f75;
+}
+.fu-modal-title {
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0 0 12px;
+}
+.fu-modal input[type="date"] {
+  width: calc(100% - 44px);
+  padding: 8px;
+  border: 2px solid #613f75;
+  border-radius: 8px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+.fu-open-cal {
+  width: 36px;
+  height: 36px;
+  margin-bottom: 12px;
+  border: 2px solid #613f75;
+  border-radius: 8px;
+  background: #ffdc8f;
+  cursor: pointer;
+  font-size: 18px;
+}
+.fu-modal-hint {
+  font-size: 0.8rem;
+  opacity: 0.7;
+  margin-top: 8px;
+}
+.fu-step[hidden] { display: none; }
+
 /* Screen readers get the outcome; the spinner alone would be silent. */
 @media (prefers-reduced-motion: reduce) {
     .fu-spinner { animation-duration: 3s; }
@@ -121,6 +223,12 @@
   const input = document.getElementById(KEY + "-input");
   const btn = document.getElementById(KEY + "-btn");
   const status = document.getElementById(KEY + "-status");
+  const modal = document.getElementById(KEY + "-modal");
+  const dateInput = document.getElementById(KEY + "-date");
+  const openCalBtn = document.getElementById(KEY + "-opencal");
+  const nextBtn = document.getElementById(KEY + "-next");
+  const pickBtn = document.getElementById(KEY + "-pick");
+  const closeBtn = document.getElementById(KEY + "-close");
 
   const say = (msg, kind) => {
     status.textContent = msg;
@@ -135,11 +243,105 @@
     btn.querySelector(".fu-text").textContent = busy ? "Subiendo..." : "{{ $label }}";
   };
 
-  btn.addEventListener("click", () => input.click());
+  const parseDate = () => {
+    const v = (dateInput && dateInput.value) || "";
+    const m = v.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+    if (!m) return { valid: false, day: NaN, month: NaN, iso: "" };
+    const y = parseInt(m[1], 10);
+    const month = parseInt(m[2], 10);
+    const day = parseInt(m[3], 10);
+    const d = new Date(y, month - 1, day);
+    const valid = y === 2026 && !isNaN(d.getTime()) &&
+                  d.getFullYear() === y && d.getMonth() === month - 1 && d.getDate() === day;
+    return { valid, day, month, iso: valid ? v : "" };
+  };
+
+  const validateDate = () => parseDate();
+
+  const openModal = () => {
+    if (!modal) return;
+    modal.removeAttribute("hidden");
+    const step1 = modal.querySelector(".fu-step-1");
+    const step2 = modal.querySelector(".fu-step-2");
+    if (step1) step1.removeAttribute("hidden");
+    if (step2) step2.setAttribute("hidden", "");
+    say("");
+    if (dateInput) {
+      dateInput.value = "";
+      dateInput.focus();
+    }
+  };
+  const closeModal = () => {
+    if (!modal) return;
+    modal.setAttribute("hidden", "");
+    if (dateInput) dateInput.value = "";
+    const step1 = modal.querySelector(".fu-step-1");
+    const step2 = modal.querySelector(".fu-step-2");
+    if (step1) step1.removeAttribute("hidden");
+    if (step2) step2.setAttribute("hidden", "");
+  };
+
+  btn.addEventListener("click", openModal);
+
+  if (nextBtn) nextBtn.addEventListener("click", () => {
+    const { valid } = parseDate();
+    if (!valid) {
+      say("Indicá una fecha válida del 2026.", "error");
+      if (dateInput) dateInput.focus();
+      return;
+    }
+    const step1 = modal.querySelector(".fu-step-1");
+    const step2 = modal.querySelector(".fu-step-2");
+    if (step1) step1.setAttribute("hidden", "");
+    if (step2) step2.removeAttribute("hidden");
+    say("");
+  });
+
+  if (pickBtn) pickBtn.addEventListener("click", () => input.click());
+
+  if (dateInput) {
+    const openPicker = () => {
+      dateInput.focus();
+      if (typeof dateInput.showPicker === "function") {
+        try { dateInput.showPicker(); return; } catch (e) {}
+      }
+      // Fallback for browsers without showPicker
+      try { dateInput.click(); } catch (e) {}
+    };
+    dateInput.addEventListener("click", openPicker);
+    dateInput.addEventListener("keydown", (e) => e.preventDefault());
+    dateInput.addEventListener("beforeinput", (e) => e.preventDefault());
+  }
+  if (openCalBtn) {
+    openCalBtn.addEventListener("click", () => {
+      if (dateInput) {
+        dateInput.focus();
+        if (typeof dateInput.showPicker === "function") {
+          try { dateInput.showPicker(); return; } catch (e) {}
+        }
+        try { dateInput.click(); } catch (e) {}
+      }
+    });
+  }
+  if (closeBtn) closeBtn.addEventListener("click", closeModal);
+  if (modal) modal.addEventListener("click", (e) => {
+    if (e.target === modal) closeModal();
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && modal && !modal.hasAttribute("hidden")) closeModal();
+  });
 
   input.addEventListener("change", async () => {
     const file = input.files && input.files[0];
     if (!file) return;
+
+    // The event date is required: day + month, year fixed to 2026.
+    const { valid: validDate, day, month } = validateDate();
+    if (!validDate) {
+      say("Indicá el día y el mes del evento (año 2026).", "error");
+      input.value = "";
+      return;
+    }
 
     // Videos get their own, larger allowance. The worker enforces the same two
     // limits; this copy just avoids burning an upload on a guaranteed 413.
@@ -159,6 +361,8 @@
 
     const body = new FormData();
     body.append("file", file);
+    body.append("day", String(day));
+    body.append("month", String(month));
 
     try {
       const res = await fetch(ENDPOINT, { method: "POST", body });
@@ -170,6 +374,7 @@
 
       say("¡Listo! Ya está en la galería.", "ok");
       input.value = "";
+      closeModal();
     } catch (err) {
       say("No se pudo subir: " + err.message, "error");
     } finally {

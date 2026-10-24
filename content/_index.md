@@ -27,3 +27,7 @@ title: Anuncio
 # Nuevos Lanzamientos
 
 {{< gallery-ext "lanzamientos" >}}
+
+<br>
+
+<center>{{< lanzamientos-upload url="https://audiogusano-flyers.falopa33.workers.dev" >}}</center>

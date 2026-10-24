@@ -181,10 +181,14 @@ export default {
     env.GUSANO_REPO = env.GUSANO_REPO || 'Sorete33/gusano';
     env.GUSANO_BRANCH = env.GUSANO_BRANCH || 'master';
 
-    let file;
+    let file, dayRaw, monthRaw, sectionRaw, destinationRaw;
     try {
       const form = await request.formData();
       file = form.get('file');
+      dayRaw = form.get('day');
+      monthRaw = form.get('month');
+      sectionRaw = form.get('section');
+      destinationRaw = form.get('destination');
     } catch (e) {
       console.error('formData failed', e);
       return json({ error: 'Expected a multipart upload.' }, 400, env);
@@ -192,6 +196,22 @@ export default {
 
     if (!file || typeof file === 'string') {
       return json({ error: 'No file field in the upload.' }, 400, env);
+    }
+
+    let dateStr = '';
+    if (!isLaunch) {
+      const day = parseInt(String(dayRaw || ''), 10);
+      const month = parseInt(String(monthRaw || ''), 10);
+      const dateObj = new Date(Date.UTC(2026, month - 1, day));
+      const dateValid = Number.isInteger(day) && day >= 1 && day <= 31 &&
+        Number.isInteger(month) && month >= 1 && month <= 12 &&
+        dateObj.getUTCFullYear() === 2026 &&
+        dateObj.getUTCMonth() === month - 1 &&
+        dateObj.getUTCDate() === day;
+      if (!dateValid) {
+        return json({ error: 'Indicá un día y mes válidos (año 2026).' }, 400, env);
+      }
+      dateStr = `2026-${String(month).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
     }
 
     const originalName = file.name || 'flyer';
@@ -213,8 +233,39 @@ export default {
       }, 413, env);
     }
 
+    const section = (String(sectionRaw || '') === 'lanzamientos') ? 'lanzamientos' : 'flyers';
+    const isLaunch = section === 'lanzamientos';
+
+    let destination = '';
+    let launchDateStr = '';
+    if (isLaunch) {
+      destination = String(destinationRaw || '').trim();
+      try {
+        const u = new URL(destination);
+        if (u.protocol !== 'http:' && u.protocol !== 'https:') throw new Error('bad protocol');
+      } catch (e) {
+        return json({ error: 'Indicá un link válido (http/https) al material.' }, 400, env);
+      }
+      const day = parseInt(String(dayRaw || ''), 10);
+      const month = parseInt(String(monthRaw || ''), 10);
+      const hasDate = !!(dayRaw || monthRaw);
+      if (hasDate) {
+        const dateObj = new Date(Date.UTC(2026, month - 1, day));
+        const dateValid = Number.isInteger(day) && day >= 1 && day <= 31 &&
+          Number.isInteger(month) && month >= 1 && month <= 12 &&
+          dateObj.getUTCFullYear() === 2026 &&
+          dateObj.getUTCMonth() === month - 1 &&
+          dateObj.getUTCDate() === day;
+        if (!dateValid) {
+          return json({ error: 'Indicá una fecha válida del 2026 o dejala vacía.' }, 400, env);
+        }
+        launchDateStr = `2026-${String(month).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+      }
+    }
+
+    const basePath = isLaunch ? (env.LAUNCHES_PATH || 'lanzamientos') : (env.FLYERS_PATH || 'flyers');
     const slug = slugify(originalName);
-    const filePath = `${env.FLYERS_PATH}/${slug}`;
+    const filePath = `${basePath}/${slug}`;
 
     // base64 in one shot: arrayBuffer() avoids the per-chunk concat that blows
     // up past a few MB.
@@ -230,6 +281,39 @@ export default {
     if (!commit.ok) {
       console.error('commit failed', commit.error);
       return json({ error: 'No se pudo guardar el flyer.' }, 502, env);
+    }
+
+    // Best-effort: record metadata in a sidecar file so sync_github.py can
+    // populate the right fields. A failure here does not fail the upload.
+    try {
+      const sidecarName = isLaunch ? '_lanzamientos.json' : '_dates.json';
+      const sidecarPath = `${basePath}/${sidecarName}`;
+      const sidecarUrl = `https://api.github.com/repos/${env.FLYERS_REPO}/contents/${sidecarPath}?ref=${env.FLYERS_BRANCH}`;
+      let meta = {};
+      const existing = await githubApi(env, sidecarUrl, { method: 'GET' });
+      if (existing.ok && existing.body && existing.body.content) {
+        try {
+          meta = JSON.parse(atob(String(existing.body.content).replace(/\n/g, '')));
+          if (!meta || typeof meta !== 'object' || Array.isArray(meta)) meta = {};
+        } catch (e) {
+          meta = {};
+        }
+      }
+      if (isLaunch) {
+        // support both legacy string and new object form
+        let prev = meta[slug];
+        if (typeof prev === 'string') prev = { destination: prev };
+        const obj = (prev && typeof prev === 'object' && !Array.isArray(prev)) ? { ...prev } : {};
+        obj.destination = destination;
+        if (launchDateStr) obj.date = launchDateStr;
+        meta[slug] = obj;
+      } else {
+        meta[slug] = dateStr;
+      }
+      const newContent = btoa(JSON.stringify(meta, null, 2));
+      await commitFile(env, sidecarPath, newContent, `Metadata: ${slug}`);
+    } catch (e) {
+      console.error('sidecar commit failed', e);
     }
 
     // Fire and forget: the flyer is safely committed even if the dispatch drops.

@@ -87,8 +87,32 @@
             {{ range shuffle $data }}
             {{ $rawLink := .link | relURL }}
             {{ $timestampedLink := printf "%s?v=%d" $rawLink now.Unix }}
+            {{/* Normalize a possibly hand-entered date (ISO or DD-MM-YYYY) to ISO. */}}
+            {{ $rawDate := "" }}
+            {{ $dateType := "" }}
+            {{ with .date }}{{ $dateType = printf "%T" . }}{{ if (strings.Contains $dateType "Time") }}{{ $rawDate = time.Format "2006-01-02" . }}{{ else }}{{ $rawDate = printf "%v" . }}{{ end }}{{ end }}
+            {{ $dateStr := "" }}
+            {{ if $rawDate }}
+              {{ $parts := split $rawDate "-" }}
+              {{ if eq (len $parts) 3 }}
+                {{ if gt (len (index $parts 0)) 2 }}
+                  {{ $dateStr = printf "%04d-%02d-%02d" (int (index $parts 0)) (int (index $parts 1)) (int (index $parts 2)) }}
+                {{ else }}
+                  {{ $dateStr = printf "%04d-%02d-%02d" (int (index $parts 2)) (int (index $parts 1)) (int (index $parts 0)) }}
+                {{ end }}
+              {{ else }}
+                {{ $parts = split $rawDate "/" }}
+                {{ if eq (len $parts) 3 }}
+                  {{ if gt (len (index $parts 0)) 2 }}
+                    {{ $dateStr = printf "%04d-%02d-%02d" (int (index $parts 0)) (int (index $parts 1)) (int (index $parts 2)) }}
+                  {{ else }}
+                    {{ $dateStr = printf "%04d-%02d-%02d" (int (index $parts 2)) (int (index $parts 1)) (int (index $parts 0)) }}
+                  {{ end }}
+                {{ end }}
+              {{ end }}
+            {{ end }}
             <div class="swiper-slide">
-                <div class="flyer-card">
+                <div class="flyer-card" data-date="{{ $dateStr }}">
                     {{ if .ribbon }}<div class="flyer-ribbon">{{ .ribbon }}</div>{{ end }}
                     {{/* data-gallery groups the slides; draggable="false" stops the
                          browser from turning the whole card into a native drag
@@ -179,6 +203,32 @@
         onOpen: pauseCards,
         onClose: playCards
     });
+})();
+</script>
+
+<script>
+(function () {
+  const TZ = "America/Argentina/Buenos_Aires";
+  const today = new Date().toLocaleDateString("en-CA", { timeZone: TZ });
+  const norm = (v) => {
+    v = (v || "").trim();
+    if (!v) return "";
+    let m = v.match(/^(\d{4})-(\d{1,2})-(\d{1,2})$/);
+    if (m) return m[1] + "-" + String(m[2]).padStart(2, "0") + "-" + String(m[3]).padStart(2, "0");
+    m = v.match(/^(\d{1,2})[-\/](\d{1,2})[-\/](\d{4})$/);
+    if (m) return m[3] + "-" + String(m[2]).padStart(2, "0") + "-" + String(m[1]).padStart(2, "0");
+    return v;
+  };
+  document.querySelectorAll(".swiper-container-{{ $dataFile }} .flyer-card").forEach((card) => {
+    if (card.querySelector(".flyer-ribbon")) return;
+    const d = norm(card.getAttribute("data-date"));
+    if (d && d === today) {
+      const r = document.createElement("div");
+      r.className = "flyer-ribbon";
+      r.textContent = "Hoy! Hoy! Hoy!";
+      card.appendChild(r);
+    }
+  });
 })();
 </script>
 {{ else }}
