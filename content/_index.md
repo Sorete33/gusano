@@ -2,12 +2,12 @@
 title: Anuncio
 ---
 
-{{< new title="Subí tu audio" image="/images/material.gif" >}}
+<!-- {{< new title="Subí tu audio" image="/images/material.gif" >}}
 
 Si tenes algo grabado que quieras compartir con la comunidad, ahora podes auto-publicarte usando el botón "Subí tu material" y en pocos minutos aparecerá en Nuevos Lanzamientos.
 
 {{< /new >}}
-
+-->
 
 {{< webamp >}}
 
