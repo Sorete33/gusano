@@ -124,12 +124,12 @@
   /* Modal Popup Container */
   .ann-modal-box {
     position: relative;
-    background-color: #121212; /* Flat dark background to blend with Blowfish dark elements */
-    color: #ffffff;
+    background-color: var(--surface);
+    color: var(--text);
     width: 90%;
     max-width: 480px;
     max-height: 85vh;
-    border: 2px solid #ffe600; /* Distinct bright announcement border */
+    border: 2px solid var(--accent); /* Distinct bright announcement border */
     border-radius: 12px;
     padding: 24px;
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
@@ -153,14 +153,14 @@
     border: none;
     font-size: 28px;
     font-weight: bold;
-    color: #888;
+    color: var(--text-muted);
     cursor: pointer;
     line-height: 1;
     transition: color 0.15s ease, transform 0.1s ease;
   }
 
   .ann-close-x:hover {
-    color: #ffe600;
+    color: var(--accent);
     transform: scale(1.1);
   }
 
@@ -170,9 +170,9 @@
     font-weight: bold;
     margin: 0 0 16px 0;
     padding-right: 25px; /* Ensures title never overlaps 'X' */
-    border-bottom: 1px solid #2d2d2d;
+    border-bottom: 1px solid var(--border);
     padding-bottom: 8px;
-    color: #ffffff;
+    color: var(--text);
     font-family: inherit;
   }
 
@@ -191,7 +191,7 @@
     width: 6px;
   }
   .ann-body::-webkit-scrollbar-thumb {
-    background-color: #333;
+    background-color: var(--border);
     border-radius: 4px;
   }
 
@@ -199,7 +199,7 @@
   .ann-text {
     font-size: 15px;
     line-height: 1.55;
-    color: #e2e8f0;
+    color: var(--text);
   }
   .ann-text p {
     margin: 0 0 12px 0;
@@ -210,7 +210,7 @@
 
   /* Estilos para los hyperlinks dentro del texto */
   .ann-text a {
-    color: #ffe600; /* Color amarillo brillante para que resalte (puedes cambiarlo) */
+    color: var(--accent); /* Color amarillo brillante para que resalte (puedes cambiarlo) */
     text-decoration: underline;
     text-underline-offset: 3px;
     transition: opacity 0.15s ease;
@@ -232,7 +232,7 @@
     max-width: 100%;
     height: auto;
     border-radius: 8px;
-    border: 1px solid #2d2d2d;
+    border: 1px solid var(--border);
     display: block;
     margin: 0 auto;
     transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
@@ -249,7 +249,7 @@
   }
 
   .ann-img-link:hover {
-    box-shadow: 0 0 0 2px #ffe600;
+    box-shadow: 0 0 0 2px var(--accent);
   }
 
   .ann-img-link:hover .ann-img {
@@ -273,7 +273,7 @@
   .ann-videos iframe {
     width: 100%;
     aspect-ratio: 16 / 9;
-    border: 1px solid #2d2d2d;
+    border: 1px solid var(--border);
     border-radius: 8px;
     display: block;
   }
@@ -292,7 +292,7 @@
   .ann-footer {
     display: flex;
     justify-content: flex-end;
-    border-top: 1px solid #2d2d2d;
+    border-top: 1px solid var(--border);
     padding-top: 12px;
   }
 
@@ -300,8 +300,8 @@
      from rendering as a sliver. */
   .ann-btn-close {
     background-color: transparent;
-    color: #ffe600;
-    border: 1.5px solid #ffe600;
+    color: var(--accent);
+    border: 1.5px solid var(--accent);
     padding: 8px 18px;
     min-width: 96px;
     font-size: 14px;
@@ -312,17 +312,17 @@
   }
 
   .ann-btn-close:hover {
-    background-color: #ffe600;
-    color: #121212;
+    background-color: var(--accent);
+    color: var(--on-accent);
   }
 
   /* Primary CTA, rendered under the flyer when `link` is set. Deliberately the
      inverse of .ann-btn-close (filled rather than outlined) so the navigating
      action is the one the eye lands on. */
   .ann-btn-cta {
-    background-color: #ffe600;
-    color: #121212;
-    border: 1.5px solid #ffe600;
+    background-color: var(--accent);
+    color: var(--on-accent);
+    border: 1.5px solid var(--accent);
     padding: 8px 18px;
     min-width: 96px;
     font-size: 14px;

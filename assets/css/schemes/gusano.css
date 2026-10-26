@@ -1,0 +1,63 @@
+/* Gusano scheme - dark only.
+   Warm green-grey surfaces, Gusano green as the primary, gold as the
+   secondary, and the pastel green reserved for hovers, focus states and
+   success text. */
+
+:root {
+  /* Default text colour. The theme uses --color-neutral for body copy and
+     prose emphasis, so this is the light tone, not the background. */
+  --color-neutral: 234, 232, 227;
+
+  /* Neutral: warm charcoal with a green cast */
+  --color-neutral-50: 234, 232, 227;
+  --color-neutral-100: 214, 212, 205;
+  --color-neutral-200: 185, 184, 176;
+  --color-neutral-300: 168, 170, 159;
+  --color-neutral-400: 156, 163, 149;
+  --color-neutral-500: 139, 146, 133;
+  --color-neutral-600: 111, 118, 104;
+  --color-neutral-700: 56, 61, 51;
+  --color-neutral-800: 38, 41, 34;
+  --color-neutral-900: 28, 30, 25;
+  --color-neutral-950: 20, 21, 18;
+
+  /* Primary: Gusano green. 400 is the pastel used on dark surfaces. */
+  --color-primary-50: 248, 253, 241;
+  --color-primary-100: 242, 250, 228;
+  --color-primary-200: 226, 242, 197;
+  --color-primary-300: 203, 232, 155;
+  --color-primary-400: 183, 223, 124;
+  --color-primary-500: 132, 182, 48;
+  --color-primary-600: 107, 154, 38;
+  --color-primary-700: 85, 122, 29;
+  --color-primary-800: 64, 92, 22;
+  --color-primary-900: 44, 63, 15;
+  --color-primary-950: 26, 38, 8;
+
+  /* Secondary: gold */
+  --color-secondary-50: 255, 253, 245;
+  --color-secondary-100: 255, 248, 225;
+  --color-secondary-200: 255, 239, 194;
+  --color-secondary-300: 255, 229, 158;
+  --color-secondary-400: 255, 224, 138;
+  --color-secondary-500: 255, 217, 125;
+  --color-secondary-600: 230, 189, 92;
+  --color-secondary-700: 191, 152, 64;
+  --color-secondary-800: 153, 119, 44;
+  --color-secondary-900: 115, 88, 29;
+  --color-secondary-950: 77, 58, 16;
+
+  /* Error. 400 is the readable error text; 500 is for badges and borders. */
+  --color-error: 225, 29, 72;
+  --color-error-50: 255, 241, 243;
+  --color-error-100: 255, 224, 229;
+  --color-error-200: 254, 205, 213;
+  --color-error-300: 253, 164, 176;
+  --color-error-400: 251, 113, 133;
+  --color-error-500: 225, 29, 72;
+  --color-error-600: 190, 18, 60;
+  --color-error-700: 159, 18, 57;
+  --color-error-800: 136, 19, 55;
+  --color-error-900: 76, 5, 25;
+  --color-error-950: 43, 4, 16;
+}

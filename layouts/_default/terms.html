@@ -15,13 +15,13 @@
     {{ if .Params.showBreadcrumbs | default (site.Params.taxonomy.showBreadcrumbs | default false) }}
       {{ partial "breadcrumbs.html" . }}
     {{ end }}
-    <h1 class="mt-5 text-4xl font-extrabold text-neutral-900 dark:text-neutral">{{ .Title }}</h1>
-    <div class="mt-1 mb-2 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
+    <h1 class="mt-5 text-4xl font-extrabold text-neutral">{{ .Title }}</h1>
+    <div class="mt-1 mb-2 text-base text-neutral-400 print:hidden">
       {{ partial "article-meta/taxonomy.html" (dict "context" . "scope" "single") }}
     </div>
   </header>
   {{ if .Content }}
-    <section class="flex flex-col max-w-full mt-0 prose dark:prose-invert lg:flex-row">
+    <section class="flex flex-col max-w-full mt-0 prose prose-invert lg:flex-row">
       <div class="min-w-0 min-h-0 max-w-prose">
         {{ .Content }}
       </div>
@@ -38,14 +38,14 @@
 
   {{ if eq .Data.Plural "bandas" }}
     <div class="relative mb-6 mt-4">
-      <span class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none text-neutral-400 dark:text-neutral-500">
+      <span class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none text-neutral-500">
         {{ partial "icon.html" "search" }}
       </span>
       <input
         type="text"
         id="band-search"
         placeholder="Filtrar bandas..."
-        class="w-full pl-10 pr-3 py-2 rounded-md border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-800 text-neutral-950 dark:text-neutral-50 focus:outline-none focus:ring-2 focus:ring-primary-500">
+        class="w-full pl-10 pr-3 py-2 rounded-md border border-neutral-700 bg-neutral-900 text-neutral-50 focus:outline-none focus:ring-2 focus:ring-primary-500">
     </div>
   {{ end }}
 

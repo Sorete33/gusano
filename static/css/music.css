@@ -1,13 +1,13 @@
-/* Avocado theme color variables with fallbacks */
+/* Gusano theme color variables with fallbacks */
 :root {
-  --player-primary: rgb(var(--color-primary-500, 132, 204, 22));
-  --player-primary-hover: rgb(var(--color-primary-600, 101, 163, 13));
-  --player-bg-dark: rgb(var(--color-neutral-950, 15, 12, 10));
-  --player-bg-neutral: rgb(var(--color-neutral-900, 28, 25, 23));
-  --player-bg-light: rgb(var(--color-neutral-800, 41, 37, 36));
-  --player-text: rgb(var(--color-neutral-50, 250, 250, 249));
-  --player-text-muted: rgb(var(--color-neutral-400, 168, 162, 158));
-  --player-text-dark: rgb(var(--color-neutral-900, 28, 25, 23));
+  --player-primary: rgb(var(--color-primary-500, 132, 182, 48));
+  --player-primary-hover: rgb(var(--color-primary-400, 183, 223, 124));
+  --player-bg-dark: rgb(var(--color-neutral-950, 20, 21, 18));
+  --player-bg-neutral: rgb(var(--color-neutral-900, 28, 30, 25));
+  --player-bg-light: rgb(var(--color-neutral-800, 38, 41, 34));
+  --player-text: rgb(var(--color-neutral-50, 234, 232, 227));
+  --player-text-muted: rgb(var(--color-neutral-400, 156, 163, 149));
+  --player-text-dark: rgb(var(--color-neutral-950, 20, 21, 18));
 }
 
 /* Main container styled to sit nicely in the layout */
@@ -198,17 +198,39 @@ aside li.active .song-duration {
 input[type="range"] {
   width: 100%;
   height: 8px;
-  background: var(--player-bg-light);
+  -webkit-appearance: none;
+  appearance: none;
+  accent-color: var(--player-primary);
+  background: transparent;
   border-radius: 5px;
   outline: none;
   margin: 0 15px;
   font-size: 16px; /* prevents iOS zoom */
 }
 
+input[type="range"]::-webkit-slider-runnable-track {
+  height: 8px;
+  border-radius: 5px;
+  background: var(--player-bg-light);
+}
+
+input[type="range"]::-moz-range-track {
+  height: 8px;
+  border-radius: 5px;
+  background: var(--player-bg-light);
+}
+
+input[type="range"]::-moz-range-progress {
+  height: 8px;
+  border-radius: 5px;
+  background: var(--player-primary);
+}
+
 input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;
   width: 16px;
   height: 16px;
+  margin-top: -4px;
   border-radius: 50%;
   background: var(--player-primary);
   cursor: grab;
@@ -266,7 +288,7 @@ input[type="range"]::-moz-range-thumb:active {
 .controls button#playPause {
   font-size: 3.5em;
   background-color: var(--player-primary);
-  color: #fff;
+  color: var(--player-text-dark);
   width: 60px;
   height: 60px;
   min-width: 60px;
@@ -345,7 +367,7 @@ input[type="range"]::-moz-range-thumb:active {
 
 .search-input-container:focus-within {
   border-color: var(--player-primary);
-  box-shadow: 0 0 0 2px rgba(var(--color-primary-500, 132, 204, 22), 0.2);
+  box-shadow: 0 0 0 2px rgba(var(--color-primary-500, 132, 182, 48), 0.2);
 }
 
 .search-input-container .search-icon {
@@ -384,7 +406,7 @@ input[type="range"]::-moz-range-thumb:active {
 .playlist-filters select:focus,
 .playlist-filters input[type="date"]:focus {
   border-color: var(--player-primary);
-  box-shadow: 0 0 0 2px rgba(var(--color-primary-500, 132, 204, 22), 0.2);
+  box-shadow: 0 0 0 2px rgba(var(--color-primary-500, 132, 182, 48), 0.2);
 }
 
 .date-input-container {
@@ -437,7 +459,7 @@ input[type="range"]::-moz-range-thumb:active {
 .date-picker-btn:hover,
 .date-picker-btn:focus {
   border-color: var(--player-primary);
-  box-shadow: 0 0 0 2px rgba(var(--color-primary-500, 132, 204, 22), 0.2);
+  box-shadow: 0 0 0 2px rgba(var(--color-primary-500, 132, 182, 48), 0.2);
   outline: none;
 }
 
@@ -540,13 +562,13 @@ input[type="range"]::-moz-range-thumb:active {
 }
 
 .cal-day-has-event {
-  background-color: rgba(var(--color-primary-500, 132, 204, 22), 0.15);
+  background-color: rgba(var(--color-primary-500, 132, 182, 48), 0.15);
   color: var(--player-primary);
   font-weight: 700;
 }
 
 .cal-day-has-event:hover {
-  background-color: rgba(var(--color-primary-500, 132, 204, 22), 0.3);
+  background-color: rgba(var(--color-primary-500, 132, 182, 48), 0.3);
 }
 
 .cal-day-today {
@@ -665,7 +687,7 @@ aside li.active .song-title-text {
 
 .cover-grid-item.active {
   border-color: var(--player-primary);
-  box-shadow: 0 0 10px rgba(var(--color-primary-500, 132, 204, 22), 0.5);
+  box-shadow: 0 0 10px rgba(var(--color-primary-500, 132, 182, 48), 0.5);
 }
 
 .song-duration-meta {
@@ -766,7 +788,7 @@ aside li.active .song-date {
     position: absolute;
     top: 10px;
     left: 10px;
-    background: rgba(var(--color-primary-500, 132, 204, 22), 0.2);
+    background: rgba(var(--color-primary-500, 132, 182, 48), 0.2);
     border: 1px solid var(--player-primary);
     padding: 8px 12px;
   }

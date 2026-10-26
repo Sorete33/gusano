@@ -13,8 +13,8 @@
     gap: 14px;
     
     /* Styling */
-    background-color: #613f75;
-    color: #ff6600 !important; /* Your specific orange */
+    background-color: var(--primary);
+    color: var(--on-primary) !important;
     padding: 7px 14px;
     border-radius: 12px;
     text-decoration: none;
@@ -38,11 +38,11 @@
 
 /* Hover States */
 .db-upload-btn:hover {
-    background-color: #ffdc8f !important;
-    color: #613f75 !important;
+    background-color: var(--primary-soft) !important;
+    color: var(--on-primary) !important;
     transform: translateY(-3px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-    border-color: #613f75;
+    border-color: var(--primary);
 }
 
 .db-upload-btn:hover .db-icon-wrapper img {

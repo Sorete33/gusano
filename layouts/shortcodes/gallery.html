@@ -8,7 +8,7 @@
 {{ $fileExists := or (fileExists $fileYml) (fileExists $fileYaml) (fileExists $fileJson) (fileExists $fileToml) }}
 
 {{ if and $fileExists (not $data) }}
-<div class="text-center py-12 text-neutral-500 dark:text-neutral-400">
+<div class="text-center py-12 text-neutral-400">
     <p class="text-lg font-medium">No hay próximos eventos</p>
 </div>
 {{ else if $data }}
@@ -67,8 +67,8 @@
         top: 12px;
         left: 0;
         z-index: 10;
-        background: #e11d48;
-        color: #fff;
+        background: var(--error);
+        color: var(--on-error);
         font-size: 12px;
         font-weight: 700;
         letter-spacing: 0.04em;
@@ -78,6 +78,31 @@
         box-shadow: 0 4px 12px rgba(0,0,0,0.35);
         max-width: 90%;
         white-space: nowrap;
+    }
+
+    /* Swiper's bundled CSS defaults the navigation and pagination to blue.
+       Keep this gallery on the site palette instead. */
+    .swiper-container-{{ $dataFile }} {
+        --swiper-theme-color: var(--primary);
+        --swiper-navigation-color: var(--primary-soft);
+        --swiper-pagination-color: var(--primary-soft);
+        --swiper-pagination-bullet-inactive-color: var(--text-muted);
+        --swiper-pagination-bullet-inactive-opacity: 0.45;
+    }
+
+    .swiper-container-{{ $dataFile }} .swiper-button-prev,
+    .swiper-container-{{ $dataFile }} .swiper-button-next {
+        color: var(--primary-soft);
+    }
+
+    .swiper-container-{{ $dataFile }} .swiper-pagination-bullet {
+        background: var(--text-muted);
+        opacity: 0.45;
+    }
+
+    .swiper-container-{{ $dataFile }} .swiper-pagination-bullet-active {
+        background: var(--primary-soft);
+        opacity: 1;
     }
 </style>
 
@@ -232,5 +257,5 @@
 })();
 </script>
 {{ else }}
-    <p style="color: red;">Error: data/{{ $dataFile }}.yml no encontrado.</p>
+    <p class="gallery-error">Error: data/{{ $dataFile }}.yml no encontrado.</p>
 {{ end }}

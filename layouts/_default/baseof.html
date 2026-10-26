@@ -1,34 +1,34 @@
-{{/* Copy of themes/blowfish/layouts/_default/baseof.html with ONE change:
-     `class="scroll-smooth"` is now `class="dark scroll-smooth"`.
+{{/* Project baseof for the vendored Blowfish theme.
 
-     The site is dark-only with no day mode to fall back to, so the class
-     lives in the HTML instead of waiting for appearance.js. Blowfish
-     compiles all 120 `dark:` variants against `.dark`, and nothing in the
-     CSS reads the data-default-appearance attribute: with JS off the <html>
-     never got the class and visitors saw the light palette. With the class
-     hardcoded, dark mode no longer depends on anything.
-
-     This is a hand-copied fork, so it does NOT merge on its own when
-     blowfish is updated - re-copy the theme file and keep only the class
-     line. */ -}}
+     The site is dark-only, so `dark` is hardcoded on <html> instead of
+     waiting for appearance.js. Blowfish compiles all of its `dark:` variants
+     against `.dark`; this way dark mode does not depend on JS or a stored
+     preference. The page background itself comes from assets/css/custom.css
+     (there is no bg-neutral-950 utility in the prebuilt Tailwind CSS). */ -}}
+{{ $pageBg := "/under.jpg" }}
+{{ with .Resources.GetMatch "featured*" }}{{ $pageBg = .RelPermalink }}{{ end }}
+{{ with .Params.featureimage }}
+  {{ if hasPrefix . "http" }}{{ $pageBg = . }}
+  {{ else if hasPrefix . "/" }}{{ $pageBg = . }}
+  {{ else }}{{ $pageBg = (printf "/%s" .) }}{{ end }}
+{{ end }}
 <!doctype html>
 <html
   lang="{{ with site.Params.isoCode | default (site.LanguageCode | default `en`) }}{{- . -}}{{ end }}"
   dir="{{ cond (site.Params.rtl | default false) `rtl` `ltr` }}"
   class="dark scroll-smooth"
-  data-default-appearance="{{ site.Params.defaultAppearance | default `light` }}"
-  data-auto-appearance="{{ site.Params.autoSwitchAppearance | default `true` }}">
+  style="background-image: url('{{ $pageBg }}'); background-size: cover; background-attachment: fixed; background-position: center;">
   {{- partial "head.html" . -}}
   {{- partialCached "init.html" . -}}
 
   {{ $bodyLayout := "flex flex-col h-screen m-auto leading-7 max-w-7xl px-6 sm:px-14 md:px-24 lg:px-32" }}
-  {{ $bodyColor := "text-lg bg-neutral text-neutral-900 dark:bg-neutral-800 dark:text-neutral" }}
+  {{ $bodyColor := "text-lg text-neutral" }}
   <body class="{{ $bodyLayout }} {{ $bodyColor }} {{ if site.Params.enableStyledScrollbar | default true }}bf-scrollbar{{ end }}">
     <div id="the-top" class="absolute flex self-center">
       <a
-        class="px-3 py-1 text-sm -translate-y-8 rounded-b-lg bg-primary-200 focus:translate-y-0 dark:bg-neutral-600"
+        class="px-3 py-1 text-sm -translate-y-8 rounded-b-lg bg-neutral-600 focus:translate-y-0"
         href="#main-content">
-        <span class="font-bold text-primary-600 pe-2 dark:text-primary-400">&darr;</span>
+        <span class="font-bold text-primary-400 pe-2">&darr;</span>
         {{ i18n "nav.skip_to_main" }}
       </a>
     </div>
@@ -59,7 +59,7 @@
       data-id="{{ site.Params.buymeacoffee.identifier }}"
       data-description="Support me on Buy me a coffee!"
       {{ with site.Params.buymeacoffee.globalWidgetMessage }}data-message="{{ . }}"{{ end }}
-      {{ with site.Params.buymeacoffee.globalWidgetColor | default `#FFDD00` }}data-color="{{ . }}"{{ end }}
+      {{ with site.Params.buymeacoffee.globalWidgetColor | default `#ffd97d` }}data-color="{{ . }}"{{ end }}
       {{ with site.Params.buymeacoffee.globalWidgetPosition }}data-position="{{ . }}"{{ end }}
       data-x_margin="18"
       data-y_margin="18"></script>

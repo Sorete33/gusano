@@ -6,7 +6,7 @@
     max-width: 480px;
     box-sizing: border-box;
     min-height: 210px; /* 120 + 40 + 48 + 2 (border) */
-    border: 1px solid #bbb;
+    border: 1px solid var(--border, #383d33);
   }
 
   /* This interferes the SVGs inside buttons, ignore them */
@@ -15,14 +15,9 @@
   }
 
   .root.svelte-19qbmeq a {
-    color: #537d86;
+    color: var(--primary-soft, #B7DF7C);
     text-decoration: underline;
     font-weight: 700;
-  }
-  @media (prefers-color-scheme: dark) {
-    .root.svelte-19qbmeq a {
-      color: inherit;
-    }
   }
 
   .links.svelte-1qnb1ca {
@@ -88,7 +83,7 @@
     cursor: pointer;
     padding: 10px 8px;
     border: 0;
-    border-bottom: 1px solid #bbb;
+    border-bottom: 1px solid var(--border, #383d33);
     white-space: pre;
     overflow: hidden;
     text-overflow: ellipsis;

@@ -132,10 +132,10 @@
   {{ $cssRules := slice }}
 
   {{/* default color */}}
-  {{ $cssRules = $cssRules | append ".language-dot[data-language=\"default\"] { background-color: #0077b6; }" }}
+  {{ $cssRules = $cssRules | append ".language-dot[data-language=\"default\"] { background-color: rgb(var(--color-primary-500)); }" }}
 
   {{/* Hugging Face model color */}}
-  {{ $cssRules = $cssRules | append ".language-dot[data-language=\"model\"] { background-color: #ff6b35; }" }}
+  {{ $cssRules = $cssRules | append ".language-dot[data-language=\"model\"] { background-color: rgb(var(--color-secondary-500)); }" }}
 
   {{ range $lang, $color := $repoColors }}
     {{ $cssRules = $cssRules | append (printf ".language-dot[data-language=\"%s\"] { background-color: %s; }" $lang $color) }}

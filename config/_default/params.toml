@@ -1,4 +1,6 @@
-colorScheme = "avocado"
+colorScheme = "gusano"
+# Dark only: there is no light palette to switch to. The class is also
+# hardcoded in layouts/_default/baseof.html so first paint never waits for JS.
 defaultAppearance = "dark"
 autoSwitchAppearance = false
 enableA11y = false
@@ -17,11 +19,11 @@ firebase = { }
 fathomAnalytics = { }
 umamiAnalytics = { }
 selineAnalytics = { }
-buymeacoffee = { }
+buymeacoffee = { globalWidgetColor = "#ffd97d" }
 verification = { }
 rssnext = { }
 advertisement = { }
-defaultBackgroundImage = ""
+defaultBackgroundImage = "under.jpg"
 
 [header]
 layout = "basic"
@@ -30,9 +32,6 @@ layout = "basic"
 showMenu = true
 showCopyright = false
 showThemeAttribution = false
-# Dark only: there is no day mode to offer. Dropping the switcher also removes
-# the only theme code that takes the `dark` class off <html>; see
-# layouts/partials/extend-head.html, which pins it back on.
 showAppearanceSwitcher = false
 showScrollToTop = true
 

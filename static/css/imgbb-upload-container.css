@@ -6,8 +6,8 @@
     .imgbb-btn {
         display: inline-flex;
         align-items: center;
-        background-color: #007bff;
-        color: white;
+        background-color: var(--primary);
+        color: var(--on-primary);
         padding: 12px 24px;
         font-size: 1.1rem;
         font-weight: 600;
@@ -18,7 +18,7 @@
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
     .imgbb-btn:hover {
-        background-color: #0056b3;
+        background-color: var(--primary-soft);
         box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
     }
     .imgbb-btn:active {
@@ -30,16 +30,16 @@
     #imgbb-status {
         margin-top: 15px;
         font-size: 0.95rem;
-        color: #333;
+        color: var(--text);
     }
     .success-link {
         display: block;
         margin-top: 8px;
         padding: 10px;
-        background: #f8f9fa;
-        border: 1px solid #dee2e6;
+        background: var(--panel);
+        border: 1px solid var(--border);
         border-radius: 4px;
-        color: #007bff;
+        color: var(--primary-soft);
         word-break: break-all;
     }
 </style>

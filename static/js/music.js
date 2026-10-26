@@ -470,7 +470,7 @@ repeatBtn.onclick = () => {
     repeatMode = "none";
     repeatBtn.textContent = "repeat";
   }
-  repeatBtn.style.color = repeatMode === "none" ? "#fff" : "var(--player-primary)";
+  repeatBtn.style.color = repeatMode === "none" ? "var(--player-text)" : "var(--player-primary)";
 };
 
 function updateShuffleQueue() {
@@ -487,7 +487,7 @@ function updateShuffleQueue() {
 
 shuffleBtn.onclick = () => {
   isShuffled = !isShuffled;
-  shuffleBtn.style.color = isShuffled ? "var(--player-primary)" : "#fff";
+  shuffleBtn.style.color = isShuffled ? "var(--player-primary)" : "var(--player-text)";
   updateShuffleQueue();
 };
 

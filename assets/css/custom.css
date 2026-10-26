@@ -1,20 +1,84 @@
-/* Site-wide overrides, appended after the scheme and blowfish's main.css by
-   themes/blowfish/layouts/partials/head.html.
+/* Site-wide overrides, appended after the scheme and Blowfish's main.css by
+   layouts/partials/head.html.
 
-   Dark only. blowfish ships:
+   Dark only. This keeps native UI (scrollbars, form controls, the caret)
+   dark, which the CSS variables alone do not cover. */
 
-       html:not(.dark) { color-scheme: light; }
-       html.dark       { color-scheme: dark;   }
+:root {
+  /* Semantic aliases so the project CSS does not repeat raw scheme values. */
+  --bg: rgb(var(--color-neutral-950));
+  --surface: rgb(var(--color-neutral-900));
+  --panel: rgb(var(--color-neutral-800));
+  --border: rgb(var(--color-neutral-700));
+  --text: rgb(var(--color-neutral-50));
+  --text-muted: rgb(var(--color-neutral-400));
+  --primary: rgb(var(--color-primary-500));
+  --primary-soft: rgb(var(--color-primary-400));
+  --accent: rgb(var(--color-secondary-500));
+  --accent-soft: rgb(var(--color-secondary-400));
+  --error: rgb(var(--color-error-500));
+  --error-text: rgb(var(--color-error-400));
+  --success: rgb(var(--color-primary-400));
+  --on-primary: rgb(var(--color-neutral-950));
+  --on-accent: rgb(var(--color-neutral-950));
+  --on-error: #fff;
+}
 
-   layouts/_default/baseof.html hardcodes `dark` on <html>, so the second rule
-   already wins. This restates it with `html:not(.dark)` - same specificity,
-   later in the bundle - so the light value cannot come back even if the class
-   is ever lost. It keeps native UI (scrollbars, form controls, the caret)
-   dark, which is the part CSS variables alone do not cover. */
-
-html,
-html:not(.dark) {
+html {
   color-scheme: dark;
+  background-color: var(--bg);
+}
+
+body {
+  background-color: transparent;
+  color: var(--text);
+  position: relative;
+}
+
+/* Leve velo oscuro sobre el fondo full-page para que el texto sea legible. */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: -1;
+  pointer-events: none;
+}
+
+::selection {
+  background-color: rgba(var(--color-primary-400), 0.35);
+  color: var(--text);
+}
+
+/* Inputs from Tailwind's base layer default to a white background. Keep any
+   input that does not opt into a utility class inside the dark palette. */
+@layer base {
+  input:where(:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="file"]):not([type="hidden"])),
+  select,
+  textarea {
+    background-color: var(--panel);
+    color: var(--text);
+    border-color: var(--border);
+  }
+
+  input::placeholder,
+  textarea::placeholder {
+    color: var(--text-muted);
+  }
+}
+
+/* The vendored a11y toggle is disabled in params.toml, but keep its dark
+   colours on the palette if it is ever enabled. */
+.dark .ios-toggle {
+  background: var(--border);
+}
+
+.dark .ios-toggle::after {
+  background: var(--text);
+}
+
+.gallery-error {
+  color: var(--error-text);
 }
 
 /* Header: hold the full bar down to 1200px, hamburger below it.
@@ -62,3 +126,32 @@ html:not(.dark) {
     column-gap: 1rem;
   }
 }
+
+/* Fade hero/header backgrounds into the dark page background.
+   Blowfish's prebuilt CSS only ships dark:from/to-neutral-800, which leaves a
+   visible neutral-800 band at the bottom of the hero area on every page. */
+.dark .dark\:from-neutral-800 {
+  --tw-gradient-from: rgba(var(--color-neutral-950), 1) !important;
+}
+.dark .dark\:to-neutral-800 {
+  --tw-gradient-to: rgba(var(--color-neutral-950), 1) !important;
+}
+.dark .dark\:bg-neutral-800\/60 {
+  background-color: rgba(var(--color-neutral-950), 0.6);
+}
+
+/* Compatibility shim for the pre-purged Blowfish Tailwind build.
+   The project's dark-only templates use plain utility names (without the
+   `dark:` prefix) for several shades, but compiled/main.css only ships the
+   `dark:` variants. Define the plain names here so backgrounds, borders and
+   hovers render correctly. Values come from assets/css/schemes/gusano.css. */
+.bg-neutral-600 { background-color: rgba(var(--color-neutral-600), 1); }
+.bg-neutral-800 { background-color: rgba(var(--color-neutral-800), 1); }
+.bg-neutral-900 { background-color: rgba(var(--color-neutral-900), 1); }
+.border-neutral-700 { border-color: rgba(var(--color-neutral-700), 1); }
+.border-neutral-800 { border-color: rgba(var(--color-neutral-800), 1); }
+.bg-primary-900\/20 { background-color: color-mix(in srgb, rgba(var(--color-primary-900), 1) 20%, transparent); }
+.border-primary-800 { border-color: rgba(var(--color-primary-800), 1); }
+.hover\:bg-neutral-700:hover { background-color: rgba(var(--color-neutral-700), 1); }
+.hover\:text-neutral-300:hover { color: rgba(var(--color-neutral-300), 1); }
+.text-neutral { color: rgba(var(--color-neutral), 1); }

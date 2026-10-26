@@ -1,6 +1,6 @@
 {{ if eq .Section "recitales" }}
-<div id="comments-container" class="mt-12 pt-8 border-t border-neutral-200 dark:border-neutral-800">
-  <h3 class="text-2xl font-bold mb-6 text-neutral-900 dark:text-neutral">
+<div id="comments-container" class="mt-12 pt-8 border-t border-neutral-800">
+  <h3 class="text-2xl font-bold mb-6 text-neutral">
     {{ i18n "comments.title" | default "Comentarios" }}
   </h3>
 
@@ -20,19 +20,19 @@
         <div class="comment-node {{ if or .replyTo .replyto }}is-reply{{ else }}is-top{{ end }}"
              data-comment-id="{{ .commentId }}"
              {{ if .replyTo }}data-reply-to="{{ .replyTo }}"{{ else if .replyto }}data-reply-to="{{ .replyto }}"{{ end }}>
-          <div class="p-4 rounded-lg bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800">
+          <div class="p-4 rounded-lg bg-neutral-900 border border-neutral-800">
             <div class="flex items-center justify-between mb-2 text-sm">
-              <span class="font-bold text-neutral-800 dark:text-neutral-200">
+              <span class="font-bold text-neutral-200">
                 {{ .name | default "Anónimo" }}
               </span>
-              <span class="text-neutral-400 dark:text-neutral-500">
+              <span class="text-neutral-500">
                 {{ time.Format "02/01/2006 15:04" .date }}
               </span>
             </div>
-            <p class="text-neutral-700 dark:text-neutral-300 whitespace-pre-line text-base leading-relaxed comment-message">
+            <p class="text-neutral-300 whitespace-pre-line text-base leading-relaxed comment-message">
               {{- .message | safeHTML -}}
             </p>
-            <button type="button" class="reply-btn mt-2 text-sm text-primary-600 dark:text-primary-400 hover:underline" data-key="{{ .commentId }}" data-name="{{ .name | default "Anónimo" }}">
+            <button type="button" class="reply-btn mt-2 text-sm text-primary-400 hover:underline" data-key="{{ .commentId }}" data-name="{{ .name | default "Anónimo" }}">
               {{ i18n "comments.reply" | default "Responder" }}
             </button>
           </div>
@@ -40,19 +40,19 @@
       {{ end }}
     </div>
   {{ else }}
-    <p class="text-neutral-500 dark:text-neutral-400 italic mb-8">
+    <p class="text-neutral-400 italic mb-8">
       {{ i18n "comments.no_comments" | default "No hay comentarios aún. ¡Sé el primero en comentar!" }}
     </p>
   {{ end }}
 
-  <div class="bg-neutral-50 dark:bg-neutral-900 p-6 rounded-lg border border-neutral-200 dark:border-neutral-800">
-    <h4 class="text-lg font-bold mb-4 text-neutral-900 dark:text-neutral">
+  <div class="bg-neutral-900 p-6 rounded-lg border border-neutral-800">
+    <h4 class="text-lg font-bold mb-4 text-neutral">
       {{ i18n "comments.write_comment" | default "Dejar un comentario" }}
     </h4>
 
-    <div id="reply-context" class="hidden bg-primary-50 dark:bg-primary-900/20 p-3 rounded-md mb-4 text-sm flex items-center justify-between border border-primary-200 dark:border-primary-800">
+    <div id="reply-context" class="hidden bg-primary-900/20 p-3 rounded-md mb-4 text-sm flex items-center justify-between border border-primary-800">
       <span>{{ i18n "comments.replying_to" | default "Respondiendo a" }} <strong id="reply-to-name"></strong></span>
-      <button type="button" id="cancel-reply" class="text-neutral-500 hover:text-neutral-700 dark:hover:text-neutral-300 font-bold text-lg leading-none">&times;</button>
+      <button type="button" id="cancel-reply" class="text-neutral-500 hover:text-neutral-300 font-bold text-lg leading-none">&times;</button>
     </div>
 
     <form id="comment-form" class="space-y-4">
@@ -63,7 +63,7 @@
       <input type="text" name="honeypot" class="hidden" style="display:none !important" autocomplete="off">
 
       <div>
-        <label for="comment-name" class="block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-1">
+        <label for="comment-name" class="block text-sm font-medium text-neutral-300 mb-1">
           {{ i18n "comments.name" | default "Nombre (opcional)" }}
         </label>
         <input 
@@ -71,12 +71,12 @@
           id="comment-name" 
           name="name" 
           placeholder="Anónimo" 
-          class="w-full px-3 py-2 rounded-md border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-800 text-neutral-950 dark:text-neutral-50 focus:outline-none focus:ring-2 focus:ring-primary-500"
+          class="w-full px-3 py-2 rounded-md border border-neutral-700 bg-neutral-900 text-neutral-50 focus:outline-none focus:ring-2 focus:ring-primary-500"
         >
       </div>
 
       <div>
-        <label for="comment-message" class="block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-1">
+        <label for="comment-message" class="block text-sm font-medium text-neutral-300 mb-1">
           {{ i18n "comments.message" | default "Mensaje" }}
         </label>
         <textarea 
@@ -85,7 +85,7 @@
           required 
           rows="4" 
           placeholder="{{ i18n "comments.placeholder" | default "Escribe tu comentario aquí..." }}" 
-          class="w-full px-3 py-2 rounded-md border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-800 text-neutral-950 dark:text-neutral-50 focus:outline-none focus:ring-2 focus:ring-primary-500"
+          class="w-full px-3 py-2 rounded-md border border-neutral-700 bg-neutral-900 text-neutral-50 focus:outline-none focus:ring-2 focus:ring-primary-500"
         ></textarea>
 
         <!-- Formatting toolbar -->
@@ -106,13 +106,13 @@
       <div id="comment-preview" class="preview-pane hidden"></div>
 
       <div class="flex flex-wrap gap-2 items-center">
-        <button type="button" id="preview-btn" class="inline-flex items-center justify-center px-4 py-2 text-sm font-medium text-neutral-700 dark:text-neutral-300 bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500">
+        <button type="button" id="preview-btn" class="inline-flex items-center justify-center px-4 py-2 text-sm font-medium text-neutral-300 bg-neutral-800 hover:bg-neutral-700 rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500">
           {{ i18n "comments.preview" | default "Vista previa" }}
         </button>
         <button 
           type="submit" 
           id="comment-submit-btn"
-          class="inline-flex items-center justify-center px-4 py-2 text-sm font-medium text-white bg-primary-600 hover:bg-primary-700 rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 disabled:opacity-50"
+          class="comment-submit inline-flex items-center justify-center px-4 py-2 text-sm font-medium rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 disabled:opacity-50"
         >
           {{ i18n "comments.submit" | default "Enviar Comentario" }}
         </button>
@@ -152,6 +152,24 @@
 </div>
 
 <style>
+  #comment-status.is-success {
+    color: var(--success);
+    background: rgba(var(--color-primary-500), 0.12);
+    border: 1px solid rgba(var(--color-primary-500), 0.35);
+  }
+  #comment-status.is-error {
+    color: var(--error-text);
+    background: rgba(var(--color-error-500), 0.12);
+    border: 1px solid rgba(var(--color-error-500), 0.35);
+  }
+  .comment-submit {
+    color: var(--on-primary);
+    background-color: var(--primary);
+  }
+  .comment-submit:hover:not(:disabled) {
+    color: var(--on-primary);
+    background-color: var(--primary-soft);
+  }
   .fmt-btn {
     display: inline-flex;
     align-items: center;
@@ -167,10 +185,7 @@
     transition: background-color .15s;
   }
   .fmt-btn:hover {
-    background-color: rgba(0,0,0,0.08);
-  }
-  .dark .fmt-btn:hover {
-    background-color: rgba(255,255,255,0.1);
+    background-color: rgba(var(--color-neutral-50), 0.08);
   }
   .fmt-btn b, .fmt-btn i {
     font-size: .875rem;
@@ -179,11 +194,8 @@
     display: inline-block;
     width: 1px;
     height: 1.25rem;
-    background-color: #d4d4d4;
+    background-color: var(--border);
     margin: 0 .25rem;
-  }
-  .dark .toolbar-sep {
-    background-color: #525252;
   }
   .emoji-picker {
     position: absolute;
@@ -191,17 +203,12 @@
     top: 100%;
     left: 0;
     margin-top: 4px;
-    background: #fff;
-    border: 1px solid #d4d4d4;
+    background: var(--panel);
+    border: 1px solid var(--border);
     border-radius: 0.75rem;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.4);
     padding: 10px;
     max-width: 290px;
-  }
-  .dark .emoji-picker {
-    background: #262626;
-    border-color: #525252;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.4);
   }
   .emoji-grid {
     display: grid;
@@ -218,10 +225,7 @@
     user-select: none;
   }
   .emoji-item:hover {
-    background-color: #f5f5f5;
-  }
-  .dark .emoji-item:hover {
-    background-color: #404040;
+    background-color: var(--border);
   }
   .media-overlay {
     display: none;
@@ -236,18 +240,14 @@
     display: flex;
   }
   .media-box {
-    background: #fff;
-    border: 1px solid #d4d4d4;
+    background: var(--panel);
+    border: 1px solid var(--border);
     border-radius: 0.75rem;
     box-shadow: 0 20px 60px rgba(0,0,0,0.2);
     padding: 1.25rem;
     width: 100%;
     max-width: 360px;
     margin: 0 1rem;
-  }
-  .dark .media-box {
-    background: #262626;
-    border-color: #525252;
   }
   .media-box-header {
     display: flex;
@@ -267,49 +267,34 @@
     cursor: pointer;
     font-size: 1.5rem;
     line-height: 1;
-    color: #a3a3a3;
+    color: var(--text-muted);
     padding: 0;
   }
   .media-box-header button:hover {
-    color: #525252;
-  }
-  .dark .media-box-header button:hover {
-    color: #d4d4d4;
+    color: var(--text);
   }
   .media-box label {
     display: block;
     font-size: .75rem;
     font-weight: 500;
-    color: #737373;
+    color: var(--text-muted);
     margin-bottom: .375rem;
-  }
-  .dark .media-box label {
-    color: #a3a3a3;
   }
   .media-box input[type="url"] {
     width: 100%;
     padding: .5rem .75rem;
-    border: 1px solid #d4d4d4;
+    border: 1px solid var(--border);
     border-radius: .375rem;
-    background: #fff;
-    color: inherit;
+    background: var(--panel);
+    color: var(--text);
     font-size: .875rem;
     outline: none;
     margin-bottom: .75rem;
     box-sizing: border-box;
   }
   .media-box input[type="url"]:focus {
-    border-color: #2563eb;
-    box-shadow: 0 0 0 2px rgba(37,99,235,0.2);
-  }
-  .dark .media-box input[type="url"] {
-    background: #262626;
-    border-color: #525252;
-    color: #e5e5e5;
-  }
-  .dark .media-box input[type="url"]:focus {
-    border-color: #3b82f6;
-    box-shadow: 0 0 0 2px rgba(59,130,246,0.2);
+    border-color: var(--primary-soft);
+    box-shadow: 0 0 0 2px rgba(var(--color-primary-400), 0.25);
   }
   .media-box-actions {
     display: flex;
@@ -325,24 +310,18 @@
     border: none;
   }
   .media-box-actions button:first-child {
-    color: #737373;
+    color: var(--text-muted);
     background: transparent;
   }
   .media-box-actions button:first-child:hover {
-    background: rgba(0,0,0,0.06);
-  }
-  .dark .media-box-actions button:first-child {
-    color: #a3a3a3;
-  }
-  .dark .media-box-actions button:first-child:hover {
-    background: rgba(255,255,255,0.08);
+    background: rgba(var(--color-neutral-50), 0.08);
   }
   .media-box-actions button:last-child {
-    color: #fff;
-    background: #2563eb;
+    color: var(--on-primary);
+    background: var(--primary);
   }
   .media-box-actions button:last-child:hover {
-    background: #1d4ed8;
+    background: var(--primary-soft);
   }
   .comment-message img {
     border-radius: 0.5rem;
@@ -370,11 +349,8 @@
     left: 0;
     bottom: 0;
     width: 2px;
-    background: linear-gradient(to bottom, rgb(34 197 94 / 0.5), rgb(34 197 94 / 0.15));
+    background: linear-gradient(to bottom, rgba(var(--color-primary-400), 0.5), rgba(var(--color-primary-400), 0.15));
     border-radius: 1px;
-  }
-  .dark .replies-container::before {
-    background: linear-gradient(to bottom, rgb(74 222 128 / 0.5), rgb(74 222 128 / 0.15));
   }
   .comment-node.is-reply {
     position: relative;
@@ -387,11 +363,8 @@
     left: 0;
     width: 1.25rem;
     height: 2px;
-    background: rgb(34 197 94 / 0.5);
+    background: rgba(var(--color-primary-400), 0.5);
     border-radius: 0 1px 1px 0;
-  }
-  .dark .comment-node.is-reply::before {
-    background: rgb(74 222 128 / 0.5);
   }
   .comment-node.is-reply:first-child::before {
     top: 1.75rem;
@@ -400,15 +373,11 @@
   .preview-pane {
     padding: 1rem;
     border-radius: 0.5rem;
-    border: 1px solid #d4d4d4;
-    background: #fafafa;
+    border: 1px solid var(--border);
+    background: var(--bg);
     min-height: 80px;
     line-height: 1.625;
     font-size: 0.9375rem;
-  }
-  .dark .preview-pane {
-    background: #1a1a1a;
-    border-color: #525252;
   }
   .preview-pane img {
     border-radius: 0.5rem;
@@ -417,7 +386,7 @@
     margin: 0.5rem 0;
   }
   .preview-pane a {
-    color: #2563eb;
+    color: var(--primary-soft);
     text-decoration: underline;
   }
   .preview-pane img.pepe-comment {
@@ -426,9 +395,6 @@
     width: auto !important;
     margin: 0 1px !important;
     vertical-align: middle !important;
-  }
-  .dark .preview-pane a {
-    color: #60a5fa;
   }
 
   .pepe-overlay {
@@ -444,8 +410,8 @@
     display: flex;
   }
   .pepe-box {
-    background: #fff;
-    border: 1px solid #d4d4d4;
+    background: var(--panel);
+    border: 1px solid var(--border);
     border-radius: 0.75rem;
     box-shadow: 0 20px 60px rgba(0,0,0,0.2);
     width: 100%;
@@ -455,20 +421,13 @@
     display: flex;
     flex-direction: column;
   }
-  .dark .pepe-box {
-    background: #262626;
-    border-color: #525252;
-  }
   .pepe-box-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 1rem 1.25rem;
-    border-bottom: 1px solid #e5e5e5;
+    border-bottom: 1px solid var(--border);
     flex-shrink: 0;
-  }
-  .dark .pepe-box-header {
-    border-bottom-color: #404040;
   }
   .pepe-box-header h5 {
     font-size: 1rem;
@@ -482,19 +441,16 @@
     cursor: pointer;
     font-size: 1.5rem;
     line-height: 1;
-    color: #a3a3a3;
+    color: var(--text-muted);
     padding: 0;
   }
   .pepe-box-header button:hover {
-    color: #525252;
-  }
-  .dark .pepe-box-header button:hover {
-    color: #d4d4d4;
+    color: var(--text);
   }
   .pepe-loading {
     padding: 2rem;
     text-align: center;
-    color: #a3a3a3;
+    color: var(--text-muted);
     font-size: .875rem;
   }
   .pepe-content {
@@ -509,14 +465,10 @@
   .pepe-section-title {
     font-size: .8125rem;
     font-weight: 600;
-    color: #737373;
+    color: var(--text-muted);
     padding: .5rem .25rem;
     margin: 0;
-    border-bottom: 1px solid #f0f0f0;
-  }
-  .dark .pepe-section-title {
-    color: #a3a3a3;
-    border-bottom-color: #333;
+    border-bottom: 1px solid var(--border);
   }
   .pepe-grid {
     display: grid;
@@ -534,21 +486,15 @@
     justify-content: center;
   }
   .pepe-item:hover {
-    background-color: #f0f0f0;
-  }
-  .dark .pepe-item:hover {
-    background-color: #404040;
+    background-color: var(--border);
   }
   .pepe-item img {
     width: 48px;
     height: 48px;
     object-fit: contain;
     image-rendering: auto;
-    background: #f0f0f0;
+    background: var(--border);
     border-radius: 6px;
-  }
-  .dark .pepe-item img {
-    background: #333;
   }
 </style>
 
@@ -616,10 +562,7 @@
 
     function showStatus(msg, type) {
       statusDiv.textContent = msg;
-      statusDiv.className = "text-sm p-3 rounded-md mt-2 block " + 
-        (type === "success" 
-          ? "bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400" 
-          : "bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-400");
+      statusDiv.className = "text-sm p-3 rounded-md mt-2 block is-" + type;
     }
   });
 </script>
@@ -958,7 +901,7 @@
       if (previewPane.classList.contains('hidden')) {
         var txt = textarea.value;
         if (!txt.trim()) {
-          previewPane.innerHTML = '<em class="text-neutral-400 dark:text-neutral-500">' + '{{ i18n "comments.preview_empty" | default "Escribe algo para ver la vista previa." }}' + '</em>';
+          previewPane.innerHTML = '<em class="text-neutral-500">' + '{{ i18n "comments.preview_empty" | default "Escribe algo para ver la vista previa." }}' + '</em>';
         } else {
           var html = txt
             .replace(/&/g, '&amp;')
@@ -985,7 +928,7 @@
   document.querySelectorAll('.comment-message').forEach(function(el) {
     var html = el.innerHTML;
     // Convert markdown links [text](url)
-    html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener" class="text-primary-600 dark:text-primary-400 hover:underline">$1</a>');
+    html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener" class="text-primary-400 hover:underline">$1</a>');
     // Convert bold **text**
     html = html.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
     // Convert italic *text*
