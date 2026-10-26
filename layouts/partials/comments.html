@@ -1,5 +1,5 @@
 {{ if eq .Section "recitales" }}
-<div id="comments-container" class="mt-12 pt-8 border-t border-neutral-800">
+<div id="comments-container" class="mt-12 pt-8 border-t border-neutral-800" data-permalink="{{ .RelPermalink }}">
   <h3 class="text-2xl font-bold mb-6 text-neutral">
     {{ i18n "comments.title" | default "Comentarios" }}
   </h3>
@@ -32,6 +32,18 @@
             <p class="text-neutral-300 whitespace-pre-line text-base leading-relaxed comment-message">
               {{- .message | safeHTML -}}
             </p>
+            {{ $cid := .commentId }}
+            <div class="comment-reactions flex flex-wrap items-center gap-1 mt-2" data-comment-id="{{ $cid }}">
+              <div class="reactions-list flex flex-wrap gap-1"></div>
+              <div class="reaction-picker-wrap relative">
+                <button type="button" class="reaction-add-btn" data-comment-id="{{ $cid }}" aria-label="Agregar reacción" title="Reaccionar">+</button>
+                <div class="reaction-picker hidden">
+                  {{ range (slice "👍" "❤️" "😂" "😮" "😢" "🔥" "🎧" "🎵" "🎸" "🥁" "🎹" "🎤" "🎉" "👏") }}
+                    <button type="button" class="picker-emoji" data-emoji="{{ . }}" data-comment-id="{{ $cid }}">{{ . }}</button>
+                  {{ end }}
+                </div>
+              </div>
+            </div>
             <button type="button" class="reply-btn mt-2 text-sm text-primary-400 hover:underline" data-key="{{ .commentId }}" data-name="{{ .name | default "Anónimo" }}">
               {{ i18n "comments.reply" | default "Responder" }}
             </button>
@@ -938,6 +950,135 @@
     // Convert /pepe/ paths to images
     html = html.replace(/(\/pepe\/[^<]+?\.(?:gif|png|jpg|jpeg|webp|svg))/gi, function(m) { return '<img src="' + encodeURI(m) + '" alt="" class="pepe-comment" loading="lazy">'; });
     el.innerHTML = html;
+  });
+})();
+</script>
+
+<script>
+(function() {
+  var container = document.getElementById('comments-container');
+  if (!container) return;
+  var workerUrl = '{{ site.Params.comments.workerurl }}';
+  if (!workerUrl || workerUrl === 'https://your-worker.yoursubdomain.workers.dev') return;
+  if (!workerUrl.startsWith('http://') && !workerUrl.startsWith('https://')) {
+    workerUrl = 'https://' + workerUrl;
+  }
+  var permalink = container.getAttribute('data-permalink') || '';
+
+  function storageKey(commentId, emoji) {
+    return 'reacted:' + commentId + ':' + emoji;
+  }
+
+  function makeReactionBtn(cid, emoji, count) {
+    var btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'reaction-btn' + (localStorage.getItem(storageKey(cid, emoji)) ? ' reacted' : '');
+    btn.setAttribute('data-emoji', emoji);
+    btn.setAttribute('data-comment-id', cid);
+    btn.setAttribute('aria-label', 'Reaccionar con ' + emoji);
+    var em = document.createElement('span');
+    em.className = 'reaction-emoji';
+    em.textContent = emoji;
+    var ct = document.createElement('span');
+    ct.className = 'reaction-count';
+    ct.textContent = count;
+    ct.style.display = count > 0 ? '' : 'none';
+    btn.appendChild(em);
+    btn.appendChild(ct);
+    btn.addEventListener('click', function() { react(cid, emoji, btn); });
+    return btn;
+  }
+
+  async function react(cid, emoji, btn) {
+    if (localStorage.getItem(storageKey(cid, emoji))) return;
+    if (btn) btn.disabled = true;
+    try {
+      var res = await fetch(workerUrl, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ action: 'react', permalink: permalink, commentId: cid, emoji: emoji })
+      });
+      var data = await res.json();
+      if (res.ok && data.success) {
+        // find or create the button in the list
+        var list = document.querySelector('.comment-reactions[data-comment-id="' + cid + '"] .reactions-list');
+        var existing = list ? list.querySelector('.reaction-btn[data-emoji="' + emoji + '"]') : null;
+        if (!existing && list) {
+          existing = makeReactionBtn(cid, emoji, data.count);
+          list.appendChild(existing);
+        } else if (existing) {
+          var span = existing.querySelector('.reaction-count');
+          if (span) { span.textContent = data.count; span.style.display = ''; }
+          existing.classList.add('reacted');
+        }
+        localStorage.setItem(storageKey(cid, emoji), '1');
+        if (existing) existing.classList.add('reacted');
+      }
+    } catch (e) {
+      console.error(e);
+    } finally {
+      if (btn) btn.disabled = false;
+    }
+  }
+
+  // Load counts from worker and render only reacted emojis
+  if (permalink) {
+    fetch(workerUrl + '/reactions?permalink=' + encodeURIComponent(permalink))
+      .then(function(r) { return r.json(); })
+      .then(function(data) {
+        document.querySelectorAll('.comment-reactions').forEach(function(wrap) {
+          var cid = wrap.getAttribute('data-comment-id');
+          var list = wrap.querySelector('.reactions-list');
+          if (!list) return;
+          if (data && data[cid]) {
+            Object.keys(data[cid]).forEach(function(emoji) {
+              var count = data[cid][emoji];
+              if (count > 0) {
+                var btn = makeReactionBtn(cid, emoji, count);
+                if (localStorage.getItem(storageKey(cid, emoji))) {
+                  btn.classList.add('reacted');
+                }
+                list.appendChild(btn);
+              }
+            });
+          }
+        });
+      })
+      .catch(function() {});
+  }
+
+  // Toggle picker
+  document.querySelectorAll('.reaction-add-btn').forEach(function(btn) {
+    btn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      var wrap = btn.parentElement;
+      var picker = wrap.querySelector('.reaction-picker');
+      // close all other pickers
+      document.querySelectorAll('.reaction-picker').forEach(function(p) {
+        if (p !== picker) p.classList.add('hidden');
+      });
+      if (picker) picker.classList.toggle('hidden');
+    });
+  });
+
+  // Picker emoji click
+  document.querySelectorAll('.picker-emoji').forEach(function(btn) {
+    btn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      var cid = btn.getAttribute('data-comment-id');
+      var emoji = btn.getAttribute('data-emoji');
+      var wrap = btn.closest('.comment-reactions');
+      var picker = btn.closest('.reaction-picker');
+      if (picker) picker.classList.add('hidden');
+      react(cid, emoji, null);
+    });
+  });
+
+  // Close pickers on outside click
+  document.addEventListener('click', function() {
+    document.querySelectorAll('.reaction-picker').forEach(function(p) {
+      p.classList.add('hidden');
+    });
   });
 })();
 </script>

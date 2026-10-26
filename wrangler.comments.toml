@@ -1,0 +1,19 @@
+# Configuración para el worker de comentarios (worker.js).
+# Deploy: wrangler deploy --config wrangler.comments.toml
+# Antes de deployar, crear el KV namespace y poner su id abajo:
+#   wrangler kv namespace create REACTIONS
+name = "audiogusano-comments"
+main = "worker.js"
+compatibility_date = "2026-01-01"
+preview_urls = false
+
+[[kv_namespaces]]
+binding = "REACTIONS"
+id = "REEMPLAZAR_CON_ID_DEL_NAMESPACE"
+
+# Secrets (no commitear valores):
+#   wrangler secret put GITHUB_PAT --config wrangler.comments.toml
+[vars]
+GITHUB_OWNER = "Sorete33"
+GITHUB_REPO = "gusano"
+GITHUB_BRANCH = "master"
