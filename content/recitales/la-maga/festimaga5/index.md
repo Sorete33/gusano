@@ -2,7 +2,7 @@
 date : 2026-10-11
 title : "Festimaga Vol 5"
 weight: -76
-bandas: [Fronda y Raíz, 2x3, Bandurria, Entres, Sabotage]
+bandas: [Fronda y Raíz, 2x3, Bandurria, Entres, Sabotage, Dados Vuelta]
 espacios: [La Maga]
 author: "Gusanoide"
 draft: false
@@ -12,7 +12,7 @@ heroStyle: background
 
 # ![alt text](featured.webp)
 
-## Gracias a les feriantes por participar, si quieren adjuntar su emprendimiento en los comentarios o en un mail les agrego al artículo. También si alguien sabe el nombre del Dúo Bandurria le pongo el apropiado.
+## Gracias a les feriantes por participar, si quieren adjuntar su emprendimiento en los comentarios o en un mail les agrego al artículo.
 
 ---
 
@@ -28,7 +28,7 @@ heroStyle: background
 
 ---
 
-# Bandurria
+# Dados Vuelta
 
 {{< track show="la-maga/festimaga5" track="bandurria" >}}
 
