@@ -9,7 +9,7 @@ preview_urls = false
 
 [[kv_namespaces]]
 binding = "REACTIONS"
-id = "REEMPLAZAR_CON_ID_DEL_NAMESPACE"
+id = "3b7fed208bb043b6b487c1cc99cc6d6f"
 
 # Secrets (no commitear valores):
 #   wrangler secret put GITHUB_PAT --config wrangler.comments.toml

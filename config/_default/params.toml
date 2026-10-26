@@ -75,7 +75,7 @@ showZenMode = false
 showComments = true
 
 [comments]
-workerUrl = "comentarios.falopa33.workers.dev"
+workerUrl = "audiogusano-comments.falopa33.workers.dev"
 
 [list]
 showHero = true
