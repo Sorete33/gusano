@@ -54,6 +54,20 @@
   {{/* Social */}}
   {{ template "_internal/opengraph.html" . }}
   {{ template "_internal/twitter_cards.html" . }}
+  {{/* SEO extras: og:type, twitter:card, og:url, og:site_name, imagen fallback */}}
+  {{ if .IsHome }}<meta property="og:type" content="website">
+  {{ else if eq .Section "recitales" }}<meta property="og:type" content="article">
+  {{ else }}<meta property="og:type" content="website">{{ end }}
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:url" content="{{ .Permalink }}">
+  <meta property="og:site_name" content="{{ .Site.Title }}">
+  {{ if not (.Resources.ByType "image") }}
+    {{ with resources.Get "under.jpg" }}
+      {{ $webp := .Resize "1600x webp q80" }}
+      <meta property="og:image" content="{{ $webp.RelPermalink | absURL }}">
+      <meta name="twitter:image" content="{{ $webp.RelPermalink | absURL }}">
+    {{ end }}
+  {{ end }}
   {{/* Use defaultSocialImage if feature image does not exist */}}
   {{ $featureImage := "" }}
   {{ $pageImages := .Resources.ByType "image" }}

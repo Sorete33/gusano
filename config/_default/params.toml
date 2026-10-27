@@ -3,7 +3,7 @@ colorScheme = "gusano"
 # hardcoded in layouts/_default/baseof.html so first paint never waits for JS.
 defaultAppearance = "dark"
 autoSwitchAppearance = false
-enableA11y = false
+enableA11y = true
 enableSearch = true
 enableCodeCopy = true
 enableStructuredBreadcrumbs = true
