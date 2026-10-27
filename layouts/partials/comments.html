@@ -915,20 +915,25 @@
         if (!txt.trim()) {
           previewPane.innerHTML = '<em class="text-neutral-500">' + '{{ i18n "comments.preview_empty" | default "Escribe algo para ver la vista previa." }}' + '</em>';
         } else {
-          var html = txt
+          var escaped = txt
             .replace(/&/g, '&amp;')
             .replace(/</g, '&lt;')
-            .replace(/>/g, '&gt;')
-            .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
-            .replace(/\*([^*]+)\*/g, '<em>$1</em>')
-            .replace(/\[([^\]]+)\]\(([^)]+)\)/g, function (m, text, url) {
+            .replace(/>/g, '&gt;');
+          var __links = [];
+          var html = escaped
+            .replace(/\[([^\]]*)\]\(([^)]+)\)/g, function (m, text, url) {
               if (/^https?:\/\//i.test(url) || url.startsWith('/')) {
-                return '<a href="' + String(url).replace(/"/g, '&quot;') + '" target="_blank" rel="noopener">' + text + '</a>';
+                var a = '<a href="' + String(url).replace(/"/g, '&quot;') + '" target="_blank" rel="noopener">' + text + '</a>';
+                __links.push(a);
+                return '\u0000LINK' + (__links.length - 1) + '\u0000';
               }
               return m;
             })
-            .replace(/(https?:\/\/[^\s<]+?\.(?:jpg|jpeg|png|gif|webp|svg)(?:\?[^\s<]*)?)/gi, '<br><img src="$1" alt="" loading="lazy"><br>')
+            .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
+            .replace(/\*([^*]+)\*/g, '<em>$1</em>')
+            .replace(/(https?:\/\/[^\s<]+?\.(?:jpg|jpeg|png|gif|webp|svg)(?:\?[^\s<]*)?)/gi, function (u) { return '<br><img src="' + u + '" alt="" loading="lazy"><br>'; })
             .replace(/(\/pepe\/[^<]+?\.(?:gif|png|jpg|jpeg|webp|svg))/gi, function(m) { return '<img src="' + encodeURI(m) + '" alt="" class="pepe-comment" loading="lazy">'; })
+            .replace(/\u0000LINK(\d+)\u0000/g, function (m, i) { return __links[+i] || m; })
             .replace(/\n/g, '<br>');
           previewPane.innerHTML = html;
         }
@@ -944,10 +949,13 @@
   // Render formatting and images in comment messages
   document.querySelectorAll('.comment-message').forEach(function(el) {
     var html = el.innerHTML;
+    var __links = [];
     // Convert markdown links [text](url)
-    html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/g, function (m, text, url) {
+    html = html.replace(/\[([^\]]*)\]\(([^)]+)\)/g, function (m, text, url) {
       if (/^https?:\/\//i.test(url) || url.startsWith('/')) {
-        return '<a href="' + String(url).replace(/"/g, '&quot;') + '" target="_blank" rel="noopener" class="text-primary-400 hover:underline">' + text + '</a>';
+        var a = '<a href="' + String(url).replace(/"/g, '&quot;') + '" target="_blank" rel="noopener" class="text-primary-400 hover:underline">' + text + '</a>';
+        __links.push(a);
+        return '\u0000LINK' + (__links.length - 1) + '\u0000';
       }
       return m;
     });
@@ -956,9 +964,11 @@
     // Convert italic *text*
     html = html.replace(/\*([^*]+)\*/g, '<em>$1</em>');
     // Convert image URLs
-    html = html.replace(/(https?:\/\/[^\s<]+?\.(?:jpg|jpeg|png|gif|webp|svg)(?:\?[^\s<]*)?)/gi, '<br><img src="$1" alt="" loading="lazy"><br>');
+    html = html.replace(/(https?:\/\/[^\s<]+?\.(?:jpg|jpeg|png|gif|webp|svg)(?:\?[^\s<]*)?)/gi, function (u) { return '<br><img src="' + u + '" alt="" loading="lazy"><br>'; });
     // Convert /pepe/ paths to images
     html = html.replace(/(\/pepe\/[^<]+?\.(?:gif|png|jpg|jpeg|webp|svg))/gi, function(m) { return '<img src="' + encodeURI(m) + '" alt="" class="pepe-comment" loading="lazy">'; });
+    // Restore protected links
+    html = html.replace(/\u0000LINK(\d+)\u0000/g, function (m, i) { return __links[+i] || m; });
     el.innerHTML = html;
   });
 })();
