@@ -3,21 +3,52 @@
      The site is dark-only, so `dark` is hardcoded on <html> instead of
      waiting for appearance.js. Blowfish compiles all of its `dark:` variants
      against `.dark`; this way dark mode does not depend on JS or a stored
-     preference. The page background itself comes from assets/css/custom.css
-     (there is no bg-neutral-950 utility in the prebuilt Tailwind CSS). */ -}}
-{{ $pageBg := "/under.jpg" }}
-{{ with .Resources.GetMatch "featured*" }}{{ $pageBg = .RelPermalink }}{{ end }}
-{{ with .Params.featureimage }}
-  {{ if hasPrefix . "http" }}{{ $pageBg = . }}
-  {{ else if hasPrefix . "/" }}{{ $pageBg = . }}
-  {{ else }}{{ $pageBg = (printf "/%s" .) }}{{ end }}
+     preference. The page background comes from under.jpg (processed via Hugo
+     Pipes to WebP) unless the page declares a featured/featureimage. */ -}}
+
+{{/* Default background: assets/under.jpg -> WebP (2 sizes for image-set) */}}
+{{ $under := resources.Get "under.jpg" }}
+{{ $underLg := "" }}
+{{ $underSm := "" }}
+{{ if $under }}
+  {{ $underLg = $under.Resize "1600x webp q80" }}
+  {{ $underSm = $under.Resize "800x webp q75" }}
 {{ end }}
+
+{{ $bgCss := "" }}
+{{ if and $underLg $underSm }}
+  {{ $bgCss = printf "image-set(url('%s') 800w, url('%s') 1600w)" $underSm.RelPermalink $underLg.RelPermalink }}
+{{ else if $underLg }}
+  {{ $bgCss = printf "url('%s')" $underLg.RelPermalink }}
+{{ else }}
+  {{ $bgCss = "url('/under.jpg')" }}
+{{ end }}
+
+{{ with .Resources.GetMatch "featured*" }}
+  {{ $bgCss = printf "url('%s')" .RelPermalink }}
+{{ end }}
+{{ with .Params.featureimage }}
+  {{ if hasPrefix . "http" }}
+    {{ $bgCss = printf "url('%s')" . }}
+  {{ else if hasPrefix . "/" }}
+    {{ $bgCss = printf "url('%s')" . }}
+  {{ else }}
+    {{ $res := resources.Get . }}
+    {{ if $res }}
+      {{ $proc := $res.Resize "1600x webp q80" }}
+      {{ $bgCss = printf "url('%s')" $proc.RelPermalink }}
+    {{ else }}
+      {{ $bgCss = printf "url('/%s')" . }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
 <!doctype html>
 <html
   lang="{{ with site.Params.isoCode | default (site.LanguageCode | default `en`) }}{{- . -}}{{ end }}"
   dir="{{ cond (site.Params.rtl | default false) `rtl` `ltr` }}"
   class="dark scroll-smooth"
-  style="background-image: url('{{ $pageBg }}'); background-size: cover; background-attachment: fixed; background-position: center;">
+  style="background-image: {{ $bgCss }}; background-size: cover; background-attachment: fixed; background-position: center;">
   {{- partial "head.html" . -}}
   {{- partialCached "init.html" . -}}
 

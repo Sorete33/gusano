@@ -24,7 +24,11 @@
               {{ $useDefault = false }}
             {{ end }}
           {{ end }}
-          {{ if $homepageImage }}
+          {{ $homepageImageFinal := $homepageImage }}
+          {{ if and $homepageImage (not (or $disableImageOptimization (eq $homepageImage.MediaType.SubType "svg"))) }}
+            {{ $homepageImageFinal = $homepageImage.Resize "1600x webp q80" }}
+          {{ end }}
+          {{ if $homepageImageFinal }}
             {{ $style := "" }}
             {{ $defaultPosition := cond $useDefault site.Params.imagePosition false }}
             {{ with $.Params.imagePosition | default $defaultPosition }}
@@ -32,7 +36,10 @@
             {{ end }}
             <img
               class="h-full w-full object-cover nozoom mt-0 mr-0 mb-0 ml-0"
-              src="{{ $homepageImage.RelPermalink }}"
+              src="{{ $homepageImageFinal.RelPermalink }}"
+              fetchpriority="high"
+              loading="eager"
+              decoding="async"
               {{ if $style }}style="{{ $style | safeCSS }}"{{ end }}>
             {{ if not $disableHeroImageFilter }}
               <div
