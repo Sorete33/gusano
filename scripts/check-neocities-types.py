@@ -56,6 +56,10 @@ SUPPORTER_ONLY = {
 
 IGNORED_DIRS = {".git", ".github", "node_modules", "__pycache__"}
 
+# Sanity check para cuentas premium: archivos > 5 MB y extensiones peligrosas.
+DANGEROUS_EXTENSIONS = {".exe", ".sh", ".php", ".cgi", ".pl", ".py", ".bat", ".cmd"}
+SIZE_THRESHOLD = 5 * 1024 * 1024
+
 
 def human(n):
     n = float(n)
@@ -114,21 +118,35 @@ def main():
     others = [o for o in offenders if o[1] not in SUPPORTER_ONLY]
 
     if supporter:
-        print(f"\nℹ️  {len(offenders)} file(s) in {root}/ are outside the free-tier")
-        print("   whitelist but the account is Supporter, so these deploy normally.")
-        print("   Kept visible so an accidental downgrade is not a surprise.\n")
+        # Premium: relajar. Solo sanity check: archivos peligrosos o muy grandes.
+        dangerous = [o for o in offenders if o[1] in DANGEROUS_EXTENSIONS]
+        huge = [o for o in offenders if o[2] > SIZE_THRESHOLD]
+        if dangerous or huge:
+            print(f"\nℹ️  Sanity check (premium): {len(dangerous) + len(huge)} archivo(s) a revisar.\n")
+            if dangerous:
+                print("   Extensiones peligrosas:")
+                for path, ext, size in sorted(dangerous, key=lambda o: -o[2]):
+                    print(f"     {path}  ({ext}, {human(size)})")
+                print()
+            if huge:
+                print("   Archivos > 5 MB:")
+                for path, ext, size in sorted(huge, key=lambda o: -o[2]):
+                    print(f"     {path}  ({ext}, {human(size)})")
+                print()
+        else:
+            print(f"\n✅ Premium: sin archivos peligrosos ni > 5 MB. ({len(offenders)} archivos supporter-only ignorados.)\n")
     else:
         print(f"\n❌ {len(offenders)} file(s) in {root}/ will NOT be uploaded to Neocities.")
         print("   deploy-to-neocities filters these out before uploading, so the deploy")
         print("   would succeed and the files would silently never appear on the site.\n")
 
-    if supporters:
+    if (not supporter) and supporters:
         print("   Supporter-tier-only media (these are the ones that bite):")
         for path, ext, size in sorted(supporters, key=lambda o: -o[2]):
             print(f"     {path}  ({ext}, {human(size)})")
         print()
 
-    if others:
+    if (not supporter) and others:
         print("   Other unsupported extensions:")
         for path, ext, size in sorted(others, key=lambda o: -o[2])[:40]:
             print(f"     {path}  ({ext}, {human(size)})")

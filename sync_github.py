@@ -66,12 +66,19 @@ def configure(section):
     PRESERVE_FIELDS = cfg["preserve"]
 
 GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN") or os.environ.get("GH_TOKEN")
+VERBOSE = False
 
 # Extensions worth pulling into the gallery. The site is a Neocities Supporter
 # account, which has no upload whitelist and deploys with
 # neocities_supporter:true, so .mp4 is included here and reaches the site as
 # .mp4 -- no conversion. Keep in sync with scripts/check-neocities-types.py.
 ALLOWED_EXTENSIONS = {".jpg", ".jpeg", ".png", ".gif", ".webp", ".avif", ".svg", ".mp4"}
+
+# Tamaño máximo por archivo (10 MB).
+MAX_FILE_SIZE = 10 * 1024 * 1024
+
+# Extensiones peligrosas (bloqueadas siempre, incluso en supporter).
+DANGEROUS_EXTENSIONS = {".exe", ".sh", ".php", ".cgi", ".pl", ".py", ".bat", ".cmd"}
 
 # The GitHub contents API returns at most 1000 entries per directory listing and
 # gives no way to page past that, so a folder at the cap is almost certainly
@@ -93,6 +100,18 @@ def slugify(value):
 
     return f"{value}{ext.lower()}"
 
+
+def is_safe_name(name):
+    """Rechaza nombres con path traversal o caracteres peligrosos."""
+    if not name or not isinstance(name, str):
+        return False
+    if name.startswith(".") or name.startswith("/"):
+        return False
+    if ".." in name or "/" in name or "\\" in name:
+        return False
+    if any(ord(c) < 32 for c in name):
+        return False
+    return True
 
 def api_get(url):
     """GET a GitHub API URL with auth, returning parsed JSON."""
@@ -145,11 +164,18 @@ def list_remote_files():
                 continue
 
             name = entry.get("name") or ""
+            # Seguridad: rechazar nombres con path traversal o caracteres peligrosos.
+            if not is_safe_name(name):
+                print(f"Skipping unsafe filename: {entry.get('path')}")
+                continue
             # Sidecar metadata and dotfiles are not gallery assets; skip them
             # silently instead of warning about an unknown extension.
             if name.startswith('.') or name.startswith('_'):
                 continue
             ext = os.path.splitext(name)[1].lower()
+            if ext in DANGEROUS_EXTENSIONS:
+                print(f"Skipping dangerous file: {entry.get('path')}")
+                continue
             if ext not in ALLOWED_EXTENSIONS:
                 print(f"Skipping {entry['path']}: .{ext or '?'} is not something "
                       f"the gallery renders. Allowed: {', '.join(sorted(ALLOWED_EXTENSIONS))}")
@@ -167,37 +193,69 @@ def list_remote_files():
 
 def download(entry, destination):
     """Fetch one remote file to a local path."""
-    request = urllib.request.Request(
-        download_url(entry),
-        headers={
-            "Accept": "application/vnd.github+json",
-            "X-GitHub-Api-Version": "2022-11-28",
-            "User-Agent": "audiogusano-flyer-sync",
-        }
-    )
-    if GITHUB_TOKEN:
-        request.add_header("Authorization", f"Bearer {GITHUB_TOKEN}")
-
-    try:
-        with urllib.request.urlopen(request, timeout=120) as response:
-            payload = response.read()
-    except Exception as e:
-        print(f"Error downloading {entry['raw_path']}: {e}")
+    # Path traversal guard: verificar destino real.
+    allowed_dir = os.path.realpath(LOCAL_STATIC_DIR)
+    real_dest = os.path.realpath(destination)
+    if not (real_dest == os.path.join(allowed_dir, os.path.basename(real_dest))
+            and real_dest.startswith(allowed_dir + os.sep)):
+        print(f"Refusing to write outside allowed dir: {destination}")
         return False
 
-    # The blob endpoint answers with base64; download_url does not. Band names
-    # are full of accents and spaces, which urllib refuses to put in a URL, so
-    # the blob endpoint is the only encoding-safe option for those filenames.
-    if entry.get("sha"):
-        try:
-            payload = base64.b64decode(json.loads(payload)["content"])
-        except (ValueError, KeyError) as e:
-            print(f"Error decoding blob for {entry['raw_path']}: {e}")
-            return False
+    url = download_url(entry)
+    if not url:
+        print(f"No download URL for {entry['raw_path']}")
+        return False
 
-    with open(destination, "wb") as f:
-        f.write(payload)
-    return True
+    last_err = None
+    for attempt in range(3):
+        try:
+            request = urllib.request.Request(
+                url,
+                headers={
+                    "Accept": "application/vnd.github+json",
+                    "X-GitHub-Api-Version": "2022-11-28",
+                    "User-Agent": "audiogusano-flyer-sync",
+                }
+            )
+            if GITHUB_TOKEN:
+                request.add_header("Authorization", f"Bearer {GITHUB_TOKEN}")
+
+            with urllib.request.urlopen(request, timeout=120) as response:
+                # Content-Length check
+                cl = response.headers.get("Content-Length")
+                if cl and int(cl) > MAX_FILE_SIZE:
+                    print(f"File too large ({cl} bytes), skipping: {entry['raw_path']}")
+                    return False
+                payload = response.read()
+            if len(payload) > MAX_FILE_SIZE:
+                print(f"File too large ({len(payload)} bytes), skipping: {entry['raw_path']}")
+                return False
+
+            # The blob endpoint answers with base64; download_url does not. Band names
+            # are full of accents and spaces, which urllib refuses to put in a URL, so
+            # the blob endpoint is the only encoding-safe option for those filenames.
+            if entry.get("sha"):
+                try:
+                    payload = base64.b64decode(json.loads(payload)["content"])
+                except (ValueError, KeyError) as e:
+                    print(f"Error decoding blob for {entry['raw_path']}: {e}")
+                    return False
+                if len(payload) > MAX_FILE_SIZE:
+                    print(f"File too large ({len(payload)} bytes), skipping: {entry['raw_path']}")
+                    return False
+
+            with open(destination, "wb") as f:
+                f.write(payload)
+            return True
+        except Exception as e:
+            last_err = e
+            print(f"Attempt {attempt+1}/3 failed for {entry['raw_path']}: {e}")
+            if attempt < 2:
+                import time
+                time.sleep(2 ** attempt)
+
+    print(f"Error downloading {entry['raw_path']}: {last_err}")
+    return False
 
 
 def download_url(entry):
@@ -301,6 +359,9 @@ def sync():
                 # Leave the file out of flyers.yml rather than publishing a
                 # gallery card that points at nothing.
                 continue
+        else:
+            if VERBOSE:
+                print(f"Already present, not overwriting: {clean_name}")
 
         processed_filenames.append(clean_name)
 
@@ -357,9 +418,12 @@ def sync():
 
 
 def main():
+    global VERBOSE
     parser = argparse.ArgumentParser()
     parser.add_argument("--section", choices=sorted(SECTIONS), default="flyers")
+    parser.add_argument("-v", "--verbose", action="store_true", help="Debug output")
     args = parser.parse_args()
+    VERBOSE = args.verbose
     configure(args.section)
     sync()
 
