@@ -1,5 +1,6 @@
 {{/* layouts/partials/share.html
-     Botones de compartir para recitales: copiar enlace + Instagram/WhatsApp/Telegram/Email.
+     Botones de compartir para recitales: Compartir (Web Share API) + Copiar enlace +
+     Instagram/WhatsApp/Telegram/Email.
      Uso: {{ partial "share.html" . }} dentro de layouts/_default/single.html.
      Solo se muestra si .Section == "recitales". */}}
 
@@ -14,6 +15,14 @@
   <h2 class="share__title">Compartir</h2>
 
   <div class="share__buttons">
+    {{/* Compartir (Web Share API): en mobile incluye Instagram y otras apps instaladas.
+         Se oculta automáticamente si el navegador no soporta navigator.share (desktop). */}}
+    <button type="button" class="share__btn share__btn--native" data-share-native
+            data-share-title="{{ $title }}" data-share-url="{{ $url }}"
+            aria-label="Compartir usando el menú del sistema" hidden>
+      <span aria-hidden="true">📤</span> Compartir
+    </button>
+
     {{/* Copiar enlace (siempre visible) */}}
     <button type="button" class="share__btn" data-share-copy
             data-share-url="{{ $url }}"
@@ -21,7 +30,8 @@
       <span aria-hidden="true">🔗</span> Copiar enlace
     </button>
 
-    {{/* Instagram: no hay endpoint universal; copiamos el enlace y abrimos Instagram */}}
+    {{/* Instagram: no hay endpoint de share directo. Copiamos el enlace y abrimos
+         la cámara de Stories (mobile) o instagram.com (desktop) para pegarlo. */}}
     <button type="button" class="share__btn" data-share-instagram
             data-share-url="{{ $url }}"
             aria-label="Compartir en Instagram">
@@ -57,10 +67,29 @@
   }
   if (!root) return;
   var feedback = root.querySelector('[data-share-feedback]');
+  var nativeBtn = root.querySelector('[data-share-native]');
   var copyBtn = root.querySelector('[data-share-copy]');
   var igBtn = root.querySelector('[data-share-instagram]');
 
   function say(msg) { if (feedback) feedback.textContent = msg; }
+
+  // Web Share API: visible solo si el navegador lo soporta (mobile).
+  if (nativeBtn) {
+    if (navigator.share) {
+      nativeBtn.hidden = false;
+      nativeBtn.addEventListener('click', function () {
+        navigator.share({
+          title: nativeBtn.dataset.shareTitle,
+          url: nativeBtn.dataset.shareUrl
+        }).then(function () { say('Compartido.'); })
+          .catch(function (err) {
+            if (err && err.name !== 'AbortError') say('No se pudo compartir.');
+          });
+      });
+    } else {
+      nativeBtn.hidden = true;
+    }
+  }
 
   if (copyBtn) {
     copyBtn.addEventListener('click', function () {
@@ -80,15 +109,26 @@
   if (igBtn) {
     igBtn.addEventListener('click', function () {
       var url = igBtn.dataset.shareUrl;
+      var openIg = function () {
+        // Deep link a cámara de Stories en mobile; fallback a instagram.com.
+        var isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+        if (isMobile) {
+          window.location.href = 'instagram://camera';
+        } else {
+          window.open('https://www.instagram.com/', '_blank', 'noopener');
+        }
+      };
       if (navigator.clipboard && navigator.clipboard.writeText) {
         navigator.clipboard.writeText(url).then(function () {
-          say('Enlace copiado. Pegalo en Instagram.');
-          window.open('https://www.instagram.com/', '_blank', 'noopener');
+          say('Enlace copiado. Pegalo en tu story de Instagram.');
+          openIg();
         }).catch(function () {
           say('Copia manualmente: ' + url);
+          openIg();
         });
       } else {
         say('Copia este enlace: ' + url);
+        openIg();
       }
     });
   }
