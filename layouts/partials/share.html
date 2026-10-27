@@ -7,6 +7,7 @@
 {{ $title := .Title }}
 {{ $url := .Permalink }}
 {{ $titleEnc := urlquery $title }}
+{{ $titleEnc = replace $titleEnc "+" "%20" }}
 {{ $urlEnc := urlquery $url }}
 
 <aside class="share" data-share aria-label="Compartir este recital">
@@ -29,17 +30,17 @@
 
     {{/* Enlaces directos sin JS de terceros */}}
     <a class="share__btn" rel="noopener noreferrer" target="_blank"
-       href="https://wa.me/?text={{ $titleEnc }}%20{{ $urlEnc }}"
+       href="{{ (printf "https://wa.me/?text=%s%%20%s" $titleEnc $url) | safeURL }}"
        aria-label="Compartir en WhatsApp">
       <span aria-hidden="true">💬</span> WhatsApp
     </a>
     <a class="share__btn" rel="noopener noreferrer" target="_blank"
-       href="https://t.me/share/url?url={{ $urlEnc }}&text={{ $titleEnc }}"
+       href="{{ (printf "https://t.me/share/url?url=%s&text=%s" $url $titleEnc) | safeURL }}"
        aria-label="Compartir en Telegram">
       <span aria-hidden="true">✈️</span> Telegram
     </a>
     <a class="share__btn"
-       href="mailto:?subject={{ $titleEnc }}&body={{ $urlEnc }}"
+       href="{{ (printf "mailto:?subject=%s&body=%s" $titleEnc $url) | safeURL }}"
        aria-label="Compartir por correo electrónico">
       <span aria-hidden="true">✉️</span> Email
     </a>
