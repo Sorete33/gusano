@@ -52,4 +52,4 @@ heroStyle: background
 
 ---
 
-[Artículo en Internet Archive](https://archive.org/details/live-2026-10-11-festimaga-5)
+## [Artículo en Internet Archive](https://archive.org/details/live-2026-10-11-festimaga-5)

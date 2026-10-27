@@ -31,4 +31,4 @@ heroStyle: background
 
 {{< track show="sala-biaus/entrance-ia-sabotaje" track="sabotage" >}}
 
-[Artículo en Internet Archive](https://archive.org/details/live-2026-02-07-entranceinteligencia-accidental-sabotage)
+## [Artículo en Internet Archive](https://archive.org/details/live-2026-02-07-entranceinteligencia-accidental-sabotage)

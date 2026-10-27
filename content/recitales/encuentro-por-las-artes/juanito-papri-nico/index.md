@@ -32,4 +32,4 @@ heroStyle: background
 
 {{< track show="encuentro-por-las-artes/juanito-papri-nico" track="nicolas-muchiut-y-los-monjes-del-dudaismo" >}}
 
-[Artículo en Internet Archive](https://archive.org/details/live-2026-02-27-juanito-alimaapaprikas-bandmuchiut-y-los-monjes-del-dudaismo)
+## [Artículo en Internet Archive](https://archive.org/details/live-2026-02-27-juanito-alimaapaprikas-bandmuchiut-y-los-monjes-del-dudaismo)

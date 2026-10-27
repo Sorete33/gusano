@@ -33,4 +33,4 @@ heroStyle: background
 
 {{< track show="la-maga/festimaga2" track="entrance" >}}
 
-[Artículo en Internet Archive](https://archive.org/details/live-2025-10-31-festi-maga-2)
+## [Artículo en Internet Archive](https://archive.org/details/live-2025-10-31-festi-maga-2)

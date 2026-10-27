@@ -15,4 +15,4 @@ heroStyle: background
 
 {{< track show="teatro-trac/spinetta" track="rocio-palazzo" >}}
 
-[Artículo en Internet Archive](https://archive.org/details/live-2025-09-12-proyecto-spinetta)
+## [Artículo en Internet Archive](https://archive.org/details/live-2025-09-12-proyecto-spinetta)

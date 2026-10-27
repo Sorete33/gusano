@@ -16,4 +16,4 @@ heroStyle: background
 
 {{< track show="beertonic/vocayuva" track="vocayuva" >}}
 
-[Artículo en Internet Archive](https://archive.org/details/live-2026-08-20-vocayuva)
+## [Artículo en Internet Archive](https://archive.org/details/live-2026-08-20-vocayuva)

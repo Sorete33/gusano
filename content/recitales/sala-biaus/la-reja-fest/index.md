@@ -32,4 +32,4 @@ heroStyle: background
 
 {{< track show="sala-biaus/la-reja-fest" track="drama" >}}
 
-[Artículo en Internet Archive](https://archive.org/details/live-2026-03-21-reja-estudio-fest)
+## [Artículo en Internet Archive](https://archive.org/details/live-2026-03-21-reja-estudio-fest)

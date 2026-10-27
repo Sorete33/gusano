@@ -16,4 +16,4 @@ heroStyle: background
 
 {{< track show="beertonic/telar" track="telar" >}}
 
-[Artículo en Internet Archive](https://archive.org/details/live-2025-09-25-telar)
+## [Artículo en Internet Archive](https://archive.org/details/live-2025-09-25-telar)

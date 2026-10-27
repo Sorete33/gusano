@@ -17,4 +17,4 @@ heroStyle: background
 
 {{< track show="beertonic/fango-y-perlas" track="fango-y-perlas" label="(extracto)" >}}
 
-[Artículo en Internet Archive](https://archive.org/details/live-2025-10-23-fango-y-perlas)
+## [Artículo en Internet Archive](https://archive.org/details/live-2025-10-23-fango-y-perlas)

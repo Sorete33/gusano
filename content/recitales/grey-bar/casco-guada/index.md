@@ -16,4 +16,4 @@ heroStyle: background
 
 {{< track show="grey-bar/casco-guada" track="casco-y-guada" >}}
 
-[Artículo en Internet Archive](https://archive.org/details/live-2025-10-02-casco-y-guada)
+## [Artículo en Internet Archive](https://archive.org/details/live-2025-10-02-casco-y-guada)

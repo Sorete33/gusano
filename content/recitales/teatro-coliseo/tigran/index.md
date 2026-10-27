@@ -17,4 +17,4 @@ heroStyle: background
 
 {{< track show="teatro-coliseo/tigran" track="tigran-hamasyan" >}}
 
-[Artículo en Internet Archive](https://archive.org/details/live-2025-10-14-tigran-hamasyan)
+## [Artículo en Internet Archive](https://archive.org/details/live-2025-10-14-tigran-hamasyan)

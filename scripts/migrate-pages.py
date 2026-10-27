@@ -265,7 +265,7 @@ def migrate(path: Path, shows_by_id: dict, report: list) -> str | None:
             label = lm.group(1).strip() if lm else ""
             if show.get("archive_url") and label == "Artículo en Internet Archive":
                 out.append(
-                    f'[Artículo en Internet Archive]({show["archive_url"]})'
+                    f'## [Artículo en Internet Archive]({show["archive_url"]})'
                 )
                 changed = True
                 i += 1
@@ -278,7 +278,7 @@ def migrate(path: Path, shows_by_id: dict, report: list) -> str | None:
     if show.get("archive_url") and not any(IA_LINK_RE.match(l) for l in out):
         while out and out[-1].strip() == "":
             out.pop()
-        out.extend(["", f'[Artículo en Internet Archive]({show["archive_url"]})', ""])
+        out.extend(["", f'## [Artículo en Internet Archive]({show["archive_url"]})', ""])
         changed = True
 
     # Files in the item that the page never had a section for (the music school

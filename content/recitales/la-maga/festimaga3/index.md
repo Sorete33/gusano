@@ -46,4 +46,4 @@ heroStyle: background
 
 # Pintura en vivo de la mano de [Nativa](https://www.instagram.com/nativa_sl/) (si alguien tiene una foto que me la pase)
 
-[Artículo en Internet Archive](https://archive.org/details/live-2026-01-10-festimaga-4)
+## [Artículo en Internet Archive](https://archive.org/details/live-2026-01-10-festimaga-4)

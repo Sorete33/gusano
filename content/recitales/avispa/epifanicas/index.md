@@ -16,4 +16,4 @@ heroStyle: background
 
 {{< track show="avispa/epifanicas" track="epifanicas" >}}
 
-[Artículo en Internet Archive](https://archive.org/details/live-2025-10-24-epifanicas)
+## [Artículo en Internet Archive](https://archive.org/details/live-2025-10-24-epifanicas)

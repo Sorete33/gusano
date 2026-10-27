@@ -16,4 +16,4 @@ heroStyle: background
 
 {{< track show="varelabar/frondayraiz" track="varela" >}}
 
-[Artículo en Internet Archive](https://archive.org/details/live-2026-02-20-fronda-y-raz)
+## [Artículo en Internet Archive](https://archive.org/details/live-2026-02-20-fronda-y-raz)

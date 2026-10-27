@@ -17,4 +17,4 @@ noFlyer: true
 
 {{< track show="beertonic/yula-2" track="yula" >}}
 
-[Artículo en Internet Archive](https://archive.org/details/live-2025-09-15-yula)
+## [Artículo en Internet Archive](https://archive.org/details/live-2025-09-15-yula)

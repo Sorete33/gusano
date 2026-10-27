@@ -17,4 +17,4 @@ heroStyle: background
 
 {{< track show="teatro-trac/armand" track="armando-alonso" >}}
 
-[Artículo en Internet Archive](https://archive.org/details/live-2025-09-09-armando-alonso-tro)
+## [Artículo en Internet Archive](https://archive.org/details/live-2025-09-09-armando-alonso-tro)

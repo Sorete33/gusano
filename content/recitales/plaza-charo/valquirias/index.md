@@ -17,4 +17,4 @@ heroStyle: background
 
 {{< track show="plaza-charo/valquirias" track="valquirias" >}}
 
-[Artículo en Internet Archive](https://archive.org/details/live-2025-11-08-12va-marcha-del-orgullo)
+## [Artículo en Internet Archive](https://archive.org/details/live-2025-11-08-12va-marcha-del-orgullo)

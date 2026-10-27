@@ -39,4 +39,4 @@ heroStyle: background
 {{< track show="encuentro-por-las-artes/anticover-13" track="memi-mesplet" >}}
 {{< track show="encuentro-por-las-artes/anticover-13" track="memi-mesplet-2" >}}
 
-[Artículo en Internet Archive](https://archive.org/details/live-2026-02-13-anticover-13)
+## [Artículo en Internet Archive](https://archive.org/details/live-2026-02-13-anticover-13)

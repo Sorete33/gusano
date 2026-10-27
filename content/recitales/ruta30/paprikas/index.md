@@ -21,4 +21,4 @@ heroStyle: background
 
 ![lista papri](/images/listas/paprika.webp)
 
-[Artículo en Internet Archive](https://archive.org/details/live-2026-07-17-paprikas-band)
+## [Artículo en Internet Archive](https://archive.org/details/live-2026-07-17-paprikas-band)

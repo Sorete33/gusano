@@ -31,4 +31,4 @@ heroStyle: background
 
 {{< track show="sala-biaus/epi-amy" track="epifanicas-2" >}}
 
-[Artículo en Internet Archive](https://archive.org/details/live-2026-02-14-epifanicas)
+## [Artículo en Internet Archive](https://archive.org/details/live-2026-02-14-epifanicas)

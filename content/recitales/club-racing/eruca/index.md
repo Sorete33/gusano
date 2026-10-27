@@ -17,4 +17,4 @@ heroStyle: background
 
 {{< track show="club-racing/eruca" track="eruca" >}}
 
-[Artículo en Internet Archive](https://archive.org/details/live-2026-03-08-eruca-sativa)
+## [Artículo en Internet Archive](https://archive.org/details/live-2026-03-08-eruca-sativa)

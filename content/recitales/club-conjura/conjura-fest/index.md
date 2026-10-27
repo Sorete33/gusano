@@ -39,4 +39,4 @@ heroStyle: background
 
 {{< track show="club-conjura/conjura-fest" track="velvet" >}}
 
-[Artículo en Internet Archive](https://archive.org/details/live-2026-02-28-ciclo-void)
+## [Artículo en Internet Archive](https://archive.org/details/live-2026-02-28-ciclo-void)

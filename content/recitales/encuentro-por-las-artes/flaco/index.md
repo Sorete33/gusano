@@ -18,4 +18,4 @@ heroStyle: background
 
 {{< track show="encuentro-por-las-artes/flaco" track="proyecto-spinetta" >}}
 
-[Artículo en Internet Archive](https://archive.org/details/live-2026-01-02-proyecto-spinetta)
+## [Artículo en Internet Archive](https://archive.org/details/live-2026-01-02-proyecto-spinetta)

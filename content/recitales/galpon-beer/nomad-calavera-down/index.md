@@ -30,4 +30,4 @@ heroStyle: background
 
 {{< track show="galpon-beer/nomad-calavera-down" track="downfall" >}}
 
-[Artículo en Internet Archive](https://archive.org/details/live-2026-01-30-nomadasan-calaveradownfall)
+## [Artículo en Internet Archive](https://archive.org/details/live-2026-01-30-nomadasan-calaveradownfall)

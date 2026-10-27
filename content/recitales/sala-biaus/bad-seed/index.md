@@ -15,4 +15,4 @@ heroStyle: background
 
 {{< track show="sala-biaus/bad-seed" track="bad-seed" >}}
 
-[Artículo en Internet Archive](https://archive.org/details/live-2025-05-09-bad-seed)
+## [Artículo en Internet Archive](https://archive.org/details/live-2025-05-09-bad-seed)

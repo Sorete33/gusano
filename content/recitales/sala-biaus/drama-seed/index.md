@@ -26,4 +26,4 @@ heroStyle: background
 
 {{< track show="sala-biaus/drama-seed" track="bad-seed" >}}
 
-[Artículo en Internet Archive](https://archive.org/details/live-2025-12-27-dramabad-seed)
+## [Artículo en Internet Archive](https://archive.org/details/live-2025-12-27-dramabad-seed)

@@ -30,4 +30,4 @@ heroStyle: background
 
 {{< track show="sala-biaus/alimaña-sur-muchiut" track="ser-sur" >}}
 
-[Artículo en Internet Archive](https://archive.org/details/live-2025-08-09-juanito-alimaanico-muchiutser-sur)
+## [Artículo en Internet Archive](https://archive.org/details/live-2025-08-09-juanito-alimaanico-muchiutser-sur)

@@ -19,4 +19,4 @@ heroStyle: background
 
 {{< track show="lap-cantina/epifanicas" track="epifanicas" >}}
 
-[Artículo en Internet Archive](https://archive.org/details/live-2026-02-06-epifanicas)
+## [Artículo en Internet Archive](https://archive.org/details/live-2026-02-06-epifanicas)

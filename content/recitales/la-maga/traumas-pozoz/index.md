@@ -36,4 +36,4 @@ heroStyle: background
 
 {{< track show="la-maga/traumas-pozoz" track="desahogo" >}}
 
-[Artículo en Internet Archive](https://archive.org/details/live-2025-11-02-festimaga-3)
+## [Artículo en Internet Archive](https://archive.org/details/live-2025-11-02-festimaga-3)

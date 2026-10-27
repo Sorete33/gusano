@@ -38,4 +38,4 @@ heroStyle: background
 
 {{< track show="la-maga/festimaga1" track="sala-roja" >}}
 
-[Artículo en Internet Archive](https://archive.org/details/live-2025-04-04-festi-maga-1)
+## [Artículo en Internet Archive](https://archive.org/details/live-2025-04-04-festi-maga-1)

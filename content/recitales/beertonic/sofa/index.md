@@ -16,4 +16,4 @@ heroStyle: background
 
 {{< track show="beertonic/sofa" track="sofa" >}}
 
-[Artículo en Internet Archive](https://archive.org/details/live-2026-02-15-sofa)
+## [Artículo en Internet Archive](https://archive.org/details/live-2026-02-15-sofa)

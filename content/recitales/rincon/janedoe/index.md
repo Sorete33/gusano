@@ -19,4 +19,4 @@ heroStyle: background
 {{< track show="rincon/janedoe" track="jane-doe" >}}
 ![alt text](tormenta.gif)
 
-[Artículo en Internet Archive](https://archive.org/details/live-2025-10-04-jane-doe)
+## [Artículo en Internet Archive](https://archive.org/details/live-2025-10-04-jane-doe)

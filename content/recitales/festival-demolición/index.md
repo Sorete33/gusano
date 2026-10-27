@@ -29,7 +29,7 @@ heroStyle: background
 
 {{< track show="festival-demolición" track="sala-roja" >}}
 
-[Artículo en Internet Archive](https://archive.org/details/live-2025-06-28-festival-demolicin)
+## [Artículo en Internet Archive](https://archive.org/details/live-2025-06-28-festival-demolicin)
 
 
 ---

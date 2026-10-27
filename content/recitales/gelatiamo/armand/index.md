@@ -16,4 +16,4 @@ heroStyle: background
 
 {{< track show="gelatiamo/armand" track="armando-alonso" >}}
 
-[Artículo en Internet Archive](https://archive.org/details/live-2025-12-11-armando-alonso)
+## [Artículo en Internet Archive](https://archive.org/details/live-2025-12-11-armando-alonso)

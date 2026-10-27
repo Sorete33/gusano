@@ -35,4 +35,4 @@ heroStyle: background
 
 # Pintura en vivo de [Sofia Speranza](https://www.instagram.com/sofiasperanza__/) y [Lucas Caceres](https://www.instagram.com/conectarte94/) (si alguien tiene una foto de la pintura pasenla asi la adjunto)
 
-[Artículo en Internet Archive](https://archive.org/details/live-2025-11-29-festival-distorsivo)
+## [Artículo en Internet Archive](https://archive.org/details/live-2025-11-29-festival-distorsivo)

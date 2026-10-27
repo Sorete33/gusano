@@ -18,4 +18,4 @@ heroStyle: background
 
 {{< track show="sala-biaus/oesterheld" track="oesterheld" >}}
 
-[Artículo en Internet Archive](https://archive.org/details/live-2026-01-24-oesterheld)
+## [Artículo en Internet Archive](https://archive.org/details/live-2026-01-24-oesterheld)

@@ -69,6 +69,8 @@ heroStyle: background
 
 {{< track show="el-portal-del-tango/nueva-musica-dia-2" track="benja" >}}
 
-[Artículo en Internet Archive - Día 1](https://archive.org/details/live-2025-12-03-muestra-de-fin-de-ao-dia-1)
 
-[Artículo en Internet Archive - Día 2](https://archive.org/details/live-2025-12-03-muestra-de-fin-de-ao-dia-2)
+## [Artículo en Internet Archive - Día 1](https://archive.org/details/live-2025-12-03-muestra-de-fin-de-ao-dia-1)
+
+
+## [Artículo en Internet Archive - Día 2](https://archive.org/details/live-2025-12-03-muestra-de-fin-de-ao-dia-2)

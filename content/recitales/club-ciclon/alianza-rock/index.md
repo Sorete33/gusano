@@ -27,4 +27,4 @@ heroStyle: background
 
 {{< track show="club-ciclon/alianza-rock" track="d-coyotes" >}}
 
-[Artículo en Internet Archive](https://archive.org/details/live-2026-03-14-festival-alianza)
+## [Artículo en Internet Archive](https://archive.org/details/live-2026-03-14-festival-alianza)

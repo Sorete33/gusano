@@ -625,7 +625,7 @@ def write_page(repo: Path, show: dict, featured: Path | None, venue: str) -> Pat
             "",
         ]
     if show.get("archive_url"):
-        body += [f"[Artículo en Internet Archive]({show['archive_url']})", ""]
+        body += [f"## [Artículo en Internet Archive]({show['archive_url']})", ""]
 
     page.write_text("\n".join(fm + body), encoding="utf-8")
     say(f"página  : {page.relative_to(repo)}")

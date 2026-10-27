@@ -35,4 +35,4 @@ heroStyle: background
 
 {{< track show="beertonic/cumple" track="paprikas-band" >}}
 
-[Artículo en Internet Archive](https://archive.org/details/live-2025-11-23-aniversario-beertonic)
+## [Artículo en Internet Archive](https://archive.org/details/live-2025-11-23-aniversario-beertonic)

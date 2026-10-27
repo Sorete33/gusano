@@ -14,4 +14,4 @@ heroStyle: background
 
 {{< track show="sala-biaus/ia" track="inteligencia-accidental" >}}
 
-[Artículo en Internet Archive](https://archive.org/details/live-2025-09-19-cumple-accidental-2)
+## [Artículo en Internet Archive](https://archive.org/details/live-2025-09-19-cumple-accidental-2)

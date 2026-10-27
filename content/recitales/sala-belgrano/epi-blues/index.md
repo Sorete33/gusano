@@ -24,4 +24,4 @@ heroStyle: background
 
 {{< track show="sala-belgrano/epi-blues" track="pueblues" >}}
 
-[Artículo en Internet Archive](https://archive.org/details/live-2026-03-27-pueblues-epifanicas)
+## [Artículo en Internet Archive](https://archive.org/details/live-2026-03-27-pueblues-epifanicas)

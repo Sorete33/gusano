@@ -27,4 +27,4 @@ heroStyle: background
 
 {{< track show="il-maestro/amar-cia" track="yula-y-abril" >}}
 
-[Artículo en Internet Archive](https://archive.org/details/live-2026-01-25-abril-guada-yula)
+## [Artículo en Internet Archive](https://archive.org/details/live-2026-01-25-abril-guada-yula)

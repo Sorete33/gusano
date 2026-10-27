@@ -16,4 +16,4 @@ heroStyle: background
 
 {{< track show="beertonic/armand" track="armando-alonso" >}}
 
-[Artículo en Internet Archive](https://archive.org/details/live-2025-10-09-armando-alonso)
+## [Artículo en Internet Archive](https://archive.org/details/live-2025-10-09-armando-alonso)

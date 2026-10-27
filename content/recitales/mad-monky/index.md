@@ -44,4 +44,4 @@ heroStyle: background
 
 ---
 
-[Artículo en Internet Archive](https://archive.org/details/live-2025-12-06-mad-monkey-fest)
+## [Artículo en Internet Archive](https://archive.org/details/live-2025-12-06-mad-monkey-fest)

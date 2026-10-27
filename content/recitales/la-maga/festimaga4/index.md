@@ -43,4 +43,4 @@ heroStyle: background
 
 {{< track show="la-maga/festimaga4" track="sabotage" >}}
 
-[Artículo en Internet Archive](https://archive.org/details/live-2026-02-21-festimaga-5)
+## [Artículo en Internet Archive](https://archive.org/details/live-2026-02-21-festimaga-5)

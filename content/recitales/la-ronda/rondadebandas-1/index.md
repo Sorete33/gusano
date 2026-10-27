@@ -34,4 +34,4 @@ heroStyle: background
 
 {{< track show="la-ronda/rondadebandas-1" track="parasomnia" >}}
 
-[Artículo en Internet Archive](https://archive.org/details/live-2025-07-12-ronda-de-bandas-1)
+## [Artículo en Internet Archive](https://archive.org/details/live-2025-07-12-ronda-de-bandas-1)

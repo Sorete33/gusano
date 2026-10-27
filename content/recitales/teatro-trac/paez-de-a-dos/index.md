@@ -16,4 +16,4 @@ heroStyle: background
 
 {{< track show="teatro-trac/paez-de-a-dos" track="paez-de-a-dos" >}}
 
-[Artículo en Internet Archive](https://archive.org/details/live-2025-10-17-pez-de-a-dos)
+## [Artículo en Internet Archive](https://archive.org/details/live-2025-10-17-pez-de-a-dos)

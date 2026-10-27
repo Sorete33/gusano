@@ -27,4 +27,4 @@ heroStyle: background
 
 {{< track show="la-casa-de-lu" track="sala-roja" >}}
 
-[Artículo en Internet Archive](https://archive.org/details/live-2025-10-20-cumple-lucas)
+## [Artículo en Internet Archive](https://archive.org/details/live-2025-10-20-cumple-lucas)

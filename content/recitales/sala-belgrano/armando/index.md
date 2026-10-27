@@ -21,4 +21,4 @@ heroStyle: background
 
 {{< track show="sala-belgrano/armando" track="armando-alonso-trio-en-sala-belgrano" >}}
 
-[Artículo en Internet Archive](https://archive.org/details/live-2026-03-06-armando-alonso-tro)
+## [Artículo en Internet Archive](https://archive.org/details/live-2026-03-06-armando-alonso-tro)

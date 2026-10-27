@@ -34,4 +34,4 @@ heroStyle: background
 
 ---
 
-[Artículo en Internet Archive](https://archive.org/details/live-2025-12-13-epifanicas)
+## [Artículo en Internet Archive](https://archive.org/details/live-2025-12-13-epifanicas)

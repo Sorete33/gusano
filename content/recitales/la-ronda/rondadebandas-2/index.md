@@ -33,4 +33,4 @@ heroStyle: background
 
 {{< track show="la-ronda/rondadebandas-2" track="sala-roja" >}}
 
-[Artículo en Internet Archive](https://archive.org/details/live-2025-10-18-ronda-de-bandas-2)
+## [Artículo en Internet Archive](https://archive.org/details/live-2025-10-18-ronda-de-bandas-2)

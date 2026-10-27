@@ -41,4 +41,4 @@ heroStyle: background
 # Pintura en vivo y magia de la mano de [Nativa](https://www.instagram.com/nativa_sl/) 
 ![alt text](https://files.catbox.moe/by1iqt.jpg)
 
-[Artículo en Internet Archive](https://archive.org/details/live-2026-01-16-cnicainteligencia-accidentalsr-wilson-nmada)
+## [Artículo en Internet Archive](https://archive.org/details/live-2026-01-16-cnicainteligencia-accidentalsr-wilson-nmada)

@@ -22,4 +22,4 @@ heroStyle: background
 
 ![alt text](genio.jpg)
 
-[Artículo en Internet Archive](https://archive.org/details/live-2025-11-06-epifanicas)
+## [Artículo en Internet Archive](https://archive.org/details/live-2025-11-06-epifanicas)

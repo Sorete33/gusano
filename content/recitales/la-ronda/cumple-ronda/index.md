@@ -38,4 +38,4 @@ heroStyle: background
 {{< track show="la-ronda/cumple-ronda" track="epifanicas" >}}
 ---
 
-[Artículo en Internet Archive](https://archive.org/details/live-2025-09-20-cumple-la-ronda)
+## [Artículo en Internet Archive](https://archive.org/details/live-2025-09-20-cumple-la-ronda)

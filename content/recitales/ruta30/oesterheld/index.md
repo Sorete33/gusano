@@ -18,4 +18,4 @@ heroStyle: background
 
 {{< track show="ruta30/oesterheld" track="oesterheld" >}}
 
-[Artículo en Internet Archive](https://archive.org/details/live-2026-02-06-oesterheld)
+## [Artículo en Internet Archive](https://archive.org/details/live-2026-02-06-oesterheld)

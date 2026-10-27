@@ -27,4 +27,4 @@ heroStyle: background
 
 {{< track show="conser/ensamble" track="terry-riley" >}}
 
-[Artículo en Internet Archive](https://archive.org/details/live-2025-10-24-glass-y-riley)
+## [Artículo en Internet Archive](https://archive.org/details/live-2025-10-24-glass-y-riley)

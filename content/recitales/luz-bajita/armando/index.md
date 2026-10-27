@@ -29,4 +29,4 @@ heroStyle: background
 
 ---
 
-[Artículo en Internet Archive](https://archive.org/details/armando-luz-bajita)
+## [Artículo en Internet Archive](https://archive.org/details/armando-luz-bajita)

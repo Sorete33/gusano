@@ -21,4 +21,4 @@ heroStyle: background
 
 {{< track show="plaza-venezuela/catonga" track="ronda-catonga" >}}
 
-[Artículo en Internet Archive](https://archive.org/details/live-2025-10-26-ronda-catonga)
+## [Artículo en Internet Archive](https://archive.org/details/live-2025-10-26-ronda-catonga)

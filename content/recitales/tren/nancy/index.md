@@ -18,4 +18,4 @@ heroStyle: background
 
 {{< track show="tren/nancy" track="nancy" >}}
 
-[Artículo en Internet Archive](https://archive.org/details/live-2026-03-02-nancy)
+## [Artículo en Internet Archive](https://archive.org/details/live-2026-03-02-nancy)

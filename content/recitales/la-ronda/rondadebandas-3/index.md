@@ -39,4 +39,4 @@ heroStyle: background
 
 {{< track show="la-ronda/rondadebandas-3" track="sociedad-macabra" >}}
 
-[Artículo en Internet Archive](https://archive.org/details/live-2026-07-10-ronda-de-bandas-3)
+## [Artículo en Internet Archive](https://archive.org/details/live-2026-07-10-ronda-de-bandas-3)

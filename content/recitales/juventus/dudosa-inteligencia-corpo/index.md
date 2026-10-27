@@ -43,4 +43,4 @@ heroStyle: background
 
 # “Si el archivo es la ley y su institución, la noción de “desarchivar” también puede referir a la desobediencia ante lo que se puede recordar y, por lo tanto, ante lo que se puede decir (Aillon, Virginia).
 
-[Artículo en Internet Archive](https://archive.org/details/live-2026-05-09-viaje-accidental)
+## [Artículo en Internet Archive](https://archive.org/details/live-2026-05-09-viaje-accidental)

@@ -30,4 +30,4 @@ heroStyle: background
 
 ---
 
-[Artículo en Internet Archive](https://archive.org/details/live-2026-09-26-cumple-accidental-3)
+## [Artículo en Internet Archive](https://archive.org/details/live-2026-09-26-cumple-accidental-3)

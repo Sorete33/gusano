@@ -17,4 +17,4 @@ heroStyle: background
 
 {{< track show="beertonic/armand2" track="armando-alonso" >}}
 
-[Artículo en Internet Archive](https://archive.org/details/live-2026-03-19-armando-alonso)
+## [Artículo en Internet Archive](https://archive.org/details/live-2026-03-19-armando-alonso)

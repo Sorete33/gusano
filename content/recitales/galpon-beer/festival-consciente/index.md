@@ -55,4 +55,4 @@ heroStyle: background
 
 {{< track show="galpon-beer/festival-consciente" track="forrxs" >}}
 
-[Artículo en Internet Archive](https://archive.org/details/live-2025-11-21-festival-consciente)
+## [Artículo en Internet Archive](https://archive.org/details/live-2025-11-21-festival-consciente)

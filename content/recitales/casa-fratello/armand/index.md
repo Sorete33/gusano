@@ -15,4 +15,4 @@ heroStyle: background
 
 {{< track show="casa-fratello/armand" track="armando-alonso" >}}
 
-[Artículo en Internet Archive](https://archive.org/details/live-2025-03-27-armando-alonso)
+## [Artículo en Internet Archive](https://archive.org/details/live-2025-03-27-armando-alonso)

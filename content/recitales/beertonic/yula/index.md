@@ -20,4 +20,4 @@ noFlyer: true
 
 {{< track show="beertonic/yula" track="yula-invitades" >}}
 
-[Artículo en Internet Archive](https://archive.org/details/live-2025-05-04-yula)
+## [Artículo en Internet Archive](https://archive.org/details/live-2025-05-04-yula)
