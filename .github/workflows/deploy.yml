@@ -38,7 +38,7 @@ jobs:
           fetch-depth: 0
 
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: '3.x'
 
@@ -61,15 +61,15 @@ jobs:
         run: python sync_github.py --section lanzamientos
 
       - name: Setup Hugo
-        uses: peaceiris/actions-hugo@v2
+        uses: peaceiris/actions-hugo@v3
         with:
-          hugo-version: 'latest'
+          hugo-version: 'latest'  # latest OK por decisión del dueño; una actualización de Hugo puede romper el build.
           extended: true
 
       - name: Build Hugo
         run: |
           # We build FIRST while the new flyer files are present in the local runner
-          hugo --minify --gc --cleanDestinationDir
+          hugo --minify --gc --cleanDestinationDir --enableGitInfo
           ls -R public/images/gallery || echo "Gallery directory not found!"
 
       # The deploy action silently drops file types it thinks Neocities will
