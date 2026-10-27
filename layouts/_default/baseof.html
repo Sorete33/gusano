@@ -25,7 +25,12 @@
 {{ end }}
 
 {{ with .Resources.GetMatch "featured*" }}
-  {{ $bgCss = printf "url('%s')" .RelPermalink }}
+  {{ if eq .MediaType.SubType "svg" }}
+    {{ $bgCss = printf "url('%s')" .RelPermalink }}
+  {{ else }}
+    {{ $proc := .Resize "1600x webp q80" }}
+    {{ $bgCss = printf "url('%s')" $proc.RelPermalink }}
+  {{ end }}
 {{ end }}
 {{ with .Params.featureimage }}
   {{ if hasPrefix . "http" }}
@@ -48,7 +53,7 @@
   lang="{{ with site.Params.isoCode | default (site.LanguageCode | default `en`) }}{{- . -}}{{ end }}"
   dir="{{ cond (site.Params.rtl | default false) `rtl` `ltr` }}"
   class="dark scroll-smooth"
-  style="background-image: {{ $bgCss }}; background-size: cover; background-attachment: fixed; background-position: center;">
+  style="background-image: {{ $bgCss | safeCSS }}; background-size: cover; background-attachment: fixed; background-position: center;">
   {{- partial "head.html" . -}}
   {{- partialCached "init.html" . -}}
 
