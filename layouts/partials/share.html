@@ -27,7 +27,7 @@
     <button type="button" class="share__btn" data-share-copy
             data-share-url="{{ $url }}"
             aria-label="Copiar enlace al portapapeles">
-      <span aria-hidden="true">🔗</span> Copiar enlace
+      {{ partial "icon.html" "link" }} Copiar enlace
     </button>
 
     {{/* Instagram: no hay endpoint de share directo. Copiamos el enlace y abrimos
@@ -35,24 +35,24 @@
     <button type="button" class="share__btn" data-share-instagram
             data-share-url="{{ $url }}"
             aria-label="Compartir en Instagram">
-      <span aria-hidden="true">📸</span> Instagram
+      {{ partial "icon.html" "instagram" }} Instagram
     </button>
 
     {{/* Enlaces directos sin JS de terceros */}}
     <a class="share__btn" rel="noopener noreferrer" target="_blank"
        href="{{ (printf "https://wa.me/?text=%s%%20%s" $titleEnc $url) | safeURL }}"
        aria-label="Compartir en WhatsApp">
-      <span aria-hidden="true">💬</span> WhatsApp
+      {{ partial "icon.html" "whatsapp" }} WhatsApp
     </a>
     <a class="share__btn" rel="noopener noreferrer" target="_blank"
        href="{{ (printf "https://t.me/share/url?url=%s&text=%s" $url $titleEnc) | safeURL }}"
        aria-label="Compartir en Telegram">
-      <span aria-hidden="true">✈️</span> Telegram
+      {{ partial "icon.html" "telegram" }} Telegram
     </a>
     <a class="share__btn"
        href="{{ (printf "mailto:?subject=%s&body=%s" $titleEnc $url) | safeURL }}"
        aria-label="Compartir por correo electrónico">
-      <span aria-hidden="true">✉️</span> Email
+      {{ partial "icon.html" "email" }} Email
     </a>
   </div>
 
