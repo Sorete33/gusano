@@ -1,0 +1,30 @@
+{{/* Recibe una página y devuelve la URL (string) de su miniatura featured, o "" */}}
+{{ $p := . }}
+{{ $img := "" }}
+{{ with $p.Resources.GetMatch "featured*" }}
+  {{ if eq .MediaType.SubType "svg" }}
+    {{ $img = .RelPermalink }}
+  {{ else }}
+    {{ $img = (.Resize "x64 webp q75").RelPermalink }}
+  {{ end }}
+{{ else }}
+  {{ with $p.Params.featureimage }}
+    {{ if or (hasPrefix . "http:") (hasPrefix . "https:") }}
+      {{ $img = . }}
+    {{ else if hasPrefix . "/" }}
+      {{ $img = . }}
+    {{ else }}
+      {{ $res := resources.Get . }}
+      {{ if $res }}
+        {{ if eq $res.MediaType.SubType "svg" }}
+          {{ $img = $res.RelPermalink }}
+        {{ else }}
+          {{ $img = ($res.Resize "x64 webp q75").RelPermalink }}
+        {{ end }}
+      {{ else }}
+        {{ $img = printf "/%s" . }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+{{ return $img }}
