@@ -1,5 +1,5 @@
 {{/* layouts/partials/share.html
-     Botones de compartir para recitales: Web Share API + enlaces directos + fediverso.
+     Botones de compartir para recitales: copiar enlace + Instagram/WhatsApp/Telegram/Email.
      Uso: {{ partial "share.html" . }} dentro de layouts/_default/single.html.
      Solo se muestra si .Section == "recitales". */}}
 
@@ -13,20 +13,18 @@
   <h2 class="share__title">Compartir</h2>
 
   <div class="share__buttons">
-    {{/* Botón principal: Web Share API (móvil: WhatsApp, Telegram, Mastodon, etc. instalados) */}}
-    <button type="button" class="share__btn share__btn--native"
-            data-share-native
-            data-share-title="{{ $title }}"
-            data-share-url="{{ $url }}"
-            aria-label="Compartir usando el menú del sistema">
-      <span aria-hidden="true">📤</span> Compartir
-    </button>
-
-    {{/* Fallback copiar enlace (siempre visible) */}}
+    {{/* Copiar enlace (siempre visible) */}}
     <button type="button" class="share__btn" data-share-copy
             data-share-url="{{ $url }}"
             aria-label="Copiar enlace al portapapeles">
       <span aria-hidden="true">🔗</span> Copiar enlace
+    </button>
+
+    {{/* Instagram: no hay endpoint universal; copiamos el enlace y abrimos Instagram */}}
+    <button type="button" class="share__btn" data-share-instagram
+            data-share-url="{{ $url }}"
+            aria-label="Compartir en Instagram">
+      <span aria-hidden="true">📸</span> Instagram
     </button>
 
     {{/* Enlaces directos sin JS de terceros */}}
@@ -40,23 +38,10 @@
        aria-label="Compartir en Telegram">
       <span aria-hidden="true">✈️</span> Telegram
     </a>
-    <a class="share__btn" rel="noopener noreferrer" target="_blank"
-       href="https://www.reddit.com/submit?url={{ $urlEnc }}&title={{ $titleEnc }}"
-       aria-label="Compartir en Reddit">
-      <span aria-hidden="true">👽</span> Reddit
-    </a>
     <a class="share__btn"
        href="mailto:?subject={{ $titleEnc }}&body={{ $urlEnc }}"
        aria-label="Compartir por correo electrónico">
       <span aria-hidden="true">✉️</span> Email
-    </a>
-
-    {{/* Fediverso: no hay endpoint universal (cada instancia es distinta).
-         tootpick.org permite elegir instancia y luego pegar el texto/enlace. */}}
-    <a class="share__btn" rel="noopener noreferrer" target="_blank"
-       href="https://tootpick.org/"
-       aria-label="Compartir en el fediverso (elegir instancia de Mastodon/Pleroma)">
-      <span aria-hidden="true">🐘</span> Fediverso
     </a>
   </div>
 
@@ -68,26 +53,10 @@
   var root = document.currentScript && document.currentScript.closest('[data-share]');
   if (!root) return;
   var feedback = root.querySelector('[data-share-feedback]');
-  var nativeBtn = root.querySelector('[data-share-native]');
   var copyBtn = root.querySelector('[data-share-copy]');
+  var igBtn = root.querySelector('[data-share-instagram]');
 
   function say(msg) { if (feedback) feedback.textContent = msg; }
-
-  if (nativeBtn) {
-    if (navigator.share) {
-      nativeBtn.addEventListener('click', function () {
-        navigator.share({
-          title: nativeBtn.dataset.shareTitle,
-          url: nativeBtn.dataset.shareUrl
-        }).then(function () { say('Compartido.'); })
-          .catch(function (err) {
-            if (err && err.name !== 'AbortError') say('No se pudo compartir.');
-          });
-      });
-    } else {
-      nativeBtn.hidden = true;
-    }
-  }
 
   if (copyBtn) {
     copyBtn.addEventListener('click', function () {
@@ -96,10 +65,26 @@
         navigator.clipboard.writeText(url).then(function () {
           say('Enlace copiado.');
         }).catch(function () {
-          say('Copiá manualmente: ' + url);
+          say('Copia manualmente: ' + url);
         });
       } else {
-        say('Copiá este enlace: ' + url);
+        say('Copia este enlace: ' + url);
+      }
+    });
+  }
+
+  if (igBtn) {
+    igBtn.addEventListener('click', function () {
+      var url = igBtn.dataset.shareUrl;
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(url).then(function () {
+          say('Enlace copiado. Pegalo en Instagram.');
+          window.open('https://www.instagram.com/', '_blank', 'noopener');
+        }).catch(function () {
+          say('Copia manualmente: ' + url);
+        });
+      } else {
+        say('Copia este enlace: ' + url);
       }
     });
   }
