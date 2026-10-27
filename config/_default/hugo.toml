@@ -82,6 +82,7 @@ enableA11y = true
 [markup]
   [markup.goldmark]
     [markup.goldmark.renderer]
+      # unsafe = true OK: solo el dueño edita contenido, nunca se renderiza HTML de usuarios.
       unsafe = true
 
 [params.players]
