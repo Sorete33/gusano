@@ -50,7 +50,10 @@
 
 <script>
 (function () {
-  var root = document.currentScript && document.currentScript.closest('[data-share]');
+  var root = document.currentScript && document.currentScript.previousElementSibling;
+  if (!root || !root.hasAttribute('data-share')) {
+    root = document.querySelector('[data-share]');
+  }
   if (!root) return;
   var feedback = root.querySelector('[data-share-feedback]');
   var copyBtn = root.querySelector('[data-share-copy]');
