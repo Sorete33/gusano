@@ -30,7 +30,7 @@
               </span>
             </div>
             <p class="text-neutral-300 whitespace-pre-line text-base leading-relaxed comment-message">
-              {{- .message | safeHTML -}}
+              {{ .message }}
             </p>
             {{ $cid := .commentId }}
             <div class="comment-reactions flex flex-wrap items-center gap-1 mt-2" data-comment-id="{{ $cid }}">
@@ -921,7 +921,12 @@
             .replace(/>/g, '&gt;')
             .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
             .replace(/\*([^*]+)\*/g, '<em>$1</em>')
-            .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>')
+            .replace(/\[([^\]]+)\]\(([^)]+)\)/g, function (m, text, url) {
+              if (/^https?:\/\//i.test(url) || url.startsWith('/')) {
+                return '<a href="' + String(url).replace(/"/g, '&quot;') + '" target="_blank" rel="noopener">' + text + '</a>';
+              }
+              return m;
+            })
             .replace(/(https?:\/\/[^\s<]+?\.(?:jpg|jpeg|png|gif|webp|svg)(?:\?[^\s<]*)?)/gi, '<br><img src="$1" alt="" loading="lazy"><br>')
             .replace(/(\/pepe\/[^<]+?\.(?:gif|png|jpg|jpeg|webp|svg))/gi, function(m) { return '<img src="' + encodeURI(m) + '" alt="" class="pepe-comment" loading="lazy">'; })
             .replace(/\n/g, '<br>');
@@ -940,7 +945,12 @@
   document.querySelectorAll('.comment-message').forEach(function(el) {
     var html = el.innerHTML;
     // Convert markdown links [text](url)
-    html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener" class="text-primary-400 hover:underline">$1</a>');
+    html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/g, function (m, text, url) {
+      if (/^https?:\/\//i.test(url) || url.startsWith('/')) {
+        return '<a href="' + String(url).replace(/"/g, '&quot;') + '" target="_blank" rel="noopener" class="text-primary-400 hover:underline">' + text + '</a>';
+      }
+      return m;
+    });
     // Convert bold **text**
     html = html.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
     // Convert italic *text*
