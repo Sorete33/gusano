@@ -22,9 +22,15 @@
 - link: /nuevos/hacia-el-sur.jpg
   name: hacia-el-sur
   destination: https://agustinlayus.bandcamp.com/album/hacia-el-sur
+- link: /nuevos/ia-2.jpg
+  name: ia-2
+  destination: https://www.youtube.com/watch?v=MHovwoqU6bI
+- link: /nuevos/ia-3.jpg
+  name: ia-3
+  destination: https://www.youtube.com/watch?v=X_2DtwUEKpk
 - link: /nuevos/ia.jpg
   name: ia
-  destination: https://www.youtube.com/watch?v=h3WmNq3bepY&list=PLNsSgqvv0I4Q&pp=8AUB
+  destination: https://www.youtube.com/watch?v=h3WmNq3bepY
 - link: /nuevos/juanito-chevy.jpg
   name: juanito-chevy
   destination: https://www.youtube.com/watch?v=U0DMyW3tsAk
