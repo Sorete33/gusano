@@ -109,7 +109,7 @@
 <div class="nav-wrapper">
     <div class="swiper mySwiper-{{ $dataFile }} swiper-container-{{ $dataFile }}">
         <div class="swiper-wrapper">
-            {{ range shuffle $data }}
+            {{ range $data }}
             {{ $rawLink := .link | relURL }}
             {{ $timestampedLink := printf "%s?v=%d" $rawLink now.Unix }}
             {{/* Normalize a possibly hand-entered date (ISO or DD-MM-YYYY) to ISO. */}}
@@ -165,7 +165,23 @@
 <script>
 (function() {
     const dataName = "{{ $dataFile }}";
-    
+
+    // Client-side random order, once per page load. Hugo's `shuffle` would
+    // randomise at build time, so refreshing would show the same sequence.
+    // Reorder the existing DOM nodes before Swiper initialises.
+    (function () {
+        const wrapper = document.querySelector(".mySwiper-" + dataName + " .swiper-wrapper");
+        if (!wrapper) return;
+        const slides = Array.prototype.slice.call(wrapper.children);
+        for (let i = slides.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            const t = slides[i]; slides[i] = slides[j]; slides[j] = t;
+        }
+        const frag = document.createDocumentFragment();
+        slides.forEach(function (s) { frag.appendChild(s); });
+        wrapper.appendChild(frag);
+    })();
+
     new Swiper(".mySwiper-" + dataName, {
         effect: "coverflow", 
         grabCursor: true, 
