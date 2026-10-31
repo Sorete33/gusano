@@ -2,18 +2,11 @@
   name: catango
 - link: /images/gallery/cck.webp
   name: cck
+  ribbon: "Hoy! Hoy! Hoy!"
 - link: /images/gallery/conser.mp4
   name: conser
 - link: /images/gallery/conser3.jpg
   name: conser3
-- link: /images/gallery/cueva.jpg
-  name: cueva
-  ribbon: Hoy! Hoy! Hoy!
-- link: /images/gallery/flyer-publi-ruta-juanito.jpg
-  name: flyer-publi-ruta-juanito
-- link: /images/gallery/gema.jpg
-  name: gema
-  date: '2026-10-30'
 - link: /images/gallery/guitarra.jpg
   name: guitarra
 - link: /images/gallery/jo.webp
