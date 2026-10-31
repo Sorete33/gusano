@@ -2,11 +2,13 @@
   name: catango
 - link: /images/gallery/cck.webp
   name: cck
-  ribbon: "Hoy! Hoy! Hoy!"
+  ribbon: Hoy! Hoy! Hoy!
 - link: /images/gallery/conser.mp4
   name: conser
 - link: /images/gallery/conser3.jpg
   name: conser3
+- link: /images/gallery/cueva.jpg
+  name: cueva
 - link: /images/gallery/guitarra.jpg
   name: guitarra
 - link: /images/gallery/jo.webp
