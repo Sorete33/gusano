@@ -21,8 +21,6 @@
   date: '2026-12-06'
 - link: /images/gallery/conser.mp4
   name: conser
-- link: /images/gallery/conser3.jpg
-  name: conser3
 - link: /images/gallery/cueva2.jpg
   name: cueva2
   date: '2026-11-20'
@@ -35,8 +33,6 @@
 - link: /images/gallery/pozoz.webp
   name: pozoz
   date: '2026-11-06'
-- link: /images/gallery/reaper.jpg
-  name: reaper
 - link: /images/gallery/ronda1.webp
   name: ronda1
   date: '2026-11-21'
@@ -55,5 +51,3 @@
 - link: /images/gallery/trac3.jpg
   name: trac3
   date: '2026-11-06'
-- link: /images/gallery/vocayuva.jpg
-  name: vocayuva
