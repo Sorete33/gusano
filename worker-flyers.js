@@ -198,6 +198,9 @@ export default {
       return json({ error: 'No file field in the upload.' }, 400, env);
     }
 
+    const section = (String(sectionRaw || '') === 'lanzamientos') ? 'lanzamientos' : 'flyers';
+    const isLaunch = section === 'lanzamientos';
+
     let dateStr = '';
     if (!isLaunch) {
       const day = parseInt(String(dayRaw || ''), 10);
@@ -232,9 +235,6 @@ export default {
         error: `El archivo es demasiado grande (máx ${maxMb} MB${isVideo ? ' para un video' : ''}).`,
       }, 413, env);
     }
-
-    const section = (String(sectionRaw || '') === 'lanzamientos') ? 'lanzamientos' : 'flyers';
-    const isLaunch = section === 'lanzamientos';
 
     let destination = '';
     let launchDateStr = '';
