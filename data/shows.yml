@@ -14,6 +14,29 @@
 #   flac/wav descarga en alta calidad, mismo criterio
 #   duration segundos (lo rellena sync-archive.py desde la metadata de archive.org)
 # Si la pista tiene `mp3`, gana sobre `src`.
+- id: groove/louded-y-winona-riders
+  date: '2026-10-30'
+  title: Louded y Winona Riders en Groove
+  tracks:
+  - id: louded
+    artist: Louded
+    title: Louded en Groove
+    mp3: 01%20-%20Louded%20-%20Louded%20y%20Winona%20Riders%20en%20Groove%20(2026-10-30).mp3
+    wav: 01%20-%20Louded%20-%20Louded%20y%20Winona%20Riders%20en%20Groove%20(2026-10-30).wav
+    duration: 1216
+  - id: winona-riders
+    artist: Winona Riders
+    title: Winona Riders en Groove
+    mp3: 02%20-%20Winona%20Riders%20-%20Louded%20y%20Winona%20Riders%20en%20Groove%20(2026-10-30).mp3
+    wav: 02%20-%20Winona%20Riders%20-%20Louded%20y%20Winona%20Riders%20en%20Groove%20(2026-10-30).wav
+    duration: 6694
+  space: Groove
+  bands:
+  - Louded
+  - Winona Riders
+  page: /recitales/groove/louded-y-winona-riders/
+  archive: live-2026-10-30-louded-y-winona-riders-en-groove
+  archive_url: https://archive.org/details/live-2026-10-30-louded-y-winona-riders-en-groove
 - id: la-maga/festimaga5
   date: '2026-10-11'
   title: Festimaga Vol 5
