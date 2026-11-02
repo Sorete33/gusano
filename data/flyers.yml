@@ -3,6 +3,7 @@
   date: '2026-12-11'
 - link: /images/gallery/catango.webp
   name: catango
+  date: '2026-11-07'
 - link: /images/gallery/chasqui.jpg
   name: chasqui
   date: '2026-11-27'
@@ -27,10 +28,13 @@
   date: '2026-11-20'
 - link: /images/gallery/guitarra.jpg
   name: guitarra
+  date: '2026-11-02'
 - link: /images/gallery/jo.webp
   name: jo
+  date: '2026-11-14'
 - link: /images/gallery/pozoz.webp
   name: pozoz
+  date: '2026-11-06'
 - link: /images/gallery/reaper.jpg
   name: reaper
 - link: /images/gallery/ronda1.webp
@@ -44,6 +48,7 @@
   date: '2026-11-03'
 - link: /images/gallery/snapshot.jpg
   name: snapshot
+  date: '2026-11-14'
 - link: /images/gallery/sofa.jpg
   name: sofa
   date: '2026-12-10'
