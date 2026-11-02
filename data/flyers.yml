@@ -6,10 +6,25 @@
 - link: /images/gallery/chasqui.jpg
   name: chasqui
   date: '2026-11-27'
+- link: /images/gallery/chasqui2.jpg
+  name: chasqui2
+  date: '2026-11-28'
+- link: /images/gallery/chasqui3.jpg
+  name: chasqui3
+  date: '2026-11-20'
+- link: /images/gallery/chasqui4.jpg
+  name: chasqui4
+  date: '2026-11-05'
+- link: /images/gallery/chasqui5.jpg
+  name: chasqui5
+  date: '2026-12-06'
 - link: /images/gallery/conser.mp4
   name: conser
 - link: /images/gallery/conser3.jpg
   name: conser3
+- link: /images/gallery/cueva2.jpg
+  name: cueva2
+  date: '2026-11-20'
 - link: /images/gallery/guitarra.jpg
   name: guitarra
 - link: /images/gallery/jo.webp
@@ -18,7 +33,22 @@
   name: pozoz
 - link: /images/gallery/reaper.jpg
   name: reaper
+- link: /images/gallery/ronda1.webp
+  name: ronda1
+  date: '2026-11-21'
+- link: /images/gallery/ronda2.webp
+  name: ronda2
+  date: '2026-11-13'
+- link: /images/gallery/salud.jpg
+  name: salud
+  date: '2026-11-03'
 - link: /images/gallery/snapshot.jpg
   name: snapshot
+- link: /images/gallery/sofa.jpg
+  name: sofa
+  date: '2026-12-10'
+- link: /images/gallery/trac3.jpg
+  name: trac3
+  date: '2026-11-06'
 - link: /images/gallery/vocayuva.jpg
   name: vocayuva
