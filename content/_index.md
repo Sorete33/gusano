@@ -2,12 +2,10 @@
 title: Anuncio
 ---
 
-<!-- {{< new title="Subí tu audio" image="/images/material.gif" >}}
-
-Si tenes algo grabado que quieras compartir con la comunidad, ahora podes auto-publicarte usando el botón "Subí tu material" y en pocos minutos aparecerá en Nuevos Lanzamientos.
-
+{{< new title="Nueva Entrada" image="/recitales/groove/louded-y-winona-riders/featured.jpg" link="https://audiogusano.neocities.org/recitales/groove/louded-y-winona-riders/" button="Ir al evento" close="oki" >}}
+Louded teloneando a Winona Riders que presentaron su disco 0% en Groove
 {{< /new >}}
--->
+
 
 {{< webamp >}}
 
