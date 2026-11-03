@@ -104,6 +104,39 @@
         background: var(--primary-soft);
         opacity: 1;
     }
+
+    /* "Descargar Flyer" button injected into the GLightbox modal. */
+    .g-download-btn {
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        z-index: 99999;
+        background: var(--primary-soft, #fff);
+        color: var(--on-primary, #111);
+        padding: 8px 14px;
+        border-radius: 6px;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 13px;
+        box-shadow: 0 2px 8px rgba(0,0,0,.35);
+        touch-action: manipulation;
+    }
+    .g-download-btn:hover { opacity: .85; }
+
+    /* Keep GLightbox prev/next arrows visible on mobile (they are hidden
+       by default below 769px) so navigation works when swipe doesn't. */
+    @media (max-width: 768px) {
+        .glightbox-clean .gprev,
+        .glightbox-clean .gnext {
+            top: 45% !important;
+            opacity: 0.9;
+        }
+    }
+    .glightbox-clean .gprev,
+    .glightbox-clean .gnext {
+        width: 44px;
+        height: 50px;
+    }
 </style>
 
 <div class="nav-wrapper">
@@ -187,6 +220,8 @@
         grabCursor: true, 
         centeredSlides: true,
         slidesPerView: "auto", 
+        simulateTouch: true,
+        touchRatio: 1,
         loop: true,
         coverflowEffect: { rotate: 0, stretch: 0, depth: 100, modifier: 2.5, slideShadows: false },
         navigation: { nextEl: ".next-" + dataName, prevEl: ".prev-" + dataName },
@@ -231,17 +266,81 @@
     // browser treating each card as a native drag source, since an <a href> is
     // draggable by default and a native drag swallows the mousemove/mouseup
     // pair Swiper needs.
-    GLightbox({
+    let lightbox;
+
+    function ensureDownloadButton() {
+        const container = document.querySelector('.glightbox-container');
+        if (!container || container.querySelector('.g-download-btn')) return;
+        const btn = document.createElement('a');
+        btn.className = 'g-download-btn';
+        btn.textContent = 'Descargar Flyer';
+        container.appendChild(btn);
+    }
+
+    function currentTrigger(current) {
+        if (current && current.trigger) return current.trigger;
+        try {
+            const el = lightbox.elements[lightbox.index];
+            return el && el.node;
+        } catch (e) { return null; }
+    }
+
+    function updateDownloadButton(current) {
+        if (dataName !== 'flyers') return;
+        const btn = document.querySelector('.g-download-btn');
+        if (!btn) return;
+        const trigger = currentTrigger(current);
+        const href = trigger && trigger.getAttribute('href');
+        if (!href || /\.(mp4|webm|ogg|mov)(\?|$)/i.test(href)) {
+            btn.style.display = 'none';
+            return;
+        }
+        btn.href = href;
+        try {
+            const u = new URL(href, window.location.href);
+            const name = u.pathname.split('/').pop();
+            if (name) btn.setAttribute('download', name);
+        } catch (e) {}
+        btn.style.display = '';
+        // Place the button in the bottom-right corner of the actual image
+        // instead of the (empty) top-left corner of the whole modal.
+        const place = () => {
+            const slide = (current && current.slide) ? current.slide
+                : (lightbox.getActiveSlide ? lightbox.getActiveSlide() : null);
+            const img = slide ? slide.querySelector('.gslide-image img, img') : null;
+            const container = document.querySelector('.glightbox-container');
+            if (!img || !container) return;
+            const ir = img.getBoundingClientRect();
+            const cr = container.getBoundingClientRect();
+            const bw = btn.offsetWidth || 140;
+            const bh = btn.offsetHeight || 34;
+            btn.style.left = (ir.right - cr.left - bw - 12) + 'px';
+            btn.style.top = (ir.bottom - cr.top - bh - 12) + 'px';
+        };
+        requestAnimationFrame(() => requestAnimationFrame(place));
+    }
+
+    lightbox = GLightbox({
         selector: '.glightbox-' + dataName,
         loop: true,
         closeOnOutsideClick: true,
         draggable: false,
+        touchNavigation: true,
         preload: false,
         closeEffect: "none",
         slideEffect: "none",
         openEffect: "fade",
         plyr: { config: { ratio: null } },
-        onOpen: pauseCards,
+        onOpen: function () {
+            pauseCards();
+            if (dataName !== 'flyers') return;
+            ensureDownloadButton();
+            updateDownloadButton();
+        },
+        afterSlideChange: function (prev, current) {
+            if (dataName !== 'flyers') return;
+            updateDownloadButton(current);
+        },
         onClose: playCards
     });
 })();
