@@ -39,9 +39,6 @@
 - link: /images/gallery/pozoz.jpg
   name: pozoz
   date: '2026-11-06'
-- link: /images/gallery/pozoz.webp
-  name: pozoz
-  date: '2026-11-06'
 - link: /images/gallery/pozoz2.png
   name: pozoz2
   date: '2026-11-07'
@@ -51,9 +48,6 @@
 - link: /images/gallery/ronda2.webp
   name: ronda2
   date: '2026-11-13'
-- link: /images/gallery/salud.jpg
-  name: salud
-  date: '2026-11-03'
 - link: /images/gallery/snapshot.jpg
   name: snapshot
   date: '2026-11-14'
