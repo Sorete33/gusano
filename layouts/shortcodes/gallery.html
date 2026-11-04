@@ -153,18 +153,24 @@
             {{ if $rawDate }}
               {{ $parts := split $rawDate "-" }}
               {{ if eq (len $parts) 3 }}
+                {{ $a := default "0" (strings.TrimLeft "0" (index $parts 0)) }}
+                {{ $b := default "0" (strings.TrimLeft "0" (index $parts 1)) }}
+                {{ $c := default "0" (strings.TrimLeft "0" (index $parts 2)) }}
                 {{ if gt (len (index $parts 0)) 2 }}
-                  {{ $dateStr = printf "%04d-%02d-%02d" (int (index $parts 0)) (int (index $parts 1)) (int (index $parts 2)) }}
+                  {{ $dateStr = printf "%04d-%02d-%02d" (int $a) (int $b) (int $c) }}
                 {{ else }}
-                  {{ $dateStr = printf "%04d-%02d-%02d" (int (index $parts 2)) (int (index $parts 1)) (int (index $parts 0)) }}
+                  {{ $dateStr = printf "%04d-%02d-%02d" (int $c) (int $b) (int $a) }}
                 {{ end }}
               {{ else }}
                 {{ $parts = split $rawDate "/" }}
                 {{ if eq (len $parts) 3 }}
+                  {{ $a := default "0" (strings.TrimLeft "0" (index $parts 0)) }}
+                  {{ $b := default "0" (strings.TrimLeft "0" (index $parts 1)) }}
+                  {{ $c := default "0" (strings.TrimLeft "0" (index $parts 2)) }}
                   {{ if gt (len (index $parts 0)) 2 }}
-                    {{ $dateStr = printf "%04d-%02d-%02d" (int (index $parts 0)) (int (index $parts 1)) (int (index $parts 2)) }}
+                    {{ $dateStr = printf "%04d-%02d-%02d" (int $a) (int $b) (int $c) }}
                   {{ else }}
-                    {{ $dateStr = printf "%04d-%02d-%02d" (int (index $parts 2)) (int (index $parts 1)) (int (index $parts 0)) }}
+                    {{ $dateStr = printf "%04d-%02d-%02d" (int $c) (int $b) (int $a) }}
                   {{ end }}
                 {{ end }}
               {{ end }}
