@@ -20,8 +20,12 @@
 }
 
 html.hide-cursor,
-body.hide-cursor {
-  cursor: none;
+body.hide-cursor,
+html.hide-cursor::before,
+html.hide-cursor::after,
+body.hide-cursor::before,
+body.hide-cursor::after {
+  cursor: none !important;
 }
 
 html.hide-cursor *,
@@ -31,6 +35,10 @@ html.hide-cursor *::after,
 body.hide-cursor *::before,
 body.hide-cursor *::after {
   cursor: none !important;
+}
+
+html, body {
+  min-height: 100%;
 }
 
 @media (pointer: coarse) {
