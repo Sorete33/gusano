@@ -374,6 +374,10 @@
       return;
     }
 
+    // The event date is already captured; close the dialog now so the
+    // upload does not keep a modal on screen while the network request runs.
+    closeModal();
+
     setBusy(true);
     say("Subiendo tu flyer...");
 
@@ -392,7 +396,6 @@
 
       say("¡Listo! Ya está en la galería.", "ok");
       input.value = "";
-      closeModal();
     } catch (err) {
       say("No se pudo subir: " + err.message, "error");
     } finally {
