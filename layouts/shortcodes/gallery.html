@@ -207,17 +207,42 @@
 
     // Client-side random order, once per page load. Hugo's `shuffle` would
     // randomise at build time, so refreshing would show the same sequence.
+    // Events taking place today ("Hoy! Hoy! Hoy!") are pushed to the front
+    // first, then the remaining slides are shuffled randomly behind them.
     // Reorder the existing DOM nodes before Swiper initialises.
     (function () {
         const wrapper = document.querySelector(".mySwiper-" + dataName + " .swiper-wrapper");
         if (!wrapper) return;
         const slides = Array.prototype.slice.call(wrapper.children);
-        for (let i = slides.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-            const t = slides[i]; slides[i] = slides[j]; slides[j] = t;
-        }
+        const TZ = "America/Argentina/Buenos_Aires";
+        const today = new Date().toLocaleDateString("en-CA", { timeZone: TZ });
+        const norm = (v) => {
+            v = (v || "").trim();
+            if (!v) return "";
+            let m = v.match(/^(\d{4})-(\d{1,2})-(\d{1,2})$/);
+            if (m) return m[1] + "-" + String(m[2]).padStart(2, "0") + "-" + String(m[3]).padStart(2, "0");
+            m = v.match(/^(\d{1,2})[-\/](\d{1,2})[-\/](\d{4})$/);
+            if (m) return m[3] + "-" + String(m[2]).padStart(2, "0") + "-" + String(m[1]).padStart(2, "0");
+            return v;
+        };
+        const isToday = (slide) => {
+            const card = slide.querySelector(".flyer-card");
+            const d = norm(card && card.getAttribute("data-date"));
+            return !!d && d === today;
+        };
+        const shuffle = (arr) => {
+            for (let i = arr.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                const t = arr[i]; arr[i] = arr[j]; arr[j] = t;
+            }
+        };
+        const todaySlides = slides.filter(isToday);
+        const rest = slides.filter((s) => !isToday(s));
+        shuffle(todaySlides);
+        shuffle(rest);
+        const ordered = todaySlides.concat(rest);
         const frag = document.createDocumentFragment();
-        slides.forEach(function (s) { frag.appendChild(s); });
+        ordered.forEach(function (s) { frag.appendChild(s); });
         wrapper.appendChild(frag);
     })();
 
