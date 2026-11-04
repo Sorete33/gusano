@@ -5,6 +5,7 @@
   var cursor = document.createElement("div");
   cursor.className = "custom-cursor";
   document.body.appendChild(cursor);
+  document.documentElement.classList.add("hide-cursor");
   document.body.classList.add("hide-cursor");
 
   var visible = false;

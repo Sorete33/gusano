@@ -9,7 +9,7 @@
   background-repeat: no-repeat;
   background-position: center;
   pointer-events: none;
-  z-index: 1000001;
+  z-index: 2147483647;
   will-change: transform;
   transform: translate(-4px, -4px);
 }
@@ -19,11 +19,17 @@
   transform: translate(-4px, -4px) scale(1.15);
 }
 
+html.hide-cursor,
 body.hide-cursor {
   cursor: none;
 }
 
-body.hide-cursor * {
+html.hide-cursor *,
+body.hide-cursor *,
+html.hide-cursor *::before,
+html.hide-cursor *::after,
+body.hide-cursor *::before,
+body.hide-cursor *::after {
   cursor: none !important;
 }
 
@@ -31,9 +37,11 @@ body.hide-cursor * {
   .custom-cursor {
     display: none !important;
   }
+  html.hide-cursor,
   body.hide-cursor {
     cursor: auto;
   }
+  html.hide-cursor *,
   body.hide-cursor * {
     cursor: auto !important;
   }
