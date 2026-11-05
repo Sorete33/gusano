@@ -44,6 +44,6 @@
 
   document.getElementById('ag-banner-close').addEventListener('click', () => {
     banner.remove();
-    if (container) container.remove();
+    // La lluvia sigue de fondo durante todo el evento; no se corta al cerrar el mensaje.
   });
 })();
