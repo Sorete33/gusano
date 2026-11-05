@@ -119,3 +119,8 @@ cardView = true
 cardViewScreenWidth = true
 
 
+
+[celebration]
+enabled = false
+start = ""
+end = ""
