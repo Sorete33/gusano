@@ -1,32 +1,9 @@
 window.A11yPanel = (() => {
   const FEATURES = {
-    disableBlur: {
+    highContrast: {
       default: false,
       apply: (enabled) => {
-        document.querySelectorAll("script[data-blur-id]").forEach((script) => {
-          const targetId = script.getAttribute("data-blur-id");
-          const scrollDivisor = Number(script.getAttribute("data-scroll-divisor") || 300);
-          if (typeof setBackgroundBlur === "function") {
-            setBackgroundBlur(targetId, scrollDivisor, enabled, targetId === "menu-blur");
-          }
-        });
-      },
-    },
-
-    disableImages: {
-      default: false,
-      apply: (enabled) => {
-        const image = document.getElementById("background-image");
-        if (image) {
-          image.style.display = enabled ? "none" : "";
-        }
-      },
-    },
-
-    fontSize: {
-      default: "default",
-      apply: (size) => {
-        document.documentElement.style.fontSize = size === "default" ? "" : size;
+        document.documentElement.classList.toggle("a11y-high-contrast", enabled);
       },
     },
 
@@ -48,16 +25,44 @@ window.A11yPanel = (() => {
       },
     },
 
-    zenMode: {
+    reduceMotion: {
       default: false,
       apply: (enabled) => {
-        const isActive = document.body?.classList.contains("zen-mode-enable");
-        if (enabled !== isActive) {
-          const checkbox = document.querySelector('[id$="zen-mode"]');
-          if (checkbox && typeof _toggleZenMode === "function") {
-            _toggleZenMode(checkbox, { scrollToHeader: false });
-          }
+        document.documentElement.classList.toggle("a11y-reduce-motion", enabled);
+      },
+    },
+
+    dyslexiaFont: {
+      default: false,
+      apply: (enabled) => {
+        document.documentElement.classList.toggle("a11y-dyslexia", enabled);
+      },
+    },
+
+    textSpacing: {
+      default: false,
+      apply: (enabled) => {
+        document.documentElement.classList.toggle("a11y-text-spacing", enabled);
+      },
+    },
+
+    largeCursor: {
+      default: false,
+      reload: true,
+      apply: (enabled) => {
+        document.documentElement.classList.toggle("a11y-large-cursor", enabled);
+        if (enabled) {
+          document.querySelectorAll(".custom-cursor").forEach((node) => node.remove());
+          document.documentElement.classList.remove("hide-cursor");
+          document.body.classList.remove("hide-cursor");
         }
+      },
+    },
+
+    fontSize: {
+      default: "default",
+      apply: (size) => {
+        document.documentElement.style.fontSize = size === "default" ? "" : size;
       },
     },
   };
@@ -85,6 +90,9 @@ window.A11yPanel = (() => {
       console.warn(`a11y.js: can not store settings: ${e}`);
     }
     FEATURES[key]?.apply(value);
+    if (FEATURES[key]?.reload) {
+      window.location.reload();
+    }
   };
 
   const initPanel = (panelId) => {
@@ -146,10 +154,11 @@ window.A11yPanel = (() => {
     });
   };
 
-  if (getSettings().disableImages) {
+  if (getSettings().largeCursor) {
     new MutationObserver(() => {
-      const img = document.getElementById("background-image");
-      if (img) img.style.display = "none";
+      document.querySelectorAll(".custom-cursor").forEach((node) => node.remove());
+      document.documentElement.classList.remove("hide-cursor");
+      document.body.classList.remove("hide-cursor");
     }).observe(document, { childList: true, subtree: true });
   }
 

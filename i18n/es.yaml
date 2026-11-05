@@ -32,6 +32,20 @@ article:
 
 a11y:
   title: "Configuración de accesibilidad"
+  high_contrast: "Alto contraste"
+  high_contrast_desc: "Aumenta el contraste (fondo negro, texto blanco) para mejor visibilidad."
+  show_link_underline: "Subrayar enlaces"
+  underline_links_desc: "Subraya todos los enlaces para distinguirlos mejor."
+  reduce_motion: "Reducir movimiento"
+  reduce_motion_desc: "Desactiva animaciones y transiciones."
+  dyslexia_font: "Fuente para dislexia"
+  dyslexia_font_desc: "Usa una tipografía más legible (Lexend)."
+  text_spacing: "Espaciado de texto"
+  text_spacing_desc: "Aumenta el interlineado y espaciado entre letras."
+  large_cursor: "Cursor grande"
+  large_cursor_desc: "Desactiva el cursor personalizado y usa uno más grande."
+  font_size: "Tamaño de fuente"
+  font_size_desc: "Elige un tamaño de fuente exacto."
 
 author:
   byline_title: "Autor"

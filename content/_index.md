@@ -7,6 +7,11 @@ Louded teloneando a Winona Riders que presentaron su disco 0% en Groove
 {{< /new >}}
 -->
 
+{{< new title="Nuevo botón de accesibilidad" image="/images/accesibilidad.gif" close="oki" >}}
+Nuevo botón de accesibilidad para personas con visibilidad reducida, dislexia o epilepsia.
+{{< /new >}}
+
+
 {{< webamp >}}
 
 # Próximos eventos

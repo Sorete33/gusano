@@ -32,10 +32,20 @@ article:
 
 a11y:
   title: "Accessibility settings"
-  disable_blur: "Disable blur"
-  disable_images: "Disable background image"
-  show_link_underline: "Show link underline"
+  high_contrast: "High contrast"
+  high_contrast_desc: "Increase contrast (black background, white text) for better visibility."
+  show_link_underline: "Underline links"
+  underline_links_desc: "Underline all links to make them easier to distinguish."
+  reduce_motion: "Reduce motion"
+  reduce_motion_desc: "Disable animations and transitions."
+  dyslexia_font: "Dyslexia-friendly font"
+  dyslexia_font_desc: "Use a more readable typeface (Lexend)."
+  text_spacing: "Text spacing"
+  text_spacing_desc: "Increase line height and letter spacing."
+  large_cursor: "Large cursor"
+  large_cursor_desc: "Disable the custom cursor and use a larger one."
   font_size: "Font size"
+  font_size_desc: "Choose an exact font size."
 
 author:
   byline_title: "Author"

@@ -18,7 +18,7 @@
     role="dialog"
     aria-labelledby="{{ $prefix }}a11y-panel-title"
     class="a11y-panel-enter fixed hidden p-6 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 rounded-lg shadow-xl bg-neutral-50 dark:bg-neutral-800 border border-neutral-300 dark:border-neutral-700"
-    style="min-width: 20rem; z-index:9999;">
+    style="min-width: 20rem; max-height: 80vh; overflow-y: auto; z-index:9999;">
     <div class="flex items-center justify-between mb-6">
       <h3
         id="{{ $prefix }}a11y-panel-title"
@@ -36,48 +36,42 @@
     </div>
 
     <div class="space-y-5">
-      {{ $toggles := slice }}
-      {{ $shouldDisableBlur := or site.Params.homepage.layoutBackgroundBlur site.Params.article.layoutBackgroundBlur site.Params.list.layoutBackgroundBlur }}
-      {{ $shouldDisableBackgroundImage := or
-        (eq site.Params.homepage.layout "background")
-        (eq site.Params.article.heroStyle "background")
-        (eq site.Params.list.heroStyle "background")
-        (eq site.Params.taxonomy.heroStyle "background")
-        (eq site.Params.term.heroStyle "background")
+      {{ $toggles := slice
+        (dict "id" (print $prefix "high-contrast") "label" (i18n "a11y.high_contrast") "desc" (i18n "a11y.high_contrast_desc"))
+        (dict "id" (print $prefix "underline-links") "label" (i18n "a11y.show_link_underline") "desc" (i18n "a11y.underline_links_desc"))
+        (dict "id" (print $prefix "reduce-motion") "label" (i18n "a11y.reduce_motion") "desc" (i18n "a11y.reduce_motion_desc"))
+        (dict "id" (print $prefix "dyslexia-font") "label" (i18n "a11y.dyslexia_font") "desc" (i18n "a11y.dyslexia_font_desc"))
+        (dict "id" (print $prefix "text-spacing") "label" (i18n "a11y.text_spacing") "desc" (i18n "a11y.text_spacing_desc"))
+        (dict "id" (print $prefix "large-cursor") "label" (i18n "a11y.large_cursor") "desc" (i18n "a11y.large_cursor_desc"))
       }}
-      {{ if $shouldDisableBlur }}
-        {{ $toggles = $toggles | append (dict "id" (print $prefix "disable-blur") "label" (i18n "a11y.disable_blur")) }}
-      {{ end }}
-      {{ if $shouldDisableBackgroundImage }}
-        {{ $toggles = $toggles | append (dict "id" (print $prefix "disable-images") "label" (i18n "a11y.disable_images")) }}
-      {{ end }}
-      {{- $toggles = $toggles | append
-        (dict "id" (print $prefix "underline-links") "label" (i18n "a11y.show_link_underline"))
-        (dict "id" (print $prefix "zen-mode") "label" (i18n "article.zen_mode_title.enable"))
-      -}}
 
       {{- range $toggles }}
-        <div class="flex items-center justify-between">
-          <label for="{{ .id }}" class="text-sm font-medium text-neutral-700 dark:text-neutral-300">
-            {{ .label }}
-          </label>
-          <div class="ios-toggle">
+        <div class="flex items-start justify-between gap-3">
+          <div class="flex-1">
+            <label for="{{ .id }}" class="text-sm font-medium text-neutral-700 dark:text-neutral-300">
+              {{ .label }}
+            </label>
+            <p class="text-xs text-neutral-500 dark:text-neutral-400 mt-0.5">{{ .desc }}</p>
+          </div>
+          <div class="ios-toggle shrink-0">
             <input type="checkbox" id="{{ .id }}">
           </div>
         </div>
       {{- end }}
 
-
-      <div class="flex items-center justify-between">
-        <label
-          for="{{ $prefix }}font-size-select"
-          class="text-sm font-medium text-neutral-700 dark:text-neutral-300">
-          {{ i18n "a11y.font_size" }}
-        </label>
+      <div class="flex items-center justify-between gap-3">
+        <div class="flex-1">
+          <label
+            for="{{ $prefix }}font-size-select"
+            class="text-sm font-medium text-neutral-700 dark:text-neutral-300">
+            {{ i18n "a11y.font_size" }}
+          </label>
+          <p class="text-xs text-neutral-500 dark:text-neutral-400 mt-0.5">{{ i18n "a11y.font_size_desc" }}</p>
+        </div>
         <select
           id="{{ $prefix }}font-size-select"
           class="border rounded-lg px-3 py-1.5 pr-8 text-neutral-900 text-sm dark:bg-neutral-700 dark:text-neutral-200 focus:ring-primary-500 focus:border-primary-500">
-          {{ $fontSizes := slice "default" "12px" "14px" "16px" "18px" "20px" "22px" "24px" }}
+          {{ $fontSizes := slice "default" "12px" "14px" "16px" "18px" "20px" "22px" "24px" "28px" "32px" }}
           {{ range $fontSizes }}
             <option value="{{ . }}">{{ . }}</option>
           {{ end }}

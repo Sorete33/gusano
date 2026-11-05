@@ -1,6 +1,10 @@
 (function () {
   if (window.matchMedia("(pointer: coarse)").matches) return;
   if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  try {
+    var s = JSON.parse(localStorage.getItem("a11ySettings") || "{}");
+    if (s && s.largeCursor) return;
+  } catch (e) {}
 
   var cursor = document.createElement("div");
   cursor.className = "custom-cursor";
