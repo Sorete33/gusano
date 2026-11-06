@@ -3,7 +3,7 @@ title: Anuncio
 ---
 
 <!--{{< new title="Nueva Entrada" image="/recitales/sociedad-francesa/duendes-de-cage/featured.jpg" link="https://audiogusano.neocities.org/recitales/sociedad-francesa/duendes-de-cage/" button="Ir al evento" close="oki" >}}
-Los Duendes de Cage en la Sociedad Francesa de Chivilcoy
+Los Duendes de Cag en la Sociedad Francesa de Chivilcoy
 {{< /new >}}
 -->
 <!-- 
