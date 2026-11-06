@@ -14,6 +14,29 @@
 #   flac/wav descarga en alta calidad, mismo criterio
 #   duration segundos (lo rellena sync-archive.py desde la metadata de archive.org)
 # Si la pista tiene `mp3`, gana sobre `src`.
+- id: sociedad-francesa/duendes-de-cage
+  date: '2026-11-03'
+  title: Duendes de Cage - Paisajes en la Sociedad Francesa de Chivilcoy
+  tracks:
+  - id: bloque-1
+    artist: Duendes de Cage
+    title: Paisajes Bloque 1
+    mp3: 01%20-%20Duendes%20de%20Cage%20-%20Paisajes%20Bloque%201%20.mp3
+    wav: 01%20-%20Duendes%20de%20Cage%20-%20Paisajes%20Bloque%201%20(2026-11-03)%20.wav
+    duration: 2309
+  - id: bloque-2
+    artist: Duendes de Cage
+    title: Paisajes Bloque 2
+    mp3: 02%20-%20Duendes%20de%20Cage%20-%20Paisajes%20Bloque%202%20(2026-11-03).mp3
+    wav: 02%20-%20Duendes%20de%20Cage%20-%20Paisajes%20Bloque%202%20(2026-11-03).wav
+    duration: 1089
+  space: Sociedad Francesa
+  bands:
+  - Duendes de Cage
+  cover: /recitales/sociedad-francesa/duendes-de-cage/featured.jpg
+  page: /recitales/sociedad-francesa/duendes-de-cage/
+  archive: live-2026-11-03-duendes-de-cage-paisajes-en-la-sociedad-francesa-de-chivilcoy
+  archive_url: https://archive.org/details/live-2026-11-03-duendes-de-cage-paisajes-en-la-sociedad-francesa-de-chivilcoy
 - id: groove/louded-y-winona-riders
   date: '2026-10-30'
   title: Louded y Winona Riders en Groove

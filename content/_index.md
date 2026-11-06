@@ -2,15 +2,15 @@
 title: Anuncio
 ---
 
-<!-- {{< new title="Nueva Entrada" image="/recitales/groove/louded-y-winona-riders/featured.jpg" link="https://audiogusano.neocities.org/recitales/groove/louded-y-winona-riders/" button="Ir al evento" close="oki" >}}
-Louded teloneando a Winona Riders que presentaron su disco 0% en Groove
+{{< new title="Nueva Entrada" image="/recitales/sociedad-francesa/duendes-de-cage/featured.jpg" link="https://audiogusano.neocities.org/recitales/sociedad-francesa/duendes-de-cage/" button="Ir al evento" close="oki" >}}
+Los Duendes de Cage en la Sociedad Francesa de Chivilcoy
 {{< /new >}}
--->
 
+<!-- 
 {{< new title="Nuevo botón de accesibilidad" image="/images/accesibilidad.gif" close="oki" >}}
 Nuevo botón de accesibilidad para personas con visibilidad reducida, dislexia o epilepsia.
 {{< /new >}}
-
+-->
 
 {{< webamp >}}
 
