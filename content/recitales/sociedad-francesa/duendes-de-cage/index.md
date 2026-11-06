@@ -1,8 +1,8 @@
 ---
 date : 2026-11-03
-title : "Duendes de Cage Paisajes en la Sociedad Francesa de Chivilcoy"
+title : "Los Duendes de Cage Paisajes en la Sociedad Francesa de Chivilcoy"
 weight: -78
-bandas: [Duendes de Cage]
+bandas: [Los Duendes de Cage]
 espacios: [Sociedad Francesa de Chivilcoy]
 author: "Gusanoide"
 draft: false
