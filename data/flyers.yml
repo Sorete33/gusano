@@ -25,15 +25,6 @@
 - link: /images/gallery/chasqui5.jpg
   name: chasqui5
   date: '2026-12-06'
-- link: /images/gallery/conser-jose.jpg
-  name: conser-jose
-  date: '2026-11-06'
-- link: /images/gallery/conser-lalo.jpg
-  name: conser-lalo
-  date: '2026-11-06'
-- link: /images/gallery/conser-rocio.jpg
-  name: conser-rocio
-  date: '2026-11-06'
 - link: /images/gallery/conser.mp4
   name: conser
 - link: /images/gallery/cris.jpg
@@ -54,12 +45,6 @@
 - link: /images/gallery/jo.webp
   name: jo
   date: '2026-11-14'
-- link: /images/gallery/portal.png
-  name: portal
-  date: '2026-11-06'
-- link: /images/gallery/pozoz.jpg
-  name: pozoz
-  date: '2026-11-06'
 - link: /images/gallery/pozoz2.png
   name: pozoz2
   date: '2026-11-07'
@@ -75,9 +60,6 @@
 - link: /images/gallery/snapshot.jpg
   name: snapshot
   date: '2026-11-14'
-- link: /images/gallery/sociedad-francesa.webp
-  name: sociedad-francesa
-  date: '2026-11-06'
 - link: /images/gallery/sociedad.png
   name: sociedad
   date: '2026-11-14'
