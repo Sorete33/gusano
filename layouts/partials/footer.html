@@ -75,20 +75,11 @@
     type="text/javascript"
     src="{{ $jsProcess.RelPermalink }}"
     integrity="{{ $jsProcess.Data.Integrity }}"></script>
-  {{/* Evento 100.000 visitantes: lluvia + banner solo en portada */}}
-  {{ if .IsHome }}
-    <script>
-      window.AG_CELEBRATION = {
-        enabled: {{ .Site.Params.celebration.enabled | default false }},
-        start: "{{ .Site.Params.celebration.start | default "" }}",
-        end: "{{ .Site.Params.celebration.end | default "" }}"
-      };
-    </script>
-    {{ $rainCss := resources.Get "css/rain.css" }}
-    <link rel="stylesheet" href="{{ $rainCss.RelPermalink }}">
-    {{ $rainJs := resources.Get "js/rain.js" | resources.Minify | resources.Fingerprint (.Site.Params.fingerprintAlgorithm | default "sha512") }}
-    <script defer src="{{ $rainJs.RelPermalink }}" integrity="{{ $rainJs.Data.Integrity }}"></script>
-  {{ end }}
+  {{/* Lluvia manual: assets globales + toggle desde el header */}}
+  {{ $rainCss := resources.Get "css/rain.css" }}
+  <link rel="stylesheet" href="{{ $rainCss.RelPermalink }}">
+  {{ $rainJs := resources.Get "js/rain.js" | resources.Minify | resources.Fingerprint (.Site.Params.fingerprintAlgorithm | default "sha512") }}
+  <script defer src="{{ $rainJs.RelPermalink }}" integrity="{{ $rainJs.Data.Integrity }}"></script>
   {{/* Extend footer - eg. for extra scripts, etc. */}}
   {{ if templates.Exists "partials/extend-footer.html" }}
     {{ partialCached "extend-footer.html" . }}

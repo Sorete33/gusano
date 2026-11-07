@@ -24,6 +24,16 @@
     </button>
   {{ end }}
 
+  <button
+    type="button"
+    data-rain-toggle
+    aria-label="Activar o desactivar lluvia"
+    aria-pressed="false"
+    title="Lluvia"
+    class="flex items-center justify-center bf-icon-color-hover">
+    {{ partial "icon.html" "cloud" }}
+  </button>
+
   {{ if or
     .Site.Menus.main
     .Site.Menus.subnavigation

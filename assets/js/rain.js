@@ -1,18 +1,12 @@
 (function () {
-  const cfg = window.AG_CELEBRATION || {};
-  const force = new URLSearchParams(location.search).has('rain');
-  const onHome = location.pathname === '/' || location.pathname === '/index.html';
-  if (!force && !onHome) return;
-  if (!force) {
-    if (!cfg.enabled) return;
-    const now = Date.now();
-    if (cfg.start && now < Date.parse(cfg.start)) return;
-    if (cfg.end && now > Date.parse(cfg.end)) return;
-  }
-  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches && !force;
+  const STORAGE_KEY = 'ag-rain';
+  const REDUCED = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   let container = null;
-  if (!reducedMotion) {
+  let on = false;
+
+  function createRain() {
+    if (container) return;
     container = document.createElement('div');
     container.id = 'ag-rain';
     document.body.appendChild(container);
@@ -35,15 +29,71 @@
     }
   }
 
-  const banner = document.createElement('div');
-  banner.id = 'ag-banner';
-  banner.innerHTML =
-    'Llegamos a los 100.000 visitantes subterráneos, muchas gracias a todes quienes forman parte de este terrario' +
-    '<button type="button" id="ag-banner-close">Oki</button>';
-  document.body.appendChild(banner);
+  function removeRain() {
+    if (container) {
+      container.remove();
+      container = null;
+    }
+  }
 
-  document.getElementById('ag-banner-close').addEventListener('click', () => {
-    banner.remove();
-    // La lluvia sigue de fondo durante todo el evento; no se corta al cerrar el mensaje.
-  });
+  function updateButtons() {
+    document.querySelectorAll('[data-rain-toggle]').forEach(function (btn) {
+      btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+    });
+  }
+
+  function setOn(next) {
+    if (REDUCED && next) return; // respect reduced motion
+    on = !!next;
+    try { localStorage.setItem(STORAGE_KEY, on ? '1' : '0'); } catch (e) {}
+    if (on) createRain(); else removeRain();
+    updateButtons();
+  }
+
+  function toggle() {
+    setOn(!on);
+  }
+
+  window.AGRain = {
+    isOn: function () { return on; },
+    start: function () { setOn(true); },
+    stop: function () { setOn(false); },
+    toggle: toggle,
+    setOn: setOn
+  };
+
+  // Initial state
+  let initial = false;
+  try { initial = localStorage.getItem(STORAGE_KEY) === '1'; } catch (e) {}
+  if (new URLSearchParams(location.search).has('rain')) initial = true;
+  if (REDUCED) initial = false;
+
+  function wireButtons() {
+    document.querySelectorAll('[data-rain-toggle]').forEach(function (btn) {
+      if (btn.dataset.rainBound) return;
+      btn.dataset.rainBound = '1';
+      if (REDUCED) {
+        btn.setAttribute('aria-disabled', 'true');
+        btn.title = 'Lluvia desactivada (movimiento reducido)';
+      }
+      btn.addEventListener('click', function (e) {
+        e.preventDefault();
+        if (REDUCED) return;
+        toggle();
+      });
+    });
+    updateButtons();
+  }
+
+  function init() {
+    if (initial) setOn(true);
+    else updateButtons();
+    wireButtons();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init, { once: true });
+  } else {
+    init();
+  }
 })();

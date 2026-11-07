@@ -10,6 +10,16 @@
     {{ partial "header/components/a11y.html" (dict "prefix" "desktop-") }}
   {{ end }}
 
+  <button
+    type="button"
+    data-rain-toggle
+    aria-label="Activar o desactivar lluvia"
+    aria-pressed="false"
+    title="Lluvia"
+    class="text-base bf-icon-color-hover">
+    {{ partial "icon.html" "cloud" }}
+  </button>
+
   {{ if .Site.Params.enableSearch | default false }}
     <button
       id="search-button"

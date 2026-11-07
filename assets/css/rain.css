@@ -47,5 +47,14 @@
   font-size: 1rem;
 }
 #ag-banner button:hover { background: rgba(var(--color-primary-500), 0.38); }
+
+/* Toggle button state */
+[data-rain-toggle][aria-pressed="true"] {
+  color: rgb(var(--color-primary-400));
+}
+[data-rain-toggle][aria-disabled="true"] {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
 ```<|end|><|start|><|start|>assistant to=write<|channel|>analysis <|constrain|>xml<|message|><rfl:parameter name="path">
 /home/skunk/web/gusano-master/assets/js/rain.js
