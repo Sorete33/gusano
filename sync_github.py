@@ -307,6 +307,20 @@ def load_existing_entries():
     return existing
 
 
+def load_existing_order():
+    """Return the list of links in their current order in data/flyers.yml."""
+    order = []
+    if os.path.exists(DATA_FILE):
+        try:
+            with open(DATA_FILE, 'r') as f:
+                for item in yaml.safe_load(f) or []:
+                    if isinstance(item, dict) and item.get('link'):
+                        order.append(item['link'])
+        except Exception as e:
+            print(f"Warning: could not read existing {DATA_FILE}: {e}")
+    return order
+
+
 def load_remote_sidecar():
     """Fetch the section sidecar (slug -> metadata) if present."""
     url = (f"https://api.github.com/repos/{FLYERS_REPO}/contents/{FLYERS_PATH}/{SIDECAR}"
@@ -338,6 +352,7 @@ def sync():
     os.makedirs(LOCAL_STATIC_DIR, exist_ok=True)
     os.makedirs(os.path.dirname(DATA_FILE), exist_ok=True)
     existing_entries = load_existing_entries()
+    existing_order = load_existing_order()
     remote_sidecar = load_remote_sidecar()
     print(f"Connecting to GitHub ({FLYERS_REPO}@{FLYERS_BRANCH}, path /{FLYERS_PATH})...")
     remote_files = list_remote_files()
@@ -387,6 +402,8 @@ def sync():
                 if isinstance(meta, dict):
                     if meta.get("destination"):
                         flyer_entry['destination'] = meta["destination"]
+                    if meta.get("name"):
+                        flyer_entry['name'] = meta["name"]
                     if meta.get("date"):
                         nd = normalize_date(meta["date"])
                         if nd:
@@ -395,6 +412,13 @@ def sync():
                     if meta:
                         flyer_entry['destination'] = meta
         if previous:
+            # Preserve a manually overridden display name across syncs.
+            if SECTION == "lanzamientos" and previous.get('name'):
+                sidecar_name = None
+                if clean_name in remote_sidecar and isinstance(remote_sidecar[clean_name], dict):
+                    sidecar_name = remote_sidecar[clean_name].get('name')
+                if not sidecar_name:
+                    flyer_entry['name'] = previous['name']
             for key in PRESERVE_FIELDS:
                 if key not in flyer_entry and previous.get(key):
                     val = previous.get(key)
@@ -410,6 +434,12 @@ def sync():
         if local_f not in processed_filenames:
             print(f"Removing old/unmatched file: {local_f}")
             os.remove(os.path.join(LOCAL_STATIC_DIR, local_f))
+
+    # Preserve the manual ordering of existing entries; append brand-new ones
+    # (in remote order) at the end instead of re-sorting everything.
+    if existing_order:
+        index = {link: i for i, link in enumerate(existing_order)}
+        flyer_list.sort(key=lambda e: (index.get(e['link'], len(existing_order)), e['link']))
 
     with open(DATA_FILE, 'w') as yml_out:
         yaml.dump(flyer_list, yml_out, default_flow_style=False, sort_keys=False)
