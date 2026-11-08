@@ -213,7 +213,7 @@
     (function () {
         const wrapper = document.querySelector(".mySwiper-" + dataName + " .swiper-wrapper");
         if (!wrapper) return;
-        const slides = Array.prototype.slice.call(wrapper.children);
+        let slides = Array.prototype.slice.call(wrapper.children);
         const TZ = "America/Argentina/Buenos_Aires";
         const today = new Date().toLocaleDateString("en-CA", { timeZone: TZ });
         const norm = (v) => {
@@ -225,6 +225,14 @@
             if (m) return m[3] + "-" + String(m[2]).padStart(2, "0") + "-" + String(m[1]).padStart(2, "0");
             return v;
         };
+
+        // Ocultar flyers cuya fecha ya pasó (1+ día). Los que no tienen fecha se mantienen.
+        slides.slice().forEach(function (slide) {
+            const card = slide.querySelector(".flyer-card");
+            const d = norm(card && card.getAttribute("data-date"));
+            if (d && d < today) slide.remove();
+        });
+        slides = Array.prototype.slice.call(wrapper.children);
         const isToday = (slide) => {
             const card = slide.querySelector(".flyer-card");
             const d = norm(card && card.getAttribute("data-date"));

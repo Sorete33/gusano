@@ -293,6 +293,15 @@ def normalize_date(value):
     return s
 
 
+def today_argentina_str():
+    """Today's date (ISO) in America/Argentina/Buenos_Aires."""
+    try:
+        from zoneinfo import ZoneInfo
+        return datetime.datetime.now(ZoneInfo("America/Argentina/Buenos_Aires")).date().isoformat()
+    except Exception:
+        return datetime.datetime.now(datetime.timezone.utc).date().isoformat()
+
+
 def load_existing_entries():
     """Load current data/flyers.yml to preserve manual fields the sync does not know about."""
     existing = {}
@@ -364,9 +373,38 @@ def sync():
     current_local_files = os.listdir(LOCAL_STATIC_DIR)
     processed_filenames = []
 
+    today_str = today_argentina_str()
+
     for entry in remote_files:
         clean_name = slugify(entry['name'])
         local_path = os.path.join(LOCAL_STATIC_DIR, clean_name)
+
+        if SECTION == "lanzamientos":
+            link_prefix = "/nuevos"
+        else:
+            link_prefix = "/images/gallery"
+        link = f'{link_prefix}/{clean_name}'
+
+        # Erase flyers whose event date is in the past (1+ day old).
+        # Flyers without a date are kept. Only applies to the flyers section.
+        if SECTION == "flyers":
+            pre_date = None
+            meta = remote_sidecar.get(clean_name)
+            if isinstance(meta, dict):
+                pre_date = normalize_date(meta.get("date"))
+            elif meta is not None:
+                pre_date = normalize_date(meta)
+            previous = existing_entries.get(link)
+            if pre_date is None and previous:
+                pre_date = normalize_date(previous.get("date"))
+            if pre_date and pre_date < today_str:
+                if clean_name in current_local_files:
+                    try:
+                        os.remove(local_path)
+                        print(f"Removing expired flyer: {clean_name}")
+                    except OSError:
+                        pass
+                continue
 
         if clean_name not in current_local_files:
             print(f"Downloading: {entry['raw_path']} as {clean_name}")
@@ -380,12 +418,8 @@ def sync():
 
         processed_filenames.append(clean_name)
 
-        if SECTION == "lanzamientos":
-            link_prefix = "/nuevos"
-        else:
-            link_prefix = "/images/gallery"
         flyer_entry = {
-            'link': f'{link_prefix}/{clean_name}',
+            'link': link,
             'name': os.path.splitext(entry['name'])[0]  # Keep the original name for the UI label
         }
 
@@ -427,13 +461,29 @@ def sync():
                     if val:
                         flyer_entry[key] = val
 
-        flyer_list.append(flyer_entry)
+        # Final expiry check (in case the date came from preserved/manual fields).
+        if SECTION == "flyers":
+            final_date = normalize_date(flyer_entry.get("date"))
+            if final_date and final_date < today_str:
+                if os.path.exists(local_path):
+                    try:
+                        os.remove(local_path)
+                        print(f"Removing expired flyer: {clean_name}")
+                    except OSError:
+                        pass
+                if clean_name in processed_filenames:
+                    processed_filenames.remove(clean_name)
+                continue
 
+        flyer_list.append(flyer_entry)
+ 
     # Cleanup: Remove files that don't match our processed list
     for local_f in current_local_files:
         if local_f not in processed_filenames:
-            print(f"Removing old/unmatched file: {local_f}")
-            os.remove(os.path.join(LOCAL_STATIC_DIR, local_f))
+            p = os.path.join(LOCAL_STATIC_DIR, local_f)
+            if os.path.exists(p):
+                print(f"Removing old/unmatched file: {local_f}")
+                os.remove(p)
 
     # Preserve the manual ordering of existing entries; append brand-new ones
     # (in remote order) at the end instead of re-sorting everything.

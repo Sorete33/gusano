@@ -7,9 +7,6 @@
 - link: /images/gallery/armand.webp
   name: armand
   date: '2026-11-08'
-- link: /images/gallery/catango.webp
-  name: catango
-  date: '2026-11-07'
 - link: /images/gallery/charles.png
   name: charles
   date: '2026-12-05'
@@ -27,27 +24,18 @@
   date: '2026-12-06'
 - link: /images/gallery/conser.mp4
   name: conser
-- link: /images/gallery/cris.jpg
-  name: cris
-  date: '2026-11-07'
 - link: /images/gallery/cueva-alon.webp
   name: cueva-alon
   date: '2026-11-21'
 - link: /images/gallery/cueva-dic.webp
   name: cueva-dic
   date: '2026-12-05'
-- link: /images/gallery/cueva-nov.webp
-  name: cueva-nov
-  date: '2026-11-07'
 - link: /images/gallery/cueva2.jpg
   name: cueva2
   date: '2026-11-20'
 - link: /images/gallery/jo.webp
   name: jo
   date: '2026-11-14'
-- link: /images/gallery/pozoz2.png
-  name: pozoz2
-  date: '2026-11-07'
 - link: /images/gallery/ronda-aerea.jpg
   name: ronda-aerea
   date: '2026-11-08'
@@ -66,6 +54,3 @@
 - link: /images/gallery/sofa.jpg
   name: sofa
   date: '2026-12-10'
-- link: /images/gallery/trac3.jpg
-  name: trac3
-  date: '2026-11-06'
