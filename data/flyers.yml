@@ -4,9 +4,6 @@
 - link: /images/gallery/armand-vira.jpg
   name: armand-vira
   date: '2026-11-14'
-- link: /images/gallery/armand.webp
-  name: armand
-  date: '2026-11-08'
 - link: /images/gallery/charles.png
   name: charles
   date: '2026-12-05'
@@ -36,9 +33,6 @@
 - link: /images/gallery/jo.webp
   name: jo
   date: '2026-11-14'
-- link: /images/gallery/ronda-aerea.jpg
-  name: ronda-aerea
-  date: '2026-11-08'
 - link: /images/gallery/ronda1.webp
   name: ronda1
   date: '2026-11-21'
@@ -56,3 +50,12 @@
   date: '2026-12-10'
 - link: /images/gallery/catango.webp
   name: catango
+- link: /images/gallery/conser1.jpg
+  name: conser1
+  date: '2026-11-10'
+- link: /images/gallery/conser2.jpg
+  name: conser2
+  date: '2026-11-10'
+- link: /images/gallery/conser3.jpg
+  name: conser3
+  date: '2026-11-10'
