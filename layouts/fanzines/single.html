@@ -1,0 +1,211 @@
+{{ define "main" }}
+  {{ .Scratch.Set "scope" "single" }}
+
+  {{ $pages := slice }}
+  {{ range sort (.Resources.Match "*") "Name" }}
+    {{ if in (slice ".jpg" ".jpeg" ".png" ".webp") (path.Ext .Name) }}
+      {{ $pages = $pages | append .RelPermalink }}
+    {{ end }}
+  {{ end }}
+
+  <article class="fanzine-single">
+    <header class="mt-5 max-w-prose">
+      {{ if .Params.showBreadcrumbs | default (site.Params.article.showBreadcrumbs | default false) }}
+        {{ partial "breadcrumbs.html" . }}
+      {{ end }}
+      <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">{{ .Title | emojify }}</h1>
+      <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
+        {{ partial "article-meta/basic.html" (dict "context" . "scope" "single") }}
+      </div>
+    </header>
+
+    <section class="fanzine-viewer">
+      <div id="fanzine-flipbook" class="fanzine-flipbook"></div>
+      <p class="fanzine-pagecount" id="fanzine-pagecount"></p>
+    </section>
+
+    <div class="fanzine-content prose dark:prose-invert max-w-prose mt-6">
+      {{ .Content }}
+    </div>
+
+    <div class="fanzine-back mt-6 flex justify-center">
+      <a class="fanzine-back-btn" href="/fanzines/">← Volver al grid de fanzines</a>
+    </div>
+
+    {{ partial "article-pagination.html" . }}
+
+    {{ partial "comments.html" . }}
+  </article>
+
+  <script type="application/json" id="fanzine-pages">{{ $pages | jsonify | safeJS }}</script>
+
+  <script src="https://cdn.jsdelivr.net/npm/page-flip@2.0.7/dist/js/page-flip.browser.js"></script>
+  <script>
+  (function () {
+    var pagesEl = document.getElementById("fanzine-pages");
+    var container = document.getElementById("fanzine-flipbook");
+    if (!pagesEl || !container) return;
+    var pages = [];
+    try { pages = JSON.parse(pagesEl.textContent || "[]"); } catch (e) { pages = []; }
+    if (!pages.length) return;
+
+    function preload(src) {
+      return new Promise(function (resolve) {
+        var i = new Image();
+        i.crossOrigin = "anonymous";
+        i.onload = function () { resolve(i); };
+        i.onerror = function () { resolve(null); };
+        i.src = src;
+        if (i.complete && i.naturalWidth) resolve(i);
+      });
+    }
+
+    function padImage(img, maxW, maxH) {
+      var canvas = document.createElement("canvas");
+      canvas.width = maxW;
+      canvas.height = maxH;
+      var ctx = canvas.getContext("2d");
+      // Fondo negro para el flipbook.
+      ctx.fillStyle = "#000000";
+      ctx.fillRect(0, 0, maxW, maxH);
+      if (img && img.naturalWidth) {
+        var scale = Math.min(maxW / img.naturalWidth, maxH / img.naturalHeight);
+        var w = Math.round(img.naturalWidth * scale);
+        var h = Math.round(img.naturalHeight * scale);
+        var x = Math.round((maxW - w) / 2);
+        var y = Math.round((maxH - h) / 2);
+        ctx.drawImage(img, x, y, w, h);
+      }
+      return canvas.toDataURL("image/jpeg", 0.8);
+    }
+
+    function init() {
+      var loading = document.createElement("div");
+      loading.textContent = "Cargando fanzine…";
+      loading.style.textAlign = "center";
+      loading.style.padding = "2rem";
+      loading.style.color = "var(--text-muted)";
+      container.parentNode.insertBefore(loading, container);
+
+      setTimeout(function () {
+        Promise.all(pages.map(preload)).then(function (imgs) {
+          var maxW = 1, maxH = 1;
+          imgs.forEach(function (i) {
+            if (i && i.naturalWidth) maxW = Math.max(maxW, i.naturalWidth);
+            if (i && i.naturalHeight) maxH = Math.max(maxH, i.naturalHeight);
+          });
+          var scale = Math.min(1, 600 / maxW);
+          var baseW = Math.round(maxW * scale);
+          var baseH = Math.round(maxH * scale);
+          if (baseW < 300) baseW = 300;
+          if (baseH < 300) baseH = 300;
+
+          var padded = [];
+          var batchSize = 2;
+          function processBatch(i) {
+            if (i >= imgs.length) {
+              finish(padded, baseW, baseH);
+              return;
+            }
+            var end = Math.min(i + batchSize, imgs.length);
+            for (var j = i; j < end; j++) {
+              padded.push(padImage(imgs[j], baseW, baseH));
+            }
+            loading.textContent = "Cargando fanzine… " + end + " / " + imgs.length;
+            setTimeout(function () { processBatch(end); }, 0);
+          }
+          processBatch(0);
+
+          function finish(paddedArr, w, h) {
+            loading.remove();
+            var PageFlipCtor = (window.St && window.St.PageFlip) ? window.St.PageFlip : window.PageFlip;
+            if (!PageFlipCtor) {
+              pages.forEach(function (src) {
+                var img = document.createElement("img");
+                img.src = src;
+                img.alt = "";
+                img.style.maxWidth = "100%";
+                img.style.display = "block";
+                img.style.margin = "1rem auto";
+                container.appendChild(img);
+              });
+              return;
+            }
+            var flip = new PageFlipCtor(container, {
+              width: w,
+              height: h,
+              size: "stretch",
+              minWidth: 300,
+              maxWidth: 1000,
+              minHeight: 300,
+              maxHeight: 1533,
+              maxShadowOpacity: 0.5,
+              showCover: true,
+              mobileScrollSupport: true,
+              autoSize: true
+            });
+            flip.loadFromImages(paddedArr);
+            // El library limpia el canvas con blanco; lo sobrescribimos a negro.
+            if (flip.render && typeof flip.render.clear === "function") {
+              flip.render.clear = function () {
+                this.ctx.fillStyle = "#000000";
+                this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
+              };
+            }
+            flip.on("flip", function (e) {
+              var pc = document.getElementById("fanzine-pagecount");
+              if (pc) pc.textContent = (e.data + 1) + " / " + pages.length;
+            });
+            var pc = document.getElementById("fanzine-pagecount");
+            if (pc) pc.textContent = "1 / " + pages.length;
+          }
+        });
+      }, 0);
+    }
+
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", init);
+    } else {
+      init();
+    }
+  })();
+  </script>
+
+  <style>
+    .fanzine-viewer { margin: 1.5rem 0; }
+    .fanzine-flipbook {
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
+      min-height: 420px;
+      background: #000000;
+    }
+    .fanzine-pagecount {
+      text-align: center;
+      margin-top: .75rem;
+      color: var(--text-muted);
+      font-size: .9rem;
+    }
+    .fanzine-back-btn {
+      background-color: var(--accent);
+      color: var(--on-accent);
+      border: 1.5px solid var(--accent);
+      padding: 8px 18px;
+      min-width: 96px;
+      font-size: 14px;
+      font-weight: 600;
+      border-radius: 6px;
+      text-align: center;
+      text-decoration: none;
+      transition: opacity 0.15s ease, transform 0.1s ease;
+      display: inline-block;
+    }
+    .fanzine-back-btn:hover {
+      opacity: 0.85;
+      transform: translateY(-1px);
+    }
+    @media (max-width: 640px) {
+      .fanzine-flipbook { min-height: 320px; }
+    }
+  </style>
+{{ end }}

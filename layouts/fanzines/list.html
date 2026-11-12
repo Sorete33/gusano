@@ -1,0 +1,74 @@
+{{ define "main" }}
+  {{ .Scratch.Set "scope" "list" }}
+
+  <header class="mt-5 max-w-prose">
+    {{ if .Params.showBreadcrumbs | default (site.Params.list.showBreadcrumbs | default false) }}
+      {{ partial "breadcrumbs.html" . }}
+    {{ end }}
+    <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">{{ .Title | emojify }}</h1>
+    <div class="mt-1 mb-2 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
+      {{ partial "article-meta/list.html" (dict "context" . "scope" "single") }}
+    </div>
+  </header>
+
+  <section class="fanzine-intro prose dark:prose-invert max-w-prose mb-8">
+    {{ .Content }}
+  </section>
+
+  {{ if gt (len .Pages) 0 }}
+    <section class="fanzine-grid">
+      {{ range .Pages.ByDate.Reverse }}
+        {{ $images := .Resources.ByType "image" }}
+        {{ $sorted := sort $images "Name" }}
+        {{ $cover := $images.GetMatch "*cover*" }}
+        {{ if not $cover }}{{ if gt (len $sorted) 0 }}{{ $cover = index $sorted 0 }}{{ end }}{{ end }}
+
+        <article class="fanzine-card">
+          <a class="fanzine-cover-link" href="{{ .RelPermalink }}" aria-label="Abrir fanzine {{ .Title }}">
+            {{ with $cover }}
+              <img src="{{ .RelPermalink }}" alt="Portada de {{ $.Title }}" loading="lazy" decoding="async" class="nozoom">
+            {{ end }}
+          </a>
+          <div class="fanzine-card-body">
+            <h2 class="fanzine-card-title">
+              <a href="{{ .RelPermalink }}">{{ .Title | emojify }}</a>
+            </h2>
+            <p class="fanzine-card-meta">{{ len $sorted }} páginas</p>
+          </div>
+        </article>
+      {{ end }}
+    </section>
+  {{ else }}
+    <section class="mt-10 prose dark:prose-invert">
+      <p class="py-8 border-t"><em>No hay fanzines todavía.</em></p>
+    </section>
+  {{ end }}
+
+  <style>
+    .fanzine-grid {
+      display: grid;
+      gap: 1.25rem;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .fanzine-card {
+      border: 1px solid var(--border, rgba(255,255,255,.12));
+      border-radius: .75rem;
+      overflow: hidden;
+      background: rgba(0,0,0,.15);
+    }
+    .fanzine-cover-link {
+      display: block;
+    }
+    .fanzine-cover-link img {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      display: block;
+    }
+    .fanzine-card-body { padding: .75rem 1rem 1rem; }
+    .fanzine-card-title { margin: 0; font-size: 1.05rem; }
+    .fanzine-card-meta { margin: .25rem 0 .5rem; color: var(--text-muted); font-size: .85rem; }
+  </style>
+{{ end }}

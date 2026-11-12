@@ -1,4 +1,4 @@
-{{ if eq .Section "recitales" }}
+{{ if or (eq .Section "recitales") (eq .Section "fanzines") }}
 <div id="comments-container" class="mt-12 pt-8 border-t border-neutral-800" data-permalink="{{ .RelPermalink }}">
   <h3 class="text-2xl font-bold mb-6 text-neutral">
     {{ i18n "comments.title" | default "Comentarios" }}
