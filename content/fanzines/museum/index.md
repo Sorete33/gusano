@@ -8,4 +8,4 @@ heroStyle: background
 showBreadcrumbs: true
 ---
 
-# Fanzine de [Mvsevm Skate](https://www.instagram.com/mvsevmskateboards/)
+# Fanzine de [Mvsevm Skate](https://www.instagram.com/mvsevmskateboards/) X [Masao](https://www.instagram.com/masao_gallery/)
