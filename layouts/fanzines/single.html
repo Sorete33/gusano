@@ -1,12 +1,17 @@
 {{ define "main" }}
   {{ .Scratch.Set "scope" "single" }}
 
-  {{ $pages := slice }}
-  {{ range sort (.Resources.Match "*") "Name" }}
-    {{ if in (slice ".jpg" ".jpeg" ".png" ".webp") (path.Ext .Name) }}
-      {{ $pages = $pages | append .RelPermalink }}
-    {{ end }}
+  {{ $images := sort (.Resources.ByType "image") "Name" }}
+
+  {{/* Detectar carpetas de primer nivel (o un solo grupo si no hay subcarpetas). */}}
+  {{ $dirs := slice }}
+  {{ range $images }}
+    {{ $parts := split .Name "/" }}
+    {{ $dir := "" }}
+    {{ if gt (len $parts) 1 }}{{ $dir = index $parts 0 }}{{ end }}
+    {{ if not (in $dirs $dir) }}{{ $dirs = $dirs | append $dir }}{{ end }}
   {{ end }}
+  {{ if eq (len $dirs) 0 }}{{ $dirs = $dirs | append "" }}{{ end }}
 
   <article class="fanzine-single">
     <header class="mt-5 max-w-prose">
@@ -19,10 +24,24 @@
       </div>
     </header>
 
-    <section class="fanzine-viewer">
-      <div id="fanzine-flipbook" class="fanzine-flipbook"></div>
-      <p class="fanzine-pagecount" id="fanzine-pagecount"></p>
-    </section>
+    {{ range $i, $dir := $dirs }}
+      {{ $groupImages := slice }}
+      {{ range $images }}
+        {{ $parts := split .Name "/" }}
+        {{ $imgDir := "" }}
+        {{ if gt (len $parts) 1 }}{{ $imgDir = index $parts 0 }}{{ end }}
+        {{ if eq $imgDir $dir }}{{ $groupImages = $groupImages | append . }}{{ end }}
+      {{ end }}
+      {{ $groupPages := slice }}
+      {{ range $groupImages }}{{ $groupPages = $groupPages | append .RelPermalink }}{{ end }}
+
+      <section class="fanzine-viewer">
+        {{ if ne $dir "" }}<h2 class="text-2xl font-bold mt-4 mb-2">{{ $dir }}</h2>{{ end }}
+        <div id="fanzine-flipbook-{{ $i }}" class="fanzine-flipbook"></div>
+        <p class="fanzine-pagecount" id="fanzine-pagecount-{{ $i }}"></p>
+      </section>
+      <script type="application/json" id="fanzine-pages-{{ $i }}">{{ $groupPages | jsonify | safeJS }}</script>
+    {{ end }}
 
     <div class="fanzine-content prose dark:prose-invert max-w-prose mt-6">
       {{ .Content }}
@@ -37,18 +56,9 @@
     {{ partial "comments.html" . }}
   </article>
 
-  <script type="application/json" id="fanzine-pages">{{ $pages | jsonify | safeJS }}</script>
-
   <script src="https://cdn.jsdelivr.net/npm/page-flip@2.0.7/dist/js/page-flip.browser.js"></script>
   <script>
   (function () {
-    var pagesEl = document.getElementById("fanzine-pages");
-    var container = document.getElementById("fanzine-flipbook");
-    if (!pagesEl || !container) return;
-    var pages = [];
-    try { pages = JSON.parse(pagesEl.textContent || "[]"); } catch (e) { pages = []; }
-    if (!pages.length) return;
-
     function preload(src) {
       return new Promise(function (resolve) {
         var i = new Image();
@@ -65,7 +75,6 @@
       canvas.width = maxW;
       canvas.height = maxH;
       var ctx = canvas.getContext("2d");
-      // Fondo negro para el flipbook.
       ctx.fillStyle = "#000000";
       ctx.fillRect(0, 0, maxW, maxH);
       if (img && img.naturalWidth) {
@@ -79,7 +88,9 @@
       return canvas.toDataURL("image/jpeg", 0.8);
     }
 
-    function init() {
+    function initOne(container, pages, idx) {
+      if (!container || !pages || !pages.length) return;
+      var pcId = "fanzine-pagecount-" + idx;
       var loading = document.createElement("div");
       loading.textContent = "Cargando fanzine…";
       loading.style.textAlign = "center";
@@ -145,27 +156,37 @@
               autoSize: true
             });
             flip.loadFromImages(paddedArr);
-            // El library limpia el canvas con blanco; lo sobrescribimos a negro.
             if (flip.render && typeof flip.render.clear === "function") {
               flip.render.clear = function () {
                 this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
               };
             }
             flip.on("flip", function (e) {
-              var pc = document.getElementById("fanzine-pagecount");
+              var pc = document.getElementById(pcId);
               if (pc) pc.textContent = (e.data + 1) + " / " + pages.length;
             });
-            var pc = document.getElementById("fanzine-pagecount");
+            var pc = document.getElementById(pcId);
             if (pc) pc.textContent = "1 / " + pages.length;
           }
         });
       }, 0);
     }
 
+    function start() {
+      var containers = document.querySelectorAll(".fanzine-flipbook");
+      containers.forEach(function (container, idx) {
+        var pagesEl = document.getElementById("fanzine-pages-" + idx);
+        var pages = [];
+        try { pages = JSON.parse((pagesEl && pagesEl.textContent) || "[]"); } catch (e) { pages = []; }
+        if (!pages.length) return;
+        initOne(container, pages, idx);
+      });
+    }
+
     if (document.readyState === "loading") {
-      document.addEventListener("DOMContentLoaded", init);
+      document.addEventListener("DOMContentLoaded", start);
     } else {
-      init();
+      start();
     }
   })();
   </script>

@@ -33,7 +33,21 @@
             <h2 class="fanzine-card-title">
               <a href="{{ .RelPermalink }}">{{ .Title | emojify }}</a>
             </h2>
-            <p class="fanzine-card-meta">{{ len $sorted }} páginas</p>
+            {{ $versions := 0 }}
+            {{ $seenDirs := slice }}
+            {{ range $sorted }}
+              {{ $parts := split .Name "/" }}
+              {{ if gt (len $parts) 1 }}
+                {{ $d := index $parts 0 }}
+                {{ if not (in $seenDirs $d) }}
+                  {{ $versions = add $versions 1 }}
+                  {{ $seenDirs = $seenDirs | append $d }}
+                {{ end }}
+              {{ end }}
+            {{ end }}
+            <p class="fanzine-card-meta">
+              {{ if gt $versions 1 }}{{ $versions }} versiones{{ else }}{{ len $sorted }} páginas{{ end }}
+            </p>
           </div>
         </article>
       {{ end }}
