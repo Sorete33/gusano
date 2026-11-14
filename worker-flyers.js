@@ -82,6 +82,23 @@ function slugify(filename) {
   return (cleaned || 'flyer') + ext;
 }
 
+async function uniqueSlug(env, basePath, slug) {
+  const dot = slug.lastIndexOf('.');
+  const name = dot > 0 ? slug.slice(0, dot) : slug;
+  const ext = dot > 0 ? slug.slice(dot) : '';
+  let candidate = slug;
+  let i = 2;
+  while (i < 1000) {
+    const url = `https://api.github.com/repos/${env.FLYERS_REPO}/contents/${basePath}/${candidate}?ref=${env.FLYERS_BRANCH}`;
+    const res = await githubApi(env, url, { method: 'GET' });
+    if (res.status === 404) return candidate;
+    if (!res.ok) return candidate;
+    candidate = `${name}-${i}${ext}`;
+    i += 1;
+  }
+  return candidate;
+}
+
 async function githubApi(env, url, options = {}) {
   const response = await fetch(url, {
     ...options,
@@ -264,7 +281,9 @@ export default {
     }
 
     const basePath = isLaunch ? (env.LAUNCHES_PATH || 'lanzamientos') : (env.FLYERS_PATH || 'flyers');
-    const slug = slugify(originalName);
+    let slug = slugify(originalName);
+    // Avoid overwriting an existing flyer with the same slug: pick a unique name.
+    slug = await uniqueSlug(env, basePath, slug);
     const filePath = `${basePath}/${slug}`;
 
     // base64 in one shot: arrayBuffer() avoids the per-chunk concat that blows

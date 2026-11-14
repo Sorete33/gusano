@@ -372,11 +372,20 @@ def sync():
     # We track current local files to see what needs to be deleted
     current_local_files = os.listdir(LOCAL_STATIC_DIR)
     processed_filenames = []
+    used_names = set()
 
     today_str = today_argentina_str()
 
     for entry in remote_files:
-        clean_name = slugify(entry['name'])
+        original_slug = slugify(entry['name'])
+        clean_name = original_slug
+        if clean_name in used_names:
+            name, ext = os.path.splitext(clean_name)
+            i = 2
+            while f"{name}-{i}{ext}" in used_names:
+                i += 1
+            clean_name = f"{name}-{i}{ext}"
+        used_names.add(clean_name)
         local_path = os.path.join(LOCAL_STATIC_DIR, clean_name)
 
         if SECTION == "lanzamientos":
@@ -389,7 +398,7 @@ def sync():
         # Flyers without a date are kept. Only applies to the flyers section.
         if SECTION == "flyers":
             pre_date = None
-            meta = remote_sidecar.get(clean_name)
+            meta = remote_sidecar.get(original_slug)
             if isinstance(meta, dict):
                 pre_date = normalize_date(meta.get("date"))
             elif meta is not None:
@@ -426,8 +435,8 @@ def sync():
         # Preserve manual fields and apply sidecar metadata.
         previous = existing_entries.get(flyer_entry['link'])
         # Sidecar takes precedence for its known field(s).
-        if clean_name in remote_sidecar:
-            meta = remote_sidecar[clean_name]
+        if original_slug in remote_sidecar:
+            meta = remote_sidecar[original_slug]
             if SECTION == "flyers":
                 nd = normalize_date(meta if not isinstance(meta, dict) else meta.get("date"))
                 if nd:
@@ -449,8 +458,8 @@ def sync():
             # Preserve a manually overridden display name across syncs.
             if SECTION == "lanzamientos" and previous.get('name'):
                 sidecar_name = None
-                if clean_name in remote_sidecar and isinstance(remote_sidecar[clean_name], dict):
-                    sidecar_name = remote_sidecar[clean_name].get('name')
+                if original_slug in remote_sidecar and isinstance(remote_sidecar[original_slug], dict):
+                    sidecar_name = remote_sidecar[original_slug].get('name')
                 if not sidecar_name:
                     flyer_entry['name'] = previous['name']
             for key in PRESERVE_FIELDS:
