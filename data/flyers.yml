@@ -33,9 +33,6 @@
 - link: /images/gallery/ronda1.webp
   name: ronda1
   date: '2026-11-21'
-- link: /images/gallery/ronda2.webp
-  name: ronda2
-  date: '2026-11-13'
 - link: /images/gallery/snapshot.jpg
   name: snapshot
   date: '2026-11-14'
@@ -53,15 +50,6 @@
 - link: /images/gallery/luzbajita.jpg
   name: luzbajita
   date: '2026-11-15'
-- link: /images/gallery/raices2.jpg
-  name: raices2
-  date: '2026-11-13'
-- link: /images/gallery/raices.jpg
-  name: raices
-  date: '2026-11-13'
-- link: /images/gallery/raices3.jpg
-  name: raices3
-  date: '2026-11-13'
 - link: /images/gallery/winona.jpg
   name: winona
   date: '2026-11-14'
