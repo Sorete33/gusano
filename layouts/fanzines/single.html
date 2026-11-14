@@ -51,7 +51,7 @@
       <a class="fanzine-back-btn" href="/fanzines/">← Volver al grid de fanzines</a>
     </div>
 
-    {{ partial "article-pagination.html" . }}
+    <div id="fanzine-nav" class="pt-8"></div>
 
     {{ partial "comments.html" . }}
   </article>
@@ -187,6 +187,42 @@
       document.addEventListener("DOMContentLoaded", start);
     } else {
       start();
+    }
+  })();
+  </script>
+
+  <script>
+  (function () {
+    function initNav() {
+      var nav = document.getElementById("fanzine-nav");
+      if (!nav) return;
+      var order = [];
+      try { order = JSON.parse(sessionStorage.getItem("fanzineOrder") || "[]"); } catch (e) { order = []; }
+      var current = location.pathname;
+      if (current.charAt(current.length - 1) !== "/") current += "/";
+      var idx = -1;
+      for (var i = 0; i < order.length; i++) {
+        if (order[i] && order[i].href === current) { idx = i; break; }
+      }
+      if (idx < 0) return;
+      var html = '<hr class="border-dotted border-neutral-300 dark:border-neutral-600"><div class="flex justify-between pt-3 gap-4">';
+      if (idx > 0) {
+        html += '<a class="flex items-center gap-3 text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400" href="' + order[idx-1].href + '"><span class="inline-block rtl:rotate-180">&larr;</span>&ensp;' + order[idx-1].title + '</a>';
+      } else {
+        html += '<span></span>';
+      }
+      if (idx < order.length - 1) {
+        html += '<a class="flex items-center gap-3 text-right text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400" href="' + order[idx+1].href + '">' + order[idx+1].title + '&ensp;<span class="inline-block rtl:rotate-180">&rarr;</span></a>';
+      } else {
+        html += '<span></span>';
+      }
+      html += '</div>';
+      nav.innerHTML = html;
+    }
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", initNav);
+    } else {
+      initNav();
     }
   })();
   </script>

@@ -85,4 +85,31 @@
     .fanzine-card-title { margin: 0; font-size: 1.05rem; }
     .fanzine-card-meta { margin: .25rem 0 .5rem; color: var(--text-muted); font-size: .85rem; }
   </style>
+  <script>
+  (function () {
+    function shuffle() {
+      var grid = document.querySelector(".fanzine-grid");
+      if (!grid) return;
+      var cards = Array.prototype.slice.call(grid.querySelectorAll(".fanzine-card"));
+      for (var i = cards.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var tmp = cards[i];
+        cards[i] = cards[j];
+        cards[j] = tmp;
+      }
+      cards.forEach(function (c) { grid.appendChild(c); });
+      var order = cards.map(function (c) {
+        var a = c.querySelector("a.fanzine-cover-link");
+        var t = c.querySelector(".fanzine-card-title a");
+        return { href: a ? a.getAttribute("href") : null, title: t ? t.textContent.trim() : "" };
+      }).filter(function (o) { return !!o.href; });
+      try { sessionStorage.setItem("fanzineOrder", JSON.stringify(order)); } catch (e) {}
+    }
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", shuffle);
+    } else {
+      shuffle();
+    }
+  })();
+  </script>
 {{ end }}
