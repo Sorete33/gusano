@@ -4,7 +4,7 @@
      Uso: {{ partial "share.html" . }} dentro de layouts/_default/single.html.
      Solo se muestra si .Section == "recitales". */}}
 
-{{ if eq .Section "recitales" }}
+{{ if or (eq .Section "recitales") (eq .Section "fanzines") }}
 {{ $title := .Title }}
 {{ $url := .Permalink }}
 {{ $titleEnc := urlquery $title }}
