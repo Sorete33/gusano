@@ -1,9 +1,6 @@
 - link: /images/gallery/agrupacion.jpg
   name: agrupacion
   date: '2026-12-11'
-- link: /images/gallery/armand-vira.jpg
-  name: armand-vira
-  date: '2026-11-14'
 - link: /images/gallery/charles.png
   name: charles
   date: '2026-12-05'
@@ -33,41 +30,20 @@
 - link: /images/gallery/ronda1.webp
   name: ronda1
   date: '2026-11-21'
-- link: /images/gallery/snapshot.jpg
-  name: snapshot
-  date: '2026-11-14'
-- link: /images/gallery/sociedad.png
-  name: sociedad
-  date: '2026-11-14'
 - link: /images/gallery/sofa.jpg
   name: sofa
   date: '2026-12-10'
 - link: /images/gallery/catango.webp
   name: catango
-- link: /images/gallery/beer.jpg
-  name: beer
-  date: '2026-11-14'
 - link: /images/gallery/luzbajita.jpg
   name: luzbajita
   date: '2026-11-15'
-- link: /images/gallery/winona.jpg
-  name: winona
-  date: '2026-11-14'
 - link: /images/gallery/flich.jpg
   name: flich
   date: '2026-11-22'
 - link: /images/gallery/ccnk.webp
   name: ccnk
   date: '2026-11-20'
-- link: /images/gallery/raices-2.jpg
-  name: raices-2
-  date: '2026-11-14'
-- link: /images/gallery/raices4.jpg
-  name: raices4
-  date: '2026-11-14'
-- link: /images/gallery/raices5.jpg
-  name: raices5
-  date: '2026-11-14'
-- link: /images/gallery/raices6.jpg
-  name: raices6
-  date: '2026-11-14'
+- link: /images/gallery/raicesdoigo.jpg
+  name: raicesdoigo
+  date: '2026-11-15'
