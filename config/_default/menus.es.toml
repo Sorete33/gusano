@@ -43,8 +43,8 @@ weight = 5
 # their pageRef points at, and with no page to inherit from the desktop bar
 # rendered title="" (no hover tooltip).
 [[main]]
-name = "Internet Archive"
-title = "Internet Archive"
+name = "Archive"
+title = "Archive"
 url = "https://archive.org/details/@audiogusano"
 identifier = "internet-archive"
 weight = 6
