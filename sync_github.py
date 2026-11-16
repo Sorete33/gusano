@@ -1,7 +1,7 @@
 """Pull band flyers out of the public audiogusano-flyers repo into the site.
 
 Replaces the old Dropbox sync: the Dropbox "File requests" folder is gone, and
-bands now drop flyers into https://github.com/Sorete33/audiogusano-flyers (the
+bands now drop flyers into https://github.com/gusano3/audiogusano-flyers (the
 browser upload button on the home page commits straight into `flyers/`).
 
 Everything downstream of the download -- slugification, the manual `ribbon`
@@ -24,7 +24,7 @@ import urllib.request
 import yaml
 
 # Configuration
-FLYERS_REPO = os.environ.get("FLYERS_REPO", "Sorete33/audiogusano-flyers")
+FLYERS_REPO = os.environ.get("FLYERS_REPO", "gusano3/audiogusano-flyers")
 FLYERS_BRANCH = os.environ.get("FLYERS_BRANCH", "main")
 
 SECTIONS = {

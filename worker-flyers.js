@@ -1,16 +1,16 @@
 /**
  * Cloudflare Worker that receives anonymous flyer uploads from the site and
- * commits them into the Sorete33/audiogusano-flyers repo, then kicks off the
- * deploy in Sorete33/gusano.
+ * commits them into the gusano3/audiogusano-flyers repo, then kicks off the
+ * deploy in gusano3/gusano.
  *
  * Setup (Cloudflare dashboard -> Workers & Pages -> this worker -> Settings ->
  * Variables and Secrets):
  *   GITHUB_PAT      secret, PAT with `contents: write` on audiogusano-flyers and
  *                   `repository`/`contents: write` on gusano (needed for dispatch)
- *   FLYERS_REPO     var, "Sorete33/audiogusano-flyers"
+ *   FLYERS_REPO     var, "gusano3/audiogusano-flyers"
  *   FLYERS_PATH     var, "flyers"            (optional)
  *   FLYERS_BRANCH   var, "main"              (optional)
- *   GUSANO_REPO     var, "Sorete33/gusano"   (optional)
+ *   GUSANO_REPO     var, "gusano3/gusano"   (optional)
  *   GUSANO_BRANCH   var, "master"            (optional)
  *   ALLOWED_ORIGIN  var, "https://audiogusano.neocities.org"  (optional)
  *
@@ -195,7 +195,7 @@ export default {
 
     env.FLYERS_PATH = env.FLYERS_PATH || 'flyers';
     env.FLYERS_BRANCH = env.FLYERS_BRANCH || 'main';
-    env.GUSANO_REPO = env.GUSANO_REPO || 'Sorete33/gusano';
+    env.GUSANO_REPO = env.GUSANO_REPO || 'gusano3/gusano';
     env.GUSANO_BRANCH = env.GUSANO_BRANCH || 'master';
 
     let file, dayRaw, monthRaw, sectionRaw, destinationRaw;

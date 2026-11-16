@@ -4,7 +4,7 @@ on:
     branches:
       - master
   # Fired by worker-flyers.js right after it commits a flyer to
-  # Sorete33/audiogusano-flyers. This is what makes an upload appear in ~1
+  # gusano3/audiogusano-flyers. This is what makes an upload appear in ~1
   # minute instead of waiting for the next scheduled run.
   repository_dispatch:
     types:
@@ -48,7 +48,7 @@ jobs:
       - name: Run Flyer Sync
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          FLYERS_REPO: Sorete33/audiogusano-flyers
+          FLYERS_REPO: gusano3/audiogusano-flyers
           FLYERS_PATH: flyers
           FLYERS_BRANCH: main
         run: python sync_github.py --section flyers
@@ -56,7 +56,7 @@ jobs:
       - name: Run Lanzamientos Sync
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          FLYERS_REPO: Sorete33/audiogusano-flyers
+          FLYERS_REPO: gusano3/audiogusano-flyers
           FLYERS_BRANCH: main
         run: python sync_github.py --section lanzamientos
 

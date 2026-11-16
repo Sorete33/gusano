@@ -14,6 +14,6 @@ id = "3b7fed208bb043b6b487c1cc99cc6d6f"
 # Secrets (no commitear valores):
 #   wrangler secret put GITHUB_PAT --config wrangler.comments.toml
 [vars]
-GITHUB_OWNER = "Sorete33"
+GITHUB_OWNER = "gusano3"
 GITHUB_REPO = "gusano"
 GITHUB_BRANCH = "master"

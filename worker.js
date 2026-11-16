@@ -7,7 +7,7 @@
  * DOCUMENTACION DE SEGURIDAD / PAT:
  *   El PAT de GitHub (GITHUB_PAT) debe ser FINE-GRAINED, con permisos unicamente:
  *     - contents: write
- *   sobre el repositorio Sorete33/audiogusano (branch master). No otorgar
+ *   sobre el repositorio gusano3/audiogusano (branch master). No otorgar
  *   permisos adicionales (issues, pull requests, workflows, etc.) ni scopes
  *   clasicos. Rotar si se sospecha compromiso.
  *

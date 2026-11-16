@@ -15,9 +15,9 @@ preview_urls = false
 # GITHUB_PAT is deliberately absent -- it is a secret, set with `wrangler secret
 # put GITHUB_PAT` or in the Cloudflare dashboard, and must never be committed.
 [vars]
-FLYERS_REPO = "Sorete33/audiogusano-flyers"
+FLYERS_REPO = "gusano3/audiogusano-flyers"
 FLYERS_PATH = "flyers"
 FLYERS_BRANCH = "main"
-GUSANO_REPO = "Sorete33/gusano"
+GUSANO_REPO = "gusano3/gusano"
 GUSANO_BRANCH = "master"
 ALLOWED_ORIGIN = "https://audiogusano.neocities.org"

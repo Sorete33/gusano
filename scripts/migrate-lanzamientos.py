@@ -14,7 +14,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, ROOT)
 import sync_github
 
-REPO = os.environ.get("FLYERS_REPO", "Sorete33/audiogusano-flyers")
+REPO = os.environ.get("FLYERS_REPO", "gusano3/audiogusano-flyers")
 BRANCH = os.environ.get("FLYERS_BRANCH", "main")
 TOKEN = os.environ.get("GITHUB_TOKEN") or os.environ.get("GH_TOKEN")
 if not TOKEN:
