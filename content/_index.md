@@ -21,11 +21,11 @@ Nuevo botón de accesibilidad para personas con visibilidad reducida, dislexia o
 <br>
 
 <!-- The Cloudflare Worker from worker-flyers.js. It commits the upload into
-     Sorete33/audiogusano-flyers and dispatches this repo's deploy workflow.
+     gusano3/audiogusano-flyers and dispatches this repo's deploy workflow.
      An HTML comment, not a Hugo {{/* */}} one: this is a content file, not a
      template, so Go template comments render verbatim instead of being
      stripped. -->
-<center>{{< flyer-upload url="https://audiogusano-flyers.falopa33.workers.dev" >}}</center>
+<center>{{< flyer-upload url="https://audiogusano-flyers.escalofrioexistencial.workers.dev" >}}</center>
 
 <br>
 
@@ -35,4 +35,4 @@ Nuevo botón de accesibilidad para personas con visibilidad reducida, dislexia o
 
 <br>
 
-<center>{{< lanzamientos-upload url="https://audiogusano-flyers.falopa33.workers.dev" >}}</center>
+<center>{{< lanzamientos-upload url="https://audiogusano-flyers.escalofrioexistencial.workers.dev" >}}</center>
