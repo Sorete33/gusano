@@ -33,14 +33,14 @@ SECTIONS = {
         "local_dir": "static/images/gallery",
         "data_file": "data/flyers.yml",
         "sidecar": "_dates.json",
-        "preserve": ("ribbon", "date"),
+        "preserve": ("ribbon", "date", "time"),
     },
     "lanzamientos": {
         "remote_path": os.environ.get("LAUNCHES_PATH", "lanzamientos"),
         "local_dir": "static/nuevos",
         "data_file": "data/lanzamientos.yml",
         "sidecar": "_lanzamientos.json",
-        "preserve": ("destination", "date"),
+        "preserve": ("destination", "date", "time"),
     },
 }
 
@@ -293,6 +293,30 @@ def normalize_date(value):
     return s
 
 
+def normalize_time(value):
+    """Normalize a time value to HH:MM (24h). Returns None for empty/invalid."""
+    if value is None:
+        return None
+    s = str(value).strip()
+    if not s:
+        return None
+    if ':' in s:
+        parts = s.split(':')
+        h = parts[0]
+        m = parts[1] if len(parts) > 1 else '0'
+    else:
+        h = s
+        m = '0'
+    try:
+        hi = int(h)
+        mi = int(m)
+    except (ValueError, TypeError):
+        return s
+    if 0 <= hi <= 23 and 0 <= mi <= 59:
+        return f"{hi:02d}:{mi:02d}"
+    return None
+
+
 def today_argentina_str():
     """Today's date (ISO) in America/Argentina/Buenos_Aires."""
     try:
@@ -441,6 +465,10 @@ def sync():
                 nd = normalize_date(meta if not isinstance(meta, dict) else meta.get("date"))
                 if nd:
                     flyer_entry['date'] = nd
+                if isinstance(meta, dict):
+                    nt = normalize_time(meta.get("time") or meta.get("hour") or meta.get("hora"))
+                    if nt:
+                        flyer_entry['time'] = nt
             else:
                 if isinstance(meta, dict):
                     if meta.get("destination"):
@@ -451,6 +479,9 @@ def sync():
                         nd = normalize_date(meta["date"])
                         if nd:
                             flyer_entry['date'] = nd
+                    nt = normalize_time(meta.get("time") or meta.get("hour") or meta.get("hora"))
+                    if nt:
+                        flyer_entry['time'] = nt
                 else:
                     if meta:
                         flyer_entry['destination'] = meta
@@ -467,6 +498,8 @@ def sync():
                     val = previous.get(key)
                     if key == "date":
                         val = normalize_date(val)
+                    if key == "time":
+                        val = normalize_time(val)
                     if val:
                         flyer_entry[key] = val
 

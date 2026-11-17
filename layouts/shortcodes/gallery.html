@@ -176,7 +176,7 @@
               {{ end }}
             {{ end }}
             <div class="swiper-slide">
-                <div class="flyer-card" data-date="{{ $dateStr }}">
+                <div class="flyer-card" data-date="{{ $dateStr }}" data-time="{{ .time }}">
                     {{ if .ribbon }}<div class="flyer-ribbon">{{ .ribbon }}</div>{{ end }}
                     {{/* data-gallery groups the slides; draggable="false" stops the
                          browser from turning the whole card into a native drag
@@ -427,7 +427,8 @@
     if (d && d === today) {
       const r = document.createElement("div");
       r.className = "flyer-ribbon";
-      r.textContent = "Hoy! Hoy! Hoy!";
+      const t = (card.getAttribute("data-time") || "").trim();
+      r.textContent = t ? ("Hoy! Hoy! Hoy! :" + t) : "Hoy! Hoy! Hoy!";
       card.appendChild(r);
     }
   });

@@ -33,6 +33,8 @@
       <div class="fu-step fu-step-date" hidden>
         <p class="fu-modal-title">Fecha (opcional)</p>
         <input type="date" id="{{ $key }}-date" min="2026-01-01" max="2026-12-31">
+        <p class="fu-modal-title" style="margin-top:8px;font-size:0.85rem;opacity:0.8;">Hora (opcional)</p>
+        <input type="time" id="{{ $key }}-time">
         <button type="button" class="fu-open-cal" id="{{ $key }}-opencal" aria-label="Abrir calendario">📅</button>
         <button type="button" class="fu-btn fu-upload" id="{{ $key }}-upload" style="margin-top:8px;">Subir</button>
       </div>
@@ -74,6 +76,7 @@
 .fu-modal-title { font-weight: 800; text-transform: uppercase; letter-spacing: 1px; margin: 0 0 12px; color: var(--text); }
 .fu-modal input[type="url"] { width: 100%; padding: 8px; border: 2px solid var(--accent); border-radius: 8px; font-weight: 700; margin-bottom: 12px; background: var(--panel); color: var(--text); }
 .fu-modal input[type="date"] { width: calc(100% - 44px); padding: 8px; border: 2px solid var(--accent); border-radius: 8px; font-weight: 700; margin-bottom: 12px; background: var(--panel); color: var(--text); color-scheme: dark; }
+.fu-modal input[type="time"] { width: 100%; padding: 8px; border: 2px solid var(--accent); border-radius: 8px; font-weight: 700; margin-bottom: 12px; background: var(--panel); color: var(--text); color-scheme: dark; }
 .fu-modal input:focus { outline: none; box-shadow: 0 0 0 2px rgba(var(--color-secondary-500), 0.35); }
 .fu-modal-card:focus { outline: none; }
 .fu-modal button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
@@ -99,6 +102,7 @@
   const modal = document.getElementById(KEY + "-modal");
   const destInput = document.getElementById(KEY + "-dest");
   const dateInput = document.getElementById(KEY + "-date");
+  const timeInput = document.getElementById(KEY + "-time");
   const openCalBtn = document.getElementById(KEY + "-opencal");
   const nextBtn = document.getElementById(KEY + "-next");
   const pickBtn = document.getElementById(KEY + "-pick");
@@ -132,7 +136,16 @@
                   d.getFullYear() === y && d.getMonth() === month - 1 && d.getDate() === day;
     return { valid, day, month, iso: valid ? v : "" };
   };
-
+  const parseTime = () => {
+    const v = (timeInput && timeInput.value) || "";
+    if (!v) return { valid: true, time: "" };
+    const m = v.match(/^(\d{2}):(\d{2})$/);
+    if (!m) return { valid: false, time: "" };
+    const h = parseInt(m[1], 10);
+    const min = parseInt(m[2], 10);
+    if (h < 0 || h > 23 || min < 0 || min > 59) return { valid: false, time: "" };
+    return { valid: true, time: m[1] + ":" + m[2] };
+  };
   const openModal = () => {
     if (!modal) return;
     modal.removeAttribute("hidden");
@@ -150,6 +163,7 @@
     modal.setAttribute("hidden", "");
     if (destInput) destInput.value = "";
     if (dateInput) dateInput.value = "";
+    if (timeInput) timeInput.value = "";
     const stepDate = modal.querySelector(".fu-step-date");
     const step1 = modal.querySelector(".fu-step-1");
     const step2 = modal.querySelector(".fu-step-2");
@@ -186,6 +200,7 @@
     if (stepDate) stepDate.removeAttribute("hidden");
     say("");
     if (dateInput) dateInput.value = "";
+    if (timeInput) timeInput.value = "";
     const card = modal.querySelector(".fu-modal-card");
     if (card) card.focus();
   };
@@ -256,6 +271,12 @@
       if (dateInput) dateInput.focus();
       return;
     }
+    const { valid: timeValid, time } = parseTime();
+    if (!timeValid) {
+      say("Indicá una hora válida (HH:MM).", "error");
+      if (timeInput) timeInput.focus();
+      return;
+    }
     setBusy(true);
     say("Subiendo tu lanzamiento...");
     const body = new FormData();
@@ -266,6 +287,7 @@
       body.append("day", String(day));
       body.append("month", String(month));
     }
+    if (time) body.append("time", time);
     try {
       const res = await fetch(ENDPOINT, { method: "POST", body });
       const data = await res.json().catch(() => ({}));

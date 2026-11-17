@@ -99,6 +99,30 @@ async function uniqueSlug(env, basePath, slug) {
   return candidate;
 }
 
+/**
+ * Normalize an optional time value to "HH:MM" (24h). Returns "" when no time
+ * was provided, or null when the value is present but invalid.
+ */
+function normalizeTime(raw, minuteRaw) {
+  let s = (raw == null ? '' : String(raw)).trim();
+  let minuteStr = (minuteRaw == null ? '' : String(minuteRaw)).trim();
+  if (!s && !minuteStr) return '';
+  let hourPart, minutePart;
+  if (s.includes(':')) {
+    const parts = s.split(':');
+    hourPart = parts[0];
+    minutePart = parts.length > 1 ? parts[1] : '0';
+  } else {
+    hourPart = s || '0';
+    minutePart = minuteStr || '0';
+  }
+  const hour = parseInt(hourPart, 10);
+  const minute = parseInt(minutePart, 10);
+  if (!Number.isInteger(hour) || hour < 0 || hour > 23) return null;
+  if (!Number.isInteger(minute) || minute < 0 || minute > 59) return null;
+  return `${String(hour).padStart(2, '0')}:${String(minute).padStart(2, '0')}`;
+}
+
 async function githubApi(env, url, options = {}) {
   const response = await fetch(url, {
     ...options,
@@ -198,7 +222,7 @@ export default {
     env.GUSANO_REPO = env.GUSANO_REPO || 'gusano3/gusano';
     env.GUSANO_BRANCH = env.GUSANO_BRANCH || 'master';
 
-    let file, dayRaw, monthRaw, sectionRaw, destinationRaw;
+    let file, dayRaw, monthRaw, sectionRaw, destinationRaw, timeRaw, hourRaw, minuteRaw;
     try {
       const form = await request.formData();
       file = form.get('file');
@@ -206,6 +230,9 @@ export default {
       monthRaw = form.get('month');
       sectionRaw = form.get('section');
       destinationRaw = form.get('destination');
+      timeRaw = form.get('time') || form.get('hour') || form.get('hora');
+      hourRaw = form.get('hour') || form.get('hora');
+      minuteRaw = form.get('minute') || form.get('minutes') || form.get('min');
     } catch (e) {
       console.error('formData failed', e);
       return json({ error: 'Expected a multipart upload.' }, 400, env);
@@ -232,6 +259,11 @@ export default {
         return json({ error: 'Indicá un día y mes válidos (año 2026).' }, 400, env);
       }
       dateStr = `2026-${String(month).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+    }
+
+    const timeStr = normalizeTime(timeRaw, minuteRaw);
+    if (timeStr === null) {
+      return json({ error: 'Indicá una hora válida (HH:MM).' }, 400, env);
     }
 
     const originalName = file.name || 'flyer';
@@ -325,9 +357,14 @@ export default {
         const obj = (prev && typeof prev === 'object' && !Array.isArray(prev)) ? { ...prev } : {};
         obj.destination = destination;
         if (launchDateStr) obj.date = launchDateStr;
+        if (timeStr) obj.time = timeStr;
         meta[slug] = obj;
       } else {
-        meta[slug] = dateStr;
+        if (timeStr) {
+          meta[slug] = { date: dateStr, time: timeStr };
+        } else {
+          meta[slug] = dateStr;
+        }
       }
       const newContent = btoa(JSON.stringify(meta, null, 2));
       await commitFile(env, sidecarPath, newContent, `Metadata: ${slug}`);

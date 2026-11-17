@@ -27,6 +27,8 @@
       <div class="fu-step fu-step-1">
         <p class="fu-modal-title">Fecha del evento</p>
         <input type="date" id="{{ $key }}-date" min="2026-01-01" max="2026-12-31" required>
+        <p class="fu-modal-title" style="margin-top:8px;font-size:0.85rem;opacity:0.8;">Hora (opcional)</p>
+        <input type="time" id="{{ $key }}-time">
         <button type="button" class="fu-open-cal" id="{{ $key }}-opencal" aria-label="Abrir calendario">📅</button>
         <button type="button" class="fu-btn fu-next" id="{{ $key }}-next">Siguiente</button>
       </div>
@@ -190,6 +192,17 @@
   color: var(--text);
   color-scheme: dark;
 }
+.fu-modal input[type="time"] {
+  width: 100%;
+  padding: 8px;
+  border: 2px solid var(--accent);
+  border-radius: 8px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  background: var(--panel);
+  color: var(--text);
+  color-scheme: dark;
+}
 .fu-modal input:focus {
   outline: none;
   box-shadow: 0 0 0 2px rgba(var(--color-secondary-500), 0.35);
@@ -244,6 +257,7 @@
   const status = document.getElementById(KEY + "-status");
   const modal = document.getElementById(KEY + "-modal");
   const dateInput = document.getElementById(KEY + "-date");
+  const timeInput = document.getElementById(KEY + "-time");
   const openCalBtn = document.getElementById(KEY + "-opencal");
   const nextBtn = document.getElementById(KEY + "-next");
   const pickBtn = document.getElementById(KEY + "-pick");
@@ -277,6 +291,17 @@
 
   const validateDate = () => parseDate();
 
+  const parseTime = () => {
+    const v = (timeInput && timeInput.value) || "";
+    if (!v) return { valid: true, time: "" };
+    const m = v.match(/^(\d{2}):(\d{2})$/);
+    if (!m) return { valid: false, time: "" };
+    const h = parseInt(m[1], 10);
+    const min = parseInt(m[2], 10);
+    if (h < 0 || h > 23 || min < 0 || min > 59) return { valid: false, time: "" };
+    return { valid: true, time: m[1] + ":" + m[2] };
+  };
+
   const openModal = () => {
     if (!modal) return;
     modal.removeAttribute("hidden");
@@ -286,6 +311,7 @@
     if (step2) step2.setAttribute("hidden", "");
     say("");
     if (dateInput) dateInput.value = "";
+    if (timeInput) timeInput.value = "";
     const card = modal.querySelector(".fu-modal-card");
     if (card) card.focus();
   };
@@ -293,6 +319,7 @@
     if (!modal) return;
     modal.setAttribute("hidden", "");
     if (dateInput) dateInput.value = "";
+    if (timeInput) timeInput.value = "";
     const step1 = modal.querySelector(".fu-step-1");
     const step2 = modal.querySelector(".fu-step-2");
     if (step1) step1.removeAttribute("hidden");
@@ -306,6 +333,12 @@
     if (!valid) {
       say("Indicá una fecha válida del 2026.", "error");
       if (dateInput) dateInput.focus();
+      return;
+    }
+    const { valid: validTime } = parseTime();
+    if (!validTime) {
+      say("Indicá una hora válida (HH:MM).", "error");
+      if (timeInput) timeInput.focus();
       return;
     }
     const step1 = modal.querySelector(".fu-step-1");
@@ -360,6 +393,12 @@
       input.value = "";
       return;
     }
+    const { valid: validTime, time } = parseTime();
+    if (!validTime) {
+      say("Indicá una hora válida (HH:MM).", "error");
+      input.value = "";
+      return;
+    }
 
     // Videos get their own, larger allowance. The worker enforces the same two
     // limits; this copy just avoids burning an upload on a guaranteed 413.
@@ -385,6 +424,7 @@
     body.append("file", file);
     body.append("day", String(day));
     body.append("month", String(month));
+    if (time) body.append("time", time);
 
     try {
       const res = await fetch(ENDPOINT, { method: "POST", body });
