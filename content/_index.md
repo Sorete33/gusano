@@ -2,7 +2,7 @@
 title: Anuncio
 ---
 
-{{< new title="Nueva Entrada" image="/recitales/el-portal-del-tango/cruz-del-sur/featured.jpg" link="https://audiogusano.neocities.org/recitales/el-portal-del-tango/cruz-del-sur" button="Ir al evento" close="oki" >}}
+{{< new title="Nueva Entrada" image="/recitales/el-portal-del-tango/cruz-del-sur/featured.jpg" link="https://audiogusano.neocities.org/recitales/el-portal-del-tango/cruz-del-sur/" button="Ir al evento" close="oki" >}}
 Cruz del Sur en El Portal del Tango 14-11-26
 {{< /new >}}
 
