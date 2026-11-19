@@ -51,13 +51,14 @@
   lang="{{ with site.Params.isoCode | default (site.LanguageCode | default `en`) }}{{- . -}}{{ end }}"
   dir="{{ cond (site.Params.rtl | default false) `rtl` `ltr` }}"
   class="dark scroll-smooth"
-  style="background-image: {{ $bgCss | safeCSS }}; background-size: cover; background-attachment: fixed; background-position: center;">
+  style="background-color: var(--bg);">
   {{- partial "head.html" . -}}
   {{- partialCached "init.html" . -}}
 
   {{ $bodyLayout := "flex flex-col min-h-screen m-auto leading-7 max-w-7xl px-6 sm:px-14 md:px-24 lg:px-32" }}
   {{ $bodyColor := "text-lg text-neutral" }}
   <body class="{{ $bodyLayout }} {{ $bodyColor }} {{ if site.Params.enableStyledScrollbar | default true }}bf-scrollbar{{ end }}">
+    <div id="page-bg" aria-hidden="true" style="position: fixed; inset: 0; z-index: -2; background-image: {{ $bgCss | safeCSS }}; background-size: cover; background-position: center; transform: translateZ(0); pointer-events: none;"></div>
     <div id="the-top" class="absolute flex self-center">
       <a
         class="px-3 py-1 text-sm -translate-y-8 rounded-b-lg bg-neutral-600 focus:translate-y-0"

@@ -55,84 +55,19 @@
     -ms-user-select: none;
     user-select: none;
   }
-  .webamp-ripple {
-    position: absolute;
-    width: 96px;
-    height: 96px;
-    border-radius: 9999px;
-    border: 3px solid rgba(255, 255, 255, 0.9);
-    pointer-events: none;
-    opacity: 1;
-    transform: translate(-50%, -50%) scale(0);
-    animation: webampRipple 0.6s ease-out forwards;
-  }
-  @keyframes webampRipple {
-    to {
-      opacity: 0;
-      transform: translate(-50%, -50%) scale(1);
-    }
-  }
-  .webamp-pop {
-    animation: webampPop 0.3s ease-out;
-  }
-  @keyframes webampPop {
-    0% {
-      transform: scale(1);
-    }
-    40% {
-      transform: scale(1.12);
-    }
-    100% {
-      transform: scale(1);
-    }
-  }
   .webamp-unlocked {
     animation: webampUnlock 0.6s ease-out forwards;
   }
   @keyframes webampUnlock {
-    0% {
-      transform: scale(1);
-      box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.8);
-    }
-    100% {
-      transform: scale(1.05);
-      box-shadow: 0 0 0 24px rgba(255, 255, 255, 0);
-    }
+    0% { transform: scale(1); }
+    100% { transform: scale(1.05); }
   }
 
   img[data-zoom-src] {
     cursor: pointer;
-    will-change: transform;
-    transition: box-shadow 0.2s ease, transform 0.2s ease;
-  }
-  img[data-zoom-src]:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 20px 6px rgba(255, 255, 255, 0.3);
   }
   img[data-zoom-src].webamp-unlocked {
     animation: webampUnlock 0.6s ease-out forwards;
-  }
-
-  .hero-progress-ring {
-    position: absolute;
-    width: 156px;
-    height: 156px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border-radius: 9999px;
-    background: conic-gradient(
-      rgba(255, 255, 255, 0.85) var(--progress, 0%),
-      transparent var(--progress, 0%)
-    );
-    -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 5px), #000 calc(100% - 5px));
-    mask: radial-gradient(farthest-side, transparent calc(100% - 5px), #000 calc(100% - 5px));
-    pointer-events: none;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
-  .hero-progress-ring.active {
-    opacity: 1;
   }
 
 
@@ -148,69 +83,18 @@
     var TARGET = 6;
     var unlocked = false;
 
-    var ring = null;
-    if (heroImg) {
-      var imgWrapper = document.createElement("span");
-      imgWrapper.style.position = "relative";
-      imgWrapper.style.display = "inline-block";
-      imgWrapper.style.lineHeight = "0";
-      imgWrapper.style.fontSize = "0";
-      imgWrapper.style.verticalAlign = "top";
-      if (heroImg.classList.contains("mb-2")) {
-        heroImg.classList.remove("mb-2");
-        imgWrapper.style.marginBottom = "0.5rem";
-      }
-      heroImg.parentNode.insertBefore(imgWrapper, heroImg);
-      imgWrapper.appendChild(heroImg);
-
-      ring = document.createElement("div");
-      ring.className = "hero-progress-ring";
-      imgWrapper.appendChild(ring);
-    }
-
-    function updateProgress() {
-      var pct = Math.round((clicks / TARGET) * 100);
-      if (ring) {
-        ring.style.setProperty("--progress", pct + "%");
-        if (clicks > 0) ring.classList.add("active");
-      }
-    }
-
-    function spawnRipple(e) {
-      if (!heroImg) return;
-      var wrapper = heroImg.parentElement;
-      var rect = wrapper.getBoundingClientRect();
-      var ripple = document.createElement("span");
-      ripple.className = "webamp-ripple";
-      ripple.style.left = e.clientX - rect.left + "px";
-      ripple.style.top = e.clientY - rect.top + "px";
-      ripple.addEventListener("animationend", function () {
-        ripple.remove();
-      });
-      wrapper.appendChild(ripple);
-    }
-
-    function pop() {
-      if (!heroImg) return;
-      heroImg.classList.remove("webamp-pop");
-      void heroImg.offsetWidth;
-      heroImg.classList.add("webamp-pop");
-    }
+    // Keep the hero image in place; no extra wrapper/ring needed.
 
     function handleHeroClick(e) {
       e.preventDefault();
       e.stopPropagation();
       if (unlocked) return;
       clicks++;
-      spawnRipple(e);
-      pop();
-      updateProgress();
       if (clicks >= TARGET) {
         unlocked = true;
         heroImg.removeEventListener("click", handleHeroClick, true);
         heroImg.classList.add("webamp-unlocked");
         heroImg.style.cursor = "default";
-        if (ring) ring.style.display = "none";
         loadWebamp();
       }
     }
@@ -218,149 +102,6 @@
     if (heroImg) {
       heroImg.addEventListener("click", handleHeroClick, true);
     }
-
-    function parseMpegHeader(bytes) {
-      if (!bytes || bytes.length < 12) return null;
-      var offset = 0;
-      if (
-        bytes.length > 12 &&
-        bytes[0] === 0x49 &&
-        bytes[1] === 0x44 &&
-        bytes[2] === 0x33
-      ) {
-        var tagSize =
-          ((bytes[6] & 0x7f) << 21) |
-          ((bytes[7] & 0x7f) << 14) |
-          ((bytes[8] & 0x7f) << 7) |
-          (bytes[9] & 0x7f);
-        offset = 10 + tagSize;
-        if ((bytes[5] & 0x10) !== 0) offset += 10;
-      }
-      var i = offset;
-      var n = bytes.length - 4;
-      for (; i < n; i++) {
-        if (bytes[i] === 0xff && (bytes[i + 1] & 0xe0) === 0xe0) break;
-      }
-      if (i >= n) return null;
-      var b1 = bytes[i + 1];
-      var b2 = bytes[i + 2];
-      var versionBits = (b1 >> 3) & 0x03;
-      var layerBits = (b1 >> 1) & 0x03;
-      if (versionBits === 1 || layerBits === 0) return null;
-      var sampleIdx = (b2 >> 2) & 0x03;
-      if (sampleIdx === 3) return null;
-      var base = [44100, 48000, 32000][sampleIdx];
-      var sampleRate =
-        versionBits === 3 ? base : versionBits === 2 ? base / 2 : base / 4;
-      var bitrateIdx = (b2 >> 4) & 0x0f;
-      var table;
-      if (versionBits === 3) {
-        table =
-          layerBits === 1
-            ? [0, 32, 40, 48, 56, 64, 80, 96, 112, 128, 160, 192, 224, 256, 320]
-            : layerBits === 2
-            ? [0, 32, 48, 56, 64, 80, 96, 112, 128, 160, 192, 224, 256, 320, 384]
-            : [0, 32, 64, 96, 128, 160, 192, 224, 256, 288, 320, 352, 384, 416, 448];
-      } else {
-        table =
-          layerBits === 3
-            ? [0, 32, 48, 56, 64, 80, 96, 112, 128, 144, 160, 176, 192, 224, 256]
-            : [0, 8, 16, 24, 32, 40, 48, 56, 64, 80, 96, 112, 128, 144, 160];
-      }
-      var bitrateKbps = table[bitrateIdx] || 0;
-      if (!bitrateKbps) return null;
-      return { sampleRate: sampleRate, bitrateKbps: bitrateKbps };
-    }
-
-    var tagCache = {};
-
-    function applyRealMediaTags(webamp, track) {
-      if (!webamp || !track) return;
-      if (!webamp.store || typeof webamp.store.dispatch !== "function") return;
-      var url = track.url;
-      if (!url) return;
-      var state = webamp.store.getState();
-      var id = track.id != null ? track.id : null;
-      var meta = track.metaData || null;
-      if (id == null && state && state.tracks) {
-        for (var key in state.tracks) {
-          if (state.tracks[key] && state.tracks[key].url === url) {
-            id = key;
-            break;
-          }
-        }
-      }
-      if (id == null) return;
-      if (!meta && state && state.tracks && state.tracks[id]) {
-        meta = state.tracks[id];
-      }
-      if (tagCache[url]) {
-        var cached = tagCache[url];
-        webamp.store.dispatch({
-          type: "SET_MEDIA_TAGS",
-          id: id,
-          title: meta && meta.title ? meta.title : "",
-          artist: meta && meta.artist ? meta.artist : "",
-          album: meta && meta.album ? meta.album : "",
-          bitrate: cached.bitrateKbps * 1000,
-          sampleRate: cached.sampleRate,
-          numberOfChannels: 2
-        });
-        return;
-      }
-      fetch(url, { headers: { Range: "bytes=0-131071" } })
-        .then(function (resp) {
-          if (!resp.ok) throw new Error("Range fetch failed");
-          return resp.arrayBuffer();
-        })
-        .then(function (buf) {
-          var info = parseMpegHeader(new Uint8Array(buf));
-          if (!info || !info.sampleRate || !info.bitrateKbps) return;
-          tagCache[url] = info;
-          webamp.store.dispatch({
-            type: "SET_MEDIA_TAGS",
-            id: id,
-            title: meta && meta.title ? meta.title : "",
-            artist: meta && meta.artist ? meta.artist : "",
-            album: meta && meta.album ? meta.album : "",
-            bitrate: info.bitrateKbps * 1000,
-            sampleRate: info.sampleRate,
-            numberOfChannels: 2
-          });
-        })
-        .catch(function () {});
-    }
-
-    function preventWebampDragSelection() {
-      function setSelect(value) {
-        var body = document.body;
-        if (!body) return;
-        body.style.webkitUserSelect = value;
-        body.style.mozUserSelect = value;
-        body.style.msUserSelect = value;
-        body.style.userSelect = value;
-      }
-      document.addEventListener(
-        "mousedown",
-        function (e) {
-          if (e.target && e.target.closest && e.target.closest("#webamp")) {
-            setSelect("none");
-          }
-        },
-        true
-      );
-      document.addEventListener(
-        "mouseup",
-        function () {
-          setSelect("");
-        },
-        true
-      );
-      window.addEventListener("blur", function () {
-        setSelect("");
-      });
-    }
-    preventWebampDragSelection();
 
     function loadWebamp() {
       if (window.Webamp) {
@@ -417,21 +158,8 @@
         function () {
           var tracks = {{ $tracks | jsonify | safeJS }};
           webamp.appendTracks(tracks);
-          webamp.onTrackDidChange(function (track) {
-            applyRealMediaTags(webamp, track);
-          });
-          if (tracks.length) {
-            applyRealMediaTags(webamp, {
-              url: tracks[0].url,
-              metaData: tracks[0].metaData
-            });
-          }
           if (window.location.search.indexOf("__test") !== -1) {
             window.__webamp = webamp;
-            window.__dbg = {
-              parseMpegHeader: parseMpegHeader,
-              applyRealMediaTags: applyRealMediaTags
-            };
           }
           requestAnimationFrame(function () {
             var root = document.getElementById("webamp");

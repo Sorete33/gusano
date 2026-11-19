@@ -31,7 +31,7 @@
   color: rgb(var(--color-neutral-50));
   border: 1px solid rgba(var(--color-primary-400), 0.35);
   box-shadow: 0 16px 48px rgba(var(--color-neutral-950), 0.7);
-  backdrop-filter: blur(8px);
+  /* backdrop-filter removed for performance on old PCs */
   font-size: 1.25rem;
   line-height: 1.4;
   text-align: center;

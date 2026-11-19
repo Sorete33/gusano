@@ -92,11 +92,25 @@
                                 {{ if (strings.HasSuffix .link ".mp4") }}
                                     <video src="{{ $timestampedLink }}" autoplay loop muted playsinline draggable="false"></video>
                                 {{ else }}
-                                    <img src="{{ $timestampedLink }}" alt="Promo" loading="lazy" draggable="false">
+                                    {{ $imgRes := resources.Get .link }}
+                                    {{ if $imgRes }}
+                                      {{ $thumb := $imgRes }}
+                                      {{ if ne $imgRes.MediaType.SubType "svg" }}{{ $thumb = $imgRes.Resize "600x webp q75" }}{{ end }}
+                                      <img src="{{ $thumb.RelPermalink }}" alt="Promo" width="{{ $thumb.Width }}" height="{{ $thumb.Height }}" loading="lazy" decoding="async" draggable="false">
+                                    {{ else }}
+                                      <img src="{{ $timestampedLink }}" alt="Promo" loading="lazy" decoding="async" draggable="false">
+                                    {{ end }}
                                 {{ end }}
                             </a>
                         {{ else }}
-                            <img src="{{ $timestampedLink }}" alt="Flyer" loading="lazy" draggable="false">
+                            {{ $imgRes := resources.Get .link }}
+                            {{ if $imgRes }}
+                              {{ $thumb := $imgRes }}
+                              {{ if ne $imgRes.MediaType.SubType "svg" }}{{ $thumb = $imgRes.Resize "600x webp q75" }}{{ end }}
+                              <img src="{{ $thumb.RelPermalink }}" alt="Flyer" width="{{ $thumb.Width }}" height="{{ $thumb.Height }}" loading="lazy" decoding="async" draggable="false">
+                            {{ else }}
+                              <img src="{{ $timestampedLink }}" alt="Flyer" loading="lazy" decoding="async" draggable="false">
+                            {{ end }}
                         {{ end }}
                     </div>
                 </div>
@@ -113,26 +127,46 @@
 <script>
 (function() {
     const dataName = "{{ $dataFile }}";
-    new Swiper(".mySwiper-" + dataName, {
-        effect: "coverflow", 
-        grabCursor: true, 
+    var lowEndDevice = (navigator.deviceMemory && navigator.deviceMemory < 4) ||
+      (navigator.hardwareConcurrency && navigator.hardwareConcurrency <= 4) ||
+      (((navigator.connection || navigator.mozConnection || navigator.webkitConnection) || {}).saveData) ||
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    function initSwiper() {
+      var opts = {
+        grabCursor: true,
         centeredSlides: true,
-        slidesPerView: "auto", 
+        slidesPerView: "auto",
         loop: true,
-        // This helps Swiper handle slides of different heights
-        autoHeight: false, 
+        autoHeight: false,
         observer: true,
         observeParents: true,
-        coverflowEffect: { 
-            rotate: 0, 
-            stretch: 0, 
-            depth: 100, 
-            modifier: 2.5, 
-            slideShadows: false 
-        },
         navigation: { nextEl: ".next-" + dataName, prevEl: ".prev-" + dataName },
         pagination: { el: ".pagination-" + dataName, clickable: true }
-    });
+      };
+      if (lowEndDevice) {
+        opts.effect = "slide";
+      } else {
+        opts.effect = "coverflow";
+        opts.coverflowEffect = { rotate: 0, stretch: 0, depth: 100, modifier: 2.5, slideShadows: false };
+      }
+      new Swiper(".mySwiper-" + dataName, opts);
+    }
+
+    var swiperContainer = document.querySelector(".mySwiper-" + dataName);
+    if (swiperContainer && "IntersectionObserver" in window) {
+      var swiperObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            initSwiper();
+            swiperObserver.disconnect();
+          }
+        });
+      }, { rootMargin: "300px" });
+      swiperObserver.observe(swiperContainer);
+    } else {
+      initSwiper();
+    }
 })();
 </script>
 {{ else }}

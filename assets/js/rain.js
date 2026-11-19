@@ -11,7 +11,9 @@
     container.id = 'ag-rain';
     document.body.appendChild(container);
 
-    const count = window.innerWidth < 768 ? 25 : 60;
+    const conn = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+    if (conn && conn.saveData) return;
+    const count = window.innerWidth < 768 ? 8 : 15;
     for (let i = 0; i < count; i++) {
       const img = document.createElement('img');
       img.src = '/images/lluvia.gif';

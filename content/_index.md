@@ -2,10 +2,10 @@
 title: Anuncio
 ---
 
-<!--{{< new title="Nueva Entrada" image="/recitales/sociedad-francesa/duendes-de-cage/featured.jpg" link="https://audiogusano.neocities.org/recitales/sociedad-francesa/duendes-de-cage/" button="Ir al evento" close="oki" >}}
-Los Duendes de Cag en la Sociedad Francesa de Chivilcoy
+{{< new title="Nueva Entrada" image="/recitales/el-portal-del-tango/cruz-del-sur/featured.jpg" link="https://audiogusano.neocities.org/recitales/el-portal-del-tango/cruz-del-sur" button="Ir al evento" close="oki" >}}
+Cruz del Sur en El Portal del Tango 14-11-26
 {{< /new >}}
--->
+
 <!-- 
 {{< new title="Nuevo botón de accesibilidad" image="/images/accesibilidad.gif" close="oki" >}}
 Nuevo botón de accesibilidad para personas con visibilidad reducida, dislexia o epilepsia.

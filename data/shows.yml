@@ -14,6 +14,23 @@
 #   flac/wav descarga en alta calidad, mismo criterio
 #   duration segundos (lo rellena sync-archive.py desde la metadata de archive.org)
 # Si la pista tiene `mp3`, gana sobre `src`.
+- id: el-portal-del-tango/cruz-del-sur
+  date: '2026-11-14'
+  title: Cruz del Sur en El Portal del Tango
+  tracks:
+  - id: cruz-del-sur
+    artist: Cruz del Sur
+    title: Cruz del Sur en El Portal del Tango
+    mp3: Cruz%20del%20Sur%20en%20El%20Portal%20del%20Tango%20(2026-11-14).mp3
+    wav: Cruz%20del%20Sur%20en%20El%20Portal%20del%20Tango%20(2026-11-14).wav
+    duration: 3685
+  space: El Portal del Tango
+  bands:
+  - Cruz del Sur
+  cover: /recitales/el-portal-del-tango/cruz-del-sur/featured.jpg
+  page: /recitales/el-portal-del-tango/cruz-del-sur/
+  archive: live-2026-11-14-cruz-del-sur-en-el-portal-del-tango-2026-11-14
+  archive_url: https://archive.org/details/live-2026-11-14-cruz-del-sur-en-el-portal-del-tango-2026-11-14
 - id: sociedad-francesa/duendes-de-cage
   date: '2026-11-03'
   title: Duendes de Cage - Paisajes en la Sociedad Francesa de Chivilcoy

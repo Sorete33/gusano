@@ -28,17 +28,24 @@ body.hide-cursor::after {
   cursor: none !important;
 }
 
-html.hide-cursor *,
-body.hide-cursor *,
-html.hide-cursor *::before,
-html.hide-cursor *::after,
-body.hide-cursor *::before,
-body.hide-cursor *::after {
+/* cursor is inherited; only force none on elements that set their own cursor */
+html.hide-cursor a,
+html.hide-cursor button,
+html.hide-cursor input,
+html.hide-cursor select,
+html.hide-cursor textarea,
+html.hide-cursor [role="button"],
+html.hide-cursor label {
   cursor: none !important;
 }
 
 html, body {
   min-height: 100%;
+}
+
+/* Toggle button state */
+[data-cursor-toggle][aria-pressed="true"] {
+  color: rgb(var(--color-primary-400));
 }
 
 @media (pointer: coarse) {

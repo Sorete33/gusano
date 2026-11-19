@@ -181,13 +181,29 @@
                     {{/* data-gallery groups the slides; draggable="false" stops the
                          browser from turning the whole card into a native drag
                          source, which is what was blocking Swiper on video items */}}
-                    <a href="{{ $timestampedLink }}" class="glightbox-{{ $dataFile }}" data-gallery="gallery-{{ $dataFile }}" draggable="false" {{ if (strings.HasSuffix .link ".mp4") }}data-type="video"{{ end }}>
-                        {{ if (strings.HasSuffix .link ".mp4") }}
-                            <video src="{{ $timestampedLink }}" autoplay loop muted playsinline draggable="false"></video>
-                        {{ else }}
-                            <img src="{{ $timestampedLink }}" alt="Flyer" loading="lazy" draggable="false">
+                    {{ $isVideo := strings.HasSuffix .link ".mp4" }}
+                    {{ if $isVideo }}
+                      <a href="{{ $timestampedLink }}" class="glightbox-{{ $dataFile }}" data-gallery="gallery-{{ $dataFile }}" draggable="false" data-type="video">
+                        <video src="{{ $timestampedLink }}" autoplay loop muted playsinline draggable="false"></video>
+                      </a>
+                    {{ else }}
+                      {{ $imgRes := resources.Get .link }}
+                      {{ if $imgRes }}
+                        {{ $thumb := $imgRes }}
+                        {{ $full := $imgRes }}
+                        {{ if ne $imgRes.MediaType.SubType "svg" }}
+                          {{ $thumb = $imgRes.Resize "600x webp q75" }}
+                          {{ $full = $imgRes.Resize "1600x webp q80" }}
                         {{ end }}
-                    </a>
+                        <a href="{{ $full.RelPermalink }}" class="glightbox-{{ $dataFile }}" data-gallery="gallery-{{ $dataFile }}" draggable="false">
+                          <img src="{{ $thumb.RelPermalink }}" alt="Flyer" width="{{ $thumb.Width }}" height="{{ $thumb.Height }}" loading="lazy" decoding="async" draggable="false">
+                        </a>
+                      {{ else }}
+                        <a href="{{ $timestampedLink }}" class="glightbox-{{ $dataFile }}" data-gallery="gallery-{{ $dataFile }}" draggable="false">
+                          <img src="{{ $timestampedLink }}" alt="Flyer" loading="lazy" decoding="async" draggable="false">
+                        </a>
+                      {{ end }}
+                    {{ end }}
                 </div>
             </div>
             {{ end }}
@@ -277,18 +293,45 @@
         wrapper.appendChild(frag);
     })();
 
-    new Swiper(".mySwiper-" + dataName, {
-        effect: "coverflow", 
-        grabCursor: true, 
+    var lowEndDevice = (navigator.deviceMemory && navigator.deviceMemory < 4) ||
+      (navigator.hardwareConcurrency && navigator.hardwareConcurrency <= 4) ||
+      (((navigator.connection || navigator.mozConnection || navigator.webkitConnection) || {}).saveData) ||
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    function initSwiper() {
+      var opts = {
+        grabCursor: true,
         centeredSlides: true,
-        slidesPerView: "auto", 
+        slidesPerView: "auto",
         simulateTouch: true,
         touchRatio: 1,
         loop: true,
-        coverflowEffect: { rotate: 0, stretch: 0, depth: 100, modifier: 2.5, slideShadows: false },
         navigation: { nextEl: ".next-" + dataName, prevEl: ".prev-" + dataName },
         pagination: { el: ".pagination-" + dataName, clickable: true }
-    });
+      };
+      if (lowEndDevice) {
+        opts.effect = "slide";
+      } else {
+        opts.effect = "coverflow";
+        opts.coverflowEffect = { rotate: 0, stretch: 0, depth: 100, modifier: 2.5, slideShadows: false };
+      }
+      new Swiper(".mySwiper-" + dataName, opts);
+    }
+
+    var swiperContainer = document.querySelector(".mySwiper-" + dataName);
+    if (swiperContainer && "IntersectionObserver" in window) {
+      var swiperObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            initSwiper();
+            swiperObserver.disconnect();
+          }
+        });
+      }, { rootMargin: "300px" });
+      swiperObserver.observe(swiperContainer);
+    } else {
+      initSwiper();
+    }
 
     // Keep the card previews from playing under the lightbox.
     const cards = Array.prototype.slice.call(

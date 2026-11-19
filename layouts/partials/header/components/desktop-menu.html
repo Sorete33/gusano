@@ -20,6 +20,16 @@
     {{ partial "icon.html" "cloud" }}
   </button>
 
+  <button
+    type="button"
+    data-cursor-toggle
+    aria-label="Activar o desactivar cursor personalizado"
+    aria-pressed="false"
+    title="Cursor personalizado"
+    class="text-base bf-icon-color-hover">
+    {{ partial "icon.html" "cursor" }}
+  </button>
+
   {{ if .Site.Params.enableSearch | default false }}
     <button
       id="search-button"
