@@ -3,6 +3,19 @@
 
   {{ $images := sort (.Resources.ByType "image") "Name" }}
 
+  {{/* PDF de descarga (uno por flipbook, en el mismo orden). Puede ser un
+       string (un solo PDF) o una lista (varios flipbooks). */}}
+  {{ $pdfRaw := .Params.pdf }}
+  {{ if not $pdfRaw }}{{ $pdfRaw = .Params.pdfs }}{{ end }}
+  {{ $pdfs := slice }}
+  {{ if $pdfRaw }}
+    {{ if reflect.IsSlice $pdfRaw }}
+      {{ $pdfs = $pdfRaw }}
+    {{ else }}
+      {{ $pdfs = slice $pdfRaw }}
+    {{ end }}
+  {{ end }}
+
   {{/* Detectar carpetas de primer nivel (o un solo grupo si no hay subcarpetas). */}}
   {{ $dirs := slice }}
   {{ range $images }}
@@ -39,6 +52,13 @@
         {{ if ne $dir "" }}<h2 class="text-2xl font-bold mt-4 mb-2">{{ $dir }}</h2>{{ end }}
         <div id="fanzine-flipbook-{{ $i }}" class="fanzine-flipbook"></div>
         <p class="fanzine-pagecount" id="fanzine-pagecount-{{ $i }}"></p>
+        {{ $pdfUrl := "" }}
+        {{ if lt $i (len $pdfs) }}{{ $pdfUrl = index $pdfs $i }}{{ end }}
+        {{ with $pdfUrl }}
+          <div class="fanzine-download mt-4 flex justify-center">
+            <a class="fanzine-download-btn" href="{{ . }}" download target="_blank" rel="noopener">Descargar PDF</a>
+          </div>
+        {{ end }}
       </section>
       <script type="application/json" id="fanzine-pages-{{ $i }}">{{ $groupPages | jsonify | safeJS }}</script>
     {{ end }}
@@ -260,6 +280,24 @@
       text-decoration: none;
       transition: opacity 0.15s ease, transform 0.1s ease;
       display: inline-block;
+    }
+    .fanzine-download-btn {
+      background-color: var(--accent);
+      color: var(--on-accent);
+      border: 1.5px solid var(--accent);
+      padding: 8px 18px;
+      min-width: 96px;
+      font-size: 14px;
+      font-weight: 600;
+      border-radius: 6px;
+      text-align: center;
+      text-decoration: none;
+      transition: opacity 0.15s ease, transform 0.1s ease;
+      display: inline-block;
+    }
+    .fanzine-download-btn:hover {
+      opacity: 0.85;
+      transform: translateY(-1px);
     }
     .fanzine-back-btn:hover {
       opacity: 0.85;
